@@ -1,0 +1,44 @@
+{
+  "name": "computerhulp-zh",
+  "version": "1.0.0",
+  "description": "Professionele website voor Computerhulp Zuid-Holland",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "generate-cities": "node scripts/generate-cities.js"
+  },
+  "dependencies": {
+    "autoprefixer": "^10.4.0",
+    "gray-matter": "^4.0.3",
+    "marked": "^12.0.0",
+    "next": "^14.2.0",
+    "nodemailer": "^7.0.10",
+    "postcss": "^8.4.0",
+    "react": "^18.3.0",
+    "react-dom": "^18.3.0",
+    "react-google-recaptcha-v3": "^1.10.0",
+    "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/react": "^14.0.0",
+    "@types/node": "^20.0.0",
+    "@types/nodemailer": "^6.4.0",
+    "@types/react": "^18.3.0",
+    "@types/react-dom": "^18.3.0",
+    "eslint": "^8.57.1",
+    "eslint-config-next": "^15.5.4",
+    "jest": "^29.0.0",
+    "jest-environment-jsdom": "^29.0.0",
+    "sharp": "^0.34.5",
+    "typescript": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
