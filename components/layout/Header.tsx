@@ -140,46 +140,47 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-100">
             <nav className="flex flex-col gap-2 pt-4" aria-label="Mobiele navigatie">
-              <Link href="/diensten/computer-laptop-hulp" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/computer-laptop-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 💻 Computer & Laptop Hulp
               </Link>
-              <Link href="/diensten/printer-scanner-hulp" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/printer-scanner-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 🖨️ Printer & Scanner Hulp
               </Link>
-              <Link href="/diensten/wifi-internet-hulp" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/wifi-internet-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 📶 WiFi & Internet Hulp
               </Link>
-              <Link href="/diensten/email-hulp" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/email-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 📧 E-mail Hulp
               </Link>
-              <Link href="/diensten/tablet-smartphone-hulp" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/tablet-smartphone-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 📱 Tablet & Smartphone Hulp
               </Link>
-              <Link href="/diensten/persoonlijke-training" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/persoonlijke-training" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 🎓 Persoonlijke Training
               </Link>
-              <Link href="/diensten/televisie-radio" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/televisie-radio" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 📺 Televisie & Radio
               </Link>
-              <Link href="/diensten/smart-home-domotica" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/smart-home-domotica" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 🏠 Smart Home & Domotica
               </Link>
-              <Link href="/diensten/dataherstel-backup" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/dataherstel-backup" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
                 💾 Dataherstel & Backup
               </Link>
               <div className="border-t border-gray-100 my-2"></div>
-              <Link href="/website-laten-maken" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
+              <Link href="/website-laten-maken" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
                 🌐 Website Laten Maken
               </Link>
               <div className="border-t border-gray-100 my-2"></div>
-              <Link href="/over-ons" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
+              <Link href="/over-ons" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
                 Over Ons
               </Link>
-              <Link href="/contact" className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
                 Contact
               </Link>
               <Link
                 href="/afspraak-maken"
+                onClick={() => setMobileMenuOpen(false)}
                 className="mt-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-semibold text-center shadow-lg"
               >
                 Hulp Vragen

@@ -354,44 +354,6 @@ export default function HomePage() {
 
       {/* 7. Extra voordelen / geruststelling */}
       <ExtraBenefitsSection />
-
-      {/* 8. CTA / contact herhaling onderaan */}
-      <section className="py-20 bg-gradient-to-r from-blue-600 to-blue-800 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Klaar Met IT-Problemen?
-          </h2>
-          <p className="text-xl text-blue-100 mb-10">
-            Bel nu en we komen vandaag of morgen al bij u langs in Zuid-Holland
-          </p>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a
-              href="tel:+31642548451"
-              className="inline-flex items-center gap-3 bg-white text-blue-700 hover:bg-gray-50 px-10 py-5 rounded-xl font-bold text-2xl shadow-2xl hover:scale-105 transition-all"
-            >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              06-42548451
-            </a>
-
-            <Link
-              href="/afspraak-maken"
-              className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-800 text-white px-10 py-5 rounded-xl font-bold text-xl shadow-2xl hover:scale-105 transition-all border-2 border-white/30"
-            >
-              Of Plan een Afspraak
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
-            </Link>
-          </div>
-
-          <div className="text-blue-100 text-sm">
-            Ma-Zo: 08:00 - 22:00 • Ook avonden en weekenden • Geen voorrijkosten
-          </div>
-        </div>
-      </section>
     </>
   )
 }
