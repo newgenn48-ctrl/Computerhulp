@@ -6,7 +6,7 @@ import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import NearbyCities from '@/components/NearbyCities'
 
 export const metadata: Metadata = {
-  title: 'Student aan Huis Papendrecht | IT-Student Binnen 24u | €14,50',
+  title: 'Student aan Huis Papendrecht | IT-Student Binnen 24u',
   description: '🎓 Student aan huis in Papendrecht. Jonge, geduldige IT-studenten binnen 24u bij u thuis! ✓ Computer, laptop, WiFi hulp ✓ Rustig uitleggen ✓ Vanaf €43,50. Bel 06-42548451.',
   openGraph: {
     title: 'Student aan Huis Papendrecht | IT-Studenten Binnen 24u',

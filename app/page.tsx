@@ -5,7 +5,7 @@ import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Zuid-Holland | Binnen 24u bij u Thuis | €14,50',
+  title: 'Computerhulp Zuid-Holland | Binnen 24u bij u Thuis',
   description: '💻 IT-problemen? Binnen 24u bij u thuis in Zuid-Holland! ✓ Computer, laptop, printer, WiFi ✓ €14,50 per kwartier ✓ 500+ klanten. Bel 06-42548451.',
   openGraph: {
     title: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',

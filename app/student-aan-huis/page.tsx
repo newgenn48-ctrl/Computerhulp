@@ -5,7 +5,7 @@ import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 
 export const metadata: Metadata = {
-  title: 'Student aan Huis Zuid-Holland | Binnen 24u | Vanaf €43,50',
+  title: 'Student aan Huis Zuid-Holland | Binnen 24u | Vanaf',
   description: '🎓 Student aan huis voor computerhulp in Zuid-Holland. Geduldige IT-studenten binnen 24u bij u thuis. ✓ Geen voorrijkosten. Bel 06-42548451.',
   openGraph: {
     title: 'Student aan Huis Zuid-Holland | IT-Studenten Binnen 24u',

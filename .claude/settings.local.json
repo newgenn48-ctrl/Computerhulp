@@ -3,7 +3,8 @@
     "allow": [
       "Bash(git commit:*)",
       "Bash(git push:*)",
-      "Bash(node scripts/remove-contact-section.js:*)"
+      "Bash(node scripts/remove-contact-section.js:*)",
+      "Bash(node scripts/fix-seo-complete.js:*)"
     ],
     "deny": [],
     "ask": []
