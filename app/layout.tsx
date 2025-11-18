@@ -79,10 +79,22 @@ export default function RootLayout({
 }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID
   const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
+  const gtmId = 'GTM-WBZ74G2V'
 
   return (
     <html lang="nl" className="scroll-smooth">
       <head>
+        {/* Google Tag Manager */}
+        <Script id="gtm-script" strategy="afterInteractive">
+          {`
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+            })(window,document,'script','dataLayer','${gtmId}');
+          `}
+        </Script>
+
         {/* Google Ads Tag */}
         {googleAdsId && (
           <>
@@ -111,6 +123,15 @@ export default function RootLayout({
         )}
       </head>
       <body className={inter.className}>
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src={`https://www.googletagmanager.com/ns.html?id=${gtmId}`}
+            height="0"
+            width="0"
+            style={{ display: 'none', visibility: 'hidden' }}
+          />
+        </noscript>
         <Header />
         <Breadcrumb />
         <main className="min-h-screen">
