@@ -7,7 +7,7 @@ import NearbyCities from '@/components/NearbyCities'
 
 export const metadata: Metadata = {
   title: 'Student aan Huis Alphen aan den Rijn | IT-Student Binnen 24u',
-  description: '🎓 Student aan huis in Alphen aan den Rijn. Jonge, geduldige IT-studenten binnen 24u bij u thuis! ✓ Computer, laptop, WiFi hulp ✓ Rustig uitleggen ✓ Vanaf €43,50. Bel 06-42548451.',
+  description: '🎓 Student aan huis in Alphen aan den Rijn. Jonge, geduldige IT-studenten binnen 24u bij u thuis! ✓ Computer, laptop, WiFi hulp ✓ Rustig uitleggen ✓ Vanaf.',
   openGraph: {
     title: 'Student aan Huis Alphen aan den Rijn | IT-Studenten Binnen 24u',
     description: 'Jonge, geduldige IT-studenten binnen 24u bij u thuis in Alphen aan den Rijn. Geduldig uitleggen, rustig helpen. Vanaf €43,50. Bel 06-42548451',

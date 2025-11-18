@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Computer & Laptop Hulp aan Huis | Computerhulp ZH',
-  description: 'Computer of laptop problemen? Traag, vast, crash of defect? We komen bij u thuis in Zuid-Holland en maken het weer als nieuw. Binnen 24 uur geholpen. Bel 06-42548451.',
+  description: 'Computer of laptop problemen? Traag, vast, crash of defect? We komen bij u thuis in Zuid-Holland en maken het weer als nieuw. Binnen 24 uur geholpen. Bel.',
   openGraph: {
     title: 'Computer & Laptop Hulp aan Huis | Computerhulp Zuid-Holland',
     description: 'Computer of laptop problemen? We komen bij u thuis in Zuid-Holland. Bel 06-42548451.',

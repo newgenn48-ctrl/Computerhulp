@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Televisie & Radio Hulp aan Huis | Computerhulp ZH',
-  description: 'TV of radio problemen? Zenders weg, storing, of installatie nodig? We komen bij u thuis in Zuid-Holland en helpen direct. Binnen 24 uur geholpen. Bel 06-42548451.',
+  description: 'TV of radio problemen? Zenders weg, storing, of installatie nodig? We komen bij u thuis in Zuid-Holland en helpen direct. Binnen 24 uur geholpen. Bel.',
   keywords: [
     'tv hulp',
     'televisie installatie',
@@ -49,7 +49,7 @@ const structuredData = {
     price: '14.50',
     priceCurrency: 'EUR'
   },
-  description: 'Professionele televisie en radio hulp aan huis. TV installeren, zenders instellen, decoder programmeren en problemen oplossen. We komen bij u thuis in Zuid-Holland.',
+  description: 'Professionele televisie en radio hulp aan huis. TV installeren, zenders instellen, decoder programmeren en problemen oplossen. We komen bij u thuis in.',
 }
 
 const breadcrumbData = {

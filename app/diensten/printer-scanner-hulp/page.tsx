@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Printer & Scanner Hulp aan Huis | Computerhulp ZH',
-  description: 'Printer print niet, papier loopt vast of WiFi printer koppelen? We komen bij u thuis in Zuid-Holland en maken uw printer en scanner weer werkend. Binnen 24 uur geholpen. Bel 06-42548451.',
+  description: 'Printer print niet, papier loopt vast of WiFi printer koppelen? We komen bij u thuis in Zuid-Holland en maken uw printer en scanner weer werkend. Binnen 24.',
   openGraph: {
     title: 'Printer & Scanner Hulp aan Huis | Computerhulp Zuid-Holland',
     description: 'Printer print niet of WiFi printer koppelen? We komen bij u thuis. Bel 06-42548451.',

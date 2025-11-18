@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Persoonlijke Training aan Huis | Computerhulp ZH',
-  description: 'Computer basics leren, internet veilig gebruiken of Word en Excel onder de knie krijgen? We komen bij u thuis in Zuid-Holland voor persoonlijke training. Op uw tempo. Bel 06-42548451.',
+  description: 'Computer basics leren, internet veilig gebruiken of Word en Excel onder de knie krijgen? We komen bij u thuis in Zuid-Holland voor persoonlijke training. Op.',
   keywords: [
     'computer training',
     'computer leren senioren',

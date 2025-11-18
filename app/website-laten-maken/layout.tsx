@@ -1,10 +1,10 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Website Laten Maken | Vanaf',
-  description: 'Website laten maken vanaf €795. ✓ Custom of WordPress/Shopify ✓ 2-3 weken ✓ SEO geoptimaliseerd ✓ Gratis offerte. Bel 06-42548451.',
+  title: 'Website Laten Maken Zuid-Holland | Professioneel & Betaalbaar',
+  description: 'Website laten maken in Zuid-Holland. Custom of WordPress/Shopify. 2-3 weken geleverd, SEO geoptimaliseerd. Gratis offerte. Bel 06-42548451.',
   openGraph: {
-    title: 'Website Laten Maken Zuid-Holland | Vanaf',
+    title: 'Website Laten Maken Zuid-Holland | Professioneel',
     description: 'Website laten maken? Vanaf €795, custom code of WordPress/Shopify/Wix. 2-3 weken geleverd. Gratis offerte!',
     type: 'website',
     url: 'https://computerhulpzh.nl/website-laten-maken',

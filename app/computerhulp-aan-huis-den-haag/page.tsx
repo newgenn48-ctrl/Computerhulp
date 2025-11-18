@@ -78,7 +78,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis-den-haag#service',
       serviceType: 'Computerhulp aan Huis',
       name: 'Computerhulp aan Huis Den Haag',
-      description: 'Professionele computerhulp aan huis in Den Haag. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email problemen. Geen voorrijkosten, transparante prijzen van €14,50 per kwartier.',
+      description: 'Professionele computerhulp aan huis in Den Haag. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email problemen. Geen.',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis-den-haag',
       provider: {
         '@id': 'https://computerhulpzh.nl/#organization'

@@ -5,7 +5,9 @@
       "Bash(git push:*)",
       "Bash(node scripts/remove-contact-section.js:*)",
       "Bash(node scripts/fix-seo-complete.js:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(node scripts/audit-seo-titles.js:*)",
+      "Bash(node scripts/fix-long-descriptions.js:*)"
     ],
     "deny": [],
     "ask": []

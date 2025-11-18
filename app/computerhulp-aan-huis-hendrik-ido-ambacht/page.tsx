@@ -8,7 +8,7 @@ import NearbyCities from '@/components/NearbyCities'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Hendrik-Ido-Ambacht | Binnen 24u bij u Thuis',
-  description: '💻 Computerhulp aan huis in Hendrik-Ido-Ambacht. Binnen 24 uur bij u thuis! ✓ Computer, laptop, printer, WiFi ✓ Geen voorrijkosten ✓ Transparant tarief. Bel 06-42548451.',
+  description: '💻 Computerhulp aan huis in Hendrik-Ido-Ambacht. Binnen 24 uur bij u thuis! ✓ Computer, laptop, printer, WiFi ✓ Geen voorrijkosten ✓ Transparant tarief. Bel.',
   openGraph: {
     title: 'Computerhulp aan Huis Hendrik-Ido-Ambacht | Binnen 24u bij u Thuis',
     description: 'Binnen 24 uur bij u thuis in Hendrik-Ido-Ambacht. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 06-42548451',
@@ -77,7 +77,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#service',
       serviceType: 'Computerhulp aan Huis',
       name: 'Computerhulp aan Huis Hendrik-Ido-Ambacht',
-      description: 'Professionele computerhulp aan huis in heel Hendrik-Ido-Ambacht. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email problemen. Geen voorrijkosten, transparante prijzen van €14,50 per kwartier.',
+      description: 'Professionele computerhulp aan huis in heel Hendrik-Ido-Ambacht. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email problemen..',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis-hendrik-ido-ambacht',
       provider: {
         '@id': 'https://computerhulpzh.nl/#organization'
@@ -160,7 +160,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#webpage',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis-hendrik-ido-ambacht',
       name: 'Computerhulp aan Huis Hendrik-Ido-Ambacht | Binnen 24 Uur | €14,50',
-      description: 'Computerhulp aan huis in heel Hendrik-Ido-Ambacht. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Geen voorrijkosten. Bel direct: 06-42548451',
+      description: 'Computerhulp aan huis in heel Hendrik-Ido-Ambacht. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Geen voorrijkosten. Bel.',
       isPartOf: {
         '@id': 'https://computerhulpzh.nl/#website'
       },

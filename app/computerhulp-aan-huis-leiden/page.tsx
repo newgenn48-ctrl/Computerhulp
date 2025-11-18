@@ -77,7 +77,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#service',
       serviceType: 'Computerhulp aan Huis Leiden',
       name: 'Computerhulp aan Huis Leiden',
-      description: 'Professionele computerhulp aan huis in heel Leiden. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email problemen. Geen voorrijkosten, transparante prijzen van €14,50 per kwartier.',
+      description: 'Professionele computerhulp aan huis in heel Leiden. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email problemen. Geen.',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis-leiden',
       provider: {
         '@id': 'https://computerhulpzh.nl/#organization'
@@ -160,7 +160,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#webpage',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis-leiden',
       name: 'Computerhulp aan Huis Leiden | Binnen 24 Uur | €14,50',
-      description: 'Computerhulp aan huis in heel Leiden. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Geen voorrijkosten. Bel direct: 06-42548451',
+      description: 'Computerhulp aan huis in heel Leiden. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Geen voorrijkosten. Bel direct:.',
       isPartOf: {
         '@id': 'https://computerhulpzh.nl/#website'
       },

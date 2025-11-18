@@ -8,7 +8,7 @@ import NearbyCities from '@/components/NearbyCities'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Hardinxveld-Giessendam | Binnen 24u bij u Thuis',
-  description: '💻 Computerhulp aan huis in Hardinxveld-Giessendam. Binnen 24 uur bij u thuis! ✓ Computer, laptop, printer, WiFi ✓ Geen voorrijkosten ✓ Transparant tarief. Bel 06-42548451.',
+  description: '💻 Computerhulp aan huis in Hardinxveld-Giessendam. Binnen 24 uur bij u thuis! ✓ Computer, laptop, printer, WiFi ✓ Geen voorrijkosten ✓ Transparant tarief..',
   openGraph: {
     title: 'Computerhulp aan Huis Hardinxveld-Giessendam | Binnen 24u bij u Thuis',
     description: 'Binnen 24 uur bij u thuis in Hardinxveld-Giessendam. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 06-42548451',
@@ -77,7 +77,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#service',
       serviceType: 'Computerhulp aan Huis',
       name: 'Computerhulp aan Huis Hardinxveld-Giessendam',
-      description: 'Professionele computerhulp aan huis in heel Hardinxveld-Giessendam. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email problemen. Geen voorrijkosten, transparante prijzen van €14,50 per kwartier.',
+      description: 'Professionele computerhulp aan huis in heel Hardinxveld-Giessendam. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email.',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis-hardinxveld-giessendam',
       provider: {
         '@id': 'https://computerhulpzh.nl/#organization'
@@ -160,7 +160,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#webpage',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis-hardinxveld-giessendam',
       name: 'Computerhulp aan Huis Hardinxveld-Giessendam | Binnen 24 Uur | €14,50',
-      description: 'Computerhulp aan huis in heel Hardinxveld-Giessendam. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Geen voorrijkosten. Bel direct: 06-42548451',
+      description: 'Computerhulp aan huis in heel Hardinxveld-Giessendam. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Geen voorrijkosten..',
       isPartOf: {
         '@id': 'https://computerhulpzh.nl/#website'
       },

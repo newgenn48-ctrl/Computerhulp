@@ -22,7 +22,7 @@ const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
   name: 'Computerhulp Zuid-Holland',
-  description: 'Professionele computerhulp, printerhulp, en IT-ondersteuning aan huis in heel Zuid-Holland. Specialist in computer reparatie, laptop hulp, WiFi installatie, email problemen en tablet ondersteuning.',
+  description: 'Professionele computerhulp, printerhulp, en IT-ondersteuning aan huis in heel Zuid-Holland. Specialist in computer reparatie, laptop hulp, WiFi installatie,.',
   url: 'https://computerhulpzh.nl',
   telephone: '+31642548451',
   email: 'info@computerhulpzh.nl',

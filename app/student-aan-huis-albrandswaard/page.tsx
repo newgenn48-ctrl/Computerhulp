@@ -7,7 +7,7 @@ import NearbyCities from '@/components/NearbyCities'
 
 export const metadata: Metadata = {
   title: 'Student aan Huis Albrandswaard | IT-Student Binnen 24u',
-  description: '🎓 Student aan huis in Albrandswaard. Jonge, geduldige IT-studenten binnen 24u bij u thuis! ✓ Computer, laptop, WiFi hulp ✓ Rustig uitleggen ✓ Vanaf €43,50. Bel 06-42548451.',
+  description: '🎓 Student aan huis in Albrandswaard. Jonge, geduldige IT-studenten binnen 24u bij u thuis! ✓ Computer, laptop, WiFi hulp ✓ Rustig uitleggen ✓ Vanaf €43,50..',
   openGraph: {
     title: 'Student aan Huis Albrandswaard | IT-Studenten Binnen 24u',
     description: 'Jonge, geduldige IT-studenten binnen 24u bij u thuis in Albrandswaard. Geduldig uitleggen, rustig helpen. Vanaf €43,50. Bel 06-42548451',

@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Email Hulp aan Huis | Computerhulp Zuid-Holland',
-  description: 'Email instellen, wachtwoord vergeten of spam problemen? We komen bij u thuis in Zuid-Holland en regelen uw email. Outlook, Gmail, alles werkend. Bel 06-42548451.',
+  description: 'Email instellen, wachtwoord vergeten of spam problemen? We komen bij u thuis in Zuid-Holland en regelen uw email. Outlook, Gmail, alles werkend. Bel.',
   openGraph: {
     title: 'Email Hulp aan Huis | Computerhulp Zuid-Holland',
     description: 'Email instellen of wachtwoord vergeten? We komen bij u thuis. Bel 06-42548451.',

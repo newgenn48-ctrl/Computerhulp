@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'WiFi & Internet Hulp aan Huis | Computerhulp ZH',
-  description: 'Geen internet, WiFi valt weg of traag internet? We komen bij u thuis in Zuid-Holland en maken uw internet en WiFi weer snel en stabiel. Binnen 24 uur geholpen. Bel 06-42548451.',
+  description: 'Geen internet, WiFi valt weg of traag internet? We komen bij u thuis in Zuid-Holland en maken uw internet en WiFi weer snel en stabiel. Binnen 24 uur.',
   openGraph: {
     title: 'WiFi & Internet Hulp aan Huis | Computerhulp Zuid-Holland',
     description: 'Geen internet of WiFi valt weg? We komen bij u thuis. Bel 06-42548451.',

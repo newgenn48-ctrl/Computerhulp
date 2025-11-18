@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Smart Home & Domotica Hulp | Computerhulp ZH',
-  description: 'Slimme apparaten installeren? Philips Hue, Nest, Google Home of Alexa hulp nodig? We komen bij u thuis in Zuid-Holland en koppelen alles. Binnen 24 uur geholpen. Bel 06-42548451.',
+  description: 'Slimme apparaten installeren? Philips Hue, Nest, Google Home of Alexa hulp nodig? We komen bij u thuis in Zuid-Holland en koppelen alles. Binnen 24 uur.',
   keywords: [
     'smart home hulp',
     'domotica installatie',
@@ -49,7 +49,7 @@ const structuredData = {
     price: '14.50',
     priceCurrency: 'EUR'
   },
-  description: 'Professionele smart home en domotica hulp aan huis. Slimme apparaten installeren, koppelen en automatiseren. Van Philips Hue tot Google Home. We komen bij u thuis in Zuid-Holland.',
+  description: 'Professionele smart home en domotica hulp aan huis. Slimme apparaten installeren, koppelen en automatiseren. Van Philips Hue tot Google Home. We komen bij u.',
 }
 
 const breadcrumbData = {

@@ -28,7 +28,7 @@ const organizationSchema = {
     height: '60'
   },
   image: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Over%20ons.webp',
-  description: 'Professionele computerhulp aan huis in heel Zuid-Holland. Meer dan 10 jaar ervaring, 500+ tevreden klanten. Specialist in computer, laptop, printer en WiFi hulp bij u thuis.',
+  description: 'Professionele computerhulp aan huis in heel Zuid-Holland. Meer dan 10 jaar ervaring, 500+ tevreden klanten. Specialist in computer, laptop, printer en WiFi.',
   address: {
     '@type': 'PostalAddress',
     addressRegion: 'Zuid-Holland',
