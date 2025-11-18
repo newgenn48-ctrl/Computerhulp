@@ -2,7 +2,6 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://computerhulpzh.nl'
-  const currentDate = new Date()
 
   // Diensten
   const services = [
@@ -72,50 +71,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // Basis paginas
   const basePages = [
-    { url: baseUrl, priority: 1, changeFrequency: 'weekly' as const },
-    { url: `${baseUrl}/computerhulp-aan-huis`, priority: 0.95, changeFrequency: 'weekly' as const },
-    { url: `${baseUrl}/student-aan-huis`, priority: 0.9, changeFrequency: 'weekly' as const },
-    { url: `${baseUrl}/website-laten-maken`, priority: 0.95, changeFrequency: 'weekly' as const },
-    { url: `${baseUrl}/offerte-aanvragen`, priority: 0.9, changeFrequency: 'monthly' as const },
-    { url: `${baseUrl}/afspraak-maken`, priority: 0.85, changeFrequency: 'monthly' as const },
-    { url: `${baseUrl}/contact`, priority: 0.9, changeFrequency: 'monthly' as const },
-    { url: `${baseUrl}/over-ons`, priority: 0.8, changeFrequency: 'monthly' as const },
-    { url: `${baseUrl}/faq`, priority: 0.7, changeFrequency: 'monthly' as const },
-    { url: `${baseUrl}/privacy`, priority: 0.3, changeFrequency: 'yearly' as const },
-    { url: `${baseUrl}/voorwaarden`, priority: 0.3, changeFrequency: 'yearly' as const },
+    { url: baseUrl, priority: 1 },
+    { url: `${baseUrl}/computerhulp-aan-huis`, priority: 0.95 },
+    { url: `${baseUrl}/student-aan-huis`, priority: 0.95 },
+    { url: `${baseUrl}/website-laten-maken`, priority: 0.95 },
+    { url: `${baseUrl}/offerte-aanvragen`, priority: 0.9 },
+    { url: `${baseUrl}/afspraak-maken`, priority: 0.85 },
+    { url: `${baseUrl}/contact`, priority: 0.9 },
+    { url: `${baseUrl}/over-ons`, priority: 0.8 },
+    { url: `${baseUrl}/faq`, priority: 0.7 },
+    { url: `${baseUrl}/privacy`, priority: 0.3 },
+    { url: `${baseUrl}/voorwaarden`, priority: 0.3 },
   ]
 
   // Diensten paginas
   const servicePages = services.map(service => ({
     url: `${baseUrl}/diensten/${service}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
     priority: 0.9,
   }))
 
   // Stad paginas - Student aan huis
   const studentCityPages = cities.map(city => ({
     url: `${baseUrl}/student-aan-huis-${city}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: 0.95,
   }))
 
   // Stad paginas - Computerhulp aan huis
   const computerhulpCityPages = cities.map(city => ({
     url: `${baseUrl}/computerhulp-aan-huis-${city}`,
-    lastModified: currentDate,
-    changeFrequency: 'weekly' as const,
-    priority: 0.8,
+    priority: 0.95,
   }))
 
   return [
-    ...basePages.map(page => ({
-      url: page.url,
-      lastModified: currentDate,
-      changeFrequency: page.changeFrequency,
-      priority: page.priority,
-    })),
+    ...basePages,
     ...servicePages,
     ...studentCityPages,
     ...computerhulpCityPages,
