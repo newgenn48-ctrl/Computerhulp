@@ -107,7 +107,7 @@ export default function PrivacyPage() {
               <li><strong>Overdracht:</strong> uw gegevens in een leesbaar format ontvangen</li>
             </ul>
             <p className="mt-4">
-              Neem contact op via <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a> of bel <a href="tel:+31642548451" className="text-blue-600 hover:underline">06-42548451</a>
+              Neem contact op via <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a> of bel <a href="tel:+31642548451" className="text-blue-600 hover:underline">Bel Direct</a>
             </p>
           </section>
 
@@ -143,7 +143,7 @@ export default function PrivacyPage() {
             </p>
             <ul className="list-none space-y-2 mt-4">
               <li><strong>Email:</strong> <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li><strong>Telefoon:</strong> <a href="tel:+31642548451" className="text-blue-600 hover:underline">06-42548451</a></li>
+              <li><strong>Telefoon:</strong> <a href="tel:+31642548451" className="text-blue-600 hover:underline">Bel Direct</a></li>
             </ul>
           </section>
         </div>

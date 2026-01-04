@@ -6,6 +6,7 @@ import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import FloatingButtons from '@/components/layout/FloatingButtons'
 import Breadcrumb from '@/components/Breadcrumb'
+import SkipLink from '@/components/SkipLink'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -20,17 +21,16 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://computerhulpzh.nl'),
   title: {
     default: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
-    template: '%s | Computerhulp Zuid-Holland'
+    template: '%s | Computerhulp ZH'
   },
-  description: '💻 Problemen met computer, laptop, printer, email of WiFi? Binnen 24 uur geholpen in heel Zuid-Holland. Transparant tarief €14,50 per kwartier. Bel 06-42548451.',
+  description: 'Problemen met computer, laptop, printer, email of WiFi? Binnen 24 uur geholpen in heel Zuid-Holland. Transparant tarief: €14,50 per kwartier. Bel 06-42548451.',
   authors: [{ name: 'Computerhulp Zuid-Holland' }],
   creator: 'Computerhulp Zuid-Holland',
   publisher: 'Computerhulp Zuid-Holland',
   formatDetection: {
     email: true,
     address: true,
-    telephone: true,
-  },
+    telephone: true},
   openGraph: {
     type: 'website',
     locale: 'nl_NL',
@@ -43,15 +43,8 @@ export const metadata: Metadata = {
         url: '/Computerhulp Zuid Holland Logo.webp',
         width: 1200,
         height: 630,
-        alt: 'Computerhulp Zuid-Holland - IT-Hulp aan Huis',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
-    description: 'Computer, laptop, printer of WiFi problemen? Binnen 24 uur geholpen.',
-  },
+        alt: 'Computerhulp Zuid-Holland - IT-Hulp aan Huis'},
+    ]},
   robots: {
     index: true,
     follow: true,
@@ -60,9 +53,7 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
-  },
+      'max-snippet': -1}},
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32' },
@@ -71,13 +62,10 @@ export const metadata: Metadata = {
     ],
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
-    ],
-  },
-}
+    ]}}
 
 export default function RootLayout({
-  children,
-}: {
+  children}: {
   children: React.ReactNode
 }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID
@@ -140,6 +128,7 @@ export default function RootLayout({
         )}
       </head>
       <body className={inter.className}>
+        <SkipLink />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -147,11 +136,12 @@ export default function RootLayout({
             height="0"
             width="0"
             style={{ display: 'none', visibility: 'hidden' }}
+            title="Google Tag Manager"
           />
         </noscript>
         <Header />
         <Breadcrumb />
-        <main className="min-h-screen">
+        <main id="main-content" className="min-h-screen" role="main">
           {children}
         </main>
         <Footer />

@@ -3,6 +3,7 @@ import { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Contact | Afspraak Maken | Computerhulp Zuid-Holland',
   description: '📞 Neem contact op met Computerhulp Zuid-Holland. ✓ Bel 06-42548451 ✓ WhatsApp ✓ Formulier ✓ Direct antwoord. We helpen u graag met IT-problemen!',
+  keywords: 'contact computerhulp, bel computerhulp, afspraak maken, computerhulp telefoon, IT hulp contact, computerhulp zuid-holland contact',
   openGraph: {
     title: 'Contact Computerhulp Zuid-Holland | Bel 06-42548451',
     description: 'Neem contact op voor computerhulp in Zuid-Holland. Direct antwoord via telefoon, WhatsApp of formulier.',

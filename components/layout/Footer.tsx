@@ -1,6 +1,19 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+const footerCities = [
+  { name: 'Den Haag', slug: 'den-haag' },
+  { name: 'Rotterdam', slug: 'rotterdam' },
+  { name: 'Leiden', slug: 'leiden' },
+  { name: 'Delft', slug: 'delft' },
+  { name: 'Zoetermeer', slug: 'zoetermeer' },
+  { name: 'Gouda', slug: 'gouda' },
+  { name: 'Dordrecht', slug: 'dordrecht' },
+  { name: 'Alphen aan den Rijn', slug: 'alphen-aan-den-rijn' },
+  { name: 'Westland', slug: 'westland' },
+  { name: 'Capelle aan den IJssel', slug: 'capelle-aan-den-ijssel' },
+]
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -21,9 +34,24 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-400 text-sm mb-4 max-w-md">
-              Al meer dan 10 jaar dé specialist in computerhulp, printerhulp, en IT-ondersteuning
+              Al meer dan 10 jaar de specialist in computerhulp, printerhulp, en IT-ondersteuning
               aan huis in heel Zuid-Holland. Binnen 24 uur bij u thuis.
             </p>
+            {/* Info links */}
+            <div className="flex flex-wrap gap-4 text-sm">
+              <Link href="/over-ons" className="text-gray-400 hover:text-white transition">
+                Over Ons
+              </Link>
+              <Link href="/faq" className="text-gray-400 hover:text-white transition">
+                FAQ
+              </Link>
+              <Link href="/privacy" className="text-gray-400 hover:text-white transition">
+                Privacy
+              </Link>
+              <Link href="/voorwaarden" className="text-gray-400 hover:text-white transition">
+                Voorwaarden
+              </Link>
+            </div>
           </div>
 
           {/* Diensten */}
@@ -106,12 +134,24 @@ export default function Footer() {
 
         {/* Steden */}
         <div className="mt-10 pt-8 border-t border-gray-800">
-          <div className="text-sm text-gray-400 mb-3">We werken in heel Zuid-Holland, waaronder:</div>
+          <div className="flex items-center justify-between mb-3">
+            <span className="text-sm text-gray-400">We werken in heel Zuid-Holland, waaronder:</span>
+            <Link href="/locaties" className="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+              Alle locaties
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
           <div className="flex flex-wrap gap-2">
-            {['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Gouda', 'Dordrecht', 'Alphen aan den Rijn', 'Westland', 'Capelle aan den IJssel'].map(stad => (
-              <span key={stad} className="bg-gray-800 text-gray-300 px-3 py-1 rounded-full text-xs">
-                {stad}
-              </span>
+            {footerCities.map(city => (
+              <Link
+                key={city.slug}
+                href={`/computerhulp-aan-huis-${city.slug}`}
+                className="bg-gray-800 text-gray-300 hover:bg-blue-600 hover:text-white px-3 py-1 rounded-full text-xs transition-colors"
+              >
+                {city.name}
+              </Link>
             ))}
           </div>
         </div>
@@ -124,19 +164,20 @@ export default function Footer() {
             <div>
               © {currentYear} Computerhulp Zuid-Holland. Alle rechten voorbehouden.
             </div>
-            <div className="flex flex-wrap gap-4 sm:gap-6 justify-center sm:justify-end">
-              <Link href="/over-ons" className="hover:text-white transition">
-                Over Ons
-              </Link>
-              <Link href="/faq" className="hover:text-white transition">
-                FAQ
-              </Link>
-              <Link href="/privacy" className="hover:text-white transition">
-                Privacy
-              </Link>
-              <Link href="/voorwaarden" className="hover:text-white transition">
-                Voorwaarden
-              </Link>
+            <div className="flex items-center gap-1">
+              Made with{' '}
+              <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+              </svg>
+              {' '}by{' '}
+              <a
+                href="https://startbeheer.nl"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-400 hover:text-blue-300 transition"
+              >
+                Start Beheer Solutions
+              </a>
             </div>
           </div>
         </div>

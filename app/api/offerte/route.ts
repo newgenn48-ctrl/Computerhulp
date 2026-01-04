@@ -1,9 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { sanitizeHtml, sanitizeText, validateEmail, validatePhone, validateLength } from '@/lib/sanitize'
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    const clientIP = getClientIP(request)
+    const rateLimitResult = checkRateLimit(`offerte:${clientIP}`, RATE_LIMITS.offerte)
+
+    if (!rateLimitResult.success) {
+      return NextResponse.json(
+        { error: 'Te veel verzoeken. Probeer het over een minuut opnieuw.' },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000)),
+            'X-RateLimit-Limit': String(RATE_LIMITS.offerte.limit),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(rateLimitResult.resetTime),
+          }
+        }
+      )
+    }
+
     const body = await request.json()
     const { naam, email, telefoon, type_website, budget, deadline, beschrijving } = body
 
@@ -49,7 +69,6 @@ export async function POST(request: NextRequest) {
     const safeNaam = sanitizeHtml(naam.trim())
     const safeEmail = sanitizeHtml(email.trim().toLowerCase())
     const safeTelefoon = sanitizeHtml(telefoon.trim())
-    const safeTypeWebsite = sanitizeHtml(type_website.trim())
     const safeBudget = budget ? sanitizeHtml(budget.trim()) : ''
     const safeDeadline = deadline ? sanitizeHtml(deadline.trim()) : ''
     const safeBeschrijving = beschrijving ? sanitizeHtml(beschrijving.trim()) : ''

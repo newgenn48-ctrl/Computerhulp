@@ -164,9 +164,9 @@ export default function OfferteAanvragenPage() {
           <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-12">
             {/* Success Message */}
             {submitStatus === 'success' && (
-              <div className="mb-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg">
+              <div role="alert" aria-live="polite" className="mb-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg">
                 <div className="flex items-center">
-                  <svg className="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
@@ -182,15 +182,15 @@ export default function OfferteAanvragenPage() {
 
             {/* Error Message */}
             {submitStatus === 'error' && (
-              <div className="mb-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg">
+              <div role="alert" aria-live="assertive" className="mb-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg">
                 <div className="flex items-center">
-                  <svg className="w-6 h-6 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-6 h-6 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
                     <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
                     <p className="text-red-700 mt-1">
-                      Probeer het opnieuw of bel ons direct op <a href="tel:0642548451" className="font-bold underline">06-42548451</a>
+                      Probeer het opnieuw of bel ons direct op <a href="tel:0642548451" className="font-bold underline">Bel Direct</a>
                     </p>
                   </div>
                 </div>
@@ -208,6 +208,9 @@ export default function OfferteAanvragenPage() {
                     type="text"
                     id="naam"
                     name="naam"
+                    aria-required="true"
+                    aria-invalid={touched.naam && !!errors.naam}
+                    aria-describedby={touched.naam && errors.naam ? 'naam-error' : undefined}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
@@ -218,7 +221,7 @@ export default function OfferteAanvragenPage() {
                     placeholder="Bijv. Jan de Vries"
                   />
                   {touched.naam && errors.naam && (
-                    <p className="mt-1 text-sm text-red-600">{errors.naam}</p>
+                    <p id="naam-error" role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>
                   )}
                 </div>
 
@@ -246,6 +249,9 @@ export default function OfferteAanvragenPage() {
                     type="email"
                     id="email"
                     name="email"
+                    aria-required="true"
+                    aria-invalid={touched.email && !!errors.email}
+                    aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
@@ -256,7 +262,7 @@ export default function OfferteAanvragenPage() {
                     placeholder="uw@email.nl"
                   />
                   {touched.email && errors.email && (
-                    <p className="mt-1 text-sm text-red-600">{errors.email}</p>
+                    <p id="email-error" role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>
                   )}
                 </div>
 
@@ -268,6 +274,9 @@ export default function OfferteAanvragenPage() {
                     type="tel"
                     id="telefoon"
                     name="telefoon"
+                    aria-required="true"
+                    aria-invalid={touched.telefoon && !!errors.telefoon}
+                    aria-describedby={touched.telefoon && errors.telefoon ? 'telefoon-error' : undefined}
                     onBlur={handleBlur}
                     onChange={handleChange}
                     className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
@@ -278,7 +287,7 @@ export default function OfferteAanvragenPage() {
                     placeholder="06-12345678"
                   />
                   {touched.telefoon && errors.telefoon && (
-                    <p className="mt-1 text-sm text-red-600">{errors.telefoon}</p>
+                    <p id="telefoon-error" role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>
                   )}
                 </div>
               </div>
@@ -291,6 +300,9 @@ export default function OfferteAanvragenPage() {
                 <select
                   id="type_website"
                   name="type_website"
+                  aria-required="true"
+                  aria-invalid={touched.type_website && !!errors.type_website}
+                  aria-describedby={touched.type_website && errors.type_website ? 'type_website-error' : undefined}
                   onBlur={handleBlur}
                   onChange={handleChange}
                   className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
@@ -308,7 +320,7 @@ export default function OfferteAanvragenPage() {
                   <option value="maatwerk">Maatwerk / Anders</option>
                 </select>
                 {touched.type_website && errors.type_website && (
-                  <p className="mt-1 text-sm text-red-600">{errors.type_website}</p>
+                  <p id="type_website-error" role="alert" className="mt-1 text-sm text-red-600">{errors.type_website}</p>
                 )}
               </div>
 

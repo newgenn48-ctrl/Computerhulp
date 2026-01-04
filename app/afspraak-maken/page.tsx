@@ -183,46 +183,7 @@ export default function AfspraakMakenPage() {
     }
   }
   return (
-    <div className="pt-24 pb-20">
-      {/* Hero */}
-      <section className="relative bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900 text-white py-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0" style={{
-            backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)',
-            backgroundSize: '40px 40px'
-          }}></div>
-        </div>
-
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/30 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-3xl"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <div className="inline-flex items-center gap-2 bg-blue-600/20 backdrop-blur-sm border border-blue-400/30 rounded-full px-4 py-2 mb-6">
-            <svg className="w-5 h-5 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-            </svg>
-            <span className="text-sm font-medium text-blue-100">
-              Snel & Gemakkelijk
-            </span>
-          </div>
-
-          <h1
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-            style={{
-              color: 'white',
-              background: 'none',
-              WebkitTextFillColor: 'white',
-              backgroundClip: 'unset',
-              WebkitBackgroundClip: 'unset'
-            }}
-          >
-            Afspraak Maken
-          </h1>
-        </div>
-      </section>
-
-      {/* Appointment Form */}
-      <section className="py-20 bg-gray-50">
+    <div className="pt-32 pb-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
           <div className="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 border-2 border-blue-100">
             <div className="text-center mb-10">
@@ -258,7 +219,7 @@ export default function AfspraakMakenPage() {
                   </svg>
                   <div>
                     <h3 className="font-bold text-red-900 mb-1">Er ging iets mis</h3>
-                    <p className="text-red-800 text-sm">Probeer het opnieuw of bel ons direct op <a href="tel:+31642548451" className="underline font-semibold">06-42548451</a></p>
+                    <p className="text-red-800 text-sm">Probeer het opnieuw of bel ons direct op <a href="tel:+31642548451" className="underline font-semibold">Bel Direct</a></p>
                   </div>
                 </div>
               </div>
@@ -565,13 +526,12 @@ export default function AfspraakMakenPage() {
                 <p className="text-sm text-gray-500 text-center mt-6">
                   Na het versturen nemen we binnen <strong className="text-gray-900">enkele uren</strong> contact met u op om de afspraak te bevestigen.
                   <br />
-                  Bij spoed kunt u ook direct bellen: <a href="tel:+31642548451" className="text-blue-600 font-bold hover:underline">06-42548451</a>
+                  Bij spoed kunt u ook direct bellen: <a href="tel:+31642548451" className="text-blue-600 font-bold hover:underline">Bel Direct</a>
                 </p>
               </div>
             </form>
           </div>
         </div>
-      </section>
     </div>
   )
 }

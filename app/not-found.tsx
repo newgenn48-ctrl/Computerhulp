@@ -110,7 +110,7 @@ export default function NotFound() {
                 href="tel:+31642548451"
                 className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
               >
-                06-42548451
+                Bel Direct
               </a>
             </div>
           </div>

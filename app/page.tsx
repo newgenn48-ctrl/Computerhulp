@@ -1,153 +1,341 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
-import ServicesSection from '@/components/ServicesSection'
-import PricingSection from '@/components/PricingSection'
-import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
+import dynamic from 'next/dynamic'
+
+const PricingSection = dynamic(() => import('@/components/PricingSection'), {
+  loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
+})
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Zuid-Holland | Binnen 24u bij u Thuis',
-  description: '💻 IT-problemen? Binnen 24u bij u thuis in Zuid-Holland! ✓ Computer, laptop, printer, WiFi ✓ €14,50 per kwartier ✓ 500+ klanten. Bel 06-42548451.',
+  title: 'Computerhulp Zuid-Holland | IT Specialist aan Huis',
+  description: 'Computerhulp Zuid-Holland: uw IT Specialist aan huis. Hulp met computer, laptop, telefoon, tablet, printer, WiFi en smart home. Binnen 24 uur. Bel 06-42548451.',
+  keywords: 'computerhulp zuid-holland, computerhulp aan huis, laptop hulp, computer reparatie, WiFi hulp, printer installatie, Zuid-Holland, Den Haag, Rotterdam, Leiden',
   openGraph: {
-    title: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
-    description: 'Computer, laptop, printer of WiFi problemen? Binnen 24 uur bij u thuis in Zuid-Holland.',
+    title: 'Computerhulp Zuid-Holland | IT Specialist aan Huis',
+    description: 'Computerhulp Zuid-Holland: uw IT Specialist aan huis. Binnen 24 uur bij u thuis. Geen voorrijkosten. €14,50 per kwartier.',
     type: 'website',
     url: 'https://computerhulpzh.nl',
-  },
+    siteName: 'Computerhulp Zuid-Holland',
+    locale: 'nl_NL',
+    images: [
+      {
+        url: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Logo.webp',
+        width: 1200,
+        height: 630,
+        alt: 'Computerhulp Zuid-Holland - IT Hulp aan Huis'},
+    ]},
   alternates: {
-    canonical: 'https://computerhulpzh.nl',
+    canonical: 'https://computerhulpzh.nl'},
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1}}}
+
+// Organization Schema
+const organizationData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': 'https://computerhulpzh.nl/#organization',
+  name: 'Computerhulp Zuid-Holland',
+  url: 'https://computerhulpzh.nl',
+  logo: {
+    '@type': 'ImageObject',
+    url: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Logo.webp',
+    width: 200,
+    height: 60
   },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '+31642548451',
+    contactType: 'customer service',
+    availableLanguage: 'Dutch',
+    areaServed: 'NL'
+  }
 }
 
-const structuredData = {
+// LocalBusiness Schema (enhanced)
+const localBusinessData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
+  '@id': 'https://computerhulpzh.nl/#localbusiness',
   name: 'Computerhulp Zuid-Holland',
-  description: 'Professionele computerhulp, printerhulp, en IT-ondersteuning aan huis in heel Zuid-Holland. Specialist in computer reparatie, laptop hulp, WiFi installatie,.',
+  description: 'Professionele computerhulp aan huis in Zuid-Holland. Wij lossen computer, laptop, printer en WiFi problemen snel op. Binnen 24 uur bij u thuis, geen voorrijkosten.',
   url: 'https://computerhulpzh.nl',
   telephone: '+31642548451',
   email: 'info@computerhulpzh.nl',
+  logo: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Logo.webp',
+  image: [
+    'https://computerhulpzh.nl/Student%20aan%20huis.webp',
+    'https://computerhulpzh.nl/Computerhulp%20aan%20huis.webp'
+  ],
   address: {
     '@type': 'PostalAddress',
     addressRegion: 'Zuid-Holland',
     addressCountry: 'NL'
   },
-  areaServed: {
-    '@type': 'State',
-    name: 'Zuid-Holland'
+  geo: {
+    '@type': 'GeoCoordinates',
+    latitude: 52.0116,
+    longitude: 4.3571
   },
-  priceRange: '€14,50 per kwartier',
-  openingHours: 'Mo-Su 08:00-22:00',
-  aggregateRating: {
-    '@type': 'AggregateRating',
-    ratingValue: '4.9',
-    reviewCount: '847',
-    bestRating: '5'
+  areaServed: [
+    { '@type': 'City', name: 'Den Haag' },
+    { '@type': 'City', name: 'Rotterdam' },
+    { '@type': 'City', name: 'Leiden' },
+    { '@type': 'City', name: 'Delft' },
+    { '@type': 'City', name: 'Zoetermeer' },
+    { '@type': 'City', name: 'Dordrecht' },
+    { '@type': 'State', name: 'Zuid-Holland' }
+  ],
+  priceRange: '€€',
+  currenciesAccepted: 'EUR',
+  paymentAccepted: 'Cash, Credit Card, Debit Card',
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: '08:00',
+      closes: '22:00'
+    }
+  ],
+  hasOfferCatalog: {
+    '@type': 'OfferCatalog',
+    name: 'Computerhulp Diensten',
+    itemListElement: [
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Computer & Laptop Hulp', description: 'Hulp bij trage computers, crashes en opstartproblemen' }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'WiFi & Internet Hulp', description: 'WiFi installatie, bereik verbeteren en internetproblemen oplossen' }
+      },
+      {
+        '@type': 'Offer',
+        itemOffered: { '@type': 'Service', name: 'Printer & Scanner Hulp', description: 'Printer installeren, aansluiten en printproblemen oplossen' }
+      }
+    ]
   }
 }
 
+// WebSite Schema with SearchAction
+const websiteData = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  '@id': 'https://computerhulpzh.nl/#website',
+  name: 'Computerhulp Zuid-Holland',
+  url: 'https://computerhulpzh.nl',
+  publisher: { '@id': 'https://computerhulpzh.nl/#organization' },
+  inLanguage: 'nl-NL'
+}
+
+// Service Schema
+const serviceData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  '@id': 'https://computerhulpzh.nl/#service',
+  name: 'Computerhulp aan Huis',
+  serviceType: 'Computer Repair Service',
+  provider: { '@id': 'https://computerhulpzh.nl/#localbusiness' },
+  areaServed: { '@type': 'State', name: 'Zuid-Holland' },
+  description: 'Professionele computerhulp aan huis voor particulieren en kleine ondernemers in Zuid-Holland. Wij lossen computer, laptop, printer, WiFi en andere IT-problemen snel en vakkundig op.',
+  offers: {
+    '@type': 'Offer',
+    price: '14.50',
+    priceCurrency: 'EUR',
+    priceSpecification: {
+      '@type': 'UnitPriceSpecification',
+      price: '14.50',
+      priceCurrency: 'EUR',
+      unitText: 'per kwartier'
+    },
+    availability: 'https://schema.org/InStock',
+    validFrom: '2024-01-01'
+  }
+}
+
+// FAQ Schema (enhanced)
 const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Hoe snel kunnen jullie langskomen?',
+      name: 'Hoe snel kunnen jullie langskomen voor computerhulp?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In de meeste gevallen kunnen we binnen 24 uur bij u langs komen. In acute situaties proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren.'
+        text: 'In de meeste gevallen komen we binnen 24 uur bij u langs voor computerhulp aan huis. Bij spoed proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren tot 22:00.'
       }
     },
     {
       '@type': 'Question',
-      name: 'Wat kost jullie computerhulp?',
+      name: 'Wat kost computerhulp aan huis in Zuid-Holland?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Onze computerhulp kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in heel Zuid-Holland. Betalen kan via pin, contant of Tikkie.'
+        text: 'Onze computerhulp aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50). Er zijn geen voorrijkosten in heel Zuid-Holland. Betalen kan na afloop via pin, contant of Tikkie.'
       }
     },
     {
       '@type': 'Question',
-      name: 'Wat voor problemen kunnen jullie oplossen?',
+      name: 'Welke computerproblemen kunnen jullie oplossen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We helpen met alle IT-problemen: computers, laptops, printers, WiFi, email, tablets, smartphones, software installatie, virusverwijdering, en data herstel. Ook geven we persoonlijke training en uitleg.'
+        text: 'Wij helpen met alle IT-problemen: trage computers, laptop reparatie, printers installeren, WiFi problemen, email configuratie, tablets, smartphones, software installatie, virusverwijdering en data herstel. Ook voor persoonlijke uitleg en training kunt u bij ons terecht.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'In welke plaatsen bieden jullie computerhulp aan huis?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Wij bieden computerhulp aan huis in heel Zuid-Holland, waaronder Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en meer dan 50 andere gemeenten.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Moet ik iets voorbereiden voor de computerhulp afspraak?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nee, u hoeft niets voor te bereiden. Zorg alleen dat u eventuele wachtwoorden bij de hand heeft en dat de apparatuur bereikbaar is. Wij nemen al het gereedschap mee dat nodig is voor de computerhulp.'
       }
     }
   ]
 }
 
+// HowTo Schema
+const howToData = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'Computerhulp aan huis aanvragen',
+  description: 'Zo vraagt u computerhulp aan huis aan bij Computerhulp Zuid-Holland',
+  step: [
+    {
+      '@type': 'HowToStep',
+      position: 1,
+      name: 'Neem contact op',
+      text: 'Bel 06-42548451 of maak een afspraak via de website. Vertel kort wat het probleem is.'
+    },
+    {
+      '@type': 'HowToStep',
+      position: 2,
+      name: 'Afspraak maken',
+      text: 'We plannen samen een moment dat u uitkomt. Vaak kunnen we binnen 24 uur langskomen.'
+    },
+    {
+      '@type': 'HowToStep',
+      position: 3,
+      name: 'Probleem oplossen',
+      text: 'We komen bij u thuis en lossen het probleem direct op. Betalen na afloop.'
+    }
+  ],
+  totalTime: 'PT24H'
+}
+
+// BreadcrumbList
+const breadcrumbData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://computerhulpzh.nl' }
+  ]
+}
+
+const services = [
+  { title: 'Computer & Laptop Hulp', image: '/Computer & Laptop Hulp.webp', href: '/diensten/computer-laptop-hulp', desc: 'Traag, crasht of start niet op', alt: 'Computer en laptop hulp aan huis in Zuid-Holland' },
+  { title: 'WiFi & Internet Hulp', image: '/WiFi & Netwerk Hulp.webp', href: '/diensten/wifi-internet-hulp', desc: 'Geen bereik of traag internet', alt: 'WiFi en internet hulp aan huis' },
+  { title: 'Printer & Scanner Hulp', image: '/Printer & Randapparatuur.webp', href: '/diensten/printer-scanner-hulp', desc: 'Print niet of installeren', alt: 'Printer en scanner hulp aan huis' },
+  { title: 'Email Hulp', image: '/E-mail Hulp.webp', href: '/diensten/email-hulp', desc: 'Outlook, Gmail, wachtwoord', alt: 'Email hulp en configuratie aan huis' },
+  { title: 'Tablet & Smartphone Hulp', image: '/Tablet & Smartphone Hulp.webp', href: '/diensten/tablet-smartphone-hulp', desc: 'iPad, iPhone, Android hulp', alt: 'Tablet en smartphone hulp aan huis' },
+  { title: 'Smart Home & Domotica', image: '/Smart Home.webp', href: '/diensten/smart-home-domotica', desc: 'Slimme apparaten koppelen', alt: 'Smart home en domotica hulp aan huis' },
+]
+
+const testimonials = [
+  {
+    quote: 'Mijn computer deed het helemaal niet meer. Binnen 2 uur stond hij weer aan en al mijn foto\'s waren gered. Ontzettend blij!',
+    name: 'Mevrouw Van Dijk',
+    location: 'Den Haag',
+    initials: 'MV'
+  },
+  {
+    quote: 'Eindelijk iemand die normaal uitlegt! Geen ingewikkelde termen. Printer werkt nu perfect.',
+    name: 'Jan Bakker',
+    location: 'Rotterdam',
+    initials: 'JB'
+  },
+  {
+    quote: 'WiFi werkte niet, email deed het niet. Alles in één keer opgelost. Eerlijke prijs, top service!',
+    name: 'Linda Hendriks',
+    location: 'Leiden',
+    initials: 'LH'
+  }
+]
+
+const cities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel']
+
 export default function HomePage() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
-      />
+      {/* Structured Data */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
-      {/* 1. Hero Section - Helder probleem + directe oplossing */}
-      <section className="relative text-white pt-32 pb-20 overflow-hidden [&_*::selection]:bg-blue-800 [&_*::selection]:text-white">
-        {/* Background Image */}
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: 'url(/Student%20aan%20huis.webp)',
-          }}
-        />
+      {/* Premium Hero Section */}
+      <section className="relative min-h-screen bg-white overflow-hidden" aria-label="Computerhulp Zuid-Holland hero">
+        <div className="absolute inset-0">
+          <Image
+            src="/Student aan huis.webp"
+            alt="Computerhulp specialist helpt klant thuis met laptop in Zuid-Holland"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
+          />
+          <div className="absolute inset-0 bg-white/80 md:hidden" />
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/85 to-transparent" />
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-white/40 via-transparent to-white/70" />
+        </div>
 
-        {/* Gradient Overlay - Donkerder voor betere leesbaarheid */}
-        <div className="absolute inset-0 bg-gradient-to-br from-slate-900/90 via-blue-900/85 to-slate-900/90"></div>
-
-        {/* Gradient Orbs */}
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl"></div>
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl">
-            {/* Main Headline - Probleem */}
-            <h1
-              className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight"
-              style={{
-                color: 'white',
-                background: 'none',
-                WebkitTextFillColor: 'white',
-                backgroundClip: 'unset',
-                WebkitBackgroundClip: 'unset'
-              }}
-            >
-              IT-Problemen?
-              <br />
-              Snel Opgelost, Aan Huis
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-20 min-h-screen flex items-center">
+          <div className="max-w-2xl">
+            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
+              Computerhulp
+              <span className="block text-blue-600">Zuid-Holland</span>
             </h1>
 
-            {/* Subheadline - Directe oplossing */}
-            <p className="text-xl sm:text-2xl text-white mb-8 leading-relaxed max-w-3xl">
-              Computer, laptop, printer, email of WiFi problemen in <strong className="text-white">Zuid-Holland</strong>?
-              We komen binnen 24 uur bij u thuis en lossen het op. Geen gedoe, gewoon geholpen.
+            <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+              <strong className="text-gray-900">Uw IT Specialist aan huis</strong> voor al uw digitale problemen. Computer, laptop, telefoon, tablet, printer, WiFi, email of smart home - wij lossen het op. <strong className="text-gray-900">Binnen 24 uur</strong> bij u thuis.
             </p>
 
-            {/* Key Benefits */}
-            <div className="grid sm:grid-cols-3 gap-4 mb-10">
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
-                <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+            {/* USP Badges */}
+            <div className="flex flex-wrap gap-3 mb-10" role="list" aria-label="Onze voordelen">
+              <div role="listitem" className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
+                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span className="text-sm font-medium text-white">Binnen 24 uur bij u</span>
+                Binnen 24 uur
               </div>
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
-                <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <div role="listitem" className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                <span className="text-sm font-medium text-white">Geen voorrijkosten</span>
+                Geen voorrijkosten
               </div>
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/20">
-                <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+              <div role="listitem" className="flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-full text-sm font-medium">
+                <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <span className="text-sm font-medium text-white">Ook avond & weekend</span>
+                7 dagen per week
               </div>
             </div>
 
@@ -155,18 +343,20 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/afspraak-maken"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/50 transition-all hover:scale-105"
+                className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
+                aria-label="Vraag computerhulp aan huis aan"
               >
-                Hulp Vragen
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                Hulp Aanvragen
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
               </Link>
               <a
                 href="tel:+31642548451"
-                className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all"
+                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
+                aria-label="Bel ons voor computerhulp: 06-42548451"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
                 Bel Direct
@@ -174,141 +364,309 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+
+        {/* Scroll indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-gray-400" aria-hidden="true">
+          <span className="text-sm">Scroll</span>
+          <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+          </svg>
+        </div>
       </section>
 
-      {/* 2. Diensten overzicht - uitgebreid met features */}
-      <ServicesSection showFeatures={true} />
-
-      {/* 3. Werkwijze in 4 stappen */}
-      <section className="py-16 bg-white">
+      {/* Services Section */}
+      <section className="py-20 bg-white" aria-labelledby="services-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Hoe Het Werkt
+          <header className="text-center mb-16">
+            <h2 id="services-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Onze Diensten
             </h2>
-            <p className="text-lg text-gray-600">
-              In 4 simpele stappen van probleem naar oplossing
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Van computer problemen tot smart home installatie - wij lossen het op bij u thuis in Zuid-Holland
             </p>
+          </header>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6" role="list">
+            {services.map((service, idx) => (
+              <Link
+                key={idx}
+                href={service.href}
+                className="group relative h-72 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                role="listitem"
+              >
+                <Image
+                  src={service.image}
+                  alt={service.alt}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
+                <div className="absolute bottom-0 left-0 right-0 p-6">
+                  <h3 className="text-xl font-bold text-white mb-1">{service.title}</h3>
+                  <p className="text-gray-300 text-sm">{service.desc}</p>
+                </div>
+                <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
+                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </div>
+              </Link>
+            ))}
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
-                1
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Neem Contact Op
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Bel ons of vul het formulier in. Vertel kort wat het probleem is.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
-                2
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Plan Een Afspraak
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                We plannen samen een moment dat u uitkomt. Vaak al binnen 24 uur.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
-                3
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                We Komen Langs
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                We komen bij u thuis en lossen het probleem direct op.
-              </p>
-            </div>
-
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center text-white text-4xl mx-auto mb-6 shadow-xl">
-                ✓
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Probleem Opgelost
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Alles werkt weer en u weet precies hoe. Betalen na afloop.
-              </p>
-            </div>
+          <div className="text-center mt-10">
+            <Link
+              href="/diensten"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg"
+            >
+              Bekijk alle computerhulp diensten
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* 4. Prijs & tarieven */}
+      {/* How It Works */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="how-it-works-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <header className="text-center mb-16">
+            <h2 id="how-it-works-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Zo Werkt Het
+            </h2>
+            <p className="text-lg text-gray-600">
+              In 3 simpele stappen van computerprobleem naar oplossing
+            </p>
+          </header>
+
+          <ol className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            <li className="relative text-center">
+              <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-lg shadow-blue-600/25 rotate-3" aria-hidden="true">
+                1
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Bel of Plan Online</h3>
+              <p className="text-gray-600">Bel <a href="tel:+31642548451" className="text-blue-600 hover:underline">06-42548451</a> of maak een <Link href="/afspraak-maken" className="text-blue-600 hover:underline">afspraak online</Link>. Vertel kort wat het probleem is.</p>
+              <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-blue-200 to-transparent" aria-hidden="true" />
+            </li>
+
+            <li className="relative text-center">
+              <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-lg shadow-blue-600/25 -rotate-3" aria-hidden="true">
+                2
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">We Komen Langs</h3>
+              <p className="text-gray-600">Binnen 24 uur staan we bij u op de stoep in Zuid-Holland. Op een moment dat u uitkomt.</p>
+              <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-blue-200 to-transparent" aria-hidden="true" />
+            </li>
+
+            <li className="text-center">
+              <div className="w-20 h-20 bg-green-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 shadow-lg shadow-green-600/25 rotate-3" aria-hidden="true">
+                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Probleem Opgelost</h3>
+              <p className="text-gray-600">Uw computer, laptop of ander apparaat werkt weer perfect. Betalen na afloop via pin, contant of Tikkie.</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      {/* Pricing Section */}
       <PricingSection />
 
-      {/* 5. Klantbeoordelingen / social proof */}
-      <section className="py-16 bg-white">
+      {/* Testimonials */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Dit Zeggen Onze Klanten
+          <header className="text-center mb-16">
+            <h2 id="testimonials-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Wat Klanten Zeggen Over Ons
             </h2>
             <p className="text-lg text-gray-600">
               Meer dan 500 tevreden klanten in Zuid-Holland
             </p>
-          </div>
+          </header>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8" role="list">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-                <div className="flex items-center gap-1 mb-4">
+              <article key={idx} className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-100 relative" role="listitem">
+                <svg className="absolute top-6 right-6 w-10 h-10 text-blue-100" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+                </svg>
+                <div className="flex items-center gap-1 mb-4" aria-label="5 van 5 sterren">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
                       <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                     </svg>
                   ))}
                 </div>
-                <p className="text-gray-700 mb-6 italic leading-relaxed">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
+                <blockquote className="text-gray-700 mb-6 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</blockquote>
+                <footer className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                     {testimonial.initials}
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.location}</div>
+                    <cite className="font-semibold text-gray-900 not-italic">{testimonial.name}</cite>
+                    <div className="text-sm text-gray-500">{testimonial.location}</div>
                   </div>
-                </div>
-              </div>
+                </footer>
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 6. Extra voordelen / geruststelling */}
-      <ExtraBenefitsSection />
+      {/* SEO Content Section */}
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="grid lg:grid-cols-2 gap-12 items-start">
+            <article>
+              <h2 id="seo-content-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Computerhulp aan Huis in Zuid-Holland
+              </h2>
+              <div className="prose prose-lg max-w-none">
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  Heeft u problemen met uw <strong>computer, laptop, printer of WiFi</strong>? <strong>Computerhulp Zuid-Holland</strong> biedt professionele IT-hulp aan huis in de hele provincie. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of een van de andere 50+ gemeenten woont - wij komen binnen 24 uur bij u thuis.
+                </p>
+
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waarom Kiezen Voor Computerhulp Zuid-Holland?</h3>
+
+                <ul className="space-y-3 text-gray-700 mb-6">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong>Snelle service:</strong> Binnen 24 uur bij u thuis. Bij spoed vaak nog dezelfde dag.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong>Transparante prijzen:</strong> €14,50 per kwartier, geen voorrijkosten in heel Zuid-Holland.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong>10+ jaar ervaring:</strong> Professionele hulp voor alle merken en systemen.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong>Persoonlijke aanpak:</strong> Uitleg in begrijpelijke taal, geen vaktermen.</span>
+                  </li>
+                </ul>
+
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  Onze computerhulp specialisten helpen u met: <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">trage computers</Link>, <Link href="/diensten/laptop-computer-reparatie" className="text-blue-600 hover:underline">laptop reparatie</Link>, <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printer installatie</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi problemen</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">email configuratie</Link>, <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet en smartphone hulp</Link>, <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:underline">smart home installatie</Link> en <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">data herstel</Link>.
+                </p>
+
+                <p className="text-gray-700 leading-relaxed">
+                  Bel vandaag nog <a href="tel:+31642548451" className="text-blue-600 font-semibold hover:underline">06-42548451</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur.
+                </p>
+              </div>
+            </article>
+
+            <aside>
+              <div className="sticky top-24">
+                <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
+                  <Image
+                    src="/Computerhulp aan huis.webp"
+                    alt="Computerhulp specialist aan het werk bij klant thuis"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                  />
+                </div>
+
+                <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Computerhulp Werkgebied</h3>
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {cities.map((city, idx) => (
+                      <span key={idx} className="bg-white px-3 py-1 rounded-full text-sm text-gray-700 border border-gray-200">
+                        {city}
+                      </span>
+                    ))}
+                  </div>
+                  <Link href="/computerhulp-aan-huis" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                    Bekijk alle 50+ locaties
+                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                </div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-white" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <header className="text-center mb-12">
+            <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Veelgestelde Vragen over Computerhulp
+            </h2>
+          </header>
+
+          <div className="space-y-4">
+            {[
+              { q: 'Hoe snel kunnen jullie langskomen voor computerhulp?', a: 'In de meeste gevallen komen we binnen 24 uur bij u langs voor computerhulp aan huis. Bij spoed proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren tot 22:00.' },
+              { q: 'Wat kost computerhulp aan huis in Zuid-Holland?', a: 'Onze computerhulp aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50). Er zijn geen voorrijkosten in heel Zuid-Holland. Betalen kan na afloop via pin, contant of Tikkie.' },
+              { q: 'Welke computerproblemen kunnen jullie oplossen?', a: 'Wij helpen met alle IT-problemen: trage computers, laptop reparatie, printers installeren, WiFi problemen, email configuratie, tablets, smartphones, software installatie, virusverwijdering en data herstel. Ook voor persoonlijke uitleg en training kunt u bij ons terecht.' },
+              { q: 'In welke plaatsen bieden jullie computerhulp aan huis?', a: 'Wij bieden computerhulp aan huis in heel Zuid-Holland, waaronder Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en meer dan 50 andere gemeenten.' },
+              { q: 'Moet ik iets voorbereiden voor de computerhulp afspraak?', a: 'Nee, u hoeft niets voor te bereiden. Zorg alleen dat u eventuele wachtwoorden bij de hand heeft en dat de apparatuur bereikbaar is. Wij nemen al het gereedschap mee dat nodig is voor de computerhulp.' },
+            ].map((faq, idx) => (
+              <details key={idx} className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
+                <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-100 transition-colors">
+                  {faq.q}
+                  <svg className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </summary>
+                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white" aria-label="Contact opnemen">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Computerhulp Nodig? Wij Helpen Direct!
+          </h2>
+          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            Neem vandaag nog contact op voor professionele computerhulp aan huis. Binnen 24 uur bij u in Zuid-Holland!
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/afspraak-maken"
+              className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-all"
+            >
+              Afspraak Maken
+              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+            <a
+              href="tel:+31642548451"
+              className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all"
+            >
+              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+              </svg>
+              Bel Direct
+            </a>
+          </div>
+        </div>
+      </section>
     </>
   )
 }
-
-const testimonials = [
-  {
-    quote: 'Mijn computer deed het helemaal niet meer. Ik dacht dat alles weg was. Binnen 2 uur stond hij weer aan en al mijn foto\'s waren gered. Ontzettend blij mee!',
-    initials: 'MV',
-    name: 'Mevrouw Van Dijk',
-    location: 'Den Haag'
-  },
-  {
-    quote: 'Eindelijk iemand die normaal uitlegt! Geen ingewikkelde termen. Printer werkt nu perfect en ik weet nu ook hoe ik hem moet gebruiken.',
-    initials: 'JB',
-    name: 'Jan Bakker',
-    location: 'Rotterdam'
-  },
-  {
-    quote: 'Binnen een dag geholpen. WiFi werkte niet, email deed het niet. Alles in één keer opgelost. Eerlijke prijs en geen gedoe. Top!',
-    initials: 'LH',
-    name: 'Linda Hendriks',
-    location: 'Leiden'
-  }
-]

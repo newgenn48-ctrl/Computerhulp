@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Veelgestelde Vragen (FAQ) | Computerhulp Zuid-Holland',
-  description: 'Antwoorden op veelgestelde vragen over onze computerhulp diensten, prijzen, werkgebied en meer. Niet gevonden wat u zoekt? Bel ons op 06-42548451.',
+  description: 'Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Binnen 24u geholpen. Bel ons op 06-42548451.',
   openGraph: {
     title: 'Veelgestelde Vragen (FAQ) | Computerhulp Zuid-Holland',
     description: 'Antwoorden op veelgestelde vragen over onze computerhulp diensten, prijzen en werkgebied.',

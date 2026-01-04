@@ -494,3 +494,36 @@ input[type="tel"]:focus,
 textarea:focus {
   @apply shadow-lg;
 }
+
+/* Reduced Motion Support - Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-blob,
+  .float,
+  .pulse-glow,
+  .slide-up {
+    animation: none !important;
+  }
+
+  .btn-primary {
+    animation: none !important;
+    background-size: 100% auto !important;
+  }
+
+  .skeleton {
+    animation: none !important;
+    background: #e5e7eb !important;
+  }
+}

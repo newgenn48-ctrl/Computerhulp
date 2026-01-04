@@ -1,73 +1,13 @@
 import Link from 'next/link'
+import { getNearbyCities } from '@/lib/cities'
 
 interface NearbyCitiesProps {
   currentCity: string
   pageType: 'student-aan-huis' | 'computerhulp-aan-huis'
 }
 
-// Mapping van steden naar nabije steden
-const nearbyMapping: Record<string, string[]> = {
-  'rotterdam': ['schiedam', 'vlaardingen', 'capelle-aan-den-ijssel', 'ridderkerk', 'barendrecht'],
-  'den-haag': ['rijswijk', 'leidschendam-voorburg', 'wassenaar', 'delft', 'zoetermeer'],
-  'leiden': ['leiderdorp', 'oegstgeest', 'voorschoten', 'zoeterwoude', 'katwijk'],
-  'delft': ['den-haag', 'rijswijk', 'pijnacker-nootdorp', 'midden-delfland', 'schiedam'],
-  'dordrecht': ['zwijndrecht', 'papendrecht', 'sliedrecht', 'alblasserdam', 'hendrik-ido-ambacht'],
-  'zoetermeer': ['den-haag', 'pijnacker-nootdorp', 'waddinxveen', 'gouda', 'leidschendam-voorburg'],
-  'gouda': ['waddinxveen', 'zoetermeer', 'bodegraven-reeuwijk', 'moordrecht', 'alphen-aan-den-rijn'],
-  'alphen-aan-den-rijn': ['gouda', 'bodegraven-reeuwijk', 'kaag-en-braassem', 'leiden', 'nieuwkoop'],
-  'vlaardingen': ['rotterdam', 'schiedam', 'maassluis', 'westland'],
-  'schiedam': ['rotterdam', 'vlaardingen', 'delft', 'midden-delfland'],
-  'rijswijk': ['den-haag', 'delft', 'leidschendam-voorburg', 'pijnacker-nootdorp'],
-  'capelle-aan-den-ijssel': ['rotterdam', 'krimpen-aan-den-ijssel', 'nieuwerkerk-aan-den-ijssel'],
-  'gorinchem': ['hardinxveld-giessendam', 'molenlanden', 'giessenlanden'],
-  'leidschendam-voorburg': ['den-haag', 'rijswijk', 'voorschoten', 'wassenaar'],
-  'katwijk': ['leiden', 'oegstgeest', 'noordwijk', 'teylingen'],
-  'pijnacker-nootdorp': ['delft', 'zoetermeer', 'rijswijk', 'lansingerland'],
-  'lansingerland': ['rotterdam', 'pijnacker-nootdorp', 'zoetermeer', 'capelle-aan-den-ijssel'],
-  'maassluis': ['vlaardingen', 'westland', 'hoek-van-holland'],
-  'noordwijk': ['katwijk', 'leiden', 'teylingen', 'hillegom'],
-  'ridderkerk': ['rotterdam', 'barendrecht', 'zwijndrecht', 'albrandswaard'],
-  'barendrecht': ['rotterdam', 'ridderkerk', 'albrandswaard', 'zwijndrecht'],
-  'wassenaar': ['den-haag', 'leidschendam-voorburg', 'leiden', 'katwijk'],
-  'leiderdorp': ['leiden', 'zoeterwoude', 'alphen-aan-den-rijn', 'oegstgeest'],
-  'voorschoten': ['leiden', 'leidschendam-voorburg', 'wassenaar', 'oegstgeest'],
-  'waddinxveen': ['gouda', 'zoetermeer', 'alphen-aan-den-rijn', 'bodegraven-reeuwijk'],
-  'bodegraven-reeuwijk': ['gouda', 'waddinxveen', 'alphen-aan-den-rijn'],
-  'oegstgeest': ['leiden', 'katwijk', 'voorschoten', 'leiderdorp'],
-  'albrandswaard': ['rotterdam', 'barendrecht', 'ridderkerk', 'hoeksche-waard'],
-  'papendrecht': ['dordrecht', 'sliedrecht', 'alblasserdam', 'hendrik-ido-ambacht'],
-  'zwijndrecht': ['dordrecht', 'ridderkerk', 'hendrik-ido-ambacht', 'papendrecht'],
-  'krimpen-aan-den-ijssel': ['capelle-aan-den-ijssel', 'rotterdam', 'krimpenerwaard'],
-  'hillegom': ['noordwijk', 'lisse', 'kaag-en-braassem', 'teylingen'],
-  'lisse': ['hillegom', 'kaag-en-braassem', 'noordwijk', 'teylingen'],
-  'sliedrecht': ['dordrecht', 'papendrecht', 'hardinxveld-giessendam', 'alblasserdam'],
-  'alblasserdam': ['dordrecht', 'papendrecht', 'hendrik-ido-ambacht', 'sliedrecht'],
-  'hendrik-ido-ambacht': ['dordrecht', 'zwijndrecht', 'papendrecht', 'alblasserdam'],
-  'teylingen': ['katwijk', 'noordwijk', 'hillegom', 'lisse'],
-  'kaag-en-braassem': ['alphen-aan-den-rijn', 'leiden', 'lisse', 'hillegom'],
-  'krimpenerwaard': ['gouda', 'krimpen-aan-den-ijssel', 'molenlanden'],
-  'westland': ['vlaardingen', 'maassluis', 'den-haag', 'delft'],
-  'midden-delfland': ['delft', 'schiedam', 'rotterdam', 'westland'],
-  'hardinxveld-giessendam': ['gorinchem', 'sliedrecht', 'molenlanden'],
-  'molenlanden': ['gorinchem', 'hardinxveld-giessendam', 'krimpenerwaard'],
-  'hoeksche-waard': ['dordrecht', 'albrandswaard', 'barendrecht'],
-  'goeree-overflakkee': ['nissewaard', 'hellevoetsluis'],
-  'nissewaard': ['rotterdam', 'vlaardingen', 'goeree-overflakkee'],
-  'westvoorne': ['nissewaard', 'hellevoetsluis', 'rotterdam'],
-  'zoeterwoude': ['leiden', 'leiderdorp', 'alphen-aan-den-rijn'],
-  'nieuwkoop': ['alphen-aan-den-rijn', 'kaag-en-braassem', 'bodegraven-reeuwijk']
-}
-
-// Format stad naam voor display
-const formatCityName = (slug: string): string => {
-  return slug
-    .split('-')
-    .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-    .join(' ')
-}
-
 export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProps) {
-  const nearbyCities = nearbyMapping[currentCity] || []
+  const nearbyCities = getNearbyCities(currentCity, 5)
 
   if (nearbyCities.length === 0) {
     return null
@@ -88,10 +28,10 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
           {titleText}
         </h2>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 mb-6">
-          {nearbyCities.slice(0, 10).map(city => (
+          {nearbyCities.map(city => (
             <Link
-              key={city}
-              href={`/${pageType}-${city}`}
+              key={city.slug}
+              href={`/${pageType}-${city.slug}`}
               className="flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all group"
             >
               <svg
@@ -114,7 +54,7 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
                 />
               </svg>
               <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
-                {formatCityName(city)}
+                {city.name}
               </span>
             </Link>
           ))}

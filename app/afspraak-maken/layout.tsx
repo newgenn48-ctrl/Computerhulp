@@ -2,7 +2,8 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Afspraak Maken | Binnen 24u Geholpen | Computerhulp Zuid-Holland',
-  description: '📅 Maak direct een afspraak! ✓ Binnen 24u bij u thuis ✓ Gratis kennismaking ✓ Geen voorrijkosten ✓ €14,50 per kwartier. Bel 06-42548451.',
+  description: 'Maak direct een afspraak voor computerhulp aan huis. Binnen 24 uur bij u thuis in Zuid-Holland. Geen voorrijkosten, vanaf €43,50. Bel 06-42548451.',
+  keywords: 'afspraak maken, computerhulp afspraak, IT hulp plannen, computer afspraak, hulp inplannen, computerhulp reserveren, Zuid-Holland',
   openGraph: {
     title: 'Afspraak Maken | Computerhulp Zuid-Holland',
     description: 'Maak direct een afspraak. Binnen 24 uur bij u thuis in Zuid-Holland. Bel 06-42548451.',

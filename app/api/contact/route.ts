@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { sendContactEmail } from '@/lib/mailer'
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
 
 // TODO: Voor productie, implementeer reCAPTCHA v3 in het frontend formulier:
 // 1. Voeg NEXT_PUBLIC_RECAPTCHA_SITE_KEY toe aan .env
@@ -10,6 +11,7 @@ import { sendContactEmail } from '@/lib/mailer'
 // 6. Stuur token mee in request body
 
 // Verify reCAPTCHA (optional - only if configured)
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 async function verifyRecaptcha(token?: string): Promise<boolean> {
   const secretKey = process.env.RECAPTCHA_SECRET_KEY
 
@@ -42,9 +44,27 @@ async function verifyRecaptcha(token?: string): Promise<boolean> {
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    const clientIP = getClientIP(request)
+    const rateLimitResult = checkRateLimit(`contact:${clientIP}`, RATE_LIMITS.contact)
+
+    if (!rateLimitResult.success) {
+      return NextResponse.json(
+        { error: 'Te veel verzoeken. Probeer het over een minuut opnieuw.' },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000)),
+            'X-RateLimit-Limit': String(RATE_LIMITS.contact.limit),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(rateLimitResult.resetTime),
+          }
+        }
+      )
+    }
+
     // CSRF Protection: Verify origin header
     const origin = request.headers.get('origin')
-    const host = request.headers.get('host')
 
     // In production, verify that requests come from our domain
     if (process.env.NODE_ENV === 'production') {

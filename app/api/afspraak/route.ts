@@ -1,9 +1,29 @@
 import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { sanitizeHtml, sanitizeText, validateEmail, validatePhone, validateLength } from '@/lib/sanitize'
+import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
 
 export async function POST(request: NextRequest) {
   try {
+    // Rate limiting
+    const clientIP = getClientIP(request)
+    const rateLimitResult = checkRateLimit(`afspraak:${clientIP}`, RATE_LIMITS.afspraak)
+
+    if (!rateLimitResult.success) {
+      return NextResponse.json(
+        { error: 'Te veel verzoeken. Probeer het over een minuut opnieuw.' },
+        {
+          status: 429,
+          headers: {
+            'Retry-After': String(Math.ceil((rateLimitResult.resetTime - Date.now()) / 1000)),
+            'X-RateLimit-Limit': String(RATE_LIMITS.afspraak.limit),
+            'X-RateLimit-Remaining': '0',
+            'X-RateLimit-Reset': String(rateLimitResult.resetTime),
+          }
+        }
+      )
+    }
+
     const body = await request.json()
     const { naam, telefoon, email, straat, huisnummer, postcode, plaats, probleem } = body
 

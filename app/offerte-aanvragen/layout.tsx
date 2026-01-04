@@ -1,8 +1,8 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Offerte Aanvragen | Website Laten Maken | Computerhulp Zuid-Holland',
-  description: 'Vraag een vrijblijvende offerte aan voor uw nieuwe website. We maken websites op maat met custom code of WordPress, Shopify, Wix. Vanaf €795.',
+  title: 'Offerte Aanvragen | Website Laten Maken | Zuid-Holland',
+  description: 'Vraag een vrijblijvende offerte aan voor uw nieuwe website. Custom code of WordPress, Shopify, Wix. Vanaf €795. Gratis adviesgesprek. Bel 06-42548451.',
   openGraph: {
     title: 'Offerte Aanvragen | Website Laten Maken',
     description: 'Vraag een vrijblijvende offerte aan voor uw nieuwe website. Vanaf €795.',

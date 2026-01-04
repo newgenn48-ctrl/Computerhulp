@@ -139,7 +139,7 @@ export default function VoorwaardenPage() {
             </p>
             <ul className="list-none space-y-2 mt-4">
               <li><strong>Email:</strong> <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li><strong>Telefoon:</strong> <a href="tel:+31642548451" className="text-blue-600 hover:underline">06-42548451</a></li>
+              <li><strong>Telefoon:</strong> <a href="tel:+31642548451" className="text-blue-600 hover:underline">Bel Direct</a></li>
             </ul>
             <p className="mt-4">
               Wij streven ernaar klachten binnen 7 dagen te behandelen.
@@ -181,7 +181,7 @@ export default function VoorwaardenPage() {
               <li>KvK: 91310318</li>
               <li>BTW: NL865613461B01</li>
               <li>Email: <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li>Telefoon: <a href="tel:+31642548451" className="text-blue-600 hover:underline">06-42548451</a></li>
+              <li>Telefoon: <a href="tel:+31642548451" className="text-blue-600 hover:underline">Bel Direct</a></li>
             </ul>
           </section>
         </div>

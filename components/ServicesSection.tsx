@@ -16,6 +16,20 @@ export const services = [
     ]
   },
   {
+    icon: '🔧',
+    title: 'Laptop & Computer Reparatie',
+    description: 'Laptop kapot? Scherm defect of computer start niet op? Wij repareren alle merken laptops en computers bij u thuis.',
+    slug: '/diensten/laptop-computer-reparatie',
+    features: [
+      'Scherm reparatie',
+      'Accu en oplader problemen',
+      'Toetsenbord en touchpad',
+      'SSD en geheugen upgrade',
+      'Moederbord reparatie',
+      'Alle merken: HP, Dell, Lenovo, Apple, etc.'
+    ]
+  },
+  {
     icon: '🖨️',
     title: 'Printer & Randapparatuur',
     description: 'Laat uw printer, scanner en randapparatuur probleemloos werken met onze installatie- en hulpservice aan huis.',
