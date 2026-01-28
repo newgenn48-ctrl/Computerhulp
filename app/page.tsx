@@ -291,7 +291,7 @@ export default function HomePage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
       {/* Premium Hero Section */}
-      <section className="relative min-h-screen bg-white overflow-hidden" aria-label="Computerhulp Zuid-Holland hero">
+      <section className="relative min-h-[70vh] md:min-h-screen bg-white overflow-hidden" aria-label="Computerhulp Zuid-Holland hero">
         <div className="absolute inset-0">
           <Image
             src="/Student aan huis.webp"
@@ -306,38 +306,16 @@ export default function HomePage() {
           <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-white/40 via-transparent to-white/70" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-20 min-h-screen flex items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Computerhulp
               <span className="block text-blue-600">Zuid-Holland</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-xl">
               Hulp nodig met uw computer, laptop, tablet of smartphone? Onze IT-specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis of op afstand. Met geduld en persoonlijke aandacht helpen wij u weer op weg. <strong className="text-gray-900">Binnen 24 uur</strong> geholpen, zonder voorrijkosten.
             </p>
-
-            {/* USP Badges */}
-            <div className="flex flex-wrap gap-3 mb-10" role="list" aria-label="Onze voordelen">
-              <div role="listitem" className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
-                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                Binnen 24 uur
-              </div>
-              <div role="listitem" className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Geen voorrijkosten
-              </div>
-              <div role="listitem" className="flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-full text-sm font-medium">
-                <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
-                7 dagen per week
-              </div>
-            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
@@ -391,7 +369,7 @@ export default function HomePage() {
               <Link
                 key={idx}
                 href={service.href}
-                className="group relative h-72 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
+                className={`group relative h-72 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${idx >= 3 ? 'hidden md:block' : ''}`}
                 role="listitem"
               >
                 <Image
@@ -426,50 +404,6 @@ export default function HomePage() {
               </svg>
             </Link>
           </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="how-it-works-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-16">
-            <h2 id="how-it-works-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Zo Werkt Het
-            </h2>
-            <p className="text-lg text-gray-600">
-              In 3 simpele stappen van computerprobleem naar oplossing
-            </p>
-          </header>
-
-          <ol className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
-            <li className="relative text-center">
-              <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-lg shadow-blue-600/25 rotate-3" aria-hidden="true">
-                1
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Bel of Plan Online</h3>
-              <p className="text-gray-600">Bel <a href="tel:+31642548451" className="text-blue-600 hover:underline">06-42548451</a> of maak een <Link href="/afspraak-maken" className="text-blue-600 hover:underline">afspraak online</Link>. Vertel kort wat het probleem is.</p>
-              <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-blue-200 to-transparent" aria-hidden="true" />
-            </li>
-
-            <li className="relative text-center">
-              <div className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-lg shadow-blue-600/25 -rotate-3" aria-hidden="true">
-                2
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">We Komen Langs</h3>
-              <p className="text-gray-600">Binnen 24 uur staan we bij u op de stoep in Zuid-Holland. Op een moment dat u uitkomt.</p>
-              <div className="hidden md:block absolute top-10 left-[60%] w-[80%] h-0.5 bg-gradient-to-r from-blue-200 to-transparent" aria-hidden="true" />
-            </li>
-
-            <li className="text-center">
-              <div className="w-20 h-20 bg-green-600 rounded-2xl flex items-center justify-center text-white text-3xl mx-auto mb-6 shadow-lg shadow-green-600/25 rotate-3" aria-hidden="true">
-                <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-              </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Probleem Opgelost</h3>
-              <p className="text-gray-600">Uw computer, laptop of ander apparaat werkt weer perfect. Betalen na afloop via pin, contant of Tikkie.</p>
-            </li>
-          </ol>
         </div>
       </section>
 
@@ -517,8 +451,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEO Content Section */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
+      {/* SEO Content Section - Hidden on mobile for better conversion */}
+      <section className="hidden md:block py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>
