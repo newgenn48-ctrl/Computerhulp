@@ -314,7 +314,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              <strong className="text-gray-900">Uw IT Specialist aan huis</strong> voor al uw digitale problemen. Computer, laptop, telefoon, tablet, printer, WiFi, email of smart home - wij lossen het op. <strong className="text-gray-900">Binnen 24 uur</strong> bij u thuis.
+              Hulp nodig met uw computer, laptop, tablet of smartphone? Onze IT-specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis of op afstand. Met geduld en persoonlijke aandacht helpen wij u weer op weg. <strong className="text-gray-900">Binnen 24 uur</strong> geholpen, zonder voorrijkosten.
             </p>
 
             {/* USP Badges */}
