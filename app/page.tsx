@@ -344,7 +344,7 @@ export default function HomePage() {
               <span className="block text-blue-600">Zuid-Holland</span>
             </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-xl">
+            <p className="text-xl md:text-2xl text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-xl">
               Hulp nodig met uw computer, laptop, tablet of smartphone? Onze IT-specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis of op afstand. Met geduld en persoonlijke aandacht helpen wij u weer op weg. <strong className="text-gray-900">Binnen 24 uur</strong> geholpen, zonder voorrijkosten.
             </p>
 
