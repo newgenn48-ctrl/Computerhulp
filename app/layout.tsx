@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
+import { Analytics } from '@vercel/analytics/next'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
 import FloatingButtons from '@/components/layout/FloatingButtons'
@@ -146,6 +147,7 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingButtons />
+        <Analytics />
       </body>
     </html>
   )
