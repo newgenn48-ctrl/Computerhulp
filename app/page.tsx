@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
   loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
@@ -258,21 +259,51 @@ const services = [
 const testimonials = [
   {
     quote: 'Mijn computer deed het helemaal niet meer. Binnen 2 uur stond hij weer aan en al mijn foto\'s waren gered. Ontzettend blij!',
-    name: 'Mevrouw Van Dijk',
+    name: 'Mevrouw Gerda',
     location: 'Den Haag',
-    initials: 'MV'
+    initials: 'G'
   },
   {
     quote: 'Eindelijk iemand die normaal uitlegt! Geen ingewikkelde termen. Printer werkt nu perfect.',
-    name: 'Jan Bakker',
+    name: 'De heer Jan',
     location: 'Rotterdam',
-    initials: 'JB'
+    initials: 'J'
   },
   {
     quote: 'WiFi werkte niet, email deed het niet. Alles in één keer opgelost. Eerlijke prijs, top service!',
-    name: 'Linda Hendriks',
+    name: 'Mevrouw Linda',
     location: 'Leiden',
-    initials: 'LH'
+    initials: 'L'
+  },
+  {
+    quote: 'Heel geduldig uitgelegd hoe ik mijn iPad moet gebruiken. Nu kan ik zelf foto\'s maken en versturen naar mijn kleinkinderen!',
+    name: 'De heer Henk',
+    location: 'Delft',
+    initials: 'H'
+  },
+  {
+    quote: 'Laptop was zo traag geworden. Na het bezoek werkt hij weer als nieuw. Fijne jongen, nam de tijd voor uitleg.',
+    name: 'Mevrouw Ria',
+    location: 'Zoetermeer',
+    initials: 'R'
+  },
+  {
+    quote: 'Mijn nieuwe smart TV kon ik niet aansluiten. Binnen een uur Netflix, Videoland én de foto\'s van mijn telefoon erop. Geweldig!',
+    name: 'De heer Peter',
+    location: 'Gouda',
+    initials: 'P'
+  },
+  {
+    quote: 'Al jaren last van een trage computer. Eindelijk iemand die het écht oplost. Scheelt mij zoveel ergernis. Aanrader!',
+    name: 'Mevrouw Corrie',
+    location: 'Dordrecht',
+    initials: 'C'
+  },
+  {
+    quote: 'Virus op mijn laptop en al mijn wachtwoorden kwijt. Alles hersteld én nu goed beveiligd. Zeer tevreden!',
+    name: 'De heer Willem',
+    location: 'Schiedam',
+    initials: 'W'
   }
 ]
 
@@ -410,44 +441,22 @@ export default function HomePage() {
       {/* Pricing Section */}
       <PricingSection />
 
-      {/* Testimonials */}
+      {/* Testimonials - Swipeable Carousel */}
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
             <h2 id="testimonials-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
               Wat Klanten Zeggen Over Ons
             </h2>
             <p className="text-lg text-gray-600">
               Meer dan 500 tevreden klanten in Zuid-Holland
             </p>
+            <p className="text-sm text-gray-400 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
           </header>
 
-          <div className="grid md:grid-cols-3 gap-8" role="list">
-            {testimonials.map((testimonial, idx) => (
-              <article key={idx} className="bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-8 border border-gray-100 relative" role="listitem">
-                <svg className="absolute top-6 right-6 w-10 h-10 text-blue-100" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                </svg>
-                <div className="flex items-center gap-1 mb-4" role="img" aria-label="5 van 5 sterren">
-                  {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  ))}
-                </div>
-                <blockquote className="text-gray-700 mb-6 leading-relaxed">&ldquo;{testimonial.quote}&rdquo;</blockquote>
-                <footer className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
-                    {testimonial.initials}
-                  </div>
-                  <div>
-                    <cite className="font-semibold text-gray-900 not-italic">{testimonial.name}</cite>
-                    <div className="text-sm text-gray-500">{testimonial.location}</div>
-                  </div>
-                </footer>
-              </article>
-            ))}
-          </div>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 
