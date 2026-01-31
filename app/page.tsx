@@ -324,9 +324,9 @@ export default function HomePage() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-white/80 md:hidden" />
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/85 to-transparent" />
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-white/40 via-transparent to-white/70" />
+          <div className="absolute inset-0 bg-blue-50/90 md:hidden" />
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-blue-50 via-blue-50/85 to-transparent" />
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-blue-50/40 via-transparent to-blue-50/70" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
