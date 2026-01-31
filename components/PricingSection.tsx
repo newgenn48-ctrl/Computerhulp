@@ -34,8 +34,7 @@ export default function PricingSection({
 
             <div className="px-8 py-10">
               <div className="text-center mb-8">
-                <div className="text-gray-600 mb-1">Minimaal 3 kwartier</div>
-                <div className="text-3xl font-bold text-gray-900">€43,50 totaal</div>
+                <div className="text-lg text-gray-700 font-medium">Minimaal 45 minuten</div>
               </div>
 
               <div className="space-y-4 mb-8">

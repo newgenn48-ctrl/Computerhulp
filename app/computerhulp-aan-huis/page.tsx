@@ -320,7 +320,7 @@ export default function ComputerhulpAanHuisPage() {
       />
 
       {/* Hero Section - Premium Full-Width Design */}
-      <section className="relative min-h-screen bg-white overflow-hidden">
+      <section className="relative min-h-[70vh] md:min-h-screen bg-white overflow-hidden">
         {/* Full-width background image with overlay */}
         <div className="absolute inset-0">
           <Image
@@ -331,45 +331,45 @@ export default function ComputerhulpAanHuisPage() {
             priority
             sizes="100vw"
           />
-          {/* Mobile: stronger overlay for readability */}
-          <div className="absolute inset-0 bg-white/80 md:hidden"></div>
-          {/* Desktop: subtle gradient to show photo */}
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/80 to-transparent"></div>
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-white/30 via-transparent to-white/60"></div>
+          {/* Mobile: blue overlay for readability */}
+          <div className="absolute inset-0 bg-blue-50/70 md:hidden"></div>
+          {/* Desktop: subtle blue gradient to show photo */}
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-blue-50/90 via-blue-50/60 to-transparent"></div>
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-blue-50/30 via-transparent to-blue-50/50"></div>
         </div>
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-24 min-h-screen flex items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
               Computerhulp
-              <span className="block">aan Huis</span>
+              <span className="block text-blue-600">aan Huis</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Wij lossen uw <strong className="text-gray-900 font-semibold">computer, laptop, printer, WiFi en andere digitale problemen</strong> vakkundig op. Bij u thuis, wanneer het u uitkomt.
+            <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
+              Hulp nodig met uw computer, laptop, printer of WiFi? Onze specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
             </p>
 
             {/* USP Badges */}
-            <div className="flex flex-wrap gap-3 mb-10">
-              <div className="flex items-center gap-2 bg-blue-50 text-blue-700 px-4 py-2 rounded-full text-sm font-medium">
-                <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+            <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Binnen 24 uur
-              </div>
-              <div className="flex items-center gap-2 bg-green-50 text-green-700 px-4 py-2 rounded-full text-sm font-medium">
+                Binnen 24 uur geholpen
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 Geen voorrijkosten
-              </div>
-              <div className="flex items-center gap-2 bg-purple-50 text-purple-700 px-4 py-2 rounded-full text-sm font-medium">
-                <svg className="w-5 h-5 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 7 dagen per week
-              </div>
+              </span>
             </div>
 
             {/* CTA Buttons */}
@@ -937,20 +937,20 @@ export default function ComputerhulpAanHuisPage() {
 const testimonials = [
   {
     quote: 'Super blij met de computerhulp aan huis! Mijn computer deed het helemaal niet meer. Binnen 2 uur kwam er iemand bij mij thuis en alles werkte weer. Al mijn foto\'s van de kleinkinderen zijn gered!',
-    initials: 'MV',
-    name: 'Mevrouw Van Dijk',
+    initials: 'G',
+    name: 'Mevrouw Gerda',
     location: 'Den Haag'
   },
   {
     quote: 'Eindelijk computerhulp aan huis die normaal uitlegt zonder ingewikkelde termen! Printer werkt nu perfect en ik weet nu ook precies hoe ik hem moet gebruiken. Heel fijn dat ze bij me thuis kwamen.',
-    initials: 'JB',
-    name: 'Jan Bakker',
+    initials: 'J',
+    name: 'De heer Jan',
     location: 'Rotterdam'
   },
   {
     quote: 'WiFi werkte niet, email deed het niet. De computerhulp aan huis heeft alles in één keer opgelost bij mij thuis. Eerlijke prijs en geen gedoe. Binnen een dag geholpen, top service!',
-    initials: 'LH',
-    name: 'Linda Hendriks',
+    initials: 'L',
+    name: 'Mevrouw Linda',
     location: 'Leiden'
   }
 ]
