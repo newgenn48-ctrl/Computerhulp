@@ -7,12 +7,11 @@ export const services = [
     description: 'Wij bieden complete computerhulp aan huis voor al uw computer- en laptopproblemen. Onze experts lossen alles snel en vakkundig bij u thuis op.',
     slug: '/diensten/computer-laptop-hulp',
     features: [
-      'Ondersteuning voor Windows en Mac',
+      'Nieuwe computer installeren en instellen',
       'Trage computer versnellen',
       'Virussen en malware verwijderen',
       'Software installeren en updaten',
-      'Hardwareproblemen oplossen',
-      'Nieuwe computer installeren en instellen'
+      'Ondersteuning voor Windows en Mac'
     ]
   },
   {
@@ -21,12 +20,11 @@ export const services = [
     description: 'Laptop kapot? Scherm defect of computer start niet op? Wij repareren alle merken laptops en computers bij u thuis.',
     slug: '/diensten/laptop-computer-reparatie',
     features: [
+      'Alle merken: HP, Dell, Lenovo, Apple, etc.',
       'Scherm reparatie',
       'Accu en oplader problemen',
-      'Toetsenbord en touchpad',
       'SSD en geheugen upgrade',
-      'Moederbord reparatie',
-      'Alle merken: HP, Dell, Lenovo, Apple, etc.'
+      'Toetsenbord en touchpad'
     ]
   },
   {
@@ -35,9 +33,9 @@ export const services = [
     description: 'Laat uw printer, scanner en randapparatuur probleemloos werken met onze installatie- en hulpservice aan huis.',
     slug: '/diensten/printer-scanner-hulp',
     features: [
-      'Printer aansluiten en instellen',
+      'Nieuwe printer aansluiten en instellen',
       'Scanner configureren',
-      'Randapparatuur koppelen aan computer of netwerk',
+      'Draadloos printen instellen',
       'Printproblemen oplossen'
     ]
   },
@@ -47,11 +45,10 @@ export const services = [
     description: 'Werkt uw e-mail niet goed? Wij lossen alle e-mailproblemen snel en professioneel voor u op, zodat u weer zonder zorgen kunt mailen.',
     slug: '/diensten/email-hulp',
     features: [
-      'E-mailaccount instellen',
-      'Outlook configureren',
+      'E-mailaccount instellen op computer of telefoon',
+      'Outlook en Gmail configureren',
       'Spamproblemen oplossen',
-      'Problemen met ontvangen of verzenden verhelpen',
-      'Advies over online veiligheid'
+      'Wachtwoord herstellen'
     ]
   },
   {
@@ -60,11 +57,10 @@ export const services = [
     description: 'Heeft u last van traag of instabiel internet? Onze wifi-specialisten zorgen dat uw netwerk weer perfect werkt.',
     slug: '/diensten/wifi-internet-hulp',
     features: [
-      'WiFi installatie en configuratie',
+      'WiFi router installeren en instellen',
       'Bereik en snelheid verbeteren',
-      'Netwerkbeveiliging instellen',
       'Apparaten verbinden met het netwerk',
-      'Internetproblemen opsporen en oplossen'
+      'Netwerkbeveiliging instellen'
     ]
   },
   {
@@ -73,11 +69,10 @@ export const services = [
     description: 'Ook voor uw mobiele apparaten bieden wij deskundige hulp aan huis. Wij zorgen dat alles soepel samenwerkt met uw computer en netwerk.',
     slug: '/diensten/tablet-smartphone-hulp',
     features: [
-      'iPad en iPhone ondersteuning',
-      'Android tablets en smartphones',
-      'Apps installeren en instellen',
-      'Synchronisatie met computer',
-      'Hulp bij WhatsApp en sociale media'
+      'Nieuwe tablet of smartphone instellen',
+      'Apps installeren (WhatsApp, foto\'s, etc.)',
+      'iPad, iPhone en Android',
+      'Synchronisatie met computer'
     ]
   },
   {
@@ -86,11 +81,10 @@ export const services = [
     description: 'Maak uw woning slimmer en comfortabeler met onze Smart Home installatie en ondersteuning. Wij helpen u bij het koppelen en instellen van slimme apparaten.',
     slug: '/diensten/smart-home-domotica',
     features: [
-      'Smart TV koppelen',
+      'Smart TV installeren en koppelen',
       'Slimme verlichting instellen',
-      'Slimme thermostaat configureren',
-      'Beveiligingscamera\'s en videodeurbellen installeren',
-      'Spraakbesturing via Google Home of Alexa instellen'
+      'Google Home of Alexa instellen',
+      'Videodeurbel installeren'
     ]
   },
   {
@@ -138,13 +132,19 @@ interface ServicesSectionProps {
   title?: string
   description?: string
   showFeatures?: boolean
+  limitServices?: number
+  showAllButton?: boolean
 }
 
 export default function ServicesSection({
   title = "Waar We U Mee Helpen",
   description = "Van simpele vragen tot complexe problemen - alles wordt bij u thuis opgelost",
-  showFeatures = false
+  showFeatures = false,
+  limitServices = 0,
+  showAllButton = false
 }: ServicesSectionProps) {
+  const displayServices = limitServices > 0 ? services.slice(0, limitServices) : services
+
   return (
     <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -158,7 +158,7 @@ export default function ServicesSection({
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-          {services.map((service, idx) => (
+          {displayServices.map((service, idx) => (
             <div
               key={idx}
               className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all"
@@ -232,6 +232,20 @@ export default function ServicesSection({
             </div>
           ))}
         </div>
+
+        {showAllButton && (
+          <div className="text-center mt-12">
+            <Link
+              href="/diensten"
+              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
+            >
+              Alle diensten bekijken
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </Link>
+          </div>
+        )}
       </div>
     </section>
   )
