@@ -176,13 +176,13 @@ export default function ServicesSection({
                     </div>
                   </div>
 
-                  <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                  <p className="text-base sm:text-sm text-gray-600 leading-relaxed mb-4">
                     {service.description}
                   </p>
 
                   <ul className="space-y-2 mb-5">
                     {service.features.map((feature, featureIdx) => (
-                      <li key={featureIdx} className="flex items-start gap-2 text-sm text-gray-700">
+                      <li key={featureIdx} className="flex items-start gap-2 text-base sm:text-sm text-gray-700">
                         <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                         </svg>
@@ -212,7 +212,7 @@ export default function ServicesSection({
                       <h3 className="text-lg font-bold text-gray-900 mb-2">
                         {service.title}
                       </h3>
-                      <p className="text-sm text-gray-600 leading-relaxed">
+                      <p className="text-base sm:text-sm text-gray-600 leading-relaxed">
                         {service.description}
                       </p>
                     </div>
