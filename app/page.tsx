@@ -248,12 +248,12 @@ const breadcrumbData = {
 }
 
 const services = [
-  { title: 'Computer & Laptop Hulp', image: '/Computer & Laptop Hulp.webp', href: '/diensten/computer-laptop-hulp', desc: 'Traag, crasht of start niet op', alt: 'Computer en laptop hulp aan huis in Zuid-Holland' },
-  { title: 'WiFi & Internet Hulp', image: '/WiFi & Netwerk Hulp.webp', href: '/diensten/wifi-internet-hulp', desc: 'Geen bereik of traag internet', alt: 'WiFi en internet hulp aan huis' },
-  { title: 'Printer & Scanner Hulp', image: '/Printer & Randapparatuur.webp', href: '/diensten/printer-scanner-hulp', desc: 'Print niet of installeren', alt: 'Printer en scanner hulp aan huis' },
-  { title: 'Email Hulp', image: '/E-mail Hulp.webp', href: '/diensten/email-hulp', desc: 'Outlook, Gmail, wachtwoord', alt: 'Email hulp en configuratie aan huis' },
-  { title: 'Tablet & Smartphone Hulp', image: '/Tablet & Smartphone Hulp.webp', href: '/diensten/tablet-smartphone-hulp', desc: 'iPad, iPhone, Android hulp', alt: 'Tablet en smartphone hulp aan huis' },
-  { title: 'Smart Home & Domotica', image: '/Smart Home.webp', href: '/diensten/smart-home-domotica', desc: 'Slimme apparaten koppelen', alt: 'Smart home en domotica hulp aan huis' },
+  { title: 'Computer & Laptop Hulp', href: '/diensten/computer-laptop-hulp', desc: 'Traag, crasht of start niet op', icon: 'laptop' },
+  { title: 'WiFi & Internet Hulp', href: '/diensten/wifi-internet-hulp', desc: 'Geen bereik of traag internet', icon: 'wifi' },
+  { title: 'Printer & Scanner Hulp', href: '/diensten/printer-scanner-hulp', desc: 'Print niet of installeren', icon: 'printer' },
+  { title: 'Email Hulp', href: '/diensten/email-hulp', desc: 'Outlook, Gmail, wachtwoord', icon: 'email' },
+  { title: 'Tablet & Smartphone Hulp', href: '/diensten/tablet-smartphone-hulp', desc: 'iPad, iPhone, Android hulp', icon: 'phone' },
+  { title: 'Smart Home & Domotica', href: '/diensten/smart-home-domotica', desc: 'Slimme apparaten koppelen', icon: 'home' },
 ]
 
 const testimonials = [
@@ -384,7 +384,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Section */}
-      <section className="py-20 bg-white" aria-labelledby="services-heading">
+      <section className="py-20 bg-gray-50" aria-labelledby="services-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-16">
             <h2 id="services-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
@@ -400,27 +400,49 @@ export default function HomePage() {
               <Link
                 key={idx}
                 href={service.href}
-                className={`group relative h-72 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 ${idx >= 3 ? 'hidden md:block' : ''}`}
+                className={`group bg-white rounded-2xl p-6 shadow-sm hover:shadow-lg border border-gray-100 transition-all duration-300 hover:-translate-y-1 ${idx >= 3 ? 'hidden md:block' : ''}`}
                 role="listitem"
               >
-                <Image
-                  src={service.image}
-                  alt={service.alt}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  loading="lazy"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <h3 className="text-xl font-bold text-white mb-1">{service.title}</h3>
-                  <p className="text-gray-300 text-sm">{service.desc}</p>
+                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center mb-4 group-hover:bg-blue-600 transition-colors">
+                  {service.icon === 'laptop' && (
+                    <svg className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  )}
+                  {service.icon === 'wifi' && (
+                    <svg className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.111 16.404a5.5 5.5 0 017.778 0M12 20h.01m-7.08-7.071c3.904-3.905 10.236-3.905 14.141 0M1.394 9.393c5.857-5.857 15.355-5.857 21.213 0" />
+                    </svg>
+                  )}
+                  {service.icon === 'printer' && (
+                    <svg className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+                    </svg>
+                  )}
+                  {service.icon === 'email' && (
+                    <svg className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  )}
+                  {service.icon === 'phone' && (
+                    <svg className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                    </svg>
+                  )}
+                  {service.icon === 'home' && (
+                    <svg className="w-7 h-7 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                    </svg>
+                  )}
                 </div>
-                <div className="absolute top-4 right-4 w-10 h-10 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity" aria-hidden="true">
-                  <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-600 mb-4">{service.desc}</p>
+                <span className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm group-hover:gap-3 transition-all">
+                  Meer info
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                   </svg>
-                </div>
+                </span>
               </Link>
             ))}
           </div>
