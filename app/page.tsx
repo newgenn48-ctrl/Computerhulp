@@ -336,9 +336,31 @@ export default function HomePage() {
               <span className="block text-blue-600">Zuid-Holland</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-600 mb-6 md:mb-8 leading-relaxed max-w-xl">
-              Hulp nodig met uw computer, laptop, tablet of smartphone? Onze IT-specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis of op afstand. Met geduld en persoonlijke aandacht helpen wij u weer op weg. <strong className="text-gray-900">Binnen 24 uur</strong> geholpen, zonder voorrijkosten.
+            <p className="text-xl md:text-2xl text-gray-600 mb-6 leading-relaxed max-w-xl">
+              Hulp nodig met uw computer, laptop, tablet of smartphone? Onze IT-specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis of op afstand.
             </p>
+
+            {/* USP Badges */}
+            <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Binnen 24 uur geholpen
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Geen voorrijkosten
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                7 dagen per week
+              </span>
+            </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
