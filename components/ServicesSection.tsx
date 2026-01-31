@@ -15,19 +15,6 @@ export const services = [
     ]
   },
   {
-    icon: '🔧',
-    title: 'Laptop & Computer Reparatie',
-    description: 'Laptop kapot? Scherm defect of computer start niet op? Wij repareren alle merken laptops en computers bij u thuis.',
-    slug: '/diensten/laptop-computer-reparatie',
-    features: [
-      'Alle merken: HP, Dell, Lenovo, Apple, etc.',
-      'Scherm reparatie',
-      'Accu en oplader problemen',
-      'SSD en geheugen upgrade',
-      'Toetsenbord en touchpad'
-    ]
-  },
-  {
     icon: '🖨️',
     title: 'Printer & Randapparatuur',
     description: 'Laat uw printer, scanner en randapparatuur probleemloos werken met onze installatie- en hulpservice aan huis.',
@@ -76,6 +63,31 @@ export const services = [
     ]
   },
   {
+    icon: '🧠',
+    title: 'Persoonlijke Training',
+    description: 'Wilt u meer leren over uw computer, internet of programma\'s? Wij bieden persoonlijke training aan huis, afgestemd op uw tempo en niveau.',
+    slug: '/diensten/persoonlijke-training',
+    features: [
+      'Basistraining voor Windows of Mac',
+      'Internet veilig gebruiken',
+      'E-mail en sociale media beheren',
+      'Foto\'s ordenen en bewerken'
+    ]
+  },
+  {
+    icon: '🔧',
+    title: 'Laptop & Computer Reparatie',
+    description: 'Laptop kapot? Scherm defect of computer start niet op? Wij repareren alle merken laptops en computers bij u thuis.',
+    slug: '/diensten/laptop-computer-reparatie',
+    features: [
+      'Alle merken: HP, Dell, Lenovo, Apple, etc.',
+      'Scherm reparatie',
+      'Accu en oplader problemen',
+      'SSD en geheugen upgrade',
+      'Toetsenbord en touchpad'
+    ]
+  },
+  {
     icon: '🏠',
     title: 'Smart Home',
     description: 'Maak uw woning slimmer en comfortabeler met onze Smart Home installatie en ondersteuning. Wij helpen u bij het koppelen en instellen van slimme apparaten.',
@@ -97,19 +109,6 @@ export const services = [
       'Dataherstel van harde schijven en USB-sticks',
       'Back-up oplossingen instellen',
       'Advies voor veilige gegevensopslag'
-    ]
-  },
-  {
-    icon: '🧠',
-    title: 'Persoonlijke Training',
-    description: 'Wilt u meer leren over uw computer, internet of programma\'s? Wij bieden persoonlijke training aan huis, afgestemd op uw tempo en niveau.',
-    slug: '/diensten/persoonlijke-training',
-    features: [
-      'Basistraining voor Windows of Mac',
-      'Internet veilig gebruiken',
-      'E-mail en sociale media beheren',
-      'Foto\'s ordenen en bewerken',
-      'Leren werken met Office-programma\'s'
     ]
   },
   {
