@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
+import ServicesSection from '@/components/ServicesSection'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u bij u Thuis',
@@ -347,7 +348,7 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Hulp nodig met uw computer, laptop, printer of WiFi? Onze specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
+              Heb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
             </p>
 
             {/* USP Badges */}
@@ -407,113 +408,14 @@ export default function ComputerhulpAanHuisPage() {
 
 
 
-      {/* Services Section - Premium Grid */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Section Header */}
-          <div className="max-w-3xl mb-16">
-            <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Onze expertise</span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Waar wij u mee helpen
-            </h2>
-            <p className="text-xl text-gray-600">
-              Van eenvoudige vragen tot complexe problemen — wij komen bij u thuis en lossen het direct op.
-            </p>
-          </div>
-
-          {/* Services Grid - Bento Style */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Large Featured Card */}
-            <div className="md:col-span-2 lg:col-span-2 group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <Image src="/Computer & Laptop Hulp.webp" alt="Computer & Laptop Hulp aan huis" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 66vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 sm:p-10 flex flex-col justify-end min-h-[400px]">
-                <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-1.5 rounded-full mb-4 w-fit">Meest gevraagd</span>
-                <h3 className="text-3xl font-bold text-white mb-3">Computer & Laptop Hulp</h3>
-                <p className="text-white/80 text-lg mb-6 max-w-xl">Trage computer? Opstartproblemen? Virus? Wij lossen alle computer- en laptopproblemen snel en vakkundig op.</p>
-                <Link href="/diensten/computer-laptop-hulp" className="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all">
-                  Meer informatie
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* WiFi Card */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <Image src="/WiFi & Netwerk Hulp.webp" alt="WiFi en Netwerk hulp aan huis" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 flex flex-col justify-end min-h-[400px]">
-                <h3 className="text-2xl font-bold text-white mb-2">WiFi & Netwerk</h3>
-                <p className="text-white/80 mb-4">Slecht bereik of traag internet? Wij optimaliseren uw netwerk.</p>
-                <Link href="/diensten/wifi-internet-hulp" className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all">
-                  Bekijken <span className="text-xl">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Printer Card */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <Image src="/Printer & Randapparatuur.webp" alt="Printer en Scanner hulp aan huis" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 flex flex-col justify-end min-h-[300px]">
-                <h3 className="text-2xl font-bold text-white mb-2">Printer & Scanner</h3>
-                <p className="text-white/80 mb-4">Installatie, configuratie en probleemoplossing.</p>
-                <Link href="/diensten/printer-scanner-hulp" className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all">
-                  Bekijken <span className="text-xl">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Email Card */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <Image src="/E-mail Hulp.webp" alt="E-mail hulp en configuratie aan huis" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 flex flex-col justify-end min-h-[300px]">
-                <h3 className="text-2xl font-bold text-white mb-2">E-mail Hulp</h3>
-                <p className="text-white/80 mb-4">Outlook, Gmail, configuratie en problemen oplossen.</p>
-                <Link href="/diensten/email-hulp" className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all">
-                  Bekijken <span className="text-xl">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Tablet & Smartphone */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <Image src="/Tablet & Smartphone Hulp.webp" alt="Tablet en Smartphone hulp aan huis" fill className="object-cover transition-transform duration-700 group-hover:scale-105" sizes="(max-width: 768px) 100vw, 33vw" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 flex flex-col justify-end min-h-[300px]">
-                <h3 className="text-2xl font-bold text-white mb-2">Tablet & Smartphone</h3>
-                <p className="text-white/80 mb-4">iPad, iPhone, Android — wij helpen u op weg.</p>
-                <Link href="/diensten/tablet-smartphone-hulp" className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all">
-                  Bekijken <span className="text-xl">→</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* View All Link */}
-          <div className="mt-12 text-center">
-            <Link href="/diensten" className="inline-flex items-center gap-3 text-gray-900 font-semibold text-lg hover:gap-5 transition-all">
-              Bekijk alle diensten
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Services Section */}
+      <ServicesSection
+        title="Waar Wij U Mee Helpen"
+        description="Van eenvoudige vragen tot complexe problemen — wij komen bij u thuis en lossen het direct op"
+        showFeatures={true}
+        limitServices={6}
+        showAllButton={true}
+      />
 
       {/* How it works - Premium Timeline */}
       <section className="py-24 bg-white">

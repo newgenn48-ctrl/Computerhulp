@@ -30,7 +30,8 @@ export default function Footer() {
                 alt="Computerhulp Zuid-Holland"
                 width={180}
                 height={56}
-                className="object-contain brightness-0 invert hover:opacity-80 transition-opacity"
+                className="brightness-0 invert hover:opacity-80 transition-opacity"
+                style={{ width: 'auto', height: 'auto' }}
               />
             </Link>
             <p className="text-gray-400 text-sm mb-4 max-w-md">

@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import ServicesImageCards from '@/components/ServicesImageCards'
+import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 
@@ -276,7 +276,7 @@ export default function StudentAanHuisPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Hulp nodig met uw computer, laptop of tablet? Onze IT-studenten lossen het <strong className="text-gray-900">geduldig en vakkundig</strong> op - bij u thuis.
+              Heb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze IT-studenten lossen het <strong className="text-gray-900">geduldig en vakkundig</strong> op - bij u thuis.
             </p>
 
             {/* USP Badges */}
@@ -328,10 +328,13 @@ export default function StudentAanHuisPage() {
 
 
 
-      {/* 3. Services overview - with images */}
-      <ServicesImageCards
+      {/* 3. Services overview */}
+      <ServicesSection
         title="Waar Onze Studenten U Mee Helpen"
         description="Van simpel tot complex - onze IT-studenten helpen u met alle technische problemen"
+        showFeatures={true}
+        limitServices={6}
+        showAllButton={true}
       />
 
       {/* 4. How it works */}

@@ -1,7 +1,9 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import NearbyCities from '@/components/NearbyCities'
+import ServicesSection from '@/components/ServicesSection'
 import { City } from '@/lib/cities'
 
 interface ComputerhulpCityPageTemplateProps {
@@ -229,51 +231,53 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
       />
 
-      {/* Hero Section - Premium Design */}
-      <section className="relative min-h-screen bg-white overflow-hidden">
-        {/* Full-width background image with overlay */}
+      {/* Hero Section */}
+      <section className="relative min-h-[70vh] md:min-h-screen bg-white overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/Student aan huis.webp"
             alt={`Computerhulp aan huis in ${city.name}`}
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            priority
+            sizes="100vw"
           />
-          {/* Mobile: stronger overlay for readability */}
-          <div className="absolute inset-0 bg-white/80 md:hidden"></div>
-          {/* Desktop: subtle gradient to show photo */}
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/80 to-transparent"></div>
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-white/30 via-transparent to-white/60"></div>
+          <div className="absolute inset-0 bg-blue-50/70 md:hidden"></div>
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-blue-50/90 via-blue-50/60 to-transparent"></div>
+          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-blue-50/30 via-transparent to-blue-50/50"></div>
         </div>
 
-        {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-24 min-h-screen flex items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
-              Computerhulp aan Huis <span className="text-blue-600">{city.name}</span>
+            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+              Computerhulp aan Huis
+              <span className="block text-blue-600">{city.name}</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Betrouwbare computerhulp aan huis in {city.name} voor al uw <strong className="text-gray-900 font-semibold">computer, laptop, printer, WiFi en andere digitale problemen</strong>. Wij komen bij u thuis en lossen het vakkundig op.
+            <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
+              Heb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze specialisten in {city.name} lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
             </p>
 
-            {/* Key Stats */}
-            <div className="flex flex-wrap gap-8 mb-10 pb-10 border-b border-gray-200">
-              <div>
-                <div className="text-4xl font-bold text-gray-900">10+</div>
-                <div className="text-sm text-gray-500 mt-1">Jaar ervaring</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-gray-900">7/7</div>
-                <div className="text-sm text-gray-500 mt-1">Dagen bereikbaar</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-gray-900">24u</div>
-                <div className="text-sm text-gray-500 mt-1">Binnen ter plaatse</div>
-              </div>
-              <div>
-                <div className="text-4xl font-bold text-gray-900">€0</div>
-                <div className="text-sm text-gray-500 mt-1">Voorrijkosten</div>
-              </div>
+            {/* USP Badges */}
+            <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Binnen 24 uur geholpen
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                Geen voorrijkosten
+              </span>
+              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                7 dagen per week
+              </span>
             </div>
 
             {/* CTA Buttons */}
@@ -299,123 +303,16 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
             </div>
           </div>
         </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-gray-400 rounded-full animate-bounce"></div>
-          </div>
-        </div>
       </section>
 
-      {/* Services Section - Premium Grid */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Section Header */}
-          <div className="max-w-3xl mb-16">
-            <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Onze expertise</span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Computerhulp aan huis {city.name}
-            </h2>
-            <p className="text-xl text-gray-600">
-              Van eenvoudige vragen tot complexe problemen — alles lossen wij ter plekke op.
-            </p>
-          </div>
-
-          {/* Services Grid - Bento Style */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {/* Large Featured Card */}
-            <div className="md:col-span-2 lg:col-span-2 group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <img src="/Computer & Laptop Hulp.webp" alt="Computer & Laptop Hulp" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 sm:p-10 flex flex-col justify-end min-h-[400px]">
-                <span className="inline-block bg-white/20 backdrop-blur-sm text-white text-sm font-medium px-4 py-1.5 rounded-full mb-4 w-fit">Meest gevraagd</span>
-                <h3 className="text-3xl font-bold text-white mb-3">Computer & Laptop Hulp</h3>
-                <p className="text-white/80 text-lg mb-6 max-w-xl">Trage computer? Opstartproblemen? Virus? Wij lossen alle computer- en laptopproblemen snel en vakkundig op in {city.name}.</p>
-                <Link href="/diensten/computer-laptop-hulp" className="inline-flex items-center gap-2 text-white font-semibold group-hover:gap-4 transition-all">
-                  Meer informatie
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
-            </div>
-
-            {/* WiFi Card */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <img src="/WiFi & Netwerk Hulp.webp" alt="WiFi & Netwerk" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 flex flex-col justify-end min-h-[400px]">
-                <h3 className="text-2xl font-bold text-white mb-2">WiFi & Netwerk</h3>
-                <p className="text-white/80 mb-4">Slecht bereik of traag internet? Wij optimaliseren uw netwerk.</p>
-                <Link href="/diensten/wifi-internet-hulp" className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all">
-                  Bekijken <span className="text-xl">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Printer Card */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <img src="/Printer & Randapparatuur.webp" alt="Printer & Scanner" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 flex flex-col justify-end min-h-[300px]">
-                <h3 className="text-2xl font-bold text-white mb-2">Printer & Scanner</h3>
-                <p className="text-white/80 mb-4">Installatie, configuratie en probleemoplossing.</p>
-                <Link href="/diensten/printer-scanner-hulp" className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all">
-                  Bekijken <span className="text-xl">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Email Card */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <img src="/E-mail Hulp.webp" alt="E-mail Hulp" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 flex flex-col justify-end min-h-[300px]">
-                <h3 className="text-2xl font-bold text-white mb-2">E-mail Hulp</h3>
-                <p className="text-white/80 mb-4">Outlook, Gmail, configuratie en problemen oplossen.</p>
-                <Link href="/diensten/email-hulp" className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all">
-                  Bekijken <span className="text-xl">→</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Tablet & Smartphone */}
-            <div className="group relative overflow-hidden rounded-3xl bg-white shadow-sm hover:shadow-xl transition-all duration-500">
-              <div className="absolute inset-0">
-                <img src="/Tablet & Smartphone Hulp.webp" alt="Tablet & Smartphone" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent"></div>
-              </div>
-              <div className="relative p-8 flex flex-col justify-end min-h-[300px]">
-                <h3 className="text-2xl font-bold text-white mb-2">Tablet & Smartphone</h3>
-                <p className="text-white/80 mb-4">iPad, iPhone, Android — wij helpen u op weg.</p>
-                <Link href="/diensten/tablet-smartphone-hulp" className="inline-flex items-center gap-2 text-white font-medium group-hover:gap-3 transition-all">
-                  Bekijken <span className="text-xl">→</span>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* View All Link */}
-          <div className="mt-12 text-center">
-            <Link href="/diensten" className="inline-flex items-center gap-3 text-gray-900 font-semibold text-lg hover:gap-5 transition-all">
-              Bekijk alle diensten
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-              </svg>
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* Services Section */}
+      <ServicesSection
+        title={`Computerhulp aan Huis ${city.name}`}
+        description="Van eenvoudige vragen tot complexe problemen — alles lossen wij ter plekke op"
+        showFeatures={true}
+        limitServices={6}
+        showAllButton={true}
+      />
 
       {/* How it works - Premium Timeline */}
       <section className="py-24 bg-white">

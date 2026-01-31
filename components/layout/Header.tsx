@@ -94,6 +94,7 @@ export default function Header() {
                 src="/Computerhulp Zuid Holland Logo.webp"
                 alt="Computerhulp Zuid-Holland"
                 fill
+                sizes="180px"
                 className="object-contain group-hover:scale-105 transition-transform"
                 priority
               />
