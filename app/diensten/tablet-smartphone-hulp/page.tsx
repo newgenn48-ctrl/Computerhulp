@@ -3,11 +3,11 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Tablet & Smartphone Hulp aan Huis in Zuid-Holland | Binnen 24u',
-  description: 'Tablet of smartphone hulp nodig? iPad, iPhone of Android problemen? Wij helpen aan huis in Zuid-Holland. Geen voorrijkosten. Bel 06-42548451.',
+  description: 'Tablet of smartphone hulp nodig? Wij helpen aan huis in Zuid-Holland. Geen voorrijkosten. Bel 06-42548451.',
   keywords: 'tablet hulp, smartphone hulp, ipad hulp, iphone hulp, android hulp, telefoon problemen, tablet aan huis, Zuid-Holland',
   openGraph: {
     title: 'Tablet & Smartphone Hulp aan Huis',
-    description: 'Tablet of smartphone hulp nodig? iPad, iPhone, Android problemen? Wij helpen aan huis in Zuid-Holland.',
+    description: 'Tablet of smartphone hulp nodig? Wij helpen aan huis in Zuid-Holland.',
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/tablet-smartphone-hulp'},
   robots: { index: true, follow: true },
@@ -27,7 +27,7 @@ const structuredData = {
   },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
   offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' },
-  description: 'Professionele tablet en smartphone hulp aan huis. Van nieuwe apparaat setup tot WhatsApp installatie en foto\'s overzetten. We komen bij u thuis in Zuid-Holland.'
+  description: 'Professionele tablet en smartphone hulp aan huis. Van nieuwe apparaat setup tot app installatie en foto\'s overzetten. We komen bij u thuis in Zuid-Holland.'
 }
 
 const breadcrumbData = {
@@ -44,8 +44,8 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Kunnen jullie WhatsApp overzetten naar een nieuwe telefoon?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we zetten WhatsApp inclusief alle chats en foto\'s over naar uw nieuwe telefoon. We zorgen dat alles behouden blijft.' } },
-    { '@type': 'Question', name: 'Helpen jullie ook met iPads en iPhones?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we helpen met alle tablets en smartphones: iPad, iPhone, Samsung, Huawei, en alle andere merken.' } },
+    { '@type': 'Question', name: 'Kunnen jullie apps en data overzetten naar een nieuwe telefoon?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we zetten al uw apps en data inclusief alle chats en foto\'s over naar uw nieuwe telefoon. We zorgen dat alles behouden blijft.' } },
+    { '@type': 'Question', name: 'Helpen jullie met alle merken tablets en smartphones?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we helpen met alle merken tablets en smartphones.' } },
     { '@type': 'Question', name: 'Kunnen jullie apps installeren en uitleggen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren alle apps die u nodig heeft en leggen rustig uit hoe ze werken.' } }
   ]
 }
@@ -62,16 +62,16 @@ const problems = [
 ]
 
 const services = [
-  { title: 'Nieuwe Apparaat Setup', items: ['iPad, Samsung tablet of andere tablet instellen', 'iPhone of Android smartphone configureren', 'Google of Apple account aanmaken', 'WiFi, Bluetooth en alle instellingen'] },
-  { title: 'App Installatie', items: ['WhatsApp, Facebook, Instagram installeren', 'Banking apps veilig instellen', 'Email apps configureren', 'App gebruik en bediening uitleggen'] },
-  { title: 'Data Overzetten', items: ['Contacten overzetten naar nieuwe apparaat', 'Foto\'s en video\'s veilig migreren', 'WhatsApp chats behouden', 'Oude telefoon data naar nieuwe'] },
+  { title: 'Nieuwe Apparaat Setup', items: ['Tablet instellen (alle merken)', 'Smartphone configureren (alle merken)', 'Account aanmaken en instellen', 'WiFi, Bluetooth en alle instellingen'] },
+  { title: 'App Installatie', items: ['Berichten en sociale media apps installeren', 'Banking apps veilig instellen', 'Email apps configureren', 'App gebruik en bediening uitleggen'] },
+  { title: 'Data Overzetten', items: ['Contacten overzetten naar nieuwe apparaat', 'Foto\'s en video\'s veilig migreren', 'Berichten en chats behouden', 'Oude telefoon data naar nieuwe'] },
   { title: 'Geheugen Opruimen', items: ['Onnodige bestanden verwijderen', 'Cache en tijdelijke data opschonen', 'Foto\'s naar cloud of computer', 'Apparaat weer snel en ruimte vrij'] }
 ]
 
 const faqs = [
-  { question: 'Kunnen jullie WhatsApp overzetten naar een nieuwe telefoon?', answer: 'Ja, we zetten WhatsApp inclusief alle chats, foto\'s en video\'s over naar uw nieuwe telefoon. We zorgen dat alles behouden blijft en leggen uit hoe het werkt.' },
-  { question: 'Helpen jullie ook met iPads en iPhones?', answer: 'Ja, we helpen met alle tablets en smartphones: iPad, iPhone, Samsung, Huawei, en alle andere merken. Onze specialisten kennen zowel iOS als Android.' },
-  { question: 'Kunnen jullie apps installeren en uitleggen hoe ze werken?', answer: 'Absoluut! We installeren alle apps die u nodig heeft en nemen de tijd om rustig uit te leggen hoe ze werken. Van WhatsApp tot online bankieren.' },
+  { question: 'Kunnen jullie apps en data overzetten naar een nieuwe telefoon?', answer: 'Ja, we zetten al uw apps inclusief alle chats, foto\'s en video\'s over naar uw nieuwe telefoon. We zorgen dat alles behouden blijft en leggen uit hoe het werkt.' },
+  { question: 'Helpen jullie met alle merken tablets en smartphones?', answer: 'Ja, we helpen met alle merken tablets en smartphones. Onze specialisten kennen alle systemen.' },
+  { question: 'Kunnen jullie apps installeren en uitleggen hoe ze werken?', answer: 'Absoluut! We installeren alle apps die u nodig heeft en nemen de tijd om rustig uit te leggen hoe ze werken. Van berichten apps tot online bankieren.' },
   { question: 'Mijn tablet is heel traag, kunnen jullie dat verhelpen?', answer: 'Ja, we kunnen uw tablet opschonen, onnodige apps verwijderen en het geheugen vrijmaken. Vaak wordt uw tablet daardoor weer een stuk sneller.' },
   { question: 'Kunnen jullie foto\'s van mijn telefoon naar de computer zetten?', answer: 'Ja, we zetten al uw foto\'s over naar uw computer en kunnen ook een backup naar de cloud instellen zodat u nooit meer foto\'s kwijtraakt.' }
 ]
@@ -96,7 +96,7 @@ export default function TabletSmartphoneHulpPage() {
                 <span className="block text-blue-600">Direct Bij U Thuis</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Tablet instellen, WhatsApp hulp nodig, apps installeren of foto&apos;s overzetten? We komen bij u thuis in Zuid-Holland en helpen met uw tablet en smartphone. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Tablet instellen, apps installeren of foto&apos;s overzetten? We komen bij u thuis in Zuid-Holland en helpen met uw tablet en smartphone. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -174,7 +174,7 @@ export default function TabletSmartphoneHulpPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Wat We Voor U Doen</h2>
-            <p className="text-lg text-gray-600">Van nieuwe tablet setup tot WhatsApp installatie</p>
+            <p className="text-lg text-gray-600">Van nieuwe tablet setup tot app installatie</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {services.map((service, idx) => (

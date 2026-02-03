@@ -61,10 +61,10 @@ const problems = [
 ]
 
 const services = [
-  { title: 'Basisvaardigheden', items: ['Muis en toetsenbord bedienen', 'Windows navigeren en programma\'s openen', 'Bestanden en mappen beheren', 'Veilig wachtwoorden en accounts'] },
-  { title: 'Internet Training', items: ['Veilig internetten en zoeken met Google', 'Online winkelen en betalen', 'Herkennen van phishing en spam', 'Social media gebruik (Facebook, etc.)'] },
+  { title: 'Basisvaardigheden', items: ['Muis en toetsenbord bedienen', 'Computer navigeren en programma\'s openen', 'Bestanden en mappen beheren', 'Veilig wachtwoorden en accounts'] },
+  { title: 'Internet Training', items: ['Veilig internetten en zoeken', 'Online winkelen en betalen', 'Herkennen van phishing en spam', 'Social media gebruik'] },
   { title: 'Office Programma\'s', items: ['Word: brieven en documenten maken', 'Excel: tabellen en eenvoudige formules', 'Documenten opslaan en printen', 'PDF bestanden maken en openen'] },
-  { title: 'Foto & Communicatie', items: ['Foto\'s van camera/telefoon importeren', 'Foto\'s ordenen en bewerken', 'Email schrijven en versturen', 'Videobellen via Zoom of WhatsApp'] }
+  { title: 'Foto & Communicatie', items: ['Foto\'s van camera/telefoon importeren', 'Foto\'s ordenen en bewerken', 'Email schrijven en versturen', 'Videobellen leren'] }
 ]
 
 const faqs = [
@@ -72,7 +72,7 @@ const faqs = [
   { question: 'Kunnen jullie mij leren online te bankieren?', answer: 'Ja, we leren u veilig online bankieren, van inloggen met DigiD tot overmaken. We leggen ook uit hoe u phishing en oplichting herkent en voorkomt.' },
   { question: 'Geven jullie ook les in Word en Excel?', answer: 'Absoluut! We geven les in Word voor brieven en documenten, en Excel voor tabellen en berekeningen. We stemmen de les af op uw niveau en tempo.' },
   { question: 'Kan ik meerdere lessen boeken?', answer: 'Ja, u kunt zoveel lessen boeken als u wilt. Veel klanten boeken een serie van 3-5 lessen om de stof goed onder de knie te krijgen.' },
-  { question: 'Leren jullie ook videobellen met WhatsApp of Zoom?', answer: 'Ja, we leren u videobellen met WhatsApp, Zoom, Skype of andere programma\'s. Zo kunt u met kinderen, kleinkinderen of vrienden beeldbellen.' }
+  { question: 'Leren jullie ook videobellen?', answer: 'Ja, we leren u videobellen met alle gangbare programma\'s. Zo kunt u met kinderen, kleinkinderen of vrienden beeldbellen.' }
 ]
 
 export default function PersoonlijkeTrainingPage() {

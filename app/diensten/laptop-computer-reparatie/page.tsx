@@ -43,7 +43,7 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Repareren jullie alle merken laptops?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we repareren alle merken: HP, Dell, Lenovo, Asus, Acer, Apple MacBook, Microsoft Surface en meer.' } },
+    { '@type': 'Question', name: 'Repareren jullie alle merken laptops?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we repareren alle merken laptops en computers.' } },
     { '@type': 'Question', name: 'Kunnen jullie een kapot scherm vervangen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we vervangen laptop schermen aan huis. We bestellen het juiste scherm en komen het bij u installeren.' } },
     { '@type': 'Question', name: 'Wat als de reparatie niet lukt?', acceptedAnswer: { '@type': 'Answer', text: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose. Geen reparatie = geen volledige kosten.' } }
   ]
@@ -64,11 +64,11 @@ const services = [
   { title: 'Scherm & Display', items: ['Scherm vervanging laptop', 'Scharnier reparatie', 'Backlight problemen', 'Beeldkwaliteit optimaliseren'] },
   { title: 'Hardware Reparatie', items: ['Toetsenbord vervanging', 'Touchpad reparatie', 'USB poort reparatie', 'Oplader en accu problemen'] },
   { title: 'Prestatie Upgrade', items: ['SSD upgrade (10x sneller)', 'RAM geheugen uitbreiden', 'Oververhitting oplossen', 'Ventilator schoonmaken/vervangen'] },
-  { title: 'Software & Systeem', items: ['Windows herstellen', 'Blue screen oplossen', 'Virus verwijderen', 'Data recovery bij crash'] }
+  { title: 'Software & Systeem', items: ['Besturingssysteem herstellen', 'Blue screen oplossen', 'Virus verwijderen', 'Data recovery bij crash'] }
 ]
 
 const faqs = [
-  { question: 'Repareren jullie alle merken laptops en computers?', answer: 'Ja, we repareren alle merken: HP, Dell, Lenovo, Asus, Acer, Apple MacBook, Microsoft Surface, Samsung, MSI, Toshiba, Sony en meer. Van zakelijke laptops tot gaming computers.' },
+  { question: 'Repareren jullie alle merken laptops en computers?', answer: 'Ja, we repareren alle merken laptops en computers. Van zakelijke laptops tot gaming computers.' },
   { question: 'Kunnen jullie een kapot laptop scherm vervangen?', answer: 'Ja, we vervangen laptop schermen aan huis. We bestellen het juiste scherm voor uw model en komen het bij u installeren. Meestal binnen enkele dagen geregeld.' },
   { question: 'Wat als de reparatie niet lukt?', answer: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). Geen reparatie = geen volledige kosten. We zijn altijd eerlijk vooraf.' },
   { question: 'Kunnen jullie mijn laptop sneller maken met een SSD?', answer: 'Ja, een SSD upgrade is een van onze meest populaire diensten. Uw laptop kan tot 10x sneller worden. We zetten al uw data over naar de nieuwe SSD.' },

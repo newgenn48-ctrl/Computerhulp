@@ -88,10 +88,10 @@ const faqData = {
     },
     {
       '@type': 'Question',
-      name: 'Repareren jullie ook Apple MacBooks?',
+      name: 'Repareren jullie alle merken laptops?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Ja, we helpen met alle merken computers en laptops, inclusief Apple MacBooks, Windows PCs, en Chromebooks.'
+        text: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem.'
       }
     }
   ]
@@ -112,7 +112,7 @@ const problems = [
   },
   {
     title: 'Vreemde Foutmeldingen',
-    description: 'Windows errors, waarschuwingen, meldingen die u niet begrijpt.',
+    description: 'Foutmeldingen, waarschuwingen, meldingen die u niet begrijpt.',
     icon: 'M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
   },
   {
@@ -136,7 +136,7 @@ const services = [
   {
     title: 'Reparatie & Herstel',
     items: [
-      'Windows herstellen en opnieuw installeren',
+      'Besturingssysteem herstellen en opnieuw installeren',
       'Hardware reparatie (scherm, toetsenbord, accu)',
       'Data recovery bij defecte harde schijf',
       'Virusverwijdering en beveiliging'
@@ -154,7 +154,7 @@ const services = [
   {
     title: 'Installatie & Setup',
     items: [
-      'Windows 10/11 installatie',
+      'Besturingssysteem installatie',
       'Programma\'s installeren (Office, Adobe, etc.)',
       'Email en cloud koppelen',
       'Oude computer overzetten naar nieuwe'
@@ -164,7 +164,7 @@ const services = [
     title: 'Beveiliging & Onderhoud',
     items: [
       'Antivirus software installeren',
-      'Windows Firewall configureren',
+      'Firewall configureren',
       'Automatische backup opzetten',
       'Privacy instellingen optimaliseren'
     ]
@@ -181,8 +181,8 @@ const faqs = [
     answer: 'Ja, in veel gevallen kunnen we data terughalen van defecte computers of harde schijven. We maken eerst een diagnose en geven u een eerlijk advies over de mogelijkheden.'
   },
   {
-    question: 'Repareren jullie ook Apple MacBooks?',
-    answer: 'Ja, we helpen met alle merken computers en laptops, inclusief Apple MacBooks, Windows PCs, en Chromebooks. Onze specialisten hebben ervaring met alle systemen.'
+    question: 'Repareren jullie alle merken laptops?',
+    answer: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem. Onze specialisten hebben ervaring met alle systemen.'
   },
   {
     question: 'Wat als het probleem niet opgelost kan worden?',

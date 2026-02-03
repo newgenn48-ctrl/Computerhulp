@@ -268,7 +268,7 @@ const testimonials = [
     initials: 'L'
   },
   {
-    quote: 'Heel geduldig uitgelegd hoe ik mijn iPad moet gebruiken. Nu kan ik zelf foto\'s maken en versturen naar mijn kleinkinderen!',
+    quote: 'Heel geduldig uitgelegd hoe ik mijn tablet moet gebruiken. Nu kan ik zelf foto\'s maken en versturen naar mijn kleinkinderen!',
     name: 'De heer Henk',
     location: 'Delft',
     initials: 'H'

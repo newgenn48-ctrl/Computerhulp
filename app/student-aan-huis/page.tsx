@@ -693,7 +693,7 @@ export default function StudentAanHuisPage() {
 
 const testimonials = [
   {
-    quote: 'Zo fijn om door een jongere geholpen te worden! Hij legde WhatsApp uit op een manier die ik begreep. En zo geduldig!',
+    quote: 'Zo fijn om door een jongere geholpen te worden! Hij legde alles uit op een manier die ik begreep. En zo geduldig!',
     initials: 'EJ',
     name: 'Mevrouw De Jong',
     location: 'Den Haag'

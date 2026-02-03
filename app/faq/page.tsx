@@ -193,8 +193,8 @@ const faqCategories = [
         answer: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, email, tablets, smartphones, software installeren, virussen verwijderen, data herstel, en persoonlijke training. Als het met technologie te maken heeft, helpen we.'
       },
       {
-        question: 'Helpen jullie ook met Macs/Apple?',
-        answer: 'Ja, we werken met zowel Windows als Mac systemen. Ook iPhones en iPads kunnen we helpen instellen en oplossen.'
+        question: 'Helpen jullie met alle merken computers?',
+        answer: 'Ja, we werken met alle besturingssystemen en alle merken computers, laptops, tablets en smartphones.'
       },
       {
         question: 'Kunnen jullie mijn data redden?',

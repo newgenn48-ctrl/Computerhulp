@@ -67,7 +67,7 @@ const services = [
 ]
 
 const faqs = [
-  { question: 'Kunnen jullie mijn nieuwe printer installeren?', answer: 'Ja, we installeren alle merken printers (HP, Canon, Epson, Brother, etc.) en zorgen dat deze werkt vanaf al uw computers, telefoons en tablets.' },
+  { question: 'Kunnen jullie mijn nieuwe printer installeren?', answer: 'Ja, we installeren alle merken printers en zorgen dat deze werkt vanaf al uw computers, telefoons en tablets.' },
   { question: 'Waarom print mijn printer niet?', answer: 'Dit kan vele oorzaken hebben: driver problemen, verbindingsproblemen, lege inkt, papierstoring, of een offline printer. We onderzoeken dit en lossen het ter plekke op.' },
   { question: 'Helpen jullie ook met draadloos printen?', answer: 'Ja, we maken uw printer draadloos zodat u kunt printen vanaf elke plek in huis, ook vanaf uw telefoon of tablet.' },
   { question: 'Kan ik ook scannen naar mijn email?', answer: 'Ja, als uw printer/scanner dit ondersteunt, stellen we scan naar email in zodat gescande documenten direct naar uw inbox gaan.' },

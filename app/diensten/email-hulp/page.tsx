@@ -3,11 +3,11 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'E-mail Hulp aan Huis in Zuid-Holland | Binnen 24u',
-  description: 'E-mail problemen? Outlook, Gmail, wachtwoord vergeten of mailbox vol? Wij komen bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel 06-42548451.',
+  description: 'E-mail problemen? Wachtwoord vergeten of mailbox vol? Wij komen bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel 06-42548451.',
   keywords: 'email hulp, outlook hulp, gmail hulp, email instellen, wachtwoord vergeten, mailbox vol, email aan huis, Zuid-Holland',
   openGraph: {
     title: 'E-mail Hulp aan Huis',
-    description: 'E-mail problemen? Outlook, Gmail of wachtwoord vergeten? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
+    description: 'E-mail problemen? Wachtwoord vergeten? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
     type: 'website'},
   alternates: {
     canonical: 'https://computerhulpzh.nl/diensten/email-hulp'},
@@ -26,7 +26,7 @@ const structuredData = {
   },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
   offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' },
-  description: 'Professionele e-mail hulp aan huis. Outlook, Gmail en andere email configureren en problemen oplossen. We komen bij u thuis in Zuid-Holland.'
+  description: 'Professionele e-mail hulp aan huis. Alle e-mailprogramma\'s configureren en problemen oplossen. We komen bij u thuis in Zuid-Holland.'
 }
 
 const breadcrumbData = {
@@ -43,7 +43,7 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Kunnen jullie mijn email wachtwoord herstellen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we helpen u bij het herstellen van wachtwoorden voor Outlook, Gmail, Ziggo, KPN en andere providers.' } },
+    { '@type': 'Question', name: 'Kunnen jullie mijn email wachtwoord herstellen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we helpen u bij het herstellen van wachtwoorden voor alle e-mail providers.' } },
     { '@type': 'Question', name: 'Helpen jullie ook met email op mijn telefoon?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we stellen uw email in op al uw apparaten: computer, laptop, tablet en telefoon.' } }
   ]
 }
@@ -60,18 +60,18 @@ const problems = [
 ]
 
 const services = [
-  { title: 'Email Configuratie', items: ['Outlook instellen en configureren', 'Gmail account koppelen', 'Email op telefoon instellen', 'Meerdere accounts beheren'] },
+  { title: 'Email Configuratie', items: ['E-mailprogramma instellen en configureren', 'E-mail account koppelen', 'Email op telefoon instellen', 'Meerdere accounts beheren'] },
   { title: 'Wachtwoord Herstel', items: ['Wachtwoord terughalen', 'Account beveiligen', 'Twee-factor authenticatie', 'Herstel opties instellen'] },
   { title: 'Problemen Oplossen', items: ['Email verzend/ontvangst problemen', 'Spam filter instellen', 'Mailbox opruimen', 'Synchronisatie problemen'] },
   { title: 'Data Beheer', items: ['Contacten importeren/exporteren', 'Agenda synchroniseren', 'Email backup maken', 'Oude emails archiveren'] }
 ]
 
 const faqs = [
-  { question: 'Kunnen jullie mijn email wachtwoord herstellen?', answer: 'Ja, we helpen u bij het herstellen van wachtwoorden voor Outlook, Gmail, Ziggo, KPN en andere email providers. We zorgen ook dat uw account weer veilig is.' },
+  { question: 'Kunnen jullie mijn email wachtwoord herstellen?', answer: 'Ja, we helpen u bij het herstellen van wachtwoorden voor alle e-mail providers. We zorgen ook dat uw account weer veilig is.' },
   { question: 'Helpen jullie ook met email op mijn telefoon?', answer: 'Ja, we stellen uw email in op al uw apparaten: computer, laptop, tablet en telefoon. Zo heeft u overal toegang tot uw mail.' },
   { question: 'Mijn mailbox is vol, wat nu?', answer: 'We helpen u uw mailbox op te ruimen door oude en onnodige emails te verwijderen. Ook kunnen we uw opslag uitbreiden of emails archiveren.' },
   { question: 'Ik krijg veel spam, kunnen jullie dat stoppen?', answer: 'We configureren uw spam filter optimaal en leren u hoe u spam kunt herkennen en blokkeren. Bij ernstige gevallen kunnen we extra maatregelen nemen.' },
-  { question: 'Kan ik mijn oude emails overzetten naar een nieuw email adres?', answer: 'Ja, we kunnen emails, contacten en agenda\'s migreren naar een nieuw email adres, bijvoorbeeld van Ziggo naar Gmail of andersom.' }
+  { question: 'Kan ik mijn oude emails overzetten naar een nieuw email adres?', answer: 'Ja, we kunnen emails, contacten en agenda\'s migreren naar een nieuw email adres, ongeacht de provider.' }
 ]
 
 export default function EmailHulpPage() {
@@ -94,7 +94,7 @@ export default function EmailHulpPage() {
                 <span className="block text-blue-600">Direct Bij U Thuis</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Wachtwoord vergeten, email werkt niet of hulp bij Outlook of Gmail? We komen bij u thuis in Zuid-Holland en zorgen dat uw email weer perfect werkt. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Wachtwoord vergeten of email werkt niet? We komen bij u thuis in Zuid-Holland en zorgen dat uw email weer perfect werkt. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">

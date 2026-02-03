@@ -45,7 +45,7 @@ const faqData = {
   '@type': 'FAQPage',
   mainEntity: [
     { '@type': 'Question', name: 'Kunnen jullie mijn verwijderde bestanden terughalen?', acceptedAnswer: { '@type': 'Answer', text: 'In veel gevallen wel. Als bestanden recent zijn verwijderd en de schijf nog werkt, is de kans groot dat we ze kunnen herstellen.' } },
-    { '@type': 'Question', name: 'Wat voor backup oplossingen bieden jullie?', acceptedAnswer: { '@type': 'Answer', text: 'We installeren automatische backups naar de cloud (OneDrive, Google Drive) of naar een externe schijf. Zo bent u altijd beschermd.' } },
+    { '@type': 'Question', name: 'Wat voor backup oplossingen bieden jullie?', acceptedAnswer: { '@type': 'Answer', text: 'We installeren automatische backups naar de cloud of naar een externe schijf. Zo bent u altijd beschermd.' } },
     { '@type': 'Question', name: 'Kunnen jullie data van een kapotte harde schijf redden?', acceptedAnswer: { '@type': 'Answer', text: 'Vaak wel. We maken een diagnose en geven u een eerlijk advies over de mogelijkheden voordat we beginnen.' } }
   ]
 }
@@ -63,14 +63,14 @@ const problems = [
 
 const services = [
   { title: 'Dataherstel', items: ['Verwijderde bestanden terughalen', 'Foto\'s en video\'s redden', 'Documenten recovery', 'Data van defecte schijf halen'] },
-  { title: 'Cloud Backup', items: ['OneDrive backup instellen', 'Google Drive configureren', 'Dropbox koppelen', 'Automatische sync activeren'] },
-  { title: 'Lokale Backup', items: ['Externe schijf backup opzetten', 'NAS systeem configureren', 'Windows Backup instellen', 'Automatische schema\'s maken'] },
+  { title: 'Cloud Backup', items: ['Cloud opslag backup instellen', 'Cloud drive configureren', 'Automatische sync activeren', 'Meerdere cloud diensten koppelen'] },
+  { title: 'Lokale Backup', items: ['Externe schijf backup opzetten', 'NAS systeem configureren', 'Automatische backup instellen', 'Backup schema\'s maken'] },
   { title: 'Data Migratie', items: ['Oude computer overzetten', 'Email en contacten migreren', 'Programma\'s en instellingen', 'Veilige overdracht garanderen'] }
 ]
 
 const faqs = [
   { question: 'Kunnen jullie mijn verwijderde bestanden terughalen?', answer: 'In veel gevallen wel. Als bestanden recent zijn verwijderd en de schijf nog werkt, is de kans groot dat we ze kunnen herstellen. We maken eerst een diagnose voordat we beginnen.' },
-  { question: 'Wat voor backup oplossingen bieden jullie?', answer: 'We installeren automatische backups naar de cloud (OneDrive, Google Drive, Dropbox) of naar een externe schijf. We zorgen dat alles automatisch werkt zonder dat u er omkijken naar heeft.' },
+  { question: 'Wat voor backup oplossingen bieden jullie?', answer: 'We installeren automatische backups naar de cloud of naar een externe schijf. We zorgen dat alles automatisch werkt zonder dat u er omkijken naar heeft.' },
   { question: 'Kunnen jullie data van een kapotte harde schijf redden?', answer: 'Vaak wel. We maken een diagnose en geven u een eerlijk advies over de mogelijkheden. Bij ernstige fysieke schade verwijzen we door naar een gespecialiseerd data recovery lab.' },
   { question: 'Hoe lang duurt dataherstel?', answer: 'Dit hangt af van de situatie. Simpele recovery kan binnen een uur, complexere gevallen kunnen langer duren. We geven vooraf een inschatting.' },
   { question: 'Kunnen jullie mijn data overzetten naar een nieuwe computer?', answer: 'Ja, we zetten al uw bestanden, foto\'s, documenten en zelfs email en programma instellingen veilig over naar uw nieuwe computer.' }

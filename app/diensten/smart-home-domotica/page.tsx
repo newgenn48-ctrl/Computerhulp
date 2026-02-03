@@ -3,11 +3,11 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Smart Home & Domotica Hulp aan Huis in Zuid-Holland',
-  description: 'Slimme apparaten installeren? Philips Hue, Nest, Google Home of Alexa hulp nodig? Wij komen bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel nu.',
+  description: 'Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel nu.',
   keywords: 'smart home, domotica, slimme apparaten, google home, alexa, smart home installatie, domotica hulp, Zuid-Holland',
   openGraph: {
     title: 'Smart Home & Domotica Hulp aan Huis',
-    description: 'Slimme apparaten installeren? Philips Hue, Nest, Google Home of Alexa hulp nodig? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
+    description: 'Slimme apparaten installeren? Hulp nodig met slimme verlichting of speakers? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
     type: 'website'},
   alternates: {
     canonical: 'https://computerhulpzh.nl/diensten/smart-home-domotica'},
@@ -26,7 +26,7 @@ const structuredData = {
   },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
   offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' },
-  description: 'Professionele smart home en domotica hulp aan huis. Slimme apparaten installeren, koppelen en automatiseren. Van Philips Hue tot Google Home. We komen bij u.'
+  description: 'Professionele smart home en domotica hulp aan huis. Slimme apparaten installeren, koppelen en automatiseren. We komen bij u thuis in Zuid-Holland.'
 }
 
 const breadcrumbData = {
@@ -43,8 +43,8 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Kunnen jullie mijn Philips Hue lampen installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren Philips Hue en alle andere slimme verlichtingssystemen. We koppelen alles aan uw app en spraakassistent.' } },
-    { '@type': 'Question', name: 'Helpen jullie ook met Google Home of Alexa?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren en configureren Google Home, Amazon Alexa en Apple HomePod. We koppelen al uw slimme apparaten.' } },
+    { '@type': 'Question', name: 'Kunnen jullie slimme verlichting installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren alle slimme verlichtingssystemen. We koppelen alles aan uw app en spraakassistent.' } },
+    { '@type': 'Question', name: 'Helpen jullie ook met slimme speakers?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren en configureren alle slimme speakers en spraakassistenten. We koppelen al uw slimme apparaten.' } },
     { '@type': 'Question', name: 'Kunnen jullie automatiseringen instellen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we maken slimme schema\'s en routines. Bijvoorbeeld: lichten aan bij zonsondergang, of verwarming omlaag als u weggaat.' } }
   ]
 }
@@ -52,27 +52,27 @@ const faqData = {
 const heroImage = '/Smart Home.webp'
 
 const problems = [
-  { title: 'Apparaten Koppelen', description: 'Philips Hue of andere lampen werken niet.', icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' },
-  { title: 'Geen Verbinding', description: 'Google Home of Alexa configureren.', icon: 'M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072' },
-  { title: 'App Problemen', description: 'Nest of Tado slim instellen.', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
+  { title: 'Apparaten Koppelen', description: 'Slimme lampen werken niet of koppelen niet.', icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' },
+  { title: 'Geen Verbinding', description: 'Slimme speaker configureren.', icon: 'M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072' },
+  { title: 'App Problemen', description: 'Slimme thermostaat instellen.', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
   { title: 'Automatisering', description: 'Beveiligingscamera\'s aan app koppelen.', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' },
-  { title: 'Spraakbesturing', description: 'Ring of Nest deurbel aansluiten.', icon: 'M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z' },
+  { title: 'Spraakbesturing', description: 'Slimme deurbel aansluiten.', icon: 'M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z' },
   { title: 'Beveiliging', description: 'Slimme routines en schema\'s instellen.', icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z' }
 ]
 
 const services = [
-  { title: 'Slimme Verlichting', items: ['Philips Hue installeren en koppelen', 'IKEA Tradfri en andere merken', 'Lampen groeperen per kamer', 'Lichtscenes en schema\'s instellen'] },
-  { title: 'Spraakassistenten', items: ['Google Home installeren', 'Amazon Alexa configureren', 'Apple HomePod koppelen', 'Alle apparaten verbinden met stem'] },
+  { title: 'Slimme Verlichting', items: ['Slimme lampen installeren en koppelen', 'Alle merken slimme verlichting', 'Lampen groeperen per kamer', 'Lichtscenes en schema\'s instellen'] },
+  { title: 'Spraakassistenten', items: ['Slimme speaker installeren', 'Spraakassistent configureren', 'Alle merken speakers', 'Alle apparaten verbinden met stem'] },
   { title: 'Klimaat & Veiligheid', items: ['Slimme thermostaat installeren', 'Beveiligingscamera\'s koppelen', 'Slimme deurbellen instellen', 'Bewegingssensoren configureren'] },
   { title: 'Automatisering', items: ['Slimme routines maken', 'Schema\'s voor verlichting', 'Automatische thermostaat regeling', 'Alles koppelen aan uw telefoon'] }
 ]
 
 const faqs = [
-  { question: 'Kunnen jullie mijn Philips Hue lampen installeren?', answer: 'Ja, we installeren Philips Hue en alle andere slimme verlichtingssystemen. We koppelen alles aan uw app, maken groepen per kamer en stellen lichtscenes in.' },
-  { question: 'Helpen jullie ook met Google Home of Alexa?', answer: 'Ja, we installeren en configureren Google Home, Amazon Alexa en Apple HomePod. We koppelen al uw slimme apparaten zodat u ze met uw stem kunt bedienen.' },
+  { question: 'Kunnen jullie slimme verlichting installeren?', answer: 'Ja, we installeren alle slimme verlichtingssystemen. We koppelen alles aan uw app, maken groepen per kamer en stellen lichtscenes in.' },
+  { question: 'Helpen jullie ook met slimme speakers?', answer: 'Ja, we installeren en configureren alle slimme speakers en spraakassistenten. We koppelen al uw slimme apparaten zodat u ze met uw stem kunt bedienen.' },
   { question: 'Kunnen jullie automatiseringen instellen?', answer: 'Absoluut! We maken slimme schema\'s en routines. Bijvoorbeeld: lichten automatisch aan bij zonsondergang, of verwarming omlaag als u weggaat.' },
-  { question: 'Welke slimme thermostaten installeren jullie?', answer: 'We installeren alle populaire slimme thermostaten: Nest, Tado, Honeywell Evohome en meer. We zorgen dat alles perfect werkt met uw verwarmingssysteem.' },
-  { question: 'Kunnen jullie een slimme deurbel installeren?', answer: 'Ja, we installeren Ring, Nest Hello, Eufy en andere slimme deurbellen. We zorgen dat u via uw telefoon kunt zien en spreken met bezoekers.' }
+  { question: 'Welke slimme thermostaten installeren jullie?', answer: 'We installeren alle slimme thermostaten. We zorgen dat alles perfect werkt met uw verwarmingssysteem.' },
+  { question: 'Kunnen jullie een slimme deurbel installeren?', answer: 'Ja, we installeren alle slimme deurbellen. We zorgen dat u via uw telefoon kunt zien en spreken met bezoekers.' }
 ]
 
 export default function SmartHomeDomoticaPage() {

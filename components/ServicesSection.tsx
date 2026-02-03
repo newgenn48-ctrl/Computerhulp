@@ -11,7 +11,7 @@ export const services = [
       'Trage computer versnellen',
       'Virussen en malware verwijderen',
       'Software installeren en updaten',
-      'Ondersteuning voor Windows en Mac'
+      'Alle besturingssystemen'
     ]
   },
   {
@@ -33,7 +33,7 @@ export const services = [
     slug: '/diensten/email-hulp',
     features: [
       'E-mailaccount instellen op computer of telefoon',
-      'Outlook en Gmail configureren',
+      'Alle e-mailprogramma\'s configureren',
       'Spamproblemen oplossen',
       'Wachtwoord herstellen'
     ]
@@ -57,8 +57,8 @@ export const services = [
     slug: '/diensten/tablet-smartphone-hulp',
     features: [
       'Nieuwe tablet of smartphone instellen',
-      'Apps installeren (WhatsApp, foto\'s, etc.)',
-      'iPad, iPhone en Android',
+      'Apps installeren en instellen',
+      'Alle merken tablets en smartphones',
       'Synchronisatie met computer'
     ]
   },
@@ -68,7 +68,7 @@ export const services = [
     description: 'Wilt u meer leren over uw computer, internet of programma\'s? Wij bieden persoonlijke training aan huis, afgestemd op uw tempo en niveau.',
     slug: '/diensten/persoonlijke-training',
     features: [
-      'Basistraining voor Windows of Mac',
+      'Basistraining voor uw computer',
       'Internet veilig gebruiken',
       'E-mail en sociale media beheren',
       'Foto\'s ordenen en bewerken'
@@ -80,7 +80,7 @@ export const services = [
     description: 'Laptop kapot? Scherm defect of computer start niet op? Wij repareren alle merken laptops en computers bij u thuis.',
     slug: '/diensten/laptop-computer-reparatie',
     features: [
-      'Alle merken: HP, Dell, Lenovo, Apple, etc.',
+      'Alle merken laptops en computers',
       'Scherm reparatie',
       'Accu en oplader problemen',
       'SSD en geheugen upgrade',
@@ -95,7 +95,7 @@ export const services = [
     features: [
       'Smart TV installeren en koppelen',
       'Slimme verlichting instellen',
-      'Google Home of Alexa instellen',
+      'Slimme speakers instellen',
       'Videodeurbel installeren'
     ]
   },
@@ -118,7 +118,7 @@ export const services = [
     slug: '/website-laten-maken',
     features: [
       'Custom websites op maat',
-      'WordPress, Shopify of Wix',
+      'Alle website platformen',
       'SEO geoptimaliseerd',
       'Mobiel-vriendelijk design',
       'Onderhoud en support',
@@ -176,10 +176,6 @@ export default function ServicesSection({
                     </div>
                   </div>
 
-                  <p className="text-base sm:text-sm text-gray-600 leading-relaxed mb-4">
-                    {service.description}
-                  </p>
-
                   <ul className="space-y-2 mb-5">
                     {service.features.map((feature, featureIdx) => (
                       <li key={featureIdx} className="flex items-start gap-2 text-base sm:text-sm text-gray-700">
@@ -209,12 +205,9 @@ export default function ServicesSection({
                       {service.icon}
                     </div>
                     <div className="flex-1">
-                      <h3 className="text-lg font-bold text-gray-900 mb-2">
+                      <h3 className="text-lg font-bold text-gray-900">
                         {service.title}
                       </h3>
-                      <p className="text-base sm:text-sm text-gray-600 leading-relaxed">
-                        {service.description}
-                      </p>
                     </div>
                   </div>
                   <Link
