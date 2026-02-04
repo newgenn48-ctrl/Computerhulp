@@ -400,7 +400,6 @@ export default function HomePage() {
       {/* Services Section */}
       <ServicesSection
         title="Onze Diensten"
-        description="Van computer problemen tot smart home installatie - wij lossen het op bij u thuis in Zuid-Holland"
         showFeatures={true}
         limitServices={6}
         showAllButton={true}
