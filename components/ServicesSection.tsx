@@ -2,9 +2,8 @@ import Link from 'next/link'
 
 export const services = [
   {
-    icon: '💻',
     title: 'Computer & Laptop Hulp',
-    description: 'Wij bieden complete computerhulp aan huis voor al uw computer- en laptopproblemen. Onze experts lossen alles snel en vakkundig bij u thuis op.',
+    image: '/Computer & Laptop Hulp.webp',
     slug: '/diensten/computer-laptop-hulp',
     features: [
       'Nieuwe computer installeren en instellen',
@@ -15,9 +14,8 @@ export const services = [
     ]
   },
   {
-    icon: '🖨️',
     title: 'Printer & Randapparatuur',
-    description: 'Laat uw printer, scanner en randapparatuur probleemloos werken met onze installatie- en hulpservice aan huis.',
+    image: '/Printer & Randapparatuur.webp',
     slug: '/diensten/printer-scanner-hulp',
     features: [
       'Nieuwe printer aansluiten en instellen',
@@ -27,9 +25,8 @@ export const services = [
     ]
   },
   {
-    icon: '📧',
     title: 'E-mail Hulp',
-    description: 'Werkt uw e-mail niet goed? Wij lossen alle e-mailproblemen snel en professioneel voor u op, zodat u weer zonder zorgen kunt mailen.',
+    image: '/E-mail Hulp.webp',
     slug: '/diensten/email-hulp',
     features: [
       'E-mailaccount instellen op computer of telefoon',
@@ -39,9 +36,8 @@ export const services = [
     ]
   },
   {
-    icon: '📶',
     title: 'WiFi & Netwerk Hulp',
-    description: 'Heeft u last van traag of instabiel internet? Onze wifi-specialisten zorgen dat uw netwerk weer perfect werkt.',
+    image: '/WiFi & Netwerk Hulp.webp',
     slug: '/diensten/wifi-internet-hulp',
     features: [
       'WiFi router installeren en instellen',
@@ -51,9 +47,8 @@ export const services = [
     ]
   },
   {
-    icon: '📱',
     title: 'Tablet & Smartphone Hulp',
-    description: 'Ook voor uw mobiele apparaten bieden wij deskundige hulp aan huis. Wij zorgen dat alles soepel samenwerkt met uw computer en netwerk.',
+    image: '/Tablet & Smartphone Hulp.webp',
     slug: '/diensten/tablet-smartphone-hulp',
     features: [
       'Nieuwe tablet of smartphone instellen',
@@ -63,9 +58,8 @@ export const services = [
     ]
   },
   {
-    icon: '🧠',
     title: 'Persoonlijke Training',
-    description: 'Wilt u meer leren over uw computer, internet of programma\'s? Wij bieden persoonlijke training aan huis, afgestemd op uw tempo en niveau.',
+    image: '/Student aan huis.webp',
     slug: '/diensten/persoonlijke-training',
     features: [
       'Basistraining voor uw computer',
@@ -75,9 +69,8 @@ export const services = [
     ]
   },
   {
-    icon: '🔧',
     title: 'Laptop & Computer Reparatie',
-    description: 'Laptop kapot? Scherm defect of computer start niet op? Wij repareren alle merken laptops en computers bij u thuis.',
+    image: '/Reparatie.webp',
     slug: '/diensten/laptop-computer-reparatie',
     features: [
       'Alle merken laptops en computers',
@@ -88,9 +81,8 @@ export const services = [
     ]
   },
   {
-    icon: '🏠',
     title: 'Smart Home',
-    description: 'Maak uw woning slimmer en comfortabeler met onze Smart Home installatie en ondersteuning. Wij helpen u bij het koppelen en instellen van slimme apparaten.',
+    image: '/Smart Home.webp',
     slug: '/diensten/smart-home-domotica',
     features: [
       'Smart TV installeren en koppelen',
@@ -100,9 +92,8 @@ export const services = [
     ]
   },
   {
-    icon: '💾',
     title: 'Dataherstel',
-    description: 'Bestanden kwijt of per ongeluk gewist? Wij helpen u uw waardevolle data veilig terug te halen.',
+    image: '/Data herstel.webp',
     slug: '/diensten/dataherstel-backup',
     features: [
       'Herstellen van verwijderde bestanden',
@@ -112,9 +103,8 @@ export const services = [
     ]
   },
   {
-    icon: '🌐',
     title: 'Website Laten Maken',
-    description: 'Professionele website laten maken voor uw bedrijf? Wij bouwen moderne, snelle websites op maat. Van visitekaartje tot webshop.',
+    image: '/Computerhulp aan huis.webp',
     slug: '/website-laten-maken',
     features: [
       'Custom websites op maat',
@@ -137,7 +127,7 @@ interface ServicesSectionProps {
 
 export default function ServicesSection({
   title = "Waar We U Mee Helpen",
-  description = "Van simpele vragen tot complexe problemen - alles wordt bij u thuis opgelost",
+  description,
   showFeatures = false,
   limitServices = 0,
   showAllButton = false
@@ -151,32 +141,37 @@ export default function ServicesSection({
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
             {title}
           </h2>
-          <p className="text-lg text-gray-600">
-            {description}
-          </p>
+          {description && (
+            <p className="text-lg text-gray-600">
+              {description}
+            </p>
+          )}
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
           {displayServices.map((service, idx) => (
-            <div
+            <Link
               key={idx}
-              className="bg-white rounded-xl p-6 border border-gray-200 hover:border-blue-500 hover:shadow-lg transition-all"
+              href={service.slug}
+              className="group relative rounded-xl overflow-hidden hover:shadow-xl transition-all"
             >
-              {showFeatures ? (
-                // Uitgebreide versie MET features (voor homepage)
-                <>
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center flex-shrink-0 text-2xl">
-                      {service.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        {service.title}
-                      </h3>
-                    </div>
-                  </div>
+              {/* Achtergrond afbeelding */}
+              <div className="relative">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
+                <h3 className="absolute bottom-4 left-4 right-4 text-xl font-bold text-white">
+                  {service.title}
+                </h3>
+              </div>
 
-                  <ul className="space-y-2 mb-5">
+              {/* Content */}
+              <div className="bg-white p-5 border border-gray-200 border-t-0 rounded-b-xl">
+                {showFeatures ? (
+                  <ul className="space-y-2 mb-4">
                     {service.features.map((feature, featureIdx) => (
                       <li key={featureIdx} className="flex items-start gap-2 text-base sm:text-sm text-gray-700">
                         <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -186,42 +181,15 @@ export default function ServicesSection({
                       </li>
                     ))}
                   </ul>
-
-                  <Link
-                    href={service.slug}
-                    className="group inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm"
-                  >
-                    Meer info
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </Link>
-                </>
-              ) : (
-                // Compacte versie ZONDER features (voor Computerhulp/Student aan Huis pagina's)
-                <>
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white text-xl flex-shrink-0">
-                      {service.icon}
-                    </div>
-                    <div className="flex-1">
-                      <h3 className="text-lg font-bold text-gray-900">
-                        {service.title}
-                      </h3>
-                    </div>
-                  </div>
-                  <Link
-                    href={service.slug}
-                    className="group inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm"
-                  >
-                    Meer info
-                    <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
-                  </Link>
-                </>
-              )}
-            </div>
+                ) : null}
+                <span className="group-hover:translate-x-1 inline-flex items-center gap-2 text-blue-600 font-semibold text-sm transition-transform">
+                  Meer info
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                  </svg>
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
 

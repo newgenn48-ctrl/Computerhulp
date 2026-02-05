@@ -29,7 +29,7 @@ const structuredData = {
     item: {
       '@type': 'Service',
       name: service.title,
-      description: service.description,
+      description: service.title,
       url: `https://computerhulpzh.nl${service.slug}`
     }
   }))
@@ -167,9 +167,6 @@ export default function DienstenPage() {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                  <div className="absolute bottom-4 left-4">
-                    <span className="text-4xl">{service.icon}</span>
-                  </div>
                 </div>
 
                 {/* Content */}
@@ -177,10 +174,6 @@ export default function DienstenPage() {
                   <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
                     {service.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 line-clamp-2">
-                    {service.description}
-                  </p>
-
                   {/* Features */}
                   <ul className="space-y-2 mb-4">
                     {service.features.slice(0, 3).map((feature, fidx) => (

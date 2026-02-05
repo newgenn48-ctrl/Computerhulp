@@ -129,13 +129,6 @@ export default function ServicesImageCards({
                   ))}
                 </div>
 
-                {/* Description - Shows on hover and focus for accessibility */}
-                <div className="overflow-hidden">
-                  <p className="text-sm text-slate-200 leading-relaxed transform translate-y-full opacity-0 transition-all duration-500 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
-                    {service.description}
-                  </p>
-                </div>
-
                 {/* CTA Button - Shows on hover and focus for accessibility */}
                 <div className="overflow-hidden mt-4">
                   <span className="inline-flex items-center gap-2 text-blue-400 font-semibold text-sm transform translate-y-full opacity-0 transition-all duration-500 delay-100 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
