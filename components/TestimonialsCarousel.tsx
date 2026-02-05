@@ -37,7 +37,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
 
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
-      const cardWidth = scrollRef.current.querySelector('article')?.offsetWidth || 400
+      const cardWidth = (scrollRef.current.querySelector('[role="listitem"]') as HTMLElement)?.offsetWidth || 400
       const scrollAmount = direction === 'left' ? -cardWidth - 24 : cardWidth + 24
       scrollRef.current.scrollBy({ left: scrollAmount, behavior: 'smooth' })
     }
@@ -80,7 +80,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
         aria-label="Klantbeoordelingen carousel"
       >
         {testimonials.map((testimonial, idx) => (
-          <article
+          <div
             key={idx}
             className="flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[calc(33.333%-1rem)] snap-start bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 sm:p-8 border border-gray-100 relative"
             role="listitem"
@@ -102,10 +102,10 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
               </div>
               <div>
                 <cite className="font-semibold text-gray-900 not-italic">{testimonial.name}</cite>
-                <div className="text-sm text-gray-500">{testimonial.location}</div>
+                <div className="text-sm text-gray-600">{testimonial.location}</div>
               </div>
             </footer>
-          </article>
+          </div>
         ))}
       </div>
 
