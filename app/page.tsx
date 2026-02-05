@@ -337,7 +337,7 @@ export default function HomePage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Heb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze IT-specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
+              Computerhulp aan huis door heel Zuid-Holland. Onze IT-specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
             </p>
 
             {/* USP Badges */}
