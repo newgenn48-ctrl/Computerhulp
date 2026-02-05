@@ -418,7 +418,7 @@ export default function HomePage() {
             <p className="text-lg text-gray-600">
               Meer dan 500 tevreden klanten in Zuid-Holland
             </p>
-            <p className="text-sm text-gray-400 mt-2 lg:hidden">
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
               ← Swipe voor meer reviews →
             </p>
           </header>
