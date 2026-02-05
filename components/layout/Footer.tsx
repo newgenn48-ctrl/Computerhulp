@@ -158,6 +158,15 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* Disclaimer */}
+      <div className="border-t border-gray-800">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
+          <p className="text-xs text-gray-500 text-center">
+            Computerhulp Zuid-Holland is een onafhankelijke dienstverlener (KvK: 91310318) en is niet gelieerd aan enige fabrikant of softwareleverancier.
+          </p>
+        </div>
+      </div>
+
       {/* Bottom Bar */}
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
