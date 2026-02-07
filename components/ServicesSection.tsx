@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export const services = [
   {
-    title: 'Computer & Laptop Hulp',
+    title: 'Computer & Laptop',
     image: '/Computer & Laptop Hulp.webp',
     slug: '/diensten/computer-laptop-hulp',
     features: [
@@ -25,7 +25,7 @@ export const services = [
     ]
   },
   {
-    title: 'E-mail Hulp',
+    title: 'E-mail',
     image: '/E-mail Hulp.webp',
     slug: '/diensten/email-hulp',
     features: [
@@ -36,7 +36,7 @@ export const services = [
     ]
   },
   {
-    title: 'WiFi & Netwerk Hulp',
+    title: 'WiFi & Netwerk',
     image: '/WiFi & Netwerk Hulp.webp',
     slug: '/diensten/wifi-internet-hulp',
     features: [
@@ -47,7 +47,7 @@ export const services = [
     ]
   },
   {
-    title: 'Tablet & Smartphone Hulp',
+    title: 'Tablet & Smartphone',
     image: '/Tablet & Smartphone Hulp.webp',
     slug: '/diensten/tablet-smartphone-hulp',
     features: [

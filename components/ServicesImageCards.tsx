@@ -5,14 +5,14 @@ import Image from 'next/image'
 
 const servicesWithImages = [
   {
-    title: 'Computer & Laptop Hulp',
+    title: 'Computer & Laptop',
     description: 'Trage computer? Virus? Opstartproblemen? Onze studenten lossen alle computer- en laptopproblemen snel op bij u thuis.',
     image: '/Computer & Laptop Hulp.webp',
     slug: '/diensten/computer-laptop-hulp',
     features: ['Windows & Mac', 'Problemen oplossen', 'Sneller maken']
   },
   {
-    title: 'WiFi & Netwerk Hulp',
+    title: 'WiFi & Netwerk',
     description: 'Slecht bereik? Traag internet? Wij optimaliseren uw WiFi-netwerk voor perfecte dekking in heel uw huis.',
     image: '/WiFi & Netwerk Hulp.webp',
     slug: '/diensten/wifi-internet-hulp',
@@ -26,7 +26,7 @@ const servicesWithImages = [
     features: ['Installatie', 'Draadloos printen', 'Problemen oplossen']
   },
   {
-    title: 'E-mail Hulp',
+    title: 'E-mail',
     description: 'E-mail problemen? Outlook werkt niet? Wij configureren uw e-mail en lossen alle problemen op.',
     image: '/E-mail Hulp.webp',
     slug: '/diensten/email-hulp',

@@ -3,11 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
-import Header from '@/components/layout/Header'
-import Footer from '@/components/layout/Footer'
-import FloatingButtons from '@/components/layout/FloatingButtons'
-import Breadcrumb from '@/components/Breadcrumb'
-import SkipLink from '@/components/SkipLink'
+import LayoutShell from '@/components/layout/LayoutShell'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -142,7 +138,6 @@ export default function RootLayout({
         )}
       </head>
       <body className={inter.className}>
-        <SkipLink />
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe
@@ -153,13 +148,9 @@ export default function RootLayout({
             title="Google Tag Manager"
           />
         </noscript>
-        <Header />
-        <Breadcrumb />
-        <main id="main-content" className="min-h-screen" role="main">
+        <LayoutShell>
           {children}
-        </main>
-        <Footer />
-        <FloatingButtons />
+        </LayoutShell>
         <Analytics />
       </body>
     </html>
