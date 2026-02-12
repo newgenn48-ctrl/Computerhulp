@@ -92,7 +92,6 @@ export default function PersoonlijkeTrainingPage() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Persoonlijke Training
-                <span className="block text-blue-600">Direct Bij U Thuis</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Computer basics leren, internet veilig gebruiken, online bankieren of Word en Excel onder de knie krijgen? We komen bij u thuis voor persoonlijke training. <strong className="text-gray-900">Op uw tempo, zonder haast.</strong>

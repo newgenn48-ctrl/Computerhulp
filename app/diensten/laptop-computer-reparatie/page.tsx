@@ -92,7 +92,6 @@ export default function LaptopComputerReparatiePage() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Laptop & Computer Reparatie
-                <span className="block text-blue-600">Direct Bij U Thuis</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Laptop kapot? Computer defect? Scherm gebroken of start niet meer op? Wij komen bij u thuis in Zuid-Holland en repareren het ter plekke. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>

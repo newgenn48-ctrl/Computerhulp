@@ -93,7 +93,6 @@ export default function DataherstelBackupPage() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Dataherstel & Backup
-                <span className="block text-blue-600">Direct Bij U Thuis</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Belangrijke bestanden kwijt, foto&apos;s verloren of computer crash? We redden uw waardevolle data en zorgen dat u nooit meer iets kwijtraakt met automatische backups. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>

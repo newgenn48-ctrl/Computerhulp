@@ -91,7 +91,6 @@ export default function EmailHulpPage() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 E-mail Hulp
-                <span className="block text-blue-600">Direct Bij U Thuis</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Wachtwoord vergeten of email werkt niet? We komen bij u thuis in Zuid-Holland en zorgen dat uw email weer perfect werkt. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>

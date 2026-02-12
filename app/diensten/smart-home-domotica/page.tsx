@@ -92,7 +92,6 @@ export default function SmartHomeDomoticaPage() {
               </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Smart Home & Domotica
-                <span className="block text-blue-600">Direct Bij U Thuis</span>
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Slimme apparaten koppelen, automatiseren en bedienen met uw stem? We installeren en koppelen alles bij u thuis in Zuid-Holland. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>

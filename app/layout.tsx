@@ -116,18 +116,6 @@ export default function RootLayout({
           </>
         )}
 
-        {/* Source protection */}
-        <Script id="source-protection" strategy="afterInteractive">
-          {`
-            document.addEventListener('contextmenu', function(e) { e.preventDefault(); });
-            document.addEventListener('keydown', function(e) {
-              if (e.key === 'F12') { e.preventDefault(); }
-              if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) { e.preventDefault(); }
-              if (e.ctrlKey && e.key === 'u') { e.preventDefault(); }
-              if (e.ctrlKey && e.key === 's') { e.preventDefault(); }
-            });
-          `}
-        </Script>
 
         {/* Google Analytics Tag */}
         {gaId && (
