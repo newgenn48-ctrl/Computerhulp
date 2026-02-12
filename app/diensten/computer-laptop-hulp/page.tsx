@@ -216,9 +216,6 @@ export default function ComputerLaptopHulpPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Text Content */}
             <div>
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 rounded-full px-4 py-2 mb-6">
-                <span className="text-sm font-medium">Computer & Laptop Specialist</span>
-              </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Computer & Laptop Hulp

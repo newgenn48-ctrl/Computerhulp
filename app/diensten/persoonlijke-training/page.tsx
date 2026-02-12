@@ -87,9 +87,6 @@ export default function PersoonlijkeTrainingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 rounded-full px-4 py-2 mb-6">
-                <span className="text-sm font-medium">Computer Training Specialist</span>
-              </div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                 Persoonlijke Training
               </h1>
