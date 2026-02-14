@@ -120,21 +120,26 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google Ads Click-to-Call Conversion */}
+        {/* Google Ads Click-to-Call Conversions */}
         <Script id="google-ads-conversion" strategy="afterInteractive">
           {`
             function gtag_report_conversion(url) {
+              var callbackFired = false;
               var callback = function () {
-                if (typeof(url) != 'undefined') {
-                  window.location = url;
+                if (!callbackFired) {
+                  callbackFired = true;
+                  if (typeof(url) != 'undefined') {
+                    window.location = url;
+                  }
                 }
               };
               gtag('event', 'conversion', {
-                'send_to': 'AW-16733341823/kib1CLKsufgbEP-Qiqs-',
+                'send_to': 'AW-16733341823/YYYPCLHFu_gbEP-Qiqs-',
                 'value': 1.0,
                 'currency': 'EUR',
                 'event_callback': callback
               });
+              setTimeout(callback, 1000);
               return false;
             }
 
