@@ -126,9 +126,9 @@ export default function ITHulpPage() {
                 </svg>
               </Link>
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
-                aria-label="Bel ons voor computerhulp: 06-42548451"
+                aria-label="Bel ons voor computerhulp: 085-8002006"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -225,7 +225,7 @@ export default function ITHulpPage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel vandaag nog <a href="tel:+31642548451" className="text-blue-600 font-semibold hover:underline">06-42548451</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur.
+                  Bel vandaag nog <a href="tel:+31858002006" className="text-blue-600 font-semibold hover:underline">085-8002006</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur.
                 </p>
               </div>
             </article>
@@ -318,7 +318,7 @@ export default function ITHulpPage() {
               </svg>
             </Link>
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all"
             >
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

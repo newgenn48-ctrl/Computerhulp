@@ -44,10 +44,10 @@ const city = getCityBySlug('${city.slug}')!
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis ${city.name} | Binnen 24u bij u Thuis',
-  description: 'Computerhulp aan huis in ${city.name}. Binnen 24 uur bij u thuis! Computer, laptop, printer, WiFi. Geen voorrijkosten. Transparant tarief. Bel 06-42548451.',
+  description: 'Computerhulp aan huis in ${city.name}. Binnen 24 uur bij u thuis! Computer, laptop, printer, WiFi. Geen voorrijkosten. Transparant tarief. Bel 085-8002006.',
   openGraph: {
     title: 'Computerhulp aan Huis ${city.name} | Binnen 24u bij u Thuis',
-    description: 'Binnen 24 uur bij u thuis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 06-42548451',
+    description: 'Binnen 24 uur bij u thuis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 085-8002006',
     type: 'website',
     url: 'https://computerhulpzh.nl/computerhulp-aan-huis-${city.slug}',
   },
@@ -72,10 +72,10 @@ const city = getCityBySlug('${city.slug}')!
 
 export const metadata: Metadata = {
   title: 'Student aan Huis ${city.name} | Binnen 24u bij u Thuis',
-  description: 'Student aan huis in ${city.name}. Binnen 24 uur bij u thuis! Computer, laptop, printer, WiFi. Geen voorrijkosten. Studenttarief. Bel 06-42548451.',
+  description: 'Student aan huis in ${city.name}. Binnen 24 uur bij u thuis! Computer, laptop, printer, WiFi. Geen voorrijkosten. Studenttarief. Bel 085-8002006.',
   openGraph: {
     title: 'Student aan Huis ${city.name} | Binnen 24u bij u Thuis',
-    description: 'Binnen 24 uur bij u thuis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Studenttarief. Bel 06-42548451',
+    description: 'Binnen 24 uur bij u thuis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Studenttarief. Bel 085-8002006',
     type: 'website',
     url: 'https://computerhulpzh.nl/student-aan-huis-${city.slug}',
   },

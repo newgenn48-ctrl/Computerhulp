@@ -7,11 +7,11 @@ import ServicesSection from '@/components/ServicesSection'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u bij u Thuis',
-  description: 'Professionele computerhulp aan huis in Zuid-Holland. Binnen 24 uur bij u thuis voor computer, laptop, printer en WiFi problemen. Geen voorrijkosten. Bel 06-42548451.',
+  description: 'Professionele computerhulp aan huis in Zuid-Holland. Binnen 24 uur bij u thuis voor computer, laptop, printer en WiFi problemen. Geen voorrijkosten. Bel 085-8002006.',
   keywords: 'computerhulp aan huis, computer hulp thuis, laptop hulp aan huis, IT hulp thuis, computer reparatie aan huis, thuishulp computer, Zuid-Holland, Den Haag, Rotterdam, Leiden',
   openGraph: {
     title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u bij u Thuis',
-    description: 'Binnen 24 uur bij u thuis in Zuid-Holland. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 06-42548451',
+    description: 'Binnen 24 uur bij u thuis in Zuid-Holland. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 085-8002006',
     type: 'website',
     url: 'https://computerhulpzh.nl/computerhulp-aan-huis',
   },
@@ -28,7 +28,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/#organization',
       name: 'Computerhulp Zuid-Holland',
       url: 'https://computerhulpzh.nl',
-      telephone: '+31642548451',
+      telephone: '+31858002006',
       email: 'info@computerhulpzh.nl',
       logo: {
         '@type': 'ImageObject',
@@ -111,7 +111,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#service',
       serviceType: 'Computerhulp aan Huis',
       name: 'Computerhulp aan Huis Zuid-Holland',
-      description: 'Professionele computerhulp aan huis in heel Zuid-Holland. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en email problemen.',
+      description: 'Professionele computerhulp aan huis in heel Zuid-Holland. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en e-mail problemen.',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis',
       provider: {
         '@id': 'https://computerhulpzh.nl/#organization'
@@ -182,7 +182,7 @@ const structuredData = {
         validFrom: '2024-01-01',
         priceValidUntil: '2026-12-31'
       },
-      termsOfService: 'https://computerhulpzh.nl/algemene-voorwaarden',
+      termsOfService: 'https://computerhulpzh.nl/voorwaarden',
       audience: {
         '@type': 'Audience',
         audienceType: 'Particulieren en bedrijven in Zuid-Holland',
@@ -348,7 +348,7 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Heb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
+              Heeft u hulp nodig bij uw computer, tablet, smartphone of een ander digitaal apparaat? Onze specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
             </p>
 
             {/* USP Badges */}
@@ -385,7 +385,7 @@ export default function ComputerhulpAanHuisPage() {
                 </svg>
               </Link>
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-200 hover:border-blue-600 transition-all"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -681,7 +681,7 @@ export default function ComputerhulpAanHuisPage() {
               },
               {
                 q: 'In welke plaatsen bieden jullie computerhulp aan huis?',
-                a: 'We bieden computerhulp aan huis in heel Zuid-Holland. Dit omvat onder andere Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en nog 40+ andere gemeenten. Overal zonder voorrijkosten.'
+                a: 'We bieden computerhulp aan huis in heel Zuid-Holland. Dit omvat onder andere Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en nog 50+ andere gemeenten. Overal zonder voorrijkosten.'
               }
             ].map((faq, idx) => (
               <details
@@ -751,7 +751,7 @@ export default function ComputerhulpAanHuisPage() {
 
           <div className="text-center mt-10">
             <Link
-              href="/computerhulp-aan-huis"
+              href="/locaties"
               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg"
             >
               Bekijk alle 50+ locaties
@@ -798,7 +798,7 @@ export default function ComputerhulpAanHuisPage() {
                 </Link>
 
                 <a
-                  href="tel:+31642548451"
+                  href="tel:+31858002006"
                   className="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-10 py-5 rounded-full font-semibold text-lg border-2 border-white/30 hover:border-white/60 transition-all"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -850,7 +850,7 @@ const testimonials = [
     location: 'Rotterdam'
   },
   {
-    quote: 'WiFi werkte niet, email deed het niet. De computerhulp aan huis heeft alles in één keer opgelost bij mij thuis. Eerlijke prijs en geen gedoe. Binnen een dag geholpen, top service!',
+    quote: 'WiFi werkte niet, e-mail deed het niet. De computerhulp aan huis heeft alles in één keer opgelost bij mij thuis. Eerlijke prijs en geen gedoe. Binnen een dag geholpen, top service!',
     initials: 'L',
     name: 'Mevrouw Linda',
     location: 'Leiden'

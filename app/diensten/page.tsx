@@ -5,8 +5,8 @@ import { services } from '@/components/ServicesSection'
 
 export const metadata: Metadata = {
   title: 'Alle Computerhulp Diensten aan Huis in Zuid-Holland',
-  description: 'Bekijk al onze computerhulp diensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, geen voorrijkosten. Bel 06-42548451.',
-  keywords: 'computerhulp diensten, IT diensten, computer services, laptop hulp, wifi hulp, printer hulp, smart home, Zuid-Holland',
+  description: 'Bekijk al onze computerhulp diensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, geen voorrijkosten. Bel 085-8002006.',
+
   openGraph: {
     title: 'Alle Computerhulp Diensten aan Huis',
     description: 'Computerhulp aan huis in Zuid-Holland. Van laptop reparatie tot smart home installatie. Binnen 24u.',
@@ -29,7 +29,7 @@ const structuredData = {
     item: {
       '@type': 'Service',
       name: service.title,
-      description: service.title,
+      description: `${service.title} aan huis in Zuid-Holland. Professionele hulp bij u thuis.`,
       url: `https://computerhulpzh.nl${service.slug}`
     }
   }))
@@ -65,7 +65,8 @@ const serviceImages: Record<string, string> = {
   'Smart Home': '/Smart Home.webp',
   'Dataherstel': '/Data herstel.webp',
   'Persoonlijke Training': '/Student aan huis.webp',
-  'Website Laten Maken': '/Computer & Laptop Hulp.webp'}
+  'Website Laten Maken': '/Computer & Laptop Hulp.webp',
+  'Televisie & Radio': '/Student aan huis.webp'}
 
 export default function DienstenPage() {
   return (
@@ -83,7 +84,7 @@ export default function DienstenPage() {
       <section className="relative min-h-screen bg-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <img src="/Student aan huis.webp" alt="Computerhulp aan huis" className="w-full h-full object-cover" />
+          <Image src="/Student aan huis.webp" alt="Computerhulp diensten aan huis in Zuid-Holland" fill sizes="100vw" className="object-cover" priority />
           {/* Light overlay for text readability */}
           <div className="absolute inset-0 bg-white/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/80 to-transparent" />
@@ -118,7 +119,7 @@ export default function DienstenPage() {
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -237,7 +238,7 @@ export default function DienstenPage() {
             </div>
 
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center px-8 py-4 rounded-xl font-bold text-xl shadow-lg shadow-blue-600/25 hover:scale-105 transition-all"
             >Bel Direct</a>
           </div>
@@ -258,7 +259,7 @@ export default function DienstenPage() {
               Onze ervaren technici komen bij u thuis of op kantoor en lossen uw technische problemen ter plekke op. Of het nu gaat om een trage computer, internetproblemen, e-mail instellingen of smartphone hulp - wij helpen u vakkundig en persoonlijk.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Alle diensten voor dezelfde transparante prijs van €14,50 per kwartier, zonder voorrijkosten. Bel <a href="tel:+31642548451" className="text-blue-600 font-semibold">Bel Direct</a> en wij komen binnen 24 uur bij u langs.
+              Alle diensten voor dezelfde transparante prijs van €14,50 per kwartier, zonder voorrijkosten. Bel <a href="tel:+31858002006" className="text-blue-600 font-semibold">085-8002006</a> en wij komen binnen 24 uur bij u langs.
             </p>
           </div>
         </div>
@@ -275,7 +276,7 @@ export default function DienstenPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-2xl shadow-xl shadow-blue-600/25 hover:scale-105 transition-all"
             >
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,14 +1,17 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
+import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
-  title: 'Smart Home & Domotica Hulp aan Huis in Zuid-Holland',
+  title: 'Smart Home Installatie aan Huis | Domotica Hulp | Binnen 24u',
   description: 'Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel nu.',
-  keywords: 'smart home, domotica, slimme apparaten, google home, alexa, smart home installatie, domotica hulp, Zuid-Holland',
+
   openGraph: {
     title: 'Smart Home & Domotica Hulp aan Huis',
     description: 'Slimme apparaten installeren? Hulp nodig met slimme verlichting of speakers? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
-    type: 'website'},
+    type: 'website',
+    url: 'https://computerhulpzh.nl/diensten/smart-home-domotica'},
   alternates: {
     canonical: 'https://computerhulpzh.nl/diensten/smart-home-domotica'},
   robots: { index: true, follow: true }}
@@ -20,7 +23,7 @@ const structuredData = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'Computerhulp Zuid-Holland',
-    telephone: '+31642548451',
+    telephone: '+31858002006',
     email: 'info@computerhulpzh.nl',
     address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
   },
@@ -45,7 +48,9 @@ const faqData = {
   mainEntity: [
     { '@type': 'Question', name: 'Kunnen jullie slimme verlichting installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren alle slimme verlichtingssystemen. We koppelen alles aan uw app en spraakassistent.' } },
     { '@type': 'Question', name: 'Helpen jullie ook met slimme speakers?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren en configureren alle slimme speakers en spraakassistenten. We koppelen al uw slimme apparaten.' } },
-    { '@type': 'Question', name: 'Kunnen jullie automatiseringen instellen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we maken slimme schema\'s en routines. Bijvoorbeeld: lichten aan bij zonsondergang, of verwarming omlaag als u weggaat.' } }
+    { '@type': 'Question', name: 'Kunnen jullie automatiseringen instellen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we maken slimme schema\'s en routines. Bijvoorbeeld: lichten aan bij zonsondergang, of verwarming omlaag als u weggaat.' } },
+    { '@type': 'Question', name: 'Welke slimme thermostaten installeren jullie?', acceptedAnswer: { '@type': 'Answer', text: 'We installeren alle slimme thermostaten. We zorgen dat alles perfect werkt met uw verwarmingssysteem.' } },
+    { '@type': 'Question', name: 'Kunnen jullie een slimme deurbel installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren alle slimme deurbellen. We zorgen dat u via uw telefoon kunt zien en spreken met bezoekers.' } }
   ]
 }
 
@@ -53,18 +58,21 @@ const heroImage = '/Smart Home.webp'
 
 const problems = [
   { title: 'Apparaten Koppelen', description: 'Slimme lampen werken niet of koppelen niet.', icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' },
-  { title: 'Geen Verbinding', description: 'Slimme speaker configureren.', icon: 'M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072' },
-  { title: 'App Problemen', description: 'Slimme thermostaat instellen.', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
-  { title: 'Automatisering', description: 'Beveiligingscamera\'s aan app koppelen.', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' },
-  { title: 'Spraakbesturing', description: 'Slimme deurbel aansluiten.', icon: 'M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z' },
-  { title: 'Beveiliging', description: 'Slimme routines en schema\'s instellen.', icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z' }
+  { title: 'Geen Verbinding', description: 'Apparaten verliezen verbinding of koppelen niet met uw netwerk.', icon: 'M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072' },
+  { title: 'App Problemen', description: 'Smart home app werkt niet of verliest verbinding met apparaten.', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
+  { title: 'Automatisering', description: 'Slimme routines en schema\'s werken niet of zijn lastig in te stellen.', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' },
+  { title: 'Spraakbesturing', description: 'Google Home, Alexa of Siri reageren niet op uw opdrachten.', icon: 'M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z' },
+  { title: 'Beveiliging', description: 'Camera\'s, deurbellen of sensoren installeren en aan uw app koppelen.', icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z' }
 ]
 
 const services = [
-  { title: 'Slimme Verlichting', items: ['Slimme lampen installeren en koppelen', 'Alle merken slimme verlichting', 'Lampen groeperen per kamer', 'Lichtscenes en schema\'s instellen'] },
-  { title: 'Spraakassistenten', items: ['Slimme speaker installeren', 'Spraakassistent configureren', 'Alle merken speakers', 'Alle apparaten verbinden met stem'] },
-  { title: 'Klimaat & Veiligheid', items: ['Slimme thermostaat installeren', 'Beveiligingscamera\'s koppelen', 'Slimme deurbellen instellen', 'Bewegingssensoren configureren'] },
-  { title: 'Automatisering', items: ['Slimme routines maken', 'Schema\'s voor verlichting', 'Automatische thermostaat regeling', 'Alles koppelen aan uw telefoon'] }
+  'Slimme verlichting installeren en koppelen',
+  'Slimme speaker en spraakassistent instellen',
+  'Slimme thermostaat installeren',
+  'Beveiligingscamera\'s en deurbel koppelen',
+  'Automatische routines en schema\'s maken',
+  'Alle apparaten bedienen via uw telefoon',
+  'Smart Home systemen integreren',
 ]
 
 const faqs = [
@@ -88,19 +96,19 @@ export default function SmartHomeDomoticaPage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Smart Home & Domotica
+                Smart Home & Domotica Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Slimme apparaten koppelen, automatiseren en bedienen met uw stem? We installeren en koppelen alles bij u thuis in Zuid-Holland. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Slimme verlichting, thermostaat of speaker installeren? Wij koppelen en configureren al uw slimme apparaten bij u thuis. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
-                  Hulp Aanvragen
+                  Plan Smart Home Hulp
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                 </Link>
-                <a href="tel:+31642548451" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105">
+                <a href="tel:+31858002006" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                  Bel Direct
+                  Bel 085-8002006
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
@@ -110,79 +118,101 @@ export default function SmartHomeDomoticaPage() {
               </div>
             </div>
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img src={heroImage} alt="Smart home en domotica hulp aan huis in Zuid-Holland" className="w-full h-[400px] lg:h-[500px] object-cover" loading="eager" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
+                <Image src={heroImage} alt="Smart home en domotica hulp aan huis in Zuid-Holland" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
-{/* Trust badge */}
-<div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100">
-  <div className="flex items-center gap-3">
-    <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-      <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    </div>
-    <div>
-      <div className="text-sm font-semibold text-gray-900">Gecertificeerd</div>
-      <div className="text-xs text-gray-500">10+ jaar ervaring</div>
-    </div>
-  </div>
-</div>
+              {/* Trust badge */}
+              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100">
+                <div className="flex items-center gap-3">
+                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
+                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div className="text-sm font-semibold text-gray-900">Gecertificeerd</div>
+                    <div className="text-xs text-gray-500">10+ jaar ervaring</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-{/* Problems Section */}
-<section className="py-20 bg-white">
-  <div className="max-w-7xl mx-auto px-4 sm:px-6">
-    <div className="text-center mb-16">
-      <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-        Veelvoorkomende Problemen
-      </h2>
-      <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-        Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
-      </p>
-    </div>
-
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {problems.map((problem, idx) => (
-        <div
-          key={idx}
-          className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
-        >
-          <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
-            <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={problem.icon} />
-            </svg>
+      {/* Onze Diensten */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
+            <p className="text-lg text-gray-600">Een overzicht van onze smart home diensten.</p>
           </div>
-          <h3 className="text-xl font-bold text-gray-900 mb-2">{problem.title}</h3>
-          <p className="text-gray-600">{problem.description}</p>
+          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+            {services.map((service, idx) => (
+              <div key={idx} className="flex items-center gap-3 py-2">
+                <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-gray-700">{service}</span>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
-    </div>
-  </div>
-</section>
+      </section>
 
-      {/* What We Do */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* Problems Section */}
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Wat We Voor U Doen</h2>
-            <p className="text-lg text-gray-600">Van slimme verlichting tot complete domotica</p>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Veelvoorkomende Smart Home Problemen
+            </h2>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
+            </p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {services.map((service, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">{service.title}</h3>
-                <ul className="space-y-3">
-                  {service.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {problems.map((problem, idx) => (
+              <div
+                key={idx}
+                className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+              >
+                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
+                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={problem.icon} />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{problem.title}</h3>
+                <p className="text-gray-600">{problem.description}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Zo Werkt Het */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Zo Werkt Het
+            </h2>
+            <p className="text-lg text-gray-600">In 3 simpele stappen geholpen</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
+              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '3', title: 'Probleem Opgelost', desc: 'Uw slimme apparaten werken samen en u weet hoe ze te bedienen. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -210,10 +240,53 @@ export default function SmartHomeDomoticaPage() {
                 ))}
               </ul>
             </div>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 text-sm">
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+                <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span>Niet opgelost? Alleen diagnosekosten</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+                <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Gemiddeld 60-90 min</span>
+              </div>
+            </div>
             <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-10 py-4 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">
-              Hulp Aanvragen
+              Plan Smart Home Hulp
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Ervaringen */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Wat Klanten Zeggen</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { text: 'Hele huis vol slimme lampen maar niks werkte samen. Nu heb ik alles in \u00e9\u00e9n app en kan ik met mijn stem alles bedienen!', name: 'Thomas B.', location: 'Rotterdam' },
+              { text: 'Google Home, slimme thermostaat en deurbel ge\u00efnstalleerd en gekoppeld. Werkt allemaal perfect. Heel tevreden!', name: 'Ellen V.', location: 'Zoetermeer' },
+              { text: 'Wist niet waar te beginnen met domotica. De specialist heeft alles uitgelegd en ge\u00efnstalleerd. Super service.', name: 'Marco J.', location: 'Leiden' }
+            ].map((t, idx) => (
+              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
+                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
+                <p className="text-sm text-gray-500">{t.location}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -239,6 +312,19 @@ export default function SmartHomeDomoticaPage() {
         </div>
       </section>
 
+      {/* SEO Content */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Smart Home Installatie door een Specialist</h2>
+          <div className="prose prose-lg text-gray-600 max-w-none">
+            <p>Een slim huis begint met de juiste installatie. Of u nu slimme verlichting, een slimme thermostaat, beveiligingscamera&apos;s of een complete domotica-oplossing wilt — het kan overweldigend zijn om alles zelf te configureren en te koppelen.</p>
+            <p>Onze smart home specialisten komen bij u thuis en zorgen dat al uw slimme apparaten perfect samenwerken. We koppelen alles aan uw smartphone, stellen spraakbesturing in via Google Home of Alexa, en maken handige automatiseringen. Zodat uw huis niet alleen slim is, maar ook makkelijk te bedienen.</p>
+          </div>
+        </div>
+      </section>
+
+      <ServiceCrossLinks currentService="smart-home-domotica" serviceName="Smart Home & Domotica" />
+
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -246,12 +332,12 @@ export default function SmartHomeDomoticaPage() {
           <p className="text-xl text-blue-100 mb-10">We installeren en koppelen alles voor u. Neem vandaag nog contact op!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">
-              Hulp Aanvragen
+              Plan Smart Home Hulp
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </Link>
-            <a href="tel:+31642548451" className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all">
+            <a href="tel:+31858002006" className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              Bel Direct
+              Bel 085-8002006
             </a>
           </div>
         </div>

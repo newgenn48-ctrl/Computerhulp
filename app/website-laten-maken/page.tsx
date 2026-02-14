@@ -77,7 +77,7 @@ export default function WebsiteLatenMakenPage() {
                   </Link>
 
                   <a
-                    href="tel:+31642548451"
+                    href="tel:+31858002006"
                     className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all hover:border-blue-500"
                   >
                     <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -580,7 +580,7 @@ export default function WebsiteLatenMakenPage() {
                     </svg>
                   </Link>
                   <a
-                    href="tel:+31642548451"
+                    href="tel:+31858002006"
                     className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white border-2 border-gray-300 text-gray-900 rounded-xl font-bold text-lg hover:border-blue-500 hover:shadow-lg transition-all"
                   >
                     <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -722,7 +722,7 @@ export default function WebsiteLatenMakenPage() {
               </Link>
 
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold text-xl hover:bg-white/20 transition-all"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -107,7 +107,7 @@ export default function NotFound() {
               </Link>
               <span className="text-white/20">•</span>
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
               >
                 Bel Direct

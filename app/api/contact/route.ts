@@ -135,14 +135,14 @@ export async function POST(request: NextRequest) {
     // Check for SMTP/email specific errors
     if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
       return NextResponse.json(
-        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 06-42548451.' },
+        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 085-8002006.' },
         { status: 503 }
       )
     }
 
     // Generic error fallback with helpful contact info
     return NextResponse.json(
-      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 06-42548451.' },
+      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 085-8002006.' },
       { status: 500 }
     )
   }

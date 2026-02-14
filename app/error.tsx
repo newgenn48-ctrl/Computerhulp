@@ -77,10 +77,10 @@ export default function Error({
               Blijft het probleem zich voordoen?
             </p>
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="text-blue-400 hover:text-blue-300 font-semibold transition-colors"
             >
-              Bel ons: 06-42548451
+              Bel ons: 085-8002006
             </a>
           </div>
         </div>

@@ -120,7 +120,7 @@ export default async function Image() {
             fontWeight: 'bold',
           }}
         >
-          📞 06-42548451
+          📞 085-8002006
         </div>
       </div>
     ),

@@ -6,7 +6,7 @@ const city = getCityBySlug('leidschendam-voorburg')!
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Leidschendam-Voorburg | Binnen 24u',
-  description: 'Computerhulp aan huis in Leidschendam-Voorburg. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 06-42548451.',
+  description: 'Computerhulp aan huis in Leidschendam-Voorburg. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 085-8002006.',
   openGraph: {
     title: 'Computerhulp aan Huis Leidschendam-Voorburg | Binnen 24u',
     description: 'Computerhulp aan huis in Leidschendam-Voorburg. Computer, laptop, WiFi hulp. Binnen 24u, geen voorrijkosten.',

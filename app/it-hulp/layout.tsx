@@ -1,12 +1,8 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan Huis | Binnen 24 uur | Vanaf \u20AC43,50',
-  description: 'Computerhulp aan huis in Zuid-Holland. Binnen 24 uur geholpen, geen voorrijkosten, 7 dagen per week. Bel 06-42548451.',
-  robots: {
-    index: false,
-    follow: false,
-  },
+  title: 'IT Hulp aan Huis | Computerhulp Zuid-Holland | Binnen 24u',
+  description: 'Professionele IT-hulp aan huis in Zuid-Holland. Computer, laptop, WiFi en printer problemen opgelost. Binnen 24 uur, geen voorrijkosten. Bel 085-8002006.',
 }
 
 const jsonLd = {
@@ -18,7 +14,7 @@ const jsonLd = {
       name: 'Computerhulp Zuid-Holland',
       description: 'Computerhulp aan huis in heel Zuid-Holland. Binnen 24 uur geholpen.',
       url: 'https://computerhulpzh.nl',
-      telephone: '+31642548451',
+      telephone: '+31858002006',
       email: 'info@computerhulpzh.nl',
       areaServed: {
         '@type': 'State',

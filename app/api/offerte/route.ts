@@ -196,7 +196,7 @@ export async function POST(request: NextRequest) {
               </div>
               <div class="footer">
                 <p><strong>Computerhulp Zuid-Holland</strong></p>
-                <p>06-42548451 | info@computerhulpzh.nl</p>
+                <p>085-8002006 | info@computerhulpzh.nl</p>
               </div>
             </div>
           </body>
@@ -293,11 +293,11 @@ Neem zo snel mogelijk contact op met de klant!
                 </div>
 
                 <div style="background: #fef3c7; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b; margin: 20px 0;">
-                  <p style="margin: 0;"><strong>💬 Vragen?</strong> Bel ons gerust op <a href="tel:0642548451" style="color: #7c3aed; font-weight: bold; font-size: 18px;">06-42548451</a></p>
+                  <p style="margin: 0;"><strong>💬 Vragen?</strong> Bel ons gerust op <a href="tel:0642548451" style="color: #7c3aed; font-weight: bold; font-size: 18px;">085-8002006</a></p>
                 </div>
 
                 <div style="text-align: center;">
-                  <a href="tel:0642548451" class="button">📞 Bel voor vragen: 06-42548451</a>
+                  <a href="tel:0642548451" class="button">📞 Bel voor vragen: 085-8002006</a>
                 </div>
 
                 <p style="font-size: 16px;">
@@ -307,7 +307,7 @@ Neem zo snel mogelijk contact op met de klant!
               </div>
               <div class="footer">
                 <p><strong>Computerhulp Zuid-Holland</strong></p>
-                <p>06-42548451 | info@computerhulpzh.nl</p>
+                <p>085-8002006 | info@computerhulpzh.nl</p>
                 <p>KvK: 91310318 | BTW: NL865613461B01</p>
               </div>
             </div>
@@ -340,12 +340,12 @@ WAT U KUNT VERWACHTEN:
 ✓ Eenvoudig zelf te beheren
 ✓ Persoonlijke begeleiding van A tot Z
 
-VRAGEN? Bel ons gerust op 06-42548451
+VRAGEN? Bel ons gerust op 085-8002006
 
 Met vriendelijke groet,
 Computerhulp Zuid-Holland
 
-06-42548451 | info@computerhulpzh.nl
+085-8002006 | info@computerhulpzh.nl
 KvK: 91310318 | BTW: NL865613461B01
       `,
     }
@@ -368,13 +368,13 @@ KvK: 91310318 | BTW: NL865613461B01
 
     if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
       return NextResponse.json(
-        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 06-42548451.' },
+        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 085-8002006.' },
         { status: 503 }
       )
     }
 
     return NextResponse.json(
-      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 06-42548451.' },
+      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 085-8002006.' },
       { status: 500 }
     )
   }

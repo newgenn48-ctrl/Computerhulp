@@ -16,7 +16,7 @@ export default function VoorwaardenPage() {
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Algemene Voorwaarden</h1>
 
         <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-          <p className="text-sm text-gray-500">Laatst bijgewerkt: {new Date().toLocaleDateString('nl-NL')}</p>
+          <p className="text-sm text-gray-500">Laatst bijgewerkt: 14 februari 2026</p>
 
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Definities</h2>
@@ -138,8 +138,8 @@ export default function VoorwaardenPage() {
               Klachten moeten binnen 14 dagen na afronding van werkzaamheden worden gemeld via:
             </p>
             <ul className="list-none space-y-2 mt-4">
-              <li><strong>Email:</strong> <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li><strong>Telefoon:</strong> <a href="tel:+31642548451" className="text-blue-600 hover:underline">Bel Direct</a></li>
+              <li><strong>E-mail:</strong> <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
+              <li><strong>Telefoon:</strong> <a href="tel:+31858002006" className="text-blue-600 hover:underline">085-8002006</a></li>
             </ul>
             <p className="mt-4">
               Wij streven ernaar klachten binnen 7 dagen te behandelen.
@@ -180,8 +180,8 @@ export default function VoorwaardenPage() {
             <ul className="list-none space-y-2 mt-4">
               <li>KvK: 91310318</li>
               <li>BTW: NL865613461B01</li>
-              <li>Email: <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li>Telefoon: <a href="tel:+31642548451" className="text-blue-600 hover:underline">Bel Direct</a></li>
+              <li>E-mail: <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
+              <li>Telefoon: <a href="tel:+31858002006" className="text-blue-600 hover:underline">085-8002006</a></li>
             </ul>
           </section>
         </div>

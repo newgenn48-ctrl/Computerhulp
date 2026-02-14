@@ -1,9 +1,10 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Over Ons - Uw IT Specialist aan Huis in Zuid-Holland',
-  description: 'Maak kennis met Computerhulp Zuid-Holland. Meer dan 10 jaar ervaring in computerhulp aan huis. Persoonlijk, eerlijk en vakkundig. Bel 06-42548451.',
+  description: 'Maak kennis met Computerhulp Zuid-Holland. Meer dan 10 jaar ervaring in computerhulp aan huis. Persoonlijk, eerlijk en vakkundig. Bel 085-8002006.',
   keywords: 'over ons, computerhulp zuid-holland, wie zijn wij, ons verhaal, betrouwbare computerhulp, IT specialist, ervaren computerhulp, Zuid-Holland',
   openGraph: {
     title: 'Over Ons | Computerhulp Zuid-Holland',
@@ -34,7 +35,7 @@ const organizationSchema = {
     addressRegion: 'Zuid-Holland',
     addressCountry: 'NL'
   },
-  telephone: '+31642548451',
+  telephone: '+31858002006',
   email: 'info@computerhulpzh.nl',
   foundingDate: '2013',
   areaServed: {
@@ -61,10 +62,13 @@ export default function OverOnsPage() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] bg-white overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/Student aan huis.webp"
-            alt="Computerhulp Zuid-Holland team"
-            className="w-full h-full object-cover"
+            alt="Computerhulp specialist helpt klant thuis"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
           />
           <div className="absolute inset-0 bg-white/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/85 to-transparent" />
@@ -122,10 +126,12 @@ export default function OverOnsPage() {
               </div>
             </div>
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl">
-              <img
+              <Image
                 src="/Computerhulp aan huis.webp"
-                alt="Computerhulp specialist aan het werk"
-                className="w-full h-full object-cover"
+                alt="Computerhulp specialist aan het werk bij klant thuis"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
           </div>
@@ -209,7 +215,7 @@ export default function OverOnsPage() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-all"
             >
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">

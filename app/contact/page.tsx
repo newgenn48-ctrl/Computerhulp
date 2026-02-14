@@ -156,7 +156,7 @@ export default function ContactPage() {
           <div className="grid md:grid-cols-3 gap-8 mb-16">
             {/* Telefoon */}
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-blue-500"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
@@ -165,8 +165,8 @@ export default function ContactPage() {
                 </svg>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Bel Direct</h3>
-              <p className="text-gray-600 mb-4">Meest snelle manier om geholpen te worden</p>
-              <div className="text-2xl font-bold text-blue-600">06-42548451</div>
+              <p className="text-gray-600 mb-4">De snelste manier om geholpen te worden</p>
+              <div className="text-2xl font-bold text-blue-600">085-8002006</div>
               <div className="text-sm text-gray-500 mt-2">Ma-Zo: 08:00 - 22:00</div>
             </a>
 
@@ -180,7 +180,7 @@ export default function ContactPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Email Ons</h3>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">E-mail Ons</h3>
               <p className="text-gray-600 mb-4">Voor niet-spoedeisende vragen</p>
               <div className="text-lg font-semibold text-blue-600 break-all">info@computerhulpzh.nl</div>
               <div className="text-sm text-gray-500 mt-2">Reactie binnen 24 uur</div>
@@ -240,7 +240,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
-                      <p className="text-red-700 mt-1">Probeer het opnieuw of bel ons direct op <a href="tel:0642548451" className="font-bold underline">06-42548451</a></p>
+                      <p className="text-red-700 mt-1">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">085-8002006</a></p>
                     </div>
                   </div>
                 </div>
@@ -303,7 +303,7 @@ export default function ContactPage() {
 
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email <span aria-hidden="true">*</span>
+                    E-mail <span aria-hidden="true">*</span>
                   </label>
                   <input
                     type="email"
@@ -455,7 +455,7 @@ export default function ContactPage() {
                 ))}
               </div>
               <p className="text-sm text-gray-500 mt-6">
-                En nog 30+ andere gemeenten in Zuid-Holland
+                En nog 40+ andere gemeenten in Zuid-Holland
               </p>
             </div>
           </div>

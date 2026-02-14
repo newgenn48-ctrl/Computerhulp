@@ -6,7 +6,7 @@ const city = getCityBySlug('capelle-aan-den-ijssel')!
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Capelle aan den IJssel | Binnen 24u',
-  description: 'Computerhulp aan huis in Capelle aan den IJssel. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 06-42548451.',
+  description: 'Computerhulp aan huis in Capelle aan den IJssel. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 085-8002006.',
   openGraph: {
     title: 'Computerhulp aan Huis Capelle aan den IJssel | Binnen 24u',
     description: 'Computerhulp aan huis in Capelle aan den IJssel. Computer, laptop, WiFi hulp. Binnen 24u, geen voorrijkosten.',

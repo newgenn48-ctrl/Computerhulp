@@ -7,11 +7,11 @@ import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 
 export const metadata: Metadata = {
   title: 'Student aan Huis Zuid-Holland | IT-Studenten Binnen 24u',
-  description: 'Student aan huis voor computerhulp in Zuid-Holland. Geduldige IT-studenten komen binnen 24 uur bij u thuis. Geen voorrijkosten, ook in het weekend. Bel 06-42548451.',
+  description: 'Student aan huis voor computerhulp in Zuid-Holland. Geduldige IT-studenten komen binnen 24 uur bij u thuis. Geen voorrijkosten, ook in het weekend. Bel 085-8002006.',
   keywords: 'student aan huis, IT student, computerhulp student, goedkope computerhulp, computer student, geduldige hulp, senioren hulp, Zuid-Holland',
   openGraph: {
     title: 'Student aan Huis Zuid-Holland | IT-Studenten Binnen 24u',
-    description: 'Jonge, geduldige IT-studenten binnen 24u bij u thuis. Geduldig uitleggen, rustig helpen. Vanaf €43,50. Bel 06-42548451',
+    description: 'Jonge, geduldige IT-studenten binnen 24u bij u thuis. Geduldig uitleggen, rustig helpen. Vanaf €43,50. Bel 085-8002006',
     type: 'website',
     url: 'https://computerhulpzh.nl/student-aan-huis',
   },
@@ -28,7 +28,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/#organization',
       name: 'Computerhulp Zuid-Holland',
       url: 'https://computerhulpzh.nl',
-      telephone: '+31642548451',
+      telephone: '+31858002006',
       email: 'info@computerhulpzh.nl',
       logo: {
         '@type': 'ImageObject',
@@ -129,7 +129,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/student-aan-huis#webpage',
       url: 'https://computerhulpzh.nl/student-aan-huis',
       name: 'Student aan Huis | Computerhulp Zuid-Holland',
-      description: 'Jonge, geduldige IT-studenten komen bij u thuis voor computerhulp. Vanaf €43,50. Bel 06-42548451',
+      description: 'Jonge, geduldige IT-studenten komen bij u thuis voor computerhulp. Vanaf €43,50. Bel 085-8002006',
       isPartOf: {
         '@id': 'https://computerhulpzh.nl/#website'
       },
@@ -204,7 +204,7 @@ const faqData = {
       name: 'In welke plaatsen komt een student aan huis?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Onze studenten komen in heel Zuid-Holland bij u thuis. Dit omvat Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en nog 40+ andere gemeenten. Overal zonder voorrijkosten.'
+        text: 'Onze studenten komen in heel Zuid-Holland bij u thuis. Dit omvat Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en nog 50+ andere gemeenten. Overal zonder voorrijkosten.'
       }
     }
   ]
@@ -276,7 +276,7 @@ export default function StudentAanHuisPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Heb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze IT-studenten lossen het <strong className="text-gray-900">geduldig en vakkundig</strong> op - bij u thuis.
+              Heeft u hulp nodig bij uw computer, tablet, smartphone of een ander digitaal apparaat? Onze IT-studenten lossen het <strong className="text-gray-900">geduldig en vakkundig</strong> op - bij u thuis.
             </p>
 
             {/* USP Badges */}
@@ -313,7 +313,7 @@ export default function StudentAanHuisPage() {
                 </svg>
               </Link>
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -433,7 +433,7 @@ export default function StudentAanHuisPage() {
               Onze IT-studenten volgen actuele opleidingen in Informatica en IT, waardoor ze perfect op de
               hoogte zijn van de nieuwste ontwikkelingen. Ze nemen de tijd om rustig uit te leggen, werken
               met moderne methodes en snappen precies hoe u als klant het beste geholpen wordt. Of het nu gaat
-              om het instellen van je nieuwe smartphone, problemen met je laptop of het beveiligen van je
+              om het instellen van uw nieuwe smartphone, problemen met uw laptop of het beveiligen van uw
               thuisnetwerk - onze student aan huis service staat voor kwaliteit tegen een eerlijke prijs.
             </p>
 
@@ -491,7 +491,7 @@ export default function StudentAanHuisPage() {
 
             <p className="text-gray-700 leading-relaxed">
               Kies voor <strong>student aan huis</strong> en ervaar het verschil van computerhulp door jonge,
-              enthousiaste IT-professionals. Bel vandaag nog <a href="tel:+31642548451" className="text-blue-600 hover:text-blue-800 font-semibold">Bel Direct</a> en
+              enthousiaste IT-professionals. Bel vandaag nog <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">Bel Direct</a> en
               ontdek waarom zoveel mensen in Zuid-Holland vertrouwen op onze student aan huis service.
             </p>
           </div>
@@ -570,7 +570,7 @@ export default function StudentAanHuisPage() {
               },
               {
                 q: 'In welke plaatsen komt een student aan huis?',
-                a: 'Onze studenten komen in heel Zuid-Holland bij u thuis. Dit omvat Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en nog 40+ andere gemeenten. Overal zonder voorrijkosten.'
+                a: 'Onze studenten komen in heel Zuid-Holland bij u thuis. Dit omvat Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en nog 50+ andere gemeenten. Overal zonder voorrijkosten.'
               }
             ].map((faq, idx) => (
               <details
@@ -635,7 +635,7 @@ export default function StudentAanHuisPage() {
 
           <div className="text-center mt-10">
             <Link
-              href="/student-aan-huis"
+              href="/locaties"
               className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg"
             >
               Bekijk alle locaties
@@ -672,7 +672,7 @@ export default function StudentAanHuisPage() {
             </Link>
 
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-10 py-5 rounded-xl font-bold text-xl shadow-lg hover:scale-105 transition-all border-2 border-blue-200"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

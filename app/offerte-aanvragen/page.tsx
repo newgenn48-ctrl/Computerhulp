@@ -172,7 +172,7 @@ export default function OfferteAanvragenPage() {
                   <div>
                     <h3 className="text-green-800 font-semibold">Bedankt voor uw aanvraag!</h3>
                     <p className="text-green-700 mt-1">
-                      We hebben uw offerte aanvraag ontvangen en sturen binnen 24 uur een offerte naar uw emailadres.
+                      We hebben uw offerte aanvraag ontvangen en sturen binnen 24 uur een offerte naar uw e-mailadres.
                       U ontvangt ook een bevestigingsmail.
                     </p>
                   </div>
@@ -190,7 +190,7 @@ export default function OfferteAanvragenPage() {
                   <div>
                     <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
                     <p className="text-red-700 mt-1">
-                      Probeer het opnieuw of bel ons direct op <a href="tel:0642548451" className="font-bold underline">Bel Direct</a>
+                      Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">Bel Direct</a>
                     </p>
                   </div>
                 </div>
@@ -243,7 +243,7 @@ export default function OfferteAanvragenPage() {
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email *
+                    E-mail *
                   </label>
                   <input
                     type="email"
@@ -355,7 +355,7 @@ export default function OfferteAanvragenPage() {
                   <option value="">Selecteer een budget</option>
                   <option value="795-1500">€795 - €1.500</option>
                   <option value="1500-3000">€1.500 - €3.000</option>
-                  <option value="3000-500">€3.000 - €5.000</option>
+                  <option value="3000-5000">€3.000 - €5.000</option>
                   <option value="500plus">€5.000+</option>
                   <option value="weet_niet">Weet ik nog niet</option>
                 </select>

@@ -10,9 +10,9 @@ const PricingSection = dynamic(() => import('@/components/PricingSection'), {
 })
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Zuid-Holland | IT Specialist aan Huis',
-  description: 'Computerhulp Zuid-Holland: uw IT Specialist aan huis. Hulp met computer, laptop, telefoon, tablet, printer, WiFi en smart home. Binnen 24 uur. Bel 06-42548451.',
-  keywords: 'computerhulp zuid-holland, computerhulp aan huis, laptop hulp, computer reparatie, WiFi hulp, printer installatie, Zuid-Holland, Den Haag, Rotterdam, Leiden',
+  title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u | Vanaf €43,50',
+  description: 'Computerproblemen? Computerhulp aan huis in heel Zuid-Holland. PC hulp, laptop reparatie, WiFi, printer en meer. Binnen 24 uur, geen voorrijkosten. Bel 085-8002006.',
+  keywords: 'computerhulp aan huis, computerproblemen, pc hulp aan huis, computer hulp aan huis, laptop hulp, pc laten maken, WiFi hulp, printer installatie, Zuid-Holland, Den Haag, Rotterdam, Leiden, Zoetermeer, Dordrecht',
   openGraph: {
     title: 'Computerhulp Zuid-Holland | IT Specialist aan Huis',
     description: 'Computerhulp Zuid-Holland: uw IT Specialist aan huis. Binnen 24 uur bij u thuis. Geen voorrijkosten. €14,50 per kwartier.',
@@ -54,7 +54,7 @@ const organizationData = {
   },
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+31642548451',
+    telephone: '+31858002006',
     contactType: 'customer service',
     availableLanguage: 'Dutch',
     areaServed: 'NL'
@@ -69,7 +69,7 @@ const localBusinessData = {
   name: 'Computerhulp Zuid-Holland',
   description: 'Professionele computerhulp aan huis in Zuid-Holland. Wij lossen computer, laptop, printer en WiFi problemen snel op. Binnen 24 uur bij u thuis, geen voorrijkosten.',
   url: 'https://computerhulpzh.nl',
-  telephone: '+31642548451',
+  telephone: '+31858002006',
   email: 'info@computerhulpzh.nl',
   logo: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Logo.webp',
   image: [
@@ -157,8 +157,7 @@ const serviceData = {
       priceCurrency: 'EUR',
       unitText: 'per kwartier'
     },
-    availability: 'https://schema.org/InStock',
-    validFrom: '2024-01-01'
+    validFrom: '2025-01-01'
   }
 }
 
@@ -221,7 +220,7 @@ const howToData = {
       '@type': 'HowToStep',
       position: 1,
       name: 'Neem contact op',
-      text: 'Bel 06-42548451 of maak een afspraak via de website. Vertel kort wat het probleem is.'
+      text: 'Bel 085-8002006 of maak een afspraak via de website. Vertel kort wat het probleem is.'
     },
     {
       '@type': 'HowToStep',
@@ -304,14 +303,19 @@ const cities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordr
 export default function HomePage() {
   return (
     <>
-      {/* Structured Data */}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(howToData) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
+      {/* Structured Data - Consolidated @graph */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          organizationData,
+          localBusinessData,
+          websiteData,
+          serviceData,
+          faqData,
+          howToData,
+          breadcrumbData,
+        ].map(({ '@context': _, ...rest }) => rest)
+      }) }} />
 
       {/* Premium Hero Section */}
       <section className="relative min-h-[70vh] md:min-h-screen bg-white overflow-hidden" aria-label="Computerhulp Zuid-Holland hero">
@@ -332,7 +336,7 @@ export default function HomePage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Computerhulp
+              Computerhulp aan Huis
               <span className="block text-blue-600">Zuid-Holland</span>
             </h1>
 
@@ -375,9 +379,9 @@ export default function HomePage() {
                 </svg>
               </Link>
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
-                aria-label="Bel ons voor computerhulp: 06-42548451"
+                aria-label="Bel ons voor computerhulp: 085-8002006"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -427,8 +431,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* SEO Content Section - Hidden on mobile for better conversion */}
-      <section className="hidden md:block py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
+      {/* SEO Content Section */}
+      <section className="py-12 md:py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>
@@ -474,7 +478,7 @@ export default function HomePage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel vandaag nog <a href="tel:+31642548451" className="text-blue-600 font-semibold hover:underline">06-42548451</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur.
+                  Bel vandaag nog <a href="tel:+31858002006" className="text-blue-600 font-semibold hover:underline">085-8002006</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur.
                 </p>
               </div>
             </article>
@@ -567,7 +571,7 @@ export default function HomePage() {
               </svg>
             </Link>
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all"
             >
               <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">

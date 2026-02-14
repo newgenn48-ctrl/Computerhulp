@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Computerhulp Zuid-Holland',
+  title: 'Privacyverklaring | Computerhulp Zuid-Holland',
   description: 'Privacyverklaring van Computerhulp Zuid-Holland. Lees hoe wij omgaan met uw persoonlijke gegevens.',
   robots: { index: false, follow: true },
   alternates: {
@@ -16,7 +16,7 @@ export default function PrivacyPage() {
         <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacyverklaring</h1>
 
         <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
-          <p className="text-sm text-gray-500">Laatst bijgewerkt: {new Date().toLocaleDateString('nl-NL')}</p>
+          <p className="text-sm text-gray-500">Laatst bijgewerkt: 14 februari 2026</p>
 
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Wie zijn wij?</h2>
@@ -26,8 +26,8 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>KvK nummer:</strong> 91310318</li>
               <li><strong>BTW nummer:</strong> NL865613461B01</li>
-              <li><strong>Email:</strong> info@computerhulpzh.nl</li>
-              <li><strong>Telefoon:</strong> 06-42548451</li>
+              <li><strong>E-mail:</strong> info@computerhulpzh.nl</li>
+              <li><strong>Telefoon:</strong> 085-8002006</li>
             </ul>
           </section>
 
@@ -104,10 +104,10 @@ export default function PrivacyPage() {
               <li><strong>Correctie:</strong> uw gegevens laten aanpassen als ze niet kloppen</li>
               <li><strong>Verwijdering:</strong> uw gegevens laten verwijderen</li>
               <li><strong>Bezwaar:</strong> bezwaar maken tegen verwerking</li>
-              <li><strong>Overdracht:</strong> uw gegevens in een leesbaar format ontvangen</li>
+              <li><strong>Overdracht:</strong> uw gegevens in een leesbaar formaat ontvangen</li>
             </ul>
             <p className="mt-4">
-              Neem contact op via <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a> of bel <a href="tel:+31642548451" className="text-blue-600 hover:underline">Bel Direct</a>
+              Neem contact op via <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a> of bel <a href="tel:+31858002006" className="text-blue-600 hover:underline">085-8002006</a>
             </p>
           </section>
 
@@ -142,8 +142,8 @@ export default function PrivacyPage() {
               Neem gerust contact op:
             </p>
             <ul className="list-none space-y-2 mt-4">
-              <li><strong>Email:</strong> <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li><strong>Telefoon:</strong> <a href="tel:+31642548451" className="text-blue-600 hover:underline">Bel Direct</a></li>
+              <li><strong>E-mail:</strong> <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
+              <li><strong>Telefoon:</strong> <a href="tel:+31858002006" className="text-blue-600 hover:underline">085-8002006</a></li>
             </ul>
           </section>
         </div>

@@ -24,7 +24,7 @@ const testimonials = [
     location: 'Rotterdam'
   },
   {
-    quote: 'WiFi werkte niet, email deed het niet. Alles in een keer opgelost bij mij thuis. Eerlijke prijs en geen gedoe. Top service!',
+    quote: 'WiFi werkte niet, e-mail deed het niet. Alles in een keer opgelost bij mij thuis. Eerlijke prijs en geen gedoe. Top service!',
     initials: 'LH',
     name: 'Linda Hendriks',
     location: 'Leiden'
@@ -44,7 +44,7 @@ export function generateStructuredData(city: City) {
         '@id': `${baseUrl}/#organization`,
         name: `Computerhulp aan Huis ${city.name}`,
         url: baseUrl,
-        telephone: '+31642548451',
+        telephone: '+31858002006',
         email: 'info@computerhulpzh.nl',
         logo: {
           '@type': 'ImageObject',
@@ -165,7 +165,7 @@ export function generateFaqData(city: City) {
         name: `Welke problemen lost computerhulp aan huis in ${city.name} op?`,
         acceptedAnswer: {
           '@type': 'Answer',
-          text: `Wij lossen alle computer, laptop, printer, WiFi, email en tablet problemen op bij u thuis in ${city.name}. Van trage computers tot virusverwijdering en van printer installatie tot WiFi optimalisatie.`
+          text: `Wij lossen alle computer-, laptop-, printer-, WiFi-, e-mail- en tabletproblemen op bij u thuis in ${city.name}. Van trage computers tot virusverwijdering en van printerinstallatie tot WiFi-optimalisatie.`
         }
       },
       {
@@ -292,7 +292,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 </svg>
               </Link>
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-200 hover:border-blue-600 transition-all"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -381,7 +381,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
       {/* Pricing */}
       <PricingSection benefits={[
         `Geen voorrijkosten in ${city.name}`,
-        'Ook avonds en in het weekend beschikbaar',
+        'Ook \'s avonds en in het weekend beschikbaar',
         'Betalen via pin, contant of Tikkie'
       ]} />
 
@@ -403,7 +403,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   Of u nu in het centrum van {city.name} woont of aan de rand — binnen 24 uur staan we bij u op de stoep. Ook in de avonduren en in het weekend.
                 </p>
                 <p>
-                  Met meer dan 10 jaar ervaring lossen we uw probleem snel en effectief op. Van trage computers tot printer installatie, van WiFi problemen tot email configuratie.
+                  Met meer dan 10 jaar ervaring lossen we uw probleem snel en effectief op. Van trage computers tot printerinstallatie, van WiFi-problemen tot e-mailconfiguratie.
                 </p>
               </div>
             </div>
@@ -558,7 +558,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   </svg>
                 </Link>
                 <a
-                  href="tel:+31642548451"
+                  href="tel:+31858002006"
                   className="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-10 py-5 rounded-full font-semibold text-lg border-2 border-white/30 hover:border-white/60 transition-all"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -1,14 +1,16 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
+import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
-  title: 'Laptop & Computer Reparatie aan Huis in Zuid-Holland | Binnen 24u',
-  description: 'Laptop of computer kapot? Scherm, toetsenbord of hardware defect? Wij repareren bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel 06-42548451.',
-  keywords: 'laptop reparatie, computer reparatie, laptop kapot, scherm reparatie, toetsenbord reparatie, computer defect, Zuid-Holland',
+  title: 'Laptop Reparatie & PC Hulp aan Huis | 24u',
+  description: 'Laptop of computer kapot? Scherm, toetsenbord of hardware defect? Wij repareren bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Laptop & Computer Reparatie aan Huis',
-    description: 'Laptop of computer kapot? Wij repareren bij u thuis in Zuid-Holland. Bel 06-42548451.',
-    type: 'website'},
+    description: 'Laptop of computer kapot? Wij repareren bij u thuis in Zuid-Holland. Bel 085-8002006.',
+    type: 'website',
+    url: 'https://computerhulpzh.nl/diensten/laptop-computer-reparatie'},
   alternates: {
     canonical: 'https://computerhulpzh.nl/diensten/laptop-computer-reparatie'},
   robots: { index: true, follow: true }}
@@ -20,7 +22,7 @@ const structuredData = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'Computerhulp Zuid-Holland',
-    telephone: '+31642548451',
+    telephone: '+31858002006',
     email: 'info@computerhulpzh.nl',
     address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
   },
@@ -45,7 +47,9 @@ const faqData = {
   mainEntity: [
     { '@type': 'Question', name: 'Repareren jullie alle merken laptops?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we repareren alle merken laptops en computers.' } },
     { '@type': 'Question', name: 'Kunnen jullie een kapot scherm vervangen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we vervangen laptop schermen aan huis. We bestellen het juiste scherm en komen het bij u installeren.' } },
-    { '@type': 'Question', name: 'Wat als de reparatie niet lukt?', acceptedAnswer: { '@type': 'Answer', text: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose. Geen reparatie = geen volledige kosten.' } }
+    { '@type': 'Question', name: 'Wat als de reparatie niet lukt?', acceptedAnswer: { '@type': 'Answer', text: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose. Geen reparatie = geen volledige kosten.' } },
+    { '@type': 'Question', name: 'Kunnen jullie mijn laptop sneller maken met een SSD?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, een SSD upgrade is een van onze meest populaire diensten. Uw laptop kan tot 10x sneller worden. We zetten al uw data over naar de nieuwe SSD.' } },
+    { '@type': 'Question', name: 'Hoe snel kunnen jullie langskomen voor reparatie?', acceptedAnswer: { '@type': 'Answer', text: 'In de meeste gevallen komen we binnen 24 uur bij u langs. Bij spoed proberen we vaak nog dezelfde dag te komen. We zijn 7 dagen per week bereikbaar.' } }
   ]
 }
 
@@ -61,10 +65,13 @@ const problems = [
 ]
 
 const services = [
-  { title: 'Scherm & Display', items: ['Scherm vervanging laptop', 'Scharnier reparatie', 'Backlight problemen', 'Beeldkwaliteit optimaliseren'] },
-  { title: 'Hardware Reparatie', items: ['Toetsenbord vervanging', 'Touchpad reparatie', 'USB poort reparatie', 'Oplader en accu problemen'] },
-  { title: 'Prestatie Upgrade', items: ['SSD upgrade (10x sneller)', 'RAM geheugen uitbreiden', 'Oververhitting oplossen', 'Ventilator schoonmaken/vervangen'] },
-  { title: 'Software & Systeem', items: ['Besturingssysteem herstellen', 'Blue screen oplossen', 'Virus verwijderen', 'Data recovery bij crash'] }
+  'Laptop scherm vervangen',
+  'Toetsenbord en touchpad reparatie',
+  'SSD upgrade voor snellere pc',
+  'Oververhitting en ventilator problemen',
+  'Blue screen en opstartproblemen oplossen',
+  'Accu en oplader problemen verhelpen',
+  'Data redden bij crash of defect',
 ]
 
 const faqs = [
@@ -88,19 +95,19 @@ export default function LaptopComputerReparatiePage() {
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Laptop & Computer Reparatie
+                Laptop Reparatie & PC Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Laptop kapot? Computer defect? Scherm gebroken of start niet meer op? Wij komen bij u thuis in Zuid-Holland en repareren het ter plekke. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Laptop kapot of computer defect? Wij repareren alle merken bij u thuis in Zuid-Holland. Scherm, toetsenbord, hardware — we fixen het ter plekke. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
-                  Hulp Aanvragen
+                  Plan Reparatie
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
                 </Link>
-                <a href="tel:+31642548451" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105">
+                <a href="tel:+31858002006" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105">
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-                  Bel Direct
+                  Bel 085-8002006
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
@@ -110,8 +117,8 @@ export default function LaptopComputerReparatiePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-                <img src={heroImage} alt="Laptop en computer reparatie specialist aan het werk" className="w-full h-[400px] lg:h-[500px] object-cover" loading="eager" />
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
+                <Image src={heroImage} alt="Laptop en computer reparatie specialist aan het werk" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
               {/* Trust badge */}
@@ -133,11 +140,31 @@ export default function LaptopComputerReparatiePage() {
         </div>
       </section>
 
+      {/* Onze Diensten */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
+            <p className="text-lg text-gray-600">Een overzicht van onze reparatie diensten.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+            {services.map((service, idx) => (
+              <div key={idx} className="flex items-center gap-3 py-2">
+                <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span className="text-gray-700">{service}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Problems Section */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelvoorkomende Problemen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelvoorkomende Laptop Problemen</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -159,25 +186,27 @@ export default function LaptopComputerReparatiePage() {
         </div>
       </section>
 
-      {/* What We Do */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Wat We Repareren</h2>
-            <p className="text-lg text-gray-600">Van hardware tot software - alle reparaties aan huis</p>
+      {/* Zo Werkt Het */}
+      <section className="py-16 bg-white border-t border-gray-100">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              Zo Werkt Het
+            </h2>
+            <p className="text-lg text-gray-600">In 3 simpele stappen geholpen</p>
           </div>
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {services.map((service, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">{service.title}</h3>
-                <ul className="space-y-3">
-                  {service.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
-                      <span className="text-gray-700">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
+              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '3', title: 'Probleem Opgelost', desc: 'Uw laptop of pc wordt ter plekke gerepareerd. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
               </div>
             ))}
           </div>
@@ -205,10 +234,55 @@ export default function LaptopComputerReparatiePage() {
                 ))}
               </ul>
             </div>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 text-sm">
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+                <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                </svg>
+                <span>Niet opgelost? Alleen diagnosekosten</span>
+              </div>
+              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
+                <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Gemiddeld 45-90 min</span>
+              </div>
+            </div>
+
             <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-10 py-4 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">
-              Hulp Aanvragen
+              Plan Reparatie
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Ervaringen */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Wat Klanten Zeggen</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              { text: 'Scherm van mijn laptop was kapot. Binnen een dag gerepareerd bij mij thuis. Scheelde me een hoop gedoe.', name: 'Lisa H.', location: 'Rotterdam' },
+              { text: 'Laptop liep vast met een blauw scherm. Ze hebben het besturingssysteem hersteld zonder dataverlies. Knap werk!', name: 'Frank M.', location: 'Den Haag' },
+              { text: 'Oude laptop was eigenlijk te traag om weg te doen. Na een SSD upgrade en meer geheugen werkt hij weer als nieuw.', name: 'Anja P.', location: 'Leiden' }
+            ].map((t, idx) => (
+              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
+                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
+                <p className="text-sm text-gray-500">{t.location}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -234,6 +308,19 @@ export default function LaptopComputerReparatiePage() {
         </div>
       </section>
 
+      {/* SEO Content */}
+      <section className="py-16 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Laptop Reparatie zonder Gedoe</h2>
+          <div className="prose prose-lg text-gray-600 max-w-none">
+            <p>Een kapotte laptop of pc hoeft niet meteen vervangen te worden. Veel problemen zijn sneller en goedkoper op te lossen dan u denkt. Of het nu gaat om een gebroken scherm, een laptop die niet meer opstart, of een pc die constant crasht — onze specialisten repareren het bij u thuis.</p>
+            <p>We werken met alle merken en modellen: HP, Lenovo, Dell, Acer, ASUS, Apple MacBook en meer. Van hardware reparaties zoals scherm- en toetsenbordvervanging tot software problemen zoals een vastgelopen besturingssysteem. En als een upgrade meer zin heeft dan een reparatie, adviseren we u eerlijk.</p>
+          </div>
+        </div>
+      </section>
+
+      <ServiceCrossLinks currentService="laptop-computer-reparatie" serviceName="Laptop & PC Reparatie" />
+
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -241,12 +328,12 @@ export default function LaptopComputerReparatiePage() {
           <p className="text-xl text-blue-100 mb-10">Bel nu en we komen vandaag of morgen al bij u langs voor reparatie</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">
-              Hulp Aanvragen
+              Plan Reparatie
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
             </Link>
-            <a href="tel:+31642548451" className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all">
+            <a href="tel:+31858002006" className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
-              Bel Direct
+              Bel 085-8002006
             </a>
           </div>
         </div>

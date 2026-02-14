@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
     template: '%s | Computerhulp ZH'
   },
-  description: 'Problemen met computer, laptop, printer, email of WiFi? Binnen 24 uur geholpen in heel Zuid-Holland. Transparant tarief: €14,50 per kwartier. Bel 06-42548451.',
+  description: 'Problemen met computer, laptop, printer, email of WiFi? Binnen 24 uur geholpen in heel Zuid-Holland. Transparant tarief: €14,50 per kwartier. Bel 085-8002006.',
   authors: [{ name: 'Computerhulp Zuid-Holland' }],
   creator: 'Computerhulp Zuid-Holland',
   publisher: 'Computerhulp Zuid-Holland',
@@ -43,6 +43,12 @@ export const metadata: Metadata = {
         height: 630,
         alt: 'Computerhulp Zuid-Holland - IT-Hulp aan Huis'},
     ]},
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
+    description: 'Binnen 24 uur computerhulp aan huis in Zuid-Holland. Vanaf €43,50, geen voorrijkosten. Bel 085-8002006.',
+    images: ['/Computerhulp Zuid Holland Logo.webp'],
+  },
   robots: {
     index: true,
     follow: true,
@@ -52,6 +58,9 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1}},
+  other: {
+    'theme-color': '#2563eb',
+  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32' },

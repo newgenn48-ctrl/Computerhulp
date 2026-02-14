@@ -6,7 +6,7 @@ const city = getCityBySlug('hendrik-ido-ambacht')!
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Hendrik-Ido-Ambacht | Binnen 24u',
-  description: 'Computerhulp aan huis in Hendrik-Ido-Ambacht. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 06-42548451.',
+  description: 'Computerhulp aan huis in Hendrik-Ido-Ambacht. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 085-8002006.',
   openGraph: {
     title: 'Computerhulp aan Huis Hendrik-Ido-Ambacht | Binnen 24u',
     description: 'Computerhulp aan huis in Hendrik-Ido-Ambacht. Computer, laptop, WiFi hulp. Binnen 24u, geen voorrijkosten.',

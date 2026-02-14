@@ -5,7 +5,7 @@ interface PricingSectionProps {
 export default function PricingSection({
   benefits = [
     'Geen voorrijkosten in heel Zuid-Holland',
-    'Ook avonds en in het weekend beschikbaar',
+    'Ook \'s avonds en in het weekend beschikbaar',
     'Betalen via pin, contant of Tikkie',
     'Eerlijke inschatting vooraf, geen verrassingen'
   ]

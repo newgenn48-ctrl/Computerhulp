@@ -126,7 +126,7 @@ ${textMessage}
                 Heeft u spoed? Bel ons gerust direct!
               </p>
               <div style="text-align: center;">
-                <a href="tel:0642548451" class="button">Bel direct: 06-42548451</a>
+                <a href="tel:0642548451" class="button">Bel direct: 085-8002006</a>
               </div>
               <p>
                 <strong>Uw gegevens:</strong><br>
@@ -140,7 +140,7 @@ ${textMessage}
             </div>
             <div class="footer">
               <p>
-                Computerhulp Zuid-Holland | 06-42548451 | info@computerhulpzh.nl<br>
+                Computerhulp Zuid-Holland | 085-8002006 | info@computerhulpzh.nl<br>
                 KvK: 91310318 | BTW: NL865613461B01
               </p>
             </div>
@@ -153,7 +153,7 @@ Beste ${textName},
 
 Hartelijk dank voor uw bericht! We hebben uw aanvraag goed ontvangen en zullen zo spoedig mogelijk contact met u opnemen.
 
-In de meeste gevallen reageren we binnen 3 uur op werkdagen. Heeft u spoed? Bel ons gerust direct op 06-42548451!
+In de meeste gevallen reageren we binnen 3 uur op werkdagen. Heeft u spoed? Bel ons gerust direct op 085-8002006!
 
 Uw gegevens:
 E-mail: ${textEmail}
@@ -163,7 +163,7 @@ Met vriendelijke groet,
 Computerhulp Zuid-Holland
 
 ---
-Computerhulp Zuid-Holland | 06-42548451 | info@computerhulpzh.nl
+Computerhulp Zuid-Holland | 085-8002006 | info@computerhulpzh.nl
 KvK: 91310318 | BTW: NL865613461B01
     `,
   }

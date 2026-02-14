@@ -72,14 +72,14 @@ function optimizeCityPage(citySlug, cityName, pageType) {
 
   if (pageType === 'student-aan-huis') {
     newTitle = `Student aan Huis ${cityName} | IT-Student Binnen 24u | €14,50`;
-    newDescription = `🎓 Student aan huis in ${cityName}. Jonge, geduldige IT-studenten binnen 24u bij u thuis! ✓ Computer, laptop, WiFi hulp ✓ Rustig uitleggen ✓ Vanaf €43,50. Bel 06-42548451.`;
+    newDescription = `🎓 Student aan huis in ${cityName}. Jonge, geduldige IT-studenten binnen 24u bij u thuis! ✓ Computer, laptop, WiFi hulp ✓ Rustig uitleggen ✓ Vanaf €43,50. Bel 085-8002006.`;
     newOGTitle = `Student aan Huis ${cityName} | IT-Studenten Binnen 24u`;
-    newOGDescription = `Jonge, geduldige IT-studenten binnen 24u bij u thuis in ${cityName}. Geduldig uitleggen, rustig helpen. Vanaf €43,50. Bel 06-42548451`;
+    newOGDescription = `Jonge, geduldige IT-studenten binnen 24u bij u thuis in ${cityName}. Geduldig uitleggen, rustig helpen. Vanaf €43,50. Bel 085-8002006`;
   } else {
     newTitle = `Computerhulp aan Huis ${cityName} | Binnen 24u bij u Thuis`;
-    newDescription = `💻 Computerhulp aan huis in ${cityName}. Binnen 24 uur bij u thuis! ✓ Computer, laptop, printer, WiFi ✓ Geen voorrijkosten ✓ Transparant tarief. Bel 06-42548451.`;
+    newDescription = `💻 Computerhulp aan huis in ${cityName}. Binnen 24 uur bij u thuis! ✓ Computer, laptop, printer, WiFi ✓ Geen voorrijkosten ✓ Transparant tarief. Bel 085-8002006.`;
     newOGTitle = `Computerhulp aan Huis ${cityName} | Binnen 24u bij u Thuis`;
-    newOGDescription = `Binnen 24 uur bij u thuis in ${cityName}. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 06-42548451`;
+    newOGDescription = `Binnen 24 uur bij u thuis in ${cityName}. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 085-8002006`;
   }
 
   // Vervang title

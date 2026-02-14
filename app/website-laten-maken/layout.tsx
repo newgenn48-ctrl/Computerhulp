@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Website Laten Maken Zuid-Holland | Professioneel & Betaalbaar',
-  description: 'Website laten maken in Zuid-Holland. Custom of WordPress/Shopify. 2-3 weken geleverd, SEO geoptimaliseerd. Gratis offerte. Bel 06-42548451.',
+  description: 'Website laten maken in Zuid-Holland. Custom of WordPress/Shopify. 2-3 weken geleverd, SEO geoptimaliseerd. Gratis offerte. Bel 085-8002006.',
   openGraph: {
     title: 'Website Laten Maken Zuid-Holland | Professioneel',
     description: 'Website laten maken? Vanaf €795, custom code of WordPress/Shopify/Wix. 2-3 weken geleverd. Gratis offerte!',
@@ -31,7 +31,7 @@ const serviceSchema = {
   provider: {
     '@type': 'LocalBusiness',
     name: 'Computerhulp Zuid-Holland',
-    telephone: '+31642548451',
+    telephone: '+31858002006',
     email: 'info@computerhulpzh.nl',
     url: 'https://computerhulpzh.nl',
     address: {

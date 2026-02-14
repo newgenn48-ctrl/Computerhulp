@@ -6,7 +6,7 @@ const city = getCityBySlug('bodegraven-reeuwijk')!
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Bodegraven-Reeuwijk | Binnen 24u',
-  description: 'Computerhulp aan huis in Bodegraven-Reeuwijk. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 06-42548451.',
+  description: 'Computerhulp aan huis in Bodegraven-Reeuwijk. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 085-8002006.',
   openGraph: {
     title: 'Computerhulp aan Huis Bodegraven-Reeuwijk | Binnen 24u',
     description: 'Computerhulp aan huis in Bodegraven-Reeuwijk. Computer, laptop, WiFi hulp. Binnen 24u, geen voorrijkosten.',

@@ -114,7 +114,7 @@ export async function POST(request: NextRequest) {
               </div>
               <div class="footer">
                 <p><strong>Computerhulp Zuid-Holland</strong></p>
-                <p>06-42548451 | info@computerhulpzh.nl</p>
+                <p>085-8002006 | info@computerhulpzh.nl</p>
               </div>
             </div>
           </body>
@@ -148,13 +148,13 @@ Neem zo snel mogelijk contact op!
 
     if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
       return NextResponse.json(
-        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 06-42548451.' },
+        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 085-8002006.' },
         { status: 503 }
       )
     }
 
     return NextResponse.json(
-      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 06-42548451.' },
+      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 085-8002006.' },
       { status: 500 }
     )
   }

@@ -68,14 +68,14 @@ function generateTitle(cityName) {
 // Generate SEO-optimized description (150-160 chars for optimal display)
 function generateDescription(cityName) {
   // Primary format with all keywords - aim for 150-160 chars
-  const desc = `Professionele computerhulp aan huis in ${cityName}. Hulp met computer, laptop, printer, WiFi en meer. Geen voorrijkosten, binnen 24 uur. Bel 06-42548451.`;
+  const desc = `Professionele computerhulp aan huis in ${cityName}. Hulp met computer, laptop, printer, WiFi en meer. Geen voorrijkosten, binnen 24 uur. Bel 085-8002006.`;
 
   if (desc.length <= 160) {
     return desc;
   }
 
   // Shorter fallback for long city names
-  return `Computerhulp aan huis in ${cityName}. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 06-42548451.`;
+  return `Computerhulp aan huis in ${cityName}. Computer, laptop, printer, WiFi hulp. Geen voorrijkosten, binnen 24 uur. Bel 085-8002006.`;
 }
 
 // Generate OG description (shorter, max 120 chars)

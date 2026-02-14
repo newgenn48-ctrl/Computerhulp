@@ -60,7 +60,7 @@ const diensten = [
               We installeren uw printer op al uw apparaten (Windows, Mac, tablets), verbinden hem met WiFi, lossen papierstoringen op, vervangen cartridges en printheads, en zorgen ervoor dat scannen werkt. Ook voor bedrijven met meerdere printers zijn we uw partner.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Binnen 24 uur bij u thuis of op kantoor. €14,50 per kwartier, geen voorrijkosten. Printer werkt niet? Dan betaalt u niet! Bel direct <a href="tel:+31642548451" className="text-blue-600 font-semibold">06-42548451</a>.
+              Binnen 24 uur bij u thuis of op kantoor. €14,50 per kwartier, geen voorrijkosten. Printer werkt niet? Dan betaalt u niet! Bel direct <a href="tel:+31858002006" className="text-blue-600 font-semibold">085-8002006</a>.
             </p>
           </div>
         </div>
@@ -101,7 +101,7 @@ const diensten = [
               We installeren uw email op al uw apparaten (computer, laptop, telefoon, tablet), synchroniseren contacten en agenda, verhelpen wachtwoord problemen, filteren spam, archiveren oude emails en trainen u in het gebruik. Binnen 24 uur bij u thuis of op kantoor.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              €14,50 per kwartier, geen voorrijkosten. Email werkt niet? Dan betaalt u niet! Direct hulp nodig? Bel <a href="tel:+31642548451" className="text-blue-600 font-semibold">06-42548451</a>.
+              €14,50 per kwartier, geen voorrijkosten. Email werkt niet? Dan betaalt u niet! Direct hulp nodig? Bel <a href="tel:+31858002006" className="text-blue-600 font-semibold">085-8002006</a>.
             </p>
           </div>
         </div>
@@ -142,7 +142,7 @@ const diensten = [
               We helpen met: nieuwe router aansluiten, WiFi wachtwoord instellen, alle apparaten verbinden, WiFi bereik vergroten met repeaters, traag internet versnellen, netwerkbeveiliging verbeteren, en gastennetwerk opzetten. Voor thuis én bedrijven.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Binnen 24 uur bij u thuis. €14,50 per kwartier, geen voorrijkosten. WiFi niet verbeterd? Dan betaalt u niet! Bel direct <a href="tel:+31642548451" className="text-blue-600 font-semibold">06-42548451</a>.
+              Binnen 24 uur bij u thuis. €14,50 per kwartier, geen voorrijkosten. WiFi niet verbeterd? Dan betaalt u niet! Bel direct <a href="tel:+31858002006" className="text-blue-600 font-semibold">085-8002006</a>.
             </p>
           </div>
         </div>

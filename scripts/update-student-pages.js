@@ -33,10 +33,10 @@ dirs.forEach(dir => {
   const newTitle = `Student aan Huis ${cityName} | Binnen 24u`;
 
   // New description format (max 155 chars)
-  const newDescription = `Student aan huis in ${cityName} voor computer, laptop en tablet hulp. Binnen 24 uur, geen voorrijkosten. Deskundige IT-studenten. Bel 06-42548451.`;
+  const newDescription = `Student aan huis in ${cityName} voor computer, laptop en tablet hulp. Binnen 24 uur, geen voorrijkosten. Deskundige IT-studenten. Bel 085-8002006.`;
 
   // New OG description (shorter)
-  const newOgDescription = `Student aan huis in ${cityName}. Computer, laptop, tablet hulp. Binnen 24 uur, geen voorrijkosten. Bel 06-42548451.`;
+  const newOgDescription = `Student aan huis in ${cityName}. Computer, laptop, tablet hulp. Binnen 24 uur, geen voorrijkosten. Bel 085-8002006.`;
 
   // Replace main title
   content = content.replace(

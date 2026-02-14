@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 import { cities } from '@/lib/cities'
 
@@ -34,7 +35,7 @@ const localBusinessData = {
   name: 'Computerhulp Zuid-Holland',
   description: 'Professionele computerhulp aan huis in meer dan 50 gemeenten in Zuid-Holland',
   url: 'https://computerhulpzh.nl',
-  telephone: '+31642548451',
+  telephone: '+31858002006',
   email: 'info@computerhulpzh.nl',
   address: {
     '@type': 'PostalAddress',
@@ -86,10 +87,13 @@ export default function LocatiesPage() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] bg-white overflow-hidden">
         <div className="absolute inset-0">
-          <img
+          <Image
             src="/Computerhulp Zuid Holland Over ons.webp"
             alt="Computerhulp Zuid-Holland locaties"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
           />
           <div className="absolute inset-0 bg-white/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/85 to-transparent" />
@@ -115,7 +119,7 @@ export default function LocatiesPage() {
                 </svg>
               </Link>
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
               >
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -138,7 +142,7 @@ export default function LocatiesPage() {
             </div>
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">24u</div>
-              <div className="text-gray-600">Response tijd</div>
+              <div className="text-gray-600">Reactietijd</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">0</div>
@@ -255,7 +259,7 @@ export default function LocatiesPage() {
               </svg>
             </Link>
             <a
-              href="tel:+31642548451"
+              href="tel:+31858002006"
               className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all"
             >
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">

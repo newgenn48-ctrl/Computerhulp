@@ -114,6 +114,18 @@ export const services = [
       'Onderhoud en support',
       'Vanaf €795'
     ]
+  },
+  {
+    title: 'Televisie & Radio',
+    image: '/Student aan huis.webp',
+    slug: '/diensten/televisie-radio',
+    features: [
+      'Smart TV installeren en instellen',
+      'Zenders instellen en sorteren',
+      'Decoder en mediabox programmeren',
+      'Soundbar en surroundsysteem',
+      'Streaming apps instellen'
+    ]
   }
 ]
 

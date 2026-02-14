@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Veelgestelde Vragen (FAQ) | Computerhulp Zuid-Holland',
-  description: 'Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Binnen 24u geholpen. Bel ons op 06-42548451.',
+  description: 'Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Binnen 24u geholpen. Bel ons op 085-8002006.',
   openGraph: {
     title: 'Veelgestelde Vragen (FAQ) | Computerhulp Zuid-Holland',
     description: 'Antwoorden op veelgestelde vragen over onze computerhulp diensten, prijzen en werkgebied.',
@@ -33,6 +33,38 @@ const faqStructuredData = {
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'We rekenen €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in heel Zuid-Holland.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Zijn er voorrijkosten?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Nee, in heel Zuid-Holland zijn er geen voorrijkosten. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Hoe kan ik betalen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'U kunt na afloop betalen via pin, contant of Tikkie. We rekenen af zodra het werk klaar is, zodat u precies weet waar u voor betaalt. Facturen zijn ook mogelijk voor bedrijven.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Werken jullie ook in het weekend?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Ja, we werken 7 dagen per week. Ook op zaterdag en zondag komen we graag bij u langs. Dit is handig als u doordeweeks werkt.'
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Welke problemen kunnen jullie oplossen?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, e-mail, tablets, smartphones, software installeren, virussen verwijderen, dataherstel en persoonlijke training.'
       }
     }
   ]
@@ -110,7 +142,7 @@ export default function FAQPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:+31642548451"
+                href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:scale-105 transition-all"
               >
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -175,12 +207,12 @@ const faqCategories = [
         answer: 'Ja, we werken 7 dagen per week. Ook op zaterdag en zondag komen we graag bij u langs. Dit is handig als u doordeweeks werkt.'
       },
       {
-        question: 'Kunnen jullie s avonds komen?',
+        question: 'Kunnen jullie \'s avonds komen?',
         answer: 'Ja, we zijn ook in de avonduren beschikbaar tot 22:00 uur. Ideaal als u overdag werkt of de kinderen naar bed zijn.'
       },
       {
         question: 'Hoe maak ik een afspraak?',
-        answer: 'Bel ons op 06-42548451 of vul het contactformulier in. We reageren altijd binnen 2 uur en plannen samen een moment dat u uitkomt.'
+        answer: 'Bel ons op 085-8002006 of vul het contactformulier in. We reageren altijd binnen 2 uur en plannen samen een moment dat u uitkomt.'
       }
     ]
   },
@@ -190,7 +222,7 @@ const faqCategories = [
     questions: [
       {
         question: 'Welke problemen kunnen jullie oplossen?',
-        answer: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, email, tablets, smartphones, software installeren, virussen verwijderen, data herstel, en persoonlijke training. Als het met technologie te maken heeft, helpen we.'
+        answer: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, e-mail, tablets, smartphones, software installeren, virussen verwijderen, dataherstel en persoonlijke training. Als het met technologie te maken heeft, helpen we.'
       },
       {
         question: 'Helpen jullie met alle merken computers?',
@@ -206,7 +238,7 @@ const faqCategories = [
       },
       {
         question: 'Geven jullie ook uitleg en training?',
-        answer: 'Absoluut! We nemen altijd de tijd om uit te leggen wat we doen. Ook geven we persoonlijke trainingen voor computer gebruik, internet, email, en specifieke programma\'s.'
+        answer: 'Absoluut! We nemen altijd de tijd om uit te leggen wat we doen. Ook geven we persoonlijke trainingen voor computergebruik, internet, e-mail en specifieke programma\'s.'
       }
     ]
   },
