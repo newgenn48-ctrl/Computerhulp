@@ -126,7 +126,7 @@ ${textMessage}
                 Heeft u spoed? Bel ons gerust direct!
               </p>
               <div style="text-align: center;">
-                <a href="tel:0642548451" class="button">Bel direct: 085-8002006</a>
+                <a href="tel:0858002006" class="button">Bel direct: 085-8002006</a>
               </div>
               <p>
                 <strong>Uw gegevens:</strong><br>

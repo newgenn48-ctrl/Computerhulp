@@ -142,7 +142,7 @@ export default function OfferteBevestigingPage() {
                   Wacht niet op de offerte! Bel ons gerust voor een vrijblijvend gesprek over uw project.
                 </p>
                 <a
-                  href="tel:0642548451"
+                  href="tel:0858002006"
                   className="inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -319,7 +319,7 @@ export default function StudentAanHuisPage() {
                 <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                Bel Direct
+                Bel 085-8002006
               </a>
             </div>
           </div>
@@ -491,7 +491,7 @@ export default function StudentAanHuisPage() {
 
             <p className="text-gray-700 leading-relaxed">
               Kies voor <strong>student aan huis</strong> en ervaar het verschil van computerhulp door jonge,
-              enthousiaste IT-professionals. Bel vandaag nog <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">Bel Direct</a> en
+              enthousiaste IT-professionals. Bel vandaag nog <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">Bel 085-8002006</a> en
               ontdek waarom zoveel mensen in Zuid-Holland vertrouwen op onze student aan huis service.
             </p>
           </div>

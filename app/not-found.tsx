@@ -110,7 +110,7 @@ export default function NotFound() {
                 href="tel:+31858002006"
                 className="text-blue-400 hover:text-blue-300 text-sm font-medium transition-colors"
               >
-                Bel Direct
+                Bel 085-8002006
               </a>
             </div>
           </div>

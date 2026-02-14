@@ -94,7 +94,7 @@ export default function AfspraakBevestigingPage() {
                   Wacht niet en bel ons direct! We zijn 7 dagen per week bereikbaar van 08:00 - 22:00 uur.
                 </p>
                 <a
-                  href="tel:0642548451"
+                  href="tel:0858002006"
                   className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

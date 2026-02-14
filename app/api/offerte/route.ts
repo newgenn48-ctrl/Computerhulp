@@ -293,11 +293,11 @@ Neem zo snel mogelijk contact op met de klant!
                 </div>
 
                 <div style="background: #fef3c7; padding: 20px; border-radius: 8px; border-left: 4px solid #f59e0b; margin: 20px 0;">
-                  <p style="margin: 0;"><strong>💬 Vragen?</strong> Bel ons gerust op <a href="tel:0642548451" style="color: #7c3aed; font-weight: bold; font-size: 18px;">085-8002006</a></p>
+                  <p style="margin: 0;"><strong>💬 Vragen?</strong> Bel ons gerust op <a href="tel:0858002006" style="color: #7c3aed; font-weight: bold; font-size: 18px;">085-8002006</a></p>
                 </div>
 
                 <div style="text-align: center;">
-                  <a href="tel:0642548451" class="button">📞 Bel voor vragen: 085-8002006</a>
+                  <a href="tel:0858002006" class="button">📞 Bel voor vragen: 085-8002006</a>
                 </div>
 
                 <p style="font-size: 16px;">

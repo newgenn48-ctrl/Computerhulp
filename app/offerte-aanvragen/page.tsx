@@ -190,7 +190,7 @@ export default function OfferteAanvragenPage() {
                   <div>
                     <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
                     <p className="text-red-700 mt-1">
-                      Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">Bel Direct</a>
+                      Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">Bel 085-8002006</a>
                     </p>
                   </div>
                 </div>

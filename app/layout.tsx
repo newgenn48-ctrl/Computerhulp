@@ -76,7 +76,6 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID
-  const googleAdsId = process.env.NEXT_PUBLIC_GOOGLE_ADS_ID
   const gtmId = 'GTM-WBZ74G2V'
 
   return (
@@ -107,23 +106,48 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google Ads Tag */}
-        {googleAdsId && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${googleAdsId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-ads" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${googleAdsId}');
-              `}
-            </Script>
-          </>
-        )}
+        {/* Google Ads Tag (gtag.js) */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-16733341823"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-16733341823');
+          `}
+        </Script>
+
+        {/* Google Ads Click-to-Call Conversion */}
+        <Script id="google-ads-conversion" strategy="afterInteractive">
+          {`
+            function gtag_report_conversion(url) {
+              var callback = function () {
+                if (typeof(url) != 'undefined') {
+                  window.location = url;
+                }
+              };
+              gtag('event', 'conversion', {
+                'send_to': 'AW-16733341823/kib1CLKsufgbEP-Qiqs-',
+                'value': 1.0,
+                'currency': 'EUR',
+                'event_callback': callback
+              });
+              return false;
+            }
+
+            // Auto-track all phone link clicks
+            document.addEventListener('click', function(e) {
+              var link = e.target.closest('a[href^="tel:"]');
+              if (link) {
+                e.preventDefault();
+                gtag_report_conversion(link.href);
+              }
+            });
+          `}
+        </Script>
 
 
         {/* Google Analytics Tag */}

@@ -219,7 +219,7 @@ export default function AfspraakMakenPage() {
                   </svg>
                   <div>
                     <h3 className="font-bold text-red-900 mb-1">Er ging iets mis</h3>
-                    <p className="text-red-800 text-sm">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="underline font-semibold">Bel Direct</a></p>
+                    <p className="text-red-800 text-sm">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="underline font-semibold">Bel 085-8002006</a></p>
                   </div>
                 </div>
               </div>
@@ -526,7 +526,7 @@ export default function AfspraakMakenPage() {
                 <p className="text-sm text-gray-500 text-center mt-6">
                   Na het versturen nemen we binnen <strong className="text-gray-900">enkele uren</strong> contact met u op om de afspraak te bevestigen.
                   <br />
-                  Bij spoed kunt u ook direct bellen: <a href="tel:+31858002006" className="text-blue-600 font-bold hover:underline">Bel Direct</a>
+                  Bij spoed kunt u ook direct bellen: <a href="tel:+31858002006" className="text-blue-600 font-bold hover:underline">Bel 085-8002006</a>
                 </p>
               </div>
             </form>
