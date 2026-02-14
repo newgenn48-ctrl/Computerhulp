@@ -134,7 +134,7 @@ export default function RootLayout({
                 }
               };
               gtag('event', 'conversion', {
-                'send_to': 'AW-16733341823/YYYPCLHFu_gbEP-Qiqs-',
+                'send_to': 'AW-16733341823/KWVeCKj-u_gbEP-Qiqs-',
                 'value': 1.0,
                 'currency': 'EUR',
                 'event_callback': callback
