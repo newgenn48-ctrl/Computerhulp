@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'Dataherstel & Backup aan Huis | Binnen 24u',
-  description: 'Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in Zuid-Holland. Geen voorrijkosten. Bel 085-8002006.',
+  description: 'Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in Zuid-Holland. Gratis voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Dataherstel & Backup aan Huis',
     description: 'Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in Zuid-Holland.',
@@ -46,7 +46,7 @@ const faqData = {
   '@type': 'FAQPage',
   mainEntity: [
     { '@type': 'Question', name: 'Kunnen jullie mijn verwijderde bestanden terughalen?', acceptedAnswer: { '@type': 'Answer', text: 'In veel gevallen wel. Als bestanden recent zijn verwijderd en de schijf nog werkt, is de kans groot dat we ze kunnen herstellen.' } },
-    { '@type': 'Question', name: 'Wat voor backup oplossingen bieden jullie?', acceptedAnswer: { '@type': 'Answer', text: 'We installeren automatische backups naar de cloud of naar een externe schijf. Zo bent u altijd beschermd.' } },
+    { '@type': 'Question', name: 'Wat voor backupoplossingen bieden jullie?', acceptedAnswer: { '@type': 'Answer', text: 'We installeren automatische backups naar de cloud of naar een externe schijf. Zo bent u altijd beschermd.' } },
     { '@type': 'Question', name: 'Kunnen jullie data van een kapotte harde schijf redden?', acceptedAnswer: { '@type': 'Answer', text: 'Vaak wel. We maken een diagnose en geven u een eerlijk advies over de mogelijkheden voordat we beginnen.' } },
     { '@type': 'Question', name: 'Hoe lang duurt dataherstel?', acceptedAnswer: { '@type': 'Answer', text: 'Dit hangt af van de situatie. Simpele recovery kan binnen een uur, complexere gevallen kunnen langer duren. We geven vooraf een inschatting.' } },
     { '@type': 'Question', name: 'Kunnen jullie mijn data overzetten naar een nieuwe computer?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we zetten al uw bestanden, foto\'s, documenten en zelfs e-mail en programma-instellingen veilig over naar uw nieuwe computer.' } }
@@ -71,12 +71,12 @@ const services = [
   'Automatische cloud backup instellen',
   'Externe schijf backup opzetten',
   'Data overzetten naar nieuwe computer',
-  'Backup schema maken en testen',
+  'Backupschema maken en testen',
 ]
 
 const faqs = [
   { question: 'Kunnen jullie mijn verwijderde bestanden terughalen?', answer: 'In veel gevallen wel. Als bestanden recent zijn verwijderd en de schijf nog werkt, is de kans groot dat we ze kunnen herstellen. We maken eerst een diagnose voordat we beginnen.' },
-  { question: 'Wat voor backup oplossingen bieden jullie?', answer: 'We installeren automatische backups naar de cloud of naar een externe schijf. We zorgen dat alles automatisch werkt zonder dat u er omkijken naar heeft.' },
+  { question: 'Wat voor backupoplossingen bieden jullie?', answer: 'We installeren automatische backups naar de cloud of naar een externe schijf. We zorgen dat alles automatisch werkt zonder dat u er omkijken naar heeft.' },
   { question: 'Kunnen jullie data van een kapotte harde schijf redden?', answer: 'Vaak wel. We maken een diagnose en geven u een eerlijk advies over de mogelijkheden. Bij ernstige fysieke schade verwijzen we door naar een gespecialiseerd data recovery lab.' },
   { question: 'Hoe lang duurt dataherstel?', answer: 'Dit hangt af van de situatie. Simpele recovery kan binnen een uur, complexere gevallen kunnen langer duren. We geven vooraf een inschatting.' },
   { question: 'Kunnen jullie mijn data overzetten naar een nieuwe computer?', answer: 'Ja, we zetten al uw bestanden, foto\'s, documenten en zelfs e-mail en programma-instellingen veilig over naar uw nieuwe computer.' }
@@ -98,7 +98,7 @@ export default function DataherstelBackupPage() {
                 Dataherstel & Backup aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Bestanden kwijt of harde schijf kapot? Wij redden uw data en zorgen voor een betrouwbare backup zodat u nooit meer iets kwijtraakt. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Bestanden kwijt of harde schijf kapot? Wij redden uw data en zorgen voor een betrouwbare backup zodat u nooit meer iets kwijtraakt.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -111,14 +111,14 @@ export default function DataherstelBackupPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>10+ jaar ervaring</div>
               </div>
             </div>
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
-                <Image src={heroImage} alt="Dataherstel en backup specialist aan het werk" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
+                <Image src={heroImage} alt="Dataherstel en backup IT-student aan het werk" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
               {/* Trust badge */}
@@ -145,7 +145,7 @@ export default function DataherstelBackupPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze dataherstel en backup diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze dataherstel- en backupdiensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -164,7 +164,7 @@ export default function DataherstelBackupPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelvoorkomende Data Problemen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelvoorkomende Dataproblemen</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -198,7 +198,7 @@ export default function DataherstelBackupPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'We herstellen uw data of maken een veilige backup. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -226,7 +226,7 @@ export default function DataherstelBackupPage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'Data terughalen waar mogelijk', 'Backup direct werkend en automatisch', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'Data terughalen waar mogelijk', 'Backup direct werkend en automatisch', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -291,7 +291,7 @@ export default function DataherstelBackupPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over dataherstel en backup aan huis</p>
           </div>
           <div className="space-y-4">
@@ -314,7 +314,7 @@ export default function DataherstelBackupPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Uw Data Is Kostbaar — Wij Beschermen Het</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Niets is zo vervelend als het verliezen van belangrijke bestanden, dierbare foto&apos;s of zakelijke documenten. Of uw harde schijf nu defect is geraakt, u per ongeluk bestanden heeft verwijderd, of uw computer niet meer opstart — er is vaak meer te redden dan u denkt.</p>
-            <p>Onze dataherstel specialisten komen bij u thuis en maken een grondige diagnose. We zijn altijd eerlijk over de mogelijkheden voordat we beginnen. Daarnaast helpen we u met het opzetten van een betrouwbaar backup systeem, zodat u in de toekomst nooit meer data kwijtraakt. We werken met zowel lokale backups als cloud-oplossingen.</p>
+            <p>Onze IT-studenten komen bij u thuis en maken een grondige diagnose. We zijn altijd eerlijk over de mogelijkheden voordat we beginnen. Daarnaast helpen we u met het opzetten van een betrouwbaar backupsysteem, zodat u in de toekomst nooit meer data kwijtraakt. We werken met zowel lokale backups als cloud-oplossingen.</p>
           </div>
         </div>
       </section>

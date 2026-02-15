@@ -4,9 +4,8 @@ import Link from 'next/link'
 import { cities } from '@/lib/cities'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Locaties Zuid-Holland | 50+ Gemeenten | Binnen 24u',
-  description: 'Computerhulp aan huis in heel Zuid-Holland. Bekijk alle 50+ gemeenten waar wij actief zijn. Van Den Haag tot Rotterdam, van Leiden tot Dordrecht. Binnen 24 uur bij u thuis.',
-  keywords: 'computerhulp locaties, Zuid-Holland gemeenten, IT hulp aan huis, computerhulp werkgebied',
+  title: 'Computerhulp Locaties Zuid-Holland | 50+ Gemeenten',
+  description: 'Computerhulp aan huis in heel Zuid-Holland. Bekijk alle 50+ gemeenten waar wij actief zijn. Van Den Haag tot Dordrecht. Bel 085-8002006.',
   openGraph: {
     title: 'Computerhulp Locaties Zuid-Holland | 50+ Gemeenten',
     description: 'Computerhulp aan huis in heel Zuid-Holland. Bekijk alle 50+ gemeenten waar wij actief zijn.',
@@ -106,7 +105,7 @@ export default function LocatiesPage() {
               Onze <span className="text-blue-600">Locaties</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Wij bieden computerhulp aan huis in meer dan <strong className="text-gray-900">50 gemeenten</strong> in <strong className="text-gray-900">Zuid-Holland</strong>. Geen voorrijkosten, binnen 24 uur bij u thuis.
+              Wij bieden computerhulp aan huis in meer dan <strong className="text-gray-900">50 gemeenten</strong> in <strong className="text-gray-900">Zuid-Holland</strong>. Gratis voorrijkosten, binnen 24 uur bij u thuis.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link

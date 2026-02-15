@@ -4,12 +4,12 @@ import Image from 'next/image'
 import { services } from '@/components/ServicesSection'
 
 export const metadata: Metadata = {
-  title: 'Alle Computerhulp Diensten aan Huis in Zuid-Holland',
-  description: 'Bekijk al onze computerhulp diensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, geen voorrijkosten. Bel 085-8002006.',
+  title: 'Alle Computerhulpdiensten aan Huis in Zuid-Holland',
+  description: 'Bekijk al onze computerhulpdiensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, gratis voorrijkosten. Bel 085-8002006.',
 
   openGraph: {
-    title: 'Alle Computerhulp Diensten aan Huis',
-    description: 'Computerhulp aan huis in Zuid-Holland. Van laptop reparatie tot smart home installatie. Binnen 24u.',
+    title: 'Alle Computerhulpdiensten aan Huis',
+    description: 'Computerhulp aan huis in Zuid-Holland. Van laptopreparatie tot smarthome-installatie. Binnen 24u.',
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten'},
   robots: {
@@ -21,8 +21,8 @@ export const metadata: Metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'ItemList',
-  name: 'Computerhulp Diensten aan Huis Zuid-Holland',
-  description: 'Overzicht van alle computerhulp diensten aan huis in Zuid-Holland',
+  name: 'Computerhulpdiensten aan Huis Zuid-Holland',
+  description: 'Overzicht van alle computerhulpdiensten aan huis in Zuid-Holland',
   itemListElement: services.map((service, index) => ({
     '@type': 'ListItem',
     position: index + 1,
@@ -84,7 +84,7 @@ export default function DienstenPage() {
       <section className="relative min-h-screen bg-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image src="/Student aan huis.webp" alt="Computerhulp diensten aan huis in Zuid-Holland" fill sizes="100vw" className="object-cover" priority />
+          <Image src="/Student aan huis.webp" alt="Computerhulpdiensten aan huis in Zuid-Holland" fill sizes="100vw" className="object-cover" priority />
           {/* Light overlay for text readability */}
           <div className="absolute inset-0 bg-white/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/80 to-transparent" />
@@ -94,11 +94,11 @@ export default function DienstenPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-24 min-h-screen flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
-              Alle Computerhulp <span className="text-blue-600">Diensten</span>
+              Alle Computerhulp&shy;<span className="text-blue-600">diensten</span>
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Professionele <strong className="text-gray-900 font-semibold">computerhulp aan huis</strong> in heel Zuid-Holland. Van laptop hulp tot smart home installatie - wij lossen het vakkundig op.
+              Professionele <strong className="text-gray-900 font-semibold">computerhulp aan huis</strong> in heel Zuid-Holland. Van laptophulp tot smarthome-installatie - wij lossen het vakkundig op.
             </p>
 
             {/* USPs */}
@@ -144,10 +144,10 @@ export default function DienstenPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Onze Computerhulp Diensten
+              Onze diensten
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Selecteer de dienst die u nodig heeft voor meer informatie
+              Klik op een dienst voor meer informatie
             </p>
           </div>
 
@@ -205,10 +205,10 @@ export default function DienstenPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Transparante Prijzen voor Alle Diensten
+              Wat het kost
             </h2>
             <p className="text-lg text-gray-600">
-              Dezelfde eerlijke prijs voor al onze computerhulp diensten
+              Voor al onze diensten geldt dezelfde prijs
             </p>
           </div>
 
@@ -220,7 +220,7 @@ export default function DienstenPage() {
             <div className="bg-white rounded-xl p-6 mb-8 shadow-sm">
               <ul className="grid md:grid-cols-2 gap-4">
                 {[
-                  'Geen voorrijkosten in heel Zuid-Holland',
+                  'Gratis voorrijkosten in heel Zuid-Holland',
                   'Alle diensten dezelfde prijs',
                   'Diagnose ter plekke inbegrepen',
                   'Betalen na afloop',
@@ -253,10 +253,10 @@ export default function DienstenPage() {
           </h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed mb-4">
-              Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Wij bieden een compleet pakket aan IT-diensten voor particulieren en bedrijven in heel Zuid-Holland. Van computer en laptop hulp tot WiFi installatie, van printer problemen tot smart home oplossingen.
+              Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Wij bieden een compleet pakket aan IT-diensten voor particulieren en bedrijven in heel Zuid-Holland. Van computer en laptophulp tot WiFi installatie, van printerproblemen tot smarthome-oplossingen.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Onze ervaren technici komen bij u thuis of op kantoor en lossen uw technische problemen ter plekke op. Of het nu gaat om een trage computer, internetproblemen, e-mail instellingen of smartphone hulp - wij helpen u vakkundig en persoonlijk.
+              Onze IT-studenten komen bij u thuis en lossen uw technische problemen ter plekke op. Of het nu gaat om een trage computer, internetproblemen, e-mailinstellingen of smartphonehulp - wij helpen u vakkundig en persoonlijk.
             </p>
             <p className="text-gray-700 leading-relaxed">
               Alle diensten voor dezelfde transparante prijs van €14,50 per kwartier, zonder voorrijkosten. Bel <a href="tel:+31858002006" className="text-blue-600 font-semibold">085-8002006</a> en wij komen binnen 24 uur bij u langs.

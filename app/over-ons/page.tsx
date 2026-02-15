@@ -3,9 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Over Ons - Uw IT Specialist aan Huis in Zuid-Holland',
+  title: 'Over Ons - Uw IT-student aan Huis in Zuid-Holland',
   description: 'Maak kennis met Computerhulp Zuid-Holland. Meer dan 10 jaar ervaring in computerhulp aan huis. Persoonlijk, eerlijk en vakkundig. Bel 085-8002006.',
-  keywords: 'over ons, computerhulp zuid-holland, wie zijn wij, ons verhaal, betrouwbare computerhulp, IT specialist, ervaren computerhulp, Zuid-Holland',
   openGraph: {
     title: 'Over Ons | Computerhulp Zuid-Holland',
     description: 'Maak kennis met Computerhulp Zuid-Holland. Meer dan 10 jaar ervaring, 500+ tevreden klanten.',
@@ -64,7 +63,7 @@ export default function OverOnsPage() {
         <div className="absolute inset-0">
           <Image
             src="/Student aan huis.webp"
-            alt="Computerhulp specialist helpt klant thuis"
+            alt="Computerhulp IT-student helpt klant thuis"
             fill
             className="object-cover"
             sizes="100vw"
@@ -107,7 +106,7 @@ export default function OverOnsPage() {
               Ons Verhaal
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Van een kleine start tot dé specialist in computerhulp aan huis
+              Van een kleine start tot dé partner voor computerhulp aan huis
             </p>
           </div>
 
@@ -128,7 +127,7 @@ export default function OverOnsPage() {
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/Computerhulp aan huis.webp"
-                alt="Computerhulp specialist aan het werk bij klant thuis"
+                alt="Computerhulp IT-student aan het werk bij klant thuis"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -143,10 +142,10 @@ export default function OverOnsPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Waarom Klanten Voor Ons Kiezen
+              Waarom mensen ons bellen
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Deze waarden staan centraal in alles wat we doen
+              Dit vinden onze klanten belangrijk — en wij ook
             </p>
           </div>
 
@@ -186,7 +185,7 @@ export default function OverOnsPage() {
           <div className="space-y-4">
             {[
               { title: 'Binnen 24 Uur Reactie', desc: 'We reageren altijd binnen 24 uur op uw aanvraag. In spoedsituaties vaak nog dezelfde dag.' },
-              { title: 'Geen Voorrijkosten', desc: 'In heel Zuid-Holland komen we gratis bij u langs. 7 dagen per week, ook in de avond.' },
+              { title: 'Gratis Voorrijkosten', desc: 'In heel Zuid-Holland komen we gratis bij u langs. 7 dagen per week, ook in de avond.' },
               { title: 'Eerlijke Prijzen', desc: 'Vaste prijs van €14,50 per kwartier. We geven altijd een eerlijke inschatting vooraf.' },
               { title: 'Privacy & Veiligheid', desc: 'Uw gegevens zijn veilig bij ons. We behandelen uw informatie met de grootst mogelijke zorgvuldigheid.' },
             ].map((item, idx) => (

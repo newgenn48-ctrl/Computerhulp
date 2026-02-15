@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'Laptop Reparatie & PC Hulp aan Huis | 24u',
-  description: 'Laptop of computer kapot? Scherm, toetsenbord of hardware defect? Wij repareren bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel 085-8002006.',
+  description: 'Laptop of computer kapot? Scherm, toetsenbord of hardware defect? Wij repareren bij u thuis in Zuid-Holland. Gratis voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Laptop & Computer Reparatie aan Huis',
     description: 'Laptop of computer kapot? Wij repareren bij u thuis in Zuid-Holland. Bel 085-8002006.',
@@ -47,9 +47,9 @@ const faqData = {
   mainEntity: [
     { '@type': 'Question', name: 'Repareren jullie alle merken laptops?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we repareren alle merken laptops en computers.' } },
     { '@type': 'Question', name: 'Kunnen jullie een kapot scherm vervangen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we vervangen laptop schermen aan huis. We bestellen het juiste scherm en komen het bij u installeren.' } },
-    { '@type': 'Question', name: 'Wat als de reparatie niet lukt?', acceptedAnswer: { '@type': 'Answer', text: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose. Geen reparatie = geen volledige kosten.' } },
-    { '@type': 'Question', name: 'Kunnen jullie mijn laptop sneller maken met een SSD?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, een SSD upgrade is een van onze meest populaire diensten. Uw laptop kan tot 10x sneller worden. We zetten al uw data over naar de nieuwe SSD.' } },
-    { '@type': 'Question', name: 'Hoe snel kunnen jullie langskomen voor reparatie?', acceptedAnswer: { '@type': 'Answer', text: 'In de meeste gevallen komen we binnen 24 uur bij u langs. Bij spoed proberen we vaak nog dezelfde dag te komen. We zijn 7 dagen per week bereikbaar.' } }
+    { '@type': 'Question', name: 'Moet mijn laptop mee naar een werkplaats?', acceptedAnswer: { '@type': 'Answer', text: 'Nee, wij repareren uw laptop bij u thuis. Alleen bij complexe hardwarefouten kan het nodig zijn om uw laptop tijdelijk mee te nemen.' } },
+    { '@type': 'Question', name: 'Hoe lang duurt een laptop reparatie gemiddeld?', acceptedAnswer: { '@type': 'Answer', text: 'De meeste reparaties zijn binnen 1 tot 2 uur klaar. Bij onderdelen die besteld moeten worden, komt de technicus terug zodra het onderdeel binnen is.' } },
+    { '@type': 'Question', name: 'Kunnen jullie ook waterschade aan een laptop repareren?', acceptedAnswer: { '@type': 'Answer', text: 'Wij doen ons best om waterschade te herstellen. Hoe sneller u ons belt, hoe groter de kans op een succesvolle reparatie.' } }
   ]
 }
 
@@ -65,10 +65,10 @@ const problems = [
 ]
 
 const services = [
-  'Laptop scherm vervangen',
+  'Laptopscherm vervangen',
   'Toetsenbord en touchpad reparatie',
   'SSD upgrade voor snellere pc',
-  'Oververhitting en ventilator problemen',
+  'Oververhitting en ventilatorproblemen',
   'Blue screen en opstartproblemen oplossen',
   'Accu en oplader problemen verhelpen',
   'Data redden bij crash of defect',
@@ -76,10 +76,10 @@ const services = [
 
 const faqs = [
   { question: 'Repareren jullie alle merken laptops en computers?', answer: 'Ja, we repareren alle merken laptops en computers. Van zakelijke laptops tot gaming computers.' },
-  { question: 'Kunnen jullie een kapot laptop scherm vervangen?', answer: 'Ja, we vervangen laptop schermen aan huis. We bestellen het juiste scherm voor uw model en komen het bij u installeren. Meestal binnen enkele dagen geregeld.' },
-  { question: 'Wat als de reparatie niet lukt?', answer: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). Geen reparatie = geen volledige kosten. We zijn altijd eerlijk vooraf.' },
-  { question: 'Kunnen jullie mijn laptop sneller maken met een SSD?', answer: 'Ja, een SSD upgrade is een van onze meest populaire diensten. Uw laptop kan tot 10x sneller worden. We zetten al uw data over naar de nieuwe SSD.' },
-  { question: 'Hoe snel kunnen jullie langskomen voor reparatie?', answer: 'In de meeste gevallen komen we binnen 24 uur bij u langs. Bij spoed proberen we vaak nog dezelfde dag te komen. We zijn 7 dagen per week bereikbaar.' }
+  { question: 'Kunnen jullie een kapot laptopscherm vervangen?', answer: 'Ja, we vervangen laptop schermen aan huis. We bestellen het juiste scherm voor uw model en komen het bij u installeren. Meestal binnen enkele dagen geregeld.' },
+  { question: 'Moet mijn laptop mee naar een werkplaats?', answer: 'Nee, wij repareren uw laptop bij u thuis. Alleen bij complexe hardwarefouten zoals moederbordproblemen kan het nodig zijn om uw laptop tijdelijk mee te nemen. We bespreken dit altijd vooraf.' },
+  { question: 'Hoe lang duurt een laptop reparatie gemiddeld?', answer: 'De meeste reparaties zijn binnen 1 tot 2 uur klaar. Bij onderdelen die besteld moeten worden, zoals een nieuw scherm of accu, komt de technicus terug zodra het onderdeel binnen is.' },
+  { question: 'Kunnen jullie ook waterschade aan een laptop repareren?', answer: 'Wij doen ons best om waterschade te herstellen. Hoe sneller u ons belt, hoe groter de kans op een succesvolle reparatie. Zet uw laptop direct uit en bel ons voor spoedadvies.' }
 ]
 
 export default function LaptopComputerReparatiePage() {
@@ -98,7 +98,7 @@ export default function LaptopComputerReparatiePage() {
                 Laptop Reparatie & PC Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Laptop kapot of computer defect? Wij repareren alle merken bij u thuis in Zuid-Holland. Scherm, toetsenbord, hardware — we fixen het ter plekke. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Laptop kapot of computer defect? Wij repareren alle merken bij u thuis in Zuid-Holland. Scherm, toetsenbord, hardware — we fixen het ter plekke.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -111,14 +111,14 @@ export default function LaptopComputerReparatiePage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Alle merken</div>
               </div>
             </div>
             <div className="relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
-                <Image src={heroImage} alt="Laptop en computer reparatie specialist aan het werk" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
+                <Image src={heroImage} alt="Laptop en computer reparatie IT-student aan het werk" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
               </div>
               {/* Trust badge */}
@@ -145,7 +145,7 @@ export default function LaptopComputerReparatiePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze reparatie diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze reparatiediensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -164,7 +164,7 @@ export default function LaptopComputerReparatiePage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelvoorkomende Laptop Problemen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelvoorkomende Laptopproblemen</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -198,7 +198,7 @@ export default function LaptopComputerReparatiePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'Uw laptop of pc wordt ter plekke gerepareerd. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -226,7 +226,7 @@ export default function LaptopComputerReparatiePage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'Diagnose ter plekke inbegrepen', 'Onderdelen tegen inkoopprijs', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'Diagnose ter plekke inbegrepen', 'Onderdelen tegen inkoopprijs', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -291,7 +291,7 @@ export default function LaptopComputerReparatiePage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over laptop en computer reparatie aan huis</p>
           </div>
           <div className="space-y-4">
@@ -313,8 +313,8 @@ export default function LaptopComputerReparatiePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Laptop Reparatie zonder Gedoe</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een kapotte laptop of pc hoeft niet meteen vervangen te worden. Veel problemen zijn sneller en goedkoper op te lossen dan u denkt. Of het nu gaat om een gebroken scherm, een laptop die niet meer opstart, of een pc die constant crasht — onze specialisten repareren het bij u thuis.</p>
-            <p>We werken met alle merken en modellen: HP, Lenovo, Dell, Acer, ASUS, Apple MacBook en meer. Van hardware reparaties zoals scherm- en toetsenbordvervanging tot software problemen zoals een vastgelopen besturingssysteem. En als een upgrade meer zin heeft dan een reparatie, adviseren we u eerlijk.</p>
+            <p>Een kapotte laptop of pc hoeft niet meteen vervangen te worden. Veel problemen zijn sneller en goedkoper op te lossen dan u denkt. Of het nu gaat om een gebroken scherm, een laptop die niet meer opstart, of een pc die constant crasht — onze IT-studenten repareren het bij u thuis.</p>
+            <p>We werken met alle merken en modellen: HP, Lenovo, Dell, Acer, ASUS, Apple MacBook en meer. Van hardware reparaties zoals scherm- en toetsenbordvervanging tot softwareproblemen zoals een vastgelopen besturingssysteem. En als een upgrade meer zin heeft dan een reparatie, adviseren we u eerlijk.</p>
           </div>
         </div>
       </section>

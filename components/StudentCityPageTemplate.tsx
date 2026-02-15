@@ -6,6 +6,7 @@ import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import { City } from '@/lib/cities'
+import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 
 interface StudentCityPageTemplateProps {
   city: City
@@ -14,12 +15,11 @@ interface StudentCityPageTemplateProps {
 // Metadata generator - used by all 52 city page files
 export function generateStudentPageMetadata(city: City): Metadata {
   return {
-    title: `Student aan Huis ${city.name} | IT Hulp aan Huis | Vanaf €43,50`,
-    description: `Student aan huis in ${city.name} voor computerhulp, laptophulp en IT-problemen. IT-studenten komen binnen 24 uur bij u thuis. Geen voorrijkosten. Bel 085-8002006.`,
-    keywords: `student aan huis ${city.name}, IT-student ${city.name}, computerhulp aan huis ${city.name}, laptophulp ${city.name}, pc-hulp ${city.name}, hulp bij computerproblemen ${city.name}, Zuid-Holland`,
+    title: `Student aan Huis ${city.name} | Vanaf €43,50`,
+    description: `Student aan huis in ${city.name} voor computerhulp en IT-problemen. Binnen 24 uur bij u thuis. Gratis voorrijkosten. Bel 085-8002006.`,
     openGraph: {
-      title: `Student aan Huis ${city.name} | IT Hulp aan Huis`,
-      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, geen voorrijkosten. Bel 085-8002006.`,
+      title: `Student aan Huis ${city.name} | Vanaf €43,50`,
+      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, gratis voorrijkosten. Bel 085-8002006.`,
       type: 'website',
       url: `https://computerhulpzh.nl/student-aan-huis-${city.slug}`,
     },
@@ -31,22 +31,22 @@ export function generateStudentPageMetadata(city: City): Metadata {
 
 const testimonials = [
   {
-    quote: 'Zo fijn om door een jongere geholpen te worden! Hij legde WhatsApp uit op een manier die ik begreep. En zo geduldig!',
-    initials: 'EJ',
-    name: 'Mevrouw De Jong',
-    location: 'Den Haag'
+    quote: 'Die jongen had zoveel geduld! Hij heeft mij stap voor stap leren videobellen met mijn dochter in Australië. Nu bellen we elke week. Geweldig!',
+    initials: 'WP',
+    name: 'Mevrouw Willems',
+    location: 'Delft'
   },
   {
-    quote: 'Onze kleinzoon studeert ook IT. Deze jongen had dezelfde energie. Alles werkt nu en ik snapte zijn uitleg perfect.',
-    initials: 'HV',
-    name: 'Henk V.',
-    location: 'Rotterdam'
+    quote: 'Mijn iPad deed helemaal niks meer. De student had het binnen een half uur weer werkend en legde uit hoe ik foto\'s kan delen. Heel vriendelijk!',
+    initials: 'PK',
+    name: 'De heer Piet',
+    location: 'Dordrecht'
   },
   {
-    quote: 'Student aan huis was perfect! Modern, snel en enthousiast. Mijn laptop is weer als nieuw. Aanrader!',
-    initials: 'MB',
-    name: 'Maria B.',
-    location: 'Leiden'
+    quote: 'Fijn dat er ook \'s avonds iemand kon komen. De student heeft mijn e-mail en agenda ingesteld en alles rustig uitgelegd. Echt een aanrader voor senioren!',
+    initials: 'JV',
+    name: 'Mevrouw Jannie',
+    location: 'Schiedam'
   }
 ]
 
@@ -54,6 +54,10 @@ function generateStructuredData(city: City) {
   const baseUrl = 'https://computerhulpzh.nl'
   const pageUrl = `${baseUrl}/student-aan-huis-${city.slug}`
   const serviceName = `Student aan Huis ${city.name}`
+  const content = getCityContent(city.slug)
+  const cityDescription = content
+    ? `IT-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige IT-studenten bij u thuis.`
+    : `Computerhulp aan huis door IT-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`
 
   return {
     '@context': 'https://schema.org',
@@ -65,6 +69,7 @@ function generateStructuredData(city: City) {
         url: baseUrl,
         telephone: '+31858002006',
         email: 'info@computerhulpzh.nl',
+        description: cityDescription,
         logo: {
           '@type': 'ImageObject',
           '@id': `${baseUrl}/#logo`,
@@ -74,6 +79,7 @@ function generateStructuredData(city: City) {
         },
         address: {
           '@type': 'PostalAddress',
+          addressLocality: city.name,
           addressRegion: 'Zuid-Holland',
           addressCountry: 'NL'
         },
@@ -92,7 +98,6 @@ function generateStructuredData(city: City) {
           }
         ],
         image: `${baseUrl}/Student%20aan%20huis.webp`,
-        description: `Computerhulp aan huis door IT-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`,
         areaServed: {
           '@type': 'City',
           name: city.name
@@ -103,7 +108,7 @@ function generateStructuredData(city: City) {
         '@id': `${pageUrl}#service`,
         serviceType: serviceName,
         name: serviceName,
-        description: `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, geen voorrijkosten.`,
+        description: `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, gratis voorrijkosten.`,
         url: pageUrl,
         provider: { '@id': `${baseUrl}/#organization` },
         areaServed: { '@type': 'City', name: city.name },
@@ -130,7 +135,7 @@ function generateStructuredData(city: City) {
         '@id': `${pageUrl}#webpage`,
         url: pageUrl,
         name: `${serviceName} | IT Hulp aan Huis | Vanaf €43,50`,
-        description: `Student aan huis in ${city.name}. IT-studenten komen bij u thuis voor computerhulp. Binnen 24 uur, geen voorrijkosten.`,
+        description: `Student aan huis in ${city.name}. IT-studenten komen bij u thuis voor computerhulp. Binnen 24 uur, gratis voorrijkosten.`,
         about: { '@id': `${pageUrl}#service` },
         isPartOf: { '@id': `${baseUrl}/#website` },
         primaryImageOfPage: {
@@ -185,15 +190,16 @@ function generateStructuredData(city: City) {
 function generateFaqQuestions(city: City) {
   const baseUrl = 'https://computerhulpzh.nl'
   const pageUrl = `${baseUrl}/student-aan-huis-${city.slug}`
+  const content = getCityContent(city.slug)
 
-  return [
+  const questions: Array<Record<string, unknown>> = [
     {
       '@type': 'Question',
       '@id': `${pageUrl}#faq-1`,
       name: `Wat kost student aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Student aan huis in ${city.name} kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in ${city.name} en omgeving. U betaalt na afloop via pin, contant of Tikkie.`
+        text: `Student aan huis in ${city.name} kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Voorrijden is gratis in ${city.name} en omgeving. U betaalt na afloop via pin, contant of Tikkie.`
       }
     },
     {
@@ -233,30 +239,56 @@ function generateFaqQuestions(city: City) {
       }
     }
   ]
+
+  if (content && content.neighborhoods.length >= 3) {
+    questions.push({
+      '@type': 'Question',
+      '@id': `${pageUrl}#faq-6`,
+      name: `In welke wijken van ${city.name} komen jullie IT-studenten?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Onze IT-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is gratis in de hele regio ${content.region}.`
+      }
+    })
+  }
+
+  return questions
 }
 
-const faqDisplayData = [
-  {
-    question: (city: City) => `Wat kost student aan huis in ${city.name}?`,
-    answer: (city: City) => `Student aan huis in ${city.name} kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in ${city.name} en omgeving. U betaalt na afloop via pin, contant of Tikkie.`
-  },
-  {
-    question: (city: City) => `Hoe snel kan een IT-student in ${city.name} langskomen?`,
-    answer: (city: City) => `In de meeste gevallen kunnen onze IT-studenten binnen 24 uur bij u thuis zijn in ${city.name}. Bij urgente problemen proberen we dezelfde dag langs te komen. We zijn 7 dagen per week beschikbaar, ook 's avonds.`
-  },
-  {
-    question: () => 'Waar helpen jullie IT-studenten mee?',
-    answer: () => 'Onze IT-studenten helpen met laptop- en computerproblemen, WiFi en internet, printers, e-mail, tablets en smartphones, smart home-apparaten en persoonlijke training. Van trage computers tot nieuwe apparaten instellen.'
-  },
-  {
-    question: () => 'Hoe werkt de betaling?',
-    answer: () => 'U betaalt na afloop van het bezoek. Dit kan via pin, contant of Tikkie. U krijgt vooraf een inschatting van de tijd, zodat u weet waar u aan toe bent. Geen verborgen kosten, geen abonnementen.'
-  },
-  {
-    question: (city: City) => `Komen jullie ook 's avonds en in het weekend in ${city.name}?`,
-    answer: (city: City) => `Ja, onze IT-studenten zijn 7 dagen per week beschikbaar in ${city.name}, ook 's avonds tot 22:00 uur. Perfect als u overdag werkt en 's avonds of in het weekend hulp nodig heeft.`
+function getFaqDisplayData(city: City) {
+  const content = getCityContent(city.slug)
+  const items = [
+    {
+      question: `Wat kost student aan huis in ${city.name}?`,
+      answer: `U betaalt \u20AC14,50 per kwartier, met een minimum van drie kwartier (\u20AC43,50). Voorrijden is gratis. Betalen doet u achteraf — via pin, contant of Tikkie.`
+    },
+    {
+      question: `Hoe snel kunnen jullie in ${city.name} langskomen?`,
+      answer: `Meestal zijn we binnen 24 uur bij u. Is het dringend? Dan proberen we het vaak nog dezelfde dag te regelen. We zijn 7 dagen per week bereikbaar, ook 's avonds.`
+    },
+    {
+      question: 'Waar kunnen jullie mee helpen?',
+      answer: 'Eigenlijk met alles rondom uw computer, laptop, tablet, smartphone, printer, WiFi of e-mail. Of u nu een traag apparaat heeft of iets nieuws wilt instellen — wij helpen u graag.'
+    },
+    {
+      question: 'Hoe werkt de betaling?',
+      answer: 'U betaalt pas na afloop, via pin, contant of Tikkie. Vooraf krijgt u een inschatting van de tijd, zodat u weet waar u aan toe bent. Geen verborgen kosten.'
+    },
+    {
+      question: `Komen jullie ook 's avonds en in het weekend?`,
+      answer: `Ja, we zijn 7 dagen per week beschikbaar, ook 's avonds tot 22:00 uur. Handig als u overdag werkt.`
+    }
+  ]
+
+  if (content && content.neighborhoods.length >= 3) {
+    items.push({
+      question: `Komen jullie ook in mijn wijk in ${city.name}?`,
+      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is altijd gratis.`
+    })
   }
-]
+
+  return items
+}
 
 export default function StudentCityPageTemplate({ city }: StudentCityPageTemplateProps) {
   const structuredData = generateStructuredData(city)
@@ -287,19 +319,17 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Student aan Huis
-              <span className="block text-blue-600">{city.name}</span>
+              Student aan Huis <span className="text-blue-600">{city.name}</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              <strong className="text-gray-900">Student aan huis in {city.name}</strong> voor computerhulp, laptophulp en IT-problemen.
-              Onze IT-studenten komen bij u thuis en lossen het <strong className="text-gray-900">geduldig en vakkundig</strong> op.
-              Binnen 24 uur geholpen.
+              <strong className="text-gray-900">Betrouwbare student aan huis in {city.name}</strong> voor computerhulp, laptophulp en IT-problemen.
+              Onze IT-studenten komen bij u thuis en lossen het <strong className="text-gray-900">geduldig en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              {['Binnen 24 uur geholpen', 'Geen voorrijkosten', '7 dagen per week', 'Vanaf €43,50'].map((usp) => (
+              {['Binnen 24 uur geholpen', 'Gratis voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
                 <span key={usp} className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
                   <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
@@ -315,7 +345,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
                 href="/afspraak-maken"
                 className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
               >
-                Hulp Aanvragen
+                Hulp aanvragen
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -336,8 +366,8 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
 
       {/* Services Section */}
       <ServicesSection
-        title={`Waar We U Mee Helpen in ${city.name}`}
-        description="Van laptopproblemen tot smart home-installatie — onze IT-studenten helpen u met alle technische vragen"
+        title={`Waar we u mee helpen in ${city.name}`}
+        description="Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag"
         showFeatures={true}
         limitServices={6}
         showAllButton={true}
@@ -348,10 +378,10 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Hoe Student aan Huis Werkt in {city.name}
+              Zo werkt het in {city.name}
             </h2>
             <p className="text-lg text-gray-600">
-              In 4 stappen van probleem naar oplossing
+              In vier stappen — simpel en overzichtelijk
             </p>
           </div>
 
@@ -360,9 +390,9 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
                 1
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Neem Contact Op</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">U belt of mailt ons</h3>
               <p className="text-gray-600 leading-relaxed">
-                Bel ons of vraag online hulp aan. Vertel kort wat er aan de hand is - we stellen een paar vragen om het probleem te begrijpen.
+                Vertel kort wat er aan de hand is. Geen ingewikkeld formulier, gewoon even bellen of een berichtje sturen.
               </p>
             </div>
 
@@ -370,9 +400,9 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
                 2
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Kies Uw Moment</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">We spreken een moment af</h3>
               <p className="text-gray-600 leading-relaxed">
-                We plannen een afspraak op een moment dat u uitkomt. Vaak al dezelfde dag of de volgende dag. U kiest zelf het tijdstip.
+                Samen zoeken we een tijdstip dat u uitkomt. Meestal kan het al de volgende dag.
               </p>
             </div>
 
@@ -380,9 +410,9 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
                 3
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Student Komt Langs</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">We komen bij u thuis</h3>
               <p className="text-gray-600 leading-relaxed">
-                Onze IT-student komt bij u thuis in {city.name}. U kijkt mee terwijl het probleem wordt opgelost en stap voor stap uitgelegd.
+                Onze IT-student komt langs in {city.name} en gaat rustig aan de slag. U kijkt gewoon mee.
               </p>
             </div>
 
@@ -390,9 +420,9 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center text-white text-4xl mx-auto mb-6 shadow-xl">
                 &#10003;
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Probleem Opgelost</h3>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Alles werkt weer</h3>
               <p className="text-gray-600 leading-relaxed">
-                Uw apparaat werkt weer en u weet precies wat er gedaan is. Betalen na afloop - geen verborgen kosten.
+                U kunt weer verder. Betalen doet u pas achteraf — gewoon via pin, contant of Tikkie.
               </p>
             </div>
           </div>
@@ -401,116 +431,172 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
 
       {/* Pricing */}
       <PricingSection benefits={[
-        `Geen voorrijkosten in ${city.name}`,
+        `Gratis voorrijkosten in ${city.name}`,
         'Eerlijke inschatting vooraf, geen verrassingen',
         'Ook \'s avonds en in het weekend beschikbaar',
         'Betalen via pin, contant of Tikkie'
       ]} />
 
-      {/* Waarom Kiezen - SEO Content */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Waarom Kiezen Voor Student aan Huis in {city.name}?
-          </h2>
+      {/* Waarom Kiezen - SEO Content with city-specific data */}
+      {(() => {
+        const content = getCityContent(city.slug)
+        const populationText = content ? getPopulationDescription(content.population) : ''
+        const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
 
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 leading-relaxed mb-6">
-              <strong>Student aan huis in {city.name}</strong> werkt anders dan u misschien gewend bent.
-              U belt, we plannen samen een moment dat u uitkomt, en een IT-student komt bij u thuis.
-              Geen ingewikkelde procedures, geen abonnementen. Gewoon iemand die uw{' '}
-              <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                computer of laptop
-              </Link>,{' '}
-              <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                tablet
-              </Link>{' '}of{' '}
-              <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                internetprobleem
-              </Link>{' '}oplost en uitlegt wat er aan de hand was.
-            </p>
+        return (
+          <section className="py-16 bg-white">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
+                Waarom mensen ons bellen in {city.name}
+              </h2>
 
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Onze IT-studenten volgen actuele technische opleidingen en zijn vertrouwd met de nieuwste
-              apparaten, software en apps. Ze nemen de tijd om rustig uit te leggen wat ze doen en waarom -
-              in begrijpelijke taal, zonder vakjargon.
-            </p>
+              <div className="prose prose-lg max-w-none">
+                {content ? (
+                  <>
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      <strong>Student aan huis in {city.name}</strong> — persoonlijke hulp bij u thuis, door geduldige IT-studenten die de tijd nemen om alles rustig uit te leggen. In een gemeente met {populationText} helpen wij regelmatig mensen met hun{' '}
+                      <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
+                        computer of laptop
+                      </Link>,{' '}
+                      <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
+                        tablet
+                      </Link>{' '}of{' '}
+                      <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
+                        WiFi
+                      </Link>.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      {neighborhoodText} — onze IT-studenten komen gewoon bij u thuis. Ze volgen een technische opleiding en weten hoe de nieuwste apparaten en software werken. En het fijne is: ze leggen alles rustig uit, in gewone taal.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      <strong>Student aan huis in {city.name}</strong> — u belt, we spreken een moment af, en een IT-student komt bij u thuis.
+                      Geen ingewikkelde procedures, geen abonnementen. Gewoon iemand die uw{' '}
+                      <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
+                        computer of laptop
+                      </Link>,{' '}
+                      <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
+                        tablet
+                      </Link>{' '}of{' '}
+                      <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
+                        WiFi
+                      </Link>{' '}weer aan de praat krijgt.
+                    </p>
+                    <p className="text-gray-700 leading-relaxed mb-6">
+                      Onze IT-studenten volgen een technische opleiding en weten hoe de nieuwste apparaten en software werken.
+                      En het fijne is: ze nemen de tijd om alles rustig uit te leggen, in gewone taal.
+                    </p>
+                  </>
+                )}
 
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-              Wat u kunt verwachten
-            </h3>
-            <ul className="space-y-3 text-gray-700 mb-6">
-              <li className="flex items-start gap-3">
-                <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span><strong>U houdt de regie:</strong> U bepaalt wanneer, hoe lang en wat er gedaan wordt. Geen verplichtingen, geen abonnementen.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span><strong>Vooraf duidelijkheid:</strong> U krijgt een inschatting van de tijd en kosten voordat we beginnen. Geen verrassingen achteraf.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span><strong>Rustig uitgelegd:</strong> Onze studenten leggen stap voor stap uit wat ze doen. U leert er zelf ook van.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span><strong>Betalen achteraf:</strong> Pas na afloop betalen via pin, contant of Tikkie. Geen voorrijkosten in {city.name}.</span>
-              </li>
-              <li className="flex items-start gap-3">
-                <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                <span>
-                  <strong>Breed inzetbaar:</strong> Van{' '}
-                  <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:text-blue-800">printerproblemen</Link> tot{' '}
-                  <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:text-blue-800">smart home-installatie</Link>,{' '}
-                  <Link href="/diensten/email-hulp" className="text-blue-600 hover:text-blue-800">e-mailhulp</Link> en{' '}
-                  <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:text-blue-800">dataherstel</Link>.
-                </span>
-              </li>
-            </ul>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                  Wat u van ons mag verwachten
+                </h3>
+                <ul className="space-y-3 text-gray-700 mb-6">
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong>U bepaalt:</strong> Wanneer, hoe lang en wat er gedaan wordt. Geen verplichtingen, geen abonnementen.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong>Geen verrassingen:</strong> U krijgt vooraf een inschatting van de tijd en kosten. Zo weet u waar u aan toe bent.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong>Rustig uitgelegd:</strong> Onze studenten leggen stap voor stap uit wat ze doen. U leert er zelf ook van.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span><strong>Betalen achteraf:</strong> Pas na afloop betalen via pin, contant of Tikkie. Gratis voorrijkosten in {city.name}.</span>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                    <span>
+                      <strong>Voor van alles:</strong> Van{' '}
+                      <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:text-blue-800">printerproblemen</Link> tot{' '}
+                      <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:text-blue-800">smart home-installatie</Link>,{' '}
+                      <Link href="/diensten/email-hulp" className="text-blue-600 hover:text-blue-800">e-mailhulp</Link> en{' '}
+                      <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:text-blue-800">dataherstel</Link>.
+                    </span>
+                  </li>
+                </ul>
 
-            <p className="text-gray-700 leading-relaxed">
-              Hulp nodig met uw computer, laptop of ander apparaat in {city.name}? Bel{' '}
-              <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">085-8002006</a>{' '}
-              of{' '}
-              <Link href="/afspraak-maken" className="text-blue-600 hover:text-blue-800 font-semibold">vraag online een afspraak aan</Link>.
-            </p>
-          </div>
-        </div>
-      </section>
+                <p className="text-gray-700 leading-relaxed">
+                  Kunnen wij u helpen in {city.name}? Bel gerust{' '}
+                  <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">085-8002006</a>{' '}
+                  of{' '}
+                  <Link href="/afspraak-maken" className="text-blue-600 hover:text-blue-800 font-semibold">vraag online een afspraak aan</Link>.
+                </p>
+              </div>
+            </div>
+          </section>
+        )
+      })()}
+
+      {/* Neighborhoods Section - City-specific */}
+      {(() => {
+        const content = getCityContent(city.slug)
+        if (!content || content.neighborhoods.length < 3) return null
+
+        return (
+          <section className="py-12 bg-gradient-to-br from-blue-50 to-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+                Student aan huis in alle wijken van {city.name}
+              </h2>
+              <p className="text-gray-600 mb-6">
+                Wij komen in alle wijken en buurten van {city.name}. Waar u ook woont — voorrijden is altijd gratis.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {content.neighborhoods.map((neighborhood) => (
+                  <span
+                    key={neighborhood}
+                    className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200"
+                  >
+                    {neighborhood}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* FAQ Section - visible */}
       <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Veelgestelde Vragen
+              Veelgestelde vragen
             </h2>
             <p className="text-lg text-gray-600">
-              Over student aan huis in {city.name}
+              Dit krijgen wij vaak gevraagd
             </p>
           </div>
 
           <div className="space-y-4">
-            {faqDisplayData.map((faq, idx) => (
+            {getFaqDisplayData(city).map((faq, idx) => (
               <details key={idx} className="group bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                 <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
-                  {faq.question(city)}
-                  <svg className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  {faq.question}
+                  <svg className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 leading-relaxed">
-                  {faq.answer(city)}
+                  {faq.answer}
                 </div>
               </details>
             ))}
@@ -523,10 +609,10 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Ervaringen met Student aan Huis
+              Wat onze klanten zeggen
             </h2>
             <p className="text-lg text-gray-600">
-              Wat klanten zeggen over onze IT-studenten
+              Wij helpen dagelijks mensen in heel Zuid-Holland
             </p>
           </div>
 
@@ -565,10 +651,10 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Student aan Huis Nodig in {city.name}?
+            Kunnen wij u helpen in {city.name}?
           </h2>
           <p className="text-xl text-gray-600 mb-10">
-            Bel nu of vraag online hulp aan - vaak al dezelfde dag geholpen
+            Bel ons gerust of stuur een berichtje. We komen graag bij u langs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -579,7 +665,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
               </svg>
-              Hulp Aanvragen
+              Hulp aanvragen
             </Link>
 
             <a
@@ -594,7 +680,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
           </div>
 
           <div className="text-gray-500 text-sm">
-            Ma-Zo: 08:00 - 22:00 | Ook avonden en weekenden | Geen voorrijkosten in {city.name}
+            Ma-Zo: 08:00 - 22:00 | Ook avonden en weekenden | Gratis voorrijkosten in {city.name}
           </div>
         </div>
       </section>
@@ -606,7 +692,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
             Computerhulp in {city.name}
           </h2>
           <p className="text-gray-600 mb-6">
-            Bekijk ook onze andere diensten in {city.name} en omgeving:
+            Bekijk ook onze andere hulp in {city.name}:
           </p>
           <div className="flex flex-wrap gap-3">
             <Link

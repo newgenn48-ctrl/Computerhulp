@@ -1,33 +1,51 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Metadata } from 'next'
 import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import { City } from '@/lib/cities'
+import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 
 interface ComputerhulpCityPageTemplateProps {
   city: City
 }
 
+export function generateComputerhulpPageMetadata(city: City): Metadata {
+  return {
+    title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
+    description: `Computerhulp aan huis in ${city.name}. Hulp met computer, laptop, printer, WiFi en meer. Gratis voorrijkosten, binnen 24 uur. Bel 085-8002006.`,
+    openGraph: {
+      title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
+      description: `Computerhulp aan huis in ${city.name}. Computer-, laptop- en WiFi-hulp. Binnen 24u, gratis voorrijkosten.`,
+      type: 'website',
+      url: `https://computerhulpzh.nl/computerhulp-aan-huis-${city.slug}`,
+    },
+    alternates: {
+      canonical: `https://computerhulpzh.nl/computerhulp-aan-huis-${city.slug}`,
+    },
+  }
+}
+
 const testimonials = [
   {
-    quote: 'Super blij met de computerhulp aan huis! Mijn computer deed het helemaal niet meer. Binnen 2 uur kwam er iemand bij mij thuis en alles werkte weer.',
-    initials: 'MV',
-    name: 'Mevrouw Van Dijk',
-    location: 'Den Haag'
+    quote: 'Mijn laptop was gehackt en ik durfde nergens meer op te klikken. De technicus heeft alles schoongemaakt, beveiligd en mij uitgelegd waar ik op moet letten. Ik voel me weer veilig online.',
+    initials: 'B',
+    name: 'Mevrouw Bea',
+    location: 'Voorburg'
   },
   {
-    quote: 'Eindelijk iemand die normaal uitlegt zonder ingewikkelde termen! Printer werkt nu perfect en ik weet precies hoe ik hem moet gebruiken.',
-    initials: 'JB',
-    name: 'Jan Bakker',
-    location: 'Rotterdam'
+    quote: 'Nieuwe printer aangesloten, scanner ingesteld en meteen laten zien hoe ik dubbelzijdig kan printen. Dat scheelt papier! Heel vriendelijk en op tijd.',
+    initials: 'T',
+    name: 'De heer Theo',
+    location: 'Barendrecht'
   },
   {
-    quote: 'WiFi werkte niet, e-mail deed het niet. Alles in een keer opgelost bij mij thuis. Eerlijke prijs en geen gedoe. Top service!',
-    initials: 'LH',
-    name: 'Linda Hendriks',
-    location: 'Leiden'
+    quote: 'Ons hele thuisnetwerk werkte niet meer na een storing. Binnen een uur alles weer online: computers, tablets en de smart-TV. Heel kundig en duidelijke uitleg achteraf.',
+    initials: 'S',
+    name: 'Mevrouw Sonja',
+    location: 'Gouda'
   }
 ]
 
@@ -35,6 +53,10 @@ export function generateStructuredData(city: City) {
   const baseUrl = 'https://computerhulpzh.nl'
   const pageUrl = `${baseUrl}/computerhulp-aan-huis-${city.slug}`
   const serviceName = `Computerhulp aan Huis ${city.name}`
+  const content = getCityContent(city.slug)
+  const cityDescription = content
+    ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computer, laptop, printer, WiFi problemen opgelost bij u thuis.`
+    : `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, gratis voorrijkosten.`
 
   return {
     '@context': 'https://schema.org',
@@ -46,6 +68,7 @@ export function generateStructuredData(city: City) {
         url: baseUrl,
         telephone: '+31858002006',
         email: 'info@computerhulpzh.nl',
+        description: cityDescription,
         logo: {
           '@type': 'ImageObject',
           '@id': `${baseUrl}/#logo`,
@@ -83,7 +106,7 @@ export function generateStructuredData(city: City) {
         '@id': `${pageUrl}#service`,
         serviceType: 'Computerhulp aan Huis',
         name: serviceName,
-        description: `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, geen voorrijkosten.`,
+        description: `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, gratis voorrijkosten.`,
         url: pageUrl,
         provider: {
           '@id': `${baseUrl}/#organization`
@@ -120,7 +143,7 @@ export function generateStructuredData(city: City) {
         '@id': `${pageUrl}#webpage`,
         url: pageUrl,
         name: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
-        description: `Computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi hulp. Binnen 24 uur bij u thuis, geen voorrijkosten.`,
+        description: `Computerhulp aan huis in ${city.name}. Computer-, laptop-, printer- en WiFi-hulp. Binnen 24 uur bij u thuis, gratis voorrijkosten.`,
         isPartOf: {
           '@id': `${baseUrl}/#website`
         },
@@ -138,45 +161,59 @@ export function generateStructuredData(city: City) {
 export function generateFaqData(city: City) {
   const baseUrl = 'https://computerhulpzh.nl'
   const pageUrl = `${baseUrl}/computerhulp-aan-huis-${city.slug}`
+  const content = getCityContent(city.slug)
+
+  const faqEntities: Array<{ '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }> = [
+    {
+      '@type': 'Question',
+      name: `Wat kost computerhulp aan huis in ${city.name}?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Computerhulp aan huis in ${city.name} kost EUR 14,50 per kwartier met een minimum van 3 kwartier (EUR 43,50 totaal). Voorrijden is gratis.`
+      }
+    },
+    {
+      '@type': 'Question',
+      name: `Hoe snel kan computerhulp aan huis in ${city.name} komen?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Onze computerhulp aan huis komt meestal binnen 24 uur bij u in ${city.name}. Bij acute problemen vaak nog dezelfde dag. We zijn 7 dagen per week beschikbaar.`
+      }
+    },
+    {
+      '@type': 'Question',
+      name: `Welke problemen lost computerhulp aan huis in ${city.name} op?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Wij lossen alle computer-, laptop-, printer-, WiFi-, e-mail- en tabletproblemen op bij u thuis in ${city.name}. Van trage computers tot virusverwijdering en van printerinstallatie tot WiFi-optimalisatie.`
+      }
+    },
+    {
+      '@type': 'Question',
+      name: 'Zijn er voorrijkosten?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Nee, voorrijden is gratis voor computerhulp aan huis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de daadwerkelijke hulp.`
+      }
+    }
+  ]
+
+  if (content && content.neighborhoods.length >= 3) {
+    faqEntities.push({
+      '@type': 'Question',
+      name: `In welke wijken van ${city.name} bieden jullie computerhulp aan?`,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: `Wij bieden computerhulp aan huis in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. In de hele regio ${content.region} is voorrijden gratis.`
+      }
+    })
+  }
 
   return {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
     '@id': `${pageUrl}#faq`,
-    mainEntity: [
-      {
-        '@type': 'Question',
-        name: `Wat kost computerhulp aan huis in ${city.name}?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Computerhulp aan huis in ${city.name} kost EUR 14,50 per kwartier met een minimum van 3 kwartier (EUR 43,50 totaal). Er zijn geen voorrijkosten.`
-        }
-      },
-      {
-        '@type': 'Question',
-        name: `Hoe snel kan computerhulp aan huis in ${city.name} komen?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Onze computerhulp aan huis komt meestal binnen 24 uur bij u in ${city.name}. Bij acute problemen vaak nog dezelfde dag. We zijn 7 dagen per week beschikbaar.`
-        }
-      },
-      {
-        '@type': 'Question',
-        name: `Welke problemen lost computerhulp aan huis in ${city.name} op?`,
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Wij lossen alle computer-, laptop-, printer-, WiFi-, e-mail- en tabletproblemen op bij u thuis in ${city.name}. Van trage computers tot virusverwijdering en van printerinstallatie tot WiFi-optimalisatie.`
-        }
-      },
-      {
-        '@type': 'Question',
-        name: 'Zijn er voorrijkosten?',
-        acceptedAnswer: {
-          '@type': 'Answer',
-          text: `Nee, er zijn geen voorrijkosten voor computerhulp aan huis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de daadwerkelijke hulp.`
-        }
-      }
-    ]
+    mainEntity: faqEntities
   }
 }
 
@@ -250,12 +287,11 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
           <div className="max-w-2xl">
             <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
-              Computerhulp aan Huis
-              <span className="block text-blue-600">{city.name}</span>
+              Computerhulp aan Huis <span className="text-blue-600">{city.name}</span>
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Heb je hulp nodig bij je computer, tablet, smartphone of een ander digitaal apparaat? Onze specialisten in {city.name} lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
+              <strong className="text-gray-900">Betrouwbare computerhulp aan huis in {city.name}</strong> voor al uw computerproblemen. Onze IT-studenten komen bij u thuis en lossen het <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
@@ -270,13 +306,13 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Geen voorrijkosten
+                Gratis voorrijkosten
               </span>
               <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                7 dagen per week
+                Betaalbare tarieven
               </span>
             </div>
 
@@ -298,7 +334,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                Direct bellen
+                Bel 085-8002006
               </a>
             </div>
           </div>
@@ -308,7 +344,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
       {/* Services Section */}
       <ServicesSection
         title={`Computerhulp aan Huis ${city.name}`}
-        description="Van eenvoudige vragen tot complexe problemen — alles lossen wij ter plekke op"
+        description="Van een simpele vraag tot een lastig probleem — wij helpen u graag"
         showFeatures={true}
         limitServices={6}
         showAllButton={true}
@@ -324,7 +360,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
               Computerhulp aan huis in {city.name}
             </h2>
             <p className="text-xl text-gray-600">
-              In 4 eenvoudige stappen van probleem naar oplossing.
+              Zo werkt het — in vier stappen.
             </p>
           </div>
 
@@ -337,8 +373,8 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Neem contact op</h3>
-              <p className="text-gray-600 leading-relaxed">Bel ons of vul het formulier in. Beschrijf kort uw probleem.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">U belt of mailt ons</h3>
+              <p className="text-gray-600 leading-relaxed">Vertel kort wat er aan de hand is. Geen ingewikkeld formulier, gewoon even bellen of een berichtje sturen.</p>
             </div>
 
             <div className="relative group">
@@ -348,8 +384,8 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Afspraak plannen</h3>
-              <p className="text-gray-600 leading-relaxed">Wij plannen samen een moment. Vaak al binnen 24 uur mogelijk.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">We spreken een moment af</h3>
+              <p className="text-gray-600 leading-relaxed">Samen zoeken we een tijdstip dat u uitkomt. Meestal kan het al de volgende dag.</p>
             </div>
 
             <div className="relative group">
@@ -359,8 +395,8 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Wij komen langs</h3>
-              <p className="text-gray-600 leading-relaxed">Onze specialist komt bij u thuis in {city.name} en lost het probleem direct op.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">We komen bij u thuis</h3>
+              <p className="text-gray-600 leading-relaxed">Onze IT-student komt langs in {city.name} en gaat rustig aan de slag.</p>
             </div>
 
             <div className="relative group">
@@ -371,8 +407,8 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   </svg>
                 </div>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">Opgelost</h3>
-              <p className="text-gray-600 leading-relaxed">Alles werkt weer perfect. Betalen kan na afloop.</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-3">Alles werkt weer</h3>
+              <p className="text-gray-600 leading-relaxed">U kunt weer verder. Betalen doet u pas achteraf — gewoon via pin, contant of Tikkie.</p>
             </div>
           </div>
         </div>
@@ -380,89 +416,203 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
 
       {/* Pricing */}
       <PricingSection benefits={[
-        `Geen voorrijkosten in ${city.name}`,
+        `Gratis voorrijkosten in ${city.name}`,
         'Ook \'s avonds en in het weekend beschikbaar',
         'Betalen via pin, contant of Tikkie'
       ]} />
 
-      {/* Content section - Premium SEO */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left Column - Main Content */}
-            <div>
-              <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Over ons</span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-8">
-                Waarom computerhulp aan huis in {city.name}?
-              </h2>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> is dé oplossing wanneer uw computer, laptop, printer of WiFi problemen geeft. Geen gedoe met apparatuur wegbrengen — wij komen naar u toe.
-                </p>
-                <p>
-                  Of u nu in het centrum van {city.name} woont of aan de rand — binnen 24 uur staan we bij u op de stoep. Ook in de avonduren en in het weekend.
-                </p>
-                <p>
-                  Met meer dan 10 jaar ervaring lossen we uw probleem snel en effectief op. Van trage computers tot printerinstallatie, van WiFi-problemen tot e-mailconfiguratie.
-                </p>
+      {/* Content section - Premium SEO with city-specific content */}
+      {(() => {
+        const content = getCityContent(city.slug)
+        const populationText = content ? getPopulationDescription(content.population) : ''
+        const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
+
+        return (
+          <section className="py-24 bg-white">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <div className="grid lg:grid-cols-2 gap-16 items-start">
+                {/* Left Column - City-specific Content */}
+                <div>
+                  <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Over ons</span>
+                  <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-8">
+                    Waarom computerhulp aan huis in {city.name}?
+                  </h2>
+                  <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                    {content ? (
+                      <>
+                        <p>
+                          <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — {content.description} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer of WiFi. Gewoon bij u aan de keukentafel.
+                        </p>
+                        <p>
+                          {neighborhoodText} — onze IT-student komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
+                        </p>
+                        {content.highlights.length > 0 && (
+                          <p>
+                            Wij kennen {city.name} en de regio {content.region} goed. Of het nu gaat om een trage computer, een printer die niet wil of WiFi die steeds wegvalt — wij zoeken het rustig uit en zorgen dat het weer werkt.
+                          </p>
+                        )}
+                      </>
+                    ) : (
+                      <>
+                        <p>
+                          <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — handig als uw computer, laptop, printer of WiFi niet meer doet wat u wilt. U hoeft nergens naartoe, wij komen gewoon bij u thuis.
+                        </p>
+                        <p>
+                          Of u nu in het centrum van {city.name} woont of wat verder weg — meestal zijn we binnen 24 uur bij u. Ook in de avonduren en in het weekend.
+                        </p>
+                        <p>
+                          Of het nu gaat om een trage computer, een printer die niet wil of WiFi die wegvalt — wij zoeken het rustig uit en zorgen dat alles weer werkt.
+                        </p>
+                      </>
+                    )}
+                  </div>
+                </div>
+
+                {/* Right Column - Benefits */}
+                <div className="bg-gray-50 rounded-3xl p-8 sm:p-10">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-8">
+                    Uw voordelen
+                  </h3>
+                  <ul className="space-y-6">
+                    <li className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900 mb-1">Gewoon thuis blijven</div>
+                        <div className="text-gray-600">U hoeft nergens naartoe — wij komen bij u in {city.name}.</div>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900 mb-1">Snel geregeld</div>
+                        <div className="text-gray-600">Meestal is het probleem in één bezoek opgelost.</div>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900 mb-1">Rustige uitleg</div>
+                        <div className="text-gray-600">We nemen de tijd om alles duidelijk uit te leggen.</div>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                        </svg>
+                      </div>
+                      <div>
+                        <div className="font-semibold text-gray-900 mb-1">Gratis voorrijkosten</div>
+                        <div className="text-gray-600">Computerhulp in heel {city.name} zonder extra kosten.</div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
               </div>
             </div>
+          </section>
+        )
+      })()}
 
-            {/* Right Column - Benefits */}
-            <div className="bg-gray-50 rounded-3xl p-8 sm:p-10">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                Uw voordelen
-              </h3>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">Geen transport nodig</div>
-                    <div className="text-gray-600">Wij komen bij u thuis in {city.name} met alle benodigde tools.</div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">Direct opgelost</div>
-                    <div className="text-gray-600">We lossen het probleem meteen op. Geen dagen wachten.</div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">Persoonlijke uitleg</div>
-                    <div className="text-gray-600">We leggen alles rustig uit in uw eigen vertrouwde omgeving.</div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">Geen voorrijkosten</div>
-                    <div className="text-gray-600">Computerhulp in heel {city.name} zonder extra kosten.</div>
-                  </div>
-                </li>
-              </ul>
+      {/* Neighborhoods Section - City-specific */}
+      {(() => {
+        const content = getCityContent(city.slug)
+        if (!content || content.neighborhoods.length < 3) return null
+
+        return (
+          <section className="py-16 bg-gray-50">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                Computerhulp in de regio {content.region}
+              </h2>
+              <p className="text-lg text-gray-600 mb-8">
+                Wij komen in alle wijken en buurten van {city.name}. Waar u ook woont in de regio {content.region} — we zijn er snel.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {content.neighborhoods.map((neighborhood) => (
+                  <span
+                    key={neighborhood}
+                    className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200"
+                  >
+                    {neighborhood}
+                  </span>
+                ))}
+              </div>
             </div>
-          </div>
-        </div>
-      </section>
+          </section>
+        )
+      })()}
+
+      {/* FAQ Section */}
+      {(() => {
+        const content = getCityContent(city.slug)
+        const faqItems = [
+          {
+            question: `Wat kost computerhulp aan huis in ${city.name}?`,
+            answer: `U betaalt \u20AC14,50 per kwartier, met een minimum van drie kwartier (\u20AC43,50). Voorrijden is gratis — u betaalt dus alleen voor de hulp zelf.`
+          },
+          {
+            question: `Hoe snel kunnen jullie in ${city.name} komen?`,
+            answer: `Meestal zijn we binnen 24 uur bij u. Is het dringend? Dan proberen we het vaak nog dezelfde dag te regelen. We zijn 7 dagen per week bereikbaar.`
+          },
+          {
+            question: `Waar kunnen jullie mee helpen?`,
+            answer: `Eigenlijk met alles rondom uw computer, laptop, printer, WiFi, e-mail of tablet. Denk aan een trage computer, een printer die niet wil, WiFi-problemen of hulp bij het instellen van uw e-mail.`
+          },
+          {
+            question: 'Zijn er voorrijkosten?',
+            answer: `Nee, voorrijden is gratis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de hulp zelf.`
+          },
+        ]
+        if (content && content.neighborhoods.length >= 3) {
+          faqItems.push({
+            question: `Komen jullie ook in mijn wijk in ${city.name}?`,
+            answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is altijd gratis.`
+          })
+        }
+
+        return (
+          <section className="py-16 bg-white">
+            <div className="max-w-4xl mx-auto px-4 sm:px-6">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                  Veelgestelde vragen
+                </h2>
+                <p className="text-lg text-gray-600">
+                  Dit krijgen wij vaak gevraagd
+                </p>
+              </div>
+              <div className="space-y-4">
+                {faqItems.map((faq, idx) => (
+                  <details key={idx} className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm">
+                    <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-100 transition-colors">
+                      {faq.question}
+                      <svg className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </div>
+                  </details>
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      })()}
 
       {/* Testimonials - Premium Cards */}
       <section className="py-24 bg-gray-50">
@@ -475,7 +625,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 Wat onze klanten zeggen
               </h2>
               <p className="text-xl text-gray-600">
-                Meer dan 500 tevreden klanten in Zuid-Holland
+                Wij helpen dagelijks mensen in heel Zuid-Holland
               </p>
             </div>
             <div className="flex items-center gap-3 bg-white rounded-2xl px-6 py-4 shadow-sm">
@@ -541,10 +691,10 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
 
             <div className="relative text-center">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                Computerhulp aan huis {city.name} nodig?
+                Kunnen wij u helpen in {city.name}?
               </h2>
               <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                Neem vandaag nog contact op en wij komen bij u thuis
+                Bel ons gerust of stuur een berichtje. We komen graag bij u langs.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
@@ -564,7 +714,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  Direct bellen
+                  Bel 085-8002006
                 </a>
               </div>
 
@@ -585,7 +735,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Geen voorrijkosten
+                  Gratis voorrijkosten
                 </span>
               </div>
             </div>

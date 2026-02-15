@@ -285,7 +285,7 @@ Neem zo snel mogelijk contact op met de klant!
                   <ul>
                     <li>Professioneel en modern design</li>
                     <li>Volledig responsive (mobiel, tablet, desktop)</li>
-                    <li>SEO geoptimaliseerd voor Google</li>
+                    <li>SEO-geoptimaliseerd voor Google</li>
                     <li>Veilig en snel (HTTPS, geoptimaliseerde afbeeldingen)</li>
                     <li>Eenvoudig zelf te beheren</li>
                     <li>Persoonlijke begeleiding van A tot Z</li>
@@ -335,7 +335,7 @@ WAT GEBEURT ER NU?
 WAT U KUNT VERWACHTEN:
 ✓ Professioneel en modern design
 ✓ Volledig responsive (mobiel, tablet, desktop)
-✓ SEO geoptimaliseerd voor Google
+✓ SEO-geoptimaliseerd voor Google
 ✓ Veilig en snel (HTTPS, geoptimaliseerde afbeeldingen)
 ✓ Eenvoudig zelf te beheren
 ✓ Persoonlijke begeleiding van A tot Z

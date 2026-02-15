@@ -35,7 +35,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-300 text-sm mb-4 max-w-md">
-              Al meer dan 10 jaar de specialist in computerhulp, printerhulp, en IT-ondersteuning
+              Al meer dan 10 jaar uw partner voor computerhulp, printerhulp en IT-ondersteuning
               aan huis in heel Zuid-Holland. Binnen 24 uur bij u thuis.
             </p>
             {/* Info links */}

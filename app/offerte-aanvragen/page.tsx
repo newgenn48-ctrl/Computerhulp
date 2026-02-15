@@ -190,7 +190,7 @@ export default function OfferteAanvragenPage() {
                   <div>
                     <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
                     <p className="text-red-700 mt-1">
-                      Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">Bel 085-8002006</a>
+                      Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">085-8002006</a>
                     </p>
                   </div>
                 </div>
@@ -480,34 +480,34 @@ export default function OfferteAanvragenPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-            Veelgestelde Vragen
+            Veelgestelde vragen
           </h2>
 
           <div className="space-y-6">
             <div className="bg-white rounded-xl p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Wat kost een website?
+                Is de offerte vrijblijvend?
               </h3>
               <p className="text-gray-700">
-                Onze websites starten vanaf €795. De exacte prijs hangt af van het aantal pagina&apos;s, functionaliteiten en de gekozen technologie. We maken altijd eerst een offerte op maat.
+                Ja, de offerte is volledig vrijblijvend en gratis. U zit nergens aan vast. We maken een offerte op maat zodat u een goed beeld krijgt van de kosten en mogelijkheden.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Hoe lang duurt het om een website te maken?
+                Welke informatie moet ik meegeven voor een offerte?
               </h3>
               <p className="text-gray-700">
-                Een standaard website is binnen 2-3 weken klaar. Voor grotere projecten zoals webshops of maatwerk kan dit 4-8 weken duren. We geven in de offerte een duidelijke planning.
+                Het type website en een omschrijving van uw wensen zijn voldoende om te starten. Hoe meer details u deelt (inspiratiewebsites, gewenste functies, budget), hoe gerichter onze offerte wordt.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-6 border border-gray-200">
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Kan ik zelf de website aanpassen na oplevering?
+                Kan ik een offerte ook telefonisch aanvragen?
               </h3>
               <p className="text-gray-700">
-                Ja, bij WordPress, Wix of Shopify websites kunt u zelf eenvoudig content aanpassen. Bij custom code websites verzorgen wij aanpassingen, of we kunnen een CMS toevoegen zodat u zelf content kunt beheren.
+                Ja, bel ons gerust op 085-8002006. We bespreken uw wensen en sturen daarna een uitgewerkte offerte per e-mail. Telefonisch advies is altijd gratis.
               </p>
             </div>
 

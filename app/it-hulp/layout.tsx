@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'IT Hulp aan Huis | Computerhulp Zuid-Holland | Binnen 24u',
-  description: 'Professionele IT-hulp aan huis in Zuid-Holland. Computer, laptop, WiFi en printer problemen opgelost. Binnen 24 uur, geen voorrijkosten. Bel 085-8002006.',
+  description: 'Professionele IT-hulp aan huis in Zuid-Holland. Computer, laptop, WiFi en printer problemen opgelost. Binnen 24 uur, gratis voorrijkosten. Bel 085-8002006.',
 }
 
 const jsonLd = {

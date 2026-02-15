@@ -32,7 +32,7 @@ const faqStructuredData = {
       name: 'Wat zijn de kosten voor computerhulp?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We rekenen €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in heel Zuid-Holland.'
+        text: 'We rekenen €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Voorrijden is gratis in heel Zuid-Holland.'
       }
     },
     {
@@ -40,7 +40,7 @@ const faqStructuredData = {
       name: 'Zijn er voorrijkosten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Nee, in heel Zuid-Holland zijn er geen voorrijkosten. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
+        text: 'Nee, in heel Zuid-Holland is voorrijden gratis. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
       }
     },
     {
@@ -92,7 +92,7 @@ export default function FAQPage() {
                 WebkitBackgroundClip: 'unset'
               }}
             >
-              Veelgestelde Vragen
+              Veelgestelde vragen
             </h1>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
               Vind snel antwoord op uw vraag. Staat uw vraag er niet bij? Bel ons gerust!
@@ -178,7 +178,7 @@ const faqCategories = [
       },
       {
         question: 'Zijn er voorrijkosten?',
-        answer: 'Nee, in heel Zuid-Holland zijn er geen voorrijkosten. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
+        answer: 'Nee, in heel Zuid-Holland is voorrijden gratis. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
       },
       {
         question: 'Hoe kan ik betalen?',
@@ -212,7 +212,7 @@ const faqCategories = [
       },
       {
         question: 'Hoe maak ik een afspraak?',
-        answer: 'Bel ons op 085-8002006 of vul het contactformulier in. We reageren altijd binnen 2 uur en plannen samen een moment dat u uitkomt.'
+        answer: 'Bel ons op 085-8002006 of vul het contactformulier in. We reageren altijd binnen 3 uur en plannen samen een moment dat u uitkomt.'
       }
     ]
   },

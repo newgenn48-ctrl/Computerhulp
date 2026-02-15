@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
+import Link from 'next/link'
 
 export default function FloatingButtons() {
   const [show, setShow] = useState(false)
@@ -91,7 +92,7 @@ export default function FloatingButtons() {
       </a>
 
       {/* Contact Button */}
-      <a
+      <Link
         href={contactLink}
         className="group relative w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl hover:shadow-blue-500/50 flex items-center justify-center transition-all hover:scale-110"
         aria-label={contactLabel}
@@ -102,7 +103,7 @@ export default function FloatingButtons() {
         <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
           {contactLabel}
         </span>
-      </a>
+      </Link>
     </div>
   )
 }

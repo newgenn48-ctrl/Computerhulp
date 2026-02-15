@@ -6,11 +6,10 @@ import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 
 export const metadata: Metadata = {
-  title: 'Student aan Huis Zuid-Holland | IT-Studenten Binnen 24u',
-  description: 'Student aan huis voor computerhulp in Zuid-Holland. Geduldige IT-studenten komen binnen 24 uur bij u thuis. Geen voorrijkosten, ook in het weekend. Bel 085-8002006.',
-  keywords: 'student aan huis, IT student, computerhulp student, goedkope computerhulp, computer student, geduldige hulp, senioren hulp, Zuid-Holland',
+  title: 'Student aan Huis | IT-Studenten Binnen 24u',
+  description: 'Student aan huis voor computerhulp in Zuid-Holland. Geduldige IT-studenten binnen 24 uur bij u thuis. Gratis voorrijkosten, ook in het weekend. Bel 085-8002006.',
   openGraph: {
-    title: 'Student aan Huis Zuid-Holland | IT-Studenten Binnen 24u',
+    title: 'Student aan Huis | IT-Studenten Binnen 24u',
     description: 'Jonge, geduldige IT-studenten binnen 24u bij u thuis. Geduldig uitleggen, rustig helpen. Vanaf €43,50. Bel 085-8002006',
     type: 'website',
     url: 'https://computerhulpzh.nl/student-aan-huis',
@@ -129,7 +128,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/student-aan-huis#webpage',
       url: 'https://computerhulpzh.nl/student-aan-huis',
       name: 'Student aan Huis | Computerhulp Zuid-Holland',
-      description: 'Jonge, geduldige IT-studenten komen bij u thuis voor computerhulp. Vanaf €43,50. Bel 085-8002006',
+      description: 'Jonge, geduldige IT-studenten komen bij u thuis voor computerhulp. Vanaf €43,50. Bel 085-8002006.',
       isPartOf: {
         '@id': 'https://computerhulpzh.nl/#website'
       },
@@ -186,7 +185,7 @@ const faqData = {
       name: 'Wat kost een student aan huis?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Een student aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in heel Zuid-Holland. Dezelfde prijs als reguliere computerhulp.'
+        text: 'Een student aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Voorrijden is gratis in heel Zuid-Holland. Dezelfde prijs als reguliere computerhulp.'
       }
     },
     {
@@ -195,7 +194,7 @@ const faqData = {
       name: 'Zijn de studenten wel kundig genoeg?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absoluut! Onze IT-studenten zijn goed opgeleid en hebben ruime ervaring. Ze studeren IT of Informatica en zijn up-to-date met de nieuwste technieken. Perfect voor alle computer, laptop en internet problemen.'
+        text: 'Absoluut! Onze IT-studenten zijn goed opgeleid en hebben ruime ervaring. Ze studeren IT of Informatica en zijn up-to-date met de nieuwste technieken. Perfect voor alle computer-, laptop- en internetproblemen.'
       }
     },
     {
@@ -276,7 +275,7 @@ export default function StudentAanHuisPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Heeft u hulp nodig bij uw computer, tablet, smartphone of een ander digitaal apparaat? Onze IT-studenten lossen het <strong className="text-gray-900">geduldig en vakkundig</strong> op - bij u thuis.
+              <strong className="text-gray-900">Betrouwbare student aan huis</strong> voor computerhulp in Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen uw problemen <strong className="text-gray-900">geduldig en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
@@ -291,13 +290,13 @@ export default function StudentAanHuisPage() {
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Geen voorrijkosten
+                Gratis voorrijkosten
               </span>
               <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                7 dagen per week
+                Betaalbare tarieven
               </span>
             </div>
 
@@ -307,7 +306,7 @@ export default function StudentAanHuisPage() {
                 href="/afspraak-maken"
                 className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
               >
-                Hulp Aanvragen
+                Hulp aanvragen
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -330,8 +329,8 @@ export default function StudentAanHuisPage() {
 
       {/* 3. Services overview */}
       <ServicesSection
-        title="Waar Onze Studenten U Mee Helpen"
-        description="Van simpel tot complex - onze IT-studenten helpen u met alle technische problemen"
+        title="Waar we u mee helpen"
+        description="Van een simpele vraag tot een lastig probleem — onze IT-studenten helpen u graag"
         showFeatures={true}
         limitServices={6}
         showAllButton={true}
@@ -342,10 +341,10 @@ export default function StudentAanHuisPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Hoe Het Werkt
+              Zo werkt het
             </h2>
             <p className="text-lg text-gray-600">
-              In 4 simpele stappen van probleem naar oplossing
+              In vier stappen — simpel en overzichtelijk
             </p>
           </div>
 
@@ -355,10 +354,10 @@ export default function StudentAanHuisPage() {
                 1
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Neem Contact Op
+                U belt of mailt ons
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Bel ons of vul het formulier in. Vertel kort wat het probleem is.
+                Vertel kort wat er aan de hand is. Gewoon even bellen of een berichtje sturen.
               </p>
             </div>
 
@@ -367,10 +366,10 @@ export default function StudentAanHuisPage() {
                 2
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Plan Een Afspraak
+                We spreken een moment af
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                We plannen samen een moment dat u uitkomt. Vaak al binnen 24 uur.
+                Samen zoeken we een tijdstip dat u uitkomt. Meestal kan het al de volgende dag.
               </p>
             </div>
 
@@ -379,10 +378,10 @@ export default function StudentAanHuisPage() {
                 3
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                We Komen Langs
+                We komen bij u thuis
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                We komen bij u thuis en lossen het probleem direct op.
+                Onze IT-student komt langs en gaat rustig aan de slag. U kijkt gewoon mee.
               </p>
             </div>
 
@@ -391,10 +390,10 @@ export default function StudentAanHuisPage() {
                 ✓
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Probleem Opgelost
+                Alles werkt weer
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Alles werkt weer en u weet precies hoe. Betalen na afloop.
+                U kunt weer verder. Betalen doet u pas achteraf — via pin, contant of Tikkie.
               </p>
             </div>
           </div>
@@ -403,8 +402,8 @@ export default function StudentAanHuisPage() {
 
       {/* 5. Pricing */}
       <PricingSection benefits={[
-        'Geen voorrijkosten in heel Zuid-Holland',
-        'Ook avonds en in het weekend beschikbaar',
+        'Gratis voorrijkosten in heel Zuid-Holland',
+        'Ook \'s avonds en in het weekend beschikbaar',
         'Betalen via pin, contant of Tikkie'
       ]} />
 
@@ -412,33 +411,20 @@ export default function StudentAanHuisPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Waarom Kiezen Voor Student aan Huis Zuid-Holland?
+            Waarom mensen ons bellen
           </h2>
 
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed mb-6">
-              <strong>Student aan huis</strong> is een unieke vorm van computerhulp waarbij jonge IT-studenten
-              bij u thuis komen voor computer, laptop en internet problemen. In heel Zuid-Holland bieden wij
-              deze moderne aanpak van computerhulp aan. Onze IT-studenten zijn energiek, geduldig en beschikken
-              over up-to-date kennis. Perfect voor wie liever door een jongere wordt geholpen of gewoon een
-              frisse kijk op technologie waardeert.
+              <strong>Student aan huis</strong> — een IT-student komt bij u thuis voor hulp met uw computer, laptop of internet. Onze studenten zijn geduldig, nemen de tijd en leggen alles rustig uit in gewone taal. In heel Zuid-Holland.
             </p>
 
             <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-              Het Verschil Van Student aan Huis Computerhulp
+              Wat maakt onze studenten anders?
             </h3>
 
             <p className="text-gray-700 leading-relaxed mb-6">
-              Een <strong>student aan huis</strong> combineert jeugdig enthousiasme met professionele kennis.
-              Onze IT-studenten volgen actuele opleidingen in Informatica en IT, waardoor ze perfect op de
-              hoogte zijn van de nieuwste ontwikkelingen. Ze nemen de tijd om rustig uit te leggen, werken
-              met moderne methodes en snappen precies hoe u als klant het beste geholpen wordt. Of het nu gaat
-              om het instellen van uw nieuwe smartphone, problemen met uw laptop of het beveiligen van uw
-              thuisnetwerk - onze student aan huis service staat voor kwaliteit tegen een eerlijke prijs.
-            </p>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              De grote voordelen van student aan huis computerhulp in Zuid-Holland zijn duidelijk:
+              Onze IT-studenten volgen een technische opleiding en weten hoe de nieuwste apparaten en software werken. Ze nemen de tijd, leggen alles rustig uit en helpen u op een manier die bij u past. Of het nu gaat om uw smartphone, laptop of thuisnetwerk.
             </p>
 
             <ul className="space-y-3 mb-8">
@@ -447,8 +433,7 @@ export default function StudentAanHuisPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-gray-700">
-                  <strong>Moderne kennis:</strong> Onze student aan huis professionals zijn up-to-date met
-                  de allernieuwste technologieën en apps
+                  <strong>Actuele kennis:</strong> Onze studenten weten hoe de nieuwste apparaten en apps werken
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -456,8 +441,7 @@ export default function StudentAanHuisPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-gray-700">
-                  <strong>Geduldig uitleggen:</strong> Jongeren hebben vaak een natuurlijk talent voor rustig
-                  uitleggen en begrijpen hoe u het beste leert
+                  <strong>Rustig uitleggen:</strong> Ze nemen de tijd en leggen alles uit in gewone taal
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -465,8 +449,7 @@ export default function StudentAanHuisPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-gray-700">
-                  <strong>Betaalbaar:</strong> Student aan huis betekent dezelfde prijs als reguliere computerhulp,
-                  maar met extra voordelen
+                  <strong>Betaalbaar:</strong> €14,50 per kwartier, gratis voorrijkosten in heel Zuid-Holland
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -474,8 +457,7 @@ export default function StudentAanHuisPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-gray-700">
-                  <strong>Heel Zuid-Holland:</strong> Van Den Haag tot Rotterdam, van Leiden tot Delft -
-                  overal komen onze studenten bij u thuis
+                  <strong>Overal in Zuid-Holland:</strong> Van Den Haag tot Dordrecht, van Leiden tot Gouda
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -483,16 +465,14 @@ export default function StudentAanHuisPage() {
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span className="text-gray-700">
-                  <strong>Flexibel:</strong> Ook &apos;s avonds en in het weekend beschikbaar, want student aan huis
-                  service past zich aan uw agenda aan
+                  <strong>Flexibel:</strong> Ook &apos;s avonds en in het weekend, wanneer het u uitkomt
                 </span>
               </li>
             </ul>
 
             <p className="text-gray-700 leading-relaxed">
-              Kies voor <strong>student aan huis</strong> en ervaar het verschil van computerhulp door jonge,
-              enthousiaste IT-professionals. Bel vandaag nog <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">Bel 085-8002006</a> en
-              ontdek waarom zoveel mensen in Zuid-Holland vertrouwen op onze student aan huis service.
+              Kunnen wij u helpen? Bel gerust <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">085-8002006</a> of
+              <Link href="/afspraak-maken" className="text-blue-600 hover:text-blue-800 font-semibold"> maak een afspraak online</Link>.
             </p>
           </div>
         </div>
@@ -503,10 +483,10 @@ export default function StudentAanHuisPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Dit Zeggen Onze Klanten
+              Wat onze klanten zeggen
             </h2>
             <p className="text-lg text-gray-600">
-              Ervaring met onze studenten aan huis
+              Wij helpen dagelijks mensen in heel Zuid-Holland
             </p>
           </div>
 
@@ -543,10 +523,10 @@ export default function StudentAanHuisPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Veelgestelde Vragen over Student aan Huis
+              Veelgestelde vragen
             </h2>
             <p className="text-lg text-gray-600">
-              Alles wat u wilt weten over onze IT-studenten service
+              Dit krijgen wij vaak gevraagd
             </p>
           </div>
 
@@ -554,23 +534,23 @@ export default function StudentAanHuisPage() {
             {[
               {
                 q: 'Wat is student aan huis?',
-                a: 'Student aan huis betekent dat jonge IT-studenten bij u thuis komen voor computerhulp. Ze zijn geduldig, energiek en leggen alles rustig uit. Perfect voor wie liever met een jongere werkt of een frisse kijk op technologie waardeert.'
+                a: 'Een IT-student komt bij u thuis om te helpen met uw computer, laptop of internet. Onze studenten zijn geduldig, nemen de tijd en leggen alles rustig uit.'
               },
               {
-                q: 'Wat is het verschil met reguliere computerhulp?',
-                a: 'Onze studenten zijn jonge IT-professionals in opleiding. Ze zijn vaak geduldiger, nemen de tijd en leggen dingen op een andere manier uit. Dezelfde kwaliteit en prijs, maar met een frisse kijk en actuele kennis van de nieuwste technologieën.'
+                q: 'Wat is het verschil met gewone computerhulp?',
+                a: 'Onze studenten volgen een technische opleiding en weten hoe de nieuwste apparaten werken. Ze nemen de tijd om alles uit te leggen. Dezelfde kwaliteit en prijs, maar met een frisse aanpak.'
               },
               {
                 q: 'Wat kost een student aan huis?',
-                a: 'Een student aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in heel Zuid-Holland. Dezelfde prijs als reguliere computerhulp, maar met extra voordelen.'
+                a: 'U betaalt €14,50 per kwartier, met een minimum van drie kwartier (€43,50). Voorrijden is gratis in heel Zuid-Holland. Betalen doet u achteraf — via pin, contant of Tikkie.'
               },
               {
-                q: 'Zijn de studenten wel kundig genoeg?',
-                a: 'Absoluut! Onze IT-studenten zijn goed opgeleid en hebben ruime ervaring. Ze studeren IT of Informatica en zijn up-to-date met de nieuwste technieken. Perfect voor alle computer, laptop, tablet en internet problemen.'
+                q: 'Weten de studenten wel genoeg?',
+                a: 'Ja, onze IT-studenten zijn goed opgeleid en hebben ervaring. Ze studeren IT of Informatica en weten hoe de nieuwste apparaten en software werken.'
               },
               {
-                q: 'In welke plaatsen komt een student aan huis?',
-                a: 'Onze studenten komen in heel Zuid-Holland bij u thuis. Dit omvat Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en nog 50+ andere gemeenten. Overal zonder voorrijkosten.'
+                q: 'Waar komen jullie?',
+                a: 'In heel Zuid-Holland: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en meer dan 50 andere gemeenten. Voorrijden is altijd gratis.'
               }
             ].map((faq, idx) => (
               <details
@@ -597,10 +577,10 @@ export default function StudentAanHuisPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Student aan Huis in heel Zuid-Holland
+              Waar we komen
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Onze IT-studenten komen bij u thuis in meer dan 50 gemeenten
+              Wij helpen mensen in meer dan 50 gemeenten in Zuid-Holland
             </p>
           </div>
 
@@ -654,10 +634,10 @@ export default function StudentAanHuisPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Klaar Voor Een Student aan Huis?
+            Kunnen wij u helpen?
           </h2>
           <p className="text-xl text-gray-600 mb-10">
-            Bel nu en we sturen een jonge IT-student bij u langs
+            Bel ons gerust of stuur een berichtje. We komen graag bij u langs.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
@@ -678,12 +658,12 @@ export default function StudentAanHuisPage() {
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
-              Direct bellen
+              Bel 085-8002006
             </a>
           </div>
 
           <div className="text-gray-500 text-sm">
-            Ma-Zo: 08:00 - 22:00 • Ook avonden en weekenden • Geen voorrijkosten
+            Ma-Zo: 08:00 - 22:00 • Ook avonden en weekenden • Gratis voorrijkosten
           </div>
         </div>
       </section>

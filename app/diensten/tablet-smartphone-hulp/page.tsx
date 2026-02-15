@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'Tablet & Smartphone Hulp aan Huis | 24u',
-  description: 'Tablet of smartphone hulp nodig? iPad, iPhone of Android problemen? Wij komen bij u thuis in Zuid-Holland voor installatie, data overzetten en meer. Geen voorrijkosten. Bel 085-8002006.',
+  description: 'Tablet of smartphone hulp nodig? iPad, iPhone of Android problemen? Wij komen bij u thuis in Zuid-Holland voor installatie, data overzetten en meer. Gratis voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Tablet & Smartphone Hulp aan Huis',
     description: 'Tablet of smartphone hulp nodig? Wij helpen aan huis in Zuid-Holland.',
@@ -56,9 +56,9 @@ const faqData = {
 const heroImage = '/Tablet & Smartphone Hulp.webp'
 
 const problems = [
-  { title: 'Tablet/Phone Traag', description: 'Uw apparaat reageert langzaam of hapert.', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
+  { title: 'Tablet/Telefoon Traag', description: 'Uw apparaat reageert langzaam of hapert.', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
   { title: 'Scherm Kapot', description: 'Gebarsten of niet-reagerende schermen.', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
-  { title: 'Accu Leeg Snel', description: 'Batterij gaat te snel leeg of laadt niet op.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
+  { title: 'Accu Snel Leeg', description: 'Batterij gaat te snel leeg of laadt niet op.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
   { title: 'Apps Crashen', description: 'Apps sluiten onverwacht af of werken niet.', icon: 'M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z' },
   { title: 'Opslag Vol', description: 'Kan geen foto\'s meer maken of apps installeren.', icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4' },
   { title: 'Geen Internet', description: 'WiFi of mobiel internet werkt niet.', icon: 'M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072m0 0l-2.829-2.829m-4.243 2.829a5 5 0 01-7.072 0l2.829-2.829m0 0a3 3 0 014.243 0' }
@@ -69,15 +69,15 @@ const services = [
   'Apps installeren en uitleggen',
   'Data overzetten naar nieuw apparaat',
   'Foto\'s en contacten veilig bewaren',
-  'WhatsApp en berichten apps instellen',
+  'WhatsApp en berichtenapps instellen',
   'Geheugen opruimen en versnellen',
   'Online bankieren veilig instellen',
 ]
 
 const faqs = [
   { question: 'Kunnen jullie apps en data overzetten naar een nieuwe telefoon?', answer: 'Ja, we zetten al uw apps inclusief alle chats, foto\'s en video\'s over naar uw nieuwe telefoon. We zorgen dat alles behouden blijft en leggen uit hoe het werkt.' },
-  { question: 'Helpen jullie met alle merken tablets en smartphones?', answer: 'Ja, we helpen met alle merken tablets en smartphones. Onze specialisten kennen alle systemen.' },
-  { question: 'Kunnen jullie apps installeren en uitleggen hoe ze werken?', answer: 'Absoluut! We installeren alle apps die u nodig heeft en nemen de tijd om rustig uit te leggen hoe ze werken. Van berichten apps tot online bankieren.' },
+  { question: 'Helpen jullie met alle merken tablets en smartphones?', answer: 'Ja, we helpen met alle merken tablets en smartphones. Onze IT-studenten kennen alle systemen.' },
+  { question: 'Kunnen jullie apps installeren en uitleggen hoe ze werken?', answer: 'Absoluut! We installeren alle apps die u nodig heeft en nemen de tijd om rustig uit te leggen hoe ze werken. Van berichtenapps tot online bankieren.' },
   { question: 'Mijn tablet is heel traag, kunnen jullie dat verhelpen?', answer: 'Ja, we kunnen uw tablet opschonen, onnodige apps verwijderen en het geheugen vrijmaken. Vaak wordt uw tablet daardoor weer een stuk sneller.' },
   { question: 'Kunnen jullie foto\'s van mijn telefoon naar de computer zetten?', answer: 'Ja, we zetten al uw foto\'s over naar uw computer en kunnen ook een backup naar de cloud instellen zodat u nooit meer foto\'s kwijtraakt.' }
 ]
@@ -98,7 +98,7 @@ export default function TabletSmartphoneHulpPage() {
                 Tablet & Smartphone Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Hulp nodig met uw tablet of smartphone? Wij helpen met instellen, apps, data overzetten en meer. Alle merken, bij u thuis. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Hulp nodig met uw tablet of smartphone? Wij helpen met instellen, apps, data overzetten en meer. Alle merken, bij u thuis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -111,7 +111,7 @@ export default function TabletSmartphoneHulpPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>10+ jaar ervaring</div>
               </div>
@@ -145,7 +145,7 @@ export default function TabletSmartphoneHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze tablet en smartphone diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze tablet- en smartphonediensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -203,7 +203,7 @@ export default function TabletSmartphoneHulpPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'Uw tablet of smartphone werkt weer perfect. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -231,7 +231,7 @@ export default function TabletSmartphoneHulpPage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'Tablet en smartphone direct werkend', 'Alles uitgelegd in begrijpelijke taal', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'Tablet en smartphone direct werkend', 'Alles uitgelegd in begrijpelijke taal', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -294,7 +294,7 @@ export default function TabletSmartphoneHulpPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over tablet en smartphone hulp aan huis</p>
           </div>
           <div className="space-y-4">
@@ -317,7 +317,7 @@ export default function TabletSmartphoneHulpPage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Tablet en Smartphone Hulp voor Iedereen</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Uw tablet of smartphone is tegenwoordig onmisbaar: voor contact met familie, bankzaken, foto&apos;s en nog veel meer. Maar wat als uw apparaat traag wordt, apps niet werken, of u niet weet hoe u iets moet instellen? Daar helpen wij mee.</p>
-            <p>Onze specialisten helpen met alle merken en modellen: Apple iPad en iPhone, Samsung Galaxy, en alle andere Android apparaten. Van het overzetten van data naar een nieuw toestel tot het instellen van e-mail en apps. We werken op uw tempo en leggen alles uit in begrijpelijke taal.</p>
+            <p>Onze IT-studenten helpen met alle merken en modellen: Apple iPad en iPhone, Samsung Galaxy, en alle andere Android apparaten. Van het overzetten van data naar een nieuw toestel tot het instellen van e-mail en apps. We werken op uw tempo en leggen alles uit in begrijpelijke taal.</p>
           </div>
         </div>
       </section>

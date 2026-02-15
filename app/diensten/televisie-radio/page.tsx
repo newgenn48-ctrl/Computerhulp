@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'TV & Radio Hulp aan Huis | Installatie | 24u',
-  description: 'TV of radio problemen? Zenders weg, storing of installatie nodig? Wij komen bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel 085-8002006.',
+  description: 'TV of radio problemen? Zenders weg, storing of installatie nodig? Wij komen bij u thuis in Zuid-Holland. Gratis voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Televisie & Radio Hulp aan Huis',
     description: 'TV of radio problemen? Zenders weg, storing, of installatie nodig? We komen bij u thuis in Zuid-Holland en helpen direct. Binnen 24 uur geholpen. Bel.',
@@ -48,7 +48,7 @@ const faqData = {
     { '@type': 'Question', name: 'Kunnen jullie mijn nieuwe TV installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren alle merken televisies, stellen de zenders in en koppelen eventueel uw decoder en soundbar.' } },
     { '@type': 'Question', name: 'Mijn zenders zijn weg, kunnen jullie helpen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we zoeken alle zenders opnieuw en zetten ze in de juiste volgorde. Dit geldt voor zowel kabel, Digitenne als satelliet.' } },
     { '@type': 'Question', name: 'Helpen jullie ook met Smart TV apps?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren Netflix, YouTube, NPO en andere apps op uw Smart TV en leggen uit hoe ze werken.' } },
-    { '@type': 'Question', name: 'Kunnen jullie mijn soundbar of surround systeem installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren soundbars, surround sound systemen en andere audio apparatuur. We zorgen dat alles goed samenwerkt met uw TV.' } },
+    { '@type': 'Question', name: 'Kunnen jullie mijn soundbar of surround systeem installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren soundbars, surroundsoundsystemen en andere audioapparatuur. We zorgen dat alles goed samenwerkt met uw TV.' } },
     { '@type': 'Question', name: 'Mijn afstandsbediening werkt niet meer, kunnen jullie dat oplossen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we programmeren afstandsbedieningen voor TV, decoder en soundbar. Ook kunnen we een universele afstandsbediening instellen zodat u alles met een remote kunt bedienen.' } }
   ]
 }
@@ -78,7 +78,7 @@ const faqs = [
   { question: 'Kunnen jullie mijn nieuwe TV installeren en ophangen?', answer: 'Ja, we installeren alle merken televisies. We kunnen de TV ook aan de muur ophangen, alle kabels netjes wegwerken en zorgen voor optimale beeld- en geluidsinstellingen.' },
   { question: 'Mijn zenders zijn weg, kunnen jullie helpen?', answer: 'Ja, we zoeken alle zenders opnieuw en zetten ze in de juiste volgorde. Dit geldt voor kabel, Digitenne en satelliet. We maken ook een favorietenlijst voor u.' },
   { question: 'Helpen jullie ook met Smart TV apps zoals Netflix?', answer: 'Absoluut! We installeren Netflix, YouTube, NPO Start en andere apps op uw Smart TV. We maken accounts aan indien nodig en leggen uit hoe alles werkt.' },
-  { question: 'Kunnen jullie mijn soundbar of surround systeem installeren?', answer: 'Ja, we installeren soundbars, surround sound systemen en andere audio apparatuur. We zorgen dat alles goed samenwerkt met uw TV.' },
+  { question: 'Kunnen jullie mijn soundbar of surround systeem installeren?', answer: 'Ja, we installeren soundbars, surroundsoundsystemen en andere audioapparatuur. We zorgen dat alles goed samenwerkt met uw TV.' },
   { question: 'Mijn afstandsbediening werkt niet meer, kunnen jullie dat oplossen?', answer: 'Ja, we programmeren afstandsbedieningen voor TV, decoder en soundbar. Ook kunnen we een universele afstandsbediening instellen zodat u alles met een remote kunt bedienen.' }
 ]
 
@@ -98,7 +98,7 @@ export default function TelevisieRadioPage() {
                 TV & Radio Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Nieuwe TV installeren, zenders kwijt of Smart TV instellen? Wij komen bij u thuis en zorgen dat alles weer perfect werkt. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Nieuwe TV installeren, zenders kwijt of Smart TV instellen? Wij komen bij u thuis en zorgen dat alles weer perfect werkt.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -111,7 +111,7 @@ export default function TelevisieRadioPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>10+ jaar ervaring</div>
               </div>
@@ -145,7 +145,7 @@ export default function TelevisieRadioPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze TV en radio diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze tv- en radiodiensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -203,7 +203,7 @@ export default function TelevisieRadioPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'Uw TV en audio-apparatuur zijn correct ingesteld. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -231,7 +231,7 @@ export default function TelevisieRadioPage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'TV en decoder direct werkend', 'Alle zenders perfect ingesteld', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'TV en decoder direct werkend', 'Alle zenders perfect ingesteld', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -294,7 +294,7 @@ export default function TelevisieRadioPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over televisie en radio hulp aan huis</p>
           </div>
           <div className="space-y-4">
@@ -316,7 +316,7 @@ export default function TelevisieRadioPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">TV en Audio Hulp aan Huis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een nieuwe Smart TV installeren, zenders op volgorde zetten, een soundbar aansluiten of streaming diensten instellen — het klinkt eenvoudig maar in de praktijk loopt het vaak anders. Onze specialisten helpen u met alle merken televisies en audio-apparatuur.</p>
+            <p>Een nieuwe Smart TV installeren, zenders op volgorde zetten, een soundbar aansluiten of streamingdiensten instellen — het klinkt eenvoudig maar in de praktijk loopt het vaak anders. Onze IT-studenten helpen u met alle merken televisies en audio-apparatuur.</p>
             <p>We komen bij u thuis en zorgen dat alles perfect werkt: van het instellen van Netflix, NPO en Disney+ tot het programmeren van uw afstandsbediening. Ook helpen we met het aansluiten van externe speakers, soundbars en surround systemen. Zodat u optimaal kunt genieten van uw TV en muziek.</p>
           </div>
         </div>

@@ -95,20 +95,16 @@ export default function ContactPage() {
       setSubmitStatus('idle')
 
       try {
-        const response = await fetch('/api/afspraak', {
+        const response = await fetch('/api/contact', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            naam: formData.naam,
-            telefoon: formData.telefoon,
+            name: formData.naam,
+            phone: formData.telefoon,
             email: formData.email,
-            straat: '',
-            huisnummer: '',
-            postcode: '',
-            plaats: formData.plaats,
-            probleem: formData.probleem
+            message: `Plaats: ${formData.plaats}\n\n${formData.probleem}`
           }),
         })
 
@@ -142,10 +138,10 @@ export default function ContactPage() {
               WebkitBackgroundClip: 'unset'
             }}
           >
-            Neem Contact Op
+            Neem contact op
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Bel direct of vul het formulier in. We nemen binnen 2 uur contact met u op.
+            Bel direct of vul het formulier in. We nemen binnen 3 uur contact met u op.
           </p>
         </div>
       </section>
@@ -213,7 +209,7 @@ export default function ContactPage() {
                 Afspraak Maken
               </h2>
               <p className="text-gray-600 mb-8 text-center">
-                Vul het formulier in en we nemen binnen 2 uur contact met u op
+                Vul het formulier in en we nemen binnen 3 uur contact met u op
               </p>
 
               {/* Success Message */}
@@ -225,7 +221,7 @@ export default function ContactPage() {
                     </svg>
                     <div>
                       <h3 className="text-green-800 font-semibold">Bedankt voor uw aanvraag!</h3>
-                      <p className="text-green-700 mt-1">We nemen binnen 2 uur contact met u op.</p>
+                      <p className="text-green-700 mt-1">We nemen binnen 3 uur contact met u op.</p>
                     </div>
                   </div>
                 </div>
@@ -398,7 +394,7 @@ export default function ContactPage() {
                 </button>
 
                 <p className="text-sm text-gray-500 text-center">
-                  We nemen binnen 2 uur contact met u op
+                  We nemen binnen 3 uur contact met u op
                 </p>
               </form>
             </div>
@@ -466,25 +462,25 @@ export default function ContactPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-            Veelgestelde Vragen
+            Veelgestelde vragen
           </h2>
 
           <div className="space-y-6">
             <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Hoe snel kunnen jullie komen?
+                Hoe snel reageren jullie op mijn bericht?
               </h3>
               <p className="text-gray-700">
-                In de meeste gevallen zijn we binnen 24 uur bij u. Bij spoedeisende situaties proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren.
+                We reageren binnen 3 uur op werkdagen. Belt u liever direct? Bel 085-8002006 en we helpen u meteen. Bij spoed proberen we dezelfde dag nog langs te komen.
               </p>
             </div>
 
             <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
               <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Wat zijn de kosten?
+                Kan ik ook WhatsApp-en of mailen?
               </h3>
               <p className="text-gray-700">
-                We rekenen €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in heel Zuid-Holland.
+                Ja, u kunt ons bereiken via WhatsApp op 06-42548451 of per e-mail op info@computerhulpzh.nl. We reageren op alle berichten binnen 3 uur op werkdagen.
               </p>
             </div>
 

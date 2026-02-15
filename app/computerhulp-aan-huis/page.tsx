@@ -7,11 +7,10 @@ import ServicesSection from '@/components/ServicesSection'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u bij u Thuis',
-  description: 'Professionele computerhulp aan huis in Zuid-Holland. Binnen 24 uur bij u thuis voor computer, laptop, printer en WiFi problemen. Geen voorrijkosten. Bel 085-8002006.',
-  keywords: 'computerhulp aan huis, computer hulp thuis, laptop hulp aan huis, IT hulp thuis, computer reparatie aan huis, thuishulp computer, Zuid-Holland, Den Haag, Rotterdam, Leiden',
+  description: 'Professionele computerhulp aan huis in Zuid-Holland. Binnen 24 uur bij u thuis voor computer, laptop, printer en WiFi. Gratis voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u bij u Thuis',
-    description: 'Binnen 24 uur bij u thuis in Zuid-Holland. Computer, laptop, printer, WiFi problemen opgelost. Geen voorrijkosten. Bel 085-8002006',
+    description: 'Binnen 24 uur bij u thuis in Zuid-Holland. Computer, laptop, printer, WiFi problemen opgelost. Gratis voorrijkosten. Bel 085-8002006',
     type: 'website',
     url: 'https://computerhulpzh.nl/computerhulp-aan-huis',
   },
@@ -197,7 +196,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#webpage',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis',
       name: 'Computerhulp aan Huis Zuid-Holland | Binnen 24 Uur | €14,50',
-      description: 'Computerhulp aan huis in heel Zuid-Holland. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Geen voorrijkosten.',
+      description: 'Computerhulp aan huis in heel Zuid-Holland. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Gratis voorrijkosten.',
       isPartOf: {
         '@id': 'https://computerhulpzh.nl/#website'
       },
@@ -254,7 +253,7 @@ const faqData = {
       name: 'Wat kost computerhulp aan huis in Zuid-Holland?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Onze computerhulp aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in heel Zuid-Holland.'
+        text: 'Onze computerhulp aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Voorrijden is gratis in heel Zuid-Holland.'
       }
     },
     {
@@ -326,7 +325,7 @@ export default function ComputerhulpAanHuisPage() {
         <div className="absolute inset-0">
           <Image
             src="/Student aan huis.webp"
-            alt="Computerhulp aan huis specialist helpt klant thuis"
+            alt="Computerhulp aan huis IT-student helpt klant thuis"
             fill
             className="object-cover"
             priority
@@ -348,7 +347,7 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Heeft u hulp nodig bij uw computer, tablet, smartphone of een ander digitaal apparaat? Onze specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
+              <strong className="text-gray-900">Betrouwbare computerhulp aan huis</strong> in heel Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen uw computerproblemen <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
@@ -363,13 +362,13 @@ export default function ComputerhulpAanHuisPage() {
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Geen voorrijkosten
+                Gratis voorrijkosten
               </span>
               <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                7 dagen per week
+                Betaalbare tarieven
               </span>
             </div>
 
@@ -391,7 +390,7 @@ export default function ComputerhulpAanHuisPage() {
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                 </svg>
-                Direct bellen
+                Bel 085-8002006
               </a>
             </div>
           </div>
@@ -410,8 +409,8 @@ export default function ComputerhulpAanHuisPage() {
 
       {/* Services Section */}
       <ServicesSection
-        title="Waar Wij U Mee Helpen"
-        description="Van eenvoudige vragen tot complexe problemen — wij komen bij u thuis en lossen het direct op"
+        title="Waar wij u mee helpen"
+        description="Van een simpele vraag tot een lastig probleem — wij komen bij u thuis en helpen u graag"
         showFeatures={true}
         limitServices={6}
         showAllButton={true}
@@ -424,10 +423,10 @@ export default function ComputerhulpAanHuisPage() {
           <div className="max-w-3xl mb-20">
             <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Hoe het werkt</span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              In 4 stappen geholpen
+              Zo werkt het
             </h2>
             <p className="text-xl text-gray-600">
-              Van eerste contact tot opgelost probleem — wij maken het u zo makkelijk mogelijk.
+              In vier stappen — simpel en overzichtelijk.
             </p>
           </div>
 
@@ -442,10 +441,10 @@ export default function ComputerhulpAanHuisPage() {
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Neem contact op
+                U belt of mailt ons
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Bel ons of vul het formulier in. Beschrijf kort uw probleem.
+                Vertel kort wat er aan de hand is. Gewoon even bellen of een berichtje sturen.
               </p>
             </div>
 
@@ -458,10 +457,10 @@ export default function ComputerhulpAanHuisPage() {
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Afspraak plannen
+                We spreken een moment af
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Wij plannen samen een moment. Vaak al binnen 24 uur mogelijk.
+                Samen zoeken we een tijdstip dat u uitkomt. Meestal kan het al de volgende dag.
               </p>
             </div>
 
@@ -474,10 +473,10 @@ export default function ComputerhulpAanHuisPage() {
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Wij komen langs
+                We komen bij u thuis
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Onze specialist komt bij u thuis en lost het probleem direct op.
+                Onze IT-student komt langs en gaat rustig aan de slag.
               </p>
             </div>
 
@@ -491,10 +490,10 @@ export default function ComputerhulpAanHuisPage() {
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Opgelost
+                Alles werkt weer
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Alles werkt weer perfect. Betalen kan na afloop.
+                U kunt weer verder. Betalen doet u pas achteraf — via pin, contant of Tikkie.
               </p>
             </div>
           </div>
@@ -512,14 +511,14 @@ export default function ComputerhulpAanHuisPage() {
             <div>
               <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Waarom wij</span>
               <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-8">
-                Computerhulp aan huis in Zuid-Holland
+                Computerhulp bij u thuis
               </h2>
               <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
                 <p>
-                  Computerhulp aan huis is dé oplossing wanneer uw computer, laptop, printer of WiFi problemen geeft. In plaats van uw apparatuur naar een winkel te brengen, komen wij bij u thuis.
+                  Doet uw computer, laptop, printer of WiFi niet wat u wilt? Dan komen wij gewoon bij u thuis. U hoeft nergens naartoe — wij regelen het aan uw keukentafel.
                 </p>
                 <p>
-                  In heel Zuid-Holland bieden wij professionele computerhulp aan huis. Of u nu in Den Haag, Rotterdam, Leiden, Delft of Zoetermeer woont - we komen bij u langs. Binnen 24 uur na uw aanvraag staan we bij u op de stoep.
+                  Wij helpen mensen in heel Zuid-Holland. Of u nu in Den Haag, Rotterdam, Leiden, Delft of Zoetermeer woont — meestal zijn we binnen 24 uur bij u.
                 </p>
               </div>
             </div>
@@ -527,7 +526,7 @@ export default function ComputerhulpAanHuisPage() {
             {/* Right Column - Benefits */}
             <div className="bg-gray-50 rounded-3xl p-8 sm:p-10">
               <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                Voordelen van onze service
+                Uw voordelen
               </h3>
               <ul className="space-y-6">
                 <li className="flex items-start gap-4">
@@ -537,8 +536,8 @@ export default function ComputerhulpAanHuisPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Geen transport nodig</div>
-                    <div className="text-gray-600">Wij komen bij u thuis met alle benodigde tools en kennis.</div>
+                    <div className="font-semibold text-gray-900 mb-1">Gewoon thuis blijven</div>
+                    <div className="text-gray-600">U hoeft nergens naartoe — wij komen bij u thuis.</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -548,8 +547,8 @@ export default function ComputerhulpAanHuisPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Direct opgelost</div>
-                    <div className="text-gray-600">We lossen het probleem meteen op. Geen dagen wachten.</div>
+                    <div className="font-semibold text-gray-900 mb-1">Snel geregeld</div>
+                    <div className="text-gray-600">Meestal is het probleem in één bezoek opgelost.</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -559,8 +558,8 @@ export default function ComputerhulpAanHuisPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Persoonlijke uitleg</div>
-                    <div className="text-gray-600">We leggen alles rustig uit in uw eigen vertrouwde omgeving.</div>
+                    <div className="font-semibold text-gray-900 mb-1">Rustige uitleg</div>
+                    <div className="text-gray-600">We nemen de tijd om alles duidelijk uit te leggen.</div>
                   </div>
                 </li>
                 <li className="flex items-start gap-4">
@@ -570,8 +569,8 @@ export default function ComputerhulpAanHuisPage() {
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Heel Zuid-Holland</div>
-                    <div className="text-gray-600">Beschikbaar in de hele provincie zonder voorrijkosten.</div>
+                    <div className="font-semibold text-gray-900 mb-1">Gratis voorrijkosten</div>
+                    <div className="text-gray-600">In heel Zuid-Holland, zonder extra kosten voor het voorrijden.</div>
                   </div>
                 </li>
               </ul>
@@ -591,7 +590,7 @@ export default function ComputerhulpAanHuisPage() {
                 Wat onze klanten zeggen
               </h2>
               <p className="text-xl text-gray-600">
-                Meer dan 500 tevreden klanten in heel Zuid-Holland
+                Wij helpen dagelijks mensen in heel Zuid-Holland
               </p>
             </div>
             <div className="flex items-center gap-3 bg-white rounded-2xl px-6 py-4 shadow-sm">
@@ -654,10 +653,10 @@ export default function ComputerhulpAanHuisPage() {
           <div className="text-center mb-16">
             <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Veelgestelde vragen</span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              FAQ over Computerhulp aan Huis
+              Veelgestelde vragen
             </h2>
             <p className="text-xl text-gray-600">
-              Antwoorden op de meest gestelde vragen over onze service
+              Dit krijgen wij vaak gevraagd
             </p>
           </div>
 
@@ -665,23 +664,23 @@ export default function ComputerhulpAanHuisPage() {
             {[
               {
                 q: 'Wat is computerhulp aan huis?',
-                a: 'Computerhulp aan huis betekent dat wij bij u thuis komen om uw computer, laptop, printer of WiFi problemen op te lossen. U hoeft niet naar een winkel te komen - wij komen naar u toe met alle benodigde tools en kennis. Dit is ideaal voor mensen die hun apparatuur niet willen verslepen of liever in hun eigen omgeving geholpen worden.'
+                a: 'Wij komen gewoon bij u thuis om uw computer, laptop, printer of WiFi te repareren of in te stellen. U hoeft nergens naartoe — wij nemen alles mee wat nodig is.'
               },
               {
-                q: 'Hoe snel kunnen jullie bij mij thuis komen voor computerhulp?',
-                a: 'In de meeste gevallen kunnen we binnen 24 uur bij u thuis zijn voor computerhulp aan huis. Bij acute problemen proberen we vaak nog dezelfde dag langs te komen. We werken 7 dagen per week, ook in de avonduren tot 22:00 uur.'
+                q: 'Wat nemen jullie mee bij een huisbezoek?',
+                a: 'Onze IT-studenten nemen gereedschap, kabels, adapters en veelgebruikte onderdelen mee. Zo kunnen we de meeste problemen ter plekke oplossen, zonder dat uw apparaat mee hoeft.'
               },
               {
-                q: 'Wat kost computerhulp aan huis in Zuid-Holland?',
-                a: 'Onze computerhulp aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Er zijn geen voorrijkosten in heel Zuid-Holland. U betaalt alleen voor de tijd die we nodig hebben om uw probleem op te lossen.'
+                q: 'Wat als mijn computer niet ter plekke gerepareerd kan worden?',
+                a: 'Dat komt zelden voor, maar als het nodig is nemen we uw apparaat mee. We bespreken dat altijd eerst met u. Meestal heeft u het binnen een paar werkdagen terug.'
               },
               {
-                q: 'Komen jullie ook in het weekend bij mij thuis?',
-                a: 'Ja, onze computerhulp aan huis is beschikbaar 7 dagen per week, ook in het weekend en in de avonduren tot 22:00 uur. Perfect als u doordeweeks werkt. We passen ons aan uw agenda aan, zonder extra kosten voor avond- of weekendservice.'
+                q: 'Komen jullie ook in het weekend?',
+                a: 'Ja, we zijn 7 dagen per week beschikbaar, ook in de avonduren tot 22:00 uur. Handig als u doordeweeks werkt. Geen extra kosten voor avond- of weekendbezoeken.'
               },
               {
-                q: 'In welke plaatsen bieden jullie computerhulp aan huis?',
-                a: 'We bieden computerhulp aan huis in heel Zuid-Holland. Dit omvat onder andere Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en nog 50+ andere gemeenten. Overal zonder voorrijkosten.'
+                q: 'Kan ik ook even bellen voor een snelle vraag?',
+                a: 'Natuurlijk. Bel gerust naar 085-8002006. Soms kunnen we een klein probleem al telefonisch oplossen. Is een bezoek nodig, dan plannen we dat meteen in.'
               }
             ].map((faq, idx) => (
               <details
@@ -709,10 +708,10 @@ export default function ComputerhulpAanHuisPage() {
           <div className="text-center mb-16">
             <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Ons werkgebied</span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Computerhulp aan Huis in heel Zuid-Holland
+              Waar we komen
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Wij komen bij u thuis in meer dan 50 gemeenten. Geen voorrijkosten, waar u ook woont.
+              Wij helpen mensen in meer dan 50 gemeenten in Zuid-Holland. Voorrijden is altijd gratis.
             </p>
           </div>
 
@@ -780,10 +779,10 @@ export default function ComputerhulpAanHuisPage() {
 
             <div className="relative text-center">
               <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                Klaar om uw probleem op te lossen?
+                Kunnen wij u ergens mee helpen?
               </h2>
               <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                Neem vandaag nog contact op en wij komen bij u thuis in Zuid-Holland
+                Bel ons gerust of stuur een berichtje. We komen graag bij u langs.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
@@ -804,7 +803,7 @@ export default function ComputerhulpAanHuisPage() {
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
                   </svg>
-                  Direct bellen
+                  Bel 085-8002006
                 </a>
               </div>
 
@@ -825,7 +824,7 @@ export default function ComputerhulpAanHuisPage() {
                   <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                   </svg>
-                  Geen voorrijkosten
+                  Gratis voorrijkosten
                 </span>
               </div>
             </div>
@@ -838,21 +837,21 @@ export default function ComputerhulpAanHuisPage() {
 
 const testimonials = [
   {
-    quote: 'Super blij met de computerhulp aan huis! Mijn computer deed het helemaal niet meer. Binnen 2 uur kwam er iemand bij mij thuis en alles werkte weer. Al mijn foto\'s van de kleinkinderen zijn gered!',
-    initials: 'G',
-    name: 'Mevrouw Gerda',
-    location: 'Den Haag'
+    quote: 'Ik had al weken last van een trage computer. De monteur kwam \'s avonds langs en binnen een uur was alles weer snel. Hij legde ook uit hoe ik mijn pc schoon kan houden. Fijne service!',
+    initials: 'A',
+    name: 'Mevrouw Agnes',
+    location: 'Zoetermeer'
   },
   {
-    quote: 'Eindelijk computerhulp aan huis die normaal uitlegt zonder ingewikkelde termen! Printer werkt nu perfect en ik weet nu ook precies hoe ik hem moet gebruiken. Heel fijn dat ze bij me thuis kwamen.',
-    initials: 'J',
-    name: 'De heer Jan',
-    location: 'Rotterdam'
+    quote: 'Moest dringend bij mijn e-mail kunnen voor werk, maar Outlook deed het niet meer. Dezelfde dag nog geholpen, alles werkt weer perfect. Erg blij dat ze ook \'s avonds komen.',
+    initials: 'R',
+    name: 'De heer Rob',
+    location: 'Vlaardingen'
   },
   {
-    quote: 'WiFi werkte niet, e-mail deed het niet. De computerhulp aan huis heeft alles in één keer opgelost bij mij thuis. Eerlijke prijs en geen gedoe. Binnen een dag geholpen, top service!',
-    initials: 'L',
-    name: 'Mevrouw Linda',
-    location: 'Leiden'
+    quote: 'Na een verhuizing werkten onze twee computers en de printer niet meer op het nieuwe netwerk. Alles in één bezoek weer aangesloten en werkend. Heel prettig dat ze aan huis komen.',
+    initials: 'M',
+    name: 'Mevrouw Marieke',
+    location: 'Alphen aan den Rijn'
   }
 ]

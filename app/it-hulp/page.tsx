@@ -10,52 +10,28 @@ const PricingSection = dynamic(() => import('@/components/PricingSection'), {
 
 const testimonials = [
   {
-    quote: 'Mijn computer deed het helemaal niet meer. Binnen 2 uur stond hij weer aan en al mijn foto\'s waren gered. Ontzettend blij!',
-    name: 'Mevrouw Gerda',
-    location: 'Den Haag',
-    initials: 'G'
+    quote: 'Na een ransomware-aanval dacht ik dat al mijn bestanden verloren waren. De IT-student heeft alles weten te herstellen en mijn computer goed beveiligd. Enorme opluchting!',
+    name: 'De heer Kees',
+    location: 'Rijswijk',
+    initials: 'K'
   },
   {
-    quote: 'Eindelijk iemand die normaal uitlegt! Geen ingewikkelde termen. Printer werkt nu perfect.',
-    name: 'De heer Jan',
-    location: 'Rotterdam',
-    initials: 'J'
+    quote: 'Ons thuisnetwerk met 3 laptops en een NAS werkte niet goed samen. Nu draait alles soepel en kan ik overal bij mijn bestanden. Vakkundig opgelost.',
+    name: 'Mevrouw Anneke',
+    location: 'Wassenaar',
+    initials: 'A'
   },
   {
-    quote: 'WiFi werkte niet, email deed het niet. Alles in één keer opgelost. Eerlijke prijs, top service!',
-    name: 'Mevrouw Linda',
-    location: 'Leiden',
-    initials: 'L'
+    quote: 'Moest thuiswerken maar mijn VPN en Teams werkten niet. Binnen een uur alles geconfigureerd. Fijn dat ze ook op korte termijn kunnen komen.',
+    name: 'De heer Marco',
+    location: 'Capelle aan den IJssel',
+    initials: 'M'
   },
   {
-    quote: 'Heel geduldig uitgelegd hoe ik mijn tablet moet gebruiken. Nu kan ik zelf foto\'s maken en versturen naar mijn kleinkinderen!',
-    name: 'De heer Henk',
-    location: 'Delft',
-    initials: 'H'
-  },
-  {
-    quote: 'Laptop was zo traag geworden. Na het bezoek werkt hij weer als nieuw. Fijne jongen, nam de tijd voor uitleg.',
-    name: 'Mevrouw Ria',
-    location: 'Zoetermeer',
-    initials: 'R'
-  },
-  {
-    quote: 'Mijn nieuwe smart TV kon ik niet aansluiten. Binnen een uur Netflix, Videoland én de foto\'s van mijn telefoon erop. Geweldig!',
-    name: 'De heer Peter',
-    location: 'Gouda',
-    initials: 'P'
-  },
-  {
-    quote: 'Al jaren last van een trage computer. Eindelijk iemand die het écht oplost. Scheelt mij zoveel ergernis. Aanrader!',
-    name: 'Mevrouw Corrie',
-    location: 'Dordrecht',
-    initials: 'C'
-  },
-  {
-    quote: 'Virus op mijn laptop en al mijn wachtwoorden kwijt. Alles hersteld én nu goed beveiligd. Zeer tevreden!',
-    name: 'De heer Willem',
-    location: 'Schiedam',
-    initials: 'W'
+    quote: 'Twee computers overgezet naar Windows 11, inclusief al onze programma\'s en bestanden. Netjes en snel geregeld, we merken geen verschil behalve dat alles sneller is!',
+    name: 'Mevrouw Diane',
+    location: 'Alphen aan den Rijn',
+    initials: 'D'
   }
 ]
 
@@ -69,7 +45,7 @@ export default function ITHulpPage() {
         <div className="absolute inset-0">
           <Image
             src="/Student aan huis.webp"
-            alt="Computerhulp specialist helpt klant thuis met laptop in Zuid-Holland"
+            alt="Computerhulp IT-student helpt klant thuis met laptop in Zuid-Holland"
             fill
             className="object-cover"
             priority
@@ -88,7 +64,7 @@ export default function ITHulpPage() {
             </h1>
 
             <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
-              Computerhulp aan huis door heel Zuid-Holland. Onze IT-specialisten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op - bij u thuis.
+              Betrouwbare computerhulp aan huis door heel Zuid-Holland. Onze IT-studenten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op — bij u thuis.
             </p>
 
             {/* USP Badges */}
@@ -103,13 +79,13 @@ export default function ITHulpPage() {
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                Geen voorrijkosten
+                Gratis voorrijkosten
               </span>
               <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
                 <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
-                7 dagen per week
+                Betaalbare tarieven
               </span>
             </div>
 
@@ -120,7 +96,7 @@ export default function ITHulpPage() {
                 className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
                 aria-label="Vraag computerhulp aan huis aan"
               >
-                Hulp Aanvragen
+                Hulp aanvragen
                 <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
                 </svg>
@@ -150,7 +126,7 @@ export default function ITHulpPage() {
 
       {/* Services Section — alleen titels, geen beschrijvingen */}
       <ServicesSection
-        title="Onze Diensten"
+        title="Onze diensten"
         showFeatures={false}
         limitServices={6}
         showAllButton={true}
@@ -164,10 +140,10 @@ export default function ITHulpPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <h2 id="testimonials-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Wat Klanten Zeggen Over Ons
+              Wat onze klanten zeggen
             </h2>
             <p className="text-lg text-gray-600">
-              Meer dan 500 tevreden klanten in Zuid-Holland
+              Wij helpen dagelijks mensen in heel Zuid-Holland
             </p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">
               ← Swipe voor meer reviews →
@@ -184,48 +160,48 @@ export default function ITHulpPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>
               <h2 id="seo-content-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Computerhulp aan Huis in Zuid-Holland
+                Computerhulp bij u thuis
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Heeft u problemen met uw <strong>computer, laptop, printer of WiFi</strong>? <strong>Computerhulp Zuid-Holland</strong> biedt professionele IT-hulp aan huis in de hele provincie. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of een van de andere 50+ gemeenten woont - wij komen binnen 24 uur bij u thuis.
+                  Doet uw <strong>computer, laptop, printer of WiFi</strong> niet wat u wilt? Wij komen gewoon bij u thuis. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of een van de andere 50+ gemeenten woont — meestal zijn we binnen 24 uur bij u.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waarom Kiezen Voor Computerhulp Zuid-Holland?</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waarom mensen ons bellen</h3>
 
                 <ul className="space-y-3 text-gray-700 mb-6">
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span><strong>Snelle service:</strong> Binnen 24 uur bij u thuis. Bij spoed vaak nog dezelfde dag.</span>
+                    <span><strong>Snel bij u thuis:</strong> Meestal binnen 24 uur. Is het dringend? Dan vaak nog dezelfde dag.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span><strong>Transparante prijzen:</strong> €14,50 per kwartier, geen voorrijkosten in heel Zuid-Holland.</span>
+                    <span><strong>Transparante prijzen:</strong> €14,50 per kwartier, gratis voorrijkosten in heel Zuid-Holland.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span><strong>10+ jaar ervaring:</strong> Professionele hulp voor alle merken en systemen.</span>
+                    <span><strong>Alle merken:</strong> Windows, Apple, Samsung — wij helpen met alles.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <span><strong>Persoonlijke aanpak:</strong> Uitleg in begrijpelijke taal, geen vaktermen.</span>
+                    <span><strong>Gewoon duidelijk:</strong> Wij leggen alles rustig uit, in gewone taal.</span>
                   </li>
                 </ul>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Onze computerhulp specialisten helpen u met: <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">trage computers</Link>, <Link href="/diensten/laptop-computer-reparatie" className="text-blue-600 hover:underline">laptop reparatie</Link>, <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printer installatie</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi problemen</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">email configuratie</Link>, <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet en smartphone hulp</Link>, <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:underline">smart home installatie</Link> en <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">data herstel</Link>.
+                  Onze IT-studenten helpen u met: <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">trage computers</Link>, <Link href="/diensten/laptop-computer-reparatie" className="text-blue-600 hover:underline">laptopreparatie</Link>, <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printerinstallatie</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi-problemen</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mailconfiguratie</Link>, <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet- en smartphonehulp</Link>, <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:underline">smarthome-installatie</Link> en <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">dataherstel</Link>.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel vandaag nog <a href="tel:+31858002006" className="text-blue-600 font-semibold hover:underline">085-8002006</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur.
+                  Bel ons gerust op <a href="tel:+31858002006" className="text-blue-600 font-semibold hover:underline">085-8002006</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. We zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur.
                 </p>
               </div>
             </article>
@@ -235,7 +211,7 @@ export default function ITHulpPage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/Computerhulp aan huis.webp"
-                    alt="Computerhulp specialist aan het werk bij klant thuis"
+                    alt="Computerhulp IT-student aan het werk bij klant thuis"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -244,7 +220,7 @@ export default function ITHulpPage() {
                 </div>
 
                 <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Computerhulp Werkgebied</h3>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4">Waar we komen</h3>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {cities.map((city, idx) => (
                       <span key={idx} className="bg-white px-3 py-1 rounded-full text-sm text-gray-700 border border-gray-200">
@@ -270,17 +246,17 @@ export default function ITHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-12">
             <h2 id="faq-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Veelgestelde Vragen over Computerhulp
+              Veelgestelde vragen
             </h2>
           </header>
 
           <div className="space-y-4">
             {[
-              { q: 'Hoe snel kunnen jullie langskomen voor computerhulp?', a: 'In de meeste gevallen komen we binnen 24 uur bij u langs voor computerhulp aan huis. Bij spoed proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren tot 22:00.' },
-              { q: 'Wat kost computerhulp aan huis in Zuid-Holland?', a: 'Onze computerhulp aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50). Er zijn geen voorrijkosten in heel Zuid-Holland. Betalen kan na afloop via pin, contant of Tikkie.' },
-              { q: 'Welke computerproblemen kunnen jullie oplossen?', a: 'Wij helpen met alle IT-problemen: trage computers, laptop reparatie, printers installeren, WiFi problemen, email configuratie, tablets, smartphones, software installatie, virusverwijdering en data herstel. Ook voor persoonlijke uitleg en training kunt u bij ons terecht.' },
-              { q: 'In welke plaatsen bieden jullie computerhulp aan huis?', a: 'Wij bieden computerhulp aan huis in heel Zuid-Holland, waaronder Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en meer dan 50 andere gemeenten.' },
-              { q: 'Moet ik iets voorbereiden voor de computerhulp afspraak?', a: 'Nee, u hoeft niets voor te bereiden. Zorg alleen dat u eventuele wachtwoorden bij de hand heeft en dat de apparatuur bereikbaar is. Wij nemen al het gereedschap mee dat nodig is voor de computerhulp.' },
+              { q: 'Kunnen jullie ook helpen met thuiswerken (VPN, Teams)?', a: 'Ja, we helpen regelmatig met thuiswerksituaties. Denk aan VPN, Microsoft Teams, Zoom of een printer koppelen aan uw werknetwerk. We zorgen dat u gewoon kunt werken.' },
+              { q: 'Helpen jullie ook met data overzetten naar een nieuwe computer?', a: 'Ja. We zetten al uw bestanden, foto\'s, e-mail en programma\'s over naar uw nieuwe computer of laptop. Daarna controleren we of alles goed werkt.' },
+              { q: 'Kan ik ook even bellen voor een snelle vraag?', a: 'Natuurlijk. Bel gerust naar 085-8002006. Soms kunnen we een klein probleem al telefonisch oplossen. Is een bezoek nodig, dan plannen we dat meteen in.' },
+              { q: 'Wat als het probleem niet in één keer opgelost is?', a: 'Dat komt zelden voor, maar als er bijvoorbeeld een onderdeel besteld moet worden, komen we kosteloos terug. U betaalt alleen voor de tijd die we daadwerkelijk nodig hebben.' },
+              { q: 'Helpen jullie ook kleine bedrijven en ZZP\'ers?', a: 'Ja, we helpen ook kleine bedrijven en ZZP\'ers. Denk aan netwerk, back-ups, beveiliging en het koppelen van apparaten. Tegen dezelfde tarieven als voor particulieren.' },
             ].map((faq, idx) => (
               <details key={idx} className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
                 <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-100 transition-colors">
@@ -302,10 +278,10 @@ export default function ITHulpPage() {
       <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Computerhulp Nodig? Wij Helpen Direct!
+            Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Neem vandaag nog contact op voor professionele computerhulp aan huis. Binnen 24 uur bij u in Zuid-Holland!
+            Bel ons gerust of stuur een berichtje. We komen graag bij u langs in Zuid-Holland.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

@@ -4,7 +4,7 @@ import ConversionTracker from '@/components/ConversionTracker'
 
 export const metadata: Metadata = {
   title: 'Afspraak Bevestiging - Computerhulp Zuid-Holland',
-  description: 'Bedankt voor uw afspraak aanvraag. We nemen binnen 3 uur contact met u op.',
+  description: 'Bedankt voor uw afspraakaanvraag. We nemen binnen 3 uur contact met u op.',
   robots: {
     index: false,
     follow: false,
@@ -56,7 +56,7 @@ export default function AfspraakBevestigingPage() {
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                     <div>
                       <p className="font-semibold text-gray-900">Binnen 24 uur</p>
-                      <p className="text-gray-700">Onze monteur komt bij u thuis om het probleem op te lossen</p>
+                      <p className="text-gray-700">Onze IT-student komt bij u thuis om het probleem op te lossen</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -76,7 +76,7 @@ export default function AfspraakBevestigingPage() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <div>
-                    <p className="font-semibold text-gray-900 mb-1">📧 Check uw email</p>
+                    <p className="font-semibold text-gray-900 mb-1">📧 Check uw e-mail</p>
                     <p className="text-gray-700">U heeft een bevestigingsmail ontvangen met alle details van uw aanvraag.</p>
                   </div>
                 </div>
@@ -94,7 +94,7 @@ export default function AfspraakBevestigingPage() {
                   Wacht niet en bel ons direct! We zijn 7 dagen per week bereikbaar van 08:00 - 22:00 uur.
                 </p>
                 <a
-                  href="tel:0858002006"
+                  href="tel:+31858002006"
                   className="inline-flex items-center justify-center gap-2 bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
                 >
                   <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -112,7 +112,7 @@ export default function AfspraakBevestigingPage() {
                     <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <p className="text-gray-700">Geen voorrijkosten</p>
+                    <p className="text-gray-700">Gratis voorrijkosten</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -124,7 +124,7 @@ export default function AfspraakBevestigingPage() {
                     <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
-                    <p className="text-gray-700">Professionele monteur</p>
+                    <p className="text-gray-700">Ervaren IT-student</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <svg className="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -159,7 +159,7 @@ export default function AfspraakBevestigingPage() {
 
         {/* Trust Badges */}
         <div className="mt-8 text-center">
-          <p className="text-sm text-gray-600 mb-4">Vertrouwd door 1000+ tevreden klanten</p>
+          <p className="text-sm text-gray-600 mb-4">Vertrouwd door 500+ tevreden klanten</p>
           <div className="flex justify-center items-center gap-6 flex-wrap">
             <div className="flex items-center gap-2 text-gray-700">
               <svg className="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">

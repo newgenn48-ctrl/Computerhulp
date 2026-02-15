@@ -12,7 +12,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
       <SkipLink />
       <Header />
       <Breadcrumb />
-      <main id="main-content" className="min-h-screen" role="main">
+      <main id="main-content" className="min-h-screen">
         {children}
       </main>
       <Footer />

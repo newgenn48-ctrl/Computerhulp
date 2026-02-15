@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'Computer Training aan Huis | Persoonlijke Les | Zuid-Holland',
-  description: 'Computer basics leren, internet veilig gebruiken of Word en Excel leren? Persoonlijke training aan huis in Zuid-Holland. Geen voorrijkosten. Bel 085-8002006.',
+  description: 'Computer basics leren, internet veilig gebruiken of Word en Excel leren? Persoonlijke training aan huis in Zuid-Holland. Gratis voorrijkosten. Bel 085-8002006.',
 
   openGraph: {
     title: 'Persoonlijke Training aan Huis',
@@ -112,7 +112,7 @@ export default function PersoonlijkeTrainingPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Op uw tempo</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geduldige uitleg</div>
               </div>
@@ -146,7 +146,7 @@ export default function PersoonlijkeTrainingPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze training diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze trainingsdiensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -199,8 +199,8 @@ export default function PersoonlijkeTrainingPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat u wilt leren.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
-              { step: '3', title: 'Probleem Opgelost', desc: 'U leert stap voor stap werken met uw apparaat. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
+              { step: '3', title: 'Training Afgerond', desc: 'U leert stap voor stap werken met uw apparaat. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
                 <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
@@ -227,7 +227,7 @@ export default function PersoonlijkeTrainingPage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'Training bij u thuis op eigen computer', 'Op uw tempo, zonder haast of druk', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'Training bij u thuis op eigen computer', 'Op uw tempo, zonder haast of druk', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -247,7 +247,7 @@ export default function PersoonlijkeTrainingPage() {
                 <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
-                <span>Sessies van 60 min</span>
+                <span>Sessies vanaf 45 min</span>
               </div>
             </div>
 
@@ -292,7 +292,7 @@ export default function PersoonlijkeTrainingPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over persoonlijke computer training aan huis</p>
           </div>
           <div className="space-y-4">

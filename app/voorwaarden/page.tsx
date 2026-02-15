@@ -53,7 +53,7 @@ export default function VoorwaardenPage() {
               <strong>Tarief:</strong> €14,50 per kwartier (15 minuten), minimaal 3 kwartier (€43,50).
             </p>
             <p className="mt-4">
-              <strong>Voorrijkosten:</strong> Geen voorrijkosten in heel Zuid-Holland.
+              <strong>Voorrijkosten:</strong> Gratis in heel Zuid-Holland.
             </p>
             <p className="mt-4">
               <strong>Betaling:</strong> Direct na afloop van werkzaamheden via pin, contant of Tikkie, tenzij anders overeengekomen.

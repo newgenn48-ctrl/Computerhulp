@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Afspraak Maken | Computerhulp Zuid-Holland | Binnen 24u',
-  description: 'Maak een afspraak voor computerhulp aan huis in Zuid-Holland. Binnen 24 uur geholpen. Geen voorrijkosten. 7 dagen per week beschikbaar.',
+  description: 'Maak een afspraak voor computerhulp aan huis in Zuid-Holland. Binnen 24 uur geholpen. Gratis voorrijkosten. 7 dagen per week beschikbaar.',
   openGraph: {
     title: 'Afspraak Maken | Computerhulp Zuid-Holland',
     description: 'Plan uw computerhulp afspraak. Binnen 24 uur bij u thuis in Zuid-Holland.',

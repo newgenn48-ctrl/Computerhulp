@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'E-mail Hulp aan Huis | Outlook & Gmail | 24u',
-  description: 'E-mail problemen? Wachtwoord vergeten of mailbox vol? Wij komen bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel 085-8002006.',
+  description: 'E-mail problemen? Wachtwoord vergeten of mailbox vol? Wij komen bij u thuis in Zuid-Holland. Gratis voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'E-mail Hulp aan Huis',
     description: 'E-mail problemen? Wachtwoord vergeten? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
@@ -45,11 +45,11 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Kunnen jullie mijn e-mail wachtwoord herstellen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we helpen u bij het herstellen van wachtwoorden voor alle e-mail providers. We zorgen ook dat uw account weer veilig is.' } },
+    { '@type': 'Question', name: 'Kunnen jullie mijn e-mail wachtwoord herstellen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we helpen u bij het herstellen van wachtwoorden voor alle e-mailproviders. We zorgen ook dat uw account weer veilig is.' } },
     { '@type': 'Question', name: 'Helpen jullie ook met e-mail op mijn telefoon?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we stellen uw e-mail in op al uw apparaten: computer, laptop, tablet en telefoon. Zo heeft u overal toegang tot uw mail.' } },
     { '@type': 'Question', name: 'Mijn mailbox is vol, wat nu?', acceptedAnswer: { '@type': 'Answer', text: 'We helpen u uw mailbox op te ruimen door oude en onnodige e-mails te verwijderen. Ook kunnen we uw opslag uitbreiden of e-mails archiveren.' } },
-    { '@type': 'Question', name: 'Ik krijg veel spam, kunnen jullie dat stoppen?', acceptedAnswer: { '@type': 'Answer', text: 'We configureren uw spam filter optimaal en leren u hoe u spam kunt herkennen en blokkeren. Bij ernstige gevallen kunnen we extra maatregelen nemen.' } },
-    { '@type': 'Question', name: 'Kan ik mijn oude e-mails overzetten naar een nieuw e-mail adres?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we kunnen e-mails, contacten en agenda\'s migreren naar een nieuw e-mail adres, ongeacht de provider.' } }
+    { '@type': 'Question', name: 'Ik krijg veel spam, kunnen jullie dat stoppen?', acceptedAnswer: { '@type': 'Answer', text: 'We configureren uw spamfilter optimaal en leren u hoe u spam kunt herkennen en blokkeren. Bij ernstige gevallen kunnen we extra maatregelen nemen.' } },
+    { '@type': 'Question', name: 'Kan ik mijn oude e-mails overzetten naar een nieuw e-mailadres?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we kunnen e-mails, contacten en agenda\'s migreren naar een nieuw e-mailadres, ongeacht de provider.' } }
   ]
 }
 
@@ -67,19 +67,19 @@ const problems = [
 const services = [
   'E-mail instellen op computer en telefoon',
   'Wachtwoord herstellen en account beveiligen',
-  'E-mail problemen oplossen',
+  'E-mailproblemen oplossen',
   'Spam filter en beveiliging instellen',
   'Contacten en agenda synchroniseren',
   'E-mail backup en archivering',
-  'Meerdere e-mail accounts beheren',
+  'Meerdere e-mailaccounts beheren',
 ]
 
 const faqs = [
-  { question: 'Kunnen jullie mijn e-mail wachtwoord herstellen?', answer: 'Ja, we helpen u bij het herstellen van wachtwoorden voor alle e-mail providers. We zorgen ook dat uw account weer veilig is.' },
+  { question: 'Kunnen jullie mijn e-mail wachtwoord herstellen?', answer: 'Ja, we helpen u bij het herstellen van wachtwoorden voor alle e-mailproviders. We zorgen ook dat uw account weer veilig is.' },
   { question: 'Helpen jullie ook met e-mail op mijn telefoon?', answer: 'Ja, we stellen uw e-mail in op al uw apparaten: computer, laptop, tablet en telefoon. Zo heeft u overal toegang tot uw mail.' },
   { question: 'Mijn mailbox is vol, wat nu?', answer: 'We helpen u uw mailbox op te ruimen door oude en onnodige e-mails te verwijderen. Ook kunnen we uw opslag uitbreiden of e-mails archiveren.' },
-  { question: 'Ik krijg veel spam, kunnen jullie dat stoppen?', answer: 'We configureren uw spam filter optimaal en leren u hoe u spam kunt herkennen en blokkeren. Bij ernstige gevallen kunnen we extra maatregelen nemen.' },
-  { question: 'Kan ik mijn oude e-mails overzetten naar een nieuw e-mail adres?', answer: 'Ja, we kunnen e-mails, contacten en agenda\'s migreren naar een nieuw e-mail adres, ongeacht de provider.' }
+  { question: 'Ik krijg veel spam, kunnen jullie dat stoppen?', answer: 'We configureren uw spamfilter optimaal en leren u hoe u spam kunt herkennen en blokkeren. Bij ernstige gevallen kunnen we extra maatregelen nemen.' },
+  { question: 'Kan ik mijn oude e-mails overzetten naar een nieuw e-mailadres?', answer: 'Ja, we kunnen e-mails, contacten en agenda\'s migreren naar een nieuw e-mailadres, ongeacht de provider.' }
 ]
 
 export default function EmailHulpPage() {
@@ -98,7 +98,7 @@ export default function EmailHulpPage() {
                 E-mail Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                E-mail werkt niet of wachtwoord vergeten? Wij helpen met Outlook, Gmail en alle andere e-mail programma's. <strong className="text-gray-900">Bij u thuis in Zuid-Holland.</strong>
+                E-mail werkt niet of wachtwoord vergeten? Wij helpen met Outlook, Gmail en alle andere e-mailprogramma's. <strong className="text-gray-900">Bij u thuis in Zuid-Holland.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -111,7 +111,7 @@ export default function EmailHulpPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Alle providers</div>
               </div>
@@ -145,7 +145,7 @@ export default function EmailHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze e-mail diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze e-maildiensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -165,7 +165,7 @@ export default function EmailHulpPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Veelvoorkomende E-mail Problemen
+              Veelvoorkomende E-mailproblemen
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
@@ -203,7 +203,7 @@ export default function EmailHulpPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'Uw e-mail werkt weer perfect op al uw apparaten. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -231,7 +231,7 @@ export default function EmailHulpPage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'E-mail direct werkend op alle apparaten', 'Wachtwoord veilig hersteld', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'E-mail direct werkend op alle apparaten', 'Wachtwoord veilig hersteld', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -296,7 +296,7 @@ export default function EmailHulpPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over e-mail hulp aan huis</p>
           </div>
           <div className="space-y-4">
@@ -316,9 +316,9 @@ export default function EmailHulpPage() {
       {/* SEO Content */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">E-mail Problemen Snel en Vakkundig Opgelost</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">E-mailproblemen Snel en Vakkundig Opgelost</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>E-mail is voor veel mensen het belangrijkste communicatiemiddel. Als uw e-mail niet werkt, uw wachtwoord kwijt is, of u overspoeld wordt met spam, dan kan dat enorm veel stress opleveren. Onze specialisten helpen u met alle e-mail providers: Outlook, Gmail, Yahoo, Ziggo, KPN en meer.</p>
+            <p>E-mail is voor veel mensen het belangrijkste communicatiemiddel. Als uw e-mail niet werkt, uw wachtwoord kwijt is, of u overspoeld wordt met spam, dan kan dat enorm veel stress opleveren. Onze IT-studenten helpen u met alle e-mailproviders: Outlook, Gmail, Yahoo, Ziggo, KPN en meer.</p>
             <p>We stellen uw e-mail in op al uw apparaten — computer, laptop, tablet en telefoon — zodat u overal bij uw berichten kunt. Ook helpen we met het migreren van e-mails naar een nieuwe provider, het opruimen van een volle mailbox, en het instellen van goede spam-filters. Alles bij u thuis, met duidelijke uitleg.</p>
           </div>
         </div>
@@ -329,7 +329,7 @@ export default function EmailHulpPage() {
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">E-mail Problemen?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">E-mailproblemen?</h2>
           <p className="text-xl text-blue-100 mb-10">Neem contact op en we komen vandaag of morgen al bij u langs</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">

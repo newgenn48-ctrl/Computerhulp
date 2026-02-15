@@ -373,7 +373,7 @@ export default function WebsiteLatenMakenPage() {
                 Website Laten Maken: Kies Uw Technologie
               </h2>
               <p className="text-xl text-gray-600">
-                Custom code of WordPress, Shopify, Wix - wij bieden beide opties. Ú bepaalt wat het beste past bij uw situatie
+                Custom code of WordPress, Shopify, Wix - wij bieden alle opties. U bepaalt wat het beste past bij uw situatie.
               </p>
             </div>
 
@@ -415,7 +415,7 @@ export default function WebsiteLatenMakenPage() {
                 </div>
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <p className="text-sm text-gray-500 font-semibold">Ideaal voor:</p>
-                  <p className="text-sm text-gray-600">Bedrijven en ZZP&apos;ers die een moderne, unieke website willen zonder standaard templates. Perfect voor wie specifieke eisen heeft, hoge traffic verwacht, of maximale controle wil</p>
+                  <p className="text-sm text-gray-600">Bedrijven en ZZP&apos;ers die een moderne, unieke website willen zonder standaard templates. Perfect voor wie specifieke eisen heeft, hoge traffic verwacht of maximale controle wil.</p>
                 </div>
               </div>
 
@@ -456,7 +456,7 @@ export default function WebsiteLatenMakenPage() {
                 </div>
                 <div className="mt-6 pt-6 border-t border-gray-200">
                   <p className="text-sm text-gray-500 font-semibold">Ideaal voor:</p>
-                  <p className="text-sm text-gray-600">Startups, kleine bedrijven, webshops, en wie zelf content wil beheren zonder technische kennis</p>
+                  <p className="text-sm text-gray-600">Startups, kleine bedrijven, webshops en wie zelf content wil beheren zonder technische kennis.</p>
                 </div>
               </div>
             </div>
@@ -482,7 +482,7 @@ export default function WebsiteLatenMakenPage() {
                 Wat Kost Het Om Een Website Te Laten Maken?
               </h2>
               <p className="text-xl text-gray-600">
-                Elke website is uniek - daarom maken we graag een offerte op maat. Vanaf €795 kunt u al een professionele website laten maken
+                Elke website is uniek - daarom maken we graag een offerte op maat. Vanaf €795 kunt u al een professionele website laten maken.
               </p>
             </div>
 
@@ -547,7 +547,7 @@ export default function WebsiteLatenMakenPage() {
                     {[
                       'Modern & Professioneel Design',
                       'Mobile Responsive (werkt op alle apparaten)',
-                      'SEO Geoptimaliseerd',
+                      'SEO-geoptimaliseerd',
                       'Contactformulier',
                       'Google Analytics',
                       'SSL Certificaat',
@@ -641,7 +641,7 @@ export default function WebsiteLatenMakenPage() {
                 },
                 {
                   q: 'Bieden jullie ook onderhoud en support na oplevering?',
-                  a: 'Ja, na oplevering bieden we nazorg en support. Kleine aanpassingen in de eerste maand zijn gratis. Voor doorlopend onderhoud, updates en backup\'s kunnen we een onderhoudscontract aanbieden. U bent nooit alleen - we staan altijd klaar om te helpen wanneer nodig.'
+                  a: 'Ja, na oplevering bieden we nazorg en support. Kleine aanpassingen in de eerste maand zijn gratis. Voor doorlopend onderhoud, updates en back-ups kunnen we een onderhoudscontract aanbieden. U bent nooit alleen - we staan altijd klaar om te helpen wanneer nodig.'
                 }
               ].map((faq, idx) => (
                 <div
@@ -707,7 +707,7 @@ export default function WebsiteLatenMakenPage() {
               Klaar Om Uw Website Te Laten Maken?
             </h2>
             <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
-              Vraag een gratis offerte aan of plan een kennismakingsgesprek. We helpen u graag met het maken van uw professionele website
+              Vraag een gratis offerte aan of plan een kennismakingsgesprek. We helpen u graag met het maken van uw professionele website.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">

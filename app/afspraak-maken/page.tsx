@@ -41,9 +41,9 @@ export default function AfspraakMakenPage() {
         break
       case 'email':
         if (!value.trim()) {
-          error = 'Email is verplicht'
+          error = 'E-mail is verplicht'
         } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) {
-          error = 'Voer een geldig emailadres in'
+          error = 'Voer een geldig e-mailadres in'
         }
         break
       case 'straat':
@@ -103,8 +103,8 @@ export default function AfspraakMakenPage() {
           else if (!/^[\d\s\-\+\(\)]{10,}$/.test(value.trim())) newErrors.telefoon = 'Voer een geldig telefoonnummer in'
           break
         case 'email':
-          if (!value.trim()) newErrors.email = 'Email is verplicht'
-          else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) newErrors.email = 'Voer een geldig emailadres in'
+          if (!value.trim()) newErrors.email = 'E-mail is verplicht'
+          else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value.trim())) newErrors.email = 'Voer een geldig e-mailadres in'
           break
         case 'straat':
           if (!value.trim()) newErrors.straat = 'Straatnaam is verplicht'
@@ -219,13 +219,13 @@ export default function AfspraakMakenPage() {
                   </svg>
                   <div>
                     <h3 className="font-bold text-red-900 mb-1">Er ging iets mis</h3>
-                    <p className="text-red-800 text-sm">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="underline font-semibold">Bel 085-8002006</a></p>
+                    <p className="text-red-800 text-sm">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="underline font-semibold">085-8002006</a></p>
                   </div>
                 </div>
               </div>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} noValidate className="space-y-6">
               {/* Persoonlijke Gegevens */}
               <div className="bg-blue-50 rounded-xl p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
@@ -301,7 +301,7 @@ export default function AfspraakMakenPage() {
 
                 <div className="mt-6">
                   <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Email *
+                    E-mail *
                   </label>
                   <input
                     type="email"
@@ -479,7 +479,7 @@ export default function AfspraakMakenPage() {
                         ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
                         : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
                     }`}
-                    placeholder="Beschrijf kort wat het probleem is. Bijvoorbeeld:&#10;• Mijn computer start niet meer op&#10;• WiFi werkt niet in mijn huis&#10;• Printer wil niet printen&#10;• Email kan ik niet openen"
+                    placeholder="Beschrijf kort wat het probleem is. Bijvoorbeeld:&#10;• Mijn computer start niet meer op&#10;• WiFi werkt niet in mijn huis&#10;• Printer wil niet printen&#10;• E-mail kan ik niet openen"
                     aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'}
                     aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
                   ></textarea>
@@ -526,7 +526,7 @@ export default function AfspraakMakenPage() {
                 <p className="text-sm text-gray-500 text-center mt-6">
                   Na het versturen nemen we binnen <strong className="text-gray-900">enkele uren</strong> contact met u op om de afspraak te bevestigen.
                   <br />
-                  Bij spoed kunt u ook direct bellen: <a href="tel:+31858002006" className="text-blue-600 font-bold hover:underline">Bel 085-8002006</a>
+                  Bij spoed kunt u ook direct bellen: <a href="tel:+31858002006" className="text-blue-600 font-bold hover:underline">085-8002006</a>
                 </p>
               </div>
             </form>

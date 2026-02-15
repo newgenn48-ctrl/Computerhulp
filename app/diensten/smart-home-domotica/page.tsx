@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'Smart Home Installatie aan Huis | Domotica Hulp | Binnen 24u',
-  description: 'Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in Zuid-Holland. Geen voorrijkosten. Bel nu.',
+  description: 'Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in Zuid-Holland. Gratis voorrijkosten. Bel nu.',
 
   openGraph: {
     title: 'Smart Home & Domotica Hulp aan Huis',
@@ -99,7 +99,7 @@ export default function SmartHomeDomoticaPage() {
                 Smart Home & Domotica Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Slimme verlichting, thermostaat of speaker installeren? Wij koppelen en configureren al uw slimme apparaten bij u thuis. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Slimme verlichting, thermostaat of speaker installeren? Wij koppelen en configureren al uw slimme apparaten bij u thuis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -112,7 +112,7 @@ export default function SmartHomeDomoticaPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>10+ jaar ervaring</div>
               </div>
@@ -146,7 +146,7 @@ export default function SmartHomeDomoticaPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze smart home diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze smart-homediensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -166,7 +166,7 @@ export default function SmartHomeDomoticaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Veelvoorkomende Smart Home Problemen
+              Veelvoorkomende Smart-homeproblemen
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
@@ -204,7 +204,7 @@ export default function SmartHomeDomoticaPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'Uw slimme apparaten werken samen en u weet hoe ze te bedienen. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -232,7 +232,7 @@ export default function SmartHomeDomoticaPage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'Apparaten direct werkend en gekoppeld', 'Uitleg hoe alles werkt', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'Apparaten direct werkend en gekoppeld', 'Uitleg hoe alles werkt', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -272,7 +272,7 @@ export default function SmartHomeDomoticaPage() {
             {[
               { text: 'Hele huis vol slimme lampen maar niks werkte samen. Nu heb ik alles in \u00e9\u00e9n app en kan ik met mijn stem alles bedienen!', name: 'Thomas B.', location: 'Rotterdam' },
               { text: 'Google Home, slimme thermostaat en deurbel ge\u00efnstalleerd en gekoppeld. Werkt allemaal perfect. Heel tevreden!', name: 'Ellen V.', location: 'Zoetermeer' },
-              { text: 'Wist niet waar te beginnen met domotica. De specialist heeft alles uitgelegd en ge\u00efnstalleerd. Super service.', name: 'Marco J.', location: 'Leiden' }
+              { text: 'Wist niet waar te beginnen met domotica. De IT-student heeft alles uitgelegd en ge\u00efnstalleerd. Super service.', name: 'Marco J.', location: 'Leiden' }
             ].map((t, idx) => (
               <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
                 <div className="flex gap-1 mb-3">
@@ -295,7 +295,7 @@ export default function SmartHomeDomoticaPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over smart home en domotica hulp aan huis</p>
           </div>
           <div className="space-y-4">
@@ -315,10 +315,10 @@ export default function SmartHomeDomoticaPage() {
       {/* SEO Content */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Smart Home Installatie door een Specialist</h2>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Smart Home Installatie door een IT-Student</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Een slim huis begint met de juiste installatie. Of u nu slimme verlichting, een slimme thermostaat, beveiligingscamera&apos;s of een complete domotica-oplossing wilt — het kan overweldigend zijn om alles zelf te configureren en te koppelen.</p>
-            <p>Onze smart home specialisten komen bij u thuis en zorgen dat al uw slimme apparaten perfect samenwerken. We koppelen alles aan uw smartphone, stellen spraakbesturing in via Google Home of Alexa, en maken handige automatiseringen. Zodat uw huis niet alleen slim is, maar ook makkelijk te bedienen.</p>
+            <p>Onze IT-studenten komen bij u thuis en zorgen dat al uw slimme apparaten perfect samenwerken. We koppelen alles aan uw smartphone, stellen spraakbesturing in via Google Home of Alexa, en maken handige automatiseringen. Zodat uw huis niet alleen slim is, maar ook makkelijk te bedienen.</p>
           </div>
         </div>
       </section>

@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'Printer & Scanner Hulp aan Huis | Binnen 24u',
-  description: 'Printer print niet of scanner werkt niet? Wij komen bij u thuis in Zuid-Holland en lossen het op. Geen voorrijkosten, binnen 24 uur. Bel 085-8002006.',
+  description: 'Printer print niet of scanner werkt niet? Wij komen bij u thuis in Zuid-Holland en lossen het op. Gratis voorrijkosten, binnen 24 uur. Bel 085-8002006.',
   openGraph: {
     title: 'Printer & Scanner Hulp aan Huis',
     description: 'Printer print niet of scanner doet het niet? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
@@ -47,7 +47,7 @@ const faqData = {
   mainEntity: [
     { '@type': 'Question', name: 'Kunnen jullie mijn nieuwe printer installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren alle merken printers en zorgen dat deze werkt vanaf al uw apparaten.' } },
     { '@type': 'Question', name: 'Helpen jullie ook met draadloos printen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we maken uw printer draadloos zodat u kunt printen vanaf laptop, telefoon en tablet.' } },
-    { '@type': 'Question', name: 'Waarom print mijn printer niet?', acceptedAnswer: { '@type': 'Answer', text: 'Dit kan vele oorzaken hebben: driver problemen, verbindingsproblemen, lege inkt, papierstoring, of een offline printer. We onderzoeken dit en lossen het ter plekke op.' } },
+    { '@type': 'Question', name: 'Waarom print mijn printer niet?', acceptedAnswer: { '@type': 'Answer', text: 'Dit kan vele oorzaken hebben: driverproblemen, verbindingsproblemen, lege inkt, papierstoring, of een offline printer. We onderzoeken dit en lossen het ter plekke op.' } },
     { '@type': 'Question', name: 'Kan ik ook scannen naar mijn e-mail?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, als uw printer/scanner dit ondersteunt, stellen we scan naar e-mail in zodat gescande documenten direct naar uw inbox gaan.' } },
     { '@type': 'Question', name: 'Mijn printer is oud, moet ik een nieuwe kopen?', acceptedAnswer: { '@type': 'Answer', text: 'We bekijken eerst of uw huidige printer nog gerepareerd kan worden. Indien nodig adviseren we u over een nieuwe printer die past bij uw gebruik.' } }
   ]
@@ -67,7 +67,7 @@ const problems = [
 const services = [
   'Nieuwe printer installeren en instellen',
   'Draadloos printen via WiFi opzetten',
-  'Printer problemen oplossen',
+  'Printerproblemen oplossen',
   'Scanner instellen en configureren',
   'Scan naar e-mail opzetten',
   'Printen vanaf telefoon en tablet',
@@ -76,7 +76,7 @@ const services = [
 
 const faqs = [
   { question: 'Kunnen jullie mijn nieuwe printer installeren?', answer: 'Ja, we installeren alle merken printers en zorgen dat deze werkt vanaf al uw computers, telefoons en tablets.' },
-  { question: 'Waarom print mijn printer niet?', answer: 'Dit kan vele oorzaken hebben: driver problemen, verbindingsproblemen, lege inkt, papierstoring, of een offline printer. We onderzoeken dit en lossen het ter plekke op.' },
+  { question: 'Waarom print mijn printer niet?', answer: 'Dit kan vele oorzaken hebben: driverproblemen, verbindingsproblemen, lege inkt, papierstoring, of een offline printer. We onderzoeken dit en lossen het ter plekke op.' },
   { question: 'Helpen jullie ook met draadloos printen?', answer: 'Ja, we maken uw printer draadloos zodat u kunt printen vanaf elke plek in huis, ook vanaf uw telefoon of tablet.' },
   { question: 'Kan ik ook scannen naar mijn e-mail?', answer: 'Ja, als uw printer/scanner dit ondersteunt, stellen we scan naar e-mail in zodat gescande documenten direct naar uw inbox gaan.' },
   { question: 'Mijn printer is oud, moet ik een nieuwe kopen?', answer: 'We bekijken eerst of uw huidige printer nog gerepareerd kan worden. Indien nodig adviseren we u over een nieuwe printer die past bij uw gebruik.' }
@@ -98,7 +98,7 @@ export default function PrinterScannerHulpPage() {
                 Printer & Scanner Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Printer werkt niet of scanner doet het niet meer? Wij installeren, repareren en configureren alle merken printers bij u thuis. <strong className="text-gray-900">Binnen 24 uur geholpen.</strong>
+                Printer werkt niet of scanner doet het niet meer? Wij installeren, repareren en configureren alle merken printers bij u thuis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -111,7 +111,7 @@ export default function PrinterScannerHulpPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Alle merken</div>
               </div>
@@ -145,7 +145,7 @@ export default function PrinterScannerHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze printer en scanner diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze printer- en scannerdiensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -165,7 +165,7 @@ export default function PrinterScannerHulpPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Veelvoorkomende Printer Problemen
+              Veelvoorkomende Printerproblemen
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
@@ -203,7 +203,7 @@ export default function PrinterScannerHulpPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'Uw printer of scanner werkt weer perfect. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -231,7 +231,7 @@ export default function PrinterScannerHulpPage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'Printer en scanner direct werkend', 'Printen vanaf alle apparaten', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'Printer en scanner direct werkend', 'Printen vanaf alle apparaten', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -270,7 +270,7 @@ export default function PrinterScannerHulpPage() {
           <div className="grid md:grid-cols-3 gap-6">
             {[
               { text: 'Printer deed het al weken niet. In een half uur was hij weer aangesloten op WiFi en kon ik weer printen en scannen.', name: 'Gerard T.', location: 'Gouda' },
-              { text: 'Nieuwe printer gekocht maar kreeg hem niet ge\u00efnstalleerd. De specialist heeft alles aangesloten en uitgelegd. Heel fijn!', name: 'Marian S.', location: 'Den Haag' },
+              { text: 'Nieuwe printer gekocht maar kreeg hem niet ge\u00efnstalleerd. De IT-student heeft alles aangesloten en uitgelegd. Heel fijn!', name: 'Marian S.', location: 'Den Haag' },
               { text: 'Kon niet meer scannen naar mijn e-mail. Bleek een instelling te zijn. Snel opgelost en nu werkt alles weer perfect.', name: 'Paul K.', location: 'Delft' }
             ].map((t, idx) => (
               <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
@@ -294,7 +294,7 @@ export default function PrinterScannerHulpPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over printer en scanner hulp aan huis</p>
           </div>
           <div className="space-y-4">
@@ -316,7 +316,7 @@ export default function PrinterScannerHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Printer en Scanner Hulp bij U Thuis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een printer die niet print, een scanner die niet scant, of een apparaat dat niet wil verbinden met uw computer — het zijn frustrerende problemen die uw dagelijkse werk verstoren. Onze specialisten kennen alle merken en modellen: HP, Canon, Epson, Brother, Samsung en meer.</p>
+            <p>Een printer die niet print, een scanner die niet scant, of een apparaat dat niet wil verbinden met uw computer — het zijn frustrerende problemen die uw dagelijkse werk verstoren. Onze IT-studenten kennen alle merken en modellen: HP, Canon, Epson, Brother, Samsung en meer.</p>
             <p>We installeren nieuwe printers, lossen papierstoringen op, configureren draadloos printen via WiFi, en stellen scan-naar-e-mail in. Alles bij u thuis, met duidelijke uitleg zodat u het voortaan zelf kunt. En als uw printer echt aan vervanging toe is, adviseren we u eerlijk welk model bij u past.</p>
           </div>
         </div>

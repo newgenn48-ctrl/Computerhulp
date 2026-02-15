@@ -1,10 +1,12 @@
+import Link from 'next/link'
+
 interface PricingSectionProps {
   benefits?: string[]
 }
 
 export default function PricingSection({
   benefits = [
-    'Geen voorrijkosten in heel Zuid-Holland',
+    'Gratis voorrijkosten in heel Zuid-Holland',
     'Ook \'s avonds en in het weekend beschikbaar',
     'Betalen via pin, contant of Tikkie',
     'Eerlijke inschatting vooraf, geen verrassingen'
@@ -48,12 +50,12 @@ export default function PricingSection({
                 ))}
               </div>
 
-              <a
+              <Link
                 href="/afspraak-maken"
                 className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-center px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105"
               >
-                Hulp Vragen
-              </a>
+                Hulp vragen
+              </Link>
             </div>
           </div>
         </div>

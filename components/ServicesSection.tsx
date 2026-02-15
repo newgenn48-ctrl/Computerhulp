@@ -58,14 +58,15 @@ export const services = [
     ]
   },
   {
-    title: 'Persoonlijke Training',
+    title: 'Televisie & Radio',
     image: '/Student aan huis.webp',
-    slug: '/diensten/persoonlijke-training',
+    slug: '/diensten/televisie-radio',
     features: [
-      'Basistraining voor uw computer',
-      'Internet veilig gebruiken',
-      'E-mail en sociale media beheren',
-      'Foto\'s ordenen en bewerken'
+      'Smart TV installeren en instellen',
+      'Zenders instellen en sorteren',
+      'Decoder en mediabox programmeren',
+      'Soundbar en surroundsysteem',
+      'Streaming apps instellen'
     ]
   },
   {
@@ -74,9 +75,9 @@ export const services = [
     slug: '/diensten/laptop-computer-reparatie',
     features: [
       'Alle merken laptops en computers',
-      'Scherm reparatie',
-      'Accu en oplader problemen',
-      'SSD en geheugen upgrade',
+      'Schermreparatie',
+      'Accu- en opladerproblemen',
+      'SSD- en geheugenupgrade',
       'Toetsenbord en touchpad'
     ]
   },
@@ -108,23 +109,22 @@ export const services = [
     slug: '/website-laten-maken',
     features: [
       'Custom websites op maat',
-      'Alle website platformen',
-      'SEO geoptimaliseerd',
+      'Alle websiteplatformen',
+      'SEO-geoptimaliseerd',
       'Mobiel-vriendelijk design',
       'Onderhoud en support',
       'Vanaf €795'
     ]
   },
   {
-    title: 'Televisie & Radio',
+    title: 'Persoonlijke Training',
     image: '/Student aan huis.webp',
-    slug: '/diensten/televisie-radio',
+    slug: '/diensten/persoonlijke-training',
     features: [
-      'Smart TV installeren en instellen',
-      'Zenders instellen en sorteren',
-      'Decoder en mediabox programmeren',
-      'Soundbar en surroundsysteem',
-      'Streaming apps instellen'
+      'Basistraining voor uw computer',
+      'Internet veilig gebruiken',
+      'E-mail en sociale media beheren',
+      'Foto\'s ordenen en bewerken'
     ]
   }
 ]

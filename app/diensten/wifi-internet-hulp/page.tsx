@@ -4,8 +4,8 @@ import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
-  title: 'WiFi Problemen? Internet Hulp aan Huis | Binnen 24u Opgelost',
-  description: 'WiFi problemen? Slecht bereik, traag of geen verbinding? Wij komen bij u thuis in Zuid-Holland en lossen het op. Geen voorrijkosten. Bel 085-8002006.',
+  title: 'WiFi-problemen? Internet Hulp aan Huis | Binnen 24u Opgelost',
+  description: 'WiFi-problemen? Slecht bereik, traag of geen verbinding? Wij komen bij u thuis in Zuid-Holland en lossen het op. Gratis voorrijkosten. Bel 085-8002006.',
 
   openGraph: {
     title: 'WiFi & Internet Hulp aan Huis',
@@ -46,10 +46,10 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Hoe verbeter ik mijn WiFi bereik?', acceptedAnswer: { '@type': 'Answer', text: 'We analyseren uw situatie en adviseren de beste oplossing: router verplaatsen, WiFi versterker, mesh systeem of powerline adapters.' } },
+    { '@type': 'Question', name: 'Hoe verbeter ik mijn WiFi-bereik?', acceptedAnswer: { '@type': 'Answer', text: 'We analyseren uw situatie en adviseren de beste oplossing: router verplaatsen, WiFi-versterker, meshsysteem of powerline-adapters.' } },
     { '@type': 'Question', name: 'Kunnen jullie mijn nieuwe router installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren alle merken routers en zorgen dat al uw apparaten weer verbonden zijn.' } },
-    { '@type': 'Question', name: 'Waarom is mijn internet zo traag?', acceptedAnswer: { '@type': 'Answer', text: 'Dit kan vele oorzaken hebben: slechte router positie, te veel apparaten, oude router, storing van buren, of een provider probleem. We onderzoeken dit en lossen het op.' } },
-    { '@type': 'Question', name: 'Kan ik mijn WiFi wachtwoord laten wijzigen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we kunnen uw WiFi wachtwoord wijzigen en zorgen dat al uw apparaten het nieuwe wachtwoord krijgen.' } },
+    { '@type': 'Question', name: 'Waarom is mijn internet zo traag?', acceptedAnswer: { '@type': 'Answer', text: 'Dit kan vele oorzaken hebben: slechte routerpositie, te veel apparaten, oude router, storing van buren, of een providerprobleem. We onderzoeken dit en lossen het op.' } },
+    { '@type': 'Question', name: 'Kan ik mijn WiFi-wachtwoord laten wijzigen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we kunnen uw WiFi-wachtwoord wijzigen en zorgen dat al uw apparaten het nieuwe wachtwoord krijgen.' } },
     { '@type': 'Question', name: 'Helpen jullie ook met bekabeld internet?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we leggen ook netwerkkabels aan en installeren switches voor een stabielere verbinding, bijvoorbeeld voor gaming of thuiswerken.' } }
   ]
 }
@@ -67,8 +67,8 @@ const problems = [
 
 const services = [
   'Nieuwe router installeren en configureren',
-  'WiFi bereik verbeteren in heel huis',
-  'Mesh netwerk of WiFi versterker plaatsen',
+  'WiFi-bereik verbeteren in heel huis',
+  'Mesh netwerk of WiFi-versterker plaatsen',
   'Alle apparaten verbinden met internet',
   'Gastnetwerk en beveiliging instellen',
   'Internetsnelheid optimaliseren',
@@ -76,10 +76,10 @@ const services = [
 ]
 
 const faqs = [
-  { question: 'Hoe verbeter ik mijn WiFi bereik in huis?', answer: 'We analyseren uw situatie en adviseren de beste oplossing: router verplaatsen, WiFi versterker, mesh systeem of powerline adapters. Vaak is een combinatie het meest effectief.' },
+  { question: 'Hoe verbeter ik mijn WiFi-bereik in huis?', answer: 'We analyseren uw situatie en adviseren de beste oplossing: router verplaatsen, WiFi-versterker, meshsysteem of powerline-adapters. Vaak is een combinatie het meest effectief.' },
   { question: 'Kunnen jullie mijn nieuwe router installeren?', answer: 'Ja, we installeren alle merken routers en zorgen dat al uw apparaten weer verbonden zijn. We stellen ook de beveiliging en optimale instellingen in.' },
-  { question: 'Waarom is mijn internet zo traag?', answer: 'Dit kan vele oorzaken hebben: slechte router positie, te veel apparaten, oude router, storing van buren, of een provider probleem. We onderzoeken dit en lossen het op.' },
-  { question: 'Kan ik mijn WiFi wachtwoord laten wijzigen?', answer: 'Ja, we kunnen uw WiFi wachtwoord wijzigen en zorgen dat al uw apparaten het nieuwe wachtwoord krijgen.' },
+  { question: 'Waarom is mijn internet zo traag?', answer: 'Dit kan vele oorzaken hebben: slechte routerpositie, te veel apparaten, oude router, storing van buren, of een providerprobleem. We onderzoeken dit en lossen het op.' },
+  { question: 'Kan ik mijn WiFi-wachtwoord laten wijzigen?', answer: 'Ja, we kunnen uw WiFi-wachtwoord wijzigen en zorgen dat al uw apparaten het nieuwe wachtwoord krijgen.' },
   { question: 'Helpen jullie ook met bekabeld internet?', answer: 'Ja, we leggen ook netwerkkabels aan en installeren switches voor een stabielere verbinding, bijvoorbeeld voor gaming of thuiswerken.' }
 ]
 
@@ -99,7 +99,7 @@ export default function WifiInternetHulpPage() {
                 WiFi & Internet Hulp aan Huis
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Slecht WiFi bereik of traag internet? Wij komen bij u thuis en zorgen voor snel en stabiel internet in heel uw woning. <strong className="text-gray-900">Geen voorrijkosten.</strong>
+                Slecht WiFi-bereik of traag internet? Wij komen bij u thuis en zorgen voor snel en stabiel internet in heel uw woning.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
@@ -112,7 +112,7 @@ export default function WifiInternetHulpPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Geen voorrijkosten</div>
+                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
                 <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>10+ jaar ervaring</div>
               </div>
@@ -146,7 +146,7 @@ export default function WifiInternetHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze WiFi en internet diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze wifi- en internetdiensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -166,7 +166,7 @@ export default function WifiInternetHulpPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Veelvoorkomende WiFi Problemen
+              Veelvoorkomende WiFi-problemen
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
@@ -204,7 +204,7 @@ export default function WifiInternetHulpPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'Uw WiFi werkt overal in huis snel en stabiel. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -232,7 +232,7 @@ export default function WifiInternetHulpPage() {
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Geen voorrijkosten in heel Zuid-Holland', 'Router en netwerk direct werkend', 'Alle apparaten verbonden', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Gratis voorrijkosten in heel Zuid-Holland', 'Router en netwerk direct werkend', 'Alle apparaten verbonden', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
                     <span className="text-white">{item}</span>
@@ -270,7 +270,7 @@ export default function WifiInternetHulpPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { text: 'WiFi reikte niet tot de slaapkamer. Een mesh systeem ge\u00efnstalleerd en nu heb ik overal perfect bereik!', name: 'Stefan K.', location: 'Den Haag' },
+              { text: 'WiFi reikte niet tot de slaapkamer. Een meshsysteem ge\u00efnstalleerd en nu heb ik overal perfect bereik!', name: 'Stefan K.', location: 'Den Haag' },
               { text: 'Internet was ontzettend traag. Bleek dat de router slecht stond. Na herplaatsing en nieuwe instellingen vliegt het.', name: 'Linda M.', location: 'Leiden' },
               { text: 'Nieuwe router ge\u00efnstalleerd en alle apparaten opnieuw verbonden. Inclusief de printer en Smart TV. Top service.', name: 'Rob H.', location: 'Delft' }
             ].map((t, idx) => (
@@ -295,7 +295,7 @@ export default function WifiInternetHulpPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde Vragen</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
             <p className="text-lg text-gray-600">Over WiFi en internet hulp aan huis</p>
           </div>
           <div className="space-y-4">
@@ -317,8 +317,8 @@ export default function WifiInternetHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">WiFi en Internet Problemen Vakkundig Opgelost</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Slecht WiFi bereik, traag internet of apparaten die steeds de verbinding verliezen — het zijn problemen die in bijna elk huishouden voorkomen. De oorzaak kan vari&euml;ren van een verkeerd geplaatste router tot een verouderd netwerk of storing van buitenaf.</p>
-            <p>Onze netwerk specialisten analyseren uw situatie ter plekke en bieden een passende oplossing: router herplaatsen, een WiFi versterker of mesh systeem installeren, of uw netwerk helemaal opnieuw configureren. We zorgen dat al uw apparaten — van laptop en telefoon tot Smart TV en printer — stabiel verbonden zijn.</p>
+            <p>Slecht WiFi-bereik, traag internet of apparaten die steeds de verbinding verliezen — het zijn problemen die in bijna elk huishouden voorkomen. De oorzaak kan vari&euml;ren van een verkeerd geplaatste router tot een verouderd netwerk of storing van buitenaf.</p>
+            <p>Onze IT-studenten analyseren uw situatie ter plekke en bieden een passende oplossing: router herplaatsen, een WiFi-versterker of meshsysteem installeren, of uw netwerk helemaal opnieuw configureren. We zorgen dat al uw apparaten — van laptop en telefoon tot Smart TV en printer — stabiel verbonden zijn.</p>
           </div>
         </div>
       </section>
@@ -328,7 +328,7 @@ export default function WifiInternetHulpPage() {
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">WiFi Problemen?</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">WiFi-problemen?</h2>
           <p className="text-xl text-blue-100 mb-10">Neem contact op en we komen vandaag of morgen al bij u langs</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">

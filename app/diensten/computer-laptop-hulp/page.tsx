@@ -5,7 +5,7 @@ import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 
 export const metadata: Metadata = {
   title: 'Computer & Laptop Hulp aan Huis | Binnen 24u',
-  description: 'Computerproblemen? Computer traag, laptop kapot of pc laten maken? Onze specialist komt aan huis in Zuid-Holland. Binnen 24 uur, geen voorrijkosten. Bel 085-8002006.',
+  description: 'Computer traag, laptop kapot of pc laten maken? IT-student aan huis in Zuid-Holland. Binnen 24 uur, gratis voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Computer & Laptop Hulp aan Huis',
     description: 'Computer of laptop problemen? Traag, vast, crash of defect? We komen bij u thuis in Zuid-Holland en maken het weer als nieuw. Binnen 24 uur geholpen.',
@@ -74,7 +74,7 @@ const faqData = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Hoe snel kunnen jullie langskomen voor computer hulp?',
+      name: 'Hoe snel kunnen jullie langskomen voor computerhulp?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'In de meeste gevallen komen we binnen 24 uur bij u langs. Bij spoed proberen we vaak nog dezelfde dag te komen.'
@@ -162,7 +162,7 @@ const services = [
 
 const faqs = [
   {
-    question: 'Hoe snel kunnen jullie langskomen voor computer hulp?',
+    question: 'Hoe snel kunnen jullie langskomen voor computerhulp?',
     answer: 'In de meeste gevallen komen we binnen 24 uur bij u langs. Bij spoed proberen we vaak nog dezelfde dag te komen. We zijn 7 dagen per week bereikbaar van 08:00 tot 22:00.'
   },
   {
@@ -171,7 +171,7 @@ const faqs = [
   },
   {
     question: 'Repareren jullie alle merken laptops?',
-    answer: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem. Onze specialisten hebben ervaring met alle systemen.'
+    answer: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem. Onze IT-studenten hebben ervaring met alle systemen.'
   },
   {
     question: 'Wat als het probleem niet opgelost kan worden?',
@@ -211,7 +211,7 @@ export default function ComputerLaptopHulpPage() {
               </h1>
 
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Hulp nodig met uw computer of laptop? Wij komen bij u thuis in Zuid-Holland en lossen het snel op. <strong className="text-gray-900">Geen voorrijkosten, binnen 24 uur.</strong>
+                Hulp nodig met uw computer of laptop? Wij komen bij u thuis in Zuid-Holland en lossen het snel op.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
@@ -241,7 +241,7 @@ export default function ComputerLaptopHulpPage() {
                   <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                   </svg>
-                  Geen voorrijkosten
+                  Gratis voorrijkosten
                 </div>
                 <div className="flex items-center gap-2">
                   <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -295,7 +295,7 @@ export default function ComputerLaptopHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze computerhulp diensten.</p>
+            <p className="text-lg text-gray-600">Een overzicht van onze computerhulpdiensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -353,7 +353,7 @@ export default function ComputerLaptopHulpPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'Specialist Komt Langs', desc: 'Binnen 24 uur komt onze specialist bij u thuis. Geen voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'We lossen het probleem ter plekke op. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -388,7 +388,7 @@ export default function ComputerLaptopHulpPage() {
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
                 {[
-                  'Geen voorrijkosten in heel Zuid-Holland',
+                  'Gratis voorrijkosten in heel Zuid-Holland',
                   'Diagnose en oplossing ter plekke',
                   'Data altijd veilig en privé',
                   'Betalen na afloop via pin, contant of Tikkie'
@@ -439,7 +439,7 @@ export default function ComputerLaptopHulpPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { text: 'Mijn laptop was ontzettend traag. Binnen een uur had de specialist een SSD geplaatst en draait alles weer als nieuw!', name: 'Peter V.', location: 'Zoetermeer' },
+              { text: 'Mijn laptop was ontzettend traag. Binnen een uur had de IT-student een SSD geplaatst en draait alles weer als nieuw!', name: 'Peter V.', location: 'Zoetermeer' },
               { text: 'Computer startte niet meer op. Ze hebben al mijn data kunnen redden en het systeem volledig hersteld. Top service!', name: 'Maria K.', location: 'Den Haag' },
               { text: 'Heel geduldig uitgelegd wat het probleem was. Eerlijke prijs en snel geregeld. Echte aanrader.', name: 'Jan B.', location: 'Delft' }
             ].map((t, idx) => (
@@ -465,7 +465,7 @@ export default function ComputerLaptopHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
-              Veelgestelde Vragen
+              Veelgestelde vragen
             </h2>
             <p className="text-lg text-gray-600">
               Over computer en laptop hulp aan huis
@@ -495,8 +495,8 @@ export default function ComputerLaptopHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Professionele Computerhulp bij U Thuis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een trage computer of laptop die vastloopt is niet alleen frustrerend, het kost u ook tijd en productiviteit. Of het nu gaat om een Windows pc die niet meer opstart, een Mac die crasht, of een laptop waarvan het scherm niet meer werkt — onze specialisten hebben de kennis en ervaring om het probleem snel te diagnosticeren en op te lossen.</p>
-            <p>Wij komen bij u thuis in heel Zuid-Holland, van Den Haag tot Rotterdam en van Leiden tot Dordrecht. Geen gedoe met uw computer naar een winkel brengen, geen wachttijden van weken. Binnen 24 uur staat onze specialist aan uw deur, en in de meeste gevallen is het probleem ter plekke verholpen. Van SSD upgrades en virusverwijdering tot complete systeemherstel — wij regelen het.</p>
+            <p>Een trage computer of laptop die vastloopt is niet alleen frustrerend, het kost u ook tijd en productiviteit. Of het nu gaat om een Windows pc die niet meer opstart, een Mac die crasht, of een laptop waarvan het scherm niet meer werkt — onze IT-studenten hebben de kennis en ervaring om het probleem snel te diagnosticeren en op te lossen.</p>
+            <p>Wij komen bij u thuis in heel Zuid-Holland, van Den Haag tot Rotterdam en van Leiden tot Dordrecht. Geen gedoe met uw computer naar een winkel brengen, geen wachttijden van weken. Binnen 24 uur staat onze IT-student aan uw deur, en in de meeste gevallen is het probleem ter plekke verholpen. Van SSD upgrades en virusverwijdering tot complete systeemherstel — wij regelen het.</p>
           </div>
         </div>
       </section>
