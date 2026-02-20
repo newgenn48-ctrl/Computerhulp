@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
 import ConversionTracker from '@/components/ConversionTracker'
+import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Offerte Bevestiging - Computerhulp Zuid-Holland',
@@ -25,9 +26,7 @@ export default function OfferteBevestigingPage() {
           {/* Purple Header */}
           <div className="bg-gradient-to-r from-purple-600 to-blue-600 text-white px-8 py-12 text-center">
             <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-6">
-              <svg className="w-12 h-12 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
+              <Icon name="check-circle-outline" className="w-12 h-12 text-purple-600" strokeWidth={2} />
             </div>
             <h1 className="text-3xl sm:text-4xl font-bold mb-3">Offerte Aanvraag Ontvangen!</h1>
             <p className="text-xl text-purple-100">Bedankt voor uw interesse in onze website diensten</p>
@@ -39,9 +38,7 @@ export default function OfferteBevestigingPage() {
               {/* Wat gebeurt er nu */}
               <div className="bg-purple-50 border-l-4 border-purple-500 p-6 rounded-lg">
                 <h2 className="text-xl font-bold text-purple-900 mb-4 flex items-center gap-2">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <Icon name="clock" className="w-6 h-6" strokeWidth={2} />
                   Wat Gebeurt Er Nu?
                 </h2>
                 <ul className="space-y-3">
@@ -72,9 +69,7 @@ export default function OfferteBevestigingPage() {
               {/* Bevestiging Email */}
               <div className="bg-green-50 border-l-4 border-green-500 p-6 rounded-lg">
                 <div className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                  <Icon name="email" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} />
                   <div>
                     <p className="font-semibold text-gray-900 mb-1">📧 Check uw e-mail</p>
                     <p className="text-gray-700">U heeft een bevestigingsmail ontvangen met de details van uw aanvraag.</p>
@@ -85,46 +80,32 @@ export default function OfferteBevestigingPage() {
               {/* Wat U Kunt Verwachten */}
               <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
                 <h3 className="font-bold text-blue-900 mb-4 flex items-center gap-2">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <Icon name="check-circle-outline" className="w-6 h-6" strokeWidth={2} />
                   Wat U Kunt Verwachten van Uw Website
                 </h3>
                 <div className="grid sm:grid-cols-2 gap-3">
                   <div className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-gray-700 text-sm">Professioneel modern design</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-gray-700 text-sm">Volledig responsive</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-gray-700 text-sm">SEO-geoptimaliseerd</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-gray-700 text-sm">Snel en veilig</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-gray-700 text-sm">Eenvoudig te beheren</p>
                   </div>
                   <div className="flex items-start gap-2">
-                    <svg className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <p className="text-gray-700 text-sm">Persoonlijke begeleiding</p>
                   </div>
                 </div>
@@ -145,9 +126,7 @@ export default function OfferteBevestigingPage() {
                   href="tel:+31858002006"
                   className="inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all shadow-lg hover:shadow-xl"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                   Bel Direct: 085-8002006
                 </a>
               </div>
@@ -169,9 +148,7 @@ export default function OfferteBevestigingPage() {
                   </div>
                   <div className="flex items-start gap-3">
                     <div className="flex-shrink-0 w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center">
-                      <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
+                      <Icon name="money" className="w-6 h-6 text-purple-600" strokeWidth={2} />
                     </div>
                     <div>
                       <p className="font-semibold text-gray-900">Transparante Prijzen</p>
@@ -198,9 +175,7 @@ export default function OfferteBevestigingPage() {
                   href="/"
                   className="flex-1 inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-lg font-semibold transition-all"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-                  </svg>
+                  <Icon name="home" className="w-5 h-5" strokeWidth={2} />
                   Terug naar Home
                 </Link>
                 <Link
@@ -219,9 +194,7 @@ export default function OfferteBevestigingPage() {
           <p className="text-sm text-gray-600 mb-4">Betrouwbare webontwikkeling sinds 2023</p>
           <div className="flex justify-center items-center gap-6 flex-wrap">
             <div className="flex items-center gap-2 text-gray-700">
-              <svg className="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-              </svg>
+              <Icon name="shield" className="w-5 h-5 text-green-500" strokeWidth={2} />
               <span className="font-semibold">KvK: 91310318</span>
             </div>
             <div className="flex items-center gap-2 text-gray-700">

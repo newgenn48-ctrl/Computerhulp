@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Icon } from '@/components/icons'
 
 export const services = [
   {
@@ -186,9 +187,7 @@ export default function ServicesSection({
                   <ul className="space-y-2 mb-4">
                     {service.features.map((feature, featureIdx) => (
                       <li key={featureIdx} className="flex items-start gap-2 text-base sm:text-sm text-gray-700">
-                        <svg className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+                        <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                         <span>{feature}</span>
                       </li>
                     ))}
@@ -196,9 +195,7 @@ export default function ServicesSection({
                 ) : null}
                 <span className="group-hover:translate-x-1 inline-flex items-center gap-2 text-blue-600 font-semibold text-sm transition-transform">
                   Meer info
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                  </svg>
+                  <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                 </span>
               </div>
             </Link>
@@ -212,9 +209,7 @@ export default function ServicesSection({
               className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
             >
               Alle diensten bekijken
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
             </Link>
           </div>
         )}

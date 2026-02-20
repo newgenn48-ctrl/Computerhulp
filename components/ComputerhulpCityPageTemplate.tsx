@@ -5,6 +5,7 @@ import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
+import { Icon } from '@/components/icons'
 import { City } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 
@@ -69,13 +70,7 @@ export function generateStructuredData(city: City) {
         telephone: '+31858002006',
         email: 'info@computerhulpzh.nl',
         description: cityDescription,
-        logo: {
-          '@type': 'ImageObject',
-          '@id': `${baseUrl}/#logo`,
-          url: `${baseUrl}/Computerhulp%20Zuid%20Holland%20Logo.webp`,
-          contentUrl: `${baseUrl}/Computerhulp%20Zuid%20Holland%20Logo.webp`,
-          caption: `Computerhulp ${city.name} Logo`
-        },
+        logo: `${baseUrl}/Computerhulp%20Zuid%20Holland%20Logo.webp`,
         address: {
           '@type': 'PostalAddress',
           addressLocality: city.name,
@@ -132,35 +127,38 @@ export function generateStructuredData(city: City) {
             },
             minPrice: '43.50',
             description: 'Minimaal 3 kwartier (EUR 43,50 totaal)'
-          },
-          seller: {
-            '@id': `${baseUrl}/#organization`
           }
         }
       },
+      ...generateFaqEntities(city),
       {
-        '@type': 'WebPage',
-        '@id': `${pageUrl}#webpage`,
-        url: pageUrl,
-        name: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
-        description: `Computerhulp aan huis in ${city.name}. Computer-, laptop-, printer- en WiFi-hulp. Binnen 24 uur bij u thuis, gratis voorrijkosten.`,
-        isPartOf: {
-          '@id': `${baseUrl}/#website`
-        },
-        about: {
-          '@id': `${pageUrl}#service`
-        },
-        datePublished: '2024-01-01',
-        dateModified: new Date().toISOString().split('T')[0],
-        inLanguage: 'nl-NL'
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Home',
+            item: baseUrl
+          },
+          {
+            '@type': 'ListItem',
+            position: 2,
+            name: 'Computerhulp aan Huis',
+            item: `${baseUrl}/computerhulp-aan-huis`
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: city.name,
+            item: pageUrl
+          }
+        ]
       }
     ]
   }
 }
 
-export function generateFaqData(city: City) {
-  const baseUrl = 'https://computerhulpzh.nl'
-  const pageUrl = `${baseUrl}/computerhulp-aan-huis-${city.slug}`
+function generateFaqEntities(city: City) {
   const content = getCityContent(city.slug)
 
   const faqEntities: Array<{ '@type': string; name: string; acceptedAnswer: { '@type': string; text: string } }> = [
@@ -209,63 +207,20 @@ export function generateFaqData(city: City) {
     })
   }
 
-  return {
-    '@context': 'https://schema.org',
+  return [{
     '@type': 'FAQPage',
-    '@id': `${pageUrl}#faq`,
     mainEntity: faqEntities
-  }
-}
-
-export function generateBreadcrumbData(city: City) {
-  const baseUrl = 'https://computerhulpzh.nl'
-  const pageUrl = `${baseUrl}/computerhulp-aan-huis-${city.slug}`
-
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    '@id': `${pageUrl}#breadcrumb`,
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        name: 'Home',
-        item: baseUrl
-      },
-      {
-        '@type': 'ListItem',
-        position: 2,
-        name: 'Computerhulp aan Huis',
-        item: `${baseUrl}/computerhulp-aan-huis`
-      },
-      {
-        '@type': 'ListItem',
-        position: 3,
-        name: city.name,
-        item: pageUrl
-      }
-    ]
-  }
+  }]
 }
 
 export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityPageTemplateProps) {
   const structuredData = generateStructuredData(city)
-  const faqData = generateFaqData(city)
-  const breadcrumbData = generateBreadcrumbData(city)
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }}
       />
 
       {/* Hero Section */}
@@ -296,24 +251,12 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Binnen 24 uur geholpen
-              </span>
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Gratis voorrijkosten
-              </span>
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
-                Betaalbare tarieven
-              </span>
+              {['Binnen 24 uur geholpen', 'Gratis voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
+                <span key={usp} className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                  <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
+                  {usp}
+                </span>
+              ))}
             </div>
 
             {/* CTA Buttons */}
@@ -323,17 +266,13 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl shadow-blue-600/25"
               >
                 Hulp aanvragen
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                </svg>
+                <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
               </Link>
               <a
                 href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-200 hover:border-blue-600 transition-all"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                 Bel 085-8002006
               </a>
             </div>
@@ -402,9 +341,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
                 <div className="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
-                  <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <Icon name="check" className="w-7 h-7" strokeWidth={2.5} />
                 </div>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">Alles werkt weer</h3>
@@ -451,6 +388,9 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                             Wij kennen {city.name} en de regio {content.region} goed. Of het nu gaat om een trage computer, een printer die niet wil of WiFi die steeds wegvalt — wij zoeken het rustig uit en zorgen dat het weer werkt.
                           </p>
                         )}
+                        <p>
+                          Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die niet meer verbinden na een Windows-update, WiFi die op bepaalde plekken in huis wegvalt en e-mailprogramma&apos;s die niet goed zijn ingesteld. Dit soort problemen lossen onze IT-studenten dagelijks op.
+                        </p>
                       </>
                     ) : (
                       <>
@@ -462,6 +402,9 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                         </p>
                         <p>
                           Of het nu gaat om een trage computer, een printer die niet wil of WiFi die wegvalt — wij zoeken het rustig uit en zorgen dat alles weer werkt.
+                        </p>
+                        <p>
+                          Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die niet meer verbinden na een Windows-update, WiFi die op bepaalde plekken in huis wegvalt en e-mailprogramma&apos;s die niet goed zijn ingesteld. Dit soort problemen lossen onze IT-studenten dagelijks op.
                         </p>
                       </>
                     )}
@@ -476,9 +419,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   <ul className="space-y-6">
                     <li className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+                        <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900 mb-1">Gewoon thuis blijven</div>
@@ -487,9 +428,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                     </li>
                     <li className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+                        <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900 mb-1">Snel geregeld</div>
@@ -498,9 +437,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                     </li>
                     <li className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+                        <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900 mb-1">Rustige uitleg</div>
@@ -509,9 +446,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                     </li>
                     <li className="flex items-start gap-4">
                       <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+                        <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
                       </div>
                       <div>
                         <div className="font-semibold text-gray-900 mb-1">Gratis voorrijkosten</div>
@@ -599,9 +534,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   <details key={idx} className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                     <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-100 transition-colors">
                       {faq.question}
-                      <svg className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                      </svg>
+                      <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" strokeWidth={2} />
                     </summary>
                     <div className="px-6 pb-6 text-gray-600 leading-relaxed">
                       {faq.answer}
@@ -633,9 +566,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
               <div>
                 <div className="flex gap-0.5 mb-1">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
                   ))}
                 </div>
                 <div className="text-sm text-gray-500">gemiddelde score</div>
@@ -648,9 +579,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
             {testimonials.map((testimonial, idx) => (
               <div key={idx} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300">
                 <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
-                  <svg className="w-6 h-6 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-                  </svg>
+                  <Icon name="quote" className="w-6 h-6 text-gray-400" />
                 </div>
                 <p className="text-gray-700 text-lg leading-relaxed mb-8">{testimonial.quote}</p>
                 <div className="flex items-center justify-between">
@@ -665,9 +594,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
+                      <Icon key={i} name="star" className="w-4 h-4 text-yellow-400" />
                     ))}
                   </div>
                 </div>
@@ -703,38 +630,28 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                   className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-gray-900 px-10 py-5 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-white/20"
                 >
                   Hulp aanvragen
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
+                  <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
                 </Link>
                 <a
                   href="tel:+31858002006"
                   className="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-10 py-5 rounded-full font-semibold text-lg border-2 border-white/30 hover:border-white/60 transition-all"
                 >
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                   Bel 085-8002006
                 </a>
               </div>
 
               <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
                 <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+                  <Icon name="check-circle" className="w-4 h-4 text-green-500" />
                   7 dagen per week
                 </span>
                 <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+                  <Icon name="check-circle" className="w-4 h-4 text-green-500" />
                   Ook avonden
                 </span>
                 <span className="flex items-center gap-2">
-                  <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+                  <Icon name="check-circle" className="w-4 h-4 text-green-500" />
                   Gratis voorrijkosten
                 </span>
               </div>

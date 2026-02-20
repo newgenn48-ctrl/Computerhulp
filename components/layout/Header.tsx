@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { Icon } from '@/components/icons'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -123,9 +124,7 @@ export default function Header() {
                 aria-controls="diensten-menu"
               >
                 Diensten
-                <svg className={`w-4 h-4 transition-transform ${dienstenOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
+                <Icon name="chevron-down" className={`w-4 h-4 transition-transform ${dienstenOpen ? 'rotate-180' : ''}`} strokeWidth={2} />
               </button>
 
               {/* Dropdown Menu */}
@@ -198,13 +197,7 @@ export default function Header() {
             aria-label={mobileMenuOpen ? "Sluit menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-              {mobileMenuOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              )}
-            </svg>
+            <Icon name={mobileMenuOpen ? 'close' : 'menu'} className="w-6 h-6" strokeWidth={2} />
           </button>
         </div>
 

@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { Icon } from '@/components/icons'
 
 const servicesWithImages = [
   {
@@ -133,15 +134,7 @@ export default function ServicesImageCards({
                 <div className="overflow-hidden mt-4">
                   <span className="inline-flex items-center gap-2 text-blue-400 font-semibold text-sm transform translate-y-full opacity-0 transition-all duration-500 delay-100 group-hover:translate-y-0 group-hover:opacity-100 group-focus-within:translate-y-0 group-focus-within:opacity-100">
                     Meer informatie
-                    <svg
-                      className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1 group-focus-within:translate-x-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      aria-hidden="true"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    <Icon name="arrow-right-short" className="w-4 h-4 transform transition-transform duration-300 group-hover:translate-x-1 group-focus-within:translate-x-1" strokeWidth={2} aria-hidden="true" />
                   </span>
                 </div>
               </div>
@@ -162,9 +155,7 @@ export default function ServicesImageCards({
             className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold transition-all hover:scale-105 shadow-lg shadow-blue-600/25"
           >
             Alle Diensten Bekijken
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
+            <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
           </Link>
         </div>
       </div>

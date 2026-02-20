@@ -2,6 +2,7 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { Icon } from '@/components/icons'
 
 interface BreadcrumbItem {
   label: string
@@ -103,9 +104,7 @@ export default function Breadcrumb() {
             {breadcrumbItems.map((item, index) => (
               <li key={index} className="flex items-center gap-2">
                 {index > 0 && (
-                  <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
+                  <Icon name="chevron-right" className="w-4 h-4 text-gray-400" strokeWidth={2} />
                 )}
                 {item.href ? (
                   <Link

@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/components/ServicesSection'
+import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Alle Computerhulpdiensten aan Huis in Zuid-Holland',
@@ -122,17 +123,13 @@ export default function DienstenPage() {
                 href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>Bel 085-8002006</a>
+                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />Bel 085-8002006</a>
               <Link
                 href="/afspraak-maken"
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg border-2 border-gray-200 hover:border-gray-300 transition-all"
               >
                 Afspraak Maken
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
             </div>
           </div>
@@ -179,9 +176,7 @@ export default function DienstenPage() {
                   <ul className="space-y-2 mb-4">
                     {service.features.slice(0, 3).map((feature, fidx) => (
                       <li key={fidx} className="flex items-center gap-2 text-sm text-gray-700">
-                        <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+                        <Icon name="check" className="w-4 h-4 text-green-600 flex-shrink-0" strokeWidth={2} />
                         {feature}
                       </li>
                     ))}
@@ -189,9 +184,7 @@ export default function DienstenPage() {
 
                   <span className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all">
                     Meer informatie
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                   </span>
                 </div>
               </Link>
@@ -228,9 +221,7 @@ export default function DienstenPage() {
                   'Ook avonden en weekenden'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0" strokeWidth={2} />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
@@ -279,17 +270,13 @@ export default function DienstenPage() {
               href="tel:+31858002006"
               className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-2xl shadow-xl shadow-blue-600/25 hover:scale-105 transition-all"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>Bel 085-8002006</a>
+              <Icon name="phone" className="w-8 h-8" strokeWidth={2} />Bel 085-8002006</a>
             <Link
               href="/afspraak-maken"
               className="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-10 py-5 rounded-xl font-bold text-xl shadow-lg hover:scale-105 transition-all border-2 border-blue-200"
             >
               Afspraak Maken
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
           </div>
         </div>

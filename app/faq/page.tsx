@@ -1,5 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Veelgestelde Vragen (FAQ) | Computerhulp Zuid-Holland',
@@ -145,9 +146,7 @@ export default function FAQPage() {
                 href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:scale-105 transition-all"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
                 Bel 085-8002006
               </a>
               <Link
@@ -155,9 +154,7 @@ export default function FAQPage() {
                 className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 border-2 border-gray-300 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
               >
                 Hulp Vragen
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
             </div>
           </div>

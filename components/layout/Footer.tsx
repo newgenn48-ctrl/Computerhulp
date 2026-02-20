@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { Icon } from '@/components/icons'
 
 const footerCities = [
   { name: 'Den Haag', slug: 'den-haag' },
@@ -98,17 +99,13 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li>
                 <a href="tel:+31858002006" className="text-gray-300 hover:text-white transition flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                  </svg>
+                  <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
                   085-8002006
                 </a>
               </li>
               <li>
                 <a href="mailto:info@computerhulpzh.nl" className="text-gray-300 hover:text-white transition flex items-center gap-2">
-                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
+                  <Icon name="email" className="w-4 h-4" strokeWidth={2} />
                   info@computerhulpzh.nl
                 </a>
               </li>
@@ -139,9 +136,7 @@ export default function Footer() {
             <span className="text-sm text-gray-300">We werken in heel Zuid-Holland, waaronder:</span>
             <Link href="/locaties" className="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
               Alle locaties
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
             </Link>
           </div>
           <div className="flex flex-wrap gap-2">
@@ -176,9 +171,7 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-1">
               Made with{' '}
-              <svg className="w-4 h-4 text-red-500" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
-              </svg>
+              <Icon name="heart" className="w-4 h-4 text-red-500" />
               {' '}by{' '}
               <a
                 href="https://startbeheer.nl"

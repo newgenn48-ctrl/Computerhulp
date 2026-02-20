@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
+import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import ServicesSection from '@/components/ServicesSection'
 
@@ -70,21 +71,15 @@ export default function ITHulpPage() {
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
               <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Binnen 24 uur geholpen
               </span>
               <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Gratis voorrijkosten
               </span>
               <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
-                <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Betaalbare tarieven
               </span>
             </div>
@@ -97,18 +92,14 @@ export default function ITHulpPage() {
                 aria-label="Vraag computerhulp aan huis aan"
               >
                 Hulp aanvragen
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
               <a
                 href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
                 aria-label="Bel ons voor computerhulp: 085-8002006"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
                 Bel 085-8002006
               </a>
             </div>
@@ -118,9 +109,7 @@ export default function ITHulpPage() {
         {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-gray-400" aria-hidden="true">
           <span className="text-sm">Scroll</span>
-          <svg className="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-          </svg>
+          <Icon name="arrow-down" className="w-5 h-5 animate-bounce" strokeWidth={2} />
         </div>
       </section>
 
@@ -171,27 +160,19 @@ export default function ITHulpPage() {
 
                 <ul className="space-y-3 text-gray-700 mb-6">
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>Snel bij u thuis:</strong> Meestal binnen 24 uur. Is het dringend? Dan vaak nog dezelfde dag.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>Transparante prijzen:</strong> €14,50 per kwartier, gratis voorrijkosten in heel Zuid-Holland.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>Alle merken:</strong> Windows, Apple, Samsung — wij helpen met alles.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>Gewoon duidelijk:</strong> Wij leggen alles rustig uit, in gewone taal.</span>
                   </li>
                 </ul>
@@ -230,9 +211,7 @@ export default function ITHulpPage() {
                   </div>
                   <Link href="/computerhulp-aan-huis" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
                     Bekijk alle 50+ locaties
-                    <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                   </Link>
                 </div>
               </div>
@@ -261,9 +240,7 @@ export default function ITHulpPage() {
               <details key={idx} className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden">
                 <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-100 transition-colors">
                   {faq.q}
-                  <svg className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 leading-relaxed">
                   {faq.a}
@@ -289,17 +266,13 @@ export default function ITHulpPage() {
               className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-all"
             >
               Afspraak Maken
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
             <a
               href="tel:+31858002006"
               className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all"
             >
-              <svg className="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
+              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
               Bel 085-8002006
             </a>
           </div>

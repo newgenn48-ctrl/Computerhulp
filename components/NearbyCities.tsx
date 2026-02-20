@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { getNearbyCities } from '@/lib/cities'
+import { Icon } from '@/components/icons'
 
 interface NearbyCitiesProps {
   currentCity: string
@@ -34,25 +35,7 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
               href={`/${pageType}-${city.slug}`}
               className="flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all group"
             >
-              <svg
-                className="w-5 h-5 text-blue-600 flex-shrink-0"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                />
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-              </svg>
+              <Icon name="location-pin" className="w-5 h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
               <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600">
                 {city.name}
               </span>
@@ -65,9 +48,7 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
           >
             {parentLink.text}
-            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-            </svg>
+            <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
           </Link>
         </div>
       </div>

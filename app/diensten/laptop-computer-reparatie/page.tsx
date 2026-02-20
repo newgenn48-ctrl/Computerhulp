@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Laptop Reparatie & PC Hulp aan Huis | 24u',
@@ -103,17 +104,17 @@ export default function LaptopComputerReparatiePage() {
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
                   Plan Reparatie
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
                 </Link>
                 <a href="tel:+31858002006" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105">
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                   Bel 085-8002006
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Gratis voorrijkosten</div>
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Binnen 24 uur</div>
-                <div className="flex items-center gap-2"><svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>Alle merken</div>
+                <div className="flex items-center gap-2"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Gratis voorrijkosten</div>
+                <div className="flex items-center gap-2"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Binnen 24 uur</div>
+                <div className="flex items-center gap-2"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Alle merken</div>
               </div>
             </div>
             <div className="relative">
@@ -125,9 +126,7 @@ export default function LaptopComputerReparatiePage() {
               <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100">
                 <div className="flex items-center gap-3">
                   <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                    </svg>
+                    <Icon name="shield" className="w-6 h-6 text-green-600" strokeWidth={2} />
                   </div>
                   <div>
                     <div className="text-sm font-semibold text-gray-900">Gecertificeerd</div>
@@ -150,9 +149,7 @@ export default function LaptopComputerReparatiePage() {
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
               <div key={idx} className="flex items-center gap-3 py-2">
-                <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2} />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
@@ -228,7 +225,7 @@ export default function LaptopComputerReparatiePage() {
               <ul className="space-y-3 text-left">
                 {['Gratis voorrijkosten in heel Zuid-Holland', 'Diagnose ter plekke inbegrepen', 'Onderdelen tegen inkoopprijs', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
-                    <svg className="w-6 h-6 text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" /></svg>
+                    <Icon name="check" className="w-6 h-6 text-green-400 flex-shrink-0" strokeWidth={2} />
                     <span className="text-white">{item}</span>
                   </li>
                 ))}
@@ -237,22 +234,18 @@ export default function LaptopComputerReparatiePage() {
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 text-sm">
               <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-                <svg className="w-5 h-5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-                </svg>
+                <Icon name="shield" className="w-5 h-5 text-green-400" strokeWidth={2} />
                 <span>Niet opgelost? Alleen diagnosekosten</span>
               </div>
               <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-                <svg className="w-5 h-5 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
+                <Icon name="clock" className="w-5 h-5 text-blue-300" strokeWidth={2} />
                 <span>Gemiddeld 45-90 min</span>
               </div>
             </div>
 
             <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-10 py-4 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">
               Plan Reparatie
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
             </Link>
           </div>
         </div>
@@ -273,9 +266,7 @@ export default function LaptopComputerReparatiePage() {
               <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
                 <div className="flex gap-1 mb-3">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
@@ -299,7 +290,7 @@ export default function LaptopComputerReparatiePage() {
               <details key={idx} className="group bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                 <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                   {faq.question}
-                  <svg className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 leading-relaxed">{faq.answer}</div>
               </details>
@@ -329,10 +320,10 @@ export default function LaptopComputerReparatiePage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">
               Plan Reparatie
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
             <a href="tel:+31858002006" className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
               Bel 085-8002006
             </a>
           </div>

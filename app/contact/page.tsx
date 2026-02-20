@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { Icon } from '@/components/icons'
 
 export default function ContactPage() {
   const router = useRouter()
@@ -156,9 +157,7 @@ export default function ContactPage() {
               className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-blue-500"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+                <Icon name="phone" className="w-8 h-8" strokeWidth={2} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Bel 085-8002006</h3>
               <p className="text-gray-600 mb-4">De snelste manier om geholpen te worden</p>
@@ -172,9 +171,7 @@ export default function ContactPage() {
               className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-blue-500"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
+                <Icon name="email" className="w-8 h-8" strokeWidth={2} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">E-mail Ons</h3>
               <p className="text-gray-600 mb-4">Voor niet-spoedeisende vragen</p>
@@ -185,10 +182,7 @@ export default function ContactPage() {
             {/* Werkgebied */}
             <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6">
-                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                </svg>
+                <Icon name="location-pin" className="w-8 h-8" strokeWidth={2} />
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-2">Werkgebied</h3>
               <p className="text-gray-600 mb-4">Heel Zuid-Holland</p>
@@ -216,9 +210,7 @@ export default function ContactPage() {
               {submitStatus === 'success' && (
                 <div role="alert" aria-live="polite" className="mb-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg">
                   <div className="flex items-center">
-                    <svg className="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                    <Icon name="check-circle-outline" className="w-6 h-6 text-green-500 mr-3" strokeWidth={2} aria-hidden="true" />
                     <div>
                       <h3 className="text-green-800 font-semibold">Bedankt voor uw aanvraag!</h3>
                       <p className="text-green-700 mt-1">We nemen binnen 3 uur contact met u op.</p>
@@ -231,9 +223,7 @@ export default function ContactPage() {
               {submitStatus === 'error' && (
                 <div role="alert" aria-live="assertive" className="mb-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg">
                   <div className="flex items-center">
-                    <svg className="w-6 h-6 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                    </svg>
+                    <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
                     <div>
                       <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
                       <p className="text-red-700 mt-1">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">085-8002006</a></p>
@@ -443,9 +433,7 @@ export default function ContactPage() {
                   'Vlaardingen', 'Capelle a/d IJssel', 'Maassluis', 'Noordwijk'
                 ].map((stad) => (
                   <div key={stad} className="flex items-center gap-2 text-gray-700">
-                    <svg className="w-4 h-4 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-4 h-4 text-green-600 flex-shrink-0" strokeWidth={2} />
                     <span className="text-sm">{stad}</span>
                   </div>
                 ))}

@@ -5,6 +5,7 @@ import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import LayoutShell from '@/components/layout/LayoutShell'
+import { SvgSprite } from '@/components/icons'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -175,6 +176,7 @@ export default function RootLayout({
             title="Google Tag Manager"
           />
         </noscript>
+        <SvgSprite />
         <LayoutShell>
           {children}
         </LayoutShell>

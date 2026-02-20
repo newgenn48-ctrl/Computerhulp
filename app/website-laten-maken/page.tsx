@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { Icon } from '@/components/icons'
 
 export default function WebsiteLatenMakenPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
@@ -71,37 +72,27 @@ export default function WebsiteLatenMakenPage() {
                     className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105"
                   >
                     Vraag Offerte Aan
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    <Icon name="arrow-right-short" className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
                   </Link>
 
                   <a
                     href="tel:+31858002006"
                     className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all hover:border-blue-500"
                   >
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>Bel 085-8002006</a>
+                    <Icon name="phone" className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" strokeWidth={2} />Bel 085-8002006</a>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-600">
                   <div className="flex items-center gap-1.5 sm:gap-2">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" strokeWidth={2} />
                     Vanaf €795
                   </div>
                   <div className="flex items-center gap-1.5 sm:gap-2">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" strokeWidth={2} />
                     2-3 weken levering
                   </div>
                   <div className="flex items-center gap-1.5 sm:gap-2">
-                    <svg className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" strokeWidth={2} />
                     100% op maat
                   </div>
                 </div>
@@ -389,27 +380,19 @@ export default function WebsiteLatenMakenPage() {
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Ultiem snel en geoptimaliseerd</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Volledig unieke functionaliteiten</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Geen maandelijkse licentiekosten</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Beste SEO prestaties</span>
                   </div>
                 </div>
@@ -430,27 +413,19 @@ export default function WebsiteLatenMakenPage() {
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Zelf eenvoudig content aanpassen</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Snelle lancering mogelijk</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Toegang tot plugins en templates</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Lagere initiële investering</span>
                   </div>
                 </div>
@@ -555,9 +530,7 @@ export default function WebsiteLatenMakenPage() {
                       'Nazorg & Support'
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-center gap-3">
-                        <svg className="w-5 h-5 text-green-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                        </svg>
+                        <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2} />
                         <span className="text-gray-700">{item}</span>
                       </div>
                     ))}
@@ -575,17 +548,13 @@ export default function WebsiteLatenMakenPage() {
                     className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
                   >
                     Vraag Gratis Offerte Aan
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                    </svg>
+                    <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
                   </Link>
                   <a
                     href="tel:+31858002006"
                     className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white border-2 border-gray-300 text-gray-900 rounded-xl font-bold text-lg hover:border-blue-500 hover:shadow-lg transition-all"
                   >
-                    <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
+                    <Icon name="phone" className="w-5 h-5 text-blue-600" strokeWidth={2} />
                     Bel 085-8002006
                   </a>
                 </div>
@@ -657,14 +626,7 @@ export default function WebsiteLatenMakenPage() {
                     <h3 className="text-xl font-bold text-gray-900 flex-1">
                       {faq.q}
                     </h3>
-                    <svg
-                      className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform duration-300 ${openFaqIndex === idx ? 'rotate-180' : ''}`}
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
+                    <Icon name="chevron-down" className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform duration-300 ${openFaqIndex === idx ? 'rotate-180' : ''}`} strokeWidth={2} />
                   </button>
                   <div
                     className={`overflow-hidden transition-all duration-300 ${openFaqIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
@@ -688,9 +650,7 @@ export default function WebsiteLatenMakenPage() {
                 className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
               >
                 Stel Uw Vraag
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
             </div>
           </div>
@@ -716,37 +676,27 @@ export default function WebsiteLatenMakenPage() {
                 className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-purple-600 rounded-xl font-black text-xl shadow-2xl hover:shadow-white/50 hover:scale-105 transition-all"
               >
                 Vraag Offerte Aan
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
               </Link>
 
               <a
                 href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold text-xl hover:bg-white/20 transition-all"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>Bel 085-8002006</a>
+                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />Bel 085-8002006</a>
             </div>
 
             <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <Icon name="check" className="w-5 h-5" strokeWidth={2} />
                 Geen verborgen kosten
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <Icon name="check" className="w-5 h-5" strokeWidth={2} />
                 Persoonlijk advies
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                </svg>
+                <Icon name="check" className="w-5 h-5" strokeWidth={2} />
                 Snelle levering
               </div>
             </div>

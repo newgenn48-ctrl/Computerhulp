@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Icon } from '@/components/icons'
 import { cities } from '@/lib/cities'
 
 export const metadata: Metadata = {
@@ -113,17 +114,13 @@ export default function LocatiesPage() {
                 className="inline-flex items-center gap-2 bg-blue-600 text-white hover:bg-blue-700 px-8 py-4 rounded-full font-semibold text-lg shadow-lg transition-all hover:scale-105"
               >
                 Afspraak Maken
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
               <a
                 href="tel:+31858002006"
                 className="inline-flex items-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
               >
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                 Bel 085-8002006
               </a>
             </div>
@@ -174,10 +171,7 @@ export default function LocatiesPage() {
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors">
-                      <svg className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
+                      <Icon name="location-pin" className="w-6 h-6 text-blue-600 group-hover:text-white transition-colors" strokeWidth={2} />
                     </div>
                     <div>
                       <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors">{city.name}</h3>
@@ -224,10 +218,7 @@ export default function LocatiesPage() {
                       href={`/computerhulp-aan-huis-${city.slug}`}
                       className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group"
                     >
-                      <svg className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
+                      <Icon name="location-pin" className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" strokeWidth={2} />
                       <span className="text-gray-700 group-hover:text-blue-600 transition-colors">{city.name}</span>
                     </Link>
                   ))}
@@ -253,17 +244,13 @@ export default function LocatiesPage() {
               className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all"
             >
               Afspraak Maken
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
             <a
               href="tel:+31858002006"
               className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
               Bel 085-8002006
             </a>
           </div>

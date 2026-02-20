@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { Icon } from '@/components/icons'
 
 export default function OfferteAanvragenPage() {
   const router = useRouter()
@@ -166,9 +167,7 @@ export default function OfferteAanvragenPage() {
             {submitStatus === 'success' && (
               <div role="alert" aria-live="polite" className="mb-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg">
                 <div className="flex items-center">
-                  <svg className="w-6 h-6 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <Icon name="check-circle-outline" className="w-6 h-6 text-green-500 mr-3" strokeWidth={2} aria-hidden="true" />
                   <div>
                     <h3 className="text-green-800 font-semibold">Bedankt voor uw aanvraag!</h3>
                     <p className="text-green-700 mt-1">
@@ -184,9 +183,7 @@ export default function OfferteAanvragenPage() {
             {submitStatus === 'error' && (
               <div role="alert" aria-live="assertive" className="mb-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg">
                 <div className="flex items-center">
-                  <svg className="w-6 h-6 text-red-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+                  <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
                   <div>
                     <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
                     <p className="text-red-700 mt-1">

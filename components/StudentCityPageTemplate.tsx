@@ -5,6 +5,7 @@ import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
+import { Icon } from '@/components/icons'
 import { City } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 
@@ -70,13 +71,7 @@ function generateStructuredData(city: City) {
         telephone: '+31858002006',
         email: 'info@computerhulpzh.nl',
         description: cityDescription,
-        logo: {
-          '@type': 'ImageObject',
-          '@id': `${baseUrl}/#logo`,
-          url: `${baseUrl}/Computerhulp%20Zuid%20Holland%20Logo.webp`,
-          contentUrl: `${baseUrl}/Computerhulp%20Zuid%20Holland%20Logo.webp`,
-          caption: 'Computerhulp Zuid-Holland Logo'
-        },
+        logo: `${baseUrl}/Computerhulp%20Zuid%20Holland%20Logo.webp`,
         address: {
           '@type': 'PostalAddress',
           addressLocality: city.name,
@@ -131,37 +126,11 @@ function generateStructuredData(city: City) {
         }
       },
       {
-        '@type': 'WebPage',
-        '@id': `${pageUrl}#webpage`,
-        url: pageUrl,
-        name: `${serviceName} | IT Hulp aan Huis | Vanaf €43,50`,
-        description: `Student aan huis in ${city.name}. IT-studenten komen bij u thuis voor computerhulp. Binnen 24 uur, gratis voorrijkosten.`,
-        about: { '@id': `${pageUrl}#service` },
-        isPartOf: { '@id': `${baseUrl}/#website` },
-        primaryImageOfPage: {
-          '@type': 'ImageObject',
-          url: `${baseUrl}/Student%20aan%20huis.webp`
-        },
-        datePublished: '2024-01-01',
-        dateModified: new Date().toISOString().split('T')[0],
-        inLanguage: 'nl-NL'
-      },
-      {
         '@type': 'FAQPage',
-        '@id': `${pageUrl}#faq`,
         mainEntity: generateFaqQuestions(city)
       },
       {
-        '@type': 'WebSite',
-        '@id': `${baseUrl}/#website`,
-        url: baseUrl,
-        name: 'Computerhulp Zuid-Holland',
-        publisher: { '@id': `${baseUrl}/#organization` },
-        inLanguage: 'nl-NL'
-      },
-      {
         '@type': 'BreadcrumbList',
-        '@id': `${pageUrl}#breadcrumb`,
         itemListElement: [
           {
             '@type': 'ListItem',
@@ -188,14 +157,11 @@ function generateStructuredData(city: City) {
 }
 
 function generateFaqQuestions(city: City) {
-  const baseUrl = 'https://computerhulpzh.nl'
-  const pageUrl = `${baseUrl}/student-aan-huis-${city.slug}`
   const content = getCityContent(city.slug)
 
   const questions: Array<Record<string, unknown>> = [
     {
       '@type': 'Question',
-      '@id': `${pageUrl}#faq-1`,
       name: `Wat kost student aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
@@ -204,7 +170,6 @@ function generateFaqQuestions(city: City) {
     },
     {
       '@type': 'Question',
-      '@id': `${pageUrl}#faq-2`,
       name: `Hoe snel kan een IT-student in ${city.name} langskomen?`,
       acceptedAnswer: {
         '@type': 'Answer',
@@ -213,7 +178,6 @@ function generateFaqQuestions(city: City) {
     },
     {
       '@type': 'Question',
-      '@id': `${pageUrl}#faq-3`,
       name: 'Waar helpen jullie IT-studenten mee?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -222,7 +186,6 @@ function generateFaqQuestions(city: City) {
     },
     {
       '@type': 'Question',
-      '@id': `${pageUrl}#faq-4`,
       name: 'Hoe werkt de betaling?',
       acceptedAnswer: {
         '@type': 'Answer',
@@ -231,7 +194,6 @@ function generateFaqQuestions(city: City) {
     },
     {
       '@type': 'Question',
-      '@id': `${pageUrl}#faq-5`,
       name: `Komen jullie ook 's avonds en in het weekend in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
@@ -243,7 +205,6 @@ function generateFaqQuestions(city: City) {
   if (content && content.neighborhoods.length >= 3) {
     questions.push({
       '@type': 'Question',
-      '@id': `${pageUrl}#faq-6`,
       name: `In welke wijken van ${city.name} komen jullie IT-studenten?`,
       acceptedAnswer: {
         '@type': 'Answer',
@@ -331,9 +292,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
               {['Binnen 24 uur geholpen', 'Gratis voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
                 <span key={usp} className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
-                  <svg className="w-5 h-5 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} aria-hidden="true" />
                   {usp}
                 </span>
               ))}
@@ -346,17 +305,13 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
                 className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
               >
                 Hulp aanvragen
-                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                </svg>
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
               <a
                 href="tel:+31858002006"
                 className="inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                </svg>
+                <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
                 Bel 085-8002006
               </a>
             </div>
@@ -496,33 +451,23 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
                 </h3>
                 <ul className="space-y-3 text-gray-700 mb-6">
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
                     <span><strong>U bepaalt:</strong> Wanneer, hoe lang en wat er gedaan wordt. Geen verplichtingen, geen abonnementen.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
                     <span><strong>Geen verrassingen:</strong> U krijgt vooraf een inschatting van de tijd en kosten. Zo weet u waar u aan toe bent.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
                     <span><strong>Rustig uitgelegd:</strong> Onze studenten leggen stap voor stap uit wat ze doen. U leert er zelf ook van.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
                     <span><strong>Betalen achteraf:</strong> Pas na afloop betalen via pin, contant of Tikkie. Gratis voorrijkosten in {city.name}.</span>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
                     <span>
                       <strong>Voor van alles:</strong> Van{' '}
                       <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:text-blue-800">printerproblemen</Link> tot{' '}
@@ -591,9 +536,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               <details key={idx} className="group bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
                 <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
                   {faq.question}
-                  <svg className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" strokeWidth={2} aria-hidden="true" />
                 </summary>
                 <div className="px-6 pb-6 text-gray-600 leading-relaxed">
                   {faq.answer}
@@ -621,9 +564,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               <div key={idx} className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
                 <div className="flex items-center gap-1 mb-4" role="img" aria-label="5 van 5 sterren">
                   {[...Array(5)].map((_, i) => (
-                    <svg key={i} className="w-5 h-5 text-yellow-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
+                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" aria-hidden="true" />
                   ))}
                 </div>
                 <p className="text-gray-700 mb-6 italic leading-relaxed">
@@ -662,9 +603,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               href="/afspraak-maken"
               className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-2xl shadow-xl shadow-blue-600/25 hover:scale-105 transition-all"
             >
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-              </svg>
+              <Icon name="chat" className="w-8 h-8" strokeWidth={2} aria-hidden="true" />
               Hulp aanvragen
             </Link>
 
@@ -672,9 +611,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
               href="tel:+31858002006"
               className="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-10 py-5 rounded-xl font-bold text-xl shadow-lg hover:scale-105 transition-all border-2 border-blue-200"
             >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
               Bel 085-8002006
             </a>
           </div>

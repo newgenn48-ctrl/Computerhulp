@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
+import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Pagina Niet Gevonden (404)',
@@ -38,21 +39,15 @@ export default function NotFound() {
             <p className="text-blue-200 font-semibold mb-3">Mogelijke oplossingen:</p>
             <ul className="space-y-2 text-blue-100">
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <Icon name="chevron-right" className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" strokeWidth={2} />
                 Controleer of het webadres correct gespeld is
               </li>
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <Icon name="chevron-right" className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" strokeWidth={2} />
                 Ga terug naar de homepage en zoek vanaf daar
               </li>
               <li className="flex items-start gap-2">
-                <svg className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
+                <Icon name="chevron-right" className="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" strokeWidth={2} />
                 Neem contact met ons op als u denkt dat dit een fout is
               </li>
             </ul>
@@ -64,9 +59,7 @@ export default function NotFound() {
               href="/"
               className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-2xl hover:shadow-blue-500/50 transition-all hover:scale-105"
             >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
-              </svg>
+              <Icon name="home" className="w-5 h-5" strokeWidth={2} />
               Terug naar Home
             </Link>
 
@@ -75,9 +68,7 @@ export default function NotFound() {
               className="inline-flex items-center justify-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white/30 hover:border-white/50 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all"
             >
               Contact Opnemen
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
-              </svg>
+              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
             </Link>
           </div>
 
