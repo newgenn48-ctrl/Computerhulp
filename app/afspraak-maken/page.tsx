@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
+import { Icon } from '@/components/icons'
 
 export default function AfspraakMakenPage() {
   const router = useRouter()
@@ -185,7 +186,7 @@ export default function AfspraakMakenPage() {
   return (
     <div className="pt-32 pb-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <div className="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 border-2 border-blue-100">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-12">
             <div className="text-center mb-10">
               <h2 className="text-3xl font-bold text-gray-900 mb-3">
                 Plan Direct Uw Afspraak
@@ -197,14 +198,12 @@ export default function AfspraakMakenPage() {
 
             {/* Success Message */}
             {submitStatus === 'success' && (
-              <div className="mb-6 p-4 bg-green-50 border-2 border-green-500 rounded-xl" role="alert" aria-live="polite">
-                <div className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              <div role="alert" aria-live="polite" className="mb-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg">
+                <div className="flex items-center">
+                  <Icon name="check-circle-outline" className="w-6 h-6 text-green-500 mr-3" strokeWidth={2} aria-hidden="true" />
                   <div>
-                    <h3 className="font-bold text-green-900 mb-1">Aanvraag verzonden!</h3>
-                    <p className="text-green-800 text-sm">We nemen binnen enkele uren contact met u op om de afspraak te bevestigen.</p>
+                    <h3 className="text-green-800 font-semibold">Aanvraag verzonden!</h3>
+                    <p className="text-green-700 mt-1">We nemen binnen enkele uren contact met u op om de afspraak te bevestigen.</p>
                   </div>
                 </div>
               </div>
@@ -212,323 +211,247 @@ export default function AfspraakMakenPage() {
 
             {/* Error Message */}
             {submitStatus === 'error' && (
-              <div className="mb-6 p-4 bg-red-50 border-2 border-red-500 rounded-xl" role="alert" aria-live="assertive">
-                <div className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-red-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
+              <div role="alert" aria-live="assertive" className="mb-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg">
+                <div className="flex items-center">
+                  <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
                   <div>
-                    <h3 className="font-bold text-red-900 mb-1">Er ging iets mis</h3>
-                    <p className="text-red-800 text-sm">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="underline font-semibold">085-8002006</a></p>
+                    <h3 className="text-red-800 font-semibold">Er ging iets mis</h3>
+                    <p className="text-red-700 mt-1">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">085-8002006</a></p>
                   </div>
                 </div>
               </div>
             )}
 
             <form onSubmit={handleSubmit} noValidate className="space-y-6">
-              {/* Persoonlijke Gegevens */}
-              <div className="bg-blue-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
-                  </svg>
-                  Uw Gegevens
-                </h3>
-
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Naam *
-                    </label>
-                    <input
-                      type="text"
-                      id="naam"
-                      name="naam"
-                      value={formData.naam}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      required
-                      aria-required="true"
-                      className={`w-full px-4 py-3 border-2 rounded-lg transition-colors outline-none bg-white ${
-                        touched.naam && errors.naam
-                          ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                          : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-                      }`}
-                      placeholder="Voor- en achternaam"
-                      aria-invalid={touched.naam && errors.naam ? 'true' : 'false'}
-                      aria-describedby={touched.naam && errors.naam ? 'naam-error' : undefined}
-                    />
-                    {touched.naam && errors.naam && (
-                      <p id="naam-error" className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                        </svg>
-                        {errors.naam}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Telefoonnummer *
-                    </label>
-                    <input
-                      type="tel"
-                      id="telefoon"
-                      name="telefoon"
-                      value={formData.telefoon}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className={`w-full px-4 py-3 border-2 rounded-lg transition-colors outline-none bg-white ${
-                        touched.telefoon && errors.telefoon
-                          ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                          : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-                      }`}
-                      placeholder="06-12345678"
-                      aria-invalid={touched.telefoon && errors.telefoon ? 'true' : 'false'}
-                      aria-describedby={touched.telefoon && errors.telefoon ? 'telefoon-error' : undefined}
-                    />
-                    {touched.telefoon && errors.telefoon && (
-                      <p id="telefoon-error" className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                        </svg>
-                        {errors.telefoon}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="mt-6">
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
-                    E-mail *
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Naam <span aria-hidden="true">*</span>
                   </label>
                   <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
+                    type="text"
+                    id="naam"
+                    name="naam"
+                    value={formData.naam}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    className={`w-full px-4 py-3 border-2 rounded-lg transition-colors outline-none bg-white ${
-                      touched.email && errors.email
-                        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                        : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
+                    required
+                    aria-required="true"
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
+                      touched.naam && errors.naam
+                        ? 'border-red-500 focus:border-red-500'
+                        : 'border-gray-300 focus:border-blue-500'
                     }`}
-                    placeholder="uw@email.nl"
-                    aria-invalid={touched.email && errors.email ? 'true' : 'false'}
-                    aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
+                    placeholder="Voor- en achternaam"
+                    aria-invalid={touched.naam && errors.naam ? 'true' : 'false'}
+                    aria-describedby={touched.naam && errors.naam ? 'naam-error' : undefined}
                   />
-                  {touched.email && errors.email && (
-                    <p id="email-error" className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                      </svg>
-                      {errors.email}
-                    </p>
+                  {touched.naam && errors.naam && (
+                    <p id="naam-error" role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>
                   )}
                 </div>
-
-                <div className="mt-6 grid sm:grid-cols-3 gap-6">
-                  <div className="sm:col-span-2">
-                    <label htmlFor="straat" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Straatnaam *
-                    </label>
-                    <input
-                      type="text"
-                      id="straat"
-                      name="straat"
-                      value={formData.straat}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className={`w-full px-4 py-3 border-2 rounded-lg transition-colors outline-none bg-white ${
-                        touched.straat && errors.straat
-                          ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                          : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-                      }`}
-                      placeholder="bijv. Prins Hendrikstraat"
-                      aria-invalid={touched.straat && errors.straat ? 'true' : 'false'}
-                      aria-describedby={touched.straat && errors.straat ? 'straat-error' : undefined}
-                    />
-                    {touched.straat && errors.straat && (
-                      <p id="straat-error" className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                        </svg>
-                        {errors.straat}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label htmlFor="huisnummer" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Huisnummer *
-                    </label>
-                    <input
-                      type="text"
-                      id="huisnummer"
-                      name="huisnummer"
-                      value={formData.huisnummer}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className={`w-full px-4 py-3 border-2 rounded-lg transition-colors outline-none bg-white ${
-                        touched.huisnummer && errors.huisnummer
-                          ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                          : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-                      }`}
-                      placeholder="123A"
-                      aria-invalid={touched.huisnummer && errors.huisnummer ? 'true' : 'false'}
-                      aria-describedby={touched.huisnummer && errors.huisnummer ? 'huisnummer-error' : undefined}
-                    />
-                    {touched.huisnummer && errors.huisnummer && (
-                      <p id="huisnummer-error" className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                        </svg>
-                        {errors.huisnummer}
-                      </p>
-                    )}
-                  </div>
-                </div>
-
-                <div className="mt-6 grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="postcode" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Postcode *
-                    </label>
-                    <input
-                      type="text"
-                      id="postcode"
-                      name="postcode"
-                      value={formData.postcode}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className={`w-full px-4 py-3 border-2 rounded-lg transition-colors outline-none bg-white ${
-                        touched.postcode && errors.postcode
-                          ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                          : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-                      }`}
-                      placeholder="2514 JG"
-                      aria-invalid={touched.postcode && errors.postcode ? 'true' : 'false'}
-                      aria-describedby={touched.postcode && errors.postcode ? 'postcode-error' : undefined}
-                    />
-                    {touched.postcode && errors.postcode && (
-                      <p id="postcode-error" className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                        </svg>
-                        {errors.postcode}
-                      </p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label htmlFor="plaats" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Plaats *
-                    </label>
-                    <input
-                      type="text"
-                      id="plaats"
-                      name="plaats"
-                      value={formData.plaats}
-                      onChange={handleChange}
-                      onBlur={handleBlur}
-                      className={`w-full px-4 py-3 border-2 rounded-lg transition-colors outline-none bg-white ${
-                        touched.plaats && errors.plaats
-                          ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                          : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
-                      }`}
-                      placeholder="Den Haag"
-                      aria-invalid={touched.plaats && errors.plaats ? 'true' : 'false'}
-                      aria-describedby={touched.plaats && errors.plaats ? 'plaats-error' : undefined}
-                    />
-                    {touched.plaats && errors.plaats && (
-                      <p id="plaats-error" className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                        </svg>
-                        {errors.plaats}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
-
-              {/* Probleem Omschrijving */}
-              <div className="bg-orange-50 rounded-xl p-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-                  <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Uw Probleem
-                </h3>
 
                 <div>
-                  <label htmlFor="probleem" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Wat is het probleem? *
+                  <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Telefoonnummer <span aria-hidden="true">*</span>
                   </label>
-                  <textarea
-                    id="probleem"
-                    name="probleem"
-                    value={formData.probleem}
+                  <input
+                    type="tel"
+                    id="telefoon"
+                    name="telefoon"
+                    value={formData.telefoon}
                     onChange={handleChange}
                     onBlur={handleBlur}
-                    rows={5}
-                    className={`w-full px-4 py-3 border-2 rounded-lg transition-colors outline-none resize-none bg-white ${
-                      touched.probleem && errors.probleem
-                        ? 'border-red-500 focus:border-red-500 focus:ring-2 focus:ring-red-200'
-                        : 'border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200'
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
+                      touched.telefoon && errors.telefoon
+                        ? 'border-red-500 focus:border-red-500'
+                        : 'border-gray-300 focus:border-blue-500'
                     }`}
-                    placeholder="Beschrijf kort wat het probleem is. Bijvoorbeeld:&#10;• Mijn computer start niet meer op&#10;• WiFi werkt niet in mijn huis&#10;• Printer wil niet printen&#10;• E-mail kan ik niet openen"
-                    aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'}
-                    aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
-                  ></textarea>
-                  {touched.probleem && errors.probleem && (
-                    <p id="probleem-error" className="mt-1 text-sm text-red-600 flex items-center gap-1">
-                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                      </svg>
-                      {errors.probleem}
-                    </p>
+                    placeholder="06-12345678"
+                    aria-invalid={touched.telefoon && errors.telefoon ? 'true' : 'false'}
+                    aria-describedby={touched.telefoon && errors.telefoon ? 'telefoon-error' : undefined}
+                  />
+                  {touched.telefoon && errors.telefoon && (
+                    <p id="telefoon-error" role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>
                   )}
                 </div>
               </div>
 
-              {/* Submit Button */}
-              <div className="pt-4">
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className={`w-full px-8 py-5 rounded-xl font-bold text-xl shadow-2xl transition-all flex items-center justify-center gap-3 ${
-                    isSubmitting
-                      ? 'bg-gray-400 cursor-not-allowed'
-                      : 'bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 hover:shadow-blue-500/50 hover:scale-105 text-white'
+              <div>
+                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  E-mail <span aria-hidden="true">*</span>
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
+                    touched.email && errors.email
+                      ? 'border-red-500 focus:border-red-500'
+                      : 'border-gray-300 focus:border-blue-500'
                   }`}
-                >
-                  {isSubmitting ? (
-                    <>
-                      <svg className="animate-spin h-6 w-6 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Bezig met verzenden...
-                    </>
-                  ) : (
-                    <>
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      Afspraak Aanvragen
-                    </>
-                  )}
-                </button>
-
-                <p className="text-sm text-gray-500 text-center mt-6">
-                  Na het versturen nemen we binnen <strong className="text-gray-900">enkele uren</strong> contact met u op om de afspraak te bevestigen.
-                  <br />
-                  Bij spoed kunt u ook direct bellen: <a href="tel:+31858002006" className="text-blue-600 font-bold hover:underline">085-8002006</a>
-                </p>
+                  placeholder="uw@email.nl"
+                  aria-invalid={touched.email && errors.email ? 'true' : 'false'}
+                  aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
+                />
+                {touched.email && errors.email && (
+                  <p id="email-error" role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>
+                )}
               </div>
+
+              <div className="grid sm:grid-cols-3 gap-6">
+                <div className="sm:col-span-2">
+                  <label htmlFor="straat" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Straatnaam <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="straat"
+                    name="straat"
+                    value={formData.straat}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
+                      touched.straat && errors.straat
+                        ? 'border-red-500 focus:border-red-500'
+                        : 'border-gray-300 focus:border-blue-500'
+                    }`}
+                    placeholder="bijv. Prins Hendrikstraat"
+                    aria-invalid={touched.straat && errors.straat ? 'true' : 'false'}
+                    aria-describedby={touched.straat && errors.straat ? 'straat-error' : undefined}
+                  />
+                  {touched.straat && errors.straat && (
+                    <p id="straat-error" role="alert" className="mt-1 text-sm text-red-600">{errors.straat}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="huisnummer" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Huisnummer <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="huisnummer"
+                    name="huisnummer"
+                    value={formData.huisnummer}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
+                      touched.huisnummer && errors.huisnummer
+                        ? 'border-red-500 focus:border-red-500'
+                        : 'border-gray-300 focus:border-blue-500'
+                    }`}
+                    placeholder="123A"
+                    aria-invalid={touched.huisnummer && errors.huisnummer ? 'true' : 'false'}
+                    aria-describedby={touched.huisnummer && errors.huisnummer ? 'huisnummer-error' : undefined}
+                  />
+                  {touched.huisnummer && errors.huisnummer && (
+                    <p id="huisnummer-error" role="alert" className="mt-1 text-sm text-red-600">{errors.huisnummer}</p>
+                  )}
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="postcode" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Postcode <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="postcode"
+                    name="postcode"
+                    value={formData.postcode}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
+                      touched.postcode && errors.postcode
+                        ? 'border-red-500 focus:border-red-500'
+                        : 'border-gray-300 focus:border-blue-500'
+                    }`}
+                    placeholder="2514 JG"
+                    aria-invalid={touched.postcode && errors.postcode ? 'true' : 'false'}
+                    aria-describedby={touched.postcode && errors.postcode ? 'postcode-error' : undefined}
+                  />
+                  {touched.postcode && errors.postcode && (
+                    <p id="postcode-error" role="alert" className="mt-1 text-sm text-red-600">{errors.postcode}</p>
+                  )}
+                </div>
+
+                <div>
+                  <label htmlFor="plaats" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Plaats <span aria-hidden="true">*</span>
+                  </label>
+                  <input
+                    type="text"
+                    id="plaats"
+                    name="plaats"
+                    value={formData.plaats}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
+                      touched.plaats && errors.plaats
+                        ? 'border-red-500 focus:border-red-500'
+                        : 'border-gray-300 focus:border-blue-500'
+                    }`}
+                    placeholder="Den Haag"
+                    aria-invalid={touched.plaats && errors.plaats ? 'true' : 'false'}
+                    aria-describedby={touched.plaats && errors.plaats ? 'plaats-error' : undefined}
+                  />
+                  {touched.plaats && errors.plaats && (
+                    <p id="plaats-error" role="alert" className="mt-1 text-sm text-red-600">{errors.plaats}</p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="probleem" className="block text-sm font-semibold text-gray-700 mb-2">
+                  Wat is het probleem? <span aria-hidden="true">*</span>
+                </label>
+                <textarea
+                  id="probleem"
+                  name="probleem"
+                  value={formData.probleem}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                  rows={5}
+                  className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none resize-none ${
+                    touched.probleem && errors.probleem
+                      ? 'border-red-500 focus:border-red-500'
+                      : 'border-gray-300 focus:border-blue-500'
+                  }`}
+                  placeholder="Beschrijf kort wat het probleem is, bijv: 'Mijn computer start niet op' of 'WiFi werkt niet meer'"
+                  aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'}
+                  aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
+                ></textarea>
+                {touched.probleem && errors.probleem && (
+                  <p id="probleem-error" role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>
+                )}
+              </div>
+
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+              >
+                {isSubmitting ? (
+                  <span className="flex items-center justify-center gap-3">
+                    <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    Bezig met verzenden...
+                  </span>
+                ) : (
+                  'Afspraak Aanvragen'
+                )}
+              </button>
+
+              <p className="text-sm text-gray-500 text-center">
+                We nemen binnen enkele uren contact met u op om de afspraak te bevestigen
+              </p>
             </form>
           </div>
         </div>
