@@ -333,35 +333,35 @@ export default function ComputerhulpAanHuisPage() {
             sizes="100vw"
           />
           {/* Mobile: blue overlay for readability */}
-          <div className="absolute inset-0 bg-blue-50/70 md:hidden"></div>
+          <div className="hero-overlay-mobile"></div>
           {/* Desktop: subtle blue gradient to show photo */}
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-blue-50/90 via-blue-50/60 to-transparent"></div>
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-blue-50/30 via-transparent to-blue-50/50"></div>
+          <div className="hero-overlay-desktop-r"></div>
+          <div className="hero-overlay-desktop-b"></div>
         </div>
 
         {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
+        <div className="hero-content">
           <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+            <h1 className="hero-title">
               Computerhulp
               <span className="block text-blue-600">aan Huis</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
+            <p className="hero-description">
               <strong className="text-gray-900">Betrouwbare computerhulp aan huis</strong> in heel Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen uw computerproblemen <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+              <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Binnen 24 uur geholpen
               </span>
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+              <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Gratis voorrijkosten
               </span>
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+              <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Betaalbare tarieven
               </span>
@@ -412,7 +412,7 @@ export default function ComputerhulpAanHuisPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Section Header */}
           <div className="max-w-3xl mb-20">
-            <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Hoe het werkt</span>
+            <span className="section-label">Hoe het werkt</span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
               Zo werkt het
             </h2>
@@ -426,7 +426,7 @@ export default function ComputerhulpAanHuisPage() {
             {/* Step 1 */}
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform">
+                <div className="step-number group-hover:scale-110 transition-transform">
                   01
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
@@ -442,7 +442,7 @@ export default function ComputerhulpAanHuisPage() {
             {/* Step 2 */}
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform">
+                <div className="step-number group-hover:scale-110 transition-transform">
                   02
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
@@ -458,7 +458,7 @@ export default function ComputerhulpAanHuisPage() {
             {/* Step 3 */}
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform">
+                <div className="step-number group-hover:scale-110 transition-transform">
                   03
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
@@ -474,7 +474,7 @@ export default function ComputerhulpAanHuisPage() {
             {/* Step 4 */}
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                <div className="step-number-done group-hover:scale-110 transition-transform">
                   <Icon name="check" className="w-7 h-7" strokeWidth={2.5} />
                 </div>
               </div>
@@ -498,7 +498,7 @@ export default function ComputerhulpAanHuisPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             {/* Left Column - Main Content */}
             <div>
-              <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Waarom wij</span>
+              <span className="section-label">Waarom wij</span>
               <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-8">
                 Computerhulp bij u thuis
               </h2>
@@ -566,7 +566,7 @@ export default function ComputerhulpAanHuisPage() {
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
             <div className="max-w-2xl mb-8 lg:mb-0">
-              <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Ervaringen</span>
+              <span className="section-label">Ervaringen</span>
               <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
                 Wat onze klanten zeggen
               </h2>
@@ -590,7 +590,7 @@ export default function ComputerhulpAanHuisPage() {
           {/* Testimonial Cards */}
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300">
+              <div key={idx} className="testimonial-card">
                 {/* Quote Icon */}
                 <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
                   <Icon name="quote" className="w-6 h-6 text-gray-400" />
@@ -626,7 +626,7 @@ export default function ComputerhulpAanHuisPage() {
       <section className="py-24 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Veelgestelde vragen</span>
+            <span className="section-label">Veelgestelde vragen</span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
               Veelgestelde vragen
             </h2>
@@ -666,7 +666,7 @@ export default function ComputerhulpAanHuisPage() {
                   {faq.q}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
                 </summary>
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                <div className="faq-answer">
                   {faq.a}
                 </div>
               </details>
@@ -679,7 +679,7 @@ export default function ComputerhulpAanHuisPage() {
       <section className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Ons werkgebied</span>
+            <span className="section-label">Ons werkgebied</span>
             <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
               Waar we komen
             </h2>

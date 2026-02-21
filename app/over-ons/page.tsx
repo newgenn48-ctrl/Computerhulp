@@ -103,10 +103,10 @@ export default function OverOnsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Ons Verhaal
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="section-subtitle max-w-2xl mx-auto">
               Van een kleine start tot dé partner voor computerhulp aan huis
             </p>
           </div>
@@ -142,10 +142,10 @@ export default function OverOnsPage() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Waarom mensen ons bellen
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="section-subtitle max-w-2xl mx-auto">
               Dit vinden onze klanten belangrijk — en wij ook
             </p>
           </div>
@@ -175,10 +175,10 @@ export default function OverOnsPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Onze Garanties
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="section-subtitle">
               Dit kunt u van ons verwachten
             </p>
           </div>
@@ -203,7 +203,7 @@ export default function OverOnsPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white">
+      <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
             Hulp Nodig?
@@ -214,14 +214,14 @@ export default function OverOnsPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="tel:+31858002006"
-              className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-all"
+              className="btn-cta-white"
             >
               <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
               Bel 085-8002006
             </a>
             <Link
               href="/afspraak-maken"
-              className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all"
+              className="btn-cta-dark"
             >
               Afspraak Maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />

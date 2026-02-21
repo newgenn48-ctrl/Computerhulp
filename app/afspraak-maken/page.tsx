@@ -225,7 +225,7 @@ export default function AfspraakMakenPage() {
             <form onSubmit={handleSubmit} noValidate className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="naam" className="form-label">
                     Naam <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -252,7 +252,7 @@ export default function AfspraakMakenPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="telefoon" className="form-label">
                     Telefoonnummer <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -278,7 +278,7 @@ export default function AfspraakMakenPage() {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="email" className="form-label">
                   E-mail <span aria-hidden="true">*</span>
                 </label>
                 <input
@@ -304,7 +304,7 @@ export default function AfspraakMakenPage() {
 
               <div className="grid sm:grid-cols-3 gap-6">
                 <div className="sm:col-span-2">
-                  <label htmlFor="straat" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="straat" className="form-label">
                     Straatnaam <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -329,7 +329,7 @@ export default function AfspraakMakenPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="huisnummer" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="huisnummer" className="form-label">
                     Huisnummer <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -356,7 +356,7 @@ export default function AfspraakMakenPage() {
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label htmlFor="postcode" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="postcode" className="form-label">
                     Postcode <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -381,7 +381,7 @@ export default function AfspraakMakenPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="plaats" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="plaats" className="form-label">
                     Plaats <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -407,7 +407,7 @@ export default function AfspraakMakenPage() {
               </div>
 
               <div>
-                <label htmlFor="probleem" className="block text-sm font-semibold text-gray-700 mb-2">
+                <label htmlFor="probleem" className="form-label">
                   Wat is het probleem? <span aria-hidden="true">*</span>
                 </label>
                 <textarea
@@ -434,7 +434,7 @@ export default function AfspraakMakenPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="btn-submit"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-3">

@@ -49,7 +49,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
       {/* Left Arrow - Desktop only */}
       <button
         onClick={() => scroll('left')}
-        className={`absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 hidden lg:flex w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all ${
+        className={`carousel-arrow left-0 -translate-x-4 ${
           canScrollLeft ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         aria-label="Vorige reviews"
@@ -60,7 +60,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
       {/* Right Arrow - Desktop only */}
       <button
         onClick={() => scroll('right')}
-        className={`absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 hidden lg:flex w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all ${
+        className={`carousel-arrow right-0 translate-x-4 ${
           canScrollRight ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
         aria-label="Volgende reviews"
@@ -79,7 +79,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
         {testimonials.map((testimonial, idx) => (
           <div
             key={idx}
-            className="flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[calc(33.333%-1rem)] snap-start bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 sm:p-8 border border-gray-100 relative"
+            className="carousel-card"
             role="listitem"
           >
             <Icon name="quote" className="absolute top-6 right-6 w-10 h-10 text-blue-100" aria-hidden="true" />

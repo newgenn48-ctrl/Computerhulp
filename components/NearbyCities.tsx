@@ -33,7 +33,7 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
             <Link
               key={city.slug}
               href={`/${pageType}-${city.slug}`}
-              className="flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all group"
+              className="group nearby-city-link"
             >
               <Icon name="location-pin" className="w-5 h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
               <span className="text-sm font-medium text-gray-900 group-hover:text-blue-600">

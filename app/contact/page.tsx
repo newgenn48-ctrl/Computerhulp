@@ -154,7 +154,7 @@ export default function ContactPage() {
             {/* Telefoon */}
             <a
               href="tel:+31858002006"
-              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-blue-500"
+              className="group contact-card"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
                 <Icon name="phone" className="w-8 h-8" strokeWidth={2} />
@@ -168,7 +168,7 @@ export default function ContactPage() {
             {/* Email */}
             <a
               href="mailto:info@computerhulpzh.nl"
-              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-blue-500"
+              className="group contact-card"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
                 <Icon name="email" className="w-8 h-8" strokeWidth={2} />
@@ -235,7 +235,7 @@ export default function ContactPage() {
               <form onSubmit={handleSubmit} className="space-y-6" noValidate>
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="naam" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="naam" className="form-label">
                       Naam <span aria-hidden="true">*</span>
                     </label>
                     <input
@@ -261,7 +261,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="telefoon" className="block text-sm font-semibold text-gray-700 mb-2">
+                    <label htmlFor="telefoon" className="form-label">
                       Telefoon <span aria-hidden="true">*</span>
                     </label>
                     <input
@@ -288,7 +288,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="email" className="form-label">
                     E-mail <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -314,7 +314,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="plaats" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="plaats" className="form-label">
                     Plaats <span aria-hidden="true">*</span>
                   </label>
                   <input
@@ -340,7 +340,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label htmlFor="probleem" className="block text-sm font-semibold text-gray-700 mb-2">
+                  <label htmlFor="probleem" className="form-label">
                     Wat is het probleem? <span aria-hidden="true">*</span>
                   </label>
                   <textarea
@@ -368,7 +368,7 @@ export default function ContactPage() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                  className="btn-submit"
                 >
                   {isSubmitting ? (
                     <span className="flex items-center justify-center gap-3">

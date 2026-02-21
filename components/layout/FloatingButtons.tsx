@@ -67,11 +67,11 @@ export default function FloatingButtons() {
       {/* WhatsApp Button */}
       <button
         onClick={handleWhatsAppClick}
-        className="group relative w-14 h-14 bg-[#25D366] hover:bg-[#128C7E] text-white rounded-full shadow-2xl hover:shadow-green-500/50 flex items-center justify-center transition-all hover:scale-110"
+        className="group floating-btn bg-[#25D366] hover:bg-[#128C7E] hover:shadow-green-500/50"
         aria-label="WhatsApp ons"
       >
         <Icon name="whatsapp" className="w-7 h-7" />
-        <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+        <span className="floating-tooltip">
           WhatsApp
         </span>
       </button>
@@ -79,11 +79,11 @@ export default function FloatingButtons() {
       {/* Bel Button */}
       <a
         href="tel:+31858002006"
-        className="group relative w-14 h-14 bg-green-600 hover:bg-green-700 text-white rounded-full shadow-2xl hover:shadow-green-500/50 flex items-center justify-center transition-all hover:scale-110"
+        className="group floating-btn bg-green-600 hover:bg-green-700 hover:shadow-green-500/50"
         aria-label="Direct bellen naar 085-8002006"
       >
         <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-        <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+        <span className="floating-tooltip">
           Bel: 085-8002006
         </span>
       </a>
@@ -91,11 +91,11 @@ export default function FloatingButtons() {
       {/* Contact Button */}
       <Link
         href={contactLink}
-        className="group relative w-14 h-14 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-2xl hover:shadow-blue-500/50 flex items-center justify-center transition-all hover:scale-110"
+        className="group floating-btn bg-blue-600 hover:bg-blue-700 hover:shadow-blue-500/50"
         aria-label={contactLabel}
       >
         <Icon name="calendar" className="w-6 h-6" strokeWidth={2} />
-        <span className="absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl">
+        <span className="floating-tooltip">
           {contactLabel}
         </span>
       </Link>

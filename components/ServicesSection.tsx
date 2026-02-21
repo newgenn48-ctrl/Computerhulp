@@ -151,11 +151,11 @@ export default function ServicesSection({
     <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+          <h2 className="section-title">
             {title}
           </h2>
           {description && (
-            <p className="text-lg text-gray-600">
+            <p className="section-subtitle">
               {description}
             </p>
           )}
@@ -206,7 +206,7 @@ export default function ServicesSection({
           <div className="text-center mt-12">
             <Link
               href="/diensten"
-              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
+              className="btn-primary"
             >
               Alle diensten bekijken
               <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />

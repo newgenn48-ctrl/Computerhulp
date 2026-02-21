@@ -263,33 +263,33 @@ export default function StudentAanHuisPage() {
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-blue-50/70 md:hidden"></div>
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-blue-50/90 via-blue-50/60 to-transparent"></div>
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-blue-50/30 via-transparent to-blue-50/50"></div>
+          <div className="hero-overlay-mobile"></div>
+          <div className="hero-overlay-desktop-r"></div>
+          <div className="hero-overlay-desktop-b"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
+        <div className="hero-content">
           <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+            <h1 className="hero-title">
               Student aan Huis
               <span className="block text-blue-600">Zuid-Holland</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
+            <p className="hero-description">
               <strong className="text-gray-900">Betrouwbare student aan huis</strong> voor computerhulp in Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen uw problemen <strong className="text-gray-900">geduldig en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+              <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Binnen 24 uur geholpen
               </span>
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+              <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Gratis voorrijkosten
               </span>
-              <span className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+              <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                 Betaalbare tarieven
               </span>
@@ -306,7 +306,7 @@ export default function StudentAanHuisPage() {
               </Link>
               <a
                 href="tel:+31858002006"
-                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
+                className="btn-secondary"
               >
                 <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
                 Bel 085-8002006
@@ -331,17 +331,17 @@ export default function StudentAanHuisPage() {
       <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Zo werkt het
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="section-subtitle">
               In vier stappen — simpel en overzichtelijk
             </p>
           </div>
 
           <div className="grid md:grid-cols-4 gap-8">
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
+              <div className="step-number-round mx-auto mb-6">
                 1
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -353,7 +353,7 @@ export default function StudentAanHuisPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
+              <div className="step-number-round mx-auto mb-6">
                 2
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -365,7 +365,7 @@ export default function StudentAanHuisPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold mx-auto mb-6 shadow-xl">
+              <div className="step-number-round mx-auto mb-6">
                 3
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-3">
@@ -463,10 +463,10 @@ export default function StudentAanHuisPage() {
       <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Wat onze klanten zeggen
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="section-subtitle">
               Wij helpen dagelijks mensen in heel Zuid-Holland
             </p>
           </div>
@@ -501,10 +501,10 @@ export default function StudentAanHuisPage() {
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Veelgestelde vragen
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="section-subtitle">
               Dit krijgen wij vaak gevraagd
             </p>
           </div>
@@ -534,13 +534,13 @@ export default function StudentAanHuisPage() {
             ].map((faq, idx) => (
               <details
                 key={idx}
-                className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden"
+                className="group faq-item"
               >
-                <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-100 transition-colors">
+                <summary className="faq-summary">
                   {faq.q}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
                 </summary>
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                <div className="faq-answer">
                   {faq.a}
                 </div>
               </details>
@@ -553,7 +553,7 @@ export default function StudentAanHuisPage() {
       <section className="py-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Waar we komen
             </h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">

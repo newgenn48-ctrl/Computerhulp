@@ -19,10 +19,10 @@ export default function PricingSection({
         <div className="max-w-4xl mx-auto">
           {/* Header */}
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Transparante Prijzen
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="section-subtitle">
               Eerlijk en duidelijk. Geen verborgen kosten, geen verrassingen.
             </p>
           </div>
@@ -51,7 +51,7 @@ export default function PricingSection({
 
               <Link
                 href="/afspraak-maken"
-                className="block w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white text-center px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105"
+                className="btn-submit block text-center"
               >
                 Hulp vragen
               </Link>

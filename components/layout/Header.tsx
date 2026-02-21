@@ -152,7 +152,7 @@ export default function Header() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors focus:bg-blue-50 focus:text-blue-600 focus:outline-none"
+                    className="nav-dropdown-link"
                     role="menuitem"
                     tabIndex={dienstenOpen ? 0 : -1}
                     onKeyDown={(e) => handleMenuItemKeyDown(e, index, 10)}
@@ -164,7 +164,7 @@ export default function Header() {
                 <div className="border-t border-gray-100 my-2"></div>
                 <Link
                   href="/website-laten-maken"
-                  className="block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors font-medium focus:bg-blue-50 focus:text-blue-600 focus:outline-none"
+                  className="nav-dropdown-link font-medium"
                   role="menuitem"
                   tabIndex={dienstenOpen ? 0 : -1}
                   onKeyDown={(e) => handleMenuItemKeyDown(e, 9, 10)}
@@ -175,15 +175,15 @@ export default function Header() {
               </div>
             </div>
 
-            <Link href="/over-ons" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+            <Link href="/over-ons" className="nav-link">
               Over Ons
             </Link>
-            <Link href="/contact" className="text-gray-700 hover:text-blue-600 font-medium transition-colors">
+            <Link href="/contact" className="nav-link">
               Contact
             </Link>
             <Link
               href="/afspraak-maken"
-              className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all"
+              className="btn-header-cta"
             >
               Hulp Vragen
             </Link>
@@ -205,48 +205,48 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-100">
             <nav className="flex flex-col gap-2 pt-4" aria-label="Mobiele navigatie">
-              <Link href="/diensten/computer-laptop-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/computer-laptop-hulp" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 💻 Computer & Laptop Hulp
               </Link>
-              <Link href="/diensten/printer-scanner-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/printer-scanner-hulp" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 🖨️ Printer & Scanner Hulp
               </Link>
-              <Link href="/diensten/wifi-internet-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/wifi-internet-hulp" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 📶 WiFi & Internet Hulp
               </Link>
-              <Link href="/diensten/email-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/email-hulp" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 📧 E-mail Hulp
               </Link>
-              <Link href="/diensten/tablet-smartphone-hulp" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/tablet-smartphone-hulp" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 📱 Tablet & Smartphone Hulp
               </Link>
-              <Link href="/diensten/persoonlijke-training" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/persoonlijke-training" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 🎓 Persoonlijke Training
               </Link>
-              <Link href="/diensten/televisie-radio" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/televisie-radio" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 📺 Televisie & Radio
               </Link>
-              <Link href="/diensten/smart-home-domotica" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/smart-home-domotica" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 🏠 Smart Home & Domotica
               </Link>
-              <Link href="/diensten/dataherstel-backup" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors">
+              <Link href="/diensten/dataherstel-backup" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 💾 Dataherstel & Backup
               </Link>
               <div className="border-t border-gray-100 my-2"></div>
-              <Link href="/website-laten-maken" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
+              <Link href="/website-laten-maken" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
                 🌐 Website Laten Maken
               </Link>
               <div className="border-t border-gray-100 my-2"></div>
-              <Link href="/over-ons" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
+              <Link href="/over-ons" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
                 Over Ons
               </Link>
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors font-medium">
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
                 Contact
               </Link>
               <Link
                 href="/afspraak-maken"
                 onClick={() => setMobileMenuOpen(false)}
-                className="mt-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-semibold text-center shadow-lg"
+                className="btn-header-cta-mobile"
               >
                 Hulp Vragen
               </Link>

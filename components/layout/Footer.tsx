@@ -41,16 +41,16 @@ export default function Footer() {
             </p>
             {/* Info links */}
             <div className="flex flex-wrap gap-4 text-sm">
-              <Link href="/over-ons" className="text-gray-300 hover:text-white transition">
+              <Link href="/over-ons" className="footer-link">
                 Over Ons
               </Link>
-              <Link href="/faq" className="text-gray-300 hover:text-white transition">
+              <Link href="/faq" className="footer-link">
                 FAQ
               </Link>
-              <Link href="/privacy" className="text-gray-300 hover:text-white transition">
+              <Link href="/privacy" className="footer-link">
                 Privacy
               </Link>
-              <Link href="/voorwaarden" className="text-gray-300 hover:text-white transition">
+              <Link href="/voorwaarden" className="footer-link">
                 Voorwaarden
               </Link>
             </div>
@@ -61,32 +61,32 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Diensten</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/computerhulp-aan-huis" className="text-gray-300 hover:text-white transition">
+                <Link href="/computerhulp-aan-huis" className="footer-link">
                   Computerhulp aan Huis
                 </Link>
               </li>
               <li>
-                <Link href="/student-aan-huis" className="text-gray-300 hover:text-white transition">
+                <Link href="/student-aan-huis" className="footer-link">
                   Student aan Huis
                 </Link>
               </li>
               <li>
-                <Link href="/website-laten-maken" className="text-gray-300 hover:text-white transition">
+                <Link href="/website-laten-maken" className="footer-link">
                   Website Laten Maken
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/computer-laptop-hulp" className="text-gray-300 hover:text-white transition">
+                <Link href="/diensten/computer-laptop-hulp" className="footer-link">
                   Computer & Laptop
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/printer-scanner-hulp" className="text-gray-300 hover:text-white transition">
+                <Link href="/diensten/printer-scanner-hulp" className="footer-link">
                   Printer & Scanner
                 </Link>
               </li>
               <li>
-                <Link href="/diensten/wifi-internet-hulp" className="text-gray-300 hover:text-white transition">
+                <Link href="/diensten/wifi-internet-hulp" className="footer-link">
                   WiFi & Internet
                 </Link>
               </li>
@@ -98,13 +98,13 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="tel:+31858002006" className="text-gray-300 hover:text-white transition flex items-center gap-2">
+                <a href="tel:+31858002006" className="footer-link flex items-center gap-2">
                   <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
                   085-8002006
                 </a>
               </li>
               <li>
-                <a href="mailto:info@computerhulpzh.nl" className="text-gray-300 hover:text-white transition flex items-center gap-2">
+                <a href="mailto:info@computerhulpzh.nl" className="footer-link flex items-center gap-2">
                   <Icon name="email" className="w-4 h-4" strokeWidth={2} />
                   info@computerhulpzh.nl
                 </a>
@@ -144,7 +144,7 @@ export default function Footer() {
               <Link
                 key={city.slug}
                 href={`/computerhulp-aan-huis-${city.slug}`}
-                className="bg-gray-800 text-gray-300 hover:bg-blue-600 hover:text-white px-3 py-1 rounded-full text-xs transition-colors"
+                className="footer-city-tag"
               >
                 {city.name}
               </Link>

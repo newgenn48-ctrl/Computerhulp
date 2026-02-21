@@ -140,10 +140,10 @@ export default function DienstenPage() {
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Onze diensten
             </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+            <p className="section-subtitle max-w-2xl mx-auto">
               Klik op een dienst voor meer informatie
             </p>
           </div>
@@ -197,10 +197,10 @@ export default function DienstenPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Wat het kost
             </h2>
-            <p className="text-lg text-gray-600">
+            <p className="section-subtitle">
               Voor al onze diensten geldt dezelfde prijs
             </p>
           </div>

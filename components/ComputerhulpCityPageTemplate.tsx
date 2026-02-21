@@ -224,7 +224,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
       />
 
       {/* Hero Section */}
-      <section className="relative min-h-[70vh] md:min-h-screen bg-white overflow-hidden">
+      <section className="hero-wrapper">
         <div className="absolute inset-0">
           <Image
             src="/Student aan huis.webp"
@@ -234,25 +234,25 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-blue-50/70 md:hidden"></div>
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-blue-50/90 via-blue-50/60 to-transparent"></div>
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-blue-50/30 via-transparent to-blue-50/50"></div>
+          <div className="hero-overlay-mobile"></div>
+          <div className="hero-overlay-desktop-r"></div>
+          <div className="hero-overlay-desktop-b"></div>
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center">
+        <div className="hero-content">
           <div className="max-w-2xl">
-            <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight">
+            <h1 className="hero-title">
               Computerhulp aan Huis <span className="text-blue-600">{city.name}</span>
             </h1>
 
-            <p className="text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl">
+            <p className="hero-description">
               <strong className="text-gray-900">Betrouwbare computerhulp aan huis in {city.name}</strong> voor al uw computerproblemen. Onze IT-studenten komen bij u thuis en lossen het <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
               {['Binnen 24 uur geholpen', 'Gratis voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
-                <span key={usp} className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200">
+                <span key={usp} className="usp-badge">
                   <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                   {usp}
                 </span>
@@ -263,14 +263,14 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/afspraak-maken"
-                className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl shadow-blue-600/25"
+                className="btn-primary"
               >
                 Hulp aanvragen
                 <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
               </Link>
               <a
                 href="tel:+31858002006"
-                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-200 hover:border-blue-600 transition-all"
+                className="btn-secondary"
               >
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                 Bel 085-8002006
@@ -294,8 +294,8 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           {/* Section Header */}
           <div className="max-w-3xl mb-20">
-            <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Werkwijze</span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
+            <span className="section-label">Werkwijze</span>
+            <h2 className="section-title-lg mt-4">
               Computerhulp aan huis in {city.name}
             </h2>
             <p className="text-xl text-gray-600">
@@ -307,7 +307,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
           <div className="grid md:grid-cols-4 gap-8 lg:gap-12">
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform">
+                <div className="step-number group-hover:scale-110 transition-transform">
                   01
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
@@ -318,7 +318,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
 
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform">
+                <div className="step-number group-hover:scale-110 transition-transform">
                   02
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
@@ -329,7 +329,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
 
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white text-xl font-bold group-hover:scale-110 transition-transform">
+                <div className="step-number group-hover:scale-110 transition-transform">
                   03
                 </div>
                 <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
@@ -340,7 +340,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
 
             <div className="relative group">
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                <div className="step-number-done group-hover:scale-110 transition-transform">
                   <Icon name="check" className="w-7 h-7" strokeWidth={2.5} />
                 </div>
               </div>
@@ -370,8 +370,8 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
               <div className="grid lg:grid-cols-2 gap-16 items-start">
                 {/* Left Column - City-specific Content */}
                 <div>
-                  <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Over ons</span>
-                  <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-8">
+                  <span className="section-label">Over ons</span>
+                  <h2 className="section-title-lg mt-4 mb-8">
                     Waarom computerhulp aan huis in {city.name}?
                   </h2>
                   <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
@@ -469,17 +469,17 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
         return (
           <section className="py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+              <h2 className="section-title">
                 Computerhulp in de regio {content.region}
               </h2>
-              <p className="text-lg text-gray-600 mb-8">
+              <p className="section-subtitle mb-8">
                 Wij komen in alle wijken en buurten van {city.name}. Waar u ook woont in de regio {content.region} — we zijn er snel.
               </p>
               <div className="flex flex-wrap gap-3">
                 {content.neighborhoods.map((neighborhood) => (
                   <span
                     key={neighborhood}
-                    className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200"
+                    className="city-tag"
                   >
                     {neighborhood}
                   </span>
@@ -522,21 +522,21 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
           <section className="py-16 bg-white">
             <div className="max-w-4xl mx-auto px-4 sm:px-6">
               <div className="text-center mb-12">
-                <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+                <h2 className="section-title">
                   Veelgestelde vragen
                 </h2>
-                <p className="text-lg text-gray-600">
+                <p className="section-subtitle">
                   Dit krijgen wij vaak gevraagd
                 </p>
               </div>
               <div className="space-y-4">
                 {faqItems.map((faq, idx) => (
-                  <details key={idx} className="group bg-gray-50 rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-                    <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-100 transition-colors">
+                  <details key={idx} className="group faq-item shadow-sm">
+                    <summary className="faq-summary">
                       {faq.question}
                       <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0 ml-4" strokeWidth={2} />
                     </summary>
-                    <div className="px-6 pb-6 text-gray-600 leading-relaxed">
+                    <div className="faq-answer">
                       {faq.answer}
                     </div>
                   </details>
@@ -553,8 +553,8 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
           {/* Section Header */}
           <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
             <div className="max-w-2xl mb-8 lg:mb-0">
-              <span className="text-sm font-semibold text-gray-500 uppercase tracking-widest">Ervaringen</span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
+              <span className="section-label">Ervaringen</span>
+              <h2 className="section-title-lg mt-4">
                 Wat onze klanten zeggen
               </h2>
               <p className="text-xl text-gray-600">
@@ -577,7 +577,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
           {/* Testimonial Cards */}
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300">
+              <div key={idx} className="testimonial-card">
                 <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
                   <Icon name="quote" className="w-6 h-6 text-gray-400" />
                 </div>
@@ -627,14 +627,14 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
               <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
                 <Link
                   href="/afspraak-maken"
-                  className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-gray-900 px-10 py-5 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-white/20"
+                  className="btn-cta-white text-gray-900"
                 >
                   Hulp aanvragen
                   <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
                 </Link>
                 <a
                   href="tel:+31858002006"
-                  className="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-10 py-5 rounded-full font-semibold text-lg border-2 border-white/30 hover:border-white/60 transition-all"
+                  className="btn-cta-ghost"
                 >
                   <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                   Bel 085-8002006
@@ -642,15 +642,15 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
               </div>
 
               <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-                <span className="flex items-center gap-2">
+                <span className="trust-indicator">
                   <Icon name="check-circle" className="w-4 h-4 text-green-500" />
                   7 dagen per week
                 </span>
-                <span className="flex items-center gap-2">
+                <span className="trust-indicator">
                   <Icon name="check-circle" className="w-4 h-4 text-green-500" />
                   Ook avonden
                 </span>
-                <span className="flex items-center gap-2">
+                <span className="trust-indicator">
                   <Icon name="check-circle" className="w-4 h-4 text-green-500" />
                   Gratis voorrijkosten
                 </span>

@@ -103,19 +103,19 @@ export default function PersoonlijkeTrainingPage() {
                 Computer beter leren gebruiken? Wij geven persoonlijke les bij u thuis, op uw eigen tempo. <strong className="text-gray-900">Van basis tot gevorderd.</strong>
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105">
+                <Link href="/afspraak-maken" className="btn-primary">
                   Boek Training
                   <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
                 </Link>
-                <a href="tel:+31858002006" className="inline-flex items-center justify-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105">
+                <a href="tel:+31858002006" className="btn-secondary">
                   <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                   Bel 085-8002006
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="flex items-center gap-2"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Gratis voorrijkosten</div>
-                <div className="flex items-center gap-2"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Op uw tempo</div>
-                <div className="flex items-center gap-2"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Geduldige uitleg</div>
+                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Gratis voorrijkosten</div>
+                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Op uw tempo</div>
+                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Geduldige uitleg</div>
               </div>
             </div>
             <div className="relative">
@@ -144,8 +144,8 @@ export default function PersoonlijkeTrainingPage() {
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Onze Diensten</h2>
-            <p className="text-lg text-gray-600">Een overzicht van onze trainingsdiensten.</p>
+            <h2 className="section-title">Onze Diensten</h2>
+            <p className="section-subtitle">Een overzicht van onze trainingsdiensten.</p>
           </div>
           <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
@@ -162,7 +162,7 @@ export default function PersoonlijkeTrainingPage() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Waar Heeft U Hulp Bij Nodig?</h2>
+            <h2 className="section-title">Waar Heeft U Hulp Bij Nodig?</h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">Persoonlijke training afgestemd op uw behoeften. Wij komen bij u thuis en leren u alles op uw eigen tempo.</p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -188,10 +188,10 @@ export default function PersoonlijkeTrainingPage() {
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="section-title">
               Zo Werkt Het
             </h2>
-            <p className="text-lg text-gray-600">In 3 simpele stappen geholpen</p>
+            <p className="section-subtitle">In 3 simpele stappen geholpen</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
@@ -215,10 +215,10 @@ export default function PersoonlijkeTrainingPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Wat Kost Het?</h2>
-            <p className="text-lg text-gray-600">Transparante prijzen, betaal per les</p>
+            <h2 className="section-title">Wat Kost Het?</h2>
+            <p className="section-subtitle">Transparante prijzen, betaal per les</p>
           </div>
-          <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-10 text-white text-center">
+          <div className="pricing-box">
             <div className="text-6xl font-bold mb-2">€14,50</div>
             <div className="text-2xl text-blue-100 mb-1">per kwartier</div>
             <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
@@ -244,7 +244,7 @@ export default function PersoonlijkeTrainingPage() {
               </div>
             </div>
 
-            <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-10 py-4 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">
+            <Link href="/afspraak-maken" className="btn-cta-white">
               Boek Training
               <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
             </Link>
@@ -256,7 +256,7 @@ export default function PersoonlijkeTrainingPage() {
       <section className="py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Wat Klanten Zeggen</h2>
+            <h2 className="section-title">Wat Klanten Zeggen</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
@@ -283,17 +283,17 @@ export default function PersoonlijkeTrainingPage() {
       <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Veelgestelde vragen</h2>
-            <p className="text-lg text-gray-600">Over persoonlijke computer training aan huis</p>
+            <h2 className="section-title">Veelgestelde vragen</h2>
+            <p className="section-subtitle">Over persoonlijke computer training aan huis</p>
           </div>
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <details key={idx} className="group bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm">
-                <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-50 transition-colors">
+              <details key={idx} className="group faq-item-white shadow-sm">
+                <summary className="faq-summary">
                   {faq.question}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
                 </summary>
-                <div className="px-6 pb-6 text-gray-600 leading-relaxed">{faq.answer}</div>
+                <div className="faq-answer">{faq.answer}</div>
               </details>
             ))}
           </div>
@@ -314,16 +314,16 @@ export default function PersoonlijkeTrainingPage() {
       <ServiceCrossLinks currentService="persoonlijke-training" serviceName="Persoonlijke Training" />
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700">
+      <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Computer Vaardigheden Verbeteren?</h2>
           <p className="text-xl text-blue-100 mb-10">Bel nu voor persoonlijke training bij u thuis</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all">
+            <Link href="/afspraak-maken" className="btn-cta-white">
               Boek Training
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
-            <a href="tel:+31858002006" className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all">
+            <a href="tel:+31858002006" className="btn-cta-dark">
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
               Bel 085-8002006
             </a>
