@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -81,6 +82,24 @@ const faqs = [
   { question: 'Helpen jullie ook met Smart TV apps zoals Netflix?', answer: 'Absoluut! We installeren Netflix, YouTube, NPO Start en andere apps op uw Smart TV. We maken accounts aan indien nodig en leggen uit hoe alles werkt.' },
   { question: 'Kunnen jullie mijn soundbar of surround systeem installeren?', answer: 'Ja, we installeren soundbars, surroundsoundsystemen en andere audioapparatuur. We zorgen dat alles goed samenwerkt met uw TV.' },
   { question: 'Mijn afstandsbediening werkt niet meer, kunnen jullie dat oplossen?', answer: 'Ja, we programmeren afstandsbedieningen voor TV, decoder en soundbar. Ook kunnen we een universele afstandsbediening instellen zodat u alles met een remote kunt bedienen.' }
+]
+
+const testimonials = [
+  {
+    quote: 'Nieuwe Smart TV gekocht maar kreeg Netflix en NPO niet werkend. Binnen een uur alles ingesteld en uitgelegd.',
+    name: 'Hans R.',
+    initials: 'HR'
+  },
+  {
+    quote: 'Alle zenders stonden door elkaar na de overstap naar Ziggo. Nu is alles weer netjes gesorteerd. Bedankt!',
+    name: 'Greta W.',
+    initials: 'GW'
+  },
+  {
+    quote: 'Soundbar aangesloten en ingesteld. Het geluid is nu perfect en alles werkt met \u00e9\u00e9n afstandsbediening.',
+    name: 'Dick L.',
+    initials: 'DL'
+  }
 ]
 
 export default function TelevisieRadioPage() {
@@ -254,30 +273,21 @@ export default function TelevisieRadioPage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'Nieuwe Smart TV gekocht maar kreeg Netflix en NPO niet werkend. Binnen een uur alles ingesteld en uitgelegd.', name: 'Hans R.', location: 'Rotterdam' },
-              { text: 'Alle zenders stonden door elkaar na de overstap naar Ziggo. Nu is alles weer netjes gesorteerd. Bedankt!', name: 'Greta W.', location: 'Gouda' },
-              { text: 'Soundbar aangesloten en ingesteld. Het geluid is nu perfect en alles werkt met \u00e9\u00e9n afstandsbediening.', name: 'Dick L.', location: 'Zoetermeer' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

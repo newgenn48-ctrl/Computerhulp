@@ -5,6 +5,7 @@ import { Icon } from '@/components/icons'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/PricingSection'
 import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 
 export const metadata: Metadata = {
   title: 'Student aan Huis | IT-Studenten Binnen 24u',
@@ -458,38 +459,22 @@ export default function StudentAanHuisPage() {
         </div>
       </section>
 
-      {/* 6. Testimonials */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
               Wat onze klanten zeggen
             </h2>
             <p className="section-subtitle">
               Wij helpen dagelijks mensen in heel Zuid-Holland
             </p>
-          </div>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-6 italic leading-relaxed">
-                  &ldquo;{testimonial.quote}&rdquo;
-                </p>
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
-                    {testimonial.initials}
-                  </div>
-                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

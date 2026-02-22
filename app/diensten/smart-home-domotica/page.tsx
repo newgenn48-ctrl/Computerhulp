@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -82,6 +83,24 @@ const faqs = [
   { question: 'Kunnen jullie automatiseringen instellen?', answer: 'Absoluut! We maken slimme schema\'s en routines. Bijvoorbeeld: lichten automatisch aan bij zonsondergang, of verwarming omlaag als u weggaat.' },
   { question: 'Welke slimme thermostaten installeren jullie?', answer: 'We installeren alle slimme thermostaten. We zorgen dat alles perfect werkt met uw verwarmingssysteem.' },
   { question: 'Kunnen jullie een slimme deurbel installeren?', answer: 'Ja, we installeren alle slimme deurbellen. We zorgen dat u via uw telefoon kunt zien en spreken met bezoekers.' }
+]
+
+const testimonials = [
+  {
+    quote: 'Hele huis vol slimme lampen maar niks werkte samen. Nu heb ik alles in \u00e9\u00e9n app en kan ik met mijn stem alles bedienen!',
+    name: 'Thomas B.',
+    initials: 'TB'
+  },
+  {
+    quote: 'Google Home, slimme thermostaat en deurbel ge\u00efnstalleerd en gekoppeld. Werkt allemaal perfect. Heel tevreden!',
+    name: 'Ellen V.',
+    initials: 'EV'
+  },
+  {
+    quote: 'Wist niet waar te beginnen met domotica. De IT-student heeft alles uitgelegd en ge\u00efnstalleerd. Super service.',
+    name: 'Marco J.',
+    initials: 'MJ'
+  }
 ]
 
 export default function SmartHomeDomoticaPage() {
@@ -255,30 +274,21 @@ export default function SmartHomeDomoticaPage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'Hele huis vol slimme lampen maar niks werkte samen. Nu heb ik alles in \u00e9\u00e9n app en kan ik met mijn stem alles bedienen!', name: 'Thomas B.', location: 'Rotterdam' },
-              { text: 'Google Home, slimme thermostaat en deurbel ge\u00efnstalleerd en gekoppeld. Werkt allemaal perfect. Heel tevreden!', name: 'Ellen V.', location: 'Zoetermeer' },
-              { text: 'Wist niet waar te beginnen met domotica. De IT-student heeft alles uitgelegd en ge\u00efnstalleerd. Super service.', name: 'Marco J.', location: 'Leiden' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

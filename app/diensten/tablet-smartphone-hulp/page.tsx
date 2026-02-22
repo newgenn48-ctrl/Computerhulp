@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -81,6 +82,24 @@ const faqs = [
   { question: 'Kunnen jullie apps installeren en uitleggen hoe ze werken?', answer: 'Absoluut! We installeren alle apps die u nodig heeft en nemen de tijd om rustig uit te leggen hoe ze werken. Van berichtenapps tot online bankieren.' },
   { question: 'Mijn tablet is heel traag, kunnen jullie dat verhelpen?', answer: 'Ja, we kunnen uw tablet opschonen, onnodige apps verwijderen en het geheugen vrijmaken. Vaak wordt uw tablet daardoor weer een stuk sneller.' },
   { question: 'Kunnen jullie foto\'s van mijn telefoon naar de computer zetten?', answer: 'Ja, we zetten al uw foto\'s over naar uw computer en kunnen ook een backup naar de cloud instellen zodat u nooit meer foto\'s kwijtraakt.' }
+]
+
+const testimonials = [
+  {
+    quote: 'Mijn iPad was heel traag. Na het opschonen en updaten doet hij het weer prima. Ook alle apps opnieuw uitgelegd.',
+    name: 'Joke H.',
+    initials: 'JH'
+  },
+  {
+    quote: 'Alle foto\'s van mijn telefoon overgezet naar mijn computer en een cloud backup gemaakt. Heel geruststellend.',
+    name: 'Piet A.',
+    initials: 'PA'
+  },
+  {
+    quote: 'Nieuwe smartphone gekocht maar snapte er niks van. Nu kan ik appen, bellen en foto\'s maken. Geweldig!',
+    name: 'Truus M.',
+    initials: 'TM'
+  }
 ]
 
 export default function TabletSmartphoneHulpPage() {
@@ -254,30 +273,21 @@ export default function TabletSmartphoneHulpPage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'Mijn iPad was heel traag. Na het opschonen en updaten doet hij het weer prima. Ook alle apps opnieuw uitgelegd.', name: 'Joke H.', location: 'Alphen aan den Rijn' },
-              { text: 'Alle foto\'s van mijn telefoon overgezet naar mijn computer en een cloud backup gemaakt. Heel geruststellend.', name: 'Piet A.', location: 'Dordrecht' },
-              { text: 'Nieuwe smartphone gekocht maar snapte er niks van. Nu kan ik appen, bellen en foto\'s maken. Geweldig!', name: 'Truus M.', location: 'Den Haag' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

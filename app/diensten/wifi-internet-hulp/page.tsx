@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -82,6 +83,24 @@ const faqs = [
   { question: 'Waarom is mijn internet zo traag?', answer: 'Dit kan vele oorzaken hebben: slechte routerpositie, te veel apparaten, oude router, storing van buren, of een providerprobleem. We onderzoeken dit en lossen het op.' },
   { question: 'Kan ik mijn WiFi-wachtwoord laten wijzigen?', answer: 'Ja, we kunnen uw WiFi-wachtwoord wijzigen en zorgen dat al uw apparaten het nieuwe wachtwoord krijgen.' },
   { question: 'Helpen jullie ook met bekabeld internet?', answer: 'Ja, we leggen ook netwerkkabels aan en installeren switches voor een stabielere verbinding, bijvoorbeeld voor gaming of thuiswerken.' }
+]
+
+const testimonials = [
+  {
+    quote: 'WiFi reikte niet tot de slaapkamer. Een meshsysteem ge\u00efnstalleerd en nu heb ik overal perfect bereik!',
+    name: 'Stefan K.',
+    initials: 'SK'
+  },
+  {
+    quote: 'Internet was ontzettend traag. Bleek dat de router slecht stond. Na herplaatsing en nieuwe instellingen vliegt het.',
+    name: 'Linda M.',
+    initials: 'LM'
+  },
+  {
+    quote: 'Nieuwe router ge\u00efnstalleerd en alle apparaten opnieuw verbonden. Inclusief de printer en Smart TV. Top service.',
+    name: 'Rob H.',
+    initials: 'RH'
+  }
 ]
 
 export default function WifiInternetHulpPage() {
@@ -255,30 +274,21 @@ export default function WifiInternetHulpPage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'WiFi reikte niet tot de slaapkamer. Een meshsysteem ge\u00efnstalleerd en nu heb ik overal perfect bereik!', name: 'Stefan K.', location: 'Den Haag' },
-              { text: 'Internet was ontzettend traag. Bleek dat de router slecht stond. Na herplaatsing en nieuwe instellingen vliegt het.', name: 'Linda M.', location: 'Leiden' },
-              { text: 'Nieuwe router ge\u00efnstalleerd en alle apparaten opnieuw verbonden. Inclusief de printer en Smart TV. Top service.', name: 'Rob H.', location: 'Delft' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

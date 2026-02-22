@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -53,6 +54,24 @@ const faqData = {
     { '@type': 'Question', name: 'Kunnen jullie ook waterschade aan een laptop repareren?', acceptedAnswer: { '@type': 'Answer', text: 'Wij doen ons best om waterschade te herstellen. Hoe sneller u ons belt, hoe groter de kans op een succesvolle reparatie.' } }
   ]
 }
+
+const testimonials = [
+  {
+    quote: 'Scherm van mijn laptop was kapot. Binnen een dag gerepareerd bij mij thuis. Scheelde me een hoop gedoe.',
+    name: 'Lisa H.',
+    initials: 'LH'
+  },
+  {
+    quote: 'Laptop liep vast met een blauw scherm. Ze hebben het besturingssysteem hersteld zonder dataverlies. Knap werk!',
+    name: 'Frank M.',
+    initials: 'FM'
+  },
+  {
+    quote: 'Oude laptop was eigenlijk te traag om weg te doen. Na een SSD upgrade en meer geheugen werkt hij weer als nieuw.',
+    name: 'Anja P.',
+    initials: 'AP'
+  }
+]
 
 const heroImage = '/Reparatie.webp'
 
@@ -251,30 +270,21 @@ export default function LaptopComputerReparatiePage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'Scherm van mijn laptop was kapot. Binnen een dag gerepareerd bij mij thuis. Scheelde me een hoop gedoe.', name: 'Lisa H.', location: 'Rotterdam' },
-              { text: 'Laptop liep vast met een blauw scherm. Ze hebben het besturingssysteem hersteld zonder dataverlies. Knap werk!', name: 'Frank M.', location: 'Den Haag' },
-              { text: 'Oude laptop was eigenlijk te traag om weg te doen. Na een SSD upgrade en meer geheugen werkt hij weer als nieuw.', name: 'Anja P.', location: 'Leiden' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

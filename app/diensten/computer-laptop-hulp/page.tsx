@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -115,6 +116,24 @@ const faqData = {
     }
   ]
 }
+
+const testimonials = [
+  {
+    quote: 'Mijn laptop was ontzettend traag. Binnen een uur had de IT-student een SSD geplaatst en draait alles weer als nieuw!',
+    name: 'Peter V.',
+    initials: 'PV'
+  },
+  {
+    quote: 'Computer startte niet meer op. Ze hebben al mijn data kunnen redden en het systeem volledig hersteld. Top service!',
+    name: 'Maria K.',
+    initials: 'MK'
+  },
+  {
+    quote: 'Heel geduldig uitgelegd wat het probleem was. Eerlijke prijs en snel geregeld. Echte aanrader.',
+    name: 'Jan B.',
+    initials: 'JB'
+  }
+]
 
 const heroImage = '/Computer & Laptop Hulp.webp'
 
@@ -410,30 +429,22 @@ export default function ComputerLaptopHulpPage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'Mijn laptop was ontzettend traag. Binnen een uur had de IT-student een SSD geplaatst en draait alles weer als nieuw!', name: 'Peter V.', location: 'Zoetermeer' },
-              { text: 'Computer startte niet meer op. Ze hebben al mijn data kunnen redden en het systeem volledig hersteld. Top service!', name: 'Maria K.', location: 'Den Haag' },
-              { text: 'Heel geduldig uitgelegd wat het probleem was. Eerlijke prijs en snel geregeld. Echte aanrader.', name: 'Jan B.', location: 'Delft' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

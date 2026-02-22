@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -53,6 +54,24 @@ const faqData = {
     { '@type': 'Question', name: 'Kunnen jullie mijn data overzetten naar een nieuwe computer?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we zetten al uw bestanden, foto\'s, documenten en zelfs e-mail en programma-instellingen veilig over naar uw nieuwe computer.' } }
   ]
 }
+
+const testimonials = [
+  {
+    quote: 'Al mijn familiefoto\'s leken verloren na een crash. Ze hebben alles kunnen terughalen. Ontzettend dankbaar!',
+    name: 'Anneke R.',
+    initials: 'AR'
+  },
+  {
+    quote: 'Harde schijf kapot, maar ze konden 95% van mijn bestanden redden. Heel professioneel en eerlijk over de mogelijkheden.',
+    name: 'Willem J.',
+    initials: 'WJ'
+  },
+  {
+    quote: 'Fijne backup oplossing opgezet zodat ik nooit meer bestanden kwijtraak. Duidelijk uitgelegd hoe het werkt.',
+    name: 'Sandra M.',
+    initials: 'SM'
+  }
+]
 
 const heroImage = '/Data herstel.webp'
 
@@ -251,30 +270,22 @@ export default function DataherstelBackupPage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'Al mijn familiefoto\'s leken verloren na een crash. Ze hebben alles kunnen terughalen. Ontzettend dankbaar!', name: 'Anneke R.', location: 'Rotterdam' },
-              { text: 'Harde schijf kapot, maar ze konden 95% van mijn bestanden redden. Heel professioneel en eerlijk over de mogelijkheden.', name: 'Willem J.', location: 'Gouda' },
-              { text: 'Fijne backup oplossing opgezet zodat ik nooit meer bestanden kwijtraak. Duidelijk uitgelegd hoe het werkt.', name: 'Sandra M.', location: 'Leiden' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

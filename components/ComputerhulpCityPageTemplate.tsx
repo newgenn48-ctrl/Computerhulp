@@ -6,6 +6,7 @@ import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import { Icon } from '@/components/icons'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { City } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 
@@ -559,57 +560,22 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
         )
       })()}
 
-      {/* Testimonials - Premium Cards */}
-      <section className="py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Section Header */}
-          <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16">
-            <div className="max-w-2xl mb-8 lg:mb-0">
-              <span className="section-label">Ervaringen</span>
-              <h2 className="section-title-lg mt-4">
-                Wat onze klanten zeggen
-              </h2>
-              <p className="text-xl text-gray-600">
-                Wij helpen dagelijks mensen in heel Zuid-Holland
-              </p>
-            </div>
-            <div className="flex items-center gap-3 bg-white rounded-2xl px-6 py-4 shadow-sm">
-              <div className="text-4xl font-bold text-gray-900">4.9</div>
-              <div>
-                <div className="flex gap-0.5 mb-1">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <div className="text-sm text-gray-500">gemiddelde score</div>
-              </div>
-            </div>
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
 
-          {/* Testimonial Cards */}
-          <div className="grid md:grid-cols-3 gap-8">
-            {testimonials.map((testimonial, idx) => (
-              <div key={idx} className="testimonial-card">
-                <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mb-6">
-                  <Icon name="quote" className="w-6 h-6 text-gray-400" />
-                </div>
-                <p className="text-gray-700 text-lg leading-relaxed mb-8">{testimonial.quote}</p>
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-4">
-                    <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">
-                      {testimonial.initials}
-                    </div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                  </div>
-                  <div className="flex gap-0.5">
-                    {[...Array(5)].map((_, i) => (
-                      <Icon key={i} name="star" className="w-4 h-4 text-yellow-400" />
-                    ))}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

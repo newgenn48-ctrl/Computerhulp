@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -82,6 +83,24 @@ const faqs = [
   { question: 'Geven jullie ook les in Word en Excel?', answer: 'Absoluut! We geven les in Word voor brieven en documenten, en Excel voor tabellen en berekeningen. We stemmen de les af op uw niveau en tempo.' },
   { question: 'Kan ik meerdere lessen boeken?', answer: 'Ja, u kunt zoveel lessen boeken als u wilt. Veel klanten boeken een serie van 3-5 lessen om de stof goed onder de knie te krijgen.' },
   { question: 'Leren jullie ook videobellen?', answer: 'Ja, we leren u videobellen met alle gangbare programma\'s. Zo kunt u met kinderen, kleinkinderen of vrienden beeldbellen.' }
+]
+
+const testimonials = [
+  {
+    quote: 'Eindelijk snap ik hoe mijn iPad werkt! Heel geduldig uitgelegd, op mijn tempo. Nu kan ik zelf videobellen met de kleinkinderen.',
+    name: 'Corrie V.',
+    initials: 'CV'
+  },
+  {
+    quote: 'In twee lessen heb ik geleerd hoe ik foto\'s deel, e-mail gebruik en veilig internet. Fantastische hulp.',
+    name: 'Bert J.',
+    initials: 'BJ'
+  },
+  {
+    quote: 'Als 78-jarige was ik bang dat ik het nooit zou leren. Maar met zoveel geduld en duidelijke uitleg kan ik nu alles zelf!',
+    name: 'Ria K.',
+    initials: 'RK'
+  }
 ]
 
 export default function PersoonlijkeTrainingPage() {
@@ -252,30 +271,21 @@ export default function PersoonlijkeTrainingPage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'Eindelijk snap ik hoe mijn iPad werkt! Heel geduldig uitgelegd, op mijn tempo. Nu kan ik zelf videobellen met de kleinkinderen.', name: 'Corrie V.', location: 'Den Haag' },
-              { text: 'In twee lessen heb ik geleerd hoe ik foto\'s deel, e-mail gebruik en veilig internet. Fantastische hulp.', name: 'Bert J.', location: 'Delft' },
-              { text: 'Als 78-jarige was ik bang dat ik het nooit zou leren. Maar met zoveel geduld en duidelijke uitleg kan ik nu alles zelf!', name: 'Ria K.', location: 'Zoetermeer' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 

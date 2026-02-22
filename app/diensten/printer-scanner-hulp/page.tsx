@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
@@ -81,6 +82,24 @@ const faqs = [
   { question: 'Helpen jullie ook met draadloos printen?', answer: 'Ja, we maken uw printer draadloos zodat u kunt printen vanaf elke plek in huis, ook vanaf uw telefoon of tablet.' },
   { question: 'Kan ik ook scannen naar mijn e-mail?', answer: 'Ja, als uw printer/scanner dit ondersteunt, stellen we scan naar e-mail in zodat gescande documenten direct naar uw inbox gaan.' },
   { question: 'Mijn printer is oud, moet ik een nieuwe kopen?', answer: 'We bekijken eerst of uw huidige printer nog gerepareerd kan worden. Indien nodig adviseren we u over een nieuwe printer die past bij uw gebruik.' }
+]
+
+const testimonials = [
+  {
+    quote: 'Printer deed het al weken niet. In een half uur was hij weer aangesloten op WiFi en kon ik weer printen en scannen.',
+    name: 'Gerard T.',
+    initials: 'GT'
+  },
+  {
+    quote: 'Nieuwe printer gekocht maar kreeg hem niet ge\u00efnstalleerd. De IT-student heeft alles aangesloten en uitgelegd. Heel fijn!',
+    name: 'Marian S.',
+    initials: 'MS'
+  },
+  {
+    quote: 'Kon niet meer scannen naar mijn e-mail. Bleek een instelling te zijn. Snel opgelost en nu werkt alles weer perfect.',
+    name: 'Paul K.',
+    initials: 'PK'
+  }
 ]
 
 export default function PrinterScannerHulpPage() {
@@ -254,30 +273,21 @@ export default function PrinterScannerHulpPage() {
         </div>
       </section>
 
-      {/* Ervaringen */}
-      <section className="py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Klanten Zeggen</h2>
-          </div>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              { text: 'Printer deed het al weken niet. In een half uur was hij weer aangesloten op WiFi en kon ik weer printen en scannen.', name: 'Gerard T.', location: 'Gouda' },
-              { text: 'Nieuwe printer gekocht maar kreeg hem niet ge\u00efnstalleerd. De IT-student heeft alles aangesloten en uitgelegd. Heel fijn!', name: 'Marian S.', location: 'Den Haag' },
-              { text: 'Kon niet meer scannen naar mijn e-mail. Bleek een instelling te zijn. Snel opgelost en nu werkt alles weer perfect.', name: 'Paul K.', location: 'Delft' }
-            ].map((t, idx) => (
-              <div key={idx} className="bg-gray-50 rounded-2xl p-6 border border-gray-200">
-                <div className="flex gap-1 mb-3">
-                  {[...Array(5)].map((_, i) => (
-                    <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 mb-3 italic">&ldquo;{t.text}&rdquo;</p>
-                <p className="text-sm font-semibold text-gray-900">{t.name}</p>
-                <p className="text-sm text-gray-500">{t.location}</p>
-              </div>
-            ))}
-          </div>
+      {/* Testimonials - Swipeable Carousel */}
+      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 
