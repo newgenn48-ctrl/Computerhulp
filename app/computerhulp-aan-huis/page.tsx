@@ -343,8 +343,7 @@ export default function ComputerhulpAanHuisPage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Computerhulp
-              <span className="block text-blue-600">aan Huis</span>
+              Computerhulp <span className="text-blue-600">aan Huis</span>
             </h1>
 
             <p className="hero-description">

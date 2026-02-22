@@ -348,8 +348,7 @@ export default function HomePage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Computerhulp aan Huis
-              <span className="block text-blue-600">Zuid-Holland</span>
+              Computerhulp <span className="text-blue-600">aan Huis</span>
             </h1>
 
             <p className="hero-description">
