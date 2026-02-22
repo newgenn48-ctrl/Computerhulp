@@ -34,20 +34,32 @@ const testimonials = [
   {
     quote: 'Die jongen had zoveel geduld! Hij heeft mij stap voor stap leren videobellen met mijn dochter in Australië. Nu bellen we elke week. Geweldig!',
     initials: 'WP',
-    name: 'Mevrouw Willems',
-    location: 'Delft'
+    name: 'Mevrouw Willems'
   },
   {
     quote: 'Mijn iPad deed helemaal niks meer. De student had het binnen een half uur weer werkend en legde uit hoe ik foto\'s kan delen. Heel vriendelijk!',
     initials: 'PK',
-    name: 'De heer Piet',
-    location: 'Dordrecht'
+    name: 'De heer Piet'
   },
   {
     quote: 'Fijn dat er ook \'s avonds iemand kon komen. De student heeft mijn e-mail en agenda ingesteld en alles rustig uitgelegd. Echt een aanrader voor senioren!',
     initials: 'JV',
-    name: 'Mevrouw Jannie',
-    location: 'Schiedam'
+    name: 'Mevrouw Jannie'
+  },
+  {
+    quote: 'De student heeft mij geholpen met het maken van een fotoboek op de computer. Heel geduldig uitgelegd en nu kan ik het zelf! Wat een leuke jongen.',
+    initials: 'MH',
+    name: 'Mevrouw Martha'
+  },
+  {
+    quote: 'Ik kreeg steeds vreemde meldingen op mijn laptop. De student heeft alles gecontroleerd, opgeschoond en uitgelegd hoe ik het kan voorkomen. Heel duidelijk!',
+    initials: 'KD',
+    name: 'De heer Klaas'
+  },
+  {
+    quote: 'Mijn WiFi viel steeds weg bij het videobellen. De student heeft de router opnieuw ingesteld en nu heb ik geen last meer. Fijne hulp!',
+    initials: 'EB',
+    name: 'Mevrouw Elly'
   }
 ]
 
@@ -173,7 +185,7 @@ function generateFaqQuestions(city: City) {
       name: `Hoe snel kan een IT-student in ${city.name} langskomen?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `In de meeste gevallen kunnen onze IT-studenten binnen 24 uur bij u thuis zijn in ${city.name}. Bij urgente problemen proberen we dezelfde dag langs te komen. We zijn 7 dagen per week beschikbaar, ook 's avonds.`
+        text: `In de meeste gevallen kunnen onze IT-studenten binnen 24 uur bij u thuis zijn in ${city.name}. Bij urgente problemen proberen we dezelfde dag langs te komen. We zijn 7 dagen per week beschikbaar, ook \'s avonds.`
       }
     },
     {
@@ -194,10 +206,10 @@ function generateFaqQuestions(city: City) {
     },
     {
       '@type': 'Question',
-      name: `Komen jullie ook 's avonds en in het weekend in ${city.name}?`,
+      name: `Komen jullie ook \'s avonds en in het weekend in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Ja, onze IT-studenten zijn 7 dagen per week beschikbaar in ${city.name}, ook 's avonds tot 22:00 uur. Perfect als u overdag werkt en 's avonds of in het weekend hulp nodig heeft.`
+        text: `Ja, onze IT-studenten zijn 7 dagen per week beschikbaar in ${city.name}, ook \'s avonds tot 22:00 uur. Perfect als u overdag werkt en 's avonds of in het weekend hulp nodig heeft.`
       }
     }
   ]
@@ -225,7 +237,7 @@ function getFaqDisplayData(city: City) {
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} langskomen?`,
-      answer: `Meestal zijn we binnen 24 uur bij u. Is het dringend? Dan proberen we het vaak nog dezelfde dag te regelen. We zijn 7 dagen per week bereikbaar, ook 's avonds.`
+      answer: `Meestal zijn we binnen 24 uur bij u. Is het dringend? Dan proberen we het vaak nog dezelfde dag te regelen. We zijn 7 dagen per week bereikbaar, ook \'s avonds.`
     },
     {
       question: 'Waar kunnen jullie mee helpen?',
@@ -236,8 +248,8 @@ function getFaqDisplayData(city: City) {
       answer: 'U betaalt pas na afloop, via pin, contant of Tikkie. Vooraf krijgt u een inschatting van de tijd, zodat u weet waar u aan toe bent. Geen verborgen kosten.'
     },
     {
-      question: `Komen jullie ook 's avonds en in het weekend?`,
-      answer: `Ja, we zijn 7 dagen per week beschikbaar, ook 's avonds tot 22:00 uur. Handig als u overdag werkt.`
+      question: `Komen jullie ook \'s avonds en in het weekend?`,
+      answer: `Ja, we zijn 7 dagen per week beschikbaar, ook \'s avonds tot 22:00 uur. Handig als u overdag werkt.`
     }
   ]
 
@@ -574,10 +586,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.initials}
                   </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.location}</div>
-                  </div>
+                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
                 </div>
               </div>
             ))}

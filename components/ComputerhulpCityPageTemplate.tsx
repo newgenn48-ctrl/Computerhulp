@@ -33,20 +33,32 @@ const testimonials = [
   {
     quote: 'Mijn laptop was gehackt en ik durfde nergens meer op te klikken. De technicus heeft alles schoongemaakt, beveiligd en mij uitgelegd waar ik op moet letten. Ik voel me weer veilig online.',
     initials: 'B',
-    name: 'Mevrouw Bea',
-    location: 'Voorburg'
+    name: 'Mevrouw Bea'
   },
   {
     quote: 'Nieuwe printer aangesloten, scanner ingesteld en meteen laten zien hoe ik dubbelzijdig kan printen. Dat scheelt papier! Heel vriendelijk en op tijd.',
     initials: 'T',
-    name: 'De heer Theo',
-    location: 'Barendrecht'
+    name: 'De heer Theo'
   },
   {
     quote: 'Ons hele thuisnetwerk werkte niet meer na een storing. Binnen een uur alles weer online: computers, tablets en de smart-TV. Heel kundig en duidelijke uitleg achteraf.',
     initials: 'S',
-    name: 'Mevrouw Sonja',
-    location: 'Gouda'
+    name: 'Mevrouw Sonja'
+  },
+  {
+    quote: 'Computer startte niet meer op en ik had een deadline. Dezelfde avond nog geholpen en alles gered. Dat was echt een redding in nood!',
+    initials: 'F',
+    name: 'De heer Fred'
+  },
+  {
+    quote: 'Al mijn foto\'s van de afgelopen 10 jaar stonden op een oude laptop die kapot ging. Alles is overgezet naar mijn nieuwe computer. Ik ben zo opgelucht!',
+    initials: 'I',
+    name: 'Mevrouw Ineke'
+  },
+  {
+    quote: 'Drie apparaten tegelijk aangesloten op het netwerk en alles werkt nu samen. Zelfs de draadloze printer! Heel knap gedaan.',
+    initials: 'W',
+    name: 'De heer Wim'
   }
 ]
 
@@ -587,10 +599,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                     <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-semibold">
                       {testimonial.initials}
                     </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-500">{testimonial.location}</div>
-                    </div>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (

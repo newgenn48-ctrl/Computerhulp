@@ -251,50 +251,62 @@ const testimonials = [
   {
     quote: 'Mijn computer deed het helemaal niet meer. Binnen 2 uur stond hij weer aan en al mijn foto\'s waren gered. Ontzettend blij!',
     name: 'Mevrouw Gerda',
-    location: 'Den Haag',
     initials: 'G'
   },
   {
     quote: 'Eindelijk iemand die normaal uitlegt! Geen ingewikkelde termen. Printer werkt nu perfect.',
     name: 'De heer Jan',
-    location: 'Rotterdam',
     initials: 'J'
   },
   {
     quote: 'WiFi werkte niet, e-mail deed het niet. Alles in één keer opgelost. Eerlijke prijs, top service!',
     name: 'Mevrouw Linda',
-    location: 'Leiden',
     initials: 'L'
   },
   {
     quote: 'Heel geduldig uitgelegd hoe ik mijn tablet moet gebruiken. Nu kan ik zelf foto\'s maken en versturen naar mijn kleinkinderen!',
     name: 'De heer Henk',
-    location: 'Delft',
     initials: 'H'
   },
   {
     quote: 'Laptop was zo traag geworden. Na het bezoek werkt hij weer als nieuw. Fijne jongen, nam de tijd voor uitleg.',
     name: 'Mevrouw Ria',
-    location: 'Zoetermeer',
     initials: 'R'
   },
   {
     quote: 'Mijn nieuwe smart TV kon ik niet aansluiten. Binnen een uur Netflix, Videoland én de foto\'s van mijn telefoon erop. Geweldig!',
     name: 'De heer Peter',
-    location: 'Gouda',
     initials: 'P'
   },
   {
     quote: 'Al jaren last van een trage computer. Eindelijk iemand die het écht oplost. Scheelt mij zoveel ergernis. Aanrader!',
     name: 'Mevrouw Corrie',
-    location: 'Dordrecht',
     initials: 'C'
   },
   {
     quote: 'Virus op mijn laptop en al mijn wachtwoorden kwijt. Alles hersteld én nu goed beveiligd. Zeer tevreden!',
     name: 'De heer Willem',
-    location: 'Schiedam',
     initials: 'W'
+  },
+  {
+    quote: 'Mijn e-mail was gehackt en ik wist niet wat ik moest doen. Alles weer veilig gemaakt en uitgelegd hoe ik sterke wachtwoorden gebruik. Heel geruststellend!',
+    name: 'Mevrouw Ans',
+    initials: 'A'
+  },
+  {
+    quote: 'De kinderen klaagden dat het internet zo langzaam was. Na het bezoek vliegt alles weer. Ook de WiFi op zolder werkt nu perfect!',
+    name: 'De heer Frank',
+    initials: 'F'
+  },
+  {
+    quote: 'Nieuwe laptop gekocht maar kreeg alles niet overgezet. Binnen anderhalf uur stond alles erop: foto\'s, documenten, programma\'s. Heel handig!',
+    name: 'Mevrouw Truus',
+    initials: 'T'
+  },
+  {
+    quote: 'Mijn printer deed het al maanden niet meer. Had er zelf uren aan gezeten. De monteur loste het in tien minuten op. Waarom heb ik niet eerder gebeld!',
+    name: 'De heer Bert',
+    initials: 'B'
   }
 ]
 

@@ -605,10 +605,7 @@ export default function ComputerhulpAanHuisPage() {
                     <div className="w-12 h-12 bg-gray-900 rounded-full flex items-center justify-center text-white font-semibold">
                       {testimonial.initials}
                     </div>
-                    <div>
-                      <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                      <div className="text-sm text-gray-500">{testimonial.location}</div>
-                    </div>
+                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
                   </div>
                   <div className="flex gap-0.5">
                     {[...Array(5)].map((_, i) => (
@@ -797,19 +794,41 @@ const testimonials = [
   {
     quote: 'Ik had al weken last van een trage computer. De monteur kwam \'s avonds langs en binnen een uur was alles weer snel. Hij legde ook uit hoe ik mijn pc schoon kan houden. Fijne service!',
     initials: 'A',
-    name: 'Mevrouw Agnes',
-    location: 'Zoetermeer'
+    name: 'Mevrouw Agnes'
   },
   {
     quote: 'Moest dringend bij mijn e-mail kunnen voor werk, maar Outlook deed het niet meer. Dezelfde dag nog geholpen, alles werkt weer perfect. Erg blij dat ze ook \'s avonds komen.',
     initials: 'R',
-    name: 'De heer Rob',
-    location: 'Vlaardingen'
+    name: 'De heer Rob'
   },
   {
     quote: 'Na een verhuizing werkten onze twee computers en de printer niet meer op het nieuwe netwerk. Alles in één bezoek weer aangesloten en werkend. Heel prettig dat ze aan huis komen.',
     initials: 'M',
-    name: 'Mevrouw Marieke',
-    location: 'Alphen aan den Rijn'
+    name: 'Mevrouw Marieke'
+  },
+  {
+    quote: 'Mijn moeder van 82 kon niet meer bij haar foto\'s. De monteur heeft alles weer werkend gemaakt en het haar rustig uitgelegd. Ze belt nu zelf met haar kleinkinderen!',
+    initials: 'K',
+    name: 'De heer Karel'
+  },
+  {
+    quote: 'Computer gaf vreemde foutmeldingen en was ontzettend langzaam. Bleek vol met rommel te zitten. Na het bezoek start hij weer op in 30 seconden. Verschil van dag en nacht!',
+    initials: 'J',
+    name: 'Mevrouw José'
+  },
+  {
+    quote: 'WiFi reikte niet tot de slaapkamer. De monteur heeft een mesh-systeem geïnstalleerd en nu heb ik overal bereik. Zelfs in de tuin! Heel blij mee.',
+    initials: 'D',
+    name: 'De heer Dick'
+  },
+  {
+    quote: 'Nieuwe laptop gekocht maar wist niet hoe ik alles moest overzetten. Binnen twee uur stonden al mijn bestanden, foto\'s en programma\'s erop. Heel handig!',
+    initials: 'L',
+    name: 'Mevrouw Lies'
+  },
+  {
+    quote: 'Printer en scanner deden het allebei niet meer. Was al drie keer naar de winkel geweest. De monteur had het in een kwartier opgelost. Scheelde mij weer een rit!',
+    initials: 'H',
+    name: 'De heer Herman'
   }
 ]

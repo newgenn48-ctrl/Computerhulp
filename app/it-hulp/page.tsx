@@ -13,26 +13,42 @@ const testimonials = [
   {
     quote: 'Na een ransomware-aanval dacht ik dat al mijn bestanden verloren waren. De IT-student heeft alles weten te herstellen en mijn computer goed beveiligd. Enorme opluchting!',
     name: 'De heer Kees',
-    location: 'Rijswijk',
     initials: 'K'
   },
   {
     quote: 'Ons thuisnetwerk met 3 laptops en een NAS werkte niet goed samen. Nu draait alles soepel en kan ik overal bij mijn bestanden. Vakkundig opgelost.',
     name: 'Mevrouw Anneke',
-    location: 'Wassenaar',
     initials: 'A'
   },
   {
     quote: 'Moest thuiswerken maar mijn VPN en Teams werkten niet. Binnen een uur alles geconfigureerd. Fijn dat ze ook op korte termijn kunnen komen.',
     name: 'De heer Marco',
-    location: 'Capelle aan den IJssel',
     initials: 'M'
   },
   {
     quote: 'Twee computers overgezet naar Windows 11, inclusief al onze programma\'s en bestanden. Netjes en snel geregeld, we merken geen verschil behalve dat alles sneller is!',
     name: 'Mevrouw Diane',
-    location: 'Alphen aan den Rijn',
     initials: 'D'
+  },
+  {
+    quote: 'Server op kantoor crashte steeds. Bleek een defecte harde schijf. Dezelfde dag vervangen en alles weer draaiend. Echt vakwerk.',
+    name: 'De heer Paul',
+    initials: 'P'
+  },
+  {
+    quote: 'Mijn NAS was niet meer bereikbaar en ik had geen backup. Gelukkig alles kunnen herstellen en nu automatische backups ingesteld. Wat een opluchting!',
+    name: 'Mevrouw Ellen',
+    initials: 'E'
+  },
+  {
+    quote: 'Bedrijfsnetwerk was traag en onveilig. Alles opnieuw geconfigureerd met een goede firewall. Medewerkers merken het verschil meteen.',
+    name: 'De heer Sander',
+    initials: 'S'
+  },
+  {
+    quote: 'Mail migratie van oud systeem naar Microsoft 365 voor ons hele gezin. Alles netjes overgezet zonder dat we iets kwijt zijn. Topservice!',
+    name: 'Mevrouw Ingrid',
+    initials: 'I'
   }
 ]
 

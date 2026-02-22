@@ -6,7 +6,6 @@ import { Icon } from '@/components/icons'
 interface Testimonial {
   quote: string
   name: string
-  location: string
   initials: string
 }
 
@@ -93,10 +92,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
               <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                 {testimonial.initials}
               </div>
-              <div>
-                <cite className="font-semibold text-gray-900 not-italic">{testimonial.name}</cite>
-                <div className="text-sm text-gray-600">{testimonial.location}</div>
-              </div>
+              <cite className="font-semibold text-gray-900 not-italic">{testimonial.name}</cite>
             </footer>
           </div>
         ))}

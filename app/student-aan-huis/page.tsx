@@ -486,10 +486,7 @@ export default function StudentAanHuisPage() {
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white font-bold">
                     {testimonial.initials}
                   </div>
-                  <div>
-                    <div className="font-semibold text-gray-900">{testimonial.name}</div>
-                    <div className="text-sm text-gray-600">{testimonial.location}</div>
-                  </div>
+                  <div className="font-semibold text-gray-900">{testimonial.name}</div>
                 </div>
               </div>
             ))}
@@ -643,19 +640,41 @@ const testimonials = [
   {
     quote: 'Zo fijn om door een jongere geholpen te worden! Hij legde alles uit op een manier die ik begreep. En zo geduldig!',
     initials: 'EJ',
-    name: 'Mevrouw De Jong',
-    location: 'Den Haag'
+    name: 'Mevrouw De Jong'
   },
   {
     quote: 'Onze kleinzoon studeert ook IT. Deze jongen had dezelfde energie. Alles werkt nu en ik snapte zijn uitleg perfect.',
     initials: 'HV',
-    name: 'Henk V.',
-    location: 'Rotterdam'
+    name: 'Henk V.'
   },
   {
     quote: 'Student aan huis was perfect! Modern, snel en enthousiast. Mijn laptop is weer als nieuw. Aanrader!',
     initials: 'MB',
-    name: 'Maria B.',
-    location: 'Leiden'
+    name: 'Maria B.'
+  },
+  {
+    quote: 'De student heeft mij leren werken met mijn nieuwe iPhone. Contacten overgezet, WhatsApp geïnstalleerd en uitgelegd hoe de camera werkt. Heel leerzaam!',
+    initials: 'GR',
+    name: 'Mevrouw Greetje'
+  },
+  {
+    quote: 'Ik durfde niet meer online te bankieren na een phishing mail. De student heeft alles gecontroleerd en mij tips gegeven om veilig te blijven. Heel fijn!',
+    initials: 'WB',
+    name: 'De heer Wim'
+  },
+  {
+    quote: 'Mijn tablet was zo vol dat er niks meer op kon. De student heeft alles opgeruimd en laten zien hoe ik foto\'s naar de cloud kan verplaatsen. Top!',
+    initials: 'NK',
+    name: 'Mevrouw Nel'
+  },
+  {
+    quote: 'Zoom en Teams werkten niet goed voor mijn bridgeclub online. Na het bezoek kan ik probleemloos meedoen. Heel blij!',
+    initials: 'RP',
+    name: 'De heer Ruud'
+  },
+  {
+    quote: 'De student heeft ons geholpen met het instellen van een slim deurslot en de Ring deurbel. Nu kunnen we alles bedienen vanaf onze telefoon. Geweldig!',
+    initials: 'AB',
+    name: 'Mevrouw Annie'
   }
 ]
