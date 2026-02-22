@@ -61,8 +61,8 @@ export default function ITHulpPage() {
       <section className="relative min-h-[70vh] md:min-h-screen bg-white overflow-hidden" aria-label="Computerhulp Zuid-Holland hero">
         <div className="absolute inset-0">
           <Image
-            src="/Student aan huis.webp"
-            alt="Computerhulp IT-student helpt klant thuis met laptop in Zuid-Holland"
+            src="/computerhulp.webp"
+            alt="IT hulp aan huis - computerhulp bij u thuis"
             fill
             className="object-cover"
             priority
