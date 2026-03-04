@@ -17,6 +17,8 @@ const allServices = [
   { slug: 'smart-home-domotica', name: 'Smart Home & Domotica' },
   { slug: 'dataherstel-backup', name: 'Dataherstel & Backup' },
   { slug: 'persoonlijke-training', name: 'Persoonlijke Training' },
+  { slug: 'computercursus-ouderen', name: 'Computercursus Ouderen' },
+  { slug: 'tv-installatie', name: 'TV Installatie' },
 ]
 
 const topCities = [
@@ -37,10 +39,12 @@ const relatedServicesMap: Record<string, string[]> = {
   'printer-scanner-hulp': ['computer-laptop-hulp', 'wifi-internet-hulp', 'email-hulp', 'laptop-computer-reparatie', 'persoonlijke-training'],
   'email-hulp': ['computer-laptop-hulp', 'tablet-smartphone-hulp', 'wifi-internet-hulp', 'persoonlijke-training', 'printer-scanner-hulp'],
   'tablet-smartphone-hulp': ['email-hulp', 'wifi-internet-hulp', 'persoonlijke-training', 'smart-home-domotica', 'computer-laptop-hulp'],
-  'televisie-radio': ['smart-home-domotica', 'wifi-internet-hulp', 'tablet-smartphone-hulp', 'computer-laptop-hulp', 'persoonlijke-training'],
+  'televisie-radio': ['tv-installatie', 'smart-home-domotica', 'wifi-internet-hulp', 'tablet-smartphone-hulp', 'computer-laptop-hulp'],
   'smart-home-domotica': ['wifi-internet-hulp', 'televisie-radio', 'tablet-smartphone-hulp', 'computer-laptop-hulp', 'persoonlijke-training'],
   'dataherstel-backup': ['computer-laptop-hulp', 'laptop-computer-reparatie', 'email-hulp', 'tablet-smartphone-hulp', 'persoonlijke-training'],
-  'persoonlijke-training': ['computer-laptop-hulp', 'tablet-smartphone-hulp', 'email-hulp', 'wifi-internet-hulp', 'smart-home-domotica'],
+  'persoonlijke-training': ['computer-laptop-hulp', 'tablet-smartphone-hulp', 'email-hulp', 'wifi-internet-hulp', 'computercursus-ouderen'],
+  'computercursus-ouderen': ['persoonlijke-training', 'tablet-smartphone-hulp', 'email-hulp', 'computer-laptop-hulp', 'wifi-internet-hulp'],
+  'tv-installatie': ['televisie-radio', 'smart-home-domotica', 'wifi-internet-hulp', 'computer-laptop-hulp', 'tablet-smartphone-hulp'],
 }
 
 export default function ServiceCrossLinks({ currentService, serviceName }: ServiceCrossLinksProps) {

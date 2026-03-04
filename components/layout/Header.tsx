@@ -148,6 +148,8 @@ export default function Header() {
                   { href: '/diensten/televisie-radio', label: '📺 Televisie & Radio' },
                   { href: '/diensten/smart-home-domotica', label: '🏠 Smart Home & Domotica' },
                   { href: '/diensten/dataherstel-backup', label: '💾 Dataherstel & Backup' },
+                  { href: '/diensten/computercursus-ouderen', label: '👴 Computercursus Ouderen' },
+                  { href: '/diensten/tv-installatie', label: '📺 TV Installatie' },
                 ].map((item, index) => (
                   <Link
                     key={item.href}
@@ -155,7 +157,7 @@ export default function Header() {
                     className="nav-dropdown-link"
                     role="menuitem"
                     tabIndex={dienstenOpen ? 0 : -1}
-                    onKeyDown={(e) => handleMenuItemKeyDown(e, index, 10)}
+                    onKeyDown={(e) => handleMenuItemKeyDown(e, index, 12)}
                     onClick={() => setDienstenOpen(false)}
                   >
                     {item.label}
@@ -167,7 +169,7 @@ export default function Header() {
                   className="nav-dropdown-link font-medium"
                   role="menuitem"
                   tabIndex={dienstenOpen ? 0 : -1}
-                  onKeyDown={(e) => handleMenuItemKeyDown(e, 9, 10)}
+                  onKeyDown={(e) => handleMenuItemKeyDown(e, 11, 12)}
                   onClick={() => setDienstenOpen(false)}
                 >
                   🌐 Website Laten Maken
@@ -231,6 +233,12 @@ export default function Header() {
               </Link>
               <Link href="/diensten/dataherstel-backup" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 💾 Dataherstel & Backup
+              </Link>
+              <Link href="/diensten/computercursus-ouderen" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
+                👴 Computercursus Ouderen
+              </Link>
+              <Link href="/diensten/tv-installatie" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
+                📺 TV Installatie
               </Link>
               <div className="border-t border-gray-100 my-2"></div>
               <Link href="/website-laten-maken" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
