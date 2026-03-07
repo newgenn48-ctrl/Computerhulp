@@ -359,7 +359,7 @@ export default function ComputerhulpAanHuisPage() {
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                €10 voorrijkosten
+                Betrouwbaar & vakkundig
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
@@ -739,7 +739,7 @@ export default function ComputerhulpAanHuisPage() {
                 </span>
                 <span className="flex items-center gap-2">
                   <Icon name="check-circle" className="w-4 h-4 text-green-500" />
-                  €10 voorrijkosten
+                  Binnen 24 uur geholpen
                 </span>
               </div>
             </div>

@@ -627,7 +627,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 </span>
                 <span className="trust-indicator">
                   <Icon name="check-circle" className="w-4 h-4 text-green-500" />
-                  €10 voorrijkosten
+                  Binnen 24 uur geholpen
                 </span>
               </div>
             </div>
