@@ -19,6 +19,10 @@ const allServices = [
   { slug: 'persoonlijke-training', name: 'Persoonlijke Training' },
   { slug: 'computercursus-ouderen', name: 'Computercursus Ouderen' },
   { slug: 'tv-installatie', name: 'TV Installatie' },
+  { slug: 'pc-hulp-aan-huis', name: 'PC Hulp aan Huis' },
+  { slug: 'hulp-bij-computerproblemen', name: 'Hulp bij Computerproblemen' },
+  { slug: 'smartphone-hulp-aan-huis', name: 'Smartphone Hulp' },
+  { slug: 'computerhulp-senioren', name: 'Computerhulp Senioren' },
 ]
 
 const topCities = [
@@ -45,6 +49,10 @@ const relatedServicesMap: Record<string, string[]> = {
   'persoonlijke-training': ['computer-laptop-hulp', 'tablet-smartphone-hulp', 'email-hulp', 'wifi-internet-hulp', 'computercursus-ouderen'],
   'computercursus-ouderen': ['persoonlijke-training', 'tablet-smartphone-hulp', 'email-hulp', 'computer-laptop-hulp', 'wifi-internet-hulp'],
   'tv-installatie': ['televisie-radio', 'smart-home-domotica', 'wifi-internet-hulp', 'computer-laptop-hulp', 'tablet-smartphone-hulp'],
+  'pc-hulp-aan-huis': ['computer-laptop-hulp', 'laptop-computer-reparatie', 'hulp-bij-computerproblemen', 'dataherstel-backup', 'wifi-internet-hulp'],
+  'hulp-bij-computerproblemen': ['computer-laptop-hulp', 'pc-hulp-aan-huis', 'wifi-internet-hulp', 'printer-scanner-hulp', 'email-hulp'],
+  'smartphone-hulp-aan-huis': ['tablet-smartphone-hulp', 'email-hulp', 'persoonlijke-training', 'computerhulp-senioren', 'wifi-internet-hulp'],
+  'computerhulp-senioren': ['computercursus-ouderen', 'persoonlijke-training', 'tablet-smartphone-hulp', 'smartphone-hulp-aan-huis', 'email-hulp'],
 }
 
 export default function ServiceCrossLinks({ currentService, serviceName }: ServiceCrossLinksProps) {

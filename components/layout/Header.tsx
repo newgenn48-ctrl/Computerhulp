@@ -150,6 +150,10 @@ export default function Header() {
                   { href: '/diensten/dataherstel-backup', label: '💾 Dataherstel & Backup' },
                   { href: '/diensten/computercursus-ouderen', label: '👴 Computercursus Ouderen' },
                   { href: '/diensten/tv-installatie', label: '📺 TV Installatie' },
+                  { href: '/diensten/pc-hulp-aan-huis', label: '🖥️ PC Hulp aan Huis' },
+                  { href: '/diensten/hulp-bij-computerproblemen', label: '🔧 Hulp bij Computerproblemen' },
+                  { href: '/diensten/smartphone-hulp-aan-huis', label: '📱 Smartphone Hulp aan Huis' },
+                  { href: '/diensten/computerhulp-senioren', label: '👴 Computerhulp Senioren' },
                 ].map((item, index) => (
                   <Link
                     key={item.href}
@@ -157,7 +161,7 @@ export default function Header() {
                     className="nav-dropdown-link"
                     role="menuitem"
                     tabIndex={dienstenOpen ? 0 : -1}
-                    onKeyDown={(e) => handleMenuItemKeyDown(e, index, 12)}
+                    onKeyDown={(e) => handleMenuItemKeyDown(e, index, 16)}
                     onClick={() => setDienstenOpen(false)}
                   >
                     {item.label}
@@ -169,7 +173,7 @@ export default function Header() {
                   className="nav-dropdown-link font-medium"
                   role="menuitem"
                   tabIndex={dienstenOpen ? 0 : -1}
-                  onKeyDown={(e) => handleMenuItemKeyDown(e, 11, 12)}
+                  onKeyDown={(e) => handleMenuItemKeyDown(e, 15, 16)}
                   onClick={() => setDienstenOpen(false)}
                 >
                   🌐 Website Laten Maken
@@ -239,6 +243,18 @@ export default function Header() {
               </Link>
               <Link href="/diensten/tv-installatie" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
                 📺 TV Installatie
+              </Link>
+              <Link href="/diensten/pc-hulp-aan-huis" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
+                🖥️ PC Hulp aan Huis
+              </Link>
+              <Link href="/diensten/hulp-bij-computerproblemen" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
+                🔧 Hulp bij Computerproblemen
+              </Link>
+              <Link href="/diensten/smartphone-hulp-aan-huis" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
+                📱 Smartphone Hulp aan Huis
+              </Link>
+              <Link href="/diensten/computerhulp-senioren" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link">
+                👴 Computerhulp Senioren
               </Link>
               <div className="border-t border-gray-100 my-2"></div>
               <Link href="/website-laten-maken" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
