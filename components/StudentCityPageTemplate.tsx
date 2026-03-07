@@ -303,7 +303,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              {['Binnen 24 uur geholpen', '€10 voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
+              {['Binnen 24 uur geholpen', 'Betrouwbaar & vakkundig', 'Betaalbare tarieven'].map((usp) => (
                 <span key={usp} className="usp-badge">
                   <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} aria-hidden="true" />
                   {usp}

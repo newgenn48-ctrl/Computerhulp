@@ -131,7 +131,7 @@ export default function ComputercursusOuderenPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />€10 voorrijkosten</div>
+                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Betrouwbaar &amp; vakkundig</div>
                 <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Op uw eigen tempo</div>
                 <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Geduldige uitleg</div>
               </div>

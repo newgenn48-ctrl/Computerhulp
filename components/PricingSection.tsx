@@ -23,7 +23,7 @@ export default function PricingSection({
               Transparante Prijzen
             </h2>
             <p className="section-subtitle">
-              Eerlijk en duidelijk. Geen verborgen kosten, geen verrassingen.
+              De meeste problemen lossen we op voor slechts €54,97 all-in.
             </p>
           </div>
 
