@@ -105,7 +105,7 @@ export default async function Image() {
               ✓ Aan huis service
             </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              ✓ €14,50 per kwartier
+              ✓ €14,99 per kwartier
             </div>
           </div>
         </div>

@@ -29,7 +29,7 @@ const structuredData = {
     address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
   },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' },
+  offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'EUR' },
   description: 'Professionele TV installatie aan huis. TV ophangen aan de muur, Smart TV instellen, soundbar aansluiten en streaming apps configureren in Zuid-Holland.'
 }
 
@@ -51,7 +51,7 @@ const faqData = {
     { '@type': 'Question', name: 'Helpen jullie ook met het instellen van een Smart TV?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we verbinden uw Smart TV met WiFi, installeren apps zoals Netflix en YouTube, en stellen alles in zodat u direct kunt kijken.' } },
     { '@type': 'Question', name: 'Kunnen jullie een soundbar aansluiten op mijn TV?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we sluiten uw soundbar of surround systeem aan en zorgen dat het geluid perfect samenwerkt met uw TV.' } },
     { '@type': 'Question', name: 'Installeren jullie ook streaming apps zoals Netflix?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren en configureren alle populaire streaming apps: Netflix, Disney+, NPO Start, Videoland en meer.' } },
-    { '@type': 'Question', name: 'Wat kost een TV installatie?', acceptedAnswer: { '@type': 'Answer', text: 'Onze service kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50). Voorrijkosten zijn gratis in heel Zuid-Holland.' } }
+    { '@type': 'Question', name: 'Wat kost een TV installatie?', acceptedAnswer: { '@type': 'Answer', text: 'Onze service kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97). Voorrijkosten zijn slechts €10 in heel Zuid-Holland.' } }
   ]
 }
 
@@ -81,7 +81,7 @@ const faqs = [
   { question: 'Helpen jullie ook met het instellen van een Smart TV?', answer: 'Absoluut! We verbinden uw Smart TV met uw WiFi-netwerk, installeren apps zoals Netflix, YouTube en NPO Start, en stellen alles in zodat u direct kunt kijken. We leggen ook uit hoe alles werkt.' },
   { question: 'Kunnen jullie een soundbar aansluiten op mijn TV?', answer: 'Ja, we sluiten uw soundbar of surround systeem aan via HDMI ARC, optisch of Bluetooth. We zorgen dat het geluid perfect samenwerkt met uw TV en afstandsbediening.' },
   { question: 'Installeren jullie ook streaming apps zoals Netflix?', answer: 'Ja, we installeren en configureren alle populaire streaming apps: Netflix, Disney+, NPO Start, Videoland, Amazon Prime en meer. We maken accounts aan indien nodig.' },
-  { question: 'Wat kost een TV installatie?', answer: 'Onze service kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50). Voorrijkosten zijn gratis in heel Zuid-Holland. Een gemiddelde TV installatie duurt 45 tot 90 minuten.' }
+  { question: 'Wat kost een TV installatie?', answer: 'Onze service kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97). Voorrijkosten zijn slechts €10 in heel Zuid-Holland. Een gemiddelde TV installatie duurt 45 tot 90 minuten.' }
 ]
 
 const testimonials = [
@@ -131,7 +131,7 @@ export default function TVInstallatiePage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Gratis voorrijkosten</div>
+                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />€10 voorrijkosten</div>
                 <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Binnen 24 uur</div>
                 <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Alle merken TV&apos;s</div>
               </div>
@@ -219,7 +219,7 @@ export default function TVInstallatiePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat u nodig heeft.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
               { step: '3', title: 'TV Geïnstalleerd', desc: 'Uw TV is opgehangen, ingesteld en klaar voor gebruik. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -242,12 +242,12 @@ export default function TVInstallatiePage() {
             <p className="section-subtitle">Transparante prijzen, geen verborgen kosten</p>
           </div>
           <div className="pricing-box">
-            <div className="text-6xl font-bold mb-2">€14,50</div>
+            <div className="text-6xl font-bold mb-2">€14,99</div>
             <div className="text-2xl text-blue-100 mb-1">per kwartier</div>
-            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
+            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€44,97)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Gratis voorrijkosten in heel Zuid-Holland', 'TV ophangen en volledig instellen', 'Alle apparaten aangesloten en werkend', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Slechts €10 voorrijkosten in heel Zuid-Holland', 'TV ophangen en volledig instellen', 'Alle apparaten aangesloten en werkend', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-400 flex-shrink-0" strokeWidth={2} />
                     <span className="text-white">{item}</span>
@@ -318,7 +318,7 @@ export default function TVInstallatiePage() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Professionele TV Installatie Service aan Huis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Een nieuwe TV kopen is het leuke deel — het installeren vaak minder. Van het ophangen aan de muur tot het instellen van Smart TV-functies, het aansluiten van een soundbar en het configureren van streaming apps: er komt meer bij kijken dan u denkt. Onze IT-studenten komen bij u thuis en regelen de complete TV installatie, zodat u direct kunt genieten.</p>
-            <p>Wij werken met alle merken televisies: Samsung, LG, Sony, Philips en meer. Of het nu gaat om een TV aan de muur monteren, zenders op volgorde zetten, Netflix en Disney+ instellen of een compleet surround sound systeem aansluiten — wij zorgen ervoor dat alles perfect werkt. Snel, vakkundig en met gratis voorrijkosten in heel Zuid-Holland.</p>
+            <p>Wij werken met alle merken televisies: Samsung, LG, Sony, Philips en meer. Of het nu gaat om een TV aan de muur monteren, zenders op volgorde zetten, Netflix en Disney+ instellen of een compleet surround sound systeem aansluiten — wij zorgen ervoor dat alles perfect werkt. Snel, vakkundig en met €10 voorrijkosten in heel Zuid-Holland.</p>
           </div>
         </div>
       </section>

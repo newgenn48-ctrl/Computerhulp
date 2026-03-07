@@ -106,7 +106,7 @@ export default function LocatiesPage() {
               Onze <span className="text-blue-600">Locaties</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Wij bieden computerhulp aan huis in meer dan <strong className="text-gray-900">50 gemeenten</strong> in <strong className="text-gray-900">Zuid-Holland</strong>. Gratis voorrijkosten, binnen 24 uur bij u thuis.
+              Wij bieden computerhulp aan huis in meer dan <strong className="text-gray-900">50 gemeenten</strong> in <strong className="text-gray-900">Zuid-Holland</strong>. €10 voorrijkosten, binnen 24 uur bij u thuis.
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
@@ -141,7 +141,7 @@ export default function LocatiesPage() {
               <div className="text-gray-600">Reactietijd</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">0</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">€10</div>
               <div className="text-gray-600">Voorrijkosten</div>
             </div>
             <div>

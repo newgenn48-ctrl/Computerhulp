@@ -7,7 +7,7 @@ interface PricingSectionProps {
 
 export default function PricingSection({
   benefits = [
-    'Gratis voorrijkosten in heel Zuid-Holland',
+    'Slechts €10 voorrijkosten in heel Zuid-Holland',
     'Ook \'s avonds en in het weekend beschikbaar',
     'Betalen via pin, contant of Tikkie',
     'Eerlijke inschatting vooraf, geen verrassingen'
@@ -31,7 +31,7 @@ export default function PricingSection({
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-blue-500">
             <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-6 text-white text-center">
               <div className="text-sm font-semibold uppercase tracking-wide mb-2">Ons Tarief</div>
-              <div className="text-6xl font-bold mb-2">€14,50</div>
+              <div className="text-6xl font-bold mb-2">€14,99</div>
               <div className="text-xl">per kwartier</div>
             </div>
 

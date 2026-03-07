@@ -253,8 +253,8 @@ Neem zo snel mogelijk contact op met de klant!
                   <ul>
                     <li><strong>Binnen 3 uur:</strong> We bellen u om een afspraak in te plannen</li>
                     <li><strong>Binnen 24 uur:</strong> Onze monteur komt bij u langs</li>
-                    <li><strong>Gratis voorrijkosten</strong> in heel Zuid-Holland</li>
-                    <li><strong>Transparant tarief:</strong> €14,50 per kwartier</li>
+                    <li><strong>€10 voorrijkosten</strong> in heel Zuid-Holland</li>
+                    <li><strong>Transparant tarief:</strong> €14,99 per kwartier</li>
                   </ul>
                 </div>
 
@@ -295,8 +295,8 @@ Email: ${textEmail}
 WAT GEBEURT ER NU?
 - Binnen 3 uur: We bellen u om een afspraak in te plannen
 - Binnen 24 uur: Onze monteur komt bij u langs
-- Gratis voorrijkosten in heel Zuid-Holland
-- Transparant tarief: €14,50 per kwartier
+- Slechts €10 voorrijkosten in heel Zuid-Holland
+- Transparant tarief: €14,99 per kwartier
 
 SPOED? Bel ons direct op 085-8002006
 

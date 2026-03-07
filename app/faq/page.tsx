@@ -33,7 +33,7 @@ const faqStructuredData = {
       name: 'Wat zijn de kosten voor computerhulp?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We rekenen €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Voorrijden is gratis in heel Zuid-Holland.'
+        text: 'We rekenen €14,99 per kwartier met een minimum van 3 kwartier (€44,97 totaal). Voorrijden kost slechts €10 in heel Zuid-Holland.'
       }
     },
     {
@@ -41,7 +41,7 @@ const faqStructuredData = {
       name: 'Zijn er voorrijkosten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Nee, in heel Zuid-Holland is voorrijden gratis. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
+        text: 'Nee, in heel Zuid-Holland is voorrijden slechts €10. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
       }
     },
     {
@@ -171,11 +171,11 @@ const faqCategories = [
     questions: [
       {
         question: 'Wat zijn de kosten voor computerhulp?',
-        answer: 'We rekenen €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Dit is een all-in prijs - er komen geen extra kosten bij.'
+        answer: 'We rekenen €14,99 per kwartier met een minimum van 3 kwartier (€44,97 totaal). Dit is een all-in prijs - er komen geen extra kosten bij.'
       },
       {
         question: 'Zijn er voorrijkosten?',
-        answer: 'Nee, in heel Zuid-Holland is voorrijden gratis. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
+        answer: 'Nee, in heel Zuid-Holland is voorrijden slechts €10. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
       },
       {
         question: 'Hoe kan ik betalen?',
@@ -187,7 +187,7 @@ const faqCategories = [
       },
       {
         question: 'Zijn er extra kosten in de avond of weekend?',
-        answer: 'Nee, we rekenen hetzelfde tarief op alle dagen en tijden. Ook op zaterdag, zondag of in de avonduren betaalt u gewoon €14,50 per kwartier.'
+        answer: 'Nee, we rekenen hetzelfde tarief op alle dagen en tijden. Ook op zaterdag, zondag of in de avonduren betaalt u gewoon €14,99 per kwartier.'
       }
     ]
   },

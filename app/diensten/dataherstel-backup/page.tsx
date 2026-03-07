@@ -7,7 +7,7 @@ import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Dataherstel & Backup aan Huis | Binnen 24u',
-  description: 'Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in Zuid-Holland. Gratis voorrijkosten. Bel 085-8002006.',
+  description: 'Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in Zuid-Holland. €10 voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Dataherstel & Backup aan Huis',
     description: 'Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in Zuid-Holland.',
@@ -29,7 +29,7 @@ const structuredData = {
     address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
   },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' },
+  offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'EUR' },
   description: 'Professionele dataherstel en backup service aan huis. Verloren bestanden terughalen, foto\'s redden en automatische backups instellen. We komen bij u thuis in Zuid-Holland.'
 }
 
@@ -131,7 +131,7 @@ export default function DataherstelBackupPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Gratis voorrijkosten</div>
+                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />€10 voorrijkosten</div>
                 <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Binnen 24 uur</div>
                 <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />10+ jaar ervaring</div>
               </div>
@@ -214,7 +214,7 @@ export default function DataherstelBackupPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'We herstellen uw data of maken een veilige backup. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -237,12 +237,12 @@ export default function DataherstelBackupPage() {
             <p className="section-subtitle">Transparante prijzen, geen verborgen kosten</p>
           </div>
           <div className="pricing-box">
-            <div className="text-6xl font-bold mb-2">€14,50</div>
+            <div className="text-6xl font-bold mb-2">€14,99</div>
             <div className="text-2xl text-blue-100 mb-1">per kwartier</div>
-            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
+            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€44,97)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Gratis voorrijkosten in heel Zuid-Holland', 'Data terughalen waar mogelijk', 'Backup direct werkend en automatisch', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Slechts €10 voorrijkosten in heel Zuid-Holland', 'Data terughalen waar mogelijk', 'Backup direct werkend en automatisch', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-400 flex-shrink-0" strokeWidth={2} />
                     <span className="text-white">{item}</span>

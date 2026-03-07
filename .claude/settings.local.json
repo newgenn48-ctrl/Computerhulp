@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git add:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nRemove source protection and simplify service page hero titles\n\n- Remove user-select:none from CSS \\(allow text selection\\)\n- Remove source protection script from layout\n- Remove \"Direct Bij U Thuis\" from all service page h1 titles\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git push:*)",
+      "Bash(git commit:*)",
+      "Bash(npm run build:*)",
+      "Bash(dir:*)",
+      "Bash(findstr:*)",
+      "Bash(Select-String -Pattern \"cache|turbo|\\\\.next\")",
+      "Bash(ls:*)",
+      "Bash(node:*)",
+      "Bash(find:*)",
+      "Bash(npx next build)",
+      "Bash(wc:*)",
+      "Bash(curl:*)",
+      "Bash(pkill:*)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "Bash(tail:*)",
+      "Bash(cd:*)",
+      "Bash(rm:*)",
+      "Bash(xargs sed:*)",
+      "Bash(sed:*)"
+    ]
+  }
+}

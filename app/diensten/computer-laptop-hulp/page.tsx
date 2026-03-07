@@ -7,7 +7,7 @@ import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Computer & Laptop Hulp aan Huis | Binnen 24u',
-  description: 'Computer traag, laptop kapot of pc laten maken? IT-student aan huis in Zuid-Holland. Binnen 24 uur, gratis voorrijkosten. Bel 085-8002006.',
+  description: 'Computer traag, laptop kapot of pc laten maken? IT-student aan huis in Zuid-Holland. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Computer & Laptop Hulp aan Huis',
     description: 'Computer of laptop problemen? Traag, vast, crash of defect? We komen bij u thuis in Zuid-Holland en maken het weer als nieuw. Binnen 24 uur geholpen.',
@@ -40,7 +40,7 @@ const structuredData = {
   },
   offers: {
     '@type': 'Offer',
-    price: '14.50',
+    price: '14.99',
     priceCurrency: 'EUR'
   },
   description: 'Professionele computer en laptop hulp aan huis. Van trage computers tot crashes, data recovery en hardware upgrades. We komen bij u thuis in Zuid-Holland.'}
@@ -255,7 +255,7 @@ export default function ComputerLaptopHulpPage() {
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
                 <div className="trust-indicator">
                   <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                  Gratis voorrijkosten
+                  €10 voorrijkosten
                 </div>
                 <div className="trust-indicator">
                   <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
@@ -359,7 +359,7 @@ export default function ComputerLaptopHulpPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
               { step: '3', title: 'Probleem Opgelost', desc: 'We lossen het probleem ter plekke op. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -387,14 +387,14 @@ export default function ComputerLaptopHulpPage() {
           </div>
 
           <div className="pricing-box">
-            <div className="text-6xl font-bold mb-2">€14,50</div>
+            <div className="text-6xl font-bold mb-2">€14,99</div>
             <div className="text-2xl text-blue-100 mb-1">per kwartier</div>
-            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
+            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€44,97)</div>
 
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
                 {[
-                  'Gratis voorrijkosten in heel Zuid-Holland',
+                  'Slechts €10 voorrijkosten in heel Zuid-Holland',
                   'Diagnose en oplossing ter plekke',
                   'Data altijd veilig en privé',
                   'Betalen na afloop via pin, contant of Tikkie'

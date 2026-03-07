@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     default: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
     template: '%s'
   },
-  description: 'Problemen met computer, laptop, printer, e-mail of WiFi? Binnen 24 uur geholpen in heel Zuid-Holland. Transparant tarief: €14,50 per kwartier. Bel 085-8002006.',
+  description: 'Problemen met computer, laptop, printer, e-mail of WiFi? Binnen 24 uur geholpen in heel Zuid-Holland. Transparant tarief: €14,99 per kwartier. Bel 085-8002006.',
   authors: [{ name: 'Computerhulp Zuid-Holland' }],
   creator: 'Computerhulp Zuid-Holland',
   publisher: 'Computerhulp Zuid-Holland',
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
-    description: 'Binnen 24 uur computerhulp aan huis in Zuid-Holland. Vanaf €43,50, gratis voorrijkosten. Bel 085-8002006.',
+    description: 'Binnen 24 uur computerhulp aan huis in Zuid-Holland. Vanaf €44,97, €10 voorrijkosten. Bel 085-8002006.',
     images: ['/Computerhulp Zuid Holland Logo.webp'],
   },
   robots: {

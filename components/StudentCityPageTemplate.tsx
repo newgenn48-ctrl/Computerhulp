@@ -17,11 +17,11 @@ interface StudentCityPageTemplateProps {
 // Metadata generator - used by all 52 city page files
 export function generateStudentPageMetadata(city: City): Metadata {
   return {
-    title: `Student aan Huis ${city.name} | Vanaf €43,50`,
-    description: `Student aan huis in ${city.name} voor computerhulp en IT-problemen. Binnen 24 uur bij u thuis. Gratis voorrijkosten. Bel 085-8002006.`,
+    title: `Student aan Huis ${city.name} | Vanaf €44,97`,
+    description: `Student aan huis in ${city.name} voor computerhulp en IT-problemen. Binnen 24 uur bij u thuis. €10 voorrijkosten. Bel 085-8002006.`,
     openGraph: {
-      title: `Student aan Huis ${city.name} | Vanaf €43,50`,
-      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, gratis voorrijkosten. Bel 085-8002006.`,
+      title: `Student aan Huis ${city.name} | Vanaf €44,97`,
+      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.`,
       type: 'website',
       url: `https://computerhulpzh.nl/student-aan-huis-${city.slug}`,
     },
@@ -116,17 +116,17 @@ function generateStructuredData(city: City) {
         '@id': `${pageUrl}#service`,
         serviceType: serviceName,
         name: serviceName,
-        description: `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, gratis voorrijkosten.`,
+        description: `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, €10 voorrijkosten.`,
         url: pageUrl,
         provider: { '@id': `${baseUrl}/#organization` },
         areaServed: { '@type': 'City', name: city.name },
         offers: {
           '@type': 'Offer',
-          price: '14.50',
+          price: '14.99',
           priceCurrency: 'EUR',
           priceSpecification: {
             '@type': 'UnitPriceSpecification',
-            price: '14.50',
+            price: '14.99',
             priceCurrency: 'EUR',
             referenceQuantity: {
               '@type': 'QuantitativeValue',
@@ -134,7 +134,7 @@ function generateStructuredData(city: City) {
               unitCode: 'MIN',
               unitText: 'minuten'
             },
-            description: 'Minimaal 3 kwartier (EUR 43,50 totaal)'
+            description: 'Minimaal 3 kwartier (EUR 44,97 totaal)'
           }
         }
       },
@@ -178,7 +178,7 @@ function generateFaqQuestions(city: City) {
       name: `Wat kost student aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Student aan huis in ${city.name} kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Voorrijden is gratis in ${city.name} en omgeving. U betaalt na afloop via pin, contant of Tikkie.`
+        text: `Student aan huis in ${city.name} kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97 totaal). Voorrijden kost slechts €10 in ${city.name} en omgeving. U betaalt na afloop via pin, contant of Tikkie.`
       }
     },
     {
@@ -221,7 +221,7 @@ function generateFaqQuestions(city: City) {
       name: `In welke wijken van ${city.name} komen jullie IT-studenten?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Onze IT-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is gratis in de hele regio ${content.region}.`
+        text: `Onze IT-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts €10 in de hele regio ${content.region}.`
       }
     })
   }
@@ -234,7 +234,7 @@ function getFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost student aan huis in ${city.name}?`,
-      answer: `U betaalt \u20AC14,50 per kwartier, met een minimum van drie kwartier (\u20AC43,50). Voorrijden is gratis. Betalen doet u achteraf — via pin, contant of Tikkie.`
+      answer: `U betaalt \u20AC14,50 per kwartier, met een minimum van drie kwartier (\u20AC43,50). Voorrijden kost slechts €10. Betalen doet u achteraf — via pin, contant of Tikkie.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} langskomen?`,
@@ -257,7 +257,7 @@ function getFaqDisplayData(city: City) {
   if (content && content.neighborhoods.length >= 3) {
     items.push({
       question: `Komen jullie ook in mijn wijk in ${city.name}?`,
-      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is altijd gratis.`
+      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts €10.`
     })
   }
 
@@ -303,7 +303,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              {['Binnen 24 uur geholpen', 'Gratis voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
+              {['Binnen 24 uur geholpen', '€10 voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
                 <span key={usp} className="usp-badge">
                   <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} aria-hidden="true" />
                   {usp}
@@ -399,7 +399,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
 
       {/* Pricing */}
       <PricingSection benefits={[
-        `Gratis voorrijkosten in ${city.name}`,
+        `€10 voorrijkosten in ${city.name}`,
         'Eerlijke inschatting vooraf, geen verrassingen',
         'Ook \'s avonds en in het weekend beschikbaar',
         'Betalen via pin, contant of Tikkie'
@@ -477,7 +477,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
-                    <span><strong>Betalen achteraf:</strong> Pas na afloop betalen via pin, contant of Tikkie. Gratis voorrijkosten in {city.name}.</span>
+                    <span><strong>Betalen achteraf:</strong> Pas na afloop betalen via pin, contant of Tikkie. €10 voorrijkosten in {city.name}.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
@@ -515,7 +515,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
                 Student aan huis in alle wijken van {city.name}
               </h2>
               <p className="text-gray-600 mb-6">
-                Wij komen in alle wijken en buurten van {city.name}. Waar u ook woont — voorrijden is altijd gratis.
+                Wij komen in alle wijken en buurten van {city.name}. Waar u ook woont — voorrijden kost slechts €10.
               </p>
               <div className="flex flex-wrap gap-3">
                 {content.neighborhoods.map((neighborhood) => (
@@ -611,7 +611,7 @@ export default function StudentCityPageTemplate({ city }: StudentCityPageTemplat
           </div>
 
           <div className="text-gray-500 text-sm">
-            Ma-Zo: 08:00 - 22:00 | Ook avonden en weekenden | Gratis voorrijkosten in {city.name}
+            Ma-Zo: 08:00 - 22:00 | Ook avonden en weekenden | €10 voorrijkosten in {city.name}
           </div>
         </div>
       </section>

@@ -153,10 +153,10 @@ export default function OverOnsPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               { icon: '🤝', title: 'Persoonlijk & Geduldig', desc: 'We nemen de tijd om alles rustig uit te leggen. Geen haast, geen irritatie als iets even niet lukt.' },
-              { icon: '💎', title: 'Eerlijk & Transparant', desc: 'Vaste prijs van €14,50 per kwartier. Geen verrassingen achteraf. We verkopen niet onnodig extra spullen.' },
+              { icon: '💎', title: 'Eerlijk & Transparant', desc: 'Vaste prijs van €14,99 per kwartier. Geen verrassingen achteraf. We verkopen niet onnodig extra spullen.' },
               { icon: '⚡', title: 'Snel & Vakkundig', desc: 'Door jarenlange ervaring lossen we problemen snel op. We komen binnen 24 uur bij u langs.' },
               { icon: '🎯', title: 'Alle Leeftijden', desc: 'Of u nu 25 bent of 85, we helpen iedereen. We passen ons tempo en uitleg aan uw niveau aan.' },
-              { icon: '🏠', title: 'Bij U Thuis', desc: 'Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, zonder voorrijkosten.' },
+              { icon: '🏠', title: 'Bij U Thuis', desc: 'Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, met slechts €10 voorrijkosten.' },
               { icon: '✅', title: 'Bewezen Betrouwbaar', desc: 'KvK geregistreerd, verzekerd en al jaren actief. Honderden tevreden klanten gingen u voor.' },
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all">
@@ -186,8 +186,8 @@ export default function OverOnsPage() {
           <div className="space-y-4">
             {[
               { title: 'Binnen 24 Uur Reactie', desc: 'We reageren altijd binnen 24 uur op uw aanvraag. In spoedsituaties vaak nog dezelfde dag.' },
-              { title: 'Gratis Voorrijkosten', desc: 'In heel Zuid-Holland komen we gratis bij u langs. 7 dagen per week, ook in de avond.' },
-              { title: 'Eerlijke Prijzen', desc: 'Vaste prijs van €14,50 per kwartier. We geven altijd een eerlijke inschatting vooraf.' },
+              { title: '€10 Voorrijkosten', desc: 'In heel Zuid-Holland komen we gratis bij u langs. 7 dagen per week, ook in de avond.' },
+              { title: 'Eerlijke Prijzen', desc: 'Vaste prijs van €14,99 per kwartier. We geven altijd een eerlijke inschatting vooraf.' },
               { title: 'Privacy & Veiligheid', desc: 'Uw gegevens zijn veilig bij ons. We behandelen uw informatie met de grootst mogelijke zorgvuldigheid.' },
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-6 border border-gray-200">

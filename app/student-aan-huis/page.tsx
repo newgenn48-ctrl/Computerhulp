@@ -9,10 +9,10 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 
 export const metadata: Metadata = {
   title: 'Student aan Huis | IT-Studenten Binnen 24u',
-  description: 'Student aan huis voor computerhulp in Zuid-Holland. Geduldige IT-studenten binnen 24 uur bij u thuis. Gratis voorrijkosten, ook in het weekend. Bel 085-8002006.',
+  description: 'Student aan huis voor computerhulp in Zuid-Holland. Geduldige IT-studenten binnen 24 uur bij u thuis. €10 voorrijkosten, ook in het weekend. Bel 085-8002006.',
   openGraph: {
     title: 'Student aan Huis | IT-Studenten Binnen 24u',
-    description: 'Jonge, geduldige IT-studenten binnen 24u bij u thuis. Geduldig uitleggen, rustig helpen. Vanaf €43,50. Bel 085-8002006',
+    description: 'Jonge, geduldige IT-studenten binnen 24u bij u thuis. Geduldig uitleggen, rustig helpen. Vanaf €44,97. Bel 085-8002006',
     type: 'website',
     url: 'https://computerhulpzh.nl/student-aan-huis',
   },
@@ -102,12 +102,12 @@ const structuredData = {
       },
       offers: {
         '@type': 'Offer',
-        price: '14.50',
+        price: '14.99',
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '14.50',
+          price: '14.99',
           priceCurrency: 'EUR',
           referenceQuantity: {
             '@type': 'QuantitativeValue',
@@ -115,8 +115,8 @@ const structuredData = {
             unitCode: 'MIN',
             unitText: 'minuten'
           },
-          minPrice: '43.50',
-          description: 'Minimaal 3 kwartier (€43,50 totaal)'
+          minPrice: '44.97',
+          description: 'Minimaal 3 kwartier (€44,97 totaal)'
         },
         seller: {
           '@id': 'https://computerhulpzh.nl/#organization'
@@ -130,7 +130,7 @@ const structuredData = {
       '@id': 'https://computerhulpzh.nl/student-aan-huis#webpage',
       url: 'https://computerhulpzh.nl/student-aan-huis',
       name: 'Student aan Huis | Computerhulp Zuid-Holland',
-      description: 'Jonge, geduldige IT-studenten komen bij u thuis voor computerhulp. Vanaf €43,50. Bel 085-8002006.',
+      description: 'Jonge, geduldige IT-studenten komen bij u thuis voor computerhulp. Vanaf €44,97. Bel 085-8002006.',
       isPartOf: {
         '@id': 'https://computerhulpzh.nl/#website'
       },
@@ -187,7 +187,7 @@ const faqData = {
       name: 'Wat kost een student aan huis?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Een student aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Voorrijden is gratis in heel Zuid-Holland. Dezelfde prijs als reguliere computerhulp.'
+        text: 'Een student aan huis kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97 totaal). Voorrijden kost slechts €10 in heel Zuid-Holland. Dezelfde prijs als reguliere computerhulp.'
       }
     },
     {
@@ -205,7 +205,7 @@ const faqData = {
       name: 'In welke plaatsen komt een student aan huis?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Onze studenten komen in heel Zuid-Holland bij u thuis. Dit omvat Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en nog 50+ andere gemeenten. Overal zonder voorrijkosten.'
+        text: 'Onze studenten komen in heel Zuid-Holland bij u thuis. Dit omvat Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en nog 50+ andere gemeenten. Overal met slechts €10 voorrijkosten.'
       }
     }
   ]
@@ -287,7 +287,7 @@ export default function StudentAanHuisPage() {
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Gratis voorrijkosten
+                €10 voorrijkosten
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
@@ -393,7 +393,7 @@ export default function StudentAanHuisPage() {
 
       {/* 5. Pricing */}
       <PricingSection benefits={[
-        'Gratis voorrijkosten in heel Zuid-Holland',
+        'Slechts €10 voorrijkosten in heel Zuid-Holland',
         'Ook \'s avonds en in het weekend beschikbaar',
         'Betalen via pin, contant of Tikkie'
       ]} />
@@ -434,7 +434,7 @@ export default function StudentAanHuisPage() {
               <li className="flex items-start gap-3">
                 <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} />
                 <span className="text-gray-700">
-                  <strong>Betaalbaar:</strong> €14,50 per kwartier, gratis voorrijkosten in heel Zuid-Holland
+                  <strong>Betaalbaar:</strong> €14,99 per kwartier, €10 voorrijkosten in heel Zuid-Holland
                 </span>
               </li>
               <li className="flex items-start gap-3">
@@ -502,7 +502,7 @@ export default function StudentAanHuisPage() {
               },
               {
                 q: 'Wat kost een student aan huis?',
-                a: 'U betaalt €14,50 per kwartier, met een minimum van drie kwartier (€43,50). Voorrijden is gratis in heel Zuid-Holland. Betalen doet u achteraf — via pin, contant of Tikkie.'
+                a: 'U betaalt €14,99 per kwartier, met een minimum van drie kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. Betalen doet u achteraf — via pin, contant of Tikkie.'
               },
               {
                 q: 'Weten de studenten wel genoeg?',
@@ -510,7 +510,7 @@ export default function StudentAanHuisPage() {
               },
               {
                 q: 'Waar komen jullie?',
-                a: 'In heel Zuid-Holland: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en meer dan 50 andere gemeenten. Voorrijden is altijd gratis.'
+                a: 'In heel Zuid-Holland: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en meer dan 50 andere gemeenten. Voorrijden kost slechts €10.'
               }
             ].map((faq, idx) => (
               <details
@@ -612,7 +612,7 @@ export default function StudentAanHuisPage() {
           </div>
 
           <div className="text-gray-500 text-sm">
-            Ma-Zo: 08:00 - 22:00 • Ook avonden en weekenden • Gratis voorrijkosten
+            Ma-Zo: 08:00 - 22:00 • Ook avonden en weekenden • €10 voorrijkosten
           </div>
         </div>
       </section>

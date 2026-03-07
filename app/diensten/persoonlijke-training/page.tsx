@@ -7,7 +7,7 @@ import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Computer Training aan Huis | Persoonlijke Les | Zuid-Holland',
-  description: 'Computer basics leren, internet veilig gebruiken of Word en Excel leren? Persoonlijke training aan huis in Zuid-Holland. Gratis voorrijkosten. Bel 085-8002006.',
+  description: 'Computer basics leren, internet veilig gebruiken of Word en Excel leren? Persoonlijke training aan huis in Zuid-Holland. €10 voorrijkosten. Bel 085-8002006.',
 
   openGraph: {
     title: 'Persoonlijke Training aan Huis',
@@ -30,7 +30,7 @@ const structuredData = {
     address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
   },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  offers: { '@type': 'Offer', price: '14.50', priceCurrency: 'EUR' },
+  offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'EUR' },
   description: 'Persoonlijke computer training aan huis. Van computer basics tot Word, Excel, internet en online bankieren. Op uw tempo, bij u thuis in Zuid-Holland.'
 }
 
@@ -132,7 +132,7 @@ export default function PersoonlijkeTrainingPage() {
                 </a>
               </div>
               <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Gratis voorrijkosten</div>
+                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />€10 voorrijkosten</div>
                 <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Op uw tempo</div>
                 <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Geduldige uitleg</div>
               </div>
@@ -215,7 +215,7 @@ export default function PersoonlijkeTrainingPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat u wilt leren.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Gratis voorrijkosten.' },
+              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
               { step: '3', title: 'Training Afgerond', desc: 'U leert stap voor stap werken met uw apparaat. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -238,12 +238,12 @@ export default function PersoonlijkeTrainingPage() {
             <p className="section-subtitle">Transparante prijzen, betaal per les</p>
           </div>
           <div className="pricing-box">
-            <div className="text-6xl font-bold mb-2">€14,50</div>
+            <div className="text-6xl font-bold mb-2">€14,99</div>
             <div className="text-2xl text-blue-100 mb-1">per kwartier</div>
-            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€43,50)</div>
+            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€44,97)</div>
             <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
               <ul className="space-y-3 text-left">
-                {['Gratis voorrijkosten in heel Zuid-Holland', 'Training bij u thuis op eigen computer', 'Op uw tempo, zonder haast of druk', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
+                {['Slechts €10 voorrijkosten in heel Zuid-Holland', 'Training bij u thuis op eigen computer', 'Op uw tempo, zonder haast of druk', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-400 flex-shrink-0" strokeWidth={2} />
                     <span className="text-white">{item}</span>

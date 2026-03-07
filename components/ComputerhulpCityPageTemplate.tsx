@@ -17,10 +17,10 @@ interface ComputerhulpCityPageTemplateProps {
 export function generateComputerhulpPageMetadata(city: City): Metadata {
   return {
     title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
-    description: `Computerhulp aan huis in ${city.name}. Hulp met computer, laptop, printer, WiFi en meer. Gratis voorrijkosten, binnen 24 uur. Bel 085-8002006.`,
+    description: `Computerhulp aan huis in ${city.name}. Hulp met computer, laptop, printer, WiFi en meer. €10 voorrijkosten, binnen 24 uur. Bel 085-8002006.`,
     openGraph: {
       title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
-      description: `Computerhulp aan huis in ${city.name}. Computer-, laptop- en WiFi-hulp. Binnen 24u, gratis voorrijkosten.`,
+      description: `Computerhulp aan huis in ${city.name}. Computer-, laptop- en WiFi-hulp. Binnen 24u, €10 voorrijkosten.`,
       type: 'website',
       url: `https://computerhulpzh.nl/computerhulp-aan-huis-${city.slug}`,
     },
@@ -70,7 +70,7 @@ export function generateStructuredData(city: City) {
   const content = getCityContent(city.slug)
   const cityDescription = content
     ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computer, laptop, printer, WiFi problemen opgelost bij u thuis.`
-    : `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, gratis voorrijkosten.`
+    : `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, €10 voorrijkosten.`
 
   return {
     '@context': 'https://schema.org',
@@ -114,7 +114,7 @@ export function generateStructuredData(city: City) {
         '@id': `${pageUrl}#service`,
         serviceType: 'Computerhulp aan Huis',
         name: serviceName,
-        description: `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, gratis voorrijkosten.`,
+        description: `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, €10 voorrijkosten.`,
         url: pageUrl,
         provider: {
           '@id': `${baseUrl}/#organization`
@@ -125,12 +125,12 @@ export function generateStructuredData(city: City) {
         },
         offers: {
           '@type': 'Offer',
-          price: '14.50',
+          price: '14.99',
           priceCurrency: 'EUR',
           availability: 'https://schema.org/InStock',
           priceSpecification: {
             '@type': 'UnitPriceSpecification',
-            price: '14.50',
+            price: '14.99',
             priceCurrency: 'EUR',
             referenceQuantity: {
               '@type': 'QuantitativeValue',
@@ -138,8 +138,8 @@ export function generateStructuredData(city: City) {
               unitCode: 'MIN',
               unitText: 'minuten'
             },
-            minPrice: '43.50',
-            description: 'Minimaal 3 kwartier (EUR 43,50 totaal)'
+            minPrice: '44.97',
+            description: 'Minimaal 3 kwartier (EUR 44,97 totaal)'
           }
         }
       },
@@ -180,7 +180,7 @@ function generateFaqEntities(city: City) {
       name: `Wat kost computerhulp aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Computerhulp aan huis in ${city.name} kost EUR 14,50 per kwartier met een minimum van 3 kwartier (EUR 43,50 totaal). Voorrijden is gratis.`
+        text: `Computerhulp aan huis in ${city.name} kost EUR 14,99 per kwartier met een minimum van 3 kwartier (EUR 44,97 totaal). Voorrijden kost slechts €10.`
       }
     },
     {
@@ -204,7 +204,7 @@ function generateFaqEntities(city: City) {
       name: 'Zijn er voorrijkosten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Nee, voorrijden is gratis voor computerhulp aan huis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de daadwerkelijke hulp.`
+        text: `Voorrijden kost slechts €10 voor computerhulp aan huis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de daadwerkelijke hulp.`
       }
     }
   ]
@@ -215,7 +215,7 @@ function generateFaqEntities(city: City) {
       name: `In welke wijken van ${city.name} bieden jullie computerhulp aan?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Wij bieden computerhulp aan huis in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. In de hele regio ${content.region} is voorrijden gratis.`
+        text: `Wij bieden computerhulp aan huis in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. In de hele regio ${content.region} is voorrijden slechts €10.`
       }
     })
   }
@@ -264,7 +264,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              {['Binnen 24 uur geholpen', 'Gratis voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
+              {['Binnen 24 uur geholpen', '€10 voorrijkosten', 'Betaalbare tarieven'].map((usp) => (
                 <span key={usp} className="usp-badge">
                   <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
                   {usp}
@@ -366,7 +366,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
 
       {/* Pricing */}
       <PricingSection benefits={[
-        `Gratis voorrijkosten in ${city.name}`,
+        `€10 voorrijkosten in ${city.name}`,
         'Ook \'s avonds en in het weekend beschikbaar',
         'Betalen via pin, contant of Tikkie'
       ]} />
@@ -462,7 +462,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                         <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
                       </div>
                       <div>
-                        <div className="font-semibold text-gray-900 mb-1">Gratis voorrijkosten</div>
+                        <div className="font-semibold text-gray-900 mb-1">€10 voorrijkosten</div>
                         <div className="text-gray-600">Computerhulp in heel {city.name} zonder extra kosten.</div>
                       </div>
                     </li>
@@ -509,7 +509,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
         const faqItems = [
           {
             question: `Wat kost computerhulp aan huis in ${city.name}?`,
-            answer: `U betaalt \u20AC14,50 per kwartier, met een minimum van drie kwartier (\u20AC43,50). Voorrijden is gratis — u betaalt dus alleen voor de hulp zelf.`
+            answer: `U betaalt \u20AC14,50 per kwartier, met een minimum van drie kwartier (\u20AC43,50). Voorrijden kost slechts €10 — u betaalt dus alleen voor de hulp zelf.`
           },
           {
             question: `Hoe snel kunnen jullie in ${city.name} komen?`,
@@ -521,13 +521,13 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
           },
           {
             question: 'Zijn er voorrijkosten?',
-            answer: `Nee, voorrijden is gratis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de hulp zelf.`
+            answer: `Voorrijden kost slechts €10 in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de hulp zelf.`
           },
         ]
         if (content && content.neighborhoods.length >= 3) {
           faqItems.push({
             question: `Komen jullie ook in mijn wijk in ${city.name}?`,
-            answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is altijd gratis.`
+            answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts €10.`
           })
         }
 
@@ -627,7 +627,7 @@ export default function ComputerhulpCityPageTemplate({ city }: ComputerhulpCityP
                 </span>
                 <span className="trust-indicator">
                   <Icon name="check-circle" className="w-4 h-4 text-green-500" />
-                  Gratis voorrijkosten
+                  €10 voorrijkosten
                 </span>
               </div>
             </div>

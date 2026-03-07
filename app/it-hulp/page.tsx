@@ -91,7 +91,7 @@ export default function ITHulpPage() {
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Gratis voorrijkosten
+                €10 voorrijkosten
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
@@ -180,7 +180,7 @@ export default function ITHulpPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Transparante prijzen:</strong> €14,50 per kwartier, gratis voorrijkosten in heel Zuid-Holland.</span>
+                    <span><strong>Transparante prijzen:</strong> €14,99 per kwartier, €10 voorrijkosten in heel Zuid-Holland.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />

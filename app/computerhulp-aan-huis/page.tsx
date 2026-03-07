@@ -9,10 +9,10 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 
 export const metadata: Metadata = {
   title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u bij u Thuis',
-  description: 'Professionele computerhulp aan huis in Zuid-Holland. Binnen 24 uur bij u thuis voor computer, laptop, printer en WiFi. Gratis voorrijkosten. Bel 085-8002006.',
+  description: 'Professionele computerhulp aan huis in Zuid-Holland. Binnen 24 uur bij u thuis voor computer, laptop, printer en WiFi. €10 voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u bij u Thuis',
-    description: 'Binnen 24 uur bij u thuis in Zuid-Holland. Computer, laptop, printer, WiFi problemen opgelost. Gratis voorrijkosten. Bel 085-8002006',
+    description: 'Binnen 24 uur bij u thuis in Zuid-Holland. Computer, laptop, printer, WiFi problemen opgelost. €10 voorrijkosten. Bel 085-8002006',
     type: 'website',
     url: 'https://computerhulpzh.nl/computerhulp-aan-huis',
   },
@@ -160,13 +160,13 @@ const structuredData = {
       },
       offers: {
         '@type': 'Offer',
-        price: '14.50',
+        price: '14.99',
         priceCurrency: 'EUR',
         availability: 'https://schema.org/InStock',
         availableDeliveryMethod: 'https://schema.org/OnSitePickup',
         priceSpecification: {
           '@type': 'UnitPriceSpecification',
-          price: '14.50',
+          price: '14.99',
           priceCurrency: 'EUR',
           referenceQuantity: {
             '@type': 'QuantitativeValue',
@@ -174,8 +174,8 @@ const structuredData = {
             unitCode: 'MIN',
             unitText: 'minuten'
           },
-          minPrice: '43.50',
-          description: 'Minimaal 3 kwartier (€43,50 totaal)'
+          minPrice: '44.97',
+          description: 'Minimaal 3 kwartier (€44,97 totaal)'
         },
         seller: {
           '@id': 'https://computerhulpzh.nl/#organization'
@@ -197,8 +197,8 @@ const structuredData = {
       '@type': 'WebPage',
       '@id': 'https://computerhulpzh.nl/computerhulp-aan-huis#webpage',
       url: 'https://computerhulpzh.nl/computerhulp-aan-huis',
-      name: 'Computerhulp aan Huis Zuid-Holland | Binnen 24 Uur | €14,50',
-      description: 'Computerhulp aan huis in heel Zuid-Holland. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. Gratis voorrijkosten.',
+      name: 'Computerhulp aan Huis Zuid-Holland | Binnen 24 Uur | €14,99',
+      description: 'Computerhulp aan huis in heel Zuid-Holland. Computer, laptop, printer of WiFi problemen? Wij komen binnen 24 uur bij u thuis. €10 voorrijkosten.',
       isPartOf: {
         '@id': 'https://computerhulpzh.nl/#website'
       },
@@ -255,7 +255,7 @@ const faqData = {
       name: 'Wat kost computerhulp aan huis in Zuid-Holland?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Onze computerhulp aan huis kost €14,50 per kwartier met een minimum van 3 kwartier (€43,50 totaal). Voorrijden is gratis in heel Zuid-Holland.'
+        text: 'Onze computerhulp aan huis kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97 totaal). Voorrijden kost slechts €10 in heel Zuid-Holland.'
       }
     },
     {
@@ -273,7 +273,7 @@ const faqData = {
       name: 'In welke plaatsen bieden jullie computerhulp aan huis?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We bieden computerhulp aan huis in heel Zuid-Holland, inclusief Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn en alle kleinere plaatsen. Overal zonder voorrijkosten.'
+        text: 'We bieden computerhulp aan huis in heel Zuid-Holland, inclusief Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn en alle kleinere plaatsen. Overal met slechts €10 voorrijkosten.'
       }
     }
   ]
@@ -359,7 +359,7 @@ export default function ComputerhulpAanHuisPage() {
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Gratis voorrijkosten
+                €10 voorrijkosten
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
@@ -550,8 +550,8 @@ export default function ComputerhulpAanHuisPage() {
                     <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
                   </div>
                   <div>
-                    <div className="font-semibold text-gray-900 mb-1">Gratis voorrijkosten</div>
-                    <div className="text-gray-600">In heel Zuid-Holland, zonder extra kosten voor het voorrijden.</div>
+                    <div className="font-semibold text-gray-900 mb-1">€10 voorrijkosten</div>
+                    <div className="text-gray-600">In heel Zuid-Holland, met slechts €10 voorrijkosten.</div>
                   </div>
                 </li>
               </ul>
@@ -641,7 +641,7 @@ export default function ComputerhulpAanHuisPage() {
               Waar we komen
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Wij helpen mensen in meer dan 50 gemeenten in Zuid-Holland. Voorrijden is altijd gratis.
+              Wij helpen mensen in meer dan 50 gemeenten in Zuid-Holland. Voorrijden kost slechts €10.
             </p>
           </div>
 
@@ -739,7 +739,7 @@ export default function ComputerhulpAanHuisPage() {
                 </span>
                 <span className="flex items-center gap-2">
                   <Icon name="check-circle" className="w-4 h-4 text-green-500" />
-                  Gratis voorrijkosten
+                  €10 voorrijkosten
                 </span>
               </div>
             </div>

@@ -103,11 +103,11 @@ export default function AfspraakBevestigingPage() {
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div className="flex items-start gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-500 flex-shrink-0" strokeWidth={2} />
-                    <p className="text-gray-700">Gratis voorrijkosten</p>
+                    <p className="text-gray-700">€10 voorrijkosten</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-500 flex-shrink-0" strokeWidth={2} />
-                    <p className="text-gray-700">Transparant tarief €14,50/kwartier</p>
+                    <p className="text-gray-700">Transparant tarief €14,99/kwartier</p>
                   </div>
                   <div className="flex items-start gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-500 flex-shrink-0" strokeWidth={2} />

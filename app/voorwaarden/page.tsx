@@ -50,10 +50,10 @@ export default function VoorwaardenPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Prijzen en Betaling</h2>
             <p>
-              <strong>Tarief:</strong> €14,50 per kwartier (15 minuten), minimaal 3 kwartier (€43,50).
+              <strong>Tarief:</strong> €14,99 per kwartier (15 minuten), minimaal 3 kwartier (€44,97).
             </p>
             <p className="mt-4">
-              <strong>Voorrijkosten:</strong> Gratis in heel Zuid-Holland.
+              <strong>Voorrijkosten:</strong> €10 in heel Zuid-Holland.
             </p>
             <p className="mt-4">
               <strong>Betaling:</strong> Direct na afloop van werkzaamheden via pin, contant of Tikkie, tenzij anders overeengekomen.
@@ -82,7 +82,7 @@ export default function VoorwaardenPage() {
           <section>
             <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. Annulering</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Door klant:</strong> Gratis annuleren tot 24 uur voor de afspraak. Bij annulering binnen 24 uur kunnen we €43,50 (minimumtarief) in rekening brengen.</li>
+              <li><strong>Door klant:</strong> Gratis annuleren tot 24 uur voor de afspraak. Bij annulering binnen 24 uur kunnen we €44,97 (minimumtarief) in rekening brengen.</li>
               <li><strong>Door ons:</strong> Als wij moeten annuleren, doen we dit zo snel mogelijk en plannen we een nieuwe afspraak zonder extra kosten.</li>
             </ul>
           </section>

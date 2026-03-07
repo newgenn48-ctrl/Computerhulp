@@ -6,7 +6,7 @@ import { Icon } from '@/components/icons'
 
 export const metadata: Metadata = {
   title: 'Alle Computerhulpdiensten aan Huis in Zuid-Holland',
-  description: 'Bekijk al onze computerhulpdiensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, gratis voorrijkosten. Bel 085-8002006.',
+  description: 'Bekijk al onze computerhulpdiensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, €10 voorrijkosten. Bel 085-8002006.',
 
   openGraph: {
     title: 'Alle Computerhulpdiensten aan Huis',
@@ -108,7 +108,7 @@ export default function DienstenPage() {
                 { label: '10+ Diensten', icon: '🛠️' },
                 { label: '7 Dagen', icon: '📅' },
                 { label: 'Binnen 24u', icon: '⚡' },
-                { label: '€0 Voorrijkosten', icon: '🚗' },
+                { label: '€10 Voorrijkosten', icon: '🚗' },
               ].map((usp, idx) => (
                 <div key={idx} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-sm">
                   <span className="text-lg">{usp.icon}</span>
@@ -206,14 +206,14 @@ export default function DienstenPage() {
           </div>
 
           <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-10 border-2 border-blue-200 shadow-xl">
-            <div className="text-6xl font-bold text-blue-600 mb-2 text-center">€14,50</div>
+            <div className="text-6xl font-bold text-blue-600 mb-2 text-center">€14,99</div>
             <div className="text-2xl text-gray-700 mb-1 text-center">per kwartier</div>
-            <div className="text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier (€43,50)</div>
+            <div className="text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier (€44,97)</div>
 
             <div className="bg-white rounded-xl p-6 mb-8 shadow-sm">
               <ul className="grid md:grid-cols-2 gap-4">
                 {[
-                  'Gratis voorrijkosten in heel Zuid-Holland',
+                  'Slechts €10 voorrijkosten in heel Zuid-Holland',
                   'Alle diensten dezelfde prijs',
                   'Diagnose ter plekke inbegrepen',
                   'Betalen na afloop',
@@ -250,7 +250,7 @@ export default function DienstenPage() {
               Onze IT-studenten komen bij u thuis en lossen uw technische problemen ter plekke op. Of het nu gaat om een trage computer, internetproblemen, e-mailinstellingen of smartphonehulp - wij helpen u vakkundig en persoonlijk.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Alle diensten voor dezelfde transparante prijs van €14,50 per kwartier, zonder voorrijkosten. Bel <a href="tel:+31858002006" className="text-blue-600 font-semibold">085-8002006</a> en wij komen binnen 24 uur bij u langs.
+              Alle diensten voor dezelfde transparante prijs van €14,99 per kwartier, met slechts €10 voorrijkosten. Bel <a href="tel:+31858002006" className="text-blue-600 font-semibold">085-8002006</a> en wij komen binnen 24 uur bij u langs.
             </p>
           </div>
         </div>
