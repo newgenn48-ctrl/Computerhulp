@@ -348,7 +348,7 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              <strong className="text-gray-900">Betrouwbare computerhulp aan huis</strong> in heel Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen uw computerproblemen <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
+              <strong className="text-gray-900">Betrouwbare computerhulp aan huis</strong> in heel Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen alles <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
@@ -400,9 +400,8 @@ export default function ComputerhulpAanHuisPage() {
 
       {/* Services Section */}
       <ServicesSection
-        title="Waar wij u mee helpen"
-        description="Van een simpele vraag tot een lastig probleem — wij komen bij u thuis en helpen u graag"
-        showFeatures={true}
+        title="Onze diensten"
+        showFeatures={false}
         limitServices={6}
         showAllButton={true}
       />
