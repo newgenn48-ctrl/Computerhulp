@@ -393,11 +393,6 @@ export default function HomePage() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden md:flex flex-col items-center gap-2 text-gray-400" aria-hidden="true">
-          <span className="text-sm">Scroll</span>
-          <Icon name="arrow-down" className="w-5 h-5 animate-bounce" strokeWidth={2} />
-        </div>
       </section>
 
       {/* Services Section */}
