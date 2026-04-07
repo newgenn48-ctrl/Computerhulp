@@ -25,7 +25,7 @@ export default function ExtraBenefitsSection() {
           </div>
 
           <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-            <div className="w-14 h-14 bg-green-600 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
               <Icon name="money" className="w-8 h-8 text-white" strokeWidth={2} />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Geen Verrassingen</h3>
@@ -35,7 +35,7 @@ export default function ExtraBenefitsSection() {
           </div>
 
           <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-            <div className="w-14 h-14 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
               <Icon name="book" className="w-8 h-8 text-white" strokeWidth={2} />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Uitleg Inbegrepen</h3>
@@ -45,7 +45,7 @@ export default function ExtraBenefitsSection() {
           </div>
 
           <div className="bg-gray-50 rounded-xl p-6 border border-gray-200 hover:shadow-lg transition-shadow">
-            <div className="w-14 h-14 bg-orange-500 rounded-lg flex items-center justify-center mb-4">
+            <div className="w-14 h-14 bg-blue-600 rounded-lg flex items-center justify-center mb-4">
               <Icon name="thumbs-up" className="w-8 h-8 text-white" strokeWidth={2} />
             </div>
             <h3 className="text-xl font-bold text-gray-900 mb-2">Garantie op Werk</h3>

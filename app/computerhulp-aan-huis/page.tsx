@@ -371,14 +371,14 @@ export default function ComputerhulpAanHuisPage() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 href="/afspraak-maken"
-                className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-xl shadow-blue-600/25"
+                className="btn-primary"
               >
                 Hulp aanvragen
                 <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
               </Link>
               <a
                 href="tel:+31858002006"
-                className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-200 hover:border-blue-600 transition-all"
+                className="btn-secondary"
               >
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                 Bel 085-8002006
@@ -387,13 +387,6 @@ export default function ComputerhulpAanHuisPage() {
           </div>
         </div>
 
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-gray-400">
-          <span className="text-xs uppercase tracking-widest">Scroll</span>
-          <div className="w-6 h-10 border-2 border-gray-300 rounded-full flex justify-center pt-2">
-            <div className="w-1.5 h-3 bg-gray-400 rounded-full animate-bounce"></div>
-          </div>
-        </div>
       </section>
 
 
@@ -406,158 +399,76 @@ export default function ComputerhulpAanHuisPage() {
         showAllButton={true}
       />
 
-      {/* How it works - Premium Timeline */}
-      <section className="py-24 bg-white">
+      {/* Waarom klanten voor ons kiezen */}
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          {/* Section Header */}
-          <div className="max-w-3xl mb-20">
-            <span className="section-label">Hoe het werkt</span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Zo werkt het
+          <div className="text-center mb-12">
+            <h2 className="section-title">
+              Waarom klanten voor ons kiezen
             </h2>
-            <p className="text-xl text-gray-600">
-              In vier stappen — simpel en overzichtelijk.
+            <p className="section-subtitle">
+              Dit maakt het verschil
             </p>
           </div>
 
-          {/* Timeline Steps */}
-          <div className="grid md:grid-cols-4 gap-8 lg:gap-12">
-            {/* Step 1 */}
-            <div className="relative group">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="step-number group-hover:scale-110 transition-transform">
-                  01
-                </div>
-                <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="clock" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                U belt of mailt ons
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Vertel kort wat er aan de hand is. Gewoon even bellen of een berichtje sturen.
-              </p>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">Binnen 24 uur bij u thuis</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">Geen weken wachten. Meestal komen we al de volgende dag — ook 's avonds en in het weekend.</p>
+              </div>
             </div>
 
-            {/* Step 2 */}
-            <div className="relative group">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="step-number group-hover:scale-110 transition-transform">
-                  02
-                </div>
-                <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
+            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="money" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                We spreken een moment af
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Samen zoeken we een tijdstip dat u uitkomt. Meestal kan het al de volgende dag.
-              </p>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">Geen verrassingen achteraf</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">€14,99 per kwartier, €10 voorrijkosten. U weet vooraf wat het kost. Betalen achteraf via pin of Tikkie.</p>
+              </div>
             </div>
 
-            {/* Step 3 */}
-            <div className="relative group">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="step-number group-hover:scale-110 transition-transform">
-                  03
-                </div>
-                <div className="hidden md:block flex-1 h-px bg-gray-200"></div>
+            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="home" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                We komen bij u thuis
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Onze IT-student komt langs en gaat rustig aan de slag.
-              </p>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">Gewoon thuis blijven</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">U hoeft nergens naartoe. Wij komen bij u aan de keukentafel en lossen het ter plekke op.</p>
+              </div>
             </div>
 
-            {/* Step 4 */}
-            <div className="relative group">
-              <div className="flex items-center gap-4 mb-6">
-                <div className="step-number-done group-hover:scale-110 transition-transform">
-                  <Icon name="check" className="w-7 h-7" strokeWidth={2.5} />
-                </div>
+            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="shield" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Alles werkt weer
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                U kunt weer verder. Betalen doet u pas achteraf — via pin, contant of Tikkie.
-              </p>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">Betrouwbaar en veilig</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">KvK-geregistreerd, verzekerd en gescreend. Uw gegevens en apparatuur zijn in goede handen.</p>
+              </div>
             </div>
+          </div>
+
+          {/* CTA */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <Link href="/afspraak-maken" className="btn-primary">
+              Hulp aanvragen
+              <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
+            </Link>
+            <a href="tel:+31858002006" className="btn-secondary">
+              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
+              Bel 085-8002006
+            </a>
           </div>
         </div>
       </section>
 
       {/* 5. Pricing */}
       <PricingSection />
-
-      {/* Content section - Premium SEO */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-16 items-start">
-            {/* Left Column - Main Content */}
-            <div>
-              <span className="section-label">Waarom wij</span>
-              <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-8">
-                Computerhulp bij u thuis
-              </h2>
-              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
-                <p>
-                  Doet uw computer, laptop, printer of WiFi niet wat u wilt? Dan komen wij gewoon bij u thuis. U hoeft nergens naartoe — wij regelen het aan uw keukentafel.
-                </p>
-                <p>
-                  Wij helpen mensen in heel Zuid-Holland. Of u nu in Den Haag, Rotterdam, Leiden, Delft of Zoetermeer woont — meestal zijn we binnen 24 uur bij u.
-                </p>
-              </div>
-            </div>
-
-            {/* Right Column - Benefits */}
-            <div className="bg-gray-50 rounded-3xl p-8 sm:p-10">
-              <h3 className="text-2xl font-bold text-gray-900 mb-8">
-                Uw voordelen
-              </h3>
-              <ul className="space-y-6">
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">Gewoon thuis blijven</div>
-                    <div className="text-gray-600">U hoeft nergens naartoe — wij komen bij u thuis.</div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">Snel geregeld</div>
-                    <div className="text-gray-600">Meestal is het probleem in één bezoek opgelost.</div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">Rustige uitleg</div>
-                    <div className="text-gray-600">We nemen de tijd om alles duidelijk uit te leggen.</div>
-                  </div>
-                </li>
-                <li className="flex items-start gap-4">
-                  <div className="w-10 h-10 bg-gray-900 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-gray-900 mb-1">€10 voorrijkosten</div>
-                    <div className="text-gray-600">In heel Zuid-Holland, met slechts €10 voorrijkosten.</div>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Testimonials - Swipeable Carousel */}
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
@@ -575,6 +486,18 @@ export default function ComputerhulpAanHuisPage() {
           </header>
 
           <TestimonialsCarousel testimonials={testimonials} />
+
+          {/* CTA na testimonials */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <Link href="/afspraak-maken" className="btn-primary">
+              Ook geholpen worden?
+              <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
+            </Link>
+            <a href="tel:+31858002006" className="btn-secondary">
+              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
+              Bel 085-8002006
+            </a>
+          </div>
         </div>
       </section>
 
@@ -616,9 +539,9 @@ export default function ComputerhulpAanHuisPage() {
             ].map((faq, idx) => (
               <details
                 key={idx}
-                className="group bg-gray-50 rounded-2xl border border-gray-200 overflow-hidden"
+                className="group faq-item"
               >
-                <summary className="flex items-center justify-between cursor-pointer p-6 font-semibold text-lg text-gray-900 hover:bg-gray-100 transition-colors">
+                <summary className="faq-summary">
                   {faq.q}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
                 </summary>
@@ -689,59 +612,38 @@ export default function ComputerhulpAanHuisPage() {
       {/* 7. Extra benefits / reassurance */}
       <ExtraBenefitsSection />
 
-      {/* Final CTA - Premium */}
-      <section className="py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="relative overflow-hidden bg-gray-900 rounded-[2.5rem] px-8 py-16 sm:px-16 sm:py-24">
-            {/* Background Pattern */}
-            <div className="absolute inset-0 opacity-10">
-              <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)', backgroundSize: '32px 32px'}}></div>
-            </div>
-
-            {/* Glow Effect */}
-            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-gradient-to-b from-white/10 to-transparent rounded-full blur-3xl"></div>
-
-            <div className="relative text-center">
-              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-                Kunnen wij u ergens mee helpen?
-              </h2>
-              <p className="text-xl text-gray-400 mb-12 max-w-2xl mx-auto">
-                Bel ons gerust of stuur een berichtje. We komen graag bij u langs.
-              </p>
-
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
-                <Link
-                  href="/afspraak-maken"
-                  className="inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-100 text-gray-900 px-10 py-5 rounded-full font-semibold text-lg transition-all hover:scale-105 hover:shadow-2xl hover:shadow-white/20"
-                >
-                  Hulp aanvragen
-                  <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
-                </Link>
-
-                <a
-                  href="tel:+31858002006"
-                  className="inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-10 py-5 rounded-full font-semibold text-lg border-2 border-white/30 hover:border-white/60 transition-all"
-                >
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                  Bel 085-8002006
-                </a>
-              </div>
-
-              <div className="flex flex-wrap justify-center gap-6 text-sm text-gray-500">
-                <span className="flex items-center gap-2">
-                  <Icon name="check-circle" className="w-4 h-4 text-green-500" />
-                  7 dagen per week
-                </span>
-                <span className="flex items-center gap-2">
-                  <Icon name="check-circle" className="w-4 h-4 text-green-500" />
-                  Ook avonden
-                </span>
-                <span className="flex items-center gap-2">
-                  <Icon name="check-circle" className="w-4 h-4 text-green-500" />
-                  Binnen 24 uur geholpen
-                </span>
-              </div>
-            </div>
+      {/* Final CTA */}
+      <section className="cta-section-blue" aria-label="Contact opnemen">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Kunnen wij u ergens mee helpen?
+          </h2>
+          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            Bel ons gerust of stuur een berichtje. We komen graag bij u langs in Zuid-Holland.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <Link href="/afspraak-maken" className="btn-cta-white">
+              Afspraak Maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
+            </Link>
+            <a href="tel:+31858002006" className="btn-cta-dark">
+              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
+              Bel 085-8002006
+            </a>
+          </div>
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
+              7 dagen per week
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
+              Ook avonden
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
+              Binnen 24 uur geholpen
+            </span>
           </div>
         </div>
       </section>
