@@ -245,7 +245,9 @@ export const services = [
   'televisie-radio',
   'smart-home-domotica',
   'dataherstel-backup',
-  'laptop-computer-reparatie'
+  'laptop-computer-reparatie',
+  'laptop-laten-herstellen',
+  'monteur-aan-huis'
 ] as const
 
 export type ServiceSlug = typeof services[number]
