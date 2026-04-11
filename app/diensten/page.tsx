@@ -217,7 +217,7 @@ export default function DienstenPage() {
                   'Alle diensten dezelfde prijs',
                   'Diagnose ter plekke inbegrepen',
                   'Betalen na afloop',
-                  'Pin, contant of Tikkie',
+                  'Pin of Tikkie',
                   'Ook avonden en weekenden'
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">

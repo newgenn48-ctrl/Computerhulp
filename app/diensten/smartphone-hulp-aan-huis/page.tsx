@@ -180,7 +180,7 @@ const faqData = {
       name: 'Wat kost computerhulp aan huis in Zuid-Holland?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Onze computerhulp aan huis kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. Betalen kan na afloop via pin, contant of Tikkie.'
+        text: 'Onze computerhulp aan huis kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. Betalen kan na afloop via pin of Tikkie.'
       }
     },
     {
@@ -516,7 +516,7 @@ export default function SmartphoneHulpAanHuisPage() {
           <div className="space-y-4">
             {[
               { q: 'Hoe snel kunnen jullie langskomen?', a: 'Meestal staan we binnen een dag bij u aan de deur. Heeft u haast? Dan proberen we vaak nog dezelfde dag langs te komen. We zijn elke dag bereikbaar, ook in de avond.' },
-              { q: 'Wat kost het?', a: 'We rekenen €14,99 per kwartier, met een minimum van drie kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin, contant of Tikkie.' },
+              { q: 'Wat kost het?', a: 'We rekenen €14,99 per kwartier, met een minimum van drie kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin of Tikkie.' },
               { q: 'Waar kunnen jullie mee helpen?', a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, WiFi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.' },
               { q: 'Komen jullie ook in mijn woonplaats?', a: 'Wij komen in heel Zuid-Holland bij u thuis. Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en meer dan 50 andere gemeenten. Overal €10 voorrijkosten.' },
               { q: 'Moet ik iets voorbereiden?', a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele wachtwoorden alvast klaar. Verder nemen wij alles mee wat nodig is.' },

@@ -1,18 +1,14 @@
 'use client'
 
-import { useState, useCallback } from 'react'
+import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
 
 const validationRules: Record<string, { required: string; pattern?: [RegExp, string]; minLength?: [number, string] }> = {
   naam: { required: 'Naam is verplicht', minLength: [2, 'Naam moet minimaal 2 karakters bevatten'] },
   telefoon: { required: 'Telefoonnummer is verplicht', pattern: [/^[\d\s\-\+\(\)]{10,}$/, 'Voer een geldig telefoonnummer in'] },
-  email: { required: 'E-mail is verplicht', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
-  straat: { required: 'Straatnaam is verplicht', minLength: [2, 'Straatnaam moet minimaal 2 karakters bevatten'] },
-  huisnummer: { required: 'Huisnummer is verplicht' },
-  postcode: { required: 'Postcode is verplicht', pattern: [/^\d{4}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2514 JG)'] },
-  plaats: { required: 'Plaats is verplicht', minLength: [2, 'Plaats moet minimaal 2 karakters bevatten'] },
-  probleem: { required: 'Beschrijf uw probleem', minLength: [10, 'Beschrijf uw probleem iets uitgebreider (minimaal 10 karakters)'] },
+  email: { required: 'E-mailadres is verplicht', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
+  probleem: { required: 'Beschrijf kort uw probleem', minLength: [10, 'Beschrijf uw probleem iets uitgebreider'] },
 }
 
 function validate(name: string, value: string): string {
@@ -27,14 +23,11 @@ function validate(name: string, value: string): string {
 
 export default function AfspraakForm() {
   const router = useRouter()
-  const [formData, setFormData] = useState({
-    naam: '', telefoon: '', email: '', straat: '', huisnummer: '', postcode: '', plaats: '', probleem: ''
-  })
+  const [formData, setFormData] = useState({ naam: '', telefoon: '', email: '', probleem: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-  const [isLookingUp, setIsLookingUp] = useState(false)
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -48,40 +41,6 @@ export default function AfspraakForm() {
     if (touched[name]) {
       setErrors(prev => ({ ...prev, [name]: validate(name, value) }))
     }
-  }
-
-  const lookupAddress = useCallback(async (postcode: string, huisnummer: string) => {
-    const pc = postcode.trim().replace(/\s/g, '')
-    const nr = huisnummer.trim().replace(/[^0-9]/g, '')
-    if (!/^\d{4}[A-Za-z]{2}$/.test(pc) || !nr) return
-
-    setIsLookingUp(true)
-    try {
-      const res = await fetch(`https://postcode.tech/api/v1/postcode/full?postcode=${pc}&number=${nr}`, {
-        headers: { 'Authorization': 'Bearer b1dc79fe-7aed-4a25-be99-43e0e0e9c8e4' }
-      })
-      if (res.ok) {
-        const data = await res.json()
-        if (data.street && data.city) {
-          setFormData(prev => ({ ...prev, straat: data.street, plaats: data.city }))
-          setErrors(prev => ({ ...prev, straat: '', plaats: '' }))
-        }
-      }
-    } catch {
-      // Silently fail — user can fill in manually
-    } finally {
-      setIsLookingUp(false)
-    }
-  }, [])
-
-  const handlePostcodeBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    handleBlur(e)
-    lookupAddress(e.target.value, formData.huisnummer)
-  }
-
-  const handleHuisnummerBlur = (e: React.FocusEvent<HTMLInputElement>) => {
-    handleBlur(e)
-    lookupAddress(formData.postcode, e.target.value)
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -103,11 +62,17 @@ export default function AfspraakForm() {
     setSubmitStatus('idle')
 
     try {
+      const controller = new AbortController()
+      const timeoutId = setTimeout(() => controller.abort(), 10000)
+
       const response = await fetch('/api/afspraak', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(formData),
+        signal: controller.signal,
       })
+      clearTimeout(timeoutId)
+
       if (response.ok) {
         setSubmitStatus('success')
         router.push('/afspraak-bevestiging')
@@ -122,26 +87,14 @@ export default function AfspraakForm() {
   }
 
   const inputClass = (field: string) =>
-    `w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
+    `w-full px-4 py-4 border-2 rounded-xl text-base focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
       touched[field] && errors[field] ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-blue-500'
     }`
 
   return (
     <>
-      {submitStatus === 'success' && (
-        <div role="alert" aria-live="polite" className="mb-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg">
-          <div className="flex items-center">
-            <Icon name="check-circle-outline" className="w-6 h-6 text-green-500 mr-3" strokeWidth={2} aria-hidden="true" />
-            <div>
-              <h3 className="text-green-800 font-semibold">Aanvraag verzonden!</h3>
-              <p className="text-green-700 mt-1">We nemen binnen enkele uren contact met u op om de afspraak te bevestigen.</p>
-            </div>
-          </div>
-        </div>
-      )}
-
       {submitStatus === 'error' && (
-        <div role="alert" aria-live="assertive" className="mb-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg">
+        <div role="alert" aria-live="assertive" className="alert-error">
           <div className="flex items-center">
             <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
             <div>
@@ -152,62 +105,29 @@ export default function AfspraakForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} noValidate className="space-y-6">
-        <div className="grid sm:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="naam" className="form-label">Naam <span aria-hidden="true">*</span></label>
-            <input type="text" id="naam" name="naam" value={formData.naam} onChange={handleChange} onBlur={handleBlur} required aria-required="true" className={inputClass('naam')} placeholder="Voor- en achternaam" aria-invalid={touched.naam && errors.naam ? 'true' : 'false'} aria-describedby={touched.naam && errors.naam ? 'naam-error' : undefined} />
-            {touched.naam && errors.naam && <p id="naam-error" role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>}
-          </div>
-          <div>
-            <label htmlFor="telefoon" className="form-label">Telefoonnummer <span aria-hidden="true">*</span></label>
-            <input type="tel" id="telefoon" name="telefoon" value={formData.telefoon} onChange={handleChange} onBlur={handleBlur} className={inputClass('telefoon')} placeholder="06-12345678" aria-invalid={touched.telefoon && errors.telefoon ? 'true' : 'false'} aria-describedby={touched.telefoon && errors.telefoon ? 'telefoon-error' : undefined} />
-            {touched.telefoon && errors.telefoon && <p id="telefoon-error" role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>}
-          </div>
+      <form onSubmit={handleSubmit} noValidate className="space-y-5">
+        <div>
+          <label htmlFor="naam" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Uw naam <span className="text-red-500" aria-hidden="true">*</span></label>
+          <input type="text" id="naam" name="naam" value={formData.naam} onChange={handleChange} onBlur={handleBlur} required aria-required="true" className={inputClass('naam')} placeholder="Voor- en achternaam" aria-invalid={touched.naam && errors.naam ? 'true' : 'false'} disabled={isSubmitting} />
+          {touched.naam && errors.naam && <p role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>}
         </div>
 
         <div>
-          <label htmlFor="email" className="form-label">E-mail <span aria-hidden="true">*</span></label>
-          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} onBlur={handleBlur} className={inputClass('email')} placeholder="uw@email.nl" aria-invalid={touched.email && errors.email ? 'true' : 'false'} aria-describedby={touched.email && errors.email ? 'email-error' : undefined} />
-          {touched.email && errors.email && <p id="email-error" role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>}
-        </div>
-
-        <div className="grid sm:grid-cols-2 gap-6">
-          <div>
-            <label htmlFor="postcode" className="form-label">Postcode <span aria-hidden="true">*</span></label>
-            <input type="text" id="postcode" name="postcode" value={formData.postcode} onChange={handleChange} onBlur={handlePostcodeBlur} className={inputClass('postcode')} placeholder="2514 JG" aria-invalid={touched.postcode && errors.postcode ? 'true' : 'false'} aria-describedby={touched.postcode && errors.postcode ? 'postcode-error' : undefined} />
-            {touched.postcode && errors.postcode && <p id="postcode-error" role="alert" className="mt-1 text-sm text-red-600">{errors.postcode}</p>}
-          </div>
-          <div>
-            <label htmlFor="huisnummer" className="form-label">Huisnummer <span aria-hidden="true">*</span></label>
-            <input type="text" id="huisnummer" name="huisnummer" value={formData.huisnummer} onChange={handleChange} onBlur={handleHuisnummerBlur} className={inputClass('huisnummer')} placeholder="123A" aria-invalid={touched.huisnummer && errors.huisnummer ? 'true' : 'false'} aria-describedby={touched.huisnummer && errors.huisnummer ? 'huisnummer-error' : undefined} />
-            {touched.huisnummer && errors.huisnummer && <p id="huisnummer-error" role="alert" className="mt-1 text-sm text-red-600">{errors.huisnummer}</p>}
-          </div>
-        </div>
-
-        <div className="grid sm:grid-cols-3 gap-6">
-          <div className="sm:col-span-2">
-            <label htmlFor="straat" className="form-label">
-              Straatnaam <span aria-hidden="true">*</span>
-              {isLookingUp && <span className="ml-2 text-blue-500 text-sm font-normal">Opzoeken...</span>}
-            </label>
-            <input type="text" id="straat" name="straat" value={formData.straat} onChange={handleChange} onBlur={handleBlur} className={inputClass('straat')} placeholder="Wordt automatisch ingevuld" aria-invalid={touched.straat && errors.straat ? 'true' : 'false'} aria-describedby={touched.straat && errors.straat ? 'straat-error' : undefined} />
-            {touched.straat && errors.straat && <p id="straat-error" role="alert" className="mt-1 text-sm text-red-600">{errors.straat}</p>}
-          </div>
-          <div>
-            <label htmlFor="plaats" className="form-label">
-              Plaats <span aria-hidden="true">*</span>
-              {isLookingUp && <span className="ml-2 text-blue-500 text-sm font-normal">Opzoeken...</span>}
-            </label>
-            <input type="text" id="plaats" name="plaats" value={formData.plaats} onChange={handleChange} onBlur={handleBlur} className={inputClass('plaats')} placeholder="Wordt automatisch ingevuld" aria-invalid={touched.plaats && errors.plaats ? 'true' : 'false'} aria-describedby={touched.plaats && errors.plaats ? 'plaats-error' : undefined} />
-            {touched.plaats && errors.plaats && <p id="plaats-error" role="alert" className="mt-1 text-sm text-red-600">{errors.plaats}</p>}
-          </div>
+          <label htmlFor="telefoon" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Telefoonnummer <span className="text-red-500" aria-hidden="true">*</span></label>
+          <input type="tel" id="telefoon" name="telefoon" value={formData.telefoon} onChange={handleChange} onBlur={handleBlur} required aria-required="true" className={inputClass('telefoon')} placeholder="06-12345678" aria-invalid={touched.telefoon && errors.telefoon ? 'true' : 'false'} disabled={isSubmitting} />
+          {touched.telefoon && errors.telefoon && <p role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>}
         </div>
 
         <div>
-          <label htmlFor="probleem" className="form-label">Wat is het probleem? <span aria-hidden="true">*</span></label>
-          <textarea id="probleem" name="probleem" value={formData.probleem} onChange={handleChange} onBlur={handleBlur} rows={5} className={`${inputClass('probleem')} resize-none`} placeholder="Beschrijf kort wat het probleem is, bijv: 'Mijn computer start niet op' of 'WiFi werkt niet meer'" aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'} aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined} />
-          {touched.probleem && errors.probleem && <p id="probleem-error" role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>}
+          <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">E-mail <span className="text-red-500" aria-hidden="true">*</span></label>
+          <input type="email" id="email" name="email" value={formData.email} onChange={handleChange} onBlur={handleBlur} required aria-required="true" className={inputClass('email')} placeholder="uw@email.nl" aria-invalid={touched.email && errors.email ? 'true' : 'false'} disabled={isSubmitting} />
+          {touched.email && errors.email && <p role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Wat is het probleem? <span className="text-red-500" aria-hidden="true">*</span></label>
+          <textarea id="probleem" name="probleem" value={formData.probleem} onChange={handleChange} onBlur={handleBlur} rows={4} className={`${inputClass('probleem')} resize-none`} placeholder="Bijv: 'Mijn laptop start niet op' of 'WiFi werkt niet meer'" aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'} disabled={isSubmitting} />
+          {touched.probleem && errors.probleem && <p role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>}
         </div>
 
         <button type="submit" disabled={isSubmitting} className="btn-submit">
@@ -220,12 +140,12 @@ export default function AfspraakForm() {
               Bezig met verzenden...
             </span>
           ) : (
-            'Afspraak Aanvragen'
+            'Hulp Vragen'
           )}
         </button>
 
         <p className="text-sm text-gray-500 text-center">
-          We nemen binnen enkele uren contact met u op om de afspraak te bevestigen
+          We bellen u binnen enkele uren terug om de afspraak te bevestigen
         </p>
       </form>
     </>

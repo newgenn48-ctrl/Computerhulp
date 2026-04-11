@@ -4,15 +4,14 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/PricingSection'
-import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 
 export const metadata: Metadata = {
-  title: 'Student aan Huis | IT-Studenten Binnen 24u',
-  description: 'Student aan huis voor computerhulp in Zuid-Holland. Geduldige IT-studenten binnen 24 uur bij u thuis. €10 voorrijkosten, ook in het weekend. Bel 085-8002006.',
+  title: 'Student aan Huis Zuid-Holland | IT-Hulp Binnen 24u bij u Thuis',
+  description: 'IT-student aan huis in Zuid-Holland. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.',
   openGraph: {
-    title: 'Student aan Huis | IT-Studenten Binnen 24u',
-    description: 'Jonge, geduldige IT-studenten binnen 24u bij u thuis. Geduldig uitleggen, rustig helpen. Vanaf €44,97. Bel 085-8002006',
+    title: 'Student aan Huis Zuid-Holland | IT-Hulp Binnen 24u bij u Thuis',
+    description: 'IT-student aan huis in Zuid-Holland. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.',
     type: 'website',
     url: 'https://computerhulpzh.nl/student-aan-huis',
   },
@@ -84,6 +83,21 @@ const structuredData = {
           '@type': 'City',
           name: 'Leiden',
           '@id': 'https://www.wikidata.org/wiki/Q43631'
+        },
+        {
+          '@type': 'City',
+          name: 'Delft',
+          '@id': 'https://www.wikidata.org/wiki/Q33433'
+        },
+        {
+          '@type': 'City',
+          name: 'Zoetermeer',
+          '@id': 'https://www.wikidata.org/wiki/Q9927'
+        },
+        {
+          '@type': 'City',
+          name: 'Dordrecht',
+          '@id': 'https://www.wikidata.org/wiki/Q26421'
         }
       ]
     },
@@ -141,7 +155,7 @@ const structuredData = {
         '@id': 'https://computerhulpzh.nl/#primaryImage'
       },
       datePublished: '2024-01-01',
-      dateModified: '2026-01-02',
+      dateModified: '2026-04-10',
       inLanguage: 'nl-NL'
     },
     {
@@ -272,7 +286,7 @@ export default function StudentAanHuisPage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Student <span className="text-blue-600">aan Huis</span>
+              Student aan Huis <span className="text-blue-600">Zuid-Holland</span>
             </h1>
 
             <p className="hero-description">
@@ -283,32 +297,26 @@ export default function StudentAanHuisPage() {
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Binnen 24 uur geholpen
+                Binnen 24 uur bij u thuis
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betrouwbaar & vakkundig
+                Geduldig en duidelijk
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betaalbare tarieven
+                7 dagen per week
               </span>
             </div>
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/afspraak-maken"
-                className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
-              >
+              <Link href="/afspraak-maken" className="btn-primary">
                 Hulp aanvragen
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+                <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
               </Link>
-              <a
-                href="tel:+31858002006"
-                className="btn-secondary"
-              >
-                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+              <a href="tel:+31858002006" className="btn-secondary">
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                 Bel 085-8002006
               </a>
             </div>
@@ -318,231 +326,166 @@ export default function StudentAanHuisPage() {
 
 
 
-      {/* 3. Services overview */}
+      {/* Zo werkt het */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="section-title">Zo werkt het</h2>
+          </div>
+
+          <div className="flex flex-col gap-4 sm:hidden">
+            {[
+              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
+              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
+              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">{item.step}</div>
+                <div>
+                  <div className="font-bold text-gray-900">{item.title}</div>
+                  <div className="text-sm sm:text-base text-gray-600">{item.sub}</div>
+                </div>
+                {idx < 2 && <Icon name="arrow-right" className="w-5 h-5 text-gray-300 ml-auto flex-shrink-0" strokeWidth={2} />}
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden sm:grid sm:grid-cols-3 gap-8">
+            {[
+              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
+              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
+              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">{item.step}</div>
+                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Services */}
       <ServicesSection
-        title="Waar we u mee helpen"
-        description="Van een simpele vraag tot een lastig probleem — onze IT-studenten helpen u graag"
-        showFeatures={true}
+        title="Onze diensten"
+        showFeatures={false}
         limitServices={6}
         showAllButton={true}
       />
 
-      {/* 4. How it works */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* Pricing */}
+      <PricingSection />
+
+      {/* Waarom klanten voor ons kiezen */}
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="section-title">
-              Zo werkt het
-            </h2>
-            <p className="section-subtitle">
-              In vier stappen — simpel en overzichtelijk
-            </p>
+            <h2 className="section-title">Waarom een student aan huis kiezen?</h2>
           </div>
 
-          <div className="grid md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="step-number-round mx-auto mb-6">
-                1
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
+            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="clock" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                U belt of mailt ons
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Vertel kort wat er aan de hand is. Gewoon even bellen of een berichtje sturen.
-              </p>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">Binnen 24 uur bij u thuis</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Geen weken wachten. Meestal al de volgende dag.</p>
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="step-number-round mx-auto mb-6">
-                2
+            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="users" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                We spreken een moment af
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Samen zoeken we een tijdstip dat u uitkomt. Meestal kan het al de volgende dag.
-              </p>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">Geduldige IT-studenten</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Nemen de tijd en leggen alles uit in gewone taal.</p>
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="step-number-round mx-auto mb-6">
-                3
+            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="home" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                We komen bij u thuis
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                Onze IT-student komt langs en gaat rustig aan de slag. U kijkt gewoon mee.
-              </p>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">Gewoon thuis blijven</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Wij komen bij u thuis en lossen het ter plekke op.</p>
+              </div>
             </div>
 
-            <div className="text-center">
-              <div className="w-20 h-20 bg-gradient-to-br from-green-600 to-green-700 rounded-full flex items-center justify-center text-white text-4xl mx-auto mb-6 shadow-xl">
-                ✓
+            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
+              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                <Icon name="shield" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                Alles werkt weer
-              </h3>
-              <p className="text-gray-600 leading-relaxed">
-                U kunt weer verder. Betalen doet u pas achteraf — via pin, contant of Tikkie.
-              </p>
+              <div>
+                <h3 className="font-bold text-gray-900 mb-1">Betrouwbaar en veilig</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">KvK-geregistreerd en verzekerd. U bent in goede handen.</p>
+              </div>
             </div>
+          </div>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+            <Link href="/afspraak-maken" className="btn-primary">
+              Ook geholpen worden?
+              <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
+            </Link>
+            <a href="tel:+31858002006" className="btn-secondary">
+              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
+              Bel 085-8002006
+            </a>
           </div>
         </div>
       </section>
 
-      {/* 5. Pricing */}
-      <PricingSection benefits={[
-        'Slechts €10 voorrijkosten in heel Zuid-Holland',
-        'Ook \'s avonds en in het weekend beschikbaar',
-        'Betalen via pin, contant of Tikkie'
-      ]} />
-
-      {/* 5.5 SEO Content Section */}
-      <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Waarom mensen ons bellen
-          </h2>
-
-          <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 leading-relaxed mb-6">
-              <strong>Student aan huis</strong> — een IT-student komt bij u thuis voor hulp met uw computer, laptop of internet. Onze studenten zijn geduldig, nemen de tijd en leggen alles rustig uit in gewone taal. In heel Zuid-Holland.
-            </p>
-
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-              Wat maakt onze studenten anders?
-            </h3>
-
-            <p className="text-gray-700 leading-relaxed mb-6">
-              Onze IT-studenten volgen een technische opleiding en weten hoe de nieuwste apparaten en software werken. Ze nemen de tijd, leggen alles rustig uit en helpen u op een manier die bij u past. Of het nu gaat om uw smartphone, laptop of thuisnetwerk.
-            </p>
-
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start gap-3">
-                <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} />
-                <span className="text-gray-700">
-                  <strong>Actuele kennis:</strong> Onze studenten weten hoe de nieuwste apparaten en apps werken
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} />
-                <span className="text-gray-700">
-                  <strong>Rustig uitleggen:</strong> Ze nemen de tijd en leggen alles uit in gewone taal
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} />
-                <span className="text-gray-700">
-                  <strong>Betaalbaar:</strong> €14,99 per kwartier, €10 voorrijkosten in heel Zuid-Holland
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} />
-                <span className="text-gray-700">
-                  <strong>Overal in Zuid-Holland:</strong> Van Den Haag tot Dordrecht, van Leiden tot Gouda
-                </span>
-              </li>
-              <li className="flex items-start gap-3">
-                <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} />
-                <span className="text-gray-700">
-                  <strong>Flexibel:</strong> Ook &apos;s avonds en in het weekend, wanneer het u uitkomt
-                </span>
-              </li>
-            </ul>
-
-            <p className="text-gray-700 leading-relaxed">
-              Kunnen wij u helpen? Bel gerust <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">085-8002006</a> of
-              <Link href="/afspraak-maken" className="text-blue-600 hover:text-blue-800 font-semibold"> maak een afspraak online</Link>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials - Swipeable Carousel */}
-      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+      {/* Testimonials */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
-            </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
+            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
+            <p className="section-subtitle">Wij helpen dagelijks mensen in heel Zuid-Holland</p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
           </header>
-
           <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 
-      {/* FAQ Section - Visible for SEO */}
-      <section className="py-16 bg-white">
+      {/* FAQ */}
+      <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="section-title">
-              Veelgestelde vragen
-            </h2>
-            <p className="section-subtitle">
-              Dit krijgen wij vaak gevraagd
-            </p>
+            <h2 className="section-title">Veelgestelde vragen</h2>
           </div>
-
           <div className="space-y-4">
             {[
-              {
-                q: 'Wat is student aan huis?',
-                a: 'Een IT-student komt bij u thuis om te helpen met uw computer, laptop of internet. Onze studenten zijn geduldig, nemen de tijd en leggen alles rustig uit.'
-              },
-              {
-                q: 'Wat is het verschil met gewone computerhulp?',
-                a: 'Onze studenten volgen een technische opleiding en weten hoe de nieuwste apparaten werken. Ze nemen de tijd om alles uit te leggen. Dezelfde kwaliteit en prijs, maar met een frisse aanpak.'
-              },
-              {
-                q: 'Wat kost een student aan huis?',
-                a: 'U betaalt €14,99 per kwartier, met een minimum van drie kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. Betalen doet u achteraf — via pin, contant of Tikkie.'
-              },
-              {
-                q: 'Weten de studenten wel genoeg?',
-                a: 'Ja, onze IT-studenten zijn goed opgeleid en hebben ervaring. Ze studeren IT of Informatica en weten hoe de nieuwste apparaten en software werken.'
-              },
-              {
-                q: 'Waar komen jullie?',
-                a: 'In heel Zuid-Holland: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en meer dan 50 andere gemeenten. Voorrijden kost slechts €10.'
-              }
+              { q: 'Wat is student aan huis?', a: 'Een IT-student komt bij u thuis om te helpen met uw computer, laptop of internet. Onze studenten zijn geduldig, nemen de tijd en leggen alles rustig uit.' },
+              { q: 'Wat is het verschil met gewone computerhulp?', a: 'Onze studenten volgen een technische opleiding en weten hoe de nieuwste apparaten werken. Ze nemen de tijd om alles uit te leggen. Dezelfde kwaliteit en prijs, maar met een frisse aanpak.' },
+              { q: 'Wat kost een student aan huis?', a: 'U betaalt €14,99 per kwartier, met een minimum van drie kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. Betalen doet u achteraf via pin of Tikkie.' },
+              { q: 'Weten de studenten wel genoeg?', a: 'Ja, onze IT-studenten zijn goed opgeleid en hebben ervaring. Ze studeren IT of Informatica en weten hoe de nieuwste apparaten en software werken.' },
+              { q: 'Waar komen jullie?', a: 'In heel Zuid-Holland: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en meer dan 50 andere gemeenten. Voorrijden kost slechts €10.' },
             ].map((faq, idx) => (
-              <details
-                key={idx}
-                className="group faq-item"
-              >
+              <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
                   {faq.q}
-                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} />
                 </summary>
-                <div className="faq-answer">
-                  {faq.a}
-                </div>
+                <div className="faq-answer">{faq.a}</div>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Werkgebied Section met interne links */}
-      <section className="py-16 bg-gray-50">
+      {/* Werkgebied */}
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="section-title">
-              Waar we komen
-            </h2>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Wij helpen mensen in meer dan 50 gemeenten in Zuid-Holland
-            </p>
+            <h2 className="section-title">Waar we komen</h2>
+            <p className="section-subtitle">Wij helpen mensen in meer dan 50 gemeenten in Zuid-Holland. Voorrijden kost slechts €10.</p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {[
               { name: 'Den Haag', slug: 'den-haag' },
               { name: 'Rotterdam', slug: 'rotterdam' },
@@ -560,19 +503,16 @@ export default function StudentAanHuisPage() {
               <Link
                 key={city.slug}
                 href={`/student-aan-huis-${city.slug}`}
-                className="flex items-center gap-3 bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group"
+                className="flex items-center gap-2 sm:gap-3 bg-white rounded-xl p-3 sm:p-4 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group"
               >
-                <Icon name="location-pin" className="w-5 h-5 text-blue-600" strokeWidth={2} />
-                <span className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">{city.name}</span>
+                <Icon name="location-pin" className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
+                <span className="font-medium text-sm sm:text-base text-gray-900 group-hover:text-blue-600 transition-colors">{city.name}</span>
               </Link>
             ))}
           </div>
 
-          <div className="text-center mt-10">
-            <Link
-              href="/locaties"
-              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg"
-            >
+          <div className="text-center mt-8">
+            <Link href="/locaties" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
               Bekijk alle locaties
               <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
             </Link>
@@ -580,39 +520,34 @@ export default function StudentAanHuisPage() {
         </div>
       </section>
 
-      {/* 7. Extra benefits / reassurance */}
-      <ExtraBenefitsSection />
-
-      {/* 8. Final CTA */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-blue-50">
+      {/* Final CTA */}
+      <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Kunnen wij u helpen?
-          </h2>
-          <p className="text-xl text-gray-600 mb-10">
-            Bel ons gerust of stuur een berichtje. We komen graag bij u langs.
-          </p>
-
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Kunnen wij u helpen?</h2>
+          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">Bel ons gerust of stuur een berichtje. We komen graag bij u langs.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link
-              href="/afspraak-maken"
-              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-2xl shadow-xl shadow-blue-600/25 hover:scale-105 transition-all"
-            >
-              <Icon name="chat" className="w-8 h-8" strokeWidth={2} />
-              Hulp vragen
+            <Link href="/afspraak-maken" className="btn-cta-white">
+              Afspraak Maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
-
-            <a
-              href="tel:+31858002006"
-              className="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-10 py-5 rounded-xl font-bold text-xl shadow-lg hover:scale-105 transition-all border-2 border-blue-200"
-            >
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+            <a href="tel:+31858002006" className="btn-cta-dark">
+              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
               Bel 085-8002006
             </a>
           </div>
-
-          <div className="text-gray-500 text-sm">
-            Ma-Zo: 08:00 - 22:00 • Ook avonden en weekenden • €10 voorrijkosten
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
+              7 dagen per week
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
+              Ook avonden
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
+              Binnen 24 uur geholpen
+            </span>
           </div>
         </div>
       </section>

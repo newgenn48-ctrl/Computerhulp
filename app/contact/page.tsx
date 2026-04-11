@@ -1,494 +1,165 @@
-'use client'
-
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
+import { Metadata } from 'next'
+import Link from 'next/link'
 import { Icon } from '@/components/icons'
 
+export const metadata: Metadata = {
+  title: 'Contact | Computerhulp Zuid-Holland | 085-8002006',
+  description: 'Neem contact op met Computerhulp Zuid-Holland. Bel 085-8002006 (ma-zo 08:00-22:00), mail info@computerhulpzh.nl of maak online een afspraak.',
+  openGraph: {
+    title: 'Contact | Computerhulp Zuid-Holland',
+    description: 'Bel 085-8002006, mail info@computerhulpzh.nl of maak online een afspraak. 7 dagen per week bereikbaar.',
+    type: 'website',
+    url: 'https://computerhulpzh.nl/contact',
+  },
+  alternates: {
+    canonical: 'https://computerhulpzh.nl/contact',
+  },
+}
+
 export default function ContactPage() {
-  const router = useRouter()
-  const [formData, setFormData] = useState({
-    naam: '',
-    telefoon: '',
-    email: '',
-    plaats: '',
-    probleem: ''
-  })
-  const [errors, setErrors] = useState<Record<string, string>>({})
-  const [touched, setTouched] = useState<Record<string, boolean>>({})
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
-
-  const validateField = (name: string, value: string) => {
-    let error = ''
-
-    switch (name) {
-      case 'naam':
-        if (!value.trim()) {
-          error = 'Vul alstublieft uw naam in'
-        } else if (value.trim().length < 2) {
-          error = 'Naam moet minimaal 2 karakters bevatten'
-        }
-        break
-      case 'email':
-        if (!value.trim()) {
-          error = 'Vul alstublieft uw e-mailadres in'
-        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)) {
-          error = 'Vul een geldig e-mailadres in'
-        }
-        break
-      case 'telefoon':
-        if (!value.trim()) {
-          error = 'Vul alstublieft uw telefoonnummer in'
-        } else if (!/[0-9\s\-\+\(\)]{10,}/.test(value)) {
-          error = 'Vul een geldig telefoonnummer in (minimaal 10 cijfers)'
-        }
-        break
-      case 'plaats':
-        if (!value.trim()) {
-          error = 'Vul alstublieft uw plaats in'
-        }
-        break
-      case 'probleem':
-        if (!value.trim()) {
-          error = 'Beschrijf alstublieft het probleem'
-        } else if (value.trim().length < 10) {
-          error = 'Beschrijving moet minimaal 10 karakters bevatten'
-        }
-        break
-    }
-
-    setErrors(prev => ({ ...prev, [name]: error }))
-    return error
-  }
-
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setTouched(prev => ({ ...prev, [name]: true }))
-    validateField(name, value)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({ ...prev, [name]: value }))
-    if (touched[name]) {
-      validateField(name, value)
-    }
-  }
-
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault()
-
-    const newErrors: Record<string, string> = {}
-    const newTouched: Record<string, boolean> = {}
-
-    const requiredFields = ['naam', 'email', 'telefoon', 'plaats', 'probleem']
-    requiredFields.forEach(field => {
-      newTouched[field] = true
-      const error = validateField(field, formData[field as keyof typeof formData])
-      if (error) newErrors[field] = error
-    })
-
-    setErrors(newErrors)
-    setTouched(newTouched)
-
-    if (Object.keys(newErrors).length === 0) {
-      setIsSubmitting(true)
-      setSubmitStatus('idle')
-
-      try {
-        const response = await fetch('/api/contact', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
-            name: formData.naam,
-            phone: formData.telefoon,
-            email: formData.email,
-            message: `Plaats: ${formData.plaats}\n\n${formData.probleem}`
-          }),
-        })
-
-        if (response.ok) {
-          setSubmitStatus('success')
-          router.push('/afspraak-bevestiging')
-        } else {
-          setSubmitStatus('error')
-        }
-      } catch (error) {
-        console.error('Form submission error:', error)
-        setSubmitStatus('error')
-      } finally {
-        setIsSubmitting(false)
-      }
-    }
-  }
-
   return (
     <div className="pt-24 pb-20">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+      <section className="cta-section-blue py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <h1
-            className="text-4xl sm:text-5xl font-bold mb-4"
-            style={{
-              color: 'white',
-              background: 'none',
-              WebkitTextFillColor: 'white',
-              backgroundClip: 'unset',
-              WebkitBackgroundClip: 'unset'
-            }}
-          >
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
             Neem contact op
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Bel direct of vul het formulier in. We nemen binnen 3 uur contact met u op.
+            We zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur
           </p>
         </div>
       </section>
 
-      {/* Contact Cards */}
+      {/* Contact Opties */}
       <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid md:grid-cols-3 gap-8 mb-16">
-            {/* Telefoon */}
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Bellen */}
             <a
               href="tel:+31858002006"
-              className="group contact-card"
+              className="group contact-card text-center"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center text-white mb-4 mx-auto group-hover:scale-110 transition-transform">
                 <Icon name="phone" className="w-8 h-8" strokeWidth={2} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Bel 085-8002006</h3>
-              <p className="text-gray-600 mb-4">De snelste manier om geholpen te worden</p>
-              <div className="text-2xl font-bold text-blue-600">085-8002006</div>
-              <div className="text-sm text-gray-500 mt-2">Ma-Zo: 08:00 - 22:00</div>
+              <h2 className="text-xl font-bold text-gray-900 mb-2">Bellen</h2>
+              <div className="text-2xl font-bold text-blue-600 mb-1">085-8002006</div>
+              <p className="text-sm text-gray-500">De snelste manier</p>
+              <p className="text-sm text-gray-500">Ma-Zo: 08:00 - 22:00</p>
             </a>
 
-            {/* Email */}
+            {/* WhatsApp */}
+            <a
+              href="https://wa.me/31642548451?text=Hallo!%20Ik%20heb%20een%20vraag%20over%20computerhulp."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group contact-card text-center"
+            >
+              <div className="w-16 h-16 bg-[#25D366] rounded-xl flex items-center justify-center text-white mb-4 mx-auto group-hover:scale-110 transition-transform">
+                <Icon name="whatsapp" className="w-8 h-8" />
+              </div>
+              <h2 className="text-xl font-bold text-gray-900 mb-2">WhatsApp</h2>
+              <div className="text-lg font-bold text-green-600 mb-1">06-42548451</div>
+              <p className="text-sm text-gray-500">Stuur een berichtje</p>
+              <p className="text-sm text-gray-500">Reactie binnen 1 uur</p>
+            </a>
+
+            {/* E-mail */}
             <a
               href="mailto:info@computerhulpzh.nl"
-              className="group contact-card"
+              className="group contact-card text-center"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6 group-hover:scale-110 transition-transform">
+              <div className="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center text-white mb-4 mx-auto group-hover:scale-110 transition-transform">
                 <Icon name="email" className="w-8 h-8" strokeWidth={2} />
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">E-mail Ons</h3>
-              <p className="text-gray-600 mb-4">Voor niet-spoedeisende vragen</p>
-              <div className="text-lg font-semibold text-blue-600 break-all">info@computerhulpzh.nl</div>
-              <div className="text-sm text-gray-500 mt-2">Reactie binnen 24 uur</div>
+              <h2 className="text-xl font-bold text-gray-900 mb-2">E-mail</h2>
+              <div className="text-base font-bold text-blue-600 mb-1 break-all">info@computerhulpzh.nl</div>
+              <p className="text-sm text-gray-500">Voor niet-spoedeisende vragen</p>
+              <p className="text-sm text-gray-500">Reactie binnen 24 uur</p>
             </a>
-
-            {/* Werkgebied */}
-            <div className="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-100">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center text-white mb-6">
-                <Icon name="location-pin" className="w-8 h-8" strokeWidth={2} />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">Werkgebied</h3>
-              <p className="text-gray-600 mb-4">Heel Zuid-Holland</p>
-              <div className="text-sm text-gray-700 space-y-1">
-                <div>• Den Haag</div>
-                <div>• Rotterdam</div>
-                <div>• Leiden</div>
-                <div>• Delft</div>
-                <div>• En omstreken</div>
-              </div>
-            </div>
           </div>
 
-          {/* Contact Form */}
-          <div className="max-w-3xl mx-auto">
-            <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-12">
-              <h2 className="text-3xl font-bold text-gray-900 mb-2 text-center">
-                Afspraak Maken
-              </h2>
-              <p className="text-gray-600 mb-8 text-center">
-                Vul het formulier in en we nemen binnen 3 uur contact met u op
-              </p>
-
-              {/* Success Message */}
-              {submitStatus === 'success' && (
-                <div role="alert" aria-live="polite" className="mb-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg">
-                  <div className="flex items-center">
-                    <Icon name="check-circle-outline" className="w-6 h-6 text-green-500 mr-3" strokeWidth={2} aria-hidden="true" />
-                    <div>
-                      <h3 className="text-green-800 font-semibold">Bedankt voor uw aanvraag!</h3>
-                      <p className="text-green-700 mt-1">We nemen binnen 3 uur contact met u op.</p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* Error Message */}
-              {submitStatus === 'error' && (
-                <div role="alert" aria-live="assertive" className="mb-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg">
-                  <div className="flex items-center">
-                    <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
-                    <div>
-                      <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
-                      <p className="text-red-700 mt-1">Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">085-8002006</a></p>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6" noValidate>
-                <div className="grid sm:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="naam" className="form-label">
-                      Naam <span aria-hidden="true">*</span>
-                    </label>
-                    <input
-                      type="text"
-                      id="naam"
-                      name="naam"
-                      value={formData.naam}
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      aria-required="true"
-                      aria-invalid={touched.naam && !!errors.naam}
-                      aria-describedby={touched.naam && errors.naam ? 'naam-error' : undefined}
-                      className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
-                        touched.naam && errors.naam
-                          ? 'border-red-500 focus:border-red-500'
-                          : 'border-gray-300 focus:border-blue-500'
-                      }`}
-                      placeholder="Uw naam"
-                    />
-                    {touched.naam && errors.naam && (
-                      <p id="naam-error" role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>
-                    )}
-                  </div>
-
-                  <div>
-                    <label htmlFor="telefoon" className="form-label">
-                      Telefoon <span aria-hidden="true">*</span>
-                    </label>
-                    <input
-                      type="tel"
-                      id="telefoon"
-                      name="telefoon"
-                      value={formData.telefoon}
-                      onBlur={handleBlur}
-                      onChange={handleChange}
-                      aria-required="true"
-                      aria-invalid={touched.telefoon && !!errors.telefoon}
-                      aria-describedby={touched.telefoon && errors.telefoon ? 'telefoon-error' : undefined}
-                      className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
-                        touched.telefoon && errors.telefoon
-                          ? 'border-red-500 focus:border-red-500'
-                          : 'border-gray-300 focus:border-blue-500'
-                      }`}
-                      placeholder="06-12345678"
-                    />
-                    {touched.telefoon && errors.telefoon && (
-                      <p id="telefoon-error" role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>
-                    )}
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="email" className="form-label">
-                    E-mail <span aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    aria-required="true"
-                    aria-invalid={touched.email && !!errors.email}
-                    aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
-                      touched.email && errors.email
-                        ? 'border-red-500 focus:border-red-500'
-                        : 'border-gray-300 focus:border-blue-500'
-                    }`}
-                    placeholder="uw@email.nl"
-                  />
-                  {touched.email && errors.email && (
-                    <p id="email-error" role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label htmlFor="plaats" className="form-label">
-                    Plaats <span aria-hidden="true">*</span>
-                  </label>
-                  <input
-                    type="text"
-                    id="plaats"
-                    name="plaats"
-                    value={formData.plaats}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    aria-required="true"
-                    aria-invalid={touched.plaats && !!errors.plaats}
-                    aria-describedby={touched.plaats && errors.plaats ? 'plaats-error' : undefined}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
-                      touched.plaats && errors.plaats
-                        ? 'border-red-500 focus:border-red-500'
-                        : 'border-gray-300 focus:border-blue-500'
-                    }`}
-                    placeholder="Bijv. Den Haag"
-                  />
-                  {touched.plaats && errors.plaats && (
-                    <p id="plaats-error" role="alert" className="mt-1 text-sm text-red-600">{errors.plaats}</p>
-                  )}
-                </div>
-
-                <div>
-                  <label htmlFor="probleem" className="form-label">
-                    Wat is het probleem? <span aria-hidden="true">*</span>
-                  </label>
-                  <textarea
-                    id="probleem"
-                    name="probleem"
-                    value={formData.probleem}
-                    onBlur={handleBlur}
-                    onChange={handleChange}
-                    rows={5}
-                    aria-required="true"
-                    aria-invalid={touched.probleem && !!errors.probleem}
-                    aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
-                    className={`w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none resize-none ${
-                      touched.probleem && errors.probleem
-                        ? 'border-red-500 focus:border-red-500'
-                        : 'border-gray-300 focus:border-blue-500'
-                    }`}
-                    placeholder="Beschrijf kort wat het probleem is, bijv: 'Mijn computer start niet op' of 'WiFi werkt niet meer'"
-                  ></textarea>
-                  {touched.probleem && errors.probleem && (
-                    <p id="probleem-error" role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>
-                  )}
-                </div>
-
-                <button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="btn-submit"
-                >
-                  {isSubmitting ? (
-                    <span className="flex items-center justify-center gap-3">
-                      <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
-                      Bezig met versturen...
-                    </span>
-                  ) : (
-                    'Verstuur Aanvraag'
-                  )}
-                </button>
-
-                <p className="text-sm text-gray-500 text-center">
-                  We nemen binnen 3 uur contact met u op
-                </p>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Werkgebied Map */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              Ons Werkgebied
+          {/* Afspraak maken CTA */}
+          <div className="bg-white rounded-2xl shadow-lg p-8 text-center border border-gray-200">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+              Direct een afspraak maken?
             </h2>
-            <p className="text-lg text-gray-600">
-              Wij komen bij u thuis in heel Zuid-Holland - van Noordwijk tot Dordrecht
+            <p className="text-gray-600 mb-6">
+              Vul het formulier in en we bellen u binnen enkele uren terug
             </p>
-          </div>
-
-          <div className="grid lg:grid-cols-2 gap-8 items-start">
-            {/* Map */}
-            <div className="rounded-2xl overflow-hidden shadow-xl border border-gray-200">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d624813.5367745955!2d3.8875036!3d52.0326067!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c5b72f4298bd71%3A0x400de5a8d1e6c10!2sZuid-Holland!5e0!3m2!1snl!2snl!4v1704193200000!5m2!1snl!2snl"
-                width="100%"
-                height="400"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="no-referrer-when-downgrade"
-                title="Werkgebied Computerhulp Zuid-Holland"
-                className="w-full"
-              />
-            </div>
-
-            {/* Steden lijst */}
-            <div className="bg-gray-50 rounded-2xl p-8 border border-gray-200">
-              <h3 className="text-xl font-bold text-gray-900 mb-6">
-                Steden waar wij actief zijn
-              </h3>
-              <div className="grid grid-cols-2 gap-3">
-                {[
-                  'Den Haag', 'Rotterdam', 'Leiden', 'Delft',
-                  'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn',
-                  'Westland', 'Katwijk', 'Rijswijk', 'Schiedam',
-                  'Vlaardingen', 'Capelle a/d IJssel', 'Maassluis', 'Noordwijk'
-                ].map((stad) => (
-                  <div key={stad} className="flex items-center gap-2 text-gray-700">
-                    <Icon name="check" className="w-4 h-4 text-green-600 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-sm">{stad}</span>
-                  </div>
-                ))}
-              </div>
-              <p className="text-sm text-gray-500 mt-6">
-                En nog 40+ andere gemeenten in Zuid-Holland
-              </p>
-            </div>
+            <Link href="/afspraak-maken" className="btn-primary">
+              Afspraak Maken
+              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-16 bg-gray-50">
+      {/* Werkgebied */}
+      <section className="py-16 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-8">
+            <h2 className="section-title">Ons werkgebied</h2>
+            <p className="section-subtitle">Wij komen in heel Zuid-Holland. Voorrijkosten slechts €10.</p>
+          </div>
+          <div className="flex flex-wrap gap-3 justify-center mb-8">
+            {['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel'].map((city) => (
+              <span key={city} className="city-tag">{city}</span>
+            ))}
+          </div>
+          <div className="text-center">
+            <Link href="/locaties" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
+              Bekijk alle 50+ locaties
+              <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
-            Veelgestelde vragen
+          <div className="text-center mb-12">
+            <h2 className="section-title">Veelgestelde vragen</h2>
+          </div>
+          <div className="space-y-4">
+            {[
+              { q: 'Hoe snel reageren jullie?', a: 'Telefonisch zijn we direct bereikbaar. WhatsApp beantwoorden we meestal binnen 1 uur. E-mails binnen 24 uur.' },
+              { q: 'Wat kost computerhulp?', a: '€14,99 per kwartier met een minimum van 3 kwartier (€44,97). Voorrijkosten zijn €10 in heel Zuid-Holland. Geen abonnement nodig.' },
+              { q: 'Komen jullie ook in het weekend?', a: 'Ja, we zijn 7 dagen per week beschikbaar van 08:00 tot 22:00 uur. Geen extra kosten voor avond- of weekendbezoeken.' },
+              { q: 'Kan ik ook even bellen voor een snelle vraag?', a: 'Natuurlijk. Bel gerust naar 085-8002006. Soms kunnen we een klein probleem al telefonisch oplossen.' },
+            ].map((faq, idx) => (
+              <details key={idx} className="group faq-item">
+                <summary className="faq-summary">
+                  {faq.q}
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} />
+                </summary>
+                <div className="faq-answer">{faq.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA */}
+      <section className="cta-section-blue" aria-label="Contact opnemen">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+            Kunnen wij u ergens mee helpen?
           </h2>
-
-          <div className="space-y-6">
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Hoe snel reageren jullie op mijn bericht?
-              </h3>
-              <p className="text-gray-700">
-                We reageren binnen 3 uur op werkdagen. Belt u liever direct? Bel 085-8002006 en we helpen u meteen. Bij spoed proberen we dezelfde dag nog langs te komen.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Kan ik ook WhatsApp-en of mailen?
-              </h3>
-              <p className="text-gray-700">
-                Ja, u kunt ons bereiken via WhatsApp op 06-42548451 of per e-mail op info@computerhulpzh.nl. We reageren op alle berichten binnen 3 uur op werkdagen.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Komen jullie ook in het weekend?
-              </h3>
-              <p className="text-gray-700">
-                Ja, we werken 7 dagen per week. Ook op zaterdag en zondag komen we graag bij u langs. Er zijn geen extra kosten voor weekendservice.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 border border-gray-200 shadow-sm">
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                Hoe kan ik betalen?
-              </h3>
-              <p className="text-gray-700">
-                U kunt betalen via pin, contant of Tikkie. We rekenen af na afloop van de werkzaamheden, zodat u precies weet waar u voor betaalt.
-              </p>
-            </div>
+          <p className="text-xl text-blue-100 mb-10">
+            Bel ons gerust. We helpen u graag verder.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a href="tel:+31858002006" className="btn-cta-white">
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+              Bel 085-8002006
+            </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak Maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>

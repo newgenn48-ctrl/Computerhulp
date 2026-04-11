@@ -403,6 +403,31 @@ export default function HomePage() {
         showAllButton={true}
       />
 
+      {/* Zo werkt het */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Zo werkt het</h2>
+            <p className="section-subtitle">In 3 simpele stappen geholpen</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {[
+              { step: '1', title: 'U belt of mailt ons', desc: 'Vertel kort wat er aan de hand is. Bel 085-8002006 of maak online een afspraak.' },
+              { step: '2', title: 'We komen bij u thuis', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Voorrijkosten slechts €10.' },
+              { step: '3', title: 'Probleem opgelost', desc: 'Uw probleem wordt ter plekke opgelost. Betaal achteraf via pin of Tikkie.' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Pricing Section */}
       <PricingSection />
 

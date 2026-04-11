@@ -9,15 +9,7 @@ export default function FloatingButtons() {
   const [show, setShow] = useState(false)
   const pathname = usePathname()
 
-  // Hide on afspraak-maken page
   const isAfspraakMakenPage = pathname === '/afspraak-maken'
-
-  // Check if we're on website laten maken page
-  const isWebsitePage = pathname === '/website-laten-maken'
-
-  // Determine button link and label based on page
-  const contactLink = isWebsitePage ? '/offerte-aanvragen' : '/afspraak-maken'
-  const contactLabel = isWebsitePage ? 'Offerte aanvragen' : 'Afspraak maken'
 
   useEffect(() => {
     let ticking = false
@@ -29,13 +21,9 @@ export default function FloatingButtons() {
           const windowHeight = window.innerHeight
           const documentHeight = document.documentElement.scrollHeight
 
-          // Hide in hero section (first 95% of viewport - hero is min-h-[90vh])
-          const pastHero = scrollY > windowHeight * 0.95
-
-          // Hide near footer (last 400px of page)
+          const pastHero = scrollY > windowHeight * 0.5
           const nearFooter = scrollY + windowHeight > documentHeight - 400
 
-          // Show only between hero and footer
           setShow(pastHero && !nearFooter)
           ticking = false
         })
@@ -44,61 +32,51 @@ export default function FloatingButtons() {
     }
 
     window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll() // Check initial position
+    handleScroll()
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Don't render on afspraak-maken page
-  if (isAfspraakMakenPage) {
-    return null
-  }
-
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent('Hallo! Ik heb een vraag over computerhulp aan huis.')
-    window.open(`https://wa.me/31642548451?text=${message}`, '_blank', 'noopener,noreferrer')
-  }
+  if (isAfspraakMakenPage) return null
 
   return (
     <div
-      className={`fixed bottom-4 right-4 sm:bottom-6 sm:right-6 flex flex-col gap-3 z-50 transition-all duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+      className={`fixed bottom-6 right-4 sm:right-6 z-50 transition-all duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
       role="complementary"
       aria-label="Snelle actieknoppen"
     >
-      {/* WhatsApp Button */}
-      <button
-        onClick={handleWhatsAppClick}
-        className="group floating-btn bg-[#25D366] hover:bg-[#128C7E] hover:shadow-green-500/50"
-        aria-label="WhatsApp ons"
-      >
-        <Icon name="whatsapp" className="w-7 h-7" />
-        <span className="floating-tooltip">
-          WhatsApp
-        </span>
-      </button>
+      {/* Mobile: WhatsApp + Bellen */}
+      <div className="flex flex-col gap-3 sm:hidden">
+        <button
+          onClick={() => {
+            const msg = encodeURIComponent('Hallo! Ik heb een vraag over computerhulp aan huis.')
+            window.open(`https://wa.me/31642548451?text=${msg}`, '_blank', 'noopener,noreferrer')
+          }}
+          className="group floating-btn bg-[#25D366] hover:bg-[#128C7E] shadow-2xl"
+          aria-label="WhatsApp ons"
+        >
+          <Icon name="whatsapp" className="w-7 h-7" />
+        </button>
 
-      {/* Bel Button */}
-      <a
-        href="tel:+31858002006"
-        className="group floating-btn bg-green-600 hover:bg-green-700 hover:shadow-green-500/50"
-        aria-label="Direct bellen naar 085-8002006"
-      >
-        <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-        <span className="floating-tooltip">
-          Bel: 085-8002006
-        </span>
-      </a>
+        <a
+          href="tel:+31858002006"
+          className="group floating-btn bg-blue-600 hover:bg-blue-700 shadow-2xl"
+          aria-label="Direct bellen naar 085-8002006"
+        >
+          <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+        </a>
+      </div>
 
-      {/* Contact Button */}
-      <Link
-        href={contactLink}
-        className="group floating-btn bg-blue-600 hover:bg-blue-700 hover:shadow-blue-500/50"
-        aria-label={contactLabel}
-      >
-        <Icon name="calendar" className="w-6 h-6" strokeWidth={2} />
-        <span className="floating-tooltip">
-          {contactLabel}
-        </span>
-      </Link>
+      {/* Desktop: Afspraak maken */}
+      <div className="hidden sm:block">
+        <Link
+          href="/afspraak-maken"
+          className="group floating-btn bg-blue-600 hover:bg-blue-700 shadow-2xl"
+          aria-label="Afspraak maken"
+        >
+          <Icon name="calendar" className="w-6 h-6" strokeWidth={2} />
+          <span className="floating-tooltip">Afspraak maken</span>
+        </Link>
+      </div>
     </div>
   )
 }

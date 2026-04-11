@@ -22,7 +22,31 @@
       "Bash(cd:*)",
       "Bash(rm:*)",
       "Bash(xargs sed:*)",
-      "Bash(sed:*)"
+      "Bash(sed:*)",
+      "WebSearch",
+      "Bash(xargs grep:*)",
+      "Bash(mkdir -p \"/c/Users/konia/OneDrive - Stichting Hogeschool Utrecht/Computerhulpzh/app/diensten/laptop-laten-herstellen\")",
+      "Bash(mkdir -p \"/c/Users/konia/OneDrive - Stichting Hogeschool Utrecht/Computerhulpzh/app/diensten/monteur-aan-huis\")",
+      "WebFetch(domain:instantit.nl)",
+      "WebFetch(domain:digibuddy.nl)",
+      "WebFetch(domain:www.studentaanhuis.nl)",
+      "WebFetch(domain:uwcomputerstudent.nl)",
+      "Bash(npx tsc:*)",
+      "Bash(xargs cat:*)",
+      "Bash(sed -i \"s|title: 'Dataherstel & Backup aan Huis | Binnen 24u'|title: 'Dataherstel \\\\& Backup aan Huis Zuid-Holland | Binnen 24u'|\" dataherstel-backup/page.tsx)",
+      "Bash(sed -i \"s|title: 'E-mail Hulp aan Huis | Outlook & Gmail | 24u'|title: 'E-mail Hulp aan Huis Zuid-Holland | Outlook \\\\& Gmail | 24u'|\" email-hulp/page.tsx)",
+      "Bash(sed -i \"s|title: 'Laptop Reparatie & PC Hulp aan Huis | 24u'|title: 'Laptop Reparatie \\\\& PC Hulp aan Huis Zuid-Holland | 24u'|\" laptop-computer-reparatie/page.tsx)",
+      "Bash(sed -i \"s|title: 'Printer & Scanner Hulp aan Huis | Binnen 24u'|title: 'Printer \\\\& Scanner Hulp aan Huis Zuid-Holland | Binnen 24u'|\" printer-scanner-hulp/page.tsx)",
+      "Bash(sed -i \"s|title: 'Smart Home Installatie aan Huis | Domotica Hulp | Binnen 24u'|title: 'Smart Home \\\\& Domotica aan Huis Zuid-Holland | Binnen 24u'|\" smart-home-domotica/page.tsx)",
+      "Bash(sed -i \"s#title: 'Dataherstel & Backup aan Huis | Binnen 24u'#title: 'Dataherstel \\\\& Backup aan Huis Zuid-Holland | Binnen 24u'#\" dataherstel-backup/page.tsx)",
+      "Bash(sed -i \"s#title: 'E-mail Hulp aan Huis | Outlook & Gmail | 24u'#title: 'E-mail Hulp aan Huis Zuid-Holland | Outlook \\\\& Gmail | 24u'#\" email-hulp/page.tsx)",
+      "Bash(sed -i \"s#title: 'Laptop Reparatie & PC Hulp aan Huis | 24u'#title: 'Laptop Reparatie \\\\& PC Hulp aan Huis Zuid-Holland | 24u'#\" laptop-computer-reparatie/page.tsx)",
+      "Bash(sed -i \"s#title: 'Printer & Scanner Hulp aan Huis | Binnen 24u'#title: 'Printer \\\\& Scanner Hulp aan Huis Zuid-Holland | Binnen 24u'#\" printer-scanner-hulp/page.tsx)",
+      "Bash(sed -i \"s#title: 'Smart Home Installatie aan Huis | Domotica Hulp | Binnen 24u'#title: 'Smart Home \\\\& Domotica aan Huis Zuid-Holland | Binnen 24u'#\" smart-home-domotica/page.tsx)",
+      "Bash(sed -i 's/pin, contant of Tikkie/pin of Tikkie/g' __TRACKED_VAR__/page.tsx)",
+      "Bash(sed -i 's/faq-item-white shadow-sm/faq-item/g' __TRACKED_VAR__/page.tsx)",
+      "Bash(sed -i s/faq-item-white/faq-item/g __TRACKED_VAR__/page.tsx)",
+      "Bash(npx --yes tsc --noEmit --pretty)"
     ]
   }
 }

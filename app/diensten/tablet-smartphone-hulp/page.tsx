@@ -4,9 +4,10 @@ import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
+import PricingSection from '@/components/PricingSection'
 
 export const metadata: Metadata = {
-  title: 'Tablet & Smartphone Hulp aan Huis | 24u',
+  title: 'Tablet & Smartphone Hulp aan Huis Zuid-Holland | 24u',
   description: 'Tablet of smartphone hulp nodig? iPad, iPhone of Android problemen? Wij komen bij u thuis in Zuid-Holland voor installatie, data overzetten en meer. €10 voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Tablet & Smartphone Hulp aan Huis',
@@ -233,45 +234,7 @@ export default function TabletSmartphoneHulpPage() {
           </div>
         </div>
       </section>
-
-      {/* Pricing */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Kost Het?</h2>
-            <p className="section-subtitle">Transparante prijzen, geen verborgen kosten</p>
-          </div>
-          <div className="pricing-box">
-            <div className="text-6xl font-bold mb-2">€14,99</div>
-            <div className="text-2xl text-blue-100 mb-1">per kwartier</div>
-            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€44,97)</div>
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
-              <ul className="space-y-3 text-left">
-                {['Slechts €10 voorrijkosten in heel Zuid-Holland', 'Tablet en smartphone direct werkend', 'Alles uitgelegd in begrijpelijke taal', 'Betalen na afloop via pin, contant of Tikkie'].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-400 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-white">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 text-sm">
-              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-                <Icon name="shield" className="w-5 h-5 text-green-400" strokeWidth={2} />
-                <span>Niet opgelost? Alleen diagnosekosten</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-                <Icon name="clock" className="w-5 h-5 text-blue-300" strokeWidth={2} />
-                <span>Gemiddeld 30-60 min</span>
-              </div>
-            </div>
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Plan Tablethulp
-              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
@@ -300,7 +263,7 @@ export default function TabletSmartphoneHulpPage() {
           </div>
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <details key={idx} className="group faq-item-white shadow-sm">
+              <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
                   {faq.question}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />

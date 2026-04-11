@@ -5,12 +5,13 @@ import ServicesSection from '@/components/ServicesSection'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
+import PricingSection from '@/components/PricingSection'
 
 export const metadata: Metadata = {
-  title: 'Monteur aan Huis | Computer & IT Hulp | Zuid-Holland',
+  title: 'Monteur aan Huis Zuid-Holland | Computer & IT Hulp | Binnen 24u',
   description: 'IT-monteur aan huis nodig? Wij komen binnen 24 uur bij u thuis in Zuid-Holland. Computer, laptop, WiFi, printer — alles opgelost. €10 voorrijkosten. Bel 085-8002006.',
   openGraph: {
-    title: 'Monteur aan Huis | Computer & IT Hulp | Zuid-Holland',
+    title: 'Monteur aan Huis Zuid-Holland | Computer & IT Hulp | Binnen 24u',
     description: 'IT-monteur aan huis nodig? Binnen 24 uur bij u thuis in heel Zuid-Holland. Bel 085-8002006.',
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/monteur-aan-huis',
@@ -219,35 +220,7 @@ export default function MonteurAanHuisPage() {
           </div>
         </div>
       </section>
-
-      {/* Pricing */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Wat Kost een Monteur aan Huis?</h2>
-            <p className="section-subtitle">Transparante prijzen, geen verborgen kosten</p>
-          </div>
-          <div className="pricing-box">
-            <div className="text-6xl font-bold mb-2">€14,99</div>
-            <div className="text-2xl text-blue-100 mb-1">per kwartier</div>
-            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€44,97)</div>
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
-              <ul className="space-y-3 text-left">
-                {['Slechts €10 voorrijkosten in heel Zuid-Holland', 'Diagnose en advies inbegrepen', 'Alle apparaten en merken', 'Betalen na afloop via pin of Tikkie'].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-400 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-white">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Monteur Aanvragen
-              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PricingSection />
 
       {/* Testimonials */}
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
@@ -270,7 +243,7 @@ export default function MonteurAanHuisPage() {
           </div>
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <details key={idx} className="group faq-item-white shadow-sm">
+              <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
                   {faq.question}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />

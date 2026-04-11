@@ -4,10 +4,11 @@ import Link from 'next/link'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { Icon } from '@/components/icons'
+import PricingSection from '@/components/PricingSection'
 
 export const metadata: Metadata = {
-  title: 'Computer & Laptop Hulp aan Huis | Binnen 24u',
-  description: 'Computer traag, laptop kapot of pc laten maken? IT-student aan huis in Zuid-Holland. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.',
+  title: 'Computer & Laptop Hulp aan Huis Zuid-Holland | Binnen 24u',
+  description: 'Computer traag, laptop kapot of pc problemen? Professionele hulp aan huis in Zuid-Holland. Alle merken, binnen 24 uur. €10 voorrijkosten. Bel 085-8002006.',
   openGraph: {
     title: 'Computer & Laptop Hulp aan Huis',
     description: 'Computer of laptop problemen? Traag, vast, crash of defect? We komen bij u thuis in Zuid-Holland en maken het weer als nieuw. Binnen 24 uur geholpen.',
@@ -373,61 +374,7 @@ export default function ComputerLaptopHulpPage() {
           </div>
         </div>
       </section>
-
-      {/* Pricing */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">
-              Wat Kost Het?
-            </h2>
-            <p className="section-subtitle">
-              Transparante prijzen, geen verborgen kosten
-            </p>
-          </div>
-
-          <div className="pricing-box">
-            <div className="text-6xl font-bold mb-2">€14,99</div>
-            <div className="text-2xl text-blue-100 mb-1">per kwartier</div>
-            <div className="text-lg text-blue-200 mb-8">Minimaal 3 kwartier (€44,97)</div>
-
-            <div className="bg-white/10 backdrop-blur rounded-xl p-6 mb-8">
-              <ul className="space-y-3 text-left">
-                {[
-                  'Slechts €10 voorrijkosten in heel Zuid-Holland',
-                  'Diagnose en oplossing ter plekke',
-                  'Data altijd veilig en privé',
-                  'Betalen na afloop via pin, contant of Tikkie'
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-400 flex-shrink-0" strokeWidth={2} />
-                    <span className="text-white">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8 text-sm">
-              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-                <Icon name="shield" className="w-5 h-5 text-green-400" strokeWidth={2} />
-                <span>Niet opgelost? Alleen diagnosekosten</span>
-              </div>
-              <div className="flex items-center gap-2 bg-white/10 px-4 py-2 rounded-full">
-                <Icon name="clock" className="w-5 h-5 text-blue-300" strokeWidth={2} />
-                <span>Gemiddeld 45-90 min</span>
-              </div>
-            </div>
-
-            <Link
-              href="/afspraak-maken"
-              className="inline-flex items-center justify-center gap-2 bg-white text-blue-600 hover:bg-blue-50 px-10 py-4 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all"
-            >
-              Plan Reparatie
-              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
@@ -462,7 +409,7 @@ export default function ComputerLaptopHulpPage() {
 
           <div className="space-y-4">
             {faqs.map((faq, idx) => (
-              <details key={idx} className="group faq-item-white shadow-sm">
+              <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
                   {faq.question}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />

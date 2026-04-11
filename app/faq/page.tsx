@@ -49,7 +49,7 @@ const faqStructuredData = {
       name: 'Hoe kan ik betalen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'U kunt na afloop betalen via pin, contant of Tikkie. We rekenen af zodra het werk klaar is, zodat u precies weet waar u voor betaalt. Facturen zijn ook mogelijk voor bedrijven.'
+        text: 'U kunt na afloop betalen via pin of Tikkie. We rekenen af zodra het werk klaar is, zodat u precies weet waar u voor betaalt. Facturen zijn ook mogelijk voor bedrijven.'
       }
     },
     {
@@ -81,18 +81,9 @@ export default function FAQPage() {
 
       <div className="pt-24 pb-20">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+        <section className="cta-section-blue py-16">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <h1
-              className="text-4xl sm:text-5xl font-bold mb-4"
-              style={{
-                color: 'white',
-                background: 'none',
-                WebkitTextFillColor: 'white',
-                backgroundClip: 'unset',
-                WebkitBackgroundClip: 'unset'
-              }}
-            >
+            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
               Veelgestelde vragen
             </h1>
             <p className="text-xl text-blue-100 max-w-2xl mx-auto">
@@ -106,25 +97,21 @@ export default function FAQPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             {faqCategories.map((category, idx) => (
               <div key={idx} className="mb-16 last:mb-0">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8 flex items-center gap-3">
-                  <span className="text-4xl">{category.icon}</span>
+                <h2 className="section-title flex items-center gap-3">
                   {category.title}
                 </h2>
 
-                <div className="space-y-6">
+                <div className="space-y-4">
                   {category.questions.map((item, qIdx) => (
-                    <div
-                      key={qIdx}
-                      className="bg-gray-50 rounded-xl p-6 border-2 border-gray-200 hover:border-blue-400 transition-colors"
-                    >
-                      <h3 className="text-xl font-bold text-gray-900 mb-3 flex items-start gap-2">
-                        <span className="text-blue-600 flex-shrink-0">Q:</span>
+                    <details key={qIdx} className="group faq-item">
+                      <summary className="faq-summary">
                         {item.question}
-                      </h3>
-                      <div className="text-gray-700 leading-relaxed pl-6">
-                        <span className="font-semibold text-gray-900">A:</span> {item.answer}
+                        <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} />
+                      </summary>
+                      <div className="faq-answer">
+                        {item.answer}
                       </div>
-                    </div>
+                    </details>
                   ))}
                 </div>
               </div>
@@ -133,26 +120,20 @@ export default function FAQPage() {
         </section>
 
         {/* CTA */}
-        <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+        <section className="cta-section-blue" aria-label="Contact opnemen">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
               Staat Uw Vraag Er Niet Bij?
             </h2>
-            <p className="text-xl text-gray-600 mb-8">
+            <p className="text-xl text-blue-100 mb-8">
               Bel ons direct of stuur een bericht. We helpen u graag verder!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                href="tel:+31858002006"
-                className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:scale-105 transition-all"
-              >
+              <a href="tel:+31858002006" className="btn-cta-white">
                 <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
                 Bel 085-8002006
               </a>
-              <Link
-                href="/afspraak-maken"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 border-2 border-gray-300 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg transition-all"
-              >
+              <Link href="/afspraak-maken" className="btn-cta-dark">
                 Hulp Vragen
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
@@ -166,7 +147,6 @@ export default function FAQPage() {
 
 const faqCategories = [
   {
-    icon: '💰',
     title: 'Prijzen & Betaling',
     questions: [
       {
@@ -175,11 +155,11 @@ const faqCategories = [
       },
       {
         question: 'Zijn er voorrijkosten?',
-        answer: 'Nee, in heel Zuid-Holland is voorrijden slechts €10. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
+        answer: 'Ja, in heel Zuid-Holland zijn de voorrijkosten slechts €10. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont.'
       },
       {
         question: 'Hoe kan ik betalen?',
-        answer: 'U kunt na afloop betalen via pin, contant of Tikkie. We rekenen af zodra het werk klaar is, zodat u precies weet waar u voor betaalt. Facturen zijn ook mogelijk voor bedrijven.'
+        answer: 'U kunt na afloop betalen via pin of Tikkie. We rekenen af zodra het werk klaar is, zodat u precies weet waar u voor betaalt. Facturen zijn ook mogelijk voor bedrijven.'
       },
       {
         question: 'Krijg ik een inschatting vooraf?',
@@ -192,12 +172,11 @@ const faqCategories = [
     ]
   },
   {
-    icon: '⏰',
     title: 'Planning & Beschikbaarheid',
     questions: [
       {
         question: 'Hoe snel kunnen jullie langskomen?',
-        answer: 'In de meeste gevallen kunnen we binnen 24 uur bij u zijn. Bij spoedsituaties (tentamen morgen, belangrijke vergadering) proberen we vaak nog dezelfde dag te komen. Bel ons en we kijken wat mogelijk is.'
+        answer: 'In de meeste gevallen kunnen we binnen 24 uur bij u zijn. Bij spoedsituaties proberen we vaak nog dezelfde dag te komen. Bel ons en we kijken wat mogelijk is.'
       },
       {
         question: 'Werken jullie ook in het weekend?',
@@ -214,7 +193,6 @@ const faqCategories = [
     ]
   },
   {
-    icon: '🛠️',
     title: 'Diensten & Problemen',
     questions: [
       {
@@ -240,7 +218,6 @@ const faqCategories = [
     ]
   },
   {
-    icon: '📍',
     title: 'Werkgebied',
     questions: [
       {
@@ -254,7 +231,6 @@ const faqCategories = [
     ]
   },
   {
-    icon: '🔒',
     title: 'Privacy & Veiligheid',
     questions: [
       {
@@ -272,7 +248,6 @@ const faqCategories = [
     ]
   },
   {
-    icon: '❓',
     title: 'Overige Vragen',
     questions: [
       {
@@ -282,10 +257,6 @@ const faqCategories = [
       {
         question: 'Wat moet ik klaar hebben?',
         answer: 'Alleen het apparaat waar u hulp mee nodig heeft. Wachtwoorden en inloggegevens zijn handig om bij de hand te hebben. Verder zorgen wij voor alle benodigde tools.'
-      },
-      {
-        question: 'Verkopen jullie ook nieuwe computers?',
-        answer: 'We richten ons puur op hulp en reparatie, niet op verkoop. Wel kunnen we adviseren welk apparaat bij u past en waar u het beste kunt kopen.'
       },
       {
         question: 'Helpen jullie ook bedrijven?',

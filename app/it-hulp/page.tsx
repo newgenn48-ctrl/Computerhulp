@@ -1,9 +1,24 @@
+import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import ServicesSection from '@/components/ServicesSection'
+
+export const metadata: Metadata = {
+  title: 'IT Hulp aan Huis voor Bedrijven & ZZP | Zuid-Holland',
+  description: 'IT hulp aan huis voor ZZP\'ers en kleine bedrijven in Zuid-Holland. VPN, netwerk, server, Microsoft 365. Binnen 24 uur geholpen. Bel 085-8002006.',
+  openGraph: {
+    title: 'IT Hulp aan Huis voor Bedrijven & ZZP',
+    description: 'Professionele IT hulp voor ZZP\'ers en bedrijven in Zuid-Holland. VPN, netwerk, server problemen opgelost bij u op kantoor.',
+    type: 'website',
+    url: 'https://computerhulpzh.nl/it-hulp',
+  },
+  alternates: {
+    canonical: 'https://computerhulpzh.nl/it-hulp',
+  },
+}
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
   loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
@@ -80,7 +95,7 @@ export default function ITHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Betrouwbare computerhulp aan huis door heel Zuid-Holland. Onze IT-studenten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op — bij u thuis.
+              Betrouwbare IT hulp aan huis door heel Zuid-Holland. Onze IT-studenten lossen alle problemen <strong className="text-gray-900">snel en vakkundig</strong> op — bij u thuis.
             </p>
 
             {/* USP Badges */}
@@ -154,7 +169,7 @@ export default function ITHulpPage() {
       </section>
 
       {/* SEO Content Section - Hidden on mobile for better conversion */}
-      <section className="hidden md:block py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
+      <section className="py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>

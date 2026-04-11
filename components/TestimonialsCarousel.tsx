@@ -87,7 +87,7 @@ export default function TestimonialsCarousel({ testimonials }: TestimonialsCarou
                 <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" aria-hidden="true" />
               ))}
             </div>
-            <blockquote className="text-gray-700 mb-6 leading-relaxed text-sm sm:text-base">&ldquo;{testimonial.quote}&rdquo;</blockquote>
+            <blockquote className="text-gray-700 mb-6 leading-relaxed text-base">&ldquo;{testimonial.quote}&rdquo;</blockquote>
             <footer className="flex items-center gap-3">
               <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                 {testimonial.initials}

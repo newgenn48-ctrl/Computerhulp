@@ -180,7 +180,7 @@ const faqData = {
       name: 'Wat kost computerhulp aan huis in Zuid-Holland?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Onze computerhulp aan huis kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. Betalen kan na afloop via pin, contant of Tikkie.'
+        text: 'Onze computerhulp aan huis kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. Betalen kan na afloop via pin of Tikkie.'
       }
     },
     {
@@ -315,7 +315,7 @@ const testimonials = [
 
 const cities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel']
 
-export default function HomePage() {
+export default function ComputerhulpSeniorenPage() {
   return (
     <>
       {/* Structured Data - Consolidated @graph */}
@@ -355,22 +355,22 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-description">
-              Betrouwbare computerhulp voor senioren door heel Zuid-Holland. Onze IT-studenten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op — bij u thuis.
+              Moeite met de computer, tablet of telefoon? Onze geduldige IT-studenten komen bij u thuis en leggen alles <strong className="text-gray-900">rustig en duidelijk</strong> uit — op uw tempo.
             </p>
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Binnen 24 uur geholpen
+                Geduldig en rustig
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betrouwbaar & vakkundig
+                Uitleg in gewone taal
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betaalbare tarieven
+                Ook voor beginners
               </span>
             </div>
 
@@ -517,7 +517,7 @@ export default function HomePage() {
           <div className="space-y-4">
             {[
               { q: 'Hoe snel kunnen jullie langskomen?', a: 'Meestal staan we binnen een dag bij u aan de deur. Heeft u haast? Dan proberen we vaak nog dezelfde dag langs te komen. We zijn elke dag bereikbaar, ook in de avond.' },
-              { q: 'Wat kost het?', a: 'We rekenen €14,99 per kwartier, met een minimum van drie kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin, contant of Tikkie.' },
+              { q: 'Wat kost het?', a: 'We rekenen €14,99 per kwartier, met een minimum van drie kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin of Tikkie.' },
               { q: 'Waar kunnen jullie mee helpen?', a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, WiFi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.' },
               { q: 'Komen jullie ook in mijn woonplaats?', a: 'Wij komen in heel Zuid-Holland bij u thuis. Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en meer dan 50 andere gemeenten. Overal €10 voorrijkosten.' },
               { q: 'Moet ik iets voorbereiden?', a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele wachtwoorden alvast klaar. Verder nemen wij alles mee wat nodig is.' },

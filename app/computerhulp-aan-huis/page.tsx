@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
-import ExtraBenefitsSection from '@/components/ExtraBenefitsSection'
 import ServicesSection from '@/components/ServicesSection'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 
@@ -209,7 +208,7 @@ const structuredData = {
         '@id': 'https://computerhulpzh.nl/#primaryImage'
       },
       datePublished: '2024-01-01',
-      dateModified: '2026-01-02',
+      dateModified: '2026-04-10',
       inLanguage: 'nl-NL'
     },
     {
@@ -344,26 +343,26 @@ export default function ComputerhulpAanHuisPage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Computerhulp <span className="text-blue-600">aan Huis</span>
+              Computerhulp aan Huis <span className="text-blue-600">Zuid-Holland</span>
             </h1>
 
             <p className="hero-description">
-              <strong className="text-gray-900">Betrouwbare computerhulp aan huis</strong> in heel Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen alles <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
+              <strong className="text-gray-900">Betrouwbare computerhulp aan huis</strong> in heel Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen uw problemen <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
             </p>
 
             {/* USP Badges */}
             <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Binnen 24 uur geholpen
+                Binnen 24 uur bij u thuis
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betrouwbaar & vakkundig
+                Ervaren IT-studenten
               </span>
               <span className="usp-badge">
                 <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betaalbare tarieven
+                7 dagen per week
               </span>
             </div>
 
@@ -391,6 +390,52 @@ export default function ComputerhulpAanHuisPage() {
 
 
 
+      {/* Zo werkt het */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="section-title">Zo werkt het</h2>
+          </div>
+
+          {/* Mobile: compact lijst */}
+          <div className="flex flex-col gap-4 sm:hidden">
+            {[
+              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
+              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
+              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">
+                  {item.step}
+                </div>
+                <div>
+                  <div className="font-bold text-gray-900">{item.title}</div>
+                  <div className="text-sm sm:text-base text-gray-600">{item.sub}</div>
+                </div>
+                {idx < 2 && <Icon name="arrow-right" className="w-5 h-5 text-gray-300 ml-auto flex-shrink-0" strokeWidth={2} />}
+              </div>
+            ))}
+          </div>
+
+          {/* Desktop: horizontaal */}
+          <div className="hidden sm:grid sm:grid-cols-3 gap-8">
+            {[
+              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
+              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
+              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
+                  {item.step}
+                </div>
+                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.sub}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Services Section */}
       <ServicesSection
         title="Onze diensten"
@@ -399,16 +444,14 @@ export default function ComputerhulpAanHuisPage() {
         showAllButton={true}
       />
 
+      {/* Pricing */}
+      <PricingSection />
+
       {/* Waarom klanten voor ons kiezen */}
       <section className="py-16 sm:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="section-title">
-              Waarom klanten voor ons kiezen
-            </h2>
-            <p className="section-subtitle">
-              Dit maakt het verschil
-            </p>
+            <h2 className="section-title">Waarom klanten voor ons kiezen</h2>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
@@ -418,17 +461,17 @@ export default function ComputerhulpAanHuisPage() {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">Binnen 24 uur bij u thuis</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">Geen weken wachten. Meestal komen we al de volgende dag — ook 's avonds en in het weekend.</p>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Geen weken wachten. Meestal al de volgende dag.</p>
               </div>
             </div>
 
             <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
               <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Icon name="money" className="w-6 h-6 text-white" strokeWidth={2} />
+                <Icon name="users" className="w-6 h-6 text-white" strokeWidth={2} />
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 mb-1">Geen verrassingen achteraf</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">€14,99 per kwartier, €10 voorrijkosten. U weet vooraf wat het kost. Betalen achteraf via pin of Tikkie.</p>
+                <h3 className="font-bold text-gray-900 mb-1">Ervaren IT-studenten</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Opgeleid en ervaren met alle soorten computerproblemen.</p>
               </div>
             </div>
 
@@ -438,7 +481,7 @@ export default function ComputerhulpAanHuisPage() {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">Gewoon thuis blijven</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">U hoeft nergens naartoe. Wij komen bij u aan de keukentafel en lossen het ter plekke op.</p>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Wij komen bij u thuis en lossen het ter plekke op.</p>
               </div>
             </div>
 
@@ -448,46 +491,11 @@ export default function ComputerhulpAanHuisPage() {
               </div>
               <div>
                 <h3 className="font-bold text-gray-900 mb-1">Betrouwbaar en veilig</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">KvK-geregistreerd, verzekerd en gescreend. Uw gegevens en apparatuur zijn in goede handen.</p>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">KvK-geregistreerd en verzekerd. U bent in goede handen.</p>
               </div>
             </div>
           </div>
 
-          {/* CTA */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Link href="/afspraak-maken" className="btn-primary">
-              Hulp aanvragen
-              <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
-            </Link>
-            <a href="tel:+31858002006" className="btn-secondary">
-              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-              Bel 085-8002006
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* 5. Pricing */}
-      <PricingSection />
-
-      {/* Testimonials - Swipeable Carousel */}
-      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
-            </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
-          </header>
-
-          <TestimonialsCarousel testimonials={testimonials} />
-
-          {/* CTA na testimonials */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
             <Link href="/afspraak-maken" className="btn-primary">
               Ook geholpen worden?
@@ -501,73 +509,61 @@ export default function ComputerhulpAanHuisPage() {
         </div>
       </section>
 
-      {/* FAQ Section - Visible for SEO */}
-      <section className="py-24 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <span className="section-label">Veelgestelde vragen</span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Veelgestelde vragen
+      {/* Testimonials */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
             </h2>
-            <p className="text-xl text-gray-600">
-              Dit krijgen wij vaak gevraagd
+            <p className="section-subtitle">
+              Wij helpen dagelijks mensen in heel Zuid-Holland
             </p>
-          </div>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
+        </div>
+      </section>
 
+      {/* FAQ */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Veelgestelde vragen</h2>
+          </div>
           <div className="space-y-4">
             {[
-              {
-                q: 'Wat is computerhulp aan huis?',
-                a: 'Wij komen gewoon bij u thuis om uw computer, laptop, printer of WiFi te repareren of in te stellen. U hoeft nergens naartoe — wij nemen alles mee wat nodig is.'
-              },
-              {
-                q: 'Wat nemen jullie mee bij een huisbezoek?',
-                a: 'Onze IT-studenten nemen gereedschap, kabels, adapters en veelgebruikte onderdelen mee. Zo kunnen we de meeste problemen ter plekke oplossen, zonder dat uw apparaat mee hoeft.'
-              },
-              {
-                q: 'Wat als mijn computer niet ter plekke gerepareerd kan worden?',
-                a: 'Dat komt zelden voor, maar als het nodig is nemen we uw apparaat mee. We bespreken dat altijd eerst met u. Meestal heeft u het binnen een paar werkdagen terug.'
-              },
-              {
-                q: 'Komen jullie ook in het weekend?',
-                a: 'Ja, we zijn 7 dagen per week beschikbaar, ook in de avonduren tot 22:00 uur. Handig als u doordeweeks werkt. Geen extra kosten voor avond- of weekendbezoeken.'
-              },
-              {
-                q: 'Kan ik ook even bellen voor een snelle vraag?',
-                a: 'Natuurlijk. Bel gerust naar 085-8002006. Soms kunnen we een klein probleem al telefonisch oplossen. Is een bezoek nodig, dan plannen we dat meteen in.'
-              }
+              { q: 'Wat is computerhulp aan huis?', a: 'Wij komen gewoon bij u thuis om uw computer, laptop, printer of WiFi te repareren of in te stellen. U hoeft nergens naartoe — wij nemen alles mee wat nodig is.' },
+              { q: 'Wat nemen jullie mee bij een huisbezoek?', a: 'Onze IT-studenten nemen gereedschap, kabels, adapters en veelgebruikte onderdelen mee. Zo kunnen we de meeste problemen ter plekke oplossen, zonder dat uw apparaat mee hoeft.' },
+              { q: 'Wat als mijn computer niet ter plekke gerepareerd kan worden?', a: 'Dat komt zelden voor, maar als het nodig is nemen we uw apparaat mee. We bespreken dat altijd eerst met u. Meestal heeft u het binnen een paar werkdagen terug.' },
+              { q: 'Komen jullie ook in het weekend?', a: 'Ja, we zijn 7 dagen per week beschikbaar, ook in de avonduren tot 22:00 uur. Handig als u doordeweeks werkt. Geen extra kosten voor avond- of weekendbezoeken.' },
+              { q: 'Kan ik ook even bellen voor een snelle vraag?', a: 'Natuurlijk. Bel gerust naar 085-8002006. Soms kunnen we een klein probleem al telefonisch oplossen. Is een bezoek nodig, dan plannen we dat meteen in.' },
             ].map((faq, idx) => (
-              <details
-                key={idx}
-                className="group faq-item"
-              >
+              <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
                   {faq.q}
-                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} />
                 </summary>
-                <div className="faq-answer">
-                  {faq.a}
-                </div>
+                <div className="faq-answer">{faq.a}</div>
               </details>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Werkgebied Section met interne links */}
-      <section className="py-24 bg-gray-50">
+      {/* Werkgebied */}
+      <section className="py-16 sm:py-20 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <span className="section-label">Ons werkgebied</span>
-            <h2 className="text-4xl sm:text-5xl font-bold text-gray-900 mt-4 mb-6">
-              Waar we komen
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="section-title">Waar we komen</h2>
+            <p className="section-subtitle">
               Wij helpen mensen in meer dan 50 gemeenten in Zuid-Holland. Voorrijden kost slechts €10.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {[
               { name: 'Den Haag', slug: 'den-haag' },
               { name: 'Rotterdam', slug: 'rotterdam' },
@@ -589,18 +585,18 @@ export default function ComputerhulpAanHuisPage() {
               <Link
                 key={city.slug}
                 href={`/computerhulp-aan-huis-${city.slug}`}
-                className="flex items-center gap-3 bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group"
+                className="flex items-center gap-2 sm:gap-3 bg-white rounded-xl p-3 sm:p-4 border border-gray-200 hover:border-blue-400 hover:shadow-lg transition-all group"
               >
-                <Icon name="location-pin" className="w-5 h-5 text-blue-600" strokeWidth={2} />
-                <span className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">{city.name}</span>
+                <Icon name="location-pin" className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
+                <span className="font-medium text-sm sm:text-base text-gray-900 group-hover:text-blue-600 transition-colors">{city.name}</span>
               </Link>
             ))}
           </div>
 
-          <div className="text-center mt-10">
+          <div className="text-center mt-8">
             <Link
               href="/locaties"
-              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
             >
               Bekijk alle 50+ locaties
               <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
@@ -608,9 +604,6 @@ export default function ComputerhulpAanHuisPage() {
           </div>
         </div>
       </section>
-
-      {/* 7. Extra benefits / reassurance */}
-      <ExtraBenefitsSection />
 
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
