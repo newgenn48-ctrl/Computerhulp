@@ -48,7 +48,7 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      <strong className="text-gray-900">Betrouwbare computerhulp aan huis in {cityName}</strong> voor al uw computerproblemen. Onze IT-studenten komen bij u thuis en lossen het <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
+      Computer, laptop, printer of WiFi doet het niet? Wij komen bij u thuis in {cityName} en lossen het op — <strong className="text-gray-900">snel en zonder gedoe</strong>.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -58,32 +58,32 @@ const computerhulpConfig: VariantConfig = {
     `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont in de regio ${region} — we zijn er snel.`,
   testimonials: [
     {
-      quote: 'Mijn laptop was gehackt en ik durfde nergens meer op te klikken. De technicus heeft alles schoongemaakt, beveiligd en mij uitgelegd waar ik op moet letten. Ik voel me weer veilig online.',
+      quote: 'Laptop gehackt. Alles schoongemaakt en beveiligd. Voel me weer veilig online.',
       initials: 'B',
       name: 'Mevrouw Bea'
     },
     {
-      quote: 'Nieuwe printer aangesloten, scanner ingesteld en meteen laten zien hoe ik dubbelzijdig kan printen. Dat scheelt papier! Heel vriendelijk en op tijd.',
+      quote: 'Printer aangesloten en scanner ingesteld. Heel vriendelijk en op tijd.',
       initials: 'T',
       name: 'De heer Theo'
     },
     {
-      quote: 'Ons hele thuisnetwerk werkte niet meer na een storing. Binnen een uur alles weer online: computers, tablets en de smart-TV. Heel kundig en duidelijke uitleg achteraf.',
+      quote: 'Thuisnetwerk deed het niet meer. Binnen een uur alles weer online.',
       initials: 'S',
       name: 'Mevrouw Sonja'
     },
     {
-      quote: 'Computer startte niet meer op en ik had een deadline. Dezelfde avond nog geholpen en alles gered. Dat was echt een redding in nood!',
+      quote: 'Computer startte niet meer op. Dezelfde avond nog geholpen. Redding in nood!',
       initials: 'F',
       name: 'De heer Fred'
     },
     {
-      quote: 'Al mijn foto\'s van de afgelopen 10 jaar stonden op een oude laptop die kapot ging. Alles is overgezet naar mijn nieuwe computer. Ik ben zo opgelucht!',
+      quote: '10 jaar aan foto\'s overgezet naar mijn nieuwe laptop. Zo opgelucht!',
       initials: 'I',
       name: 'Mevrouw Ineke'
     },
     {
-      quote: 'Drie apparaten tegelijk aangesloten op het netwerk en alles werkt nu samen. Zelfs de draadloze printer! Heel knap gedaan.',
+      quote: 'Drie apparaten op het netwerk aangesloten. Zelfs de draadloze printer werkt!',
       initials: 'W',
       name: 'De heer Wim'
     }
@@ -106,8 +106,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      <strong className="text-gray-900">Betrouwbare student aan huis in {cityName}</strong> voor computerhulp, laptophulp en IT-problemen.
-      Onze IT-studenten komen bij u thuis en lossen het <strong className="text-gray-900">geduldig en vakkundig</strong> op — zonder gedoe.
+      Computer, laptop, printer of WiFi doet het niet? Onze IT-studenten komen bij u thuis in {cityName} en lossen het op — <strong className="text-gray-900">geduldig en zonder gedoe</strong>.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -117,32 +116,32 @@ const studentConfig: VariantConfig = {
     `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont — voorrijden kost slechts €10.`,
   testimonials: [
     {
-      quote: 'Die jongen had zoveel geduld! Hij heeft mij stap voor stap leren videobellen met mijn dochter in Australië. Nu bellen we elke week. Geweldig!',
+      quote: 'Stap voor stap leren videobellen. Nu bel ik elke week met mijn dochter!',
       initials: 'WP',
       name: 'Mevrouw Willems'
     },
     {
-      quote: 'Mijn iPad deed helemaal niks meer. De student had het binnen een half uur weer werkend en legde uit hoe ik foto\'s kan delen. Heel vriendelijk!',
+      quote: 'iPad deed niks meer. Binnen een half uur weer werkend. Heel vriendelijk!',
       initials: 'PK',
       name: 'De heer Piet'
     },
     {
-      quote: 'Fijn dat er ook \'s avonds iemand kon komen. De student heeft mijn e-mail en agenda ingesteld en alles rustig uitgelegd. Echt een aanrader voor senioren!',
+      quote: 'E-mail en agenda ingesteld, alles rustig uitgelegd. Aanrader voor senioren!',
       initials: 'JV',
       name: 'Mevrouw Jannie'
     },
     {
-      quote: 'De student heeft mij geholpen met het maken van een fotoboek op de computer. Heel geduldig uitgelegd en nu kan ik het zelf! Wat een leuke jongen.',
+      quote: 'Geholpen met een fotoboek op de computer. Nu kan ik het zelf!',
       initials: 'MH',
       name: 'Mevrouw Martha'
     },
     {
-      quote: 'Ik kreeg steeds vreemde meldingen op mijn laptop. De student heeft alles gecontroleerd, opgeschoond en uitgelegd hoe ik het kan voorkomen. Heel duidelijk!',
+      quote: 'Vreemde meldingen op mijn laptop. Alles opgeschoond en uitgelegd. Heel duidelijk!',
       initials: 'KD',
       name: 'De heer Klaas'
     },
     {
-      quote: 'Mijn WiFi viel steeds weg bij het videobellen. De student heeft de router opnieuw ingesteld en nu heb ik geen last meer. Fijne hulp!',
+      quote: 'WiFi viel steeds weg. Router opnieuw ingesteld, nu geen last meer!',
       initials: 'EB',
       name: 'Mevrouw Elly'
     }
@@ -820,81 +819,32 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/afspraak-maken"
-                className="btn-primary"
-              >
-                Hulp aanvragen
-                <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
               <a
                 href="tel:+31858002006"
-                className="btn-secondary"
+                className="btn-primary"
               >
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                Bel 085-8002006
+                085-8002006
               </a>
+              <Link
+                href="/afspraak-maken"
+                className="btn-secondary"
+              >
+                Afspraak maken
+                <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Zo werkt het */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h2 className="section-title">Zo werkt het</h2>
-          </div>
-
-          {/* Mobile */}
-          <div className="flex flex-col gap-4 sm:hidden">
-            {[
-              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
-              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
-              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">
-                  {item.step}
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">{item.title}</div>
-                  <div className="text-sm sm:text-base text-gray-600">{item.sub}</div>
-                </div>
-                {idx < 2 && <Icon name="arrow-right" className="w-5 h-5 text-gray-300 ml-auto flex-shrink-0" strokeWidth={2} />}
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop */}
-          <div className="hidden sm:grid sm:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
-              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
-              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.sub}</p>
-              </div>
-            ))}
           </div>
         </div>
       </section>
 
       {/* Services Section */}
       <ServicesSection
-        title="Onze diensten"
+        title="Waar helpen wij mee?"
         showFeatures={false}
         limitServices={6}
         showAllButton={true}
       />
-
-      {/* Pricing */}
-      <PricingSection />
 
       {/* Waarom klanten voor ons kiezen */}
       <section className="py-16 sm:py-20 bg-white">
@@ -946,14 +896,14 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Link href="/afspraak-maken" className="btn-primary">
-              Ook geholpen worden?
+            <a href="tel:+31858002006" className="btn-primary">
+              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
+              085-8002006
+            </a>
+            <Link href="/afspraak-maken" className="btn-secondary">
+              Afspraak maken
               <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
             </Link>
-            <a href="tel:+31858002006" className="btn-secondary">
-              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-              Bel 085-8002006
-            </a>
           </div>
         </div>
       </section>
@@ -973,6 +923,49 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             </p>
           </header>
           <TestimonialsCarousel testimonials={config.testimonials} />
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <PricingSection />
+
+      {/* Zo werkt het */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="section-title">Zo werkt het</h2>
+          </div>
+
+          <div className="flex flex-col gap-4 sm:hidden">
+            {[
+              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
+              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
+              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">{item.step}</div>
+                <div>
+                  <div className="font-bold text-gray-900">{item.title}</div>
+                  <div className="text-sm sm:text-base text-gray-600">{item.sub}</div>
+                </div>
+                {idx < 2 && <Icon name="arrow-right" className="w-5 h-5 text-gray-300 ml-auto flex-shrink-0" strokeWidth={2} />}
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden sm:grid sm:grid-cols-3 gap-8">
+            {[
+              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
+              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
+              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">{item.step}</div>
+                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.sub}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -1037,14 +1030,14 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Hulp aanvragen
+            <a href="tel:+31858002006" className="btn-cta-white">
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              085-8002006
+            </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
             </Link>
-            <a href="tel:+31858002006" className="btn-cta-dark">
-              <Icon name="phone" className="w-7 h-7" strokeWidth={2} aria-hidden="true" />
-              Bel 085-8002006
-            </a>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-200">

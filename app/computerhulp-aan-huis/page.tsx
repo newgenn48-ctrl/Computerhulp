@@ -347,7 +347,7 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              <strong className="text-gray-900">Betrouwbare computerhulp aan huis</strong> in heel Zuid-Holland. Onze IT-studenten komen bij u thuis en lossen uw problemen <strong className="text-gray-900">snel en vakkundig</strong> op — zonder gedoe.
+              Computer, laptop, printer of WiFi doet het niet? Wij komen bij u thuis en lossen het op — <strong className="text-gray-900">snel en zonder gedoe</strong>.
             </p>
 
             {/* USP Badges */}
@@ -366,22 +366,22 @@ export default function ComputerhulpAanHuisPage() {
               </span>
             </div>
 
-            {/* CTA Buttons */}
+            {/* CTA Buttons — telefoon primair */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/afspraak-maken"
-                className="btn-primary"
-              >
-                Hulp aanvragen
-                <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
-              </Link>
               <a
                 href="tel:+31858002006"
-                className="btn-secondary"
+                className="btn-primary"
               >
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                Bel 085-8002006
+                085-8002006
               </a>
+              <Link
+                href="/afspraak-maken"
+                className="btn-secondary"
+              >
+                Afspraak maken
+                <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
+              </Link>
             </div>
           </div>
         </div>
@@ -390,62 +390,13 @@ export default function ComputerhulpAanHuisPage() {
 
 
 
-      {/* Zo werkt het */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h2 className="section-title">Zo werkt het</h2>
-          </div>
-
-          {/* Mobile: compact lijst */}
-          <div className="flex flex-col gap-4 sm:hidden">
-            {[
-              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
-              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
-              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">
-                  {item.step}
-                </div>
-                <div>
-                  <div className="font-bold text-gray-900">{item.title}</div>
-                  <div className="text-sm sm:text-base text-gray-600">{item.sub}</div>
-                </div>
-                {idx < 2 && <Icon name="arrow-right" className="w-5 h-5 text-gray-300 ml-auto flex-shrink-0" strokeWidth={2} />}
-              </div>
-            ))}
-          </div>
-
-          {/* Desktop: horizontaal */}
-          <div className="hidden sm:grid sm:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
-              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
-              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Services Section */}
       <ServicesSection
-        title="Onze diensten"
+        title="Waar helpen wij mee?"
         showFeatures={false}
         limitServices={6}
         showAllButton={true}
       />
-
-      {/* Pricing */}
-      <PricingSection />
 
       {/* Waarom klanten voor ons kiezen */}
       <section className="py-16 sm:py-20 bg-white">
@@ -497,14 +448,14 @@ export default function ComputerhulpAanHuisPage() {
           </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <Link href="/afspraak-maken" className="btn-primary">
-              Ook geholpen worden?
+            <a href="tel:+31858002006" className="btn-primary">
+              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
+              085-8002006
+            </a>
+            <Link href="/afspraak-maken" className="btn-secondary">
+              Afspraak maken
               <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
             </Link>
-            <a href="tel:+31858002006" className="btn-secondary">
-              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-              Bel 085-8002006
-            </a>
           </div>
         </div>
       </section>
@@ -516,14 +467,54 @@ export default function ComputerhulpAanHuisPage() {
             <h2 id="testimonials-heading" className="section-title">
               Wat onze klanten zeggen
             </h2>
-            <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
-            </p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">
               ← Swipe voor meer reviews →
             </p>
           </header>
           <TestimonialsCarousel testimonials={testimonials} />
+        </div>
+      </section>
+
+      {/* Pricing */}
+      <PricingSection />
+
+      {/* Zo werkt het */}
+      <section className="py-16 sm:py-20 bg-white">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="section-title">Zo werkt het</h2>
+          </div>
+
+          <div className="flex flex-col gap-4 sm:hidden">
+            {[
+              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
+              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
+              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
+            ].map((item, idx) => (
+              <div key={idx} className="flex items-center gap-4">
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">{item.step}</div>
+                <div>
+                  <div className="font-bold text-gray-900">{item.title}</div>
+                  <div className="text-sm sm:text-base text-gray-600">{item.sub}</div>
+                </div>
+                {idx < 2 && <Icon name="arrow-right" className="w-5 h-5 text-gray-300 ml-auto flex-shrink-0" strokeWidth={2} />}
+              </div>
+            ))}
+          </div>
+
+          <div className="hidden sm:grid sm:grid-cols-3 gap-8">
+            {[
+              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
+              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
+              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
+            ].map((item, idx) => (
+              <div key={idx} className="text-center">
+                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">{item.step}</div>
+                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
+                <p className="text-gray-600 text-sm">{item.sub}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -615,14 +606,14 @@ export default function ComputerhulpAanHuisPage() {
             Bel ons gerust of stuur een berichtje. We komen graag bij u langs in Zuid-Holland.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/afspraak-maken" className="btn-cta-white">
+            <a href="tel:+31858002006" className="btn-cta-white">
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+              085-8002006
+            </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
               Afspraak Maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
-            <a href="tel:+31858002006" className="btn-cta-dark">
-              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
-              Bel 085-8002006
-            </a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
             <span className="flex items-center gap-2">
@@ -646,42 +637,42 @@ export default function ComputerhulpAanHuisPage() {
 
 const testimonials = [
   {
-    quote: 'Ik had al weken last van een trage computer. De monteur kwam \'s avonds langs en binnen een uur was alles weer snel. Hij legde ook uit hoe ik mijn pc schoon kan houden. Fijne service!',
+    quote: 'Trage computer, binnen een uur weer snel. Fijne service!',
     initials: 'A',
     name: 'Mevrouw Agnes'
   },
   {
-    quote: 'Moest dringend bij mijn e-mail kunnen voor werk, maar Outlook deed het niet meer. Dezelfde dag nog geholpen, alles werkt weer perfect. Erg blij dat ze ook \'s avonds komen.',
+    quote: 'Outlook deed het niet meer. Dezelfde dag nog geholpen, alles werkt weer.',
     initials: 'R',
     name: 'De heer Rob'
   },
   {
-    quote: 'Na een verhuizing werkten onze twee computers en de printer niet meer op het nieuwe netwerk. Alles in één bezoek weer aangesloten en werkend. Heel prettig dat ze aan huis komen.',
+    quote: 'Na een verhuizing alles weer aangesloten in één bezoek. Heel prettig!',
     initials: 'M',
     name: 'Mevrouw Marieke'
   },
   {
-    quote: 'Mijn moeder van 82 kon niet meer bij haar foto\'s. De monteur heeft alles weer werkend gemaakt en het haar rustig uitgelegd. Ze belt nu zelf met haar kleinkinderen!',
+    quote: 'Mijn moeder kon niet meer bij haar foto\'s. Alles weer werkend en rustig uitgelegd.',
     initials: 'K',
     name: 'De heer Karel'
   },
   {
-    quote: 'Computer gaf vreemde foutmeldingen en was ontzettend langzaam. Bleek vol met rommel te zitten. Na het bezoek start hij weer op in 30 seconden. Verschil van dag en nacht!',
+    quote: 'Computer startte op in 10 minuten, nu in 30 seconden. Verschil van dag en nacht!',
     initials: 'J',
     name: 'Mevrouw José'
   },
   {
-    quote: 'WiFi reikte niet tot de slaapkamer. De monteur heeft een mesh-systeem geïnstalleerd en nu heb ik overal bereik. Zelfs in de tuin! Heel blij mee.',
+    quote: 'WiFi reikte niet tot de slaapkamer. Nu overal bereik, zelfs in de tuin!',
     initials: 'D',
     name: 'De heer Dick'
   },
   {
-    quote: 'Nieuwe laptop gekocht maar wist niet hoe ik alles moest overzetten. Binnen twee uur stonden al mijn bestanden, foto\'s en programma\'s erop. Heel handig!',
+    quote: 'Alle bestanden en foto\'s overgezet naar mijn nieuwe laptop. Heel handig!',
     initials: 'L',
     name: 'Mevrouw Lies'
   },
   {
-    quote: 'Printer en scanner deden het allebei niet meer. Was al drie keer naar de winkel geweest. De monteur had het in een kwartier opgelost. Scheelde mij weer een rit!',
+    quote: 'Printer deed het niet meer. In een kwartier opgelost. Scheelde mij weer een rit!',
     initials: 'H',
     name: 'De heer Herman'
   }
