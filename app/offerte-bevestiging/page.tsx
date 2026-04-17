@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import ConversionTracker from '@/components/ConversionTracker'
 import { Icon } from '@/components/icons'
+import { BUSINESS } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Offerte Bevestiging - Computerhulp Zuid-Holland',
@@ -95,31 +96,28 @@ export default function OfferteBevestigingPage() {
                 <p className="text-gray-700 mb-4">
                   Wacht niet op de offerte! Bel ons gerust voor een vrijblijvend gesprek over uw project.
                 </p>
-                <a href="tel:+31858002006" className="btn-primary">
+                <a href={BUSINESS.PHONE_HREF} className="btn-primary">
                   <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                  Bel Direct: 085-8002006
+                  Bel {BUSINESS.PHONE}
                 </a>
               </div>
 
               <div className="border-t pt-6">
-                <h3 className="font-bold text-gray-900 mb-4">Waarom Kiezen Voor Computerhulp Zuid-Holland?</h3>
-                <div className="grid gap-4">
+                <h3 className="font-bold text-gray-900 mb-4">Bereid u voor op ons gesprek</h3>
+                <p className="text-sm text-gray-600 mb-4">Denk alvast na over deze vragen — zo kunnen we meteen concreet worden:</p>
+                <ul className="space-y-3">
                   {[
-                    { title: 'Snelle Oplevering', desc: 'Wij leveren snel zonder in te boeten op kwaliteit', icon: 'clock' },
-                    { title: 'Transparante Prijzen', desc: 'Geen verrassingen, alles vooraf duidelijk', icon: 'money' },
-                    { title: 'Persoonlijke Service', desc: 'Direct contact, geen callcenters', icon: 'heart' },
+                    'Wat moet uw website kunnen (informatie tonen, webshop, afspraken inplannen)?',
+                    'Heeft u al voorbeelden van websites die u mooi vindt?',
+                    'Wilt u de website zelf kunnen aanpassen of laten wij dat doen?',
+                    'Heeft u een specifieke opleverdatum in gedachten?',
                   ].map((item, idx) => (
-                    <div key={idx} className="flex items-start gap-3">
-                      <div className="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
-                        <Icon name={item.icon} className="w-6 h-6 text-blue-600" strokeWidth={2} />
-                      </div>
-                      <div>
-                        <p className="font-semibold text-gray-900">{item.title}</p>
-                        <p className="text-sm text-gray-600">{item.desc}</p>
-                      </div>
-                    </div>
+                    <li key={idx} className="flex items-start gap-3">
+                      <Icon name="check-circle" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                      <p className="text-sm text-gray-700">{item}</p>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
 
               <div className="border-t pt-6 flex flex-col sm:flex-row gap-4">

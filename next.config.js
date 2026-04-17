@@ -27,7 +27,7 @@ const nextConfig = {
           },
           {
             key: 'Link',
-            value: '<https://fonts.googleapis.com>; rel=preconnect; crossorigin, <https://fonts.gstatic.com>; rel=preconnect; crossorigin, <https://www.googletagmanager.com>; rel=preconnect; crossorigin'
+            value: '<https://www.googletagmanager.com>; rel=preconnect; crossorigin'
           },
           {
             key: 'X-Frame-Options',

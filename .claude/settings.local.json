@@ -46,7 +46,21 @@
       "Bash(sed -i 's/pin, contant of Tikkie/pin of Tikkie/g' __TRACKED_VAR__/page.tsx)",
       "Bash(sed -i 's/faq-item-white shadow-sm/faq-item/g' __TRACKED_VAR__/page.tsx)",
       "Bash(sed -i s/faq-item-white/faq-item/g __TRACKED_VAR__/page.tsx)",
-      "Bash(npx --yes tsc --noEmit --pretty)"
+      "Bash(npx --yes tsc --noEmit --pretty)",
+      "Bash(npx sharp-cli *)",
+      "Bash(npm list *)",
+      "Bash(grep -E \"\\(^.*app$|^.*app/[^/]+$\\)\")",
+      "Bash(awk '{print $NF}')",
+      "Bash(grep -E \"\\\\.webp$|\\\\.png$|\\\\.jpg$\")",
+      "Bash([ -f \"C:\\\\Users\\\\konia\\\\OneDrive - Stichting Hogeschool Utrecht\\\\Computerhulpzh/app/$page/page.tsx\" ])",
+      "Bash(grep -v -E \"^\\(loading.tsx|page.tsx\\)$\")",
+      "Bash(echo \"---exit $?---\")",
+      "Bash(grep -rn \"text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight\" app/)",
+      "Bash(grep -rn \"text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-\\\\[1.1\\\\] tracking-tight\" app/)",
+      "Bash(npx next *)",
+      "Bash(rm -f lib/ab-testing.ts components/ExtraBenefitsSection.tsx components/ServicesImageCards.tsx components/WhatsAppWidget.tsx components/ui/FormField.tsx generate-city-pages.js generate_city_pages.py remove-text-faq.js)",
+      "Bash(rmdir components/ui appdiensten contentblog contentsteden)",
+      "Bash(npm install *)"
     ]
   }
 }

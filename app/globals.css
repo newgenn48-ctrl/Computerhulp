@@ -5,10 +5,20 @@
 @layer base {
   :root {
     --color-primary: 37 99 235;
-    --color-secondary: 16 185 129;
-    --color-accent: 245 158 11;
-    --color-dark: 15 23 42;
-    --color-light: 248 250 252;
+    --color-primary-dark: 30 64 175;
+    --color-accent: 249 115 22;
+    --color-ink: 28 25 23;
+    --color-ink-soft: 68 64 60;
+  }
+
+  html {
+    font-size: 17px;
+  }
+
+  @media (min-width: 1024px) {
+    html {
+      font-size: 18px;
+    }
   }
 
   * {
@@ -17,51 +27,50 @@
 
   body {
     @apply bg-white text-gray-900 antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1;
+    font-feature-settings: "rlig" 1, "calt" 1, "cv11" 1;
   }
 
-  img {
-    -webkit-user-drag: none;
-    -khtml-user-drag: none;
-    -moz-user-drag: none;
-    -o-user-drag: none;
-    pointer-events: none;
+  /* Headings: Inter met zelfverzekerd gewicht en strakke tracking.
+     Senior-vriendelijk — geen serif details, maar wel karaktervol. */
+  h1, h2, h3 {
+    font-feature-settings: "cv11" 1;
+    letter-spacing: -0.02em;
   }
 }
 
 @layer components {
   /* ============================================
-     BUTTONS - match actual page styles
+     BUTTONS — refined with gradient + active press
      ============================================ */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105;
+    @apply inline-flex items-center justify-center gap-3 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-md shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md transition-all duration-200;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-3 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105;
+    @apply inline-flex items-center justify-center gap-3 bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg border-2 border-gray-200 hover:border-blue-600 hover:text-blue-700 hover:shadow-md active:translate-y-0 transition-all duration-200;
   }
 
   .btn-cta-white {
-    @apply inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-xl hover:scale-105 transition-all;
+    @apply inline-flex items-center justify-center gap-3 bg-white text-blue-700 hover:bg-blue-50 px-10 py-5 rounded-xl font-bold text-xl shadow-xl shadow-blue-900/20 hover:shadow-2xl hover:shadow-blue-900/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200;
   }
 
   .btn-cta-dark {
-    @apply inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all;
+    @apply inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white px-10 py-5 rounded-xl font-bold text-xl border border-white/30 hover:border-white/50 backdrop-blur-sm transition-all duration-200;
   }
 
   .btn-cta-ghost {
-    @apply inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-10 py-5 rounded-full font-semibold text-lg border-2 border-white/30 hover:border-white/60 transition-all;
+    @apply inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-10 py-5 rounded-xl font-semibold text-lg border border-white/30 hover:border-white/60 transition-all duration-200;
   }
 
   .btn-submit {
-    @apply w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100;
+    @apply w-full bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-md shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 active:translate-y-0 transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-md;
   }
 
   /* ============================================
      USP / TRUST BADGES
      ============================================ */
   .usp-badge {
-    @apply inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200;
+    @apply inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm border border-gray-100;
   }
 
   .trust-indicator {
@@ -69,18 +78,29 @@
   }
 
   /* ============================================
-     SECTION HEADINGS
+     TYPOGRAPHY — editorial
+     ============================================ */
+  .eyebrow {
+    @apply inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] text-blue-600 mb-3;
+  }
+
+  .eyebrow-accent {
+    @apply inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] text-accent-600 mb-3;
+  }
+
+  /* ============================================
+     SECTION HEADINGS — Inter, zware gewichten, strakke tracking
      ============================================ */
   .section-title {
-    @apply text-3xl sm:text-4xl font-bold text-gray-900 mb-4;
+    @apply text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-gray-900 mb-4 leading-[1.1] tracking-display-tight;
   }
 
   .section-title-lg {
-    @apply text-4xl sm:text-5xl font-bold text-gray-900 mb-6;
+    @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-[1.05] tracking-display-tight;
   }
 
   .section-subtitle {
-    @apply text-lg text-gray-600;
+    @apply text-lg text-gray-600 leading-relaxed;
   }
 
   .section-label {
@@ -95,15 +115,15 @@
   }
 
   .hero-overlay-mobile {
-    @apply absolute inset-0 bg-blue-50/70 md:hidden;
+    @apply absolute inset-0 bg-white/70 md:hidden;
   }
 
   .hero-overlay-desktop-r {
-    @apply absolute inset-0 hidden md:block bg-gradient-to-r from-blue-50/90 via-blue-50/60 to-transparent;
+    @apply absolute inset-0 hidden md:block bg-gradient-to-r from-white/85 via-white/55 to-transparent;
   }
 
   .hero-overlay-desktop-b {
-    @apply absolute inset-0 hidden md:block bg-gradient-to-b from-blue-50/30 via-transparent to-blue-50/50;
+    @apply absolute inset-0 hidden md:block bg-gradient-to-b from-white/20 via-transparent to-white/40;
   }
 
   .hero-content {
@@ -111,49 +131,49 @@
   }
 
   .hero-title {
-    @apply text-4xl sm:text-5xl lg:text-7xl font-bold text-gray-900 mb-4 md:mb-6 leading-[1.1] tracking-tight;
+    @apply text-4xl sm:text-5xl lg:text-7xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.02] tracking-display-tight;
   }
 
   .hero-description {
-    @apply text-xl md:text-2xl text-gray-800 mb-6 leading-relaxed max-w-xl;
+    @apply text-lg md:text-xl text-gray-700 mb-6 leading-relaxed max-w-xl;
   }
 
   /* ============================================
-     CARDS
+     CARDS — subtle accent, refined shadows
      ============================================ */
   .info-card {
-    @apply bg-white rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-2xl transition-all;
+    @apply bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 border border-gray-100;
   }
 
   .testimonial-card {
-    @apply bg-white rounded-3xl p-8 shadow-sm hover:shadow-xl transition-shadow duration-300;
+    @apply bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 border border-gray-100;
   }
 
   .faq-item {
-    @apply bg-gray-50 rounded-xl border border-gray-200 overflow-hidden;
+    @apply bg-white rounded-xl overflow-hidden border border-gray-100 hover:border-gray-200 transition-colors;
   }
 
   .faq-item-white {
-    @apply bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm;
+    @apply bg-white rounded-xl overflow-hidden shadow-soft border border-gray-100;
   }
 
   .faq-summary {
-    @apply flex items-center justify-between cursor-pointer p-6 font-semibold text-gray-900 hover:bg-gray-100 transition-colors;
+    @apply flex items-center justify-between cursor-pointer p-5 sm:p-6 font-medium text-gray-900 hover:text-blue-700 transition-colors;
   }
 
   .faq-answer {
-    @apply px-6 pb-6 text-gray-600 leading-relaxed;
+    @apply px-5 sm:px-6 pb-5 sm:pb-6 text-gray-700 leading-relaxed;
   }
 
   /* ============================================
      TAGS
      ============================================ */
   .city-tag {
-    @apply bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200;
+    @apply bg-gray-50 px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-100;
   }
 
   .city-tag-link {
-    @apply bg-gray-50 px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors;
+    @apply bg-gray-50 px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 border border-gray-100 transition-colors;
   }
 
   /* ============================================
@@ -164,7 +184,7 @@
   }
 
   .step-number-round {
-    @apply w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-xl;
+    @apply w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-lg shadow-blue-600/30;
   }
 
   .step-number-done {
@@ -172,40 +192,52 @@
   }
 
   /* ============================================
-     FORM
+     FORM — refined inputs
      ============================================ */
   .form-input {
-    @apply w-full px-4 py-3 border-2 rounded-lg focus:ring-2 focus:ring-blue-200 transition-colors outline-none;
+    @apply w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl bg-white focus:border-blue-500 focus:bg-white transition-colors outline-none placeholder:text-gray-400;
   }
 
   .form-input-error {
-    @apply border-red-500 focus:border-red-500;
+    @apply border-red-500 focus:border-red-500 bg-red-50/50;
   }
 
   .form-input-normal {
-    @apply border-gray-300 focus:border-blue-500;
+    @apply border-gray-200 focus:border-blue-500;
   }
 
   .form-label {
-    @apply block text-sm sm:text-base font-semibold text-gray-700 mb-2;
+    @apply block text-sm sm:text-base font-medium text-gray-700 mb-2;
   }
 
   .form-error {
-    @apply mt-1 text-sm text-red-600;
+    @apply mt-1.5 text-sm text-red-600 font-medium;
   }
 
   /* ============================================
      PRICING
      ============================================ */
   .pricing-box {
-    @apply bg-gradient-to-br from-blue-600 to-blue-700 rounded-3xl p-10 text-white text-center;
+    @apply bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-10 text-white text-center shadow-xl shadow-blue-600/20;
   }
 
   /* ============================================
      CTA SECTIONS
      ============================================ */
   .cta-section-blue {
-    @apply py-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white;
+    @apply relative py-20 sm:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden;
+  }
+
+  .cta-section-blue::before {
+    content: '';
+    @apply absolute inset-0 opacity-20;
+    background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.15) 1px, transparent 0);
+    background-size: 40px 40px;
+    pointer-events: none;
+  }
+
+  .cta-section-blue > * {
+    @apply relative z-10;
   }
 
   .cta-section-dark {
@@ -231,70 +263,94 @@
   }
 
   .contact-card {
-    @apply bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-transparent hover:border-blue-500;
+    @apply bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition-all duration-300 border border-gray-100;
   }
 
   /* ============================================
      NAVIGATION (Header)
      ============================================ */
   .nav-link {
-    @apply text-gray-700 hover:text-blue-600 font-medium transition-colors;
+    @apply text-gray-700 hover:text-blue-700 font-medium transition-colors;
   }
 
   .nav-dropdown-link {
-    @apply block px-4 py-2.5 text-gray-700 hover:bg-blue-50 hover:text-blue-600 transition-colors focus:bg-blue-50 focus:text-blue-600 focus:outline-none;
+    @apply block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors focus:bg-gray-50 focus:text-gray-900 focus:outline-none;
   }
 
   .nav-mobile-link {
-    @apply px-4 py-3.5 text-base text-gray-700 hover:bg-blue-50 hover:text-blue-600 rounded-lg transition-colors;
+    @apply px-4 py-3.5 text-base text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-colors;
   }
 
   .btn-header-cta {
-    @apply bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2.5 rounded-full font-semibold shadow-lg hover:shadow-xl transition-all;
+    @apply bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2.5 rounded-xl font-semibold shadow-sm shadow-blue-600/20 hover:shadow-md hover:shadow-blue-600/30 transition-all duration-200;
   }
 
   .btn-header-cta-mobile {
-    @apply mt-2 bg-gradient-to-r from-blue-600 to-blue-700 text-white px-6 py-3 rounded-full font-semibold text-center shadow-lg;
+    @apply mt-2 bg-gradient-to-br from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-center shadow-sm shadow-blue-600/20;
   }
 
   /* ============================================
      FLOATING BUTTONS
      ============================================ */
   .floating-btn {
-    @apply relative w-14 h-14 text-white rounded-full shadow-2xl flex items-center justify-center transition-all hover:scale-110;
+    @apply relative w-14 h-14 text-white rounded-2xl shadow-lg flex items-center justify-center transition-all duration-200 hover:shadow-xl hover:-translate-y-0.5;
   }
 
   .floating-tooltip {
-    @apply absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-xl;
+    @apply absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg;
   }
 
   /* ============================================
      FOOTER
      ============================================ */
   .footer-link {
-    @apply text-gray-300 hover:text-white transition;
+    @apply text-gray-300 hover:text-white transition-colors;
   }
 
   .footer-city-tag {
-    @apply bg-gray-800 text-gray-300 hover:bg-blue-600 hover:text-white px-3 py-1 rounded-full text-xs transition-colors;
+    @apply bg-gray-800 text-gray-300 hover:bg-blue-600 hover:text-white px-3 py-1 rounded-full text-xs transition-colors border border-gray-700/50;
   }
 
   /* ============================================
      CAROUSEL
      ============================================ */
   .carousel-card {
-    @apply flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[calc(33.333%-1rem)] snap-start bg-gradient-to-br from-gray-50 to-blue-50 rounded-2xl p-6 sm:p-8 border border-gray-100 relative;
+    @apply flex-shrink-0 w-[85vw] sm:w-[45vw] lg:w-[calc(33.333%-1rem)] snap-start bg-white rounded-2xl p-6 sm:p-8 shadow-soft border border-gray-100 relative;
   }
 
   .carousel-arrow {
-    @apply absolute top-1/2 -translate-y-1/2 z-10 hidden lg:flex w-12 h-12 bg-white rounded-full shadow-lg items-center justify-center hover:bg-gray-50 transition-all;
+    @apply absolute top-1/2 -translate-y-1/2 z-10 hidden lg:flex w-12 h-12 bg-white rounded-xl shadow-md items-center justify-center hover:bg-gray-50 hover:shadow-lg transition-all duration-200 border border-gray-100;
   }
 
   /* ============================================
      NEARBY CITIES
      ============================================ */
   .nearby-city-link {
-    @apply flex items-center gap-2 px-4 py-3 bg-white border border-gray-200 rounded-lg hover:border-blue-500 hover:shadow-md transition-all;
+    @apply flex items-center gap-2 px-4 py-3 bg-white rounded-xl hover:bg-blue-50 hover:shadow-sm border border-gray-100 hover:border-blue-200 transition-all duration-200;
+  }
+
+  /* ============================================
+     ACCENT / DECORATIVE
+     ============================================ */
+  .display-stat {
+    @apply font-extrabold tracking-display-tight;
+  }
+
+  .accent-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .accent-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.08em;
+    height: 0.35em;
+    background: linear-gradient(90deg, rgba(249, 115, 22, 0.25) 0%, rgba(249, 115, 22, 0) 100%);
+    z-index: -1;
+    border-radius: 4px;
   }
 }
 
@@ -327,7 +383,7 @@
 }
 
 *:focus-visible {
-  @apply outline-4 outline-offset-4 outline-blue-600 rounded-2xl;
+  @apply outline-2 outline-offset-2 outline-blue-600 rounded-md;
 }
 
 html {
@@ -336,7 +392,7 @@ html {
 }
 
 ::selection {
-  @apply bg-blue-200 text-gray-900;
+  @apply bg-blue-100 text-gray-900;
 }
 
 @media print {
@@ -345,9 +401,21 @@ html {
   }
 }
 
-/* Phone Link Styling */
-a[href^="tel:"] {
-  @apply no-underline;
+/* Phone link styling: only strip underline on button-styled phone links,
+   keep it on inline prose phone links so users recognise them. */
+.btn-primary[href^="tel:"],
+.btn-secondary[href^="tel:"],
+.btn-cta-white[href^="tel:"],
+.btn-cta-dark[href^="tel:"],
+.btn-cta-ghost[href^="tel:"],
+.btn-header-cta[href^="tel:"],
+.btn-header-cta-mobile[href^="tel:"],
+.floating-btn[href^="tel:"],
+.footer-link[href^="tel:"],
+.contact-card[href^="tel:"],
+.nav-link[href^="tel:"],
+.nav-mobile-link[href^="tel:"] {
+  text-decoration: none;
 }
 
 /* Reduced Motion Support */

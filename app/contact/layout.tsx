@@ -1,16 +1,17 @@
 import { Metadata } from 'next'
+import { BUSINESS, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Contact | Computerhulp Zuid-Holland | Bel 085-8002006',
-  description: 'Neem contact op met Computerhulp Zuid-Holland. Bel 085-8002006 of vul het formulier in. Binnen 3 uur reactie. 7 dagen per week bereikbaar.',
+  title: `Contact | ${BUSINESS.NAME} | Bel ${BUSINESS.PHONE}`,
+  description: `Neem contact op met ${BUSINESS.NAME}. Bel ${BUSINESS.PHONE} of vul het formulier in. Binnen 1 uur reactie. ${HOURS.DAYS} bereikbaar.`,
   openGraph: {
-    title: 'Contact | Computerhulp Zuid-Holland',
-    description: 'Neem contact op voor computerhulp aan huis. Bel 085-8002006 of vul het formulier in. Binnen 3 uur reactie.',
+    title: `Contact | ${BUSINESS.NAME}`,
+    description: `Neem contact op voor computerhulp aan huis. Bel ${BUSINESS.PHONE} of vul het formulier in. Binnen 1 uur reactie.`,
     type: 'website',
-    url: 'https://computerhulpzh.nl/contact',
+    url: `${BUSINESS.URL}/contact`,
   },
   alternates: {
-    canonical: 'https://computerhulpzh.nl/contact',
+    canonical: `${BUSINESS.URL}/contact`,
   },
 }
 

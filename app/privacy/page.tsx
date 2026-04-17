@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { BUSINESS } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Privacyverklaring | Computerhulp Zuid-Holland',
@@ -26,8 +27,8 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>KvK nummer:</strong> 91310318</li>
               <li><strong>BTW nummer:</strong> NL865613461B01</li>
-              <li><strong>E-mail:</strong> info@computerhulpzh.nl</li>
-              <li><strong>Telefoon:</strong> 085-8002006</li>
+              <li><strong>E-mail:</strong> {BUSINESS.EMAIL}</li>
+              <li><strong>Telefoon:</strong> {BUSINESS.PHONE}</li>
             </ul>
           </section>
 
@@ -107,7 +108,7 @@ export default function PrivacyPage() {
               <li><strong>Overdracht:</strong> uw gegevens in een leesbaar formaat ontvangen</li>
             </ul>
             <p className="mt-4">
-              Neem contact op via <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a> of bel <a href="tel:+31858002006" className="text-blue-600 hover:underline">085-8002006</a>
+              Neem contact op via <a href={BUSINESS.EMAIL_HREF} className="text-blue-600 hover:underline">{BUSINESS.EMAIL}</a> of bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 hover:underline">{BUSINESS.PHONE}</a>
             </p>
           </section>
 
@@ -142,8 +143,8 @@ export default function PrivacyPage() {
               Neem gerust contact op:
             </p>
             <ul className="list-none space-y-2 mt-4">
-              <li><strong>E-mail:</strong> <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li><strong>Telefoon:</strong> <a href="tel:+31858002006" className="text-blue-600 hover:underline">085-8002006</a></li>
+              <li><strong>E-mail:</strong> <a href={BUSINESS.EMAIL_HREF} className="text-blue-600 hover:underline">{BUSINESS.EMAIL}</a></li>
+              <li><strong>Telefoon:</strong> <a href={BUSINESS.PHONE_HREF} className="text-blue-600 hover:underline">{BUSINESS.PHONE}</a></li>
             </ul>
           </section>
         </div>

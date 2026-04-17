@@ -5,30 +5,28 @@ import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import ServicesSection from '@/components/ServicesSection'
+import TrustBadges from '@/components/TrustBadges'
+import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
   loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
 })
 
 export const metadata: Metadata = {
-  title: 'Computerhulp aan Huis Zuid-Holland | Binnen 24u | Vanaf €44,97',
-  description: 'Computerproblemen? Computerhulp aan huis in Zuid-Holland. Laptop, WiFi, printer en meer. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.',
+  title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u | Vanaf ${PRICING.MINIMUM_TOTAL}`,
+  description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Computerhulp Zuid-Holland | IT-student aan Huis',
-    description: 'Computerhulp Zuid-Holland: uw IT-student aan huis. Binnen 24 uur bij u thuis. €10 voorrijkosten. €14,99 per kwartier.',
+    title: `${BUSINESS.NAME} | IT-Hulp aan Huis`,
+    description: `${BUSINESS.NAME}: uw IT-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
-    url: 'https://computerhulpzh.nl',
-    siteName: 'Computerhulp Zuid-Holland',
+    url: BUSINESS.URL,
+    siteName: BUSINESS.NAME,
     locale: 'nl_NL',
-    images: [
-      {
-        url: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Logo.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Computerhulp Zuid-Holland - IT Hulp aan Huis'},
-    ]},
+  },
   alternates: {
-    canonical: 'https://computerhulpzh.nl'},
+    canonical: BUSINESS.URL,
+  },
   robots: {
     index: true,
     follow: true,
@@ -37,54 +35,78 @@ export const metadata: Metadata = {
       follow: true,
       'max-video-preview': -1,
       'max-image-preview': 'large',
-      'max-snippet': -1}}}
+      'max-snippet': -1,
+    },
+  },
+}
 
-// Organization Schema
+// ─── Shared FAQ data (used in both JSON-LD and rendered HTML) ───────────────
+const faqItems = [
+  {
+    q: 'Hoe snel kunnen jullie langskomen?',
+    a: 'Meestal staan we binnen een dag bij u aan de deur. Heeft u haast? Dan proberen we vaak nog dezelfde dag langs te komen. We zijn elke dag bereikbaar, ook in de avond.',
+  },
+  {
+    q: 'Wat kost het?',
+    a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt pas achteraf, gewoon via pin, contant of Tikkie.`,
+  },
+  {
+    q: 'Waar kunnen jullie mee helpen?',
+    a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, WiFi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.',
+  },
+  {
+    q: 'Komen jullie ook in mijn woonplaats?',
+    a: `Wij komen in heel ${BUSINESS.REGION} bij u thuis. Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en meer dan 50 andere gemeenten. Overal ${PRICING.TRAVEL} voorrijkosten.`,
+  },
+  {
+    q: 'Moet ik iets voorbereiden?',
+    a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele wachtwoorden alvast klaar. Verder nemen wij alles mee wat nodig is.',
+  },
+]
+
+// ─── Structured data (split @ids to avoid @type collision) ───────────────────
 const organizationData = {
-  '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://computerhulpzh.nl/#organization',
-  name: 'Computerhulp Zuid-Holland',
-  url: 'https://computerhulpzh.nl',
+  '@id': `${BUSINESS.URL}/#organization`,
+  name: BUSINESS.NAME,
+  url: BUSINESS.URL,
   logo: {
     '@type': 'ImageObject',
-    url: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Logo.webp',
+    url: `${BUSINESS.URL}/logo.png`,
     width: 200,
-    height: 60
+    height: 60,
   },
   contactPoint: {
     '@type': 'ContactPoint',
-    telephone: '+31858002006',
+    telephone: BUSINESS.PHONE_INTL,
     contactType: 'customer service',
     availableLanguage: 'Dutch',
-    areaServed: 'NL'
-  }
+    areaServed: BUSINESS.COUNTRY,
+  },
 }
 
-// LocalBusiness Schema (enhanced)
 const localBusinessData = {
-  '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://computerhulpzh.nl/#localbusiness',
-  name: 'Computerhulp Zuid-Holland',
-  description: 'Professionele computerhulp aan huis in Zuid-Holland. Wij lossen computer-, laptop-, printer- en WiFi-problemen snel op. Binnen 24 uur bij u thuis, €10 voorrijkosten.',
-  url: 'https://computerhulpzh.nl',
-  telephone: '+31858002006',
-  email: 'info@computerhulpzh.nl',
-  logo: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Logo.webp',
+  '@id': `${BUSINESS.URL}/#localbusiness`,
+  name: BUSINESS.NAME,
+  description: `Professionele computerhulp aan huis in ${BUSINESS.REGION}. Wij lossen computer-, laptop-, printer- en WiFi-problemen snel op. Binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
+  url: BUSINESS.URL,
+  telephone: BUSINESS.PHONE_INTL,
+  email: BUSINESS.EMAIL,
+  logo: `${BUSINESS.URL}/logo.png`,
   image: [
-    'https://computerhulpzh.nl/Student%20aan%20huis.webp',
-    'https://computerhulpzh.nl/Computerhulp%20aan%20huis.webp'
+    `${BUSINESS.URL}/Student%20aan%20huis.webp`,
+    `${BUSINESS.URL}/Computerhulp%20aan%20huis.webp`,
   ],
   address: {
     '@type': 'PostalAddress',
-    addressRegion: 'Zuid-Holland',
-    addressCountry: 'NL'
+    addressRegion: BUSINESS.REGION,
+    addressCountry: BUSINESS.COUNTRY,
   },
   geo: {
     '@type': 'GeoCoordinates',
     latitude: 52.0116,
-    longitude: 4.3571
+    longitude: 4.3571,
   },
   areaServed: [
     { '@type': 'City', name: 'Den Haag' },
@@ -93,7 +115,7 @@ const localBusinessData = {
     { '@type': 'City', name: 'Delft' },
     { '@type': 'City', name: 'Zoetermeer' },
     { '@type': 'City', name: 'Dordrecht' },
-    { '@type': 'State', name: 'Zuid-Holland' }
+    { '@type': 'State', name: BUSINESS.REGION },
   ],
   priceRange: '€€',
   currenciesAccepted: 'EUR',
@@ -102,220 +124,71 @@ const localBusinessData = {
     {
       '@type': 'OpeningHoursSpecification',
       dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: '08:00',
-      closes: '22:00'
-    }
+      opens: HOURS.OPEN,
+      closes: HOURS.CLOSE,
+    },
   ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Computerhulp Diensten',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'Computer & Laptop Hulp', description: 'Hulp bij trage computers, crashes en opstartproblemen' }
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'WiFi & Internet Hulp', description: 'WiFi installatie, bereik verbeteren en internetproblemen oplossen' }
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'Printer & Scanner Hulp', description: 'Printer installeren, aansluiten en printproblemen oplossen' }
-      }
-    ]
-  }
 }
 
-// WebSite Schema with SearchAction
 const websiteData = {
-  '@context': 'https://schema.org',
   '@type': 'WebSite',
-  '@id': 'https://computerhulpzh.nl/#website',
-  name: 'Computerhulp Zuid-Holland',
-  url: 'https://computerhulpzh.nl',
-  publisher: { '@id': 'https://computerhulpzh.nl/#organization' },
-  inLanguage: 'nl-NL'
+  '@id': `${BUSINESS.URL}/#website`,
+  name: BUSINESS.NAME,
+  url: BUSINESS.URL,
+  publisher: { '@id': `${BUSINESS.URL}/#organization` },
+  inLanguage: 'nl-NL',
 }
 
-// Service Schema
 const serviceData = {
-  '@context': 'https://schema.org',
   '@type': 'Service',
-  '@id': 'https://computerhulpzh.nl/#service',
+  '@id': `${BUSINESS.URL}/#service`,
   name: 'Computerhulp aan Huis',
   serviceType: 'Computer Repair Service',
-  provider: { '@id': 'https://computerhulpzh.nl/#localbusiness' },
-  areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  description: 'Professionele computerhulp aan huis voor particulieren en kleine ondernemers in Zuid-Holland. Wij lossen computer, laptop, printer, WiFi en andere IT-problemen snel en vakkundig op.',
+  provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
+  areaServed: { '@type': 'State', name: BUSINESS.REGION },
+  description: `Professionele computerhulp aan huis voor particulieren en kleine ondernemers in ${BUSINESS.REGION}. Wij lossen computer, laptop, printer, WiFi en andere IT-problemen snel en vakkundig op.`,
   offers: {
     '@type': 'Offer',
-    price: '14.99',
+    price: String(PRICING.PER_QUARTER_NUM),
     priceCurrency: 'EUR',
     priceSpecification: {
       '@type': 'UnitPriceSpecification',
-      price: '14.99',
+      price: String(PRICING.PER_QUARTER_NUM),
       priceCurrency: 'EUR',
-      unitText: 'per kwartier'
+      unitText: 'per kwartier',
     },
-    validFrom: '2025-01-01'
-  }
+    validFrom: '2025-01-01',
+  },
 }
 
-// FAQ Schema (enhanced)
 const faqData = {
-  '@context': 'https://schema.org',
   '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Hoe snel kunnen jullie langskomen voor computerhulp?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'In de meeste gevallen komen we binnen 24 uur bij u langs voor computerhulp aan huis. Bij spoed proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren tot 22:00.'
-      }
+  '@id': `${BUSINESS.URL}/#faq`,
+  mainEntity: faqItems.map(item => ({
+    '@type': 'Question',
+    name: item.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: item.a,
     },
-    {
-      '@type': 'Question',
-      name: 'Wat kost computerhulp aan huis in Zuid-Holland?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Onze computerhulp aan huis kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. Betalen kan na afloop via pin, contant of Tikkie.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Welke computerproblemen kunnen jullie oplossen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Wij helpen met alle IT-problemen: trage computers, laptop reparatie, printers installeren, WiFi problemen, e-mailconfiguratie, tablets, smartphones, software-installatie, virusverwijdering en dataherstel. Ook voor persoonlijke uitleg en training kunt u bij ons terecht.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'In welke plaatsen bieden jullie computerhulp aan huis?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Wij bieden computerhulp aan huis in heel Zuid-Holland, waaronder Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en meer dan 50 andere gemeenten.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Moet ik iets voorbereiden voor de computerhulp afspraak?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Nee, u hoeft niets voor te bereiden. Zorg alleen dat u eventuele wachtwoorden bij de hand heeft en dat de apparatuur bereikbaar is. Wij nemen al het gereedschap mee dat nodig is voor de computerhulp.'
-      }
-    }
-  ]
+  })),
 }
 
-// HowTo Schema
-const howToData = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'Computerhulp aan huis aanvragen',
-  description: 'Zo vraagt u computerhulp aan huis aan bij Computerhulp Zuid-Holland',
-  step: [
-    {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'Neem contact op',
-      text: 'Bel 085-8002006 of maak een afspraak via de website. Vertel kort wat het probleem is.'
-    },
-    {
-      '@type': 'HowToStep',
-      position: 2,
-      name: 'Afspraak maken',
-      text: 'We plannen samen een moment dat u uitkomt. Vaak kunnen we binnen 24 uur langskomen.'
-    },
-    {
-      '@type': 'HowToStep',
-      position: 3,
-      name: 'Probleem oplossen',
-      text: 'We komen bij u thuis en lossen het probleem direct op. Betalen na afloop.'
-    }
-  ],
-  totalTime: 'PT24H'
-}
-
-// BreadcrumbList
 const breadcrumbData = {
-  '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://computerhulpzh.nl' }
-  ]
+    { '@type': 'ListItem', position: 1, name: 'Home', item: BUSINESS.URL },
+  ],
 }
 
-const testimonials = [
-  {
-    quote: 'Mijn computer deed het helemaal niet meer. Binnen 2 uur stond hij weer aan en al mijn foto\'s waren gered. Ontzettend blij!',
-    name: 'Mevrouw Gerda',
-    initials: 'G'
-  },
-  {
-    quote: 'Eindelijk iemand die normaal uitlegt! Geen ingewikkelde termen. Printer werkt nu perfect.',
-    name: 'De heer Jan',
-    initials: 'J'
-  },
-  {
-    quote: 'WiFi werkte niet, e-mail deed het niet. Alles in één keer opgelost. Eerlijke prijs, top service!',
-    name: 'Mevrouw Linda',
-    initials: 'L'
-  },
-  {
-    quote: 'Heel geduldig uitgelegd hoe ik mijn tablet moet gebruiken. Nu kan ik zelf foto\'s maken en versturen naar mijn kleinkinderen!',
-    name: 'De heer Henk',
-    initials: 'H'
-  },
-  {
-    quote: 'Laptop was zo traag geworden. Na het bezoek werkt hij weer als nieuw. Fijne jongen, nam de tijd voor uitleg.',
-    name: 'Mevrouw Ria',
-    initials: 'R'
-  },
-  {
-    quote: 'Mijn nieuwe smart TV kon ik niet aansluiten. Binnen een uur Netflix, Videoland én de foto\'s van mijn telefoon erop. Geweldig!',
-    name: 'De heer Peter',
-    initials: 'P'
-  },
-  {
-    quote: 'Al jaren last van een trage computer. Eindelijk iemand die het écht oplost. Scheelt mij zoveel ergernis. Aanrader!',
-    name: 'Mevrouw Corrie',
-    initials: 'C'
-  },
-  {
-    quote: 'Virus op mijn laptop en al mijn wachtwoorden kwijt. Alles hersteld én nu goed beveiligd. Zeer tevreden!',
-    name: 'De heer Willem',
-    initials: 'W'
-  },
-  {
-    quote: 'Mijn e-mail was gehackt en ik wist niet wat ik moest doen. Alles weer veilig gemaakt en uitgelegd hoe ik sterke wachtwoorden gebruik. Heel geruststellend!',
-    name: 'Mevrouw Ans',
-    initials: 'A'
-  },
-  {
-    quote: 'De kinderen klaagden dat het internet zo langzaam was. Na het bezoek vliegt alles weer. Ook de WiFi op zolder werkt nu perfect!',
-    name: 'De heer Frank',
-    initials: 'F'
-  },
-  {
-    quote: 'Nieuwe laptop gekocht maar kreeg alles niet overgezet. Binnen anderhalf uur stond alles erop: foto\'s, documenten, programma\'s. Heel handig!',
-    name: 'Mevrouw Truus',
-    initials: 'T'
-  },
-  {
-    quote: 'Mijn printer deed het al maanden niet meer. Had er zelf uren aan gezeten. De monteur loste het in tien minuten op. Waarom heb ik niet eerder gebeld!',
-    name: 'De heer Bert',
-    initials: 'B'
-  }
-]
+const testimonials = HUB_TESTIMONIALS
 
 const cities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel']
 
 export default function HomePage() {
   return (
     <>
-      {/* Structured Data - Consolidated @graph */}
+      {/* Structured Data — single @graph with non-colliding @ids */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@graph': [
@@ -324,17 +197,16 @@ export default function HomePage() {
           websiteData,
           serviceData,
           faqData,
-          howToData,
           breadcrumbData,
-        ].map(({ '@context': _, ...rest }) => rest)
+        ],
       }) }} />
 
       {/* Premium Hero Section */}
-      <section className="hero-wrapper" aria-label="Computerhulp Zuid-Holland hero">
+      <section className="hero-wrapper" aria-label={`${BUSINESS.NAME} hero`}>
         <div className="absolute inset-0">
           <Image
             src="/Student aan huis.webp"
-            alt="Computerhulp IT-student helpt klant thuis met laptop in Zuid-Holland"
+            alt={`Computerhulp IT-student helpt klant thuis met laptop in ${BUSINESS.REGION}`}
             fill
             className="object-cover"
             priority
@@ -347,53 +219,45 @@ export default function HomePage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
+            <span className="eyebrow">IT-hulp · {BUSINESS.REGION}</span>
             <h1 className="hero-title">
-              Computerhulp <span className="text-blue-600">aan Huis</span>
+              Computerhulp <span className="text-blue-600">aan huis</span>
             </h1>
 
             <p className="hero-description">
-              Betrouwbare computerhulp aan huis door heel Zuid-Holland. Onze IT-studenten lossen het <strong className="text-gray-900">snel en vakkundig</strong> op — bij u thuis.
+              Uw computer, laptop of WiFi werkt vandaag nog. We komen bij u thuis in {BUSINESS.REGION} — <strong className="text-gray-900">meestal binnen 24 uur</strong>.
             </p>
 
-            {/* USP Badges */}
-            <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              <span className="usp-badge">
-                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Binnen 24 uur geholpen
-              </span>
-              <span className="usp-badge">
-                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betrouwbaar & vakkundig
-              </span>
-              <span className="usp-badge">
-                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betaalbare tarieven
-              </span>
-            </div>
-
-            {/* CTA Buttons */}
+            {/* CTA Buttons — phone primary (senior audience prefers calling) */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/afspraak-maken"
-                className="btn-primary"
-                aria-label="Vraag computerhulp aan huis aan"
-              >
-                Hulp aanvragen
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-              </Link>
               <a
-                href="tel:+31858002006"
-                className="btn-secondary"
-                aria-label="Bel ons voor computerhulp: 085-8002006"
+                href={BUSINESS.PHONE_HREF}
+                className="btn-primary"
+                aria-label={`Bel ons voor computerhulp: ${BUSINESS.PHONE}`}
               >
                 <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-                Bel 085-8002006
+                Bel {BUSINESS.PHONE}
               </a>
+              <Link
+                href="/afspraak-maken"
+                className="btn-secondary"
+                aria-label="Vraag computerhulp aan huis aan"
+              >
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+              </Link>
             </div>
+
+            {/* Callback promise — senior-friendly reassurance */}
+            <p className="mt-4 text-sm text-gray-700">
+              Liever teruggebeld worden? <Link href="/afspraak-maken" className="text-blue-600 hover:underline font-medium">Vul het formulier in</Link> — binnen 1 uur reactie, {HOURS.LABEL}.
+            </p>
           </div>
         </div>
-
       </section>
+
+      {/* Trust badges — above-the-fold signals */}
+      <TrustBadges />
 
       {/* Services Section */}
       <ServicesSection
@@ -412,8 +276,8 @@ export default function HomePage() {
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             {[
-              { step: '1', title: 'U belt of mailt ons', desc: 'Vertel kort wat er aan de hand is. Bel 085-8002006 of maak online een afspraak.' },
-              { step: '2', title: 'We komen bij u thuis', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. Voorrijkosten slechts €10.' },
+              { step: '1', title: 'U belt of mailt ons', desc: `Vertel kort wat er aan de hand is. Bel ${BUSINESS.PHONE} of maak online een afspraak.` },
+              { step: '2', title: 'We komen bij u thuis', desc: `Binnen 24 uur komt onze IT-student bij u thuis. Voorrijkosten slechts ${PRICING.TRAVEL}.` },
               { step: '3', title: 'Probleem opgelost', desc: 'Uw probleem wordt ter plekke opgelost. Betaal achteraf via pin of Tikkie.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -431,7 +295,7 @@ export default function HomePage() {
       {/* Pricing Section */}
       <PricingSection />
 
-      {/* Testimonials - Swipeable Carousel */}
+      {/* Testimonials */}
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
@@ -439,7 +303,7 @@ export default function HomePage() {
               Wat onze klanten zeggen
             </h2>
             <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
+              Wij helpen dagelijks mensen in heel {BUSINESS.REGION}
             </p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">
               ← Swipe voor meer reviews →
@@ -460,7 +324,7 @@ export default function HomePage() {
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Loopt uw <strong>computer, laptop, printer of WiFi</strong> niet lekker? Dat is vervelend, maar geen reden tot stress. Wij komen gewoon bij u thuis en helpen het oplossen. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of ergens anders in Zuid-Holland woont — wij staan meestal binnen een dag bij u aan de deur.
+                  Loopt uw <strong>computer, laptop, printer of WiFi</strong> niet lekker? Dat is vervelend, maar geen reden tot stress. Wij komen gewoon bij u thuis en helpen het oplossen. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of ergens anders in {BUSINESS.REGION} woont — wij staan meestal binnen een dag bij u aan de deur.
                 </p>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waarom mensen ons bellen</h3>
@@ -472,7 +336,7 @@ export default function HomePage() {
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Transparante prijzen:</strong> €14,99 per kwartier, €10 voorrijkosten in heel Zuid-Holland.</span>
+                    <span><strong>Transparante prijzen:</strong> {PRICING.PER_QUARTER} per kwartier, {PRICING.TRAVEL} voorrijkosten in heel {BUSINESS.REGION}.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
@@ -489,7 +353,7 @@ export default function HomePage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel ons gerust op <a href="tel:+31858002006" className="text-blue-600 font-semibold hover:underline">085-8002006</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van 08:00 tot 22:00 uur — ook in het weekend.
+                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur — ook in het weekend.
                 </p>
               </div>
             </article>
@@ -527,7 +391,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Section */}
+      {/* FAQ Section — shares data with JSON-LD above */}
       <section className="py-20 bg-white" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-12">
@@ -537,13 +401,7 @@ export default function HomePage() {
           </header>
 
           <div className="space-y-4">
-            {[
-              { q: 'Hoe snel kunnen jullie langskomen?', a: 'Meestal staan we binnen een dag bij u aan de deur. Heeft u haast? Dan proberen we vaak nog dezelfde dag langs te komen. We zijn elke dag bereikbaar, ook in de avond.' },
-              { q: 'Wat kost het?', a: 'We rekenen €14,99 per kwartier, met een minimum van drie kwartier (€44,97). Voorrijden kost slechts €10 in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin, contant of Tikkie.' },
-              { q: 'Waar kunnen jullie mee helpen?', a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, WiFi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.' },
-              { q: 'Komen jullie ook in mijn woonplaats?', a: 'Wij komen in heel Zuid-Holland bij u thuis. Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en meer dan 50 andere gemeenten. Overal €10 voorrijkosten.' },
-              { q: 'Moet ik iets voorbereiden?', a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele wachtwoorden alvast klaar. Verder nemen wij alles mee wat nodig is.' },
-            ].map((faq, idx) => (
+            {faqItems.map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
                   {faq.q}
@@ -568,20 +426,20 @@ export default function HomePage() {
             Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={BUSINESS.PHONE_HREF}
+              className="btn-cta-white"
+            >
+              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
+              Bel {BUSINESS.PHONE}
+            </a>
             <Link
               href="/afspraak-maken"
-              className="btn-cta-white"
+              className="btn-cta-dark"
             >
               Afspraak Maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
-            <a
-              href="tel:+31858002006"
-              className="btn-cta-dark"
-            >
-              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
-              Bel 085-8002006
-            </a>
           </div>
         </div>
       </section>

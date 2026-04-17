@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { Icon } from '@/components/icons'
+import { BUSINESS, HOURS } from '@/lib/constants'
 
 const footerCities = [
   { name: 'Den Haag', slug: 'den-haag' },
@@ -27,17 +28,17 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="inline-block mb-4">
               <Image
-                src="/Computerhulp Zuid Holland Logo.webp"
-                alt="Computerhulp Zuid-Holland"
-                width={180}
-                height={56}
+                src="/logo.png"
+                alt={BUSINESS.NAME}
+                width={220}
+                height={87}
                 className="brightness-0 invert hover:opacity-80 transition-opacity"
                 style={{ width: 'auto', height: 'auto' }}
               />
             </Link>
             <p className="text-gray-300 text-sm mb-4 max-w-md">
-              Al meer dan 10 jaar uw partner voor computerhulp, printerhulp en IT-ondersteuning
-              aan huis in heel Zuid-Holland. Binnen 24 uur bij u thuis.
+              Al meer dan {BUSINESS.YEARS_ACTIVE} jaar uw partner voor computerhulp, printerhulp en IT-ondersteuning
+              aan huis in heel {BUSINESS.REGION}. Binnen 24 uur bij u thuis.
             </p>
             {/* Info links */}
             <div className="flex flex-wrap gap-4 text-sm">
@@ -98,15 +99,15 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href="tel:+31858002006" className="footer-link flex items-center gap-2">
+                <a href={BUSINESS.PHONE_HREF} className="footer-link flex items-center gap-2">
                   <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
-                  085-8002006
+                  {BUSINESS.PHONE}
                 </a>
               </li>
               <li>
-                <a href="mailto:info@computerhulpzh.nl" className="footer-link flex items-center gap-2">
+                <a href={BUSINESS.EMAIL_HREF} className="footer-link flex items-center gap-2">
                   <Icon name="email" className="w-4 h-4" strokeWidth={2} />
-                  info@computerhulpzh.nl
+                  {BUSINESS.EMAIL}
                 </a>
               </li>
             </ul>
@@ -116,15 +117,15 @@ export default function Footer() {
           <div>
             <h3 className="font-bold text-lg mb-4">Bedrijf</h3>
             <ul className="space-y-3 text-sm text-gray-300">
-              <li>KvK: 91310318</li>
-              <li>BTW: NL865613461B01</li>
+              <li>KvK: {BUSINESS.KVK}</li>
+              <li>BTW: {BUSINESS.BTW}</li>
               <li className="pt-2">
                 <div className="font-semibold text-white">Werkgebied</div>
-                <div>Heel Zuid-Holland</div>
+                <div>Heel {BUSINESS.REGION}</div>
               </li>
               <li>
                 <div className="font-semibold text-white">Bereikbaar</div>
-                <div>Ma-Zo: 08:00 - 22:00</div>
+                <div>Ma-Zo: {HOURS.OPEN} - {HOURS.CLOSE}</div>
               </li>
             </ul>
           </div>
@@ -157,7 +158,7 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <p className="text-xs text-gray-400 text-center">
-            Computerhulp Zuid-Holland is een onafhankelijke dienstverlener (KvK: 91310318) en is niet gelieerd aan enige fabrikant of softwareleverancier.
+            {BUSINESS.NAME} is een onafhankelijke dienstverlener (KvK: {BUSINESS.KVK}) en is niet gelieerd aan enige fabrikant of softwareleverancier.
           </p>
         </div>
       </div>
@@ -167,7 +168,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-300">
             <div>
-              © {currentYear} Computerhulp Zuid-Holland. Alle rechten voorbehouden.
+              © {currentYear} {BUSINESS.NAME}. Alle rechten voorbehouden.
             </div>
             <div className="flex items-center gap-1">
               Made with{' '}

@@ -1,4 +1,5 @@
 import { Metadata } from 'next'
+import { BUSINESS } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Algemene Voorwaarden | Computerhulp Zuid-Holland',
@@ -138,8 +139,8 @@ export default function VoorwaardenPage() {
               Klachten moeten binnen 14 dagen na afronding van werkzaamheden worden gemeld via:
             </p>
             <ul className="list-none space-y-2 mt-4">
-              <li><strong>E-mail:</strong> <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li><strong>Telefoon:</strong> <a href="tel:+31858002006" className="text-blue-600 hover:underline">085-8002006</a></li>
+              <li><strong>E-mail:</strong> <a href={BUSINESS.EMAIL_HREF} className="text-blue-600 hover:underline">{BUSINESS.EMAIL}</a></li>
+              <li><strong>Telefoon:</strong> <a href={BUSINESS.PHONE_HREF} className="text-blue-600 hover:underline">{BUSINESS.PHONE}</a></li>
             </ul>
             <p className="mt-4">
               Wij streven ernaar klachten binnen 7 dagen te behandelen.
@@ -180,8 +181,8 @@ export default function VoorwaardenPage() {
             <ul className="list-none space-y-2 mt-4">
               <li>KvK: 91310318</li>
               <li>BTW: NL865613461B01</li>
-              <li>E-mail: <a href="mailto:info@computerhulpzh.nl" className="text-blue-600 hover:underline">info@computerhulpzh.nl</a></li>
-              <li>Telefoon: <a href="tel:+31858002006" className="text-blue-600 hover:underline">085-8002006</a></li>
+              <li>E-mail: <a href={BUSINESS.EMAIL_HREF} className="text-blue-600 hover:underline">{BUSINESS.EMAIL}</a></li>
+              <li>Telefoon: <a href={BUSINESS.PHONE_HREF} className="text-blue-600 hover:underline">{BUSINESS.PHONE}</a></li>
             </ul>
           </section>
         </div>

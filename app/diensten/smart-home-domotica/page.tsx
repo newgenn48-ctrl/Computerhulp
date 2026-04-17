@@ -3,16 +3,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
+import { BUSINESS, PRICING } from '@/lib/constants'
+import TrustBadges from '@/components/TrustBadges'
+import AvailableInCities from '@/components/sections/AvailableInCities'
 
 export const metadata: Metadata = {
   title: 'Smart Home & Domotica aan Huis Zuid-Holland | Binnen 24u',
-  description: 'Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in Zuid-Holland. €10 voorrijkosten. Bel nu.',
+  description: `Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel nu.`,
 
   openGraph: {
     title: 'Smart Home & Domotica Hulp aan Huis',
-    description: 'Slimme apparaten installeren? Hulp nodig met slimme verlichting of speakers? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
+    description: `Slimme apparaten installeren? Hulp nodig met slimme verlichting of speakers? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/smart-home-domotica'},
   alternates: {
@@ -25,13 +30,13 @@ const structuredData = {
   serviceType: 'Smart Home & Domotica Hulp',
   provider: {
     '@type': 'LocalBusiness',
-    name: 'Computerhulp Zuid-Holland',
-    telephone: '+31858002006',
-    email: 'info@computerhulpzh.nl',
-    address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
+    name: BUSINESS.NAME,
+    telephone: BUSINESS.PHONE_INTL,
+    email: BUSINESS.EMAIL,
+    address: { '@type': 'PostalAddress', addressRegion: BUSINESS.REGION, addressCountry: BUSINESS.COUNTRY }
   },
-  areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'EUR' },
+  areaServed: { '@type': 'State', name: BUSINESS.REGION },
+  offers: { '@type': 'Offer', price: PRICING.PER_QUARTER_NUM.toString(), priceCurrency: 'EUR' },
   description: 'Professionele smart home en domotica hulp aan huis. Slimme apparaten installeren, koppelen en automatiseren. We komen bij u thuis in Zuid-Holland.'
 }
 
@@ -59,23 +64,14 @@ const faqData = {
 
 const heroImage = '/Smart Home.webp'
 
-const problems = [
-  { title: 'Apparaten Koppelen', description: 'Slimme lampen werken niet of koppelen niet.', icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' },
-  { title: 'Geen Verbinding', description: 'Apparaten verliezen verbinding of koppelen niet met uw netwerk.', icon: 'M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072' },
-  { title: 'App Problemen', description: 'Smart home app werkt niet of verliest verbinding met apparaten.', icon: 'M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z' },
-  { title: 'Automatisering', description: 'Slimme routines en schema\'s werken niet of zijn lastig in te stellen.', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' },
-  { title: 'Spraakbesturing', description: 'Google Home, Alexa of Siri reageren niet op uw opdrachten.', icon: 'M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z' },
-  { title: 'Beveiliging', description: 'Camera\'s, deurbellen of sensoren installeren en aan uw app koppelen.', icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z' }
-]
-
 const services = [
-  'Slimme verlichting installeren en koppelen',
-  'Slimme speaker en spraakassistent instellen',
-  'Slimme thermostaat installeren',
-  'Beveiligingscamera\'s en deurbel koppelen',
-  'Automatische routines en schema\'s maken',
-  'Alle apparaten bedienen via uw telefoon',
-  'Smart Home systemen integreren',
+  'Slimme verlichting installeren (Philips Hue, Ikea)',
+  'Slimme thermostaat aansluiten (Toon, Nest)',
+  'Videodeurbel installeren (Ring, Nest, Eufy)',
+  'Slim deurslot koppelen',
+  'Slimme speakers (Alexa, Google Home)',
+  'Smart TV installeren en koppelen',
+  'Alle apparaten in één app bedienen',
 ]
 
 const faqs = [
@@ -84,24 +80,6 @@ const faqs = [
   { question: 'Kunnen jullie automatiseringen instellen?', answer: 'Absoluut! We maken slimme schema\'s en routines. Bijvoorbeeld: lichten automatisch aan bij zonsondergang, of verwarming omlaag als u weggaat.' },
   { question: 'Welke slimme thermostaten installeren jullie?', answer: 'We installeren alle slimme thermostaten. We zorgen dat alles perfect werkt met uw verwarmingssysteem.' },
   { question: 'Kunnen jullie een slimme deurbel installeren?', answer: 'Ja, we installeren alle slimme deurbellen. We zorgen dat u via uw telefoon kunt zien en spreken met bezoekers.' }
-]
-
-const testimonials = [
-  {
-    quote: 'Hele huis vol slimme lampen maar niks werkte samen. Nu heb ik alles in \u00e9\u00e9n app en kan ik met mijn stem alles bedienen!',
-    name: 'Thomas B.',
-    initials: 'TB'
-  },
-  {
-    quote: 'Google Home, slimme thermostaat en deurbel ge\u00efnstalleerd en gekoppeld. Werkt allemaal perfect. Heel tevreden!',
-    name: 'Ellen V.',
-    initials: 'EV'
-  },
-  {
-    quote: 'Wist niet waar te beginnen met domotica. De IT-student heeft alles uitgelegd en ge\u00efnstalleerd. Super service.',
-    name: 'Marco J.',
-    initials: 'MJ'
-  }
 ]
 
 export default function SmartHomeDomoticaPage() {
@@ -116,26 +94,21 @@ export default function SmartHomeDomoticaPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Smart Home & Domotica Hulp aan Huis
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.04] tracking-display-tight">
+                <span className="text-blue-600">Slimme apparaten</span> laten installeren?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
                 Slimme verlichting, thermostaat of speaker installeren? Wij koppelen en configureren al uw slimme apparaten bij u thuis.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/afspraak-maken" className="btn-primary">
-                  Plan Smart Home Hulp
-                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-                </Link>
-                <a href="tel:+31858002006" className="btn-secondary">
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                  Bel 085-8002006
+                <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                  Bel {BUSINESS.PHONE}
                 </a>
-              </div>
-              <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Betrouwbaar &amp; vakkundig</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Binnen 24 uur</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />10+ jaar ervaring</div>
+                <Link href="/afspraak-maken" className="btn-secondary">
+                  Afspraak maken
+                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -160,17 +133,19 @@ export default function SmartHomeDomoticaPage() {
         </div>
       </section>
 
-      {/* Onze Diensten */}
+      <TrustBadges />
+
+      {/* Wat wij voor u doen — check-list */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="section-title">Onze Diensten</h2>
-            <p className="section-subtitle">Een overzicht van onze smart-homediensten.</p>
+            <h2 className="section-title">Wat wij voor u doen</h2>
+            <p className="section-subtitle">Slimme apparaten installeren en koppelen bij u thuis.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
-              <div key={idx} className="flex items-center gap-3 py-2">
-                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2} />
+              <div key={idx} className="flex items-start gap-3 py-1">
+                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
@@ -178,63 +153,7 @@ export default function SmartHomeDomoticaPage() {
         </div>
       </section>
 
-      {/* Problems Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="section-title">
-              Veelvoorkomende Smart-homeproblemen
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {problems.map((problem, idx) => (
-              <div
-                key={idx}
-                className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={problem.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{problem.title}</h3>
-                <p className="text-gray-600">{problem.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Zo Werkt Het */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">
-              Zo Werkt Het
-            </h2>
-            <p className="section-subtitle">In 3 simpele stappen geholpen</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
-              { step: '3', title: 'Probleem Opgelost', desc: 'Uw slimme apparaten werken samen en u weet hoe ze te bedienen. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
@@ -251,7 +170,7 @@ export default function SmartHomeDomoticaPage() {
               ← Swipe voor meer reviews →
             </p>
           </header>
-          <TestimonialsCarousel testimonials={testimonials} />
+          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
         </div>
       </section>
 
@@ -289,20 +208,22 @@ export default function SmartHomeDomoticaPage() {
 
       <ServiceCrossLinks currentService="smart-home-domotica" serviceName="Smart Home & Domotica" />
 
+
+      <AvailableInCities serviceLabel="Smart home-hulp" />
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Klaar Voor Een Slim Huis?</h2>
           <p className="text-xl text-blue-100 mb-10">We installeren en koppelen alles voor u. Neem vandaag nog contact op!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Plan Smart Home Hulp
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a href="tel:+31858002006" className="btn-cta-dark">
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-              Bel 085-8002006
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

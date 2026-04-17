@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { Icon } from '@/components/icons'
+import { BUSINESS } from '@/lib/constants'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
@@ -36,17 +37,26 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="flex items-center group">
-            <div className="relative h-10 w-32 sm:h-14 sm:w-[180px] -translate-y-1">
+          {/* Logo — met fallback-tekst als het image-bestand onverhoopt faalt */}
+          <Link href="/" className="flex items-center group" aria-label={`Naar de homepage van ${BUSINESS.NAME}`}>
+            <div className="relative h-12 w-[150px] sm:h-16 sm:w-[220px] flex items-center">
               <Image
-                src="/Computerhulp Zuid Holland Logo.webp"
-                alt="Computerhulp Zuid-Holland"
+                src="/logo.png"
+                alt={BUSINESS.NAME}
                 fill
-                sizes="180px"
-                className="object-contain group-hover:scale-105 transition-transform"
+                sizes="220px"
+                className="object-contain"
                 priority
+                onError={(e) => {
+                  const target = e.currentTarget
+                  target.style.display = 'none'
+                  const next = target.nextElementSibling as HTMLElement | null
+                  if (next) next.style.display = 'block'
+                }}
               />
+              <span className="hidden text-blue-700 font-bold text-base sm:text-lg" aria-hidden="true">
+                {BUSINESS.NAME}
+              </span>
             </div>
           </Link>
 
@@ -64,24 +74,24 @@ export default function Header() {
             <Link href="/contact" className="nav-link">
               Contact
             </Link>
-            <a href="tel:+31858002006" className="nav-link font-semibold text-blue-600 flex items-center gap-2">
-              <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
-              085-8002006
-            </a>
             <Link
               href="/afspraak-maken"
-              className="btn-header-cta"
+              className="nav-link font-medium"
             >
               Hulp Vragen
             </Link>
+            <a href={BUSINESS.PHONE_HREF} className="btn-header-cta flex items-center gap-2" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
+              {BUSINESS.PHONE}
+            </a>
           </nav>
 
           {/* Mobile: Phone + Menu */}
           <div className="flex items-center gap-2 lg:hidden">
             <a
-              href="tel:+31858002006"
+              href={BUSINESS.PHONE_HREF}
               className="p-3 text-blue-600 hover:text-blue-700"
-              aria-label="Bel 085-8002006"
+              aria-label={`Bel ${BUSINESS.PHONE}`}
             >
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
             </a>
@@ -113,9 +123,9 @@ export default function Header() {
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
                 Contact
               </Link>
-              <a href="tel:+31858002006" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium text-blue-600 flex items-center gap-2">
+              <a href={BUSINESS.PHONE_HREF} onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium text-blue-600 flex items-center gap-2">
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                Bel 085-8002006
+                Bel {BUSINESS.PHONE}
               </a>
               <Link
                 href="/afspraak-maken"

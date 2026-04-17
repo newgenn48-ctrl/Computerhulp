@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { sanitizeHtml, sanitizeText, validatePhone, validateLength } from '@/lib/sanitize'
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
+import { BUSINESS } from '@/lib/constants'
 
 export async function POST(request: NextRequest) {
   try {
@@ -21,7 +22,12 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { naam, telefoon, probleem } = body
+    const { naam, telefoon, probleem, website } = body
+
+    // Honeypot — bots fill hidden fields, humans don't
+    if (website) {
+      return NextResponse.json({ message: 'Aanvraag succesvol verzonden!' }, { status: 200 })
+    }
 
     if (!naam || !telefoon || !probleem) {
       return NextResponse.json(
@@ -114,7 +120,7 @@ export async function POST(request: NextRequest) {
               </div>
               <div class="footer">
                 <p><strong>Computerhulp Zuid-Holland</strong></p>
-                <p>085-8002006 | info@computerhulpzh.nl</p>
+                <p>${BUSINESS.PHONE} | ${BUSINESS.EMAIL}</p>
               </div>
             </div>
           </body>
@@ -148,13 +154,13 @@ Neem zo snel mogelijk contact op!
 
     if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
       return NextResponse.json(
-        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 085-8002006.' },
+        { error: `E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
         { status: 503 }
       )
     }
 
     return NextResponse.json(
-      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 085-8002006.' },
+      { error: `Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
       { status: 500 }
     )
   }

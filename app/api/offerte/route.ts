@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { sanitizeHtml, sanitizeText, validateEmail, validatePhone, validateLength } from '@/lib/sanitize'
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
+import { BUSINESS } from '@/lib/constants'
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,7 +26,12 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { naam, email, telefoon, type_website, budget, deadline, beschrijving } = body
+    const { naam, email, telefoon, type_website, budget, deadline, beschrijving, website } = body
+
+    // Honeypot — bots fill hidden fields, humans don't
+    if (website) {
+      return NextResponse.json({ message: 'Offerte aanvraag succesvol verzonden!' }, { status: 200 })
+    }
 
     // Validatie - Required fields
     if (!naam || !email || !telefoon || !type_website) {
@@ -195,8 +201,8 @@ export async function POST(request: NextRequest) {
                 </div>
               </div>
               <div class="footer">
-                <p><strong>Computerhulp Zuid-Holland</strong></p>
-                <p>085-8002006 | info@computerhulpzh.nl</p>
+                <p><strong>${BUSINESS.NAME}</strong></p>
+                <p>${BUSINESS.PHONE} | ${BUSINESS.EMAIL}</p>
               </div>
             </div>
           </body>
@@ -225,7 +231,7 @@ Neem zo snel mogelijk contact op met de klant!
     const customerMailOptions = {
       from: process.env.SMTP_FROM,
       to: safeEmail,
-      subject: 'Aanvraag bevestiging - Computerhulp Zuid-Holland',
+      subject: 'Aanvraag bevestiging - ${BUSINESS.NAME}',
       html: `
         <!DOCTYPE html>
         <html>
@@ -248,7 +254,7 @@ Neem zo snel mogelijk contact op met de klant!
           <body>
             <div class="container">
               <div class="header">
-                <h1>💻 Computerhulp Zuid-Holland</h1>
+                <h1>💻 ${BUSINESS.NAME}</h1>
                 <p style="margin: 5px 0 0 0; opacity: 0.9;">Website Laten Maken</p>
               </div>
               <div class="content">
@@ -302,13 +308,13 @@ Neem zo snel mogelijk contact op met de klant!
 
                 <p style="font-size: 16px;">
                   Met vriendelijke groet,<br>
-                  <strong>Computerhulp Zuid-Holland</strong>
+                  <strong>${BUSINESS.NAME}</strong>
                 </p>
               </div>
               <div class="footer">
-                <p><strong>Computerhulp Zuid-Holland</strong></p>
-                <p>085-8002006 | info@computerhulpzh.nl</p>
-                <p>KvK: 91310318 | BTW: NL865613461B01</p>
+                <p><strong>${BUSINESS.NAME}</strong></p>
+                <p>${BUSINESS.PHONE} | ${BUSINESS.EMAIL}</p>
+                <p>KvK: ${BUSINESS.KVK} | BTW: ${BUSINESS.BTW}</p>
               </div>
             </div>
           </body>
@@ -340,13 +346,13 @@ WAT U KUNT VERWACHTEN:
 ✓ Eenvoudig zelf te beheren
 ✓ Persoonlijke begeleiding van A tot Z
 
-VRAGEN? Bel ons gerust op 085-8002006
+VRAGEN? Bel ons gerust op ${BUSINESS.PHONE}
 
 Met vriendelijke groet,
-Computerhulp Zuid-Holland
+${BUSINESS.NAME}
 
-085-8002006 | info@computerhulpzh.nl
-KvK: 91310318 | BTW: NL865613461B01
+${BUSINESS.PHONE} | ${BUSINESS.EMAIL}
+KvK: ${BUSINESS.KVK} | BTW: ${BUSINESS.BTW}
       `,
     }
 
@@ -368,13 +374,13 @@ KvK: 91310318 | BTW: NL865613461B01
 
     if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
       return NextResponse.json(
-        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 085-8002006.' },
+        { error: `E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
         { status: 503 }
       )
     }
 
     return NextResponse.json(
-      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 085-8002006.' },
+      { error: `Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
       { status: 500 }
     )
   }

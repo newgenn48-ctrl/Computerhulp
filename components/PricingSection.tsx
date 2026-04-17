@@ -9,7 +9,7 @@ export default function PricingSection() {
 
         <div className="bg-blue-600 rounded-2xl px-6 py-8 text-white mt-8 mb-6">
           <div className="text-5xl sm:text-6xl font-bold">€14,99</div>
-          <div className="text-blue-200 mt-1">per kwartier · min. 3 kwartier · €10 voorrijkosten</div>
+          <div className="text-blue-100 mt-1">per kwartier · min. 3 kwartier · €10 voorrijkosten</div>
         </div>
 
         <p className="text-gray-600 mb-8">Geen abonnement · Geen weekendtoeslag · Betalen achteraf</p>

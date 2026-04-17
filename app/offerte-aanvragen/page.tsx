@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
+import { BUSINESS } from '@/lib/constants'
 
 export default function OfferteAanvragenPage() {
   const router = useRouter()
@@ -110,6 +111,7 @@ export default function OfferteAanvragenPage() {
           budget: formData.get('budget') as string,
           deadline: formData.get('deadline') as string,
           beschrijving: formData.get('beschrijving') as string,
+          website: formData.get('website') as string,
         }
 
         const response = await fetch('/api/offerte', {
@@ -187,7 +189,7 @@ export default function OfferteAanvragenPage() {
                   <div>
                     <h3 className="text-red-800 font-semibold">Er is iets misgegaan</h3>
                     <p className="text-red-700 mt-1">
-                      Probeer het opnieuw of bel ons direct op <a href="tel:+31858002006" className="font-bold underline">085-8002006</a>
+                      Probeer het opnieuw of bel ons direct op <a href={BUSINESS.PHONE_HREF} className="font-bold underline">{BUSINESS.PHONE}</a>
                     </p>
                   </div>
                 </div>
@@ -405,11 +407,17 @@ export default function OfferteAanvragenPage() {
                 ></textarea>
               </div>
 
+              {/* Honeypot — bots fill hidden fields, humans don't */}
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+                <label htmlFor="website">Website (laat leeg)</label>
+                <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />
+              </div>
+
               {/* Submit Button */}
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:scale-100"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-0.5 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0"
               >
                 {isSubmitting ? (
                   <span className="flex items-center justify-center gap-3">
@@ -504,7 +512,7 @@ export default function OfferteAanvragenPage() {
                 Kan ik een offerte ook telefonisch aanvragen?
               </h3>
               <p className="text-gray-700">
-                Ja, bel ons gerust op 085-8002006. We bespreken uw wensen en sturen daarna een uitgewerkte offerte per e-mail. Telefonisch advies is altijd gratis.
+                Ja, bel ons gerust op {BUSINESS.PHONE}. We bespreken uw wensen en sturen daarna een uitgewerkte offerte per e-mail. Telefonisch advies is altijd gratis.
               </p>
             </div>
 

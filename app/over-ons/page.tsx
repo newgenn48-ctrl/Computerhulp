@@ -2,55 +2,57 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import TrustBadges from '@/components/TrustBadges'
+import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Over Ons - Uw IT-student aan Huis in Zuid-Holland',
-  description: 'Maak kennis met Computerhulp Zuid-Holland. Meer dan 10 jaar ervaring in computerhulp aan huis. Persoonlijk, eerlijk en vakkundig. Bel 085-8002006.',
+  title: `Over ons — uw IT-student aan huis in ${BUSINESS.REGION}`,
+  description: `Maak kennis met ${BUSINESS.NAME}. Meer dan ${BUSINESS.YEARS_ACTIVE} jaar ervaring in computerhulp aan huis. Persoonlijk, eerlijk en vakkundig. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Over Ons | Computerhulp Zuid-Holland',
-    description: 'Maak kennis met Computerhulp Zuid-Holland. Meer dan 10 jaar ervaring, 500+ tevreden klanten.',
+    title: `Over ons | ${BUSINESS.NAME}`,
+    description: `Meer dan ${BUSINESS.YEARS_ACTIVE} jaar ervaring, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
     type: 'website',
-    url: 'https://computerhulpzh.nl/over-ons',
+    url: `${BUSINESS.URL}/over-ons`,
   },
   alternates: {
-    canonical: 'https://computerhulpzh.nl/over-ons',
+    canonical: `${BUSINESS.URL}/over-ons`,
   },
 }
 
 const organizationSchema = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  '@id': 'https://computerhulpzh.nl/#organization',
-  name: 'Computerhulp Zuid-Holland',
-  url: 'https://computerhulpzh.nl',
+  '@id': `${BUSINESS.URL}/#organization`,
+  name: BUSINESS.NAME,
+  url: BUSINESS.URL,
   logo: {
     '@type': 'ImageObject',
-    url: 'https://computerhulpzh.nl/Computerhulp%20Zuid%20Holland%20Logo.webp',
+    url: `${BUSINESS.URL}/logo.png`,
     width: '250',
-    height: '60'
+    height: '60',
   },
-  description: 'Professionele computerhulp aan huis in heel Zuid-Holland. Meer dan 10 jaar ervaring, 500+ tevreden klanten.',
+  description: `Professionele computerhulp aan huis in heel ${BUSINESS.REGION}. Meer dan ${BUSINESS.YEARS_ACTIVE} jaar ervaring, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
   address: {
     '@type': 'PostalAddress',
-    addressRegion: 'Zuid-Holland',
-    addressCountry: 'NL'
+    addressRegion: BUSINESS.REGION,
+    addressCountry: BUSINESS.COUNTRY,
   },
-  telephone: '+31858002006',
-  email: 'info@computerhulpzh.nl',
+  telephone: BUSINESS.PHONE_INTL,
+  email: BUSINESS.EMAIL,
   foundingDate: '2013',
   areaServed: {
     '@type': 'State',
-    name: 'Zuid-Holland'
-  }
+    name: BUSINESS.REGION,
+  },
 }
 
 const breadcrumbData = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://computerhulpzh.nl' },
-    { '@type': 'ListItem', position: 2, name: 'Over Ons', item: 'https://computerhulpzh.nl/over-ons' }
-  ]
+    { '@type': 'ListItem', position: 1, name: 'Home', item: BUSINESS.URL },
+    { '@type': 'ListItem', position: 2, name: 'Over Ons', item: `${BUSINESS.URL}/over-ons` },
+  ],
 }
 
 export default function OverOnsPage() {
@@ -77,27 +79,28 @@ export default function OverOnsPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-20 min-h-[70vh] flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
-              Over <span className="text-blue-600">Ons</span>
+            <span className="eyebrow">Over het bedrijf</span>
+            <h1 className="hero-title">
+              Al <span className="text-blue-600">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Al meer dan <strong className="text-gray-900">10 jaar</strong> uw betrouwbare partner voor computerhulp aan huis in <strong className="text-gray-900">Zuid-Holland</strong>.
+              Al meer dan <strong className="text-gray-900">{BUSINESS.YEARS_ACTIVE} jaar</strong> uw betrouwbare partner voor computerhulp aan huis in <strong className="text-gray-900">{BUSINESS.REGION}</strong>.
             </p>
-            <div className="flex flex-wrap gap-4">
-              {[
-                { icon: '🤝', label: 'Betrouwbaar' },
-                { icon: '💯', label: 'Eerlijk & Transparant' },
-                { icon: '🛡️', label: 'KvK Geregistreerd' },
-              ].map((item, idx) => (
-                <div key={idx} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-sm">
-                  <span className="text-lg">{item.icon}</span>
-                  <span className="font-medium text-gray-700 text-sm">{item.label}</span>
-                </div>
-              ))}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
+              </a>
+              <Link href="/afspraak-maken" className="btn-secondary">
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>
       </section>
+
+      <TrustBadges />
 
       {/* Ons Verhaal */}
       <section className="py-20 bg-white">
@@ -118,10 +121,10 @@ export default function OverOnsPage() {
                   Het begon simpel: vrienden en familie vroegen regelmatig om hulp met hun computer, printer of WiFi. Veel mensen liepen vast bij technische problemen en wisten niet waar ze naartoe konden.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Dus startten we <strong>Computerhulp Zuid-Holland</strong>. Het concept was eenvoudig: bij mensen thuis komen, in begrijpelijke taal uitleggen wat er aan de hand is, en het probleem ter plekke oplossen. Geen jargon, geen onnodige verkoop.
+                  Dus startten we <strong>{BUSINESS.NAME}</strong>. Het concept was eenvoudig: bij mensen thuis komen, in begrijpelijke taal uitleggen wat er aan de hand is, en het probleem ter plekke oplossen. Geen jargon, geen onnodige verkoop.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Wat klein begon, groeide uit tot heel Zuid-Holland. Inmiddels hebben we honderden mensen geholpen met alles van een trage laptop tot complexe netwerkinstallaties. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
+                  Wat klein begon, groeide uit tot heel {BUSINESS.REGION}. Inmiddels hebben we {BUSINESS.REVIEW_COUNT} mensen geholpen met alles van een trage laptop tot complexe netwerkinstallaties — sinds {BUSINESS.FOUNDING_YEAR}. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
                 </p>
               </div>
             </div>
@@ -150,24 +153,56 @@ export default function OverOnsPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {[
-              { icon: '🤝', title: 'Persoonlijk & Geduldig', desc: 'We nemen de tijd om alles rustig uit te leggen. Geen haast, geen irritatie als iets even niet lukt.' },
-              { icon: '💎', title: 'Eerlijk & Transparant', desc: 'Vaste prijs van €14,99 per kwartier. Geen verrassingen achteraf. We verkopen niet onnodig extra spullen.' },
-              { icon: '⚡', title: 'Snel & Vakkundig', desc: 'Door jarenlange ervaring lossen we problemen snel op. We komen binnen 24 uur bij u langs.' },
-              { icon: '🎯', title: 'Alle Leeftijden', desc: 'Of u nu 25 bent of 85, we helpen iedereen. We passen ons tempo en uitleg aan uw niveau aan.' },
-              { icon: '🏠', title: 'Bij U Thuis', desc: 'Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, met slechts €10 voorrijkosten.' },
-              { icon: '✅', title: 'Bewezen Betrouwbaar', desc: 'KvK geregistreerd, verzekerd en al jaren actief. Honderden tevreden klanten gingen u voor.' },
+              { icon: 'users', title: 'Persoonlijk & geduldig', desc: 'We nemen de tijd om alles rustig uit te leggen. Geen haast, geen irritatie als iets niet direct lukt.' },
+              { icon: 'check-circle', title: 'Eerlijk & transparant', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. Geen verrassingen achteraf. We verkopen niets onnodigs.` },
+              { icon: 'clock', title: 'Snel & vakkundig', desc: `Door ${BUSINESS.YEARS_ACTIVE} jaar ervaring lossen we problemen snel op. Meestal binnen 24 uur bij u thuis.` },
+              { icon: 'heart', title: 'Voor alle leeftijden', desc: 'Of u nu 25 bent of 85 — we helpen iedereen. We passen ons tempo en onze uitleg aan uw niveau aan.' },
+              { icon: 'home', title: 'Bij u thuis', desc: `Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, ${PRICING.TRAVEL} voorrijkosten.` },
+              { icon: 'shield', title: 'Bewezen betrouwbaar', desc: `KvK ${BUSINESS.KVK}, verzekerd en al ${BUSINESS.YEARS_ACTIVE} jaar actief. ${BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.` },
             ].map((item, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100 hover:shadow-xl hover:border-blue-200 transition-all">
-                <div className="w-14 h-14 bg-blue-100 rounded-xl flex items-center justify-center text-2xl mb-6">
-                  {item.icon}
+              <div key={idx} className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg border border-gray-100 hover:border-blue-200 transition-all">
+                <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-5 shadow-sm">
+                  <Icon name={item.icon} className="w-7 h-7 text-white" strokeWidth={2} aria-hidden="true" />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Het team */}
+      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <header className="text-center mb-12">
+            <h2 className="section-title">Ons team</h2>
+            <p className="section-subtitle max-w-2xl mx-auto">
+              IT-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Stuk voor stuk gescreend, verzekerd en met minimaal 2 jaar praktijkervaring.
+            </p>
+          </header>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
+            {[
+              { title: 'Technisch opgeleid', desc: 'IT, Informatica of Technische Informatica — zowel hbo als wo.', icon: 'users' },
+              { title: 'Ervaren met senioren', desc: 'We leggen uit in gewone taal, in uw tempo. Geen vaktermen.', icon: 'heart' },
+              { title: 'Gescreend & verzekerd', desc: `VOG waar nodig, aansprakelijk via onze bedrijfsverzekering (KvK ${BUSINESS.KVK}).`, icon: 'shield' },
+            ].map((item, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <Icon name={item.icon} className="w-6 h-6 text-blue-600" strokeWidth={2} aria-hidden="true" />
+                </div>
+                <h3 className="font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-600">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-center text-sm text-gray-500">
+            Wilt u vooraf weten wie er komt? Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-medium hover:underline">{BUSINESS.PHONE}</a> — dan vertellen we wie er ingepland staat.
+          </p>
         </div>
       </section>
 
@@ -185,13 +220,13 @@ export default function OverOnsPage() {
 
           <div className="space-y-4">
             {[
-              { title: 'Binnen 24 Uur Reactie', desc: 'We reageren altijd binnen 24 uur op uw aanvraag. In spoedsituaties vaak nog dezelfde dag.' },
-              { title: '€10 Voorrijkosten', desc: 'In heel Zuid-Holland komen we gratis bij u langs. 7 dagen per week, ook in de avond.' },
-              { title: 'Eerlijke Prijzen', desc: 'Vaste prijs van €14,99 per kwartier. We geven altijd een eerlijke inschatting vooraf.' },
-              { title: 'Privacy & Veiligheid', desc: 'Uw gegevens zijn veilig bij ons. We behandelen uw informatie met de grootst mogelijke zorgvuldigheid.' },
+              { title: `Reactie ${BUSINESS.RESPONSE_TIME}`, desc: 'We bellen altijd binnen 1 uur terug na uw aanvraag. In spoedsituaties vaak nog dezelfde dag bij u thuis.' },
+              { title: `${PRICING.TRAVEL} voorrijkosten`, desc: `In heel ${BUSINESS.REGION} komen we bij u langs. ${HOURS.DAYS}, ook in de avond.` },
+              { title: 'Eerlijke prijzen', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. We geven altijd een eerlijke inschatting vooraf.` },
+              { title: 'Privacy & veiligheid', desc: 'Uw gegevens zijn veilig bij ons. We behandelen uw informatie met de grootst mogelijke zorgvuldigheid.' },
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-6 border border-gray-200">
-                <Icon name="check-circle-outline" className="w-7 h-7 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                <Icon name="check-circle" className="w-7 h-7 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
@@ -205,26 +240,18 @@ export default function OverOnsPage() {
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Hulp Nodig?
-          </h2>
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Hulp nodig?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Neem contact op voor persoonlijke computerhulp aan huis. Binnen 24 uur bij u in Zuid-Holland.
+            Neem contact op voor persoonlijke computerhulp aan huis. Binnen 24 uur bij u in {BUSINESS.REGION}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+31858002006"
-              className="btn-cta-white"
-            >
-              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
-              Bel 085-8002006
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
             </a>
-            <Link
-              href="/afspraak-maken"
-              className="btn-cta-dark"
-            >
-              Afspraak Maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
             </Link>
           </div>
         </div>

@@ -3,15 +3,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
+import { BUSINESS, PRICING } from '@/lib/constants'
+import TrustBadges from '@/components/TrustBadges'
+import AvailableInCities from '@/components/sections/AvailableInCities'
 
 export const metadata: Metadata = {
   title: 'E-mail Hulp aan Huis Zuid-Holland | Outlook & Gmail | 24u',
-  description: 'E-mail problemen? Wachtwoord vergeten of mailbox vol? Wij komen bij u thuis in Zuid-Holland. €10 voorrijkosten. Bel 085-8002006.',
+  description: `E-mail problemen? Wachtwoord vergeten of mailbox vol? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'E-mail Hulp aan Huis',
-    description: 'E-mail problemen? Wachtwoord vergeten? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
+    description: `E-mail problemen? Wachtwoord vergeten? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/email-hulp'},
   alternates: {
@@ -24,13 +29,13 @@ const structuredData = {
   serviceType: 'E-mail Hulp',
   provider: {
     '@type': 'LocalBusiness',
-    name: 'Computerhulp Zuid-Holland',
-    telephone: '+31858002006',
-    email: 'info@computerhulpzh.nl',
-    address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
+    name: BUSINESS.NAME,
+    telephone: BUSINESS.PHONE_INTL,
+    email: BUSINESS.EMAIL,
+    address: { '@type': 'PostalAddress', addressRegion: BUSINESS.REGION, addressCountry: BUSINESS.COUNTRY }
   },
-  areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'EUR' },
+  areaServed: { '@type': 'State', name: BUSINESS.REGION },
+  offers: { '@type': 'Offer', price: PRICING.PER_QUARTER_NUM.toString(), priceCurrency: 'EUR' },
   description: 'Professionele e-mail hulp aan huis. Alle e-mailprogramma\'s configureren en problemen oplossen. We komen bij u thuis in Zuid-Holland.'
 }
 
@@ -56,43 +61,17 @@ const faqData = {
   ]
 }
 
-const testimonials = [
-  {
-    quote: 'Mijn Outlook deed het niet meer op mijn nieuwe laptop. Binnen een half uur alles weer werkend, inclusief alle oude mails.',
-    name: 'Henk D.',
-    initials: 'HD'
-  },
-  {
-    quote: 'Enorm veel spam, wisten niet meer wat te doen. Nu is alles netjes gefilterd en werkt mijn e-mail weer perfect.',
-    name: 'Bea T.',
-    initials: 'BT'
-  },
-  {
-    quote: 'E-mail overgezet van mijn oude provider naar Gmail. Alle contacten en agenda\'s mee. Heel knap gedaan.',
-    name: 'Kees W.',
-    initials: 'KW'
-  }
-]
-
 const heroImage = '/E-mail Hulp.webp'
 
-const problems = [
-  { title: 'E-mail Werkt Niet', description: 'Geen toegang tot uw e-mail of berichten.', icon: 'M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
-  { title: 'Wachtwoord Vergeten', description: 'Niet meer kunnen inloggen in uw e-mail.', icon: 'M15 7a2 2 0 012 2m4 0a6 6 0 01-7.743 5.743L11 17H9v2H7v2H4a1 1 0 01-1-1v-2.586a1 1 0 01.293-.707l5.964-5.964A6 6 0 1121 9z' },
-  { title: 'Spam/Ongewenste Mail', description: 'Overlast van ongewenste e-mails.', icon: 'M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636' },
-  { title: 'E-mail Instellen', description: 'E-mail op nieuw apparaat configureren.', icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z' },
-  { title: 'Mails Kwijt', description: 'Belangrijke e-mails verdwenen of verwijderd.', icon: 'M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16' },
-  { title: 'Synchronisatie Problemen', description: 'E-mail niet op alle apparaten gelijk.', icon: 'M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15' }
-]
-
 const services = [
-  'E-mail instellen op computer en telefoon',
-  'Wachtwoord herstellen en account beveiligen',
-  'E-mailproblemen oplossen',
-  'Spam filter en beveiliging instellen',
-  'Contacten en agenda synchroniseren',
-  'E-mail backup en archivering',
-  'Meerdere e-mailaccounts beheren',
+  'E-mail instellen op computer, tablet en telefoon',
+  'Outlook of Gmail configureren',
+  'Wachtwoord herstellen',
+  'Spam en ongewenste mail filteren',
+  'Volle mailbox opruimen',
+  'Mail migreren naar andere provider',
+  'Afwezigheid of handtekening instellen',
+  'Mail-archief maken',
 ]
 
 const faqs = [
@@ -115,26 +94,21 @@ export default function EmailHulpPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                E-mail Hulp aan Huis
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.04] tracking-display-tight">
+                Hulp nodig met uw <span className="text-blue-600">e-mail</span>?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                E-mail werkt niet of wachtwoord vergeten? Wij helpen met Outlook, Gmail en alle andere e-mailprogramma's. <strong className="text-gray-900">Bij u thuis in Zuid-Holland.</strong>
+                Wachtwoord kwijt, volle mailbox of spam die maar blijft komen? Wij stellen Outlook, Gmail, Ziggo of KPN Mail opnieuw in — <strong className="text-gray-900">meestal in een halfuur klaar</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/afspraak-maken" className="btn-primary">
-                  Plan E-mail Hulp
-                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-                </Link>
-                <a href="tel:+31858002006" className="btn-secondary">
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                  Bel 085-8002006
+                <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                  Bel {BUSINESS.PHONE}
                 </a>
-              </div>
-              <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Betrouwbaar &amp; vakkundig</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Binnen 24 uur</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Alle providers</div>
+                <Link href="/afspraak-maken" className="btn-secondary">
+                  Afspraak maken
+                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -159,17 +133,19 @@ export default function EmailHulpPage() {
         </div>
       </section>
 
-      {/* Onze Diensten */}
+      <TrustBadges />
+
+      {/* Wat wij voor u doen — check-list */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="section-title">Onze Diensten</h2>
-            <p className="section-subtitle">Een overzicht van onze e-maildiensten.</p>
+            <h2 className="section-title">Wat wij voor u doen</h2>
+            <p className="section-subtitle">E-mailklussen die we regelmatig oplossen.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
-              <div key={idx} className="flex items-center gap-3 py-2">
-                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2} />
+              <div key={idx} className="flex items-start gap-3 py-1">
+                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
@@ -177,63 +153,7 @@ export default function EmailHulpPage() {
         </div>
       </section>
 
-      {/* Problems Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="section-title">
-              Veelvoorkomende E-mailproblemen
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {problems.map((problem, idx) => (
-              <div
-                key={idx}
-                className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={problem.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{problem.title}</h3>
-                <p className="text-gray-600">{problem.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Zo Werkt Het */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">
-              Zo Werkt Het
-            </h2>
-            <p className="section-subtitle">In 3 simpele stappen geholpen</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
-              { step: '3', title: 'Probleem Opgelost', desc: 'Uw e-mail werkt weer perfect op al uw apparaten. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
@@ -251,7 +171,7 @@ export default function EmailHulpPage() {
             </p>
           </header>
 
-          <TestimonialsCarousel testimonials={testimonials} />
+          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
         </div>
       </section>
 
@@ -289,20 +209,22 @@ export default function EmailHulpPage() {
 
       <ServiceCrossLinks currentService="email-hulp" serviceName="E-mail Hulp" />
 
+
+      <AvailableInCities serviceLabel="E-mailhulp" />
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">E-mailproblemen?</h2>
           <p className="text-xl text-blue-100 mb-10">Neem contact op en we komen vandaag of morgen al bij u langs</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Plan E-mail Hulp
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a href="tel:+31858002006" className="btn-cta-dark">
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-              Bel 085-8002006
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

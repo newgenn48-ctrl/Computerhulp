@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { Icon } from '@/components/icons'
 
 export const services = [
@@ -60,7 +61,7 @@ export const services = [
   },
   {
     title: 'Televisie & Radio',
-    image: '/Student aan huis.webp',
+    image: '/TV hulp.webp',
     slug: '/diensten/televisie-radio',
     features: [
       'Smart TV installeren en instellen',
@@ -135,7 +136,7 @@ export default function ServicesSection({
   const displayServices = limitServices > 0 ? services.slice(0, limitServices) : services
 
   return (
-    <section className="py-16 bg-gradient-to-br from-gray-50 to-blue-50">
+    <section className="py-16 sm:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="section-title">
@@ -148,28 +149,29 @@ export default function ServicesSection({
           )}
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
           {displayServices.map((service, idx) => (
             <Link
               key={idx}
               href={service.slug}
-              className="group relative rounded-xl overflow-hidden hover:shadow-xl transition-all"
+              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col bg-white"
             >
-              {/* Achtergrond afbeelding */}
-              <div className="relative">
-                <img
+              {/* Afbeelding — geen overlay, geen tekst er overheen */}
+              <div className="relative w-full h-44 sm:h-40 lg:h-48 overflow-hidden">
+                <Image
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-32 sm:h-48 object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent" />
-                <h3 className="absolute bottom-3 left-3 right-3 text-sm sm:text-xl font-bold text-white">
-                  {service.title}
-                </h3>
               </div>
 
               {/* Content */}
-              <div className="bg-white p-3 sm:p-5 border border-gray-200 border-t-0 rounded-b-xl">
+              <div className="p-4 sm:p-5 rounded-b-2xl flex-1 flex flex-col">
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">
+                  {service.title}
+                </h3>
                 {showFeatures ? (
                   <ul className="hidden sm:block space-y-2 mb-4">
                     {service.features.map((feature, featureIdx) => (
@@ -180,7 +182,7 @@ export default function ServicesSection({
                     ))}
                   </ul>
                 ) : null}
-                <span className="group-hover:translate-x-1 inline-flex items-center gap-2 text-blue-600 font-semibold text-xs sm:text-sm transition-transform">
+                <span className="group-hover:translate-x-1 mt-auto inline-flex items-center gap-2 text-blue-600 font-semibold text-sm transition-transform">
                   Meer info
                   <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                 </span>

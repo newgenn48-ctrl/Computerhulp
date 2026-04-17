@@ -12,8 +12,9 @@ interface BreadcrumbItem {
 export default function Breadcrumb() {
   const pathname = usePathname()
 
-  // Don't show breadcrumb on homepage
-  if (pathname === '/') {
+  // Don't show breadcrumb on homepage or pure conversion pages
+  const hiddenPaths = ['/', '/afspraak-maken', '/offerte-aanvragen', '/afspraak-bevestiging', '/offerte-bevestiging']
+  if (hiddenPaths.includes(pathname)) {
     return null
   }
 

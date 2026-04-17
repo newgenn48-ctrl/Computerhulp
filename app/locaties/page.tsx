@@ -2,11 +2,14 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { cities } from '@/lib/cities'
+import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 export const metadata: Metadata = {
   title: 'Computerhulp Locaties Zuid-Holland | 50+ Gemeenten',
-  description: 'Computerhulp aan huis in heel Zuid-Holland. Bekijk alle 50+ gemeenten waar wij actief zijn. Van Den Haag tot Dordrecht. Bel 085-8002006.',
+  description: `Computerhulp aan huis in heel ${BUSINESS.REGION}. Bekijk alle 50+ gemeenten waar wij actief zijn. Van Den Haag tot Dordrecht. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Computerhulp Locaties Zuid-Holland | 50+ Gemeenten',
     description: 'Computerhulp aan huis in heel Zuid-Holland. Bekijk alle 50+ gemeenten waar wij actief zijn.',
@@ -31,11 +34,11 @@ const breadcrumbData = {
 const localBusinessData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://computerhulpzh.nl/#organization',
+  '@id': 'https://computerhulpzh.nl/#localbusiness',
   name: 'Computerhulp Zuid-Holland',
   description: 'Professionele computerhulp aan huis in meer dan 50 gemeenten in Zuid-Holland',
   url: 'https://computerhulpzh.nl',
-  telephone: '+31858002006',
+  telephone: BUSINESS.PHONE_INTL,
   email: 'info@computerhulpzh.nl',
   address: {
     '@type': 'PostalAddress',
@@ -102,27 +105,22 @@ export default function LocatiesPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-20 min-h-[70vh] flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
+            <span className="eyebrow">Werkgebied · Zuid-Holland</span>
+            <h1 className="section-title-lg">
               Onze <span className="text-blue-600">Locaties</span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Wij bieden computerhulp aan huis in meer dan <strong className="text-gray-900">50 gemeenten</strong> in <strong className="text-gray-900">Zuid-Holland</strong>. €10 voorrijkosten, binnen 24 uur bij u thuis.
+              Wij bieden computerhulp aan huis in meer dan <strong className="text-gray-900">50 gemeenten</strong> in <strong className="text-gray-900">{BUSINESS.REGION}</strong>. {PRICING.TRAVEL} voorrijkosten, binnen 24 uur bij u thuis.
             </p>
             <div className="flex flex-wrap gap-4">
-              <Link
-                href="/afspraak-maken"
-                className="inline-flex items-center gap-2 bg-blue-600 text-white hover:bg-blue-700 px-8 py-4 rounded-full font-semibold text-lg shadow-lg transition-all hover:scale-105"
-              >
+              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
+              </a>
+              <Link href="/afspraak-maken" className="btn-secondary">
                 Afspraak Maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
-              <a
-                href="tel:+31858002006"
-                className="inline-flex items-center gap-2 bg-white hover:bg-blue-50 text-blue-600 px-8 py-4 rounded-full font-semibold text-lg border-2 border-blue-600 transition-all hover:scale-105"
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                Bel 085-8002006
-              </a>
             </div>
           </div>
         </div>
@@ -137,15 +135,15 @@ export default function LocatiesPage() {
               <div className="text-gray-600">Gemeenten</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">24u</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">&lt; 1u</div>
               <div className="text-gray-600">Reactietijd</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">€10</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{PRICING.TRAVEL}</div>
               <div className="text-gray-600">Voorrijkosten</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">10+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{BUSINESS.YEARS_ACTIVE}</div>
               <div className="text-gray-600">Jaar ervaring</div>
             </div>
           </div>
@@ -229,6 +227,18 @@ export default function LocatiesPage() {
         </div>
       </section>
 
+      {/* Testimonials — geograpfische social proof */}
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="locations-testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="locations-testimonials-heading" className="section-title">Recent geholpen in {BUSINESS.REGION}</h2>
+            <p className="section-subtitle">Klanten uit Delft, Rotterdam, Den Haag, Gouda en meer</p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
+          </header>
+          <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
+        </div>
+      </section>
+
       {/* CTA */}
       <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
@@ -236,23 +246,17 @@ export default function LocatiesPage() {
             Staat uw gemeente er niet bij?
           </h2>
           <p className="text-xl text-blue-100 mb-10">
-            Wij zijn actief in heel Zuid-Holland. Neem contact op en we kijken wat we voor u kunnen betekenen.
+            Wij zijn actief in heel {BUSINESS.REGION}. Neem contact op en we kijken wat we voor u kunnen betekenen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/afspraak-maken"
-              className="inline-flex items-center justify-center gap-3 bg-white text-blue-600 hover:bg-blue-50 px-10 py-5 rounded-full font-bold text-xl shadow-lg hover:scale-105 transition-all"
-            >
-              Afspraak Maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a
-              href="tel:+31858002006"
-              className="inline-flex items-center justify-center gap-3 bg-blue-500 hover:bg-blue-400 text-white px-10 py-5 rounded-full font-bold text-xl border-2 border-blue-400 hover:scale-105 transition-all"
-            >
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-              Bel 085-8002006
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

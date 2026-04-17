@@ -3,14 +3,18 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/components/ServicesSection'
 import { Icon } from '@/components/icons'
+import TrustBadges from '@/components/TrustBadges'
+import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 export const metadata: Metadata = {
   title: 'Alle Computerhulpdiensten aan Huis in Zuid-Holland',
-  description: 'Bekijk al onze computerhulpdiensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, €10 voorrijkosten. Bel 085-8002006.',
+  description: `Bekijk al onze computerhulpdiensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
 
   openGraph: {
     title: 'Alle Computerhulpdiensten aan Huis',
-    description: 'Computerhulp aan huis in Zuid-Holland. Van laptopreparatie tot smarthome-installatie. Binnen 24u.',
+    description: `Computerhulp aan huis in ${BUSINESS.REGION}. Van laptopreparatie tot smarthome-installatie. Binnen 24u.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten'},
   robots: {
@@ -55,20 +59,6 @@ const breadcrumbData = {
   ]
 }
 
-// Map services to images
-const serviceImages: Record<string, string> = {
-  'Computer & Laptop Hulp': '/Computer & Laptop Hulp.webp',
-  'Laptop & Computer Reparatie': '/Reparatie.webp',
-  'Printer & Randapparatuur': '/Printer & Randapparatuur.webp',
-  'E-mail Hulp': '/E-mail Hulp.webp',
-  'WiFi & Netwerk Hulp': '/WiFi & Netwerk Hulp.webp',
-  'Tablet & Smartphone Hulp': '/Tablet & Smartphone Hulp.webp',
-  'Smart Home': '/Smart Home.webp',
-  'Dataherstel': '/Data herstel.webp',
-  'Persoonlijke Training': '/Student aan huis.webp',
-  'Website Laten Maken': '/Computer & Laptop Hulp.webp',
-  'Televisie & Radio': '/Student aan huis.webp'}
-
 export default function DienstenPage() {
   return (
     <>
@@ -94,97 +84,78 @@ export default function DienstenPage() {
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-24 min-h-screen flex items-center">
           <div className="max-w-2xl">
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1] tracking-tight">
-              Alle Computerhulp&shy;<span className="text-blue-600">diensten</span>
+            <span className="eyebrow">Alle diensten · Zuid-Holland</span>
+            <h1 className="section-title-lg">
+              Alle Diensten <span className="text-blue-600">Zuid-Holland</span>
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
               Professionele <strong className="text-gray-900 font-semibold">computerhulp aan huis</strong> in heel Zuid-Holland. Van laptophulp tot smarthome-installatie - wij lossen het vakkundig op.
             </p>
 
-            {/* USPs */}
-            <div className="flex flex-wrap gap-4 mb-10">
-              {[
-                { label: '10+ Diensten', icon: '🛠️' },
-                { label: '7 Dagen', icon: '📅' },
-                { label: 'Binnen 24u', icon: '⚡' },
-                { label: '€10 Voorrijkosten', icon: '🚗' },
-              ].map((usp, idx) => (
-                <div key={idx} className="flex items-center gap-2 bg-white/80 backdrop-blur-sm px-4 py-2 rounded-full border border-gray-200 shadow-sm">
-                  <span className="text-lg">{usp.icon}</span>
-                  <span className="font-medium text-gray-700 text-sm">{usp.label}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
+            {/* CTA Buttons — phone primary */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+31858002006"
-                className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
-              >
-                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />Bel 085-8002006</a>
-              <Link
-                href="/afspraak-maken"
-                className="inline-flex items-center justify-center gap-2 bg-white hover:bg-gray-50 text-gray-900 px-8 py-4 rounded-xl font-semibold text-lg border-2 border-gray-200 hover:border-gray-300 transition-all"
-              >
-                Afspraak Maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
+              </a>
+              <Link href="/afspraak-maken" className="btn-secondary">
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
             </div>
           </div>
         </div>
       </section>
 
+      <TrustBadges />
+
       {/* Services Grid */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="section-title">
-              Onze diensten
-            </h2>
+            <h2 className="section-title">Waar wij u mee helpen</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              Klik op een dienst voor meer informatie
+              Tik op een dienst voor meer informatie
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {services.map((service, idx) => (
               <Link
                 key={idx}
                 href={service.slug}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:border-blue-500 hover:shadow-2xl transition-all duration-300"
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 flex flex-col"
               >
                 {/* Image */}
-                <div className="relative h-48 overflow-hidden">
+                <div className="relative h-44 sm:h-48 overflow-hidden">
                   <Image
-                    src={serviceImages[service.title] || '/Computer & Laptop Hulp.webp'}
+                    src={service.image}
                     alt={service.title}
                     fill
                     className="object-cover transition-transform duration-500 group-hover:scale-110"
-                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
+                <div className="p-5 sm:p-6 flex-1 flex flex-col">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors leading-tight">
                     {service.title}
                   </h3>
                   {/* Features */}
-                  <ul className="space-y-2 mb-4">
+                  <ul className="space-y-2 mb-4 flex-1">
                     {service.features.slice(0, 3).map((feature, fidx) => (
-                      <li key={fidx} className="flex items-center gap-2 text-sm text-gray-700">
-                        <Icon name="check" className="w-4 h-4 text-green-600 flex-shrink-0" strokeWidth={2} />
-                        {feature}
+                      <li key={fidx} className="flex items-start gap-2 text-sm sm:text-base text-gray-700">
+                        <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
 
                   <span className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all">
                     Meer informatie
-                    <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
+                    <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />
                   </span>
                 </div>
               </Link>
@@ -197,42 +168,49 @@ export default function DienstenPage() {
       <section className="py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="section-title">
-              Wat het kost
-            </h2>
-            <p className="section-subtitle">
-              Voor al onze diensten geldt dezelfde prijs
-            </p>
+            <h2 className="section-title">Wat het kost</h2>
+            <p className="section-subtitle">Voor elke dienst hetzelfde transparante tarief</p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-10 border-2 border-blue-200 shadow-xl">
-            <div className="text-6xl font-bold text-blue-600 mb-2 text-center">€14,99</div>
-            <div className="text-2xl text-gray-700 mb-1 text-center">per kwartier</div>
-            <div className="text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier (€44,97)</div>
+          <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 sm:p-10 border-2 border-blue-200 shadow-xl">
+            <div className="text-5xl sm:text-6xl font-bold text-blue-600 mb-2 text-center">{PRICING.PER_QUARTER}</div>
+            <div className="text-xl sm:text-2xl text-gray-700 mb-1 text-center">per kwartier</div>
+            <div className="text-base sm:text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier ({PRICING.MINIMUM_TOTAL})</div>
 
             <div className="bg-white rounded-xl p-6 mb-8 shadow-sm">
               <ul className="grid md:grid-cols-2 gap-4">
                 {[
-                  'Slechts €10 voorrijkosten in heel Zuid-Holland',
-                  'Alle diensten dezelfde prijs',
+                  `${PRICING.TRAVEL} voorrijkosten in heel ${BUSINESS.REGION}`,
+                  'Elke dienst dezelfde prijs',
                   'Diagnose ter plekke inbegrepen',
-                  'Betalen na afloop',
-                  'Pin of Tikkie',
-                  'Ook avonden en weekenden'
+                  'Geen weekend- of avondtoeslag',
+                  'Betalen achteraf via pin of Tikkie',
+                  `${HOURS.DAYS} beschikbaar`,
                 ].map((item, idx) => (
                   <li key={idx} className="flex items-center gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0" strokeWidth={2} />
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
                     <span className="text-gray-700">{item}</span>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <a
-              href="tel:+31858002006"
-              className="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center px-8 py-4 rounded-xl font-bold text-xl shadow-lg shadow-blue-600/25 hover:scale-105 transition-all"
-            >Bel 085-8002006</a>
+            <a href={BUSINESS.PHONE_HREF} className="btn-submit block text-center" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              Bel {BUSINESS.PHONE}
+            </a>
           </div>
+        </div>
+      </section>
+
+      {/* Testimonials — social proof voor verdere conversie */}
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
+            <p className="section-subtitle">Dagelijks helpen we mensen in heel {BUSINESS.REGION}</p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
+          </header>
+          <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
         </div>
       </section>
 
@@ -240,43 +218,37 @@ export default function DienstenPage() {
       <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
-            Computerhulp aan Huis in Zuid-Holland
+            Computerhulp aan huis in {BUSINESS.REGION}
           </h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed mb-4">
-              Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Wij bieden een compleet pakket aan IT-diensten voor particulieren en bedrijven in heel Zuid-Holland. Van computer en laptophulp tot WiFi installatie, van printerproblemen tot smarthome-oplossingen.
+              Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Een compleet pakket IT-diensten voor particulieren en kleine ondernemers in heel {BUSINESS.REGION}. Van computer- en laptophulp tot WiFi-installatie, van printerproblemen tot smart-home-oplossingen.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Onze IT-studenten komen bij u thuis en lossen uw technische problemen ter plekke op. Of het nu gaat om een trage computer, internetproblemen, e-mailinstellingen of smartphonehulp - wij helpen u vakkundig en persoonlijk.
+              Onze IT-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp — we helpen vakkundig en persoonlijk, in gewone taal.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Alle diensten voor dezelfde transparante prijs van €14,99 per kwartier, met slechts €10 voorrijkosten. Bel <a href="tel:+31858002006" className="text-blue-600 font-semibold">085-8002006</a> en wij komen binnen 24 uur bij u langs.
+              Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met slechts {PRICING.TRAVEL} voorrijkosten. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen binnen 24 uur bij u langs.
             </p>
           </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-blue-50 to-white">
+      {/* Final CTA */}
+      <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-            Hulp Nodig met Computer of Techniek?
-          </h2>
-          <p className="text-xl text-gray-600 mb-8">
-            Bel ons of maak een afspraak - wij helpen u graag met al uw computerproblemen
+          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Hulp nodig met computer of techniek?</h2>
+          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            Bel ons of maak een afspraak — we helpen u graag met uw computerprobleem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="tel:+31858002006"
-              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-10 py-5 rounded-xl font-bold text-2xl shadow-xl shadow-blue-600/25 hover:scale-105 transition-all"
-            >
-              <Icon name="phone" className="w-8 h-8" strokeWidth={2} />Bel 085-8002006</a>
-            <Link
-              href="/afspraak-maken"
-              className="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-10 py-5 rounded-xl font-bold text-xl shadow-lg hover:scale-105 transition-all border-2 border-blue-200"
-            >
-              Afspraak Maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
+            </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
             </Link>
           </div>
         </div>

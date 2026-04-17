@@ -1,8 +1,8 @@
 import { ImageResponse } from 'next/og'
+import { BUSINESS, PRICING } from '@/lib/constants'
 
-// Route segment config
 export const runtime = 'edge'
-export const alt = 'Computerhulp Zuid-Holland - IT-Problemen Snel Opgelost'
+export const alt = `${BUSINESS.NAME} - IT-Problemen Snel Opgelost`
 export const size = {
   width: 1200,
   height: 630,
@@ -76,7 +76,7 @@ export default async function Image() {
               lineHeight: 1.1,
             }}
           >
-            Computerhulp Zuid-Holland
+            {BUSINESS.NAME}
           </h1>
           <p
             style={{
@@ -105,7 +105,7 @@ export default async function Image() {
               ✓ Aan huis service
             </div>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-              ✓ €14,99 per kwartier
+              ✓ {PRICING.PER_QUARTER} per kwartier
             </div>
           </div>
         </div>
@@ -120,7 +120,7 @@ export default async function Image() {
             fontWeight: 'bold',
           }}
         >
-          📞 085-8002006
+          📞 {BUSINESS.PHONE}
         </div>
       </div>
     ),

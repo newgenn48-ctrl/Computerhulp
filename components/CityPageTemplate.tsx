@@ -5,10 +5,15 @@ import { Metadata } from 'next'
 import PricingSection from '@/components/PricingSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
+import TrustBadges from '@/components/TrustBadges'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
+import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { City } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
+import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -21,6 +26,12 @@ interface CityPageTemplateProps {
 
 // ─── Variant-specific configuration ──────────────────────────────────────────
 
+interface Benefit {
+  icon: string
+  title: string
+  desc: string
+}
+
 interface VariantConfig {
   serviceName: string
   serviceNameLower: string
@@ -31,9 +42,10 @@ interface VariantConfig {
   heroDescription: (cityName: string) => React.ReactNode
   servicesTitle: (cityName: string) => string
   servicesDescription: string
+  whyTitle: string
+  benefits?: Benefit[]
   neighborhoodsSectionTitle: (city: City, region: string) => string
   neighborhoodsSectionDescription: (cityName: string, region?: string) => string
-  testimonials: Array<{ quote: string; initials: string; name: string }>
   pricingBenefits: (cityName: string) => string[]
 }
 
@@ -41,7 +53,7 @@ const computerhulpConfig: VariantConfig = {
   serviceName: 'Computerhulp aan Huis',
   serviceNameLower: 'computerhulp aan huis',
   urlPrefix: 'computerhulp-aan-huis',
-  heroImage: '/Student aan huis.webp',
+  heroImage: '/Computerhulp aan huis.webp',
   heroAlt: (cityName) => `Computerhulp aan huis in ${cityName}`,
   heroTitle: (cityName) => (
     <>Computerhulp aan Huis <span className="text-blue-600">{cityName}</span></>
@@ -53,43 +65,12 @@ const computerhulpConfig: VariantConfig = {
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
   servicesDescription: 'Van een simpele vraag tot een lastig probleem — wij helpen u graag',
+  whyTitle: 'Waarom klanten voor ons kiezen',
   neighborhoodsSectionTitle: (_city, region) => `Computerhulp in de regio ${region}`,
   neighborhoodsSectionDescription: (cityName, region) =>
     `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont in de regio ${region} — we zijn er snel.`,
-  testimonials: [
-    {
-      quote: 'Laptop gehackt. Alles schoongemaakt en beveiligd. Voel me weer veilig online.',
-      initials: 'B',
-      name: 'Mevrouw Bea'
-    },
-    {
-      quote: 'Printer aangesloten en scanner ingesteld. Heel vriendelijk en op tijd.',
-      initials: 'T',
-      name: 'De heer Theo'
-    },
-    {
-      quote: 'Thuisnetwerk deed het niet meer. Binnen een uur alles weer online.',
-      initials: 'S',
-      name: 'Mevrouw Sonja'
-    },
-    {
-      quote: 'Computer startte niet meer op. Dezelfde avond nog geholpen. Redding in nood!',
-      initials: 'F',
-      name: 'De heer Fred'
-    },
-    {
-      quote: '10 jaar aan foto\'s overgezet naar mijn nieuwe laptop. Zo opgelucht!',
-      initials: 'I',
-      name: 'Mevrouw Ineke'
-    },
-    {
-      quote: 'Drie apparaten op het netwerk aangesloten. Zelfs de draadloze printer werkt!',
-      initials: 'W',
-      name: 'De heer Wim'
-    }
-  ],
   pricingBenefits: (cityName) => [
-    `€10 voorrijkosten in ${cityName}`,
+    `${PRICING.TRAVEL} voorrijkosten in ${cityName}`,
     'Ook \'s avonds en in het weekend beschikbaar',
     'Betalen via pin of Tikkie'
   ],
@@ -111,43 +92,18 @@ const studentConfig: VariantConfig = {
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
   servicesDescription: 'Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag',
+  whyTitle: 'Waarom een student aan huis?',
+  benefits: [
+    { icon: 'users', title: 'Geduldige IT-studenten', desc: 'Jonge specialisten die uitleggen stap voor stap. Geen vaktermen, wel helder.' },
+    { icon: 'clock', title: 'Binnen 24 uur bij u thuis', desc: 'Geen wachtlijst. Meestal de volgende dag al bij u aan de keukentafel.' },
+    { icon: 'home', title: 'Gewoon thuis blijven', desc: 'U hoeft nergens naartoe. Wij komen bij u en lossen het ter plekke op.' },
+    { icon: 'shield', title: 'Betrouwbaar en verzekerd', desc: `KvK ${BUSINESS.KVK}, volledig verzekerd. Betalen pas na afloop.` },
+  ],
   neighborhoodsSectionTitle: (city) => `Student aan huis in alle wijken van ${city.name}`,
   neighborhoodsSectionDescription: (cityName) =>
-    `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont — voorrijden kost slechts €10.`,
-  testimonials: [
-    {
-      quote: 'Stap voor stap leren videobellen. Nu bel ik elke week met mijn dochter!',
-      initials: 'WP',
-      name: 'Mevrouw Willems'
-    },
-    {
-      quote: 'iPad deed niks meer. Binnen een half uur weer werkend. Heel vriendelijk!',
-      initials: 'PK',
-      name: 'De heer Piet'
-    },
-    {
-      quote: 'E-mail en agenda ingesteld, alles rustig uitgelegd. Aanrader voor senioren!',
-      initials: 'JV',
-      name: 'Mevrouw Jannie'
-    },
-    {
-      quote: 'Geholpen met een fotoboek op de computer. Nu kan ik het zelf!',
-      initials: 'MH',
-      name: 'Mevrouw Martha'
-    },
-    {
-      quote: 'Vreemde meldingen op mijn laptop. Alles opgeschoond en uitgelegd. Heel duidelijk!',
-      initials: 'KD',
-      name: 'De heer Klaas'
-    },
-    {
-      quote: 'WiFi viel steeds weg. Router opnieuw ingesteld, nu geen last meer!',
-      initials: 'EB',
-      name: 'Mevrouw Elly'
-    }
-  ],
+    `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont — voorrijden kost slechts ${PRICING.TRAVEL}.`,
   pricingBenefits: (cityName) => [
-    `€10 voorrijkosten in ${cityName}`,
+    `${PRICING.TRAVEL} voorrijkosten in ${cityName}`,
     'Eerlijke inschatting vooraf, geen verrassingen',
     'Ook \'s avonds en in het weekend beschikbaar',
     'Betalen via pin of Tikkie'
@@ -163,10 +119,10 @@ function getConfig(variant: CityPageVariant): VariantConfig {
 export function generateComputerhulpPageMetadata(city: City): Metadata {
   return {
     title: `Computerhulp aan Huis ${city.name} | Binnen 24u bij u Thuis`,
-    description: `Betrouwbare computerhulp aan huis in ${city.name}. Computer, laptop, printer en WiFi problemen opgelost. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.`,
+    description: `Betrouwbare computerhulp aan huis in ${city.name}. Computer, laptop, printer en WiFi problemen opgelost. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
-      description: `Computerhulp aan huis in ${city.name}. Computer-, laptop- en WiFi-hulp. Binnen 24u, €10 voorrijkosten.`,
+      description: `Computerhulp aan huis in ${city.name}. Computer-, laptop- en WiFi-hulp. Binnen 24u, ${PRICING.TRAVEL} voorrijkosten.`,
       type: 'website',
       url: `https://computerhulpzh.nl/computerhulp-aan-huis-${city.slug}`,
     },
@@ -179,10 +135,10 @@ export function generateComputerhulpPageMetadata(city: City): Metadata {
 export function generateStudentPageMetadata(city: City): Metadata {
   return {
     title: `Student aan Huis ${city.name} | IT-Hulp Binnen 24u bij u Thuis`,
-    description: `IT-student aan huis in ${city.name}. Geduldige hulp bij computer, laptop, WiFi en meer. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.`,
+    description: `IT-student aan huis in ${city.name}. Geduldige hulp bij computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
-      title: `Student aan Huis ${city.name} | Vanaf €44,97`,
-      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, €10 voorrijkosten. Bel 085-8002006.`,
+      title: `Student aan Huis ${city.name} | Vanaf ${PRICING.MINIMUM_TOTAL}`,
+      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
       type: 'website',
       url: `https://computerhulpzh.nl/student-aan-huis-${city.slug}`,
     },
@@ -204,24 +160,24 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
   const cityDescription = variant === 'computerhulp'
     ? (content
         ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computer, laptop, printer, WiFi problemen opgelost bij u thuis.`
-        : `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, €10 voorrijkosten.`)
+        : `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`)
     : (content
         ? `IT-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige IT-studenten bij u thuis.`
         : `Computerhulp aan huis door IT-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`)
 
   const serviceDescription = variant === 'computerhulp'
-    ? `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, €10 voorrijkosten.`
-    : `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, €10 voorrijkosten.`
+    ? `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
+    : `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
 
   const localBusiness: Record<string, unknown> = {
     '@type': 'LocalBusiness',
-    '@id': `${baseUrl}/#organization`,
+    '@id': `${baseUrl}/#localbusiness`,
     name: variant === 'computerhulp' ? `Computerhulp aan Huis ${city.name}` : 'Computerhulp Zuid-Holland',
     url: baseUrl,
-    telephone: '+31858002006',
-    email: 'info@computerhulpzh.nl',
+    telephone: BUSINESS.PHONE_INTL,
+    email: BUSINESS.EMAIL,
     description: cityDescription,
-    logo: `${baseUrl}/Computerhulp%20Zuid%20Holland%20Logo.webp`,
+    logo: `${baseUrl}/logo.png`,
     address: {
       '@type': 'PostalAddress',
       addressLocality: city.name,
@@ -259,7 +215,7 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
     name: serviceName,
     description: serviceDescription,
     url: pageUrl,
-    provider: { '@id': `${baseUrl}/#organization` },
+    provider: { '@id': `${baseUrl}/#localbusiness` },
     areaServed: { '@type': 'City', name: city.name },
     offers: {
       '@type': 'Offer',
@@ -277,7 +233,7 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
           unitText: 'minuten'
         },
         ...(variant === 'computerhulp' ? { minPrice: '44.97' } : {}),
-        description: 'Minimaal 3 kwartier (EUR 44,97 totaal)'
+        description: `Minimaal 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`
       }
     }
   }
@@ -332,7 +288,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: `Wat kost computerhulp aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Computerhulp aan huis in ${city.name} kost EUR 14,99 per kwartier met een minimum van 3 kwartier (EUR 44,97 totaal). Voorrijden kost slechts €10.`
+        text: `Computerhulp aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL}.`
       }
     },
     {
@@ -356,7 +312,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: 'Zijn er voorrijkosten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Voorrijden kost slechts €10 voor computerhulp aan huis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de daadwerkelijke hulp.`
+        text: `Voorrijden kost slechts ${PRICING.TRAVEL} voor computerhulp aan huis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de daadwerkelijke hulp.`
       }
     }
   ]
@@ -367,7 +323,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: `In welke wijken van ${city.name} bieden jullie computerhulp aan?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Wij bieden computerhulp aan huis in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. In de hele regio ${content.region} is voorrijden slechts €10.`
+        text: `Wij bieden computerhulp aan huis in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. In de hele regio ${content.region} is voorrijden slechts ${PRICING.TRAVEL}.`
       }
     })
   }
@@ -389,7 +345,7 @@ function generateStudentFaqQuestions(city: City) {
       name: `Wat kost student aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Student aan huis in ${city.name} kost €14,99 per kwartier met een minimum van 3 kwartier (€44,97 totaal). Voorrijden kost slechts €10 in ${city.name} en omgeving. U betaalt na afloop via pin of Tikkie.`
+        text: `Student aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in ${city.name} en omgeving. U betaalt na afloop via pin of Tikkie.`
       }
     },
     {
@@ -432,7 +388,7 @@ function generateStudentFaqQuestions(city: City) {
       name: `In welke wijken van ${city.name} komen jullie IT-studenten?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Onze IT-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts €10 in de hele regio ${content.region}.`
+        text: `Onze IT-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts ${PRICING.TRAVEL} in de hele regio ${content.region}.`
       }
     })
   }
@@ -447,7 +403,7 @@ function getComputerhulpFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost computerhulp aan huis in ${city.name}?`,
-      answer: `U betaalt \u20AC14,99 per kwartier, met een minimum van drie kwartier (\u20AC44,97). Voorrijden kost slechts €10 — u betaalt dus alleen voor de hulp zelf.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} — u betaalt dus alleen voor de hulp zelf.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} komen?`,
@@ -459,13 +415,13 @@ function getComputerhulpFaqDisplayData(city: City) {
     },
     {
       question: 'Zijn er voorrijkosten?',
-      answer: `Voorrijden kost slechts €10 in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de hulp zelf.`
+      answer: `Voorrijden kost slechts ${PRICING.TRAVEL} in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de hulp zelf.`
     },
   ]
   if (content && content.neighborhoods.length >= 3) {
     items.push({
       question: `Komen jullie ook in mijn wijk in ${city.name}?`,
-      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts €10.`
+      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts ${PRICING.TRAVEL}.`
     })
   }
   return items
@@ -476,7 +432,7 @@ function getStudentFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost student aan huis in ${city.name}?`,
-      answer: `U betaalt \u20AC14,99 per kwartier, met een minimum van drie kwartier (\u20AC44,97). Voorrijden kost slechts €10. Betalen doet u achteraf — via pin of Tikkie.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}. Betalen doet u achteraf — via pin of Tikkie.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} langskomen?`,
@@ -499,7 +455,7 @@ function getStudentFaqDisplayData(city: City) {
   if (content && content.neighborhoods.length >= 3) {
     items.push({
       question: `Komen jullie ook in mijn wijk in ${city.name}?`,
-      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts €10.`
+      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts ${PRICING.TRAVEL}.`
     })
   }
 
@@ -598,7 +554,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                   <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
                 </div>
                 <div>
-                  <div className="font-semibold text-gray-900 mb-1">€10 voorrijkosten</div>
+                  <div className="font-semibold text-gray-900 mb-1">{PRICING.TRAVEL} voorrijkosten</div>
                   <div className="text-gray-600">Computerhulp in heel {city.name} zonder extra kosten.</div>
                 </div>
               </li>
@@ -683,7 +639,7 @@ function StudentContentSection({ city }: { city: City }) {
             </li>
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
-              <span><strong>Betalen achteraf:</strong> Pas na afloop betalen via pin of Tikkie. €10 voorrijkosten in {city.name}.</span>
+              <span><strong>Betalen achteraf:</strong> Pas na afloop betalen via pin of Tikkie. {PRICING.TRAVEL} voorrijkosten in {city.name}.</span>
             </li>
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
@@ -699,7 +655,7 @@ function StudentContentSection({ city }: { city: City }) {
 
           <p className="text-gray-700 leading-relaxed">
             Kunnen wij u helpen in {city.name}? Bel gerust{' '}
-            <a href="tel:+31858002006" className="text-blue-600 hover:text-blue-800 font-semibold">085-8002006</a>{' '}
+            <a href={BUSINESS.PHONE_HREF} className="text-blue-600 hover:text-blue-800 font-semibold">{BUSINESS.PHONE}</a>{' '}
             of{' '}
             <Link href="/afspraak-maken" className="text-blue-600 hover:text-blue-800 font-semibold">vraag online een afspraak aan</Link>.
           </p>
@@ -799,6 +755,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
         <div className="hero-content">
           <div className="max-w-2xl">
+            <span className="eyebrow">{config.serviceName} · {city.name}</span>
             <h1 className="hero-title">
               {config.heroTitle(city.name)}
             </h1>
@@ -807,177 +764,90 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
               {config.heroDescription(city.name)}
             </p>
 
-            {/* USP Badges */}
-            <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              {['Binnen 24 uur bij u thuis', 'Ervaren IT-studenten', '7 dagen per week'].map((usp) => (
-                <span key={usp} className="usp-badge">
-                  <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} aria-hidden="true" />
-                  {usp}
-                </span>
-              ))}
-            </div>
-
-            {/* CTA Buttons */}
+            {/* CTA Buttons — phone primary */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="tel:+31858002006"
-                className="btn-primary"
-              >
+              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                085-8002006
+                Bel {BUSINESS.PHONE}
               </a>
-              <Link
-                href="/afspraak-maken"
-                className="btn-secondary"
-              >
+              <Link href="/afspraak-maken" className="btn-secondary">
                 Afspraak maken
-                <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
             </div>
+
+            <p className="mt-4 text-sm text-gray-700">
+              Liever teruggebeld worden? <Link href="/afspraak-maken" className="text-blue-600 hover:underline font-medium">Vul het formulier in</Link> — binnen 1 uur reactie.
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Services Section */}
+      <TrustBadges />
+
+      {/* Testimonials — computerhulp: direct na trust-row (social proof eerst).
+          Voor student-variant verplaatsen we ze onder PricingSection
+          (test: valideren ná prijs om bezwaren weg te nemen). */}
+      {variant !== 'student' && (
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header className="text-center mb-12">
+              <h2 id="testimonials-heading" className="section-title">
+                Wat onze klanten zeggen
+              </h2>
+              <p className="section-subtitle">
+                Dagelijks helpen we mensen in heel {BUSINESS.REGION}
+              </p>
+              <p className="text-sm text-gray-500 mt-2 lg:hidden">
+                ← Swipe voor meer reviews →
+              </p>
+            </header>
+            <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
+          </div>
+        </section>
+      )}
+
       <ServicesSection
-        title="Waar helpen wij mee?"
+        title="Waar wij mee helpen"
         showFeatures={false}
         limitServices={6}
         showAllButton={true}
       />
 
-      {/* Waarom klanten voor ons kiezen */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Waarom klanten voor ons kiezen</h2>
-          </div>
+      <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 max-w-4xl mx-auto">
-            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Icon name="clock" className="w-6 h-6 text-white" strokeWidth={2} />
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1">Binnen 24 uur bij u thuis</h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Geen weken wachten. Meestal al de volgende dag.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Icon name="users" className="w-6 h-6 text-white" strokeWidth={2} />
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1">Ervaren IT-studenten</h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Opgeleid en ervaren met alle soorten computerproblemen.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Icon name="home" className="w-6 h-6 text-white" strokeWidth={2} />
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1">Gewoon thuis blijven</h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">Wij komen bij u thuis en lossen het ter plekke op.</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 bg-blue-50 rounded-2xl p-6 border border-blue-100">
-              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                <Icon name="shield" className="w-6 h-6 text-white" strokeWidth={2} />
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1">Betrouwbaar en veilig</h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">KvK-geregistreerd en verzekerd. U bent in goede handen.</p>
-              </div>
-            </div>
-          </div>
-
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <a href="tel:+31858002006" className="btn-primary">
-              <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-              085-8002006
-            </a>
-            <Link href="/afspraak-maken" className="btn-secondary">
-              Afspraak maken
-              <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
-            </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
-          </header>
-          <TestimonialsCarousel testimonials={config.testimonials} />
-        </div>
-      </section>
-
-      {/* Pricing */}
       <PricingSection />
 
-      {/* Zo werkt het */}
-      <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-10">
-            <h2 className="section-title">Zo werkt het</h2>
+      {variant === 'student' && (
+        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <header className="text-center mb-12">
+              <h2 id="testimonials-heading" className="section-title">
+                Wat onze klanten zeggen
+              </h2>
+              <p className="section-subtitle">
+                Dagelijks helpen we mensen in heel {BUSINESS.REGION}
+              </p>
+              <p className="text-sm text-gray-500 mt-2 lg:hidden">
+                ← Swipe voor meer reviews →
+              </p>
+            </header>
+            <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
           </div>
+        </section>
+      )}
 
-          <div className="flex flex-col gap-4 sm:hidden">
-            {[
-              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
-              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
-              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
-            ].map((item, idx) => (
-              <div key={idx} className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-lg font-bold flex-shrink-0">{item.step}</div>
-                <div>
-                  <div className="font-bold text-gray-900">{item.title}</div>
-                  <div className="text-sm sm:text-base text-gray-600">{item.sub}</div>
-                </div>
-                {idx < 2 && <Icon name="arrow-right" className="w-5 h-5 text-gray-300 ml-auto flex-shrink-0" strokeWidth={2} />}
-              </div>
-            ))}
-          </div>
-
-          <div className="hidden sm:grid sm:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'U neemt contact op', sub: 'Bel ons of plan online' },
-              { step: '2', title: 'We komen bij u thuis', sub: 'Binnen 24 uur' },
-              { step: '3', title: 'Probleem opgelost', sub: 'Betalen achteraf' },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">{item.step}</div>
-                <h3 className="text-lg font-bold text-gray-900">{item.title}</h3>
-                <p className="text-gray-600 text-sm">{item.sub}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection background="white" />
 
       {/* FAQ */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">Veelgestelde vragen</h2>
-          </div>
+          <header className="text-center mb-12">
+            <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
+          </header>
           <div className="space-y-4">
             {faqItems.map((faq, idx) => (
-              <details key={idx} className="group faq-item">
+              <details key={idx} className="group faq-item-white">
                 <summary className="faq-summary">
                   {faq.question}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
@@ -989,13 +859,13 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         </div>
       </section>
 
-      {/* Content SEO + Neighborhoods - for search engines */}
+      {/* City-specific SEO content */}
       {variant === 'computerhulp'
         ? <ComputerhulpContentSection city={city} />
         : <StudentContentSection city={city} />
       }
 
-      {/* Neighborhoods */}
+      {/* Neighborhoods — alleen als er echte neighborhood data is */}
       {(() => {
         const content = getCityContent(city.slug)
         if (!content || content.neighborhoods.length < 3) return null
@@ -1019,7 +889,13 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         )
       })()}
 
-      {/* Final CTA - consistent blue */}
+      {/* Nearby cities — discovery vóór de final CTA */}
+      <NearbyCities currentCity={city.slug} pageType={config.urlPrefix} />
+
+      {/* Cross-link section (student variant only) */}
+      {variant === 'student' && <StudentCrossLinkSection city={city} />}
+
+      {/* Final CTA — consistent met hub pages */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold mb-6">
@@ -1030,9 +906,9 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <a href="tel:+31858002006" className="btn-cta-white">
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-              085-8002006
+              Bel {BUSINESS.PHONE}
             </a>
             <Link href="/afspraak-maken" className="btn-cta-dark">
               Afspraak maken
@@ -1040,27 +916,22 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             </Link>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-200">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-100">
             <span className="flex items-center gap-2">
-              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
-              7 dagen per week
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />
+              {HOURS.DAYS}
             </span>
             <span className="flex items-center gap-2">
-              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
-              Ook avonden
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />
+              Ook avonden tot {HOURS.CLOSE}
             </span>
             <span className="flex items-center gap-2">
-              <Icon name="check-circle" className="w-4 h-4 text-blue-300" />
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />
               Binnen 24 uur geholpen
             </span>
           </div>
         </div>
       </section>
-
-      {/* Cross-link section (student variant only) */}
-      {variant === 'student' && <StudentCrossLinkSection city={city} />}
-
-      <NearbyCities currentCity={city.slug} pageType={config.urlPrefix} />
     </>
   )
 }

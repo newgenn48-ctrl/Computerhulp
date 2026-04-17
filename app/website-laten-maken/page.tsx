@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import { BUSINESS } from '@/lib/constants'
 
 export default function WebsiteLatenMakenPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
@@ -67,19 +68,22 @@ export default function WebsiteLatenMakenPage() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
+                  <a
+                    href={BUSINESS.PHONE_HREF}
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-0.5"
+                    aria-label={`Bel ${BUSINESS.PHONE}`}
+                  >
+                    <Icon name="phone" className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} aria-hidden="true" />
+                    Bel {BUSINESS.PHONE}
+                  </a>
+
                   <Link
                     href="/offerte-aanvragen"
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all hover:scale-105"
-                  >
-                    Vraag Offerte Aan
-                    <Icon name="arrow-right-short" className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" strokeWidth={2} />
-                  </Link>
-
-                  <a
-                    href="tel:+31858002006"
                     className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all hover:border-blue-500"
                   >
-                    <Icon name="phone" className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600" strokeWidth={2} />Bel 085-8002006</a>
+                    Vraag offerte aan
+                    <Icon name="arrow-right-short" className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} aria-hidden="true" />
+                  </Link>
                 </div>
 
                 <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-600">
@@ -543,20 +547,20 @@ export default function WebsiteLatenMakenPage() {
                   Wilt u weten wat het kost om uw website te laten maken?
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a
+                    href={BUSINESS.PHONE_HREF}
+                    className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+                  >
+                    <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
+                    Bel {BUSINESS.PHONE}
+                  </a>
                   <Link
                     href="/offerte-aanvragen"
-                    className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
-                  >
-                    Vraag Gratis Offerte Aan
-                    <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-                  </Link>
-                  <a
-                    href="tel:+31858002006"
                     className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white border-2 border-gray-300 text-gray-900 rounded-xl font-bold text-lg hover:border-blue-500 hover:shadow-lg transition-all"
                   >
-                    <Icon name="phone" className="w-5 h-5 text-blue-600" strokeWidth={2} />
-                    Bel 085-8002006
-                  </a>
+                    Vraag Gratis Offerte Aan
+                    <Icon name="arrow-right-short" className="w-5 h-5 text-blue-600" strokeWidth={2} />
+                  </Link>
                 </div>
                 <p className="text-sm text-gray-500">
                   Geen verplichtingen • Gratis adviesgesprek • Offerte binnen 24 uur
@@ -647,7 +651,7 @@ export default function WebsiteLatenMakenPage() {
               </p>
               <Link
                 href="/offerte-aanvragen"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:scale-105 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
               >
                 Stel Uw Vraag
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
@@ -671,19 +675,21 @@ export default function WebsiteLatenMakenPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-purple-600 rounded-xl font-black text-xl shadow-2xl hover:shadow-white/50 hover:-translate-y-0.5 transition-all"
+              >
+                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+                Bel {BUSINESS.PHONE}
+              </a>
+
               <Link
                 href="/offerte-aanvragen"
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-purple-600 rounded-xl font-black text-xl shadow-2xl hover:shadow-white/50 hover:scale-105 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold text-xl hover:bg-white/20 transition-all"
               >
                 Vraag Offerte Aan
                 <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
               </Link>
-
-              <a
-                href="tel:+31858002006"
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold text-xl hover:bg-white/20 transition-all"
-              >
-                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />Bel 085-8002006</a>
             </div>
 
             <div className="flex flex-wrap justify-center gap-6 text-white/80 text-sm">

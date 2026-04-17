@@ -3,15 +3,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
+import { BUSINESS, PRICING } from '@/lib/constants'
+import TrustBadges from '@/components/TrustBadges'
+import AvailableInCities from '@/components/sections/AvailableInCities'
 
 export const metadata: Metadata = {
   title: 'Printer & Scanner Hulp aan Huis Zuid-Holland | Binnen 24u',
-  description: 'Printer print niet of scanner werkt niet? Wij komen bij u thuis in Zuid-Holland en lossen het op. €10 voorrijkosten, binnen 24 uur. Bel 085-8002006.',
+  description: `Printer print niet of scanner werkt niet? Wij komen bij u thuis in ${BUSINESS.REGION} en lossen het op. ${PRICING.TRAVEL} voorrijkosten, binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Printer & Scanner Hulp aan Huis',
-    description: 'Printer print niet of scanner doet het niet? We komen bij u thuis in Zuid-Holland. Binnen 24 uur geholpen.',
+    description: `Printer print niet of scanner doet het niet? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/printer-scanner-hulp'},
   alternates: {
@@ -24,13 +29,13 @@ const structuredData = {
   serviceType: 'Printer & Scanner Hulp',
   provider: {
     '@type': 'LocalBusiness',
-    name: 'Computerhulp Zuid-Holland',
-    telephone: '+31858002006',
-    email: 'info@computerhulpzh.nl',
-    address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
+    name: BUSINESS.NAME,
+    telephone: BUSINESS.PHONE_INTL,
+    email: BUSINESS.EMAIL,
+    address: { '@type': 'PostalAddress', addressRegion: BUSINESS.REGION, addressCountry: BUSINESS.COUNTRY }
   },
-  areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'EUR' },
+  areaServed: { '@type': 'State', name: BUSINESS.REGION },
+  offers: { '@type': 'Offer', price: PRICING.PER_QUARTER_NUM.toString(), priceCurrency: 'EUR' },
   description: 'Professionele printer en scanner hulp aan huis. Installatie, configuratie en problemen oplossen. We komen bij u thuis in Zuid-Holland.'
 }
 
@@ -58,23 +63,15 @@ const faqData = {
 
 const heroImage = '/Printer & Randapparatuur.webp'
 
-const problems = [
-  { title: 'Printer Print Niet', description: 'Printopdrachten komen niet uit de printer.', icon: 'M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z' },
-  { title: 'Slechte Printkwaliteit', description: 'Strepen, vlekken of vage afdrukken.', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
-  { title: 'Papierstoring', description: 'Papier loopt vast in de printer.', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
-  { title: 'Verbinding Mislukt', description: 'Kan niet printen via WiFi.', icon: 'M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1' },
-  { title: 'Scanner Werkt Niet', description: 'Scanner wordt niet herkend of scant niet.', icon: 'M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
-  { title: 'Nieuwe Printer Installeren', description: 'Hulp bij installatie en configuratie.', icon: 'M12 6v6m0 0v6m0-6h6m-6 0H6' }
-]
-
 const services = [
-  'Nieuwe printer installeren en instellen',
-  'Draadloos printen via WiFi opzetten',
-  'Printerproblemen oplossen',
-  'Scanner instellen en configureren',
-  'Scan naar e-mail opzetten',
-  'Printen vanaf telefoon en tablet',
-  'Papierstoringen en afdrukkwaliteit',
+  'Nieuwe printer aansluiten en instellen',
+  'Draadloos printen via WiFi instellen',
+  'Scanner installeren en koppelen',
+  'Scannen naar e-mail configureren',
+  'Printkwaliteit verbeteren',
+  'Papierstoring verhelpen',
+  'Inktcartridges vervangen',
+  'Printer niet gevonden — oplossen',
 ]
 
 const faqs = [
@@ -83,24 +80,6 @@ const faqs = [
   { question: 'Helpen jullie ook met draadloos printen?', answer: 'Ja, we maken uw printer draadloos zodat u kunt printen vanaf elke plek in huis, ook vanaf uw telefoon of tablet.' },
   { question: 'Kan ik ook scannen naar mijn e-mail?', answer: 'Ja, als uw printer/scanner dit ondersteunt, stellen we scan naar e-mail in zodat gescande documenten direct naar uw inbox gaan.' },
   { question: 'Mijn printer is oud, moet ik een nieuwe kopen?', answer: 'We bekijken eerst of uw huidige printer nog gerepareerd kan worden. Indien nodig adviseren we u over een nieuwe printer die past bij uw gebruik.' }
-]
-
-const testimonials = [
-  {
-    quote: 'Printer deed het al weken niet. In een half uur was hij weer aangesloten op WiFi en kon ik weer printen en scannen.',
-    name: 'Gerard T.',
-    initials: 'GT'
-  },
-  {
-    quote: 'Nieuwe printer gekocht maar kreeg hem niet ge\u00efnstalleerd. De IT-student heeft alles aangesloten en uitgelegd. Heel fijn!',
-    name: 'Marian S.',
-    initials: 'MS'
-  },
-  {
-    quote: 'Kon niet meer scannen naar mijn e-mail. Bleek een instelling te zijn. Snel opgelost en nu werkt alles weer perfect.',
-    name: 'Paul K.',
-    initials: 'PK'
-  }
 ]
 
 export default function PrinterScannerHulpPage() {
@@ -115,26 +94,21 @@ export default function PrinterScannerHulpPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Printer & Scanner Hulp aan Huis
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.04] tracking-display-tight">
+                Hulp met uw <span className="text-blue-600">printer</span> of scanner?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Printer werkt niet of scanner doet het niet meer? Wij installeren, repareren en configureren alle merken printers bij u thuis.
+                Draadloos printen, scannen of installatie — wij regelen het bij u thuis. De meeste printerproblemen zijn <strong className="text-gray-900">in een halfuur opgelost</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/afspraak-maken" className="btn-primary">
-                  Plan Printerhulp
-                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-                </Link>
-                <a href="tel:+31858002006" className="btn-secondary">
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                  Bel 085-8002006
+                <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                  Bel {BUSINESS.PHONE}
                 </a>
-              </div>
-              <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Betrouwbaar &amp; vakkundig</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Binnen 24 uur</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Alle merken</div>
+                <Link href="/afspraak-maken" className="btn-secondary">
+                  Afspraak maken
+                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -159,17 +133,19 @@ export default function PrinterScannerHulpPage() {
         </div>
       </section>
 
-      {/* Onze Diensten */}
+      <TrustBadges />
+
+      {/* Wat wij voor u doen — check-list */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="section-title">Onze Diensten</h2>
-            <p className="section-subtitle">Een overzicht van onze printer- en scannerdiensten.</p>
+            <h2 className="section-title">Wat wij voor u doen</h2>
+            <p className="section-subtitle">Alles rondom printers en scanners — installatie, instellingen, storingen.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
-              <div key={idx} className="flex items-center gap-3 py-2">
-                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2} />
+              <div key={idx} className="flex items-start gap-3 py-1">
+                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
@@ -177,63 +153,7 @@ export default function PrinterScannerHulpPage() {
         </div>
       </section>
 
-      {/* Problems Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="section-title">
-              Veelvoorkomende Printerproblemen
-            </h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {problems.map((problem, idx) => (
-              <div
-                key={idx}
-                className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={problem.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{problem.title}</h3>
-                <p className="text-gray-600">{problem.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Zo Werkt Het */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">
-              Zo Werkt Het
-            </h2>
-            <p className="section-subtitle">In 3 simpele stappen geholpen</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
-              { step: '3', title: 'Probleem Opgelost', desc: 'Uw printer of scanner werkt weer perfect. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
@@ -250,7 +170,7 @@ export default function PrinterScannerHulpPage() {
               ← Swipe voor meer reviews →
             </p>
           </header>
-          <TestimonialsCarousel testimonials={testimonials} />
+          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
         </div>
       </section>
 
@@ -288,20 +208,22 @@ export default function PrinterScannerHulpPage() {
 
       <ServiceCrossLinks currentService="printer-scanner-hulp" serviceName="Printer & Scanner Hulp" />
 
+
+      <AvailableInCities serviceLabel="Printerhulp" />
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Printer of Scanner Problemen?</h2>
           <p className="text-xl text-blue-100 mb-10">Neem contact op en we komen vandaag of morgen al bij u langs</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Plan Printerhulp
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a href="tel:+31858002006" className="btn-cta-dark">
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-              Bel 085-8002006
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

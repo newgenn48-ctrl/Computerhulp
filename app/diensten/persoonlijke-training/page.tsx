@@ -3,16 +3,21 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
+import { BUSINESS, PRICING } from '@/lib/constants'
+import TrustBadges from '@/components/TrustBadges'
+import AvailableInCities from '@/components/sections/AvailableInCities'
 
 export const metadata: Metadata = {
   title: 'Computer Training aan Huis | Persoonlijke Les | Zuid-Holland',
-  description: 'Computer basics leren, internet veilig gebruiken of Word en Excel leren? Persoonlijke training aan huis in Zuid-Holland. €10 voorrijkosten. Bel 085-8002006.',
+  description: `Computer basics leren, internet veilig gebruiken of Word en Excel leren? Persoonlijke training aan huis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
 
   openGraph: {
     title: 'Persoonlijke Training aan Huis',
-    description: 'Computer basics leren, internet veilig gebruiken of Word en Excel onder de knie krijgen? We komen bij u thuis in Zuid-Holland. Bel 085-8002006.',
+    description: `Computer basics leren, internet veilig gebruiken of Word en Excel onder de knie krijgen? We komen bij u thuis in ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/persoonlijke-training'},
   alternates: {
@@ -25,13 +30,13 @@ const structuredData = {
   serviceType: 'Persoonlijke Computer Training',
   provider: {
     '@type': 'LocalBusiness',
-    name: 'Computerhulp Zuid-Holland',
-    telephone: '+31858002006',
-    email: 'info@computerhulpzh.nl',
-    address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
+    name: BUSINESS.NAME,
+    telephone: BUSINESS.PHONE_INTL,
+    email: BUSINESS.EMAIL,
+    address: { '@type': 'PostalAddress', addressRegion: BUSINESS.REGION, addressCountry: BUSINESS.COUNTRY }
   },
-  areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'EUR' },
+  areaServed: { '@type': 'State', name: BUSINESS.REGION },
+  offers: { '@type': 'Offer', price: PRICING.PER_QUARTER_NUM.toString(), priceCurrency: 'EUR' },
   description: 'Persoonlijke computer training aan huis. Van computer basics tot Word, Excel, internet en online bankieren. Op uw tempo, bij u thuis in Zuid-Holland.'
 }
 
@@ -59,23 +64,15 @@ const faqData = {
 
 const heroImage = '/Student aan huis.webp'
 
-const problems = [
-  { title: 'Computer Basics Leren', description: 'Net begonnen, weet niet hoe het werkt.', icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
-  { title: 'Internet Veilig Gebruiken', description: 'Internet eng of onduidelijk, veiligheid een zorg.', icon: 'M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z' },
-  { title: 'Online Bankieren', description: 'Wil online kunnen bankieren maar weet niet hoe.', icon: 'M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z' },
-  { title: 'Foto\'s Beheren', description: 'Foto\'s van camera naar computer, ordenen.', icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z' },
-  { title: 'Word/Excel Leren', description: 'Brieven schrijven of tabellen maken.', icon: 'M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z' },
-  { title: 'E-mail en Videobellen', description: 'E-mail versturen of videobellen met familie.', icon: 'M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z' }
-]
-
 const services = [
-  'Computer basics en muis/toetsenbord',
-  'Veilig internetten en online winkelen',
-  'E-mail schrijven en versturen',
-  'Word en Excel leren gebruiken',
-  'Online bankieren met DigiD',
-  'Foto\'s importeren en beheren',
-  'Videobellen leren (Zoom, Teams)',
+  'Basistraining voor uw computer',
+  'Internet veilig gebruiken',
+  'E-mail leren gebruiken',
+  'Online bankieren zonder zorgen',
+  'Videobellen met familie (WhatsApp, Zoom)',
+  'Foto\'s ordenen, bewaren en delen',
+  'Sociale media (Facebook, Instagram)',
+  'Word, Excel en andere programma\'s',
 ]
 
 const faqs = [
@@ -84,24 +81,6 @@ const faqs = [
   { question: 'Geven jullie ook les in Word en Excel?', answer: 'Absoluut! We geven les in Word voor brieven en documenten, en Excel voor tabellen en berekeningen. We stemmen de les af op uw niveau en tempo.' },
   { question: 'Kan ik meerdere lessen boeken?', answer: 'Ja, u kunt zoveel lessen boeken als u wilt. Veel klanten boeken een serie van 3-5 lessen om de stof goed onder de knie te krijgen.' },
   { question: 'Leren jullie ook videobellen?', answer: 'Ja, we leren u videobellen met alle gangbare programma\'s. Zo kunt u met kinderen, kleinkinderen of vrienden beeldbellen.' }
-]
-
-const testimonials = [
-  {
-    quote: 'Eindelijk snap ik hoe mijn iPad werkt! Heel geduldig uitgelegd, op mijn tempo. Nu kan ik zelf videobellen met de kleinkinderen.',
-    name: 'Corrie V.',
-    initials: 'CV'
-  },
-  {
-    quote: 'In twee lessen heb ik geleerd hoe ik foto\'s deel, e-mail gebruik en veilig internet. Fantastische hulp.',
-    name: 'Bert J.',
-    initials: 'BJ'
-  },
-  {
-    quote: 'Als 78-jarige was ik bang dat ik het nooit zou leren. Maar met zoveel geduld en duidelijke uitleg kan ik nu alles zelf!',
-    name: 'Ria K.',
-    initials: 'RK'
-  }
 ]
 
 export default function PersoonlijkeTrainingPage() {
@@ -116,26 +95,21 @@ export default function PersoonlijkeTrainingPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Persoonlijke Computer Training aan Huis
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.04] tracking-display-tight">
+                Meer <span className="text-blue-600">leren</span> over uw computer?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Computer beter leren gebruiken? Wij geven persoonlijke les bij u thuis, op uw eigen tempo. <strong className="text-gray-900">Van basis tot gevorderd.</strong>
+                Van WhatsApp met de kleinkinderen tot online bankieren zonder zorgen — we leggen stap voor stap uit, <strong className="text-gray-900">op uw tempo, bij u thuis</strong>.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/afspraak-maken" className="btn-primary">
-                  Boek Training
-                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-                </Link>
-                <a href="tel:+31858002006" className="btn-secondary">
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                  Bel 085-8002006
+                <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                  Bel {BUSINESS.PHONE}
                 </a>
-              </div>
-              <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Betrouwbaar &amp; vakkundig</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Op uw tempo</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Geduldige uitleg</div>
+                <Link href="/afspraak-maken" className="btn-secondary">
+                  Afspraak maken
+                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -160,17 +134,19 @@ export default function PersoonlijkeTrainingPage() {
         </div>
       </section>
 
-      {/* Onze Diensten */}
+      <TrustBadges />
+
+      {/* Wat wij voor u doen — check-list */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="section-title">Onze Diensten</h2>
-            <p className="section-subtitle">Een overzicht van onze trainingsdiensten.</p>
+            <h2 className="section-title">Wat wij voor u doen</h2>
+            <p className="section-subtitle">Wat we u kunnen leren.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
-              <div key={idx} className="flex items-center gap-3 py-2">
-                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2} />
+              <div key={idx} className="flex items-start gap-3 py-1">
+                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
@@ -178,58 +154,7 @@ export default function PersoonlijkeTrainingPage() {
         </div>
       </section>
 
-      {/* Problems Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Waar Heeft U Hulp Bij Nodig?</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Persoonlijke training afgestemd op uw behoeften. Wij komen bij u thuis en leren u alles op uw eigen tempo.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {problems.map((problem, idx) => (
-              <div
-                key={idx}
-                className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={problem.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{problem.title}</h3>
-                <p className="text-gray-600">{problem.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Zo Werkt Het */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">
-              Zo Werkt Het
-            </h2>
-            <p className="section-subtitle">In 3 simpele stappen geholpen</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat u wilt leren.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
-              { step: '3', title: 'Training Afgerond', desc: 'U leert stap voor stap werken met uw apparaat. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
@@ -246,7 +171,7 @@ export default function PersoonlijkeTrainingPage() {
               ← Swipe voor meer reviews →
             </p>
           </header>
-          <TestimonialsCarousel testimonials={testimonials} />
+          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
         </div>
       </section>
 
@@ -284,20 +209,22 @@ export default function PersoonlijkeTrainingPage() {
 
       <ServiceCrossLinks currentService="persoonlijke-training" serviceName="Persoonlijke Training" />
 
+
+      <AvailableInCities serviceLabel="Persoonlijke training" />
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Computer Vaardigheden Verbeteren?</h2>
           <p className="text-xl text-blue-100 mb-10">Bel nu voor persoonlijke training bij u thuis</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Boek Training
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a href="tel:+31858002006" className="btn-cta-dark">
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-              Bel 085-8002006
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

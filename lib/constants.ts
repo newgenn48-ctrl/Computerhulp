@@ -4,10 +4,19 @@ export const BUSINESS = {
   PHONE_INTL: '+31858002006',
   PHONE_HREF: 'tel:+31858002006',
   WHATSAPP: '06-42548451',
+  WHATSAPP_NUMBER: '31642548451',
   WHATSAPP_HREF: 'https://wa.me/31642548451',
   EMAIL: 'info@computerhulpzh.nl',
+  EMAIL_HREF: 'mailto:info@computerhulpzh.nl',
   KVK: '91310318',
+  BTW: 'NL865613461B01',
   URL: 'https://computerhulpzh.nl',
+  REGION: 'Zuid-Holland',
+  COUNTRY: 'NL',
+  REVIEW_COUNT: '500+',
+  YEARS_ACTIVE: '10+',
+  FOUNDING_YEAR: 2013,
+  RESPONSE_TIME: 'binnen 1 uur',
 } as const
 
 export const PRICING = {

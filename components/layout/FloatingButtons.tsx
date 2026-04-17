@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import { BUSINESS } from '@/lib/constants'
 
 export default function FloatingButtons() {
   const [show, setShow] = useState(false)
@@ -40,30 +41,22 @@ export default function FloatingButtons() {
 
   return (
     <div
-      className={`fixed bottom-6 right-4 sm:right-6 z-50 transition-all duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+      className={`fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-40 transition-all duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
       role="complementary"
       aria-label="Snelle actieknoppen"
     >
-      {/* Mobile: WhatsApp + Bellen */}
+      {/* Mobile: alleen WhatsApp (phone & afspraak zitten in StickyMobileBar) */}
       <div className="flex flex-col gap-3 sm:hidden">
         <button
           onClick={() => {
             const msg = encodeURIComponent('Hallo! Ik heb een vraag over computerhulp aan huis.')
-            window.open(`https://wa.me/31642548451?text=${msg}`, '_blank', 'noopener,noreferrer')
+            window.open(`${BUSINESS.WHATSAPP_HREF}?text=${msg}`, '_blank', 'noopener,noreferrer')
           }}
           className="group floating-btn bg-[#25D366] hover:bg-[#128C7E] shadow-2xl"
           aria-label="WhatsApp ons"
         >
           <Icon name="whatsapp" className="w-7 h-7" />
         </button>
-
-        <a
-          href="tel:+31858002006"
-          className="group floating-btn bg-blue-600 hover:bg-blue-700 shadow-2xl"
-          aria-label="Direct bellen naar 085-8002006"
-        >
-          <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-        </a>
       </div>
 
       {/* Desktop: Afspraak maken */}

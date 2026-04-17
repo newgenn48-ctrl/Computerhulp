@@ -6,49 +6,46 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import LayoutShell from '@/components/layout/LayoutShell'
 import { SvgSprite } from '@/components/icons'
+import { BUSINESS, PRICING } from '@/lib/constants'
 
+// Inter overal — senior-vriendelijk, hoge leesbaarheid op scherm,
+// karakterrijk bij zware gewichten (700-800) voor professionele koppen.
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
   adjustFontFallback: true,
   fallback: ['system-ui', 'arial'],
-  variable: '--font-inter'
+  variable: '--font-inter',
 })
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://computerhulpzh.nl'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || BUSINESS.URL),
   title: {
-    default: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
-    template: '%s'
+    default: `${BUSINESS.NAME} | IT-Problemen Snel Opgelost`,
+    template: '%s',
   },
-  description: 'Problemen met computer, laptop, printer, e-mail of WiFi? Binnen 24 uur geholpen in heel Zuid-Holland. Transparant tarief: €14,99 per kwartier. Bel 085-8002006.',
-  authors: [{ name: 'Computerhulp Zuid-Holland' }],
-  creator: 'Computerhulp Zuid-Holland',
-  publisher: 'Computerhulp Zuid-Holland',
+  description: `Problemen met computer, laptop, printer, e-mail of WiFi? Binnen 24 uur geholpen in heel ${BUSINESS.REGION}. Transparant tarief: ${PRICING.PER_QUARTER} per kwartier. Bel ${BUSINESS.PHONE}.`,
+  authors: [{ name: BUSINESS.NAME }],
+  creator: BUSINESS.NAME,
+  publisher: BUSINESS.NAME,
   formatDetection: {
     email: true,
     address: true,
-    telephone: true},
+    telephone: true,
+  },
   openGraph: {
     type: 'website',
     locale: 'nl_NL',
-    url: 'https://computerhulpzh.nl',
-    siteName: 'Computerhulp Zuid-Holland',
-    title: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
-    description: 'Computer, laptop, printer of WiFi problemen? Binnen 24 uur bij u thuis in Zuid-Holland.',
-    images: [
-      {
-        url: '/Computerhulp Zuid Holland Logo.webp',
-        width: 1200,
-        height: 630,
-        alt: 'Computerhulp Zuid-Holland - IT-Hulp aan Huis'},
-    ]},
+    url: BUSINESS.URL,
+    siteName: BUSINESS.NAME,
+    title: `${BUSINESS.NAME} | IT-Problemen Snel Opgelost`,
+    description: `Computer, laptop, printer of WiFi problemen? Binnen 24 uur bij u thuis in ${BUSINESS.REGION}.`,
+  },
   twitter: {
     card: 'summary_large_image',
-    title: 'Computerhulp Zuid-Holland | IT-Problemen Snel Opgelost',
-    description: 'Binnen 24 uur computerhulp aan huis in Zuid-Holland. Vanaf €44,97, €10 voorrijkosten. Bel 085-8002006.',
-    images: ['/Computerhulp Zuid Holland Logo.webp'],
+    title: `${BUSINESS.NAME} | IT-Problemen Snel Opgelost`,
+    description: `Binnen 24 uur computerhulp aan huis in ${BUSINESS.REGION}. Vanaf ${PRICING.MINIMUM_TOTAL}, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   },
   robots: {
     index: true,
@@ -80,7 +77,7 @@ export default function RootLayout({
   const gtmId = 'GTM-WBZ74G2V'
 
   return (
-    <html lang="nl" className="scroll-smooth">
+    <html lang="nl" className={`scroll-smooth ${inter.variable}`}>
       <head>
         {/* DNS Prefetch & Preconnect for Performance */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -165,7 +162,7 @@ export default function RootLayout({
           </Script>
         )}
       </head>
-      <body className={inter.className}>
+      <body className="font-sans antialiased">
         {/* Google Tag Manager (noscript) */}
         <noscript>
           <iframe

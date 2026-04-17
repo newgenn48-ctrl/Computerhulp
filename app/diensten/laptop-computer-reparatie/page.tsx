@@ -3,15 +3,20 @@ import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
+import { BUSINESS, PRICING } from '@/lib/constants'
+import TrustBadges from '@/components/TrustBadges'
+import AvailableInCities from '@/components/sections/AvailableInCities'
 
 export const metadata: Metadata = {
   title: 'Laptop Reparatie & PC Hulp aan Huis Zuid-Holland | 24u',
-  description: 'Laptop of computer kapot? Scherm, toetsenbord of hardware defect? Wij repareren bij u thuis in Zuid-Holland. €10 voorrijkosten. Bel 085-8002006.',
+  description: `Laptop of computer kapot? Scherm, toetsenbord of hardware defect? Wij repareren bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Laptop & Computer Reparatie aan Huis',
-    description: 'Laptop of computer kapot? Wij repareren bij u thuis in Zuid-Holland. Bel 085-8002006.',
+    description: `Laptop of computer kapot? Wij repareren bij u thuis in ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/laptop-computer-reparatie'},
   alternates: {
@@ -24,13 +29,13 @@ const structuredData = {
   serviceType: 'Laptop & Computer Reparatie',
   provider: {
     '@type': 'LocalBusiness',
-    name: 'Computerhulp Zuid-Holland',
-    telephone: '+31858002006',
-    email: 'info@computerhulpzh.nl',
-    address: { '@type': 'PostalAddress', addressRegion: 'Zuid-Holland', addressCountry: 'NL' }
+    name: BUSINESS.NAME,
+    telephone: BUSINESS.PHONE_INTL,
+    email: BUSINESS.EMAIL,
+    address: { '@type': 'PostalAddress', addressRegion: BUSINESS.REGION, addressCountry: BUSINESS.COUNTRY }
   },
-  areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  offers: { '@type': 'Offer', price: '14.99', priceCurrency: 'EUR' },
+  areaServed: { '@type': 'State', name: BUSINESS.REGION },
+  offers: { '@type': 'Offer', price: PRICING.PER_QUARTER_NUM.toString(), priceCurrency: 'EUR' },
   description: 'Professionele laptop en computer reparatie aan huis. Van kapotte schermen tot hardware defecten. We komen bij u thuis in Zuid-Holland.'
 }
 
@@ -56,43 +61,17 @@ const faqData = {
   ]
 }
 
-const testimonials = [
-  {
-    quote: 'Scherm van mijn laptop was kapot. Binnen een dag gerepareerd bij mij thuis. Scheelde me een hoop gedoe.',
-    name: 'Lisa H.',
-    initials: 'LH'
-  },
-  {
-    quote: 'Laptop liep vast met een blauw scherm. Ze hebben het besturingssysteem hersteld zonder dataverlies. Knap werk!',
-    name: 'Frank M.',
-    initials: 'FM'
-  },
-  {
-    quote: 'Oude laptop was eigenlijk te traag om weg te doen. Na een SSD upgrade en meer geheugen werkt hij weer als nieuw.',
-    name: 'Anja P.',
-    initials: 'AP'
-  }
-]
-
 const heroImage = '/Reparatie.webp'
 
-const problems = [
-  { title: 'Kapot Scherm', description: 'Gebarsten, dode pixels of geen beeld.', icon: 'M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z' },
-  { title: 'Start Niet Op', description: 'Zwart scherm, piepjes of vastlopen.', icon: 'M18.364 5.636a9 9 0 010 12.728m0 0l-2.829-2.829m2.829 2.829L21 21M15.536 8.464a5 5 0 010 7.072' },
-  { title: 'Accu Problemen', description: 'Leeg snel, laadt niet of defect.', icon: 'M13 10V3L4 14h7v7l9-11h-7z' },
-  { title: 'Toetsenbord Defect', description: 'Toetsen werken niet of waterschade.', icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z' },
-  { title: 'Traag of Crasht', description: 'Langzaam, vastlopen of blue screen.', icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z' },
-  { title: 'Hardware Upgrade', description: 'SSD upgrade of meer geheugen.', icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z' }
-]
-
 const services = [
-  'Laptopscherm vervangen',
-  'Toetsenbord en touchpad reparatie',
-  'SSD upgrade voor snellere pc',
-  'Oververhitting en ventilatorproblemen',
-  'Blue screen en opstartproblemen oplossen',
-  'Accu en oplader problemen verhelpen',
-  'Data redden bij crash of defect',
+  'Kapot scherm vervangen',
+  'Defecte accu vervangen',
+  'Toetsenbord of touchpad vervangen',
+  'SSD-upgrade voor meer snelheid',
+  'Opstartproblemen oplossen',
+  'Vastgelopen Windows herstellen',
+  'Diagnose bij waterschade',
+  'Alle merken: HP, Dell, Lenovo, Apple, Asus',
 ]
 
 const faqs = [
@@ -115,26 +94,21 @@ export default function LaptopComputerReparatiePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                Laptop Reparatie & PC Hulp aan Huis
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.04] tracking-display-tight">
+                <span className="text-blue-600">Laptop</span> of pc kapot?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Laptop kapot of computer defect? Wij repareren alle merken bij u thuis in Zuid-Holland. Scherm, toetsenbord, hardware — we fixen het ter plekke.
+                Scherm, toetsenbord, accu, SSD — wij vervangen of upgraden bij u thuis. <strong className="text-gray-900">Alle merken</strong> (HP, Dell, Lenovo, Apple, Asus). Vaak goedkoper dan een vervanging.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Link href="/afspraak-maken" className="btn-primary">
-                  Plan Reparatie
-                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-                </Link>
-                <a href="tel:+31858002006" className="btn-secondary">
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                  Bel 085-8002006
+                <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                  Bel {BUSINESS.PHONE}
                 </a>
-              </div>
-              <div className="flex flex-wrap gap-6 text-sm text-gray-600">
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Betrouwbaar &amp; vakkundig</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Binnen 24 uur</div>
-                <div className="trust-indicator"><Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />Alle merken</div>
+                <Link href="/afspraak-maken" className="btn-secondary">
+                  Afspraak maken
+                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                </Link>
               </div>
             </div>
             <div className="relative">
@@ -159,17 +133,19 @@ export default function LaptopComputerReparatiePage() {
         </div>
       </section>
 
-      {/* Onze Diensten */}
+      <TrustBadges />
+
+      {/* Wat wij voor u doen — check-list */}
       <section className="py-16 bg-white border-t border-gray-100">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
-            <h2 className="section-title">Onze Diensten</h2>
-            <p className="section-subtitle">Een overzicht van onze reparatiediensten.</p>
+            <h2 className="section-title">Wat wij voor u doen</h2>
+            <p className="section-subtitle">Laptop- en pc-reparaties die we bij u thuis uitvoeren.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-3 max-w-2xl mx-auto">
+          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-2xl mx-auto">
             {services.map((service, idx) => (
-              <div key={idx} className="flex items-center gap-3 py-2">
-                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2} />
+              <div key={idx} className="flex items-start gap-3 py-1">
+                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
@@ -177,58 +153,7 @@ export default function LaptopComputerReparatiePage() {
         </div>
       </section>
 
-      {/* Problems Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Veelvoorkomende Laptopproblemen</h2>
-            <p className="text-lg text-gray-600 max-w-2xl mx-auto">Herkent u een van deze problemen? Wij komen bij u thuis en lossen het snel en vakkundig op.</p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {problems.map((problem, idx) => (
-              <div
-                key={idx}
-                className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
-              >
-                <div className="w-14 h-14 bg-blue-50 rounded-xl flex items-center justify-center mb-5 group-hover:bg-blue-100 transition-colors">
-                  <svg className="w-7 h-7 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={problem.icon} />
-                  </svg>
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{problem.title}</h3>
-                <p className="text-gray-600">{problem.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Zo Werkt Het */}
-      <section className="py-16 bg-white border-t border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
-            <h2 className="section-title">
-              Zo Werkt Het
-            </h2>
-            <p className="section-subtitle">In 3 simpele stappen geholpen</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            {[
-              { step: '1', title: 'Bel of Plan Online', desc: 'Bel 085-8002006 of maak online een afspraak. Vertel kort wat het probleem is.' },
-              { step: '2', title: 'IT-Student Komt Langs', desc: 'Binnen 24 uur komt onze IT-student bij u thuis. €10 voorrijkosten.' },
-              { step: '3', title: 'Probleem Opgelost', desc: 'Uw laptop of pc wordt ter plekke gerepareerd. Betaal achteraf, alleen voor de tijd die we nodig hebben.' },
-            ].map((item, idx) => (
-              <div key={idx} className="text-center">
-                <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">
-                  {item.step}
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-gray-600">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <HowItWorksSection />
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
@@ -245,7 +170,7 @@ export default function LaptopComputerReparatiePage() {
               ← Swipe voor meer reviews →
             </p>
           </header>
-          <TestimonialsCarousel testimonials={testimonials} />
+          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
         </div>
       </section>
 
@@ -283,20 +208,22 @@ export default function LaptopComputerReparatiePage() {
 
       <ServiceCrossLinks currentService="laptop-computer-reparatie" serviceName="Laptop & PC Reparatie" />
 
+
+      <AvailableInCities serviceLabel="Laptopreparatie" />
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Laptop of Computer Kapot?</h2>
           <p className="text-xl text-blue-100 mb-10">Bel nu en we komen vandaag of morgen al bij u langs voor reparatie</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Plan Reparatie
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a href="tel:+31858002006" className="btn-cta-dark">
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-              Bel 085-8002006
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

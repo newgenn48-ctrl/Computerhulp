@@ -4,68 +4,28 @@ import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import ServicesSection from '@/components/ServicesSection'
+import TrustBadges from '@/components/TrustBadges'
+import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'IT Hulp aan Huis voor Bedrijven & ZZP | Zuid-Holland',
-  description: 'IT hulp aan huis voor ZZP\'ers en kleine bedrijven in Zuid-Holland. VPN, netwerk, server, Microsoft 365. Binnen 24 uur geholpen. Bel 085-8002006.',
+  title: `IT Hulp aan Huis voor Bedrijven & ZZP | ${BUSINESS.REGION}`,
+  description: `IT hulp aan huis voor ZZP'ers en kleine bedrijven in ${BUSINESS.REGION}. VPN, netwerk, server, Microsoft 365. Binnen 24 uur geholpen. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'IT Hulp aan Huis voor Bedrijven & ZZP',
-    description: 'Professionele IT hulp voor ZZP\'ers en bedrijven in Zuid-Holland. VPN, netwerk, server problemen opgelost bij u op kantoor.',
+    description: `Professionele IT hulp voor ZZP'ers en bedrijven in ${BUSINESS.REGION}. VPN, netwerk, server problemen opgelost bij u op kantoor.`,
     type: 'website',
-    url: 'https://computerhulpzh.nl/it-hulp',
+    url: `${BUSINESS.URL}/it-hulp`,
   },
   alternates: {
-    canonical: 'https://computerhulpzh.nl/it-hulp',
+    canonical: `${BUSINESS.URL}/it-hulp`,
   },
 }
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
   loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
 })
-
-const testimonials = [
-  {
-    quote: 'Na een ransomware-aanval dacht ik dat al mijn bestanden verloren waren. De IT-student heeft alles weten te herstellen en mijn computer goed beveiligd. Enorme opluchting!',
-    name: 'De heer Kees',
-    initials: 'K'
-  },
-  {
-    quote: 'Ons thuisnetwerk met 3 laptops en een NAS werkte niet goed samen. Nu draait alles soepel en kan ik overal bij mijn bestanden. Vakkundig opgelost.',
-    name: 'Mevrouw Anneke',
-    initials: 'A'
-  },
-  {
-    quote: 'Moest thuiswerken maar mijn VPN en Teams werkten niet. Binnen een uur alles geconfigureerd. Fijn dat ze ook op korte termijn kunnen komen.',
-    name: 'De heer Marco',
-    initials: 'M'
-  },
-  {
-    quote: 'Twee computers overgezet naar Windows 11, inclusief al onze programma\'s en bestanden. Netjes en snel geregeld, we merken geen verschil behalve dat alles sneller is!',
-    name: 'Mevrouw Diane',
-    initials: 'D'
-  },
-  {
-    quote: 'Server op kantoor crashte steeds. Bleek een defecte harde schijf. Dezelfde dag vervangen en alles weer draaiend. Echt vakwerk.',
-    name: 'De heer Paul',
-    initials: 'P'
-  },
-  {
-    quote: 'Mijn NAS was niet meer bereikbaar en ik had geen backup. Gelukkig alles kunnen herstellen en nu automatische backups ingesteld. Wat een opluchting!',
-    name: 'Mevrouw Ellen',
-    initials: 'E'
-  },
-  {
-    quote: 'Bedrijfsnetwerk was traag en onveilig. Alles opnieuw geconfigureerd met een goede firewall. Medewerkers merken het verschil meteen.',
-    name: 'De heer Sander',
-    initials: 'S'
-  },
-  {
-    quote: 'Mail migratie van oud systeem naar Microsoft 365 voor ons hele gezin. Alles netjes overgezet zonder dat we iets kwijt zijn. Topservice!',
-    name: 'Mevrouw Ingrid',
-    initials: 'I'
-  }
-]
 
 const cities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel']
 
@@ -98,49 +58,26 @@ export default function ITHulpPage() {
               Betrouwbare IT hulp aan huis door heel Zuid-Holland. Onze IT-studenten lossen alle problemen <strong className="text-gray-900">snel en vakkundig</strong> op — bij u thuis.
             </p>
 
-            {/* USP Badges */}
-            <div className="flex flex-wrap gap-3 mb-6 md:mb-8">
-              <span className="usp-badge">
-                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Binnen 24 uur geholpen
-              </span>
-              <span className="usp-badge">
-                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betrouwbaar & vakkundig
-              </span>
-              <span className="usp-badge">
-                <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2} />
-                Betaalbare tarieven
-              </span>
-            </div>
-
-            {/* CTA Buttons */}
+            {/* CTA Buttons — phone primary (senior/business audience prefers calling) */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/afspraak-maken"
-                className="inline-flex items-center justify-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg shadow-blue-600/25 transition-all hover:scale-105"
-                aria-label="Vraag computerhulp aan huis aan"
-              >
-                Hulp aanvragen
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-              </Link>
-              <a
-                href="tel:+31858002006"
-                className="btn-secondary"
-                aria-label="Bel ons voor computerhulp: 085-8002006"
-              >
-                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-                Bel 085-8002006
+              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
               </a>
+              <Link href="/afspraak-maken" className="btn-secondary">
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </div>
-
       </section>
 
-      {/* Services Section — alleen titels, geen beschrijvingen */}
+      <TrustBadges />
+
+      {/* Services Section */}
       <ServicesSection
-        title="Onze diensten"
+        title="Waar wij u mee helpen"
         showFeatures={false}
         limitServices={6}
         showAllButton={true}
@@ -157,14 +94,14 @@ export default function ITHulpPage() {
               Wat onze klanten zeggen
             </h2>
             <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
+              Dagelijks helpen we ondernemers in heel {BUSINESS.REGION}
             </p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">
               ← Swipe voor meer reviews →
             </p>
           </header>
 
-          <TestimonialsCarousel testimonials={testimonials} />
+          <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
         </div>
       </section>
 
@@ -178,7 +115,7 @@ export default function ITHulpPage() {
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Doet uw <strong>computer, laptop, printer of WiFi</strong> niet wat u wilt? Wij komen gewoon bij u thuis. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of een van de andere 50+ gemeenten woont — meestal zijn we binnen 24 uur bij u.
+                  Doet uw <strong>computer, laptop, printer of WiFi</strong> niet wat u wilt? Wij komen gewoon bij u op kantoor of thuis. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of een van de andere 50+ gemeenten zit — meestal zijn we binnen 24 uur bij u.
                 </p>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waarom mensen ons bellen</h3>
@@ -190,7 +127,7 @@ export default function ITHulpPage() {
                   </li>
                   <li className="flex items-start gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Transparante prijzen:</strong> €14,99 per kwartier, €10 voorrijkosten in heel Zuid-Holland.</span>
+                    <span><strong>Transparante prijzen:</strong> {PRICING.PER_QUARTER} per kwartier, {PRICING.TRAVEL} voorrijkosten in heel {BUSINESS.REGION}.</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
@@ -207,7 +144,7 @@ export default function ITHulpPage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel ons gerust op <a href="tel:+31858002006" className="text-blue-600 font-semibold hover:underline">085-8002006</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. We zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur.
+                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. We zijn {HOURS.DAYS} bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur.
                 </p>
               </div>
             </article>
@@ -258,7 +195,7 @@ export default function ITHulpPage() {
             {[
               { q: 'Kunnen jullie ook helpen met thuiswerken (VPN, Teams)?', a: 'Ja, we helpen regelmatig met thuiswerksituaties. Denk aan VPN, Microsoft Teams, Zoom of een printer koppelen aan uw werknetwerk. We zorgen dat u gewoon kunt werken.' },
               { q: 'Helpen jullie ook met data overzetten naar een nieuwe computer?', a: 'Ja. We zetten al uw bestanden, foto\'s, e-mail en programma\'s over naar uw nieuwe computer of laptop. Daarna controleren we of alles goed werkt.' },
-              { q: 'Kan ik ook even bellen voor een snelle vraag?', a: 'Natuurlijk. Bel gerust naar 085-8002006. Soms kunnen we een klein probleem al telefonisch oplossen. Is een bezoek nodig, dan plannen we dat meteen in.' },
+              { q: 'Kan ik ook even bellen voor een snelle vraag?', a: `Natuurlijk. Bel gerust naar ${BUSINESS.PHONE}. Soms kunnen we een klein probleem al telefonisch oplossen. Is een bezoek nodig, dan plannen we dat meteen in.` },
               { q: 'Wat als het probleem niet in één keer opgelost is?', a: 'Dat komt zelden voor, maar als er bijvoorbeeld een onderdeel besteld moet worden, komen we kosteloos terug. U betaalt alleen voor de tijd die we daadwerkelijk nodig hebben.' },
               { q: 'Helpen jullie ook kleine bedrijven en ZZP\'ers?', a: 'Ja, we helpen ook kleine bedrijven en ZZP\'ers. Denk aan netwerk, back-ups, beveiliging en het koppelen van apparaten. Tegen dezelfde tarieven als voor particulieren.' },
             ].map((faq, idx) => (
@@ -283,23 +220,17 @@ export default function ITHulpPage() {
             Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Bel ons gerust of stuur een berichtje. We komen graag bij u langs in Zuid-Holland.
+            Bel ons gerust of stuur een berichtje. We komen graag bij u langs in {BUSINESS.REGION}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/afspraak-maken"
-              className="btn-cta-white"
-            >
-              Afspraak Maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a
-              href="tel:+31858002006"
-              className="btn-cta-dark"
-            >
-              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
-              Bel 085-8002006
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

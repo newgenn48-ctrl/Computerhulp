@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { sanitizeHtml, sanitizeText, validateEmail, validatePhone, validateLength } from '@/lib/sanitize'
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
+import { BUSINESS, HOURS } from '@/lib/constants'
 
 export async function POST(request: NextRequest) {
   try {
@@ -25,9 +26,14 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { naam, telefoon, email, probleem } = body
+    const { naam, telefoon, email, probleem, website } = body
 
-    // Validatie - Required fields
+    // Honeypot — bots fill hidden fields, humans don't
+    if (website) {
+      return NextResponse.json({ message: 'Hulpvraag succesvol verzonden!' }, { status: 200 })
+    }
+
+    // Validatie - alle velden verplicht
     if (!naam || !telefoon || !email || !probleem) {
       return NextResponse.json(
         { error: 'Alle velden zijn verplicht' },
@@ -141,8 +147,8 @@ export async function POST(request: NextRequest) {
                 </div>
               </div>
               <div class="footer">
-                <p><strong>Computerhulp Zuid-Holland</strong></p>
-                <p>085-8002006 | info@computerhulpzh.nl</p>
+                <p><strong>${BUSINESS.NAME}</strong></p>
+                <p>${BUSINESS.PHONE} | ${BUSINESS.EMAIL}</p>
               </div>
             </div>
           </body>
@@ -209,19 +215,19 @@ Neem zo snel mogelijk contact op!
                 </div>
 
                 <div class="highlight-box">
-                  <p style="margin: 0;"><strong>Spoed?</strong> Bel ons direct op <a href="tel:0858002006" style="color: #2563eb; font-weight: bold;">085-8002006</a></p>
+                  <p style="margin: 0;"><strong>Spoed?</strong> Bel ons direct op <a href="${BUSINESS.PHONE_HREF}" style="color: #2563eb; font-weight: bold;">${BUSINESS.PHONE}</a></p>
                   <p style="margin: 5px 0 0 0; font-size: 14px; color: #6b7280;">We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week.</p>
                 </div>
 
                 <p style="font-size: 16px;">
                   Met vriendelijke groet,<br>
-                  <strong>Computerhulp Zuid-Holland</strong>
+                  <strong>${BUSINESS.NAME}</strong>
                 </p>
               </div>
               <div class="footer">
-                <p><strong>Computerhulp Zuid-Holland</strong></p>
-                <p>085-8002006 | info@computerhulpzh.nl</p>
-                <p>KvK: 91310318</p>
+                <p><strong>${BUSINESS.NAME}</strong></p>
+                <p>${BUSINESS.PHONE} | ${BUSINESS.EMAIL}</p>
+                <p>KvK: ${BUSINESS.KVK}</p>
               </div>
             </div>
           </body>
@@ -237,18 +243,18 @@ Wat gebeurt er nu?
 - Samen plannen we een afspraak in
 - Onze IT-student komt bij u thuis
 
-Spoed? Bel ons direct op 085-8002006
-We zijn bereikbaar van 08:00 tot 22:00, 7 dagen per week.
+Spoed? Bel ons direct op ${BUSINESS.PHONE}
+We zijn bereikbaar van ${HOURS.LABEL}.
 
 Met vriendelijke groet,
-Computerhulp Zuid-Holland
+${BUSINESS.NAME}
 
-085-8002006 | info@computerhulpzh.nl
-KvK: 91310318
+${BUSINESS.PHONE} | ${BUSINESS.EMAIL}
+KvK: ${BUSINESS.KVK}
       `,
     }
 
-    // Verstuur beide emails
+    // Verstuur admin + klant-bevestiging
     await transporter.sendMail(adminMailOptions)
     await transporter.sendMail(customerMailOptions)
 
@@ -265,13 +271,13 @@ KvK: 91310318
 
     if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
       return NextResponse.json(
-        { error: 'E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op 085-8002006.' },
+        { error: `E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
         { status: 503 }
       )
     }
 
     return NextResponse.json(
-      { error: 'Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op 085-8002006.' },
+      { error: `Er is een fout opgetreden. Probeer het opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
       { status: 500 }
     )
   }

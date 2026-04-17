@@ -7,18 +7,26 @@ interface ConversionTrackerProps {
   conversionLabel: string
 }
 
+type GtagFn = (command: string, eventName: string, params: Record<string, unknown>) => void
+
+declare global {
+  interface Window {
+    gtag?: GtagFn
+  }
+}
+
+/**
+ * Fires a Google Ads conversion event on mount.
+ * Used on afspraak-bevestiging + offerte-bevestiging to track form submits.
+ */
 export default function ConversionTracker({ conversionId, conversionLabel }: ConversionTrackerProps) {
   useEffect(() => {
-    // Check if gtag is available
-    if (typeof window !== 'undefined' && (window as any).gtag) {
-      // Send conversion event to Google Ads
-      (window as any).gtag('event', 'conversion', {
-        'send_to': `${conversionId}/${conversionLabel}`
+    if (typeof window !== 'undefined' && window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: `${conversionId}/${conversionLabel}`,
       })
-
-      console.log('Google Ads conversion tracked:', `${conversionId}/${conversionLabel}`)
     }
   }, [conversionId, conversionLabel])
 
-  return null // This component doesn't render anything
+  return null
 }

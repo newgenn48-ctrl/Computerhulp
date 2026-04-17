@@ -1,18 +1,20 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import TrustBadges from '@/components/TrustBadges'
+import { BUSINESS, PRICING } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Veelgestelde Vragen (FAQ) | Computerhulp Zuid-Holland',
-  description: 'Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Binnen 24u geholpen. Bel ons op 085-8002006.',
+  title: `Veelgestelde vragen (FAQ) | ${BUSINESS.NAME}`,
+  description: `Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Binnen 24u geholpen. Bel ons op ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Veelgestelde Vragen (FAQ) | Computerhulp Zuid-Holland',
+    title: `Veelgestelde vragen (FAQ) | ${BUSINESS.NAME}`,
     description: 'Antwoorden op veelgestelde vragen over onze computerhulp diensten, prijzen en werkgebied.',
     type: 'website',
-    url: 'https://computerhulpzh.nl/faq',
+    url: `${BUSINESS.URL}/faq`,
   },
   alternates: {
-    canonical: 'https://computerhulpzh.nl/faq',
+    canonical: `${BUSINESS.URL}/faq`,
   },
 }
 
@@ -33,7 +35,7 @@ const faqStructuredData = {
       name: 'Wat zijn de kosten voor computerhulp?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'We rekenen €14,99 per kwartier met een minimum van 3 kwartier (€44,97 totaal). Voorrijden kost slechts €10 in heel Zuid-Holland.'
+        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.`
       }
     },
     {
@@ -41,7 +43,7 @@ const faqStructuredData = {
       name: 'Zijn er voorrijkosten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Nee, in heel Zuid-Holland is voorrijden slechts €10. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.'
+        text: `Nee, in heel ${BUSINESS.REGION} is voorrijden slechts ${PRICING.TRAVEL}. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.`
       }
     },
     {
@@ -79,18 +81,31 @@ export default function FAQPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
       />
 
-      <div className="pt-24 pb-20">
+      <div className="pb-20">
         {/* Hero */}
-        <section className="cta-section-blue py-16">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-            <h1 className="text-4xl sm:text-5xl font-bold mb-4">
-              Veelgestelde vragen
+        <section className="bg-gradient-to-br from-gray-50 to-white pt-28 pb-12 sm:pb-16">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+            <span className="eyebrow">Hulp & informatie</span>
+            <h1 className="section-title-lg mb-4">
+              Veelgestelde <span className="text-blue-600">vragen</span>
             </h1>
-            <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-              Vind snel antwoord op uw vraag. Staat uw vraag er niet bij? Bel ons gerust!
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+              Snel antwoord op vragen over prijzen, werkwijze en werkgebied. Staat uw vraag er niet bij? Bel ons gerust.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
+              </a>
+              <Link href="/afspraak-maken" className="btn-secondary">
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
+            </div>
           </div>
         </section>
+
+        <TrustBadges />
 
         {/* FAQ Content */}
         <section className="py-20 bg-white">
@@ -122,20 +137,18 @@ export default function FAQPage() {
         {/* CTA */}
         <section className="cta-section-blue" aria-label="Contact opnemen">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-              Staat Uw Vraag Er Niet Bij?
-            </h2>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Staat uw vraag er niet bij?</h2>
             <p className="text-xl text-blue-100 mb-8">
-              Bel ons direct of stuur een bericht. We helpen u graag verder!
+              Bel ons direct of stuur een bericht — we helpen u graag verder.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="tel:+31858002006" className="btn-cta-white">
-                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-                Bel 085-8002006
+              <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
               </a>
               <Link href="/afspraak-maken" className="btn-cta-dark">
-                Hulp Vragen
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -151,11 +164,11 @@ const faqCategories = [
     questions: [
       {
         question: 'Wat zijn de kosten voor computerhulp?',
-        answer: 'We rekenen €14,99 per kwartier met een minimum van 3 kwartier (€44,97 totaal). Dit is een all-in prijs - er komen geen extra kosten bij.'
+        answer: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Dit is een all-in prijs - er komen geen extra kosten bij.`
       },
       {
         question: 'Zijn er voorrijkosten?',
-        answer: 'Ja, in heel Zuid-Holland zijn de voorrijkosten slechts €10. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont.'
+        answer: `Ja, in heel Zuid-Holland zijn de voorrijkosten slechts ${PRICING.TRAVEL}. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont.`
       },
       {
         question: 'Hoe kan ik betalen?',
@@ -167,7 +180,7 @@ const faqCategories = [
       },
       {
         question: 'Zijn er extra kosten in de avond of weekend?',
-        answer: 'Nee, we rekenen hetzelfde tarief op alle dagen en tijden. Ook op zaterdag, zondag of in de avonduren betaalt u gewoon €14,99 per kwartier.'
+        answer: `Nee, we rekenen hetzelfde tarief op alle dagen en tijden. Ook op zaterdag, zondag of in de avonduren betaalt u gewoon ${PRICING.PER_QUARTER} per kwartier.`
       }
     ]
   },
@@ -188,7 +201,7 @@ const faqCategories = [
       },
       {
         question: 'Hoe maak ik een afspraak?',
-        answer: 'Bel ons op 085-8002006 of vul het contactformulier in. We reageren altijd binnen 3 uur en plannen samen een moment dat u uitkomt.'
+        answer: `Bel ons op ${BUSINESS.PHONE} of vul het contactformulier in. We reageren altijd binnen 1 uur en plannen samen een moment dat u uitkomt.`
       }
     ]
   },
@@ -239,7 +252,7 @@ const faqCategories = [
       },
       {
         question: 'Zijn jullie verzekerd?',
-        answer: 'Ja, we zijn volledig verzekerd en geregistreerd bij de KvK (91310318). U kunt met een gerust hart met ons werken.'
+        answer: `Ja, we zijn volledig verzekerd en geregistreerd bij de KvK (${BUSINESS.KVK}). U kunt met een gerust hart met ons werken.`
       },
       {
         question: 'Wat als ik niet tevreden ben?',
