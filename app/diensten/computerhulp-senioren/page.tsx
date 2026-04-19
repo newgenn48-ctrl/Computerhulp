@@ -296,7 +296,7 @@ export default function ComputerhulpSeniorenPage() {
             </h1>
 
             <p className="hero-description">
-              Trage computer, vreemde meldingen of iets dat niet werkt zoals het hoort? Wij komen bij u thuis en leggen alles <strong className="text-gray-900">rustig uit — op uw tempo</strong>.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             {/* CTA Buttons */}

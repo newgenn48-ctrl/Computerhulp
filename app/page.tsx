@@ -225,7 +225,7 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-description">
-              Uw computer, laptop of WiFi werkt vandaag nog. We komen bij u thuis in {BUSINESS.REGION} — <strong className="text-gray-900">meestal binnen 24 uur</strong>.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             {/* CTA Buttons — phone primary (senior audience prefers calling) */}

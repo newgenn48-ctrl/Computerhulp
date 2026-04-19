@@ -99,7 +99,7 @@ export default function PersoonlijkeTrainingPage() {
                 Meer <span className="text-blue-600">leren</span> over uw computer?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Van WhatsApp met de kleinkinderen tot online bankieren zonder zorgen — we leggen stap voor stap uit, <strong className="text-gray-900">op uw tempo, bij u thuis</strong>.
+                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>

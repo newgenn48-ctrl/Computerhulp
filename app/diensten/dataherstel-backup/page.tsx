@@ -98,7 +98,7 @@ export default function DataherstelBackupPage() {
                 <span className="text-blue-600">Bestanden</span> of foto&apos;s kwijt?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Harde schijf defect, per ongeluk verwijderd, computer start niet meer op? We maken eerst <strong className="text-gray-900">een eerlijke diagnose</strong> — pas als herstel realistisch is, gaan we aan de slag.
+                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>

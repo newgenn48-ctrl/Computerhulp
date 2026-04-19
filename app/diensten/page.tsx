@@ -90,7 +90,7 @@ export default function DienstenPage() {
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Professionele <strong className="text-gray-900 font-semibold">computerhulp aan huis</strong> in heel Zuid-Holland. Van laptophulp tot smarthome-installatie - wij lossen het vakkundig op.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900 font-semibold">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             {/* CTA Buttons — phone primary */}

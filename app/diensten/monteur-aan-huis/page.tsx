@@ -113,7 +113,7 @@ export default function MonteurAanHuisPage() {
                 <span className="text-blue-600">IT-monteur</span> aan huis nodig?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Computer, laptop, WiFi, printer of tv — <strong className="text-gray-900">één monteur, alles in één bezoek</strong>. Meestal binnen 24 uur bij u thuis.
+                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>

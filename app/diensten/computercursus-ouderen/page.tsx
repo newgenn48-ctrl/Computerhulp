@@ -295,7 +295,7 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-description">
-              Computer, tablet of smartphone — we leggen alles uit <strong className="text-gray-900">in gewone taal, op uw tempo</strong>. Van de basis tot wat u écht wilt kunnen.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             {/* CTA Buttons */}

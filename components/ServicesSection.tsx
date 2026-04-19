@@ -182,7 +182,8 @@ export default function ServicesSection({
                     ))}
                   </ul>
                 ) : null}
-                <span className="group-hover:translate-x-1 mt-auto inline-flex items-center gap-2 text-blue-600 font-semibold text-sm transition-transform">
+                {/* Meer info — op desktop verborgen tot hover; op touch-devices altijd zichtbaar */}
+                <span className="mt-auto inline-flex items-center gap-2 text-blue-600 font-semibold text-sm transition-all duration-300 lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0">
                   Meer info
                   <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                 </span>

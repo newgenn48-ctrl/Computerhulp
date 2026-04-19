@@ -195,7 +195,7 @@ export default function StudentAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Onze IT-studenten komen bij u thuis en lossen uw computer-, laptop- of WiFi-probleem op — <strong className="text-gray-900">geduldig en zonder gedoe</strong>.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">

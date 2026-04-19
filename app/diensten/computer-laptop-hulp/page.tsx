@@ -187,7 +187,7 @@ export default function ComputerLaptopHulpPage() {
               </h1>
 
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Iets werkt niet meer zoals het hoort? Wij komen bij u thuis, kijken rustig mee en leggen <strong className="text-gray-900">in gewone taal</strong> uit wat er aan de hand is.
+                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-8">

@@ -58,9 +58,9 @@ const computerhulpConfig: VariantConfig = {
   heroTitle: (cityName) => (
     <>Computerhulp aan Huis <span className="text-blue-600">{cityName}</span></>
   ),
-  heroDescription: (cityName) => (
+  heroDescription: () => (
     <>
-      Computer, laptop, printer of WiFi doet het niet? Wij komen bij u thuis in {cityName} en lossen het op — <strong className="text-gray-900">snel en zonder gedoe</strong>.
+      Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -85,9 +85,9 @@ const studentConfig: VariantConfig = {
   heroTitle: (cityName) => (
     <>Student aan Huis <span className="text-blue-600">{cityName}</span></>
   ),
-  heroDescription: (cityName) => (
+  heroDescription: () => (
     <>
-      Computer, laptop, printer of WiFi doet het niet? Onze IT-studenten komen bij u thuis in {cityName} en lossen het op — <strong className="text-gray-900">geduldig en zonder gedoe</strong>.
+      Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -785,28 +785,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       <TrustBadges />
 
-      {/* Testimonials — computerhulp: direct na trust-row (social proof eerst).
-          Voor student-variant verplaatsen we ze onder PricingSection
-          (test: valideren ná prijs om bezwaren weg te nemen). */}
-      {variant !== 'student' && (
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <header className="text-center mb-12">
-              <h2 id="testimonials-heading" className="section-title">
-                Wat onze klanten zeggen
-              </h2>
-              <p className="section-subtitle">
-                Dagelijks helpen we mensen in heel {BUSINESS.REGION}
-              </p>
-              <p className="text-sm text-gray-500 mt-2 lg:hidden">
-                ← Swipe voor meer reviews →
-              </p>
-            </header>
-            <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
-          </div>
-        </section>
-      )}
-
       <ServicesSection
         title="Waar wij mee helpen"
         showFeatures={false}
@@ -818,24 +796,23 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       <PricingSection />
 
-      {variant === 'student' && (
-        <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <header className="text-center mb-12">
-              <h2 id="testimonials-heading" className="section-title">
-                Wat onze klanten zeggen
-              </h2>
-              <p className="section-subtitle">
-                Dagelijks helpen we mensen in heel {BUSINESS.REGION}
-              </p>
-              <p className="text-sm text-gray-500 mt-2 lg:hidden">
-                ← Swipe voor meer reviews →
-              </p>
-            </header>
-            <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
-          </div>
-        </section>
-      )}
+      {/* Testimonials — na prijs: social proof valideert beslissing */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">
+              Wat onze klanten zeggen
+            </h2>
+            <p className="section-subtitle">
+              Dagelijks helpen we mensen in heel {BUSINESS.REGION}
+            </p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">
+              ← Swipe voor meer reviews →
+            </p>
+          </header>
+          <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
+        </div>
+      </section>
 
       <HowItWorksSection background="white" />
 

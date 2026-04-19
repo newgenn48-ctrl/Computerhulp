@@ -98,7 +98,7 @@ export default function PrinterScannerHulpPage() {
                 Hulp met uw <span className="text-blue-600">printer</span> of scanner?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Draadloos printen, scannen of installatie — wij regelen het bij u thuis. De meeste printerproblemen zijn <strong className="text-gray-900">in een halfuur opgelost</strong>.
+                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>

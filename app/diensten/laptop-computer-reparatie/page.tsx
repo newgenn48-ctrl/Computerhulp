@@ -98,7 +98,7 @@ export default function LaptopComputerReparatiePage() {
                 <span className="text-blue-600">Laptop</span> of pc kapot?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Scherm, toetsenbord, accu, SSD — wij vervangen of upgraden bij u thuis. <strong className="text-gray-900">Alle merken</strong> (HP, Dell, Lenovo, Apple, Asus). Vaak goedkoper dan een vervanging.
+                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>

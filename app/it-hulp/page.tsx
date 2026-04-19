@@ -55,7 +55,7 @@ export default function ITHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Betrouwbare IT hulp aan huis door heel Zuid-Holland. Onze IT-studenten lossen alle problemen <strong className="text-gray-900">snel en vakkundig</strong> op — bij u thuis.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             {/* CTA Buttons — phone primary (senior/business audience prefers calling) */}

@@ -296,7 +296,7 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-description">
-              Pc traag, vast of geeft vreemde meldingen? Wij lossen het bij u thuis op — <strong className="text-gray-900">zonder dat uw computer mee hoeft</strong> naar een winkel.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             {/* CTA Buttons */}

@@ -98,7 +98,7 @@ export default function EmailHulpPage() {
                 Hulp nodig met uw <span className="text-blue-600">e-mail</span>?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Wachtwoord kwijt, volle mailbox of spam die maar blijft komen? Wij stellen Outlook, Gmail, Ziggo of KPN Mail opnieuw in — <strong className="text-gray-900">meestal in een halfuur klaar</strong>.
+                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>

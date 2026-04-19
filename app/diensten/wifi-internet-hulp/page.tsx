@@ -99,7 +99,7 @@ export default function WifiInternetHulpPage() {
                 Problemen met uw <span className="text-blue-600">WiFi</span> of internet?
               </h1>
               <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Slecht bereik op zolder? Traag internet? <strong className="text-gray-900">In 7 van de 10 gevallen</strong> ligt het aan de router — en dan is het meestal binnen een uur opgelost.
+                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 mb-8">
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>

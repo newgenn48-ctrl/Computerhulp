@@ -190,7 +190,7 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Uw computer, laptop, printer of WiFi werkt vandaag nog. Wij komen bij u thuis — <strong className="text-gray-900">meestal binnen 24 uur</strong>, zonder gedoe.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4">
@@ -213,18 +213,6 @@ export default function ComputerhulpAanHuisPage() {
 
       <TrustBadges />
 
-      {/* Social proof direct na trust-row — bezoeker ziet eerst bewijs */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
-            <p className="section-subtitle">Dagelijks helpen we mensen in heel {BUSINESS.REGION}</p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
-          </header>
-          <TestimonialsCarousel testimonials={testimonials} />
-        </div>
-      </section>
-
       <ServicesSection
         title="Waar wij mee helpen"
         showFeatures={false}
@@ -235,6 +223,18 @@ export default function ComputerhulpAanHuisPage() {
       <WhyChooseUsSection />
 
       <PricingSection />
+
+      {/* Testimonials — na prijs: social proof valideert beslissing */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <header className="text-center mb-12">
+            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
+            <p className="section-subtitle">Dagelijks helpen we mensen in heel {BUSINESS.REGION}</p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
+          </header>
+          <TestimonialsCarousel testimonials={testimonials} />
+        </div>
+      </section>
 
       <HowItWorksSection background="white" />
 

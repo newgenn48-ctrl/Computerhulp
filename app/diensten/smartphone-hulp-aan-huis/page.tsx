@@ -295,7 +295,7 @@ export default function SmartphoneHulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Nieuwe telefoon instellen, contacten overzetten of een app die niet werkt? Wij regelen het bij u thuis — <strong className="text-gray-900">iPhone, Samsung, Huawei</strong>, alles.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
             {/* CTA Buttons */}
