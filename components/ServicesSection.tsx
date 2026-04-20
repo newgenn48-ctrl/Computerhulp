@@ -136,7 +136,7 @@ export default function ServicesSection({
   return (
     <section className="section-bg-soft py-20 lg:py-28">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-14">
+        <div className="text-center mb-10">
           <h2 className="section-title">
             Onze diensten
           </h2>
@@ -150,7 +150,7 @@ export default function ServicesSection({
               className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1"
             >
               {/* Uitgezoomd: object-contain zodat de hele foto zichtbaar is, bg-gray-50 als letterbox */}
-              <div className="relative aspect-square overflow-hidden bg-gray-50 p-3">
+              <div className="relative aspect-square overflow-hidden bg-gray-50">
                 <Image
                   src={service.image}
                   alt={service.title}
@@ -159,7 +159,7 @@ export default function ServicesSection({
                   className="object-contain group-hover:scale-105 transition-transform duration-500 p-2"
                 />
               </div>
-              <div className="p-4 text-center">
+              <div className="px-3 py-2.5 text-center">
                 <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">
                   {service.title}
                 </h3>

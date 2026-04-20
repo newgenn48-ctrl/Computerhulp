@@ -92,18 +92,12 @@ export default function WifiInternetHulpPage() {
 
       {/* Hero - Split Layout */}
       <section className="hero-wrapper" aria-label="WiFi & Internet aan huis hero">
-        <div className="absolute inset-0">
-          <Image
-            src={heroImage}
-            alt={`WiFi & Internet aan huis in ${BUSINESS.REGION}`}
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
+        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.08]"
+            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
           />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -114,7 +108,7 @@ export default function WifiInternetHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Slecht bereik op zolder of traag internet? <strong className="text-white">In 7 van de 10 gevallen</strong> ligt het aan de router — en dan is het meestal binnen een uur opgelost.
+              Heeft u problemen met uw WiFi of internet? Slecht bereik of traag internet? <strong className="text-white">In 7 van de 10 gevallen</strong> ligt het aan de router — en dan is het meestal binnen een uur opgelost.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -134,8 +128,8 @@ export default function WifiInternetHulpPage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

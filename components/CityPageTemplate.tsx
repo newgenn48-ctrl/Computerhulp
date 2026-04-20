@@ -60,7 +60,7 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Computer, laptop, printer of WiFi werkt niet zoals je wil? Een IT-student komt bij je thuis in {cityName} en lost het <strong className="text-white">meestal binnen 24 uur</strong> op.
+      Heeft u hulp nodig met uw digitale apparaten? Een ICT-specialist komt bij u thuis in {cityName} en lost het <strong className="text-white">meestal binnen 24 uur</strong> op.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -87,7 +87,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Een jonge IT-student komt bij je thuis in {cityName}, lost het probleem rustig op en legt alles uit — <strong className="text-white">in gewone taal, op jouw tempo</strong>.
+      Heeft u hulp nodig met uw digitale apparaten? Een jonge IT-student komt bij u thuis in {cityName} en legt alles rustig uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -781,8 +781,8 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

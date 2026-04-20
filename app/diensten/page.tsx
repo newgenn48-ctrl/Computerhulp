@@ -89,7 +89,7 @@ export default function DienstenPage() {
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Van computer tot WiFi, van printer tot smart home — we helpen met <strong className="text-gray-900 font-semibold">alles rondom je apparaten</strong>, bij je thuis en in gewone taal.
+              Heeft u hulp nodig met uw digitale apparaten? Van computer tot WiFi, van printer tot smart home — we helpen met <strong className="text-gray-900 font-semibold">alles rondom uw apparaten</strong>, bij u thuis.
             </p>
 
             {/* CTA Buttons — phone primary */}

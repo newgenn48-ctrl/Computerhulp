@@ -56,7 +56,7 @@ export default function ITHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-white">snel, slim en betrouwbaar</strong> voor je op.
+              Heeft u hulp nodig met uw digitale apparaten? Onze IT-studenten lossen het <strong className="text-white">snel, slim en betrouwbaar</strong> voor u op.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -76,8 +76,8 @@ export default function ITHulpPage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

@@ -190,7 +190,7 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Computer, laptop, printer of WiFi werkt niet zoals je wil? Wij komen bij je thuis — <strong className="text-white">meestal binnen 24 uur</strong>, zonder gedoe.
+              Heeft u hulp nodig met uw digitale apparaten? Een ICT-specialist komt bij u thuis — <strong className="text-white">meestal binnen 24 uur</strong>, zonder gedoe.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -210,8 +210,8 @@ export default function ComputerhulpAanHuisPage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

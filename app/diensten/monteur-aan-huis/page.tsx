@@ -108,18 +108,12 @@ export default function MonteurAanHuisPage() {
 
       {/* Hero */}
       <section className="hero-wrapper" aria-label="IT-monteur aan huis hero">
-        <div className="absolute inset-0">
-          <Image
-            src={heroImage}
-            alt={`IT-monteur aan huis in ${BUSINESS.REGION}`}
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
+        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.08]"
+            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
           />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -130,7 +124,7 @@ export default function MonteurAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Computer, laptop, WiFi, printer of tv — <strong className="text-white">één monteur, alles in één bezoek</strong>. Meestal binnen 24 uur bij je thuis.
+              Heeft u een IT-monteur aan huis nodig? Computer, laptop, WiFi, printer of tv — <strong className="text-white">één monteur, alles in één bezoek</strong>. Meestal binnen 24 uur bij u thuis.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -150,8 +144,8 @@ export default function MonteurAanHuisPage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

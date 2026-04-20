@@ -274,18 +274,12 @@ export default function HomePage() {
 
       {/* Premium Hero Section */}
       <section className="hero-wrapper" aria-label="Computercursus voor Ouderen hero">
-        <div className="absolute inset-0">
-          <Image
-            src="/Student aan huis.webp"
-            alt="Computerhulp IT-student helpt klant thuis met laptop in Zuid-Holland"
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
+        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.08]"
+            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
           />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -295,7 +289,7 @@ export default function HomePage() {
             </h1>
 
             <p className="hero-description">
-              Op je eigen tempo leren omgaan met computer, tablet of smartphone. We leggen alles stap voor stap uit — <strong className="text-white">in gewone taal, op jouw tempo</strong>.
+              Wilt u beter leren omgaan met uw computer, tablet of smartphone? We leggen alles stap voor stap uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">

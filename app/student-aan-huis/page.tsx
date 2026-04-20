@@ -195,7 +195,7 @@ export default function StudentAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Een jonge IT-student legt het geduldig uit en lost het probleem rustig op. Zo kun je er <strong className="text-white">zelf weer mee verder</strong>.
+              Heeft u hulp nodig met uw digitale apparaten? Een jonge IT-student komt bij u thuis en legt alles rustig uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -215,8 +215,8 @@ export default function StudentAanHuisPage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

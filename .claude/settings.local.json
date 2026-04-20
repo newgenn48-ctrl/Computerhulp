@@ -61,7 +61,8 @@
       "Bash(rm -f lib/ab-testing.ts components/ExtraBenefitsSection.tsx components/ServicesImageCards.tsx components/WhatsAppWidget.tsx components/ui/FormField.tsx generate-city-pages.js generate_city_pages.py remove-text-faq.js)",
       "Bash(rmdir components/ui appdiensten contentblog contentsteden)",
       "Bash(npm install *)",
-      "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -60 \"{}\"')"
+      "Bash(xargs -I {} sh -c 'echo \"=== {} ===\" && head -60 \"{}\"')",
+      "Bash(grep -rB1 \"Binnen 24 uur\" app/ components/ --include=\"*.tsx\")"
     ]
   }
 }

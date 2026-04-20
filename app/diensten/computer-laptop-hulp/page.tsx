@@ -177,18 +177,12 @@ export default function ComputerLaptopHulpPage() {
 
       {/* Hero - Split Layout */}
       <section className="hero-wrapper" aria-label="Computer & Laptop aan huis hero">
-        <div className="absolute inset-0">
-          <Image
-            src={heroImage}
-            alt={`Computer & Laptop aan huis in ${BUSINESS.REGION}`}
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
+        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.08]"
+            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
           />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -199,7 +193,7 @@ export default function ComputerLaptopHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Iets werkt niet meer zoals het hoort? Een IT-student komt bij je thuis, kijkt rustig mee en legt uit wat er aan de hand is — <strong className="text-white">in gewone taal</strong>.
+              Heeft u problemen met uw computer of laptop? Een IT-student komt bij u thuis, kijkt rustig mee en legt alles uit — <strong className="text-white">in gewone taal</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -219,8 +213,8 @@ export default function ComputerLaptopHulpPage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

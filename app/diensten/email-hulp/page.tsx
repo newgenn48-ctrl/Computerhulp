@@ -91,18 +91,12 @@ export default function EmailHulpPage() {
 
       {/* Hero - Split Layout */}
       <section className="hero-wrapper" aria-label="E-mail hulp aan huis hero">
-        <div className="absolute inset-0">
-          <Image
-            src={heroImage}
-            alt={`E-mail hulp aan huis in ${BUSINESS.REGION}`}
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
+        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.08]"
+            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
           />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -113,7 +107,7 @@ export default function EmailHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Wachtwoord kwijt, volle mailbox of spam die maar blijft komen? We stellen Outlook, Gmail, Ziggo of KPN Mail opnieuw in — <strong className="text-white">meestal in een halfuur klaar</strong>.
+              Heeft u problemen met uw e-mail? Wachtwoord kwijt, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in — <strong className="text-white">meestal in een halfuur klaar</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -133,8 +127,8 @@ export default function EmailHulpPage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

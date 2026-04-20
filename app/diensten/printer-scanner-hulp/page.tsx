@@ -91,18 +91,12 @@ export default function PrinterScannerHulpPage() {
 
       {/* Hero - Split Layout */}
       <section className="hero-wrapper" aria-label="Printer & Scanner aan huis hero">
-        <div className="absolute inset-0">
-          <Image
-            src={heroImage}
-            alt={`Printer & Scanner aan huis in ${BUSINESS.REGION}`}
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
+        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 opacity-[0.08]"
+            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
           />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -113,7 +107,7 @@ export default function PrinterScannerHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Draadloos printen, scannen of installatie — we regelen het bij je thuis. De meeste printerproblemen zijn <strong className="text-white">in een halfuur opgelost</strong>.
+              Heeft u hulp nodig met uw printer of scanner? Draadloos printen, scannen of installatie — we regelen het bij u thuis. De meeste printerproblemen zijn <strong className="text-white">in een halfuur opgelost</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -133,8 +127,8 @@ export default function PrinterScannerHulpPage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur
+                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />

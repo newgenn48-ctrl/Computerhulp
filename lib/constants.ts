@@ -13,7 +13,7 @@ export const BUSINESS = {
   URL: 'https://computerhulpzh.nl',
   REGION: 'Zuid-Holland',
   COUNTRY: 'NL',
-  REVIEW_COUNT: '500+',
+  REVIEW_COUNT: '5000+',
   YEARS_ACTIVE: '10+',
   FOUNDING_YEAR: 2013,
   RESPONSE_TIME: 'binnen 1 uur',
