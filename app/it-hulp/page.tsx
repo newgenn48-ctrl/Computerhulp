@@ -6,8 +6,8 @@ import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import ServicesSection from '@/components/ServicesSection'
-import TrustBadges from '@/components/TrustBadges'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 export const metadata: Metadata = {
   title: `IT Hulp aan Huis voor Bedrijven & ZZP | ${BUSINESS.REGION}`,
@@ -32,14 +32,14 @@ const cities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordr
 export default function ITHulpPage() {
   return (
     <>
-      {/* Premium Hero Section */}
-      <section className="relative min-h-[70vh] md:min-h-screen bg-white overflow-hidden" aria-label="Computerhulp Zuid-Holland hero">
+      {/* Premium Hero Section — dark photo-forward */}
+      <section className="hero-wrapper" aria-label="IT Hulp aan Huis Zuid-Holland hero">
         <div className="absolute inset-0">
           <Image
             src="/computerhulp.webp"
             alt="IT hulp aan huis - computerhulp bij u thuis"
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
             sizes="100vw"
           />
@@ -50,30 +50,45 @@ export default function ITHulpPage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
+            <p className="hero-eyebrow">IT-Hulp aan huis · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              IT Hulp <span className="text-blue-600">aan Huis</span>
+              IT Hulp <span className="text-accent-400">aan Huis</span>
             </h1>
 
             <p className="hero-description">
-              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-white">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
-            {/* CTA Buttons — phone primary (senior/business audience prefers calling) */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
                 Bel {BUSINESS.PHONE}
               </a>
-              <Link href="/afspraak-maken" className="btn-secondary">
+              <Link href="/afspraak-maken" className="btn-hero-secondary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Betaalbare tarieven
+              </span>
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Binnen 24 uur
+              </span>
+              <span className="hero-pill">
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                7 dagen per week
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <TrustBadges />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       {/* Services Section */}
       <ServicesSection
@@ -90,6 +105,7 @@ export default function ITHulpPage() {
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">
               Wat onze klanten zeggen
             </h2>

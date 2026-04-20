@@ -1,15 +1,14 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import TrustBadges from '@/components/TrustBadges'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Tarieven Computerhulp aan Huis Zuid-Holland | Transparante Prijzen',
-  description: `Wat kost computerhulp aan huis? ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Geen abonnement nodig. Transparante prijzen zonder verrassingen. Bel ${BUSINESS.PHONE}.`,
+  description: `Wat kost computerhulp aan huis? ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Transparante prijzen zonder verrassingen. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Tarieven Computerhulp aan Huis | Zuid-Holland',
-    description: `Transparante tarieven. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Geen abonnement, geen verrassingen.`,
+    description: `Transparante tarieven. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Eerlijke prijzen, geen verrassingen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/tarieven',
   },
@@ -58,8 +57,6 @@ export default function TarievenPage() {
         </div>
       </section>
 
-      <TrustBadges />
-
       {/* Pricing Card */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
@@ -72,15 +69,14 @@ export default function TarievenPage() {
 
             <div className="px-8 py-10">
               <div className="text-center mb-8">
-                <div className="text-lg text-gray-700 font-medium">Minimaal 3 kwartier ({PRICING.MINIMUM_TOTAL})</div>
+                <div className="text-lg text-gray-700 font-medium">Minimaal 3 kwartier + voorrijkosten — all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
               </div>
 
               <div className="space-y-4 mb-8">
                 {[
                   `Slechts ${PRICING.TRAVEL} voorrijkosten in heel ${BUSINESS.REGION}`,
-                  'Geen abonnement of lidmaatschap nodig',
                   'Geen extra kosten in de avond of het weekend',
-                  'Betalen na afloop via pin of Tikkie',
+                  'Betalen pas achteraf via pin of Tikkie',
                   'Eerlijke inschatting vooraf',
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">

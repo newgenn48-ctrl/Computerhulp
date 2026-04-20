@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import TrustBadges from '@/components/TrustBadges'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
@@ -99,8 +98,6 @@ export default function OverOnsPage() {
           </div>
         </div>
       </section>
-
-      <TrustBadges />
 
       {/* Ons Verhaal */}
       <section className="py-20 bg-white">

@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/components/ServicesSection'
 import { Icon } from '@/components/icons'
-import TrustBadges from '@/components/TrustBadges'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
@@ -90,7 +89,7 @@ export default function DienstenPage() {
             </h1>
 
             <p className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
-              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900 font-semibold">snel, slim en betrouwbaar</strong> voor je op.
+              Van computer tot WiFi, van printer tot smart home — we helpen met <strong className="text-gray-900 font-semibold">alles rondom je apparaten</strong>, bij je thuis en in gewone taal.
             </p>
 
             {/* CTA Buttons — phone primary */}
@@ -107,8 +106,6 @@ export default function DienstenPage() {
           </div>
         </div>
       </section>
-
-      <TrustBadges />
 
       {/* Services Grid */}
       <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
@@ -175,7 +172,7 @@ export default function DienstenPage() {
           <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 sm:p-10 border-2 border-blue-200 shadow-xl">
             <div className="text-5xl sm:text-6xl font-bold text-blue-600 mb-2 text-center">{PRICING.PER_QUARTER}</div>
             <div className="text-xl sm:text-2xl text-gray-700 mb-1 text-center">per kwartier</div>
-            <div className="text-base sm:text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier ({PRICING.MINIMUM_TOTAL})</div>
+            <div className="text-base sm:text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier + voorrijkosten — all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
 
             <div className="bg-white rounded-xl p-6 mb-8 shadow-sm">
               <ul className="grid md:grid-cols-2 gap-4">
@@ -206,6 +203,7 @@ export default function DienstenPage() {
       <section className="py-16 sm:py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
             <p className="section-subtitle">Dagelijks helpen we mensen in heel {BUSINESS.REGION}</p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>

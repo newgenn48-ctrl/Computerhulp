@@ -5,7 +5,6 @@ import { Metadata } from 'next'
 import PricingSection from '@/components/PricingSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
-import TrustBadges from '@/components/TrustBadges'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { Icon } from '@/components/icons'
@@ -14,6 +13,7 @@ import { City } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -56,11 +56,11 @@ const computerhulpConfig: VariantConfig = {
   heroImage: '/Computerhulp aan huis.webp',
   heroAlt: (cityName) => `Computerhulp aan huis in ${cityName}`,
   heroTitle: (cityName) => (
-    <>Computerhulp aan Huis <span className="text-blue-600">{cityName}</span></>
+    <>Computerhulp aan Huis <span className="text-accent-400">{cityName}</span></>
   ),
-  heroDescription: () => (
+  heroDescription: (cityName) => (
     <>
-      Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
+      Computer, laptop, printer of WiFi werkt niet zoals je wil? Een IT-student komt bij je thuis in {cityName} en lost het <strong className="text-white">meestal binnen 24 uur</strong> op.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -83,11 +83,11 @@ const studentConfig: VariantConfig = {
   heroImage: '/Student aan huis.webp',
   heroAlt: (cityName) => `IT-student helpt klant thuis met computer in ${cityName}`,
   heroTitle: (cityName) => (
-    <>Student aan Huis <span className="text-blue-600">{cityName}</span></>
+    <>Student aan Huis <span className="text-accent-400">{cityName}</span></>
   ),
-  heroDescription: () => (
+  heroDescription: (cityName) => (
     <>
-      Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
+      Een jonge IT-student komt bij je thuis in {cityName}, lost het probleem rustig op en legt alles uit — <strong className="text-white">in gewone taal, op jouw tempo</strong>.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -755,7 +755,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <span className="eyebrow">{config.serviceName} · {city.name}</span>
+            <p className="hero-eyebrow">{config.serviceName} · {city.name}</p>
             <h1 className="hero-title">
               {config.heroTitle(city.name)}
             </h1>
@@ -764,26 +764,36 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
               {config.heroDescription(city.name)}
             </p>
 
-            {/* CTA Buttons — phone primary */}
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
                 Bel {BUSINESS.PHONE}
               </a>
-              <Link href="/afspraak-maken" className="btn-secondary">
+              <Link href="/afspraak-maken" className="btn-hero-secondary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
             </div>
 
-            <p className="mt-4 text-sm text-gray-700">
-              Liever teruggebeld worden? <Link href="/afspraak-maken" className="text-blue-600 hover:underline font-medium">Vul het formulier in</Link> — binnen 1 uur reactie.
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Betaalbare tarieven
+              </span>
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Binnen 24 uur
+              </span>
+              <span className="hero-pill">
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                7 dagen per week
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
-      <TrustBadges />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       <ServicesSection
         title="Waar wij mee helpen"
@@ -800,6 +810,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">
               Wat onze klanten zeggen
             </h2>
@@ -820,6 +831,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">FAQ</p>
             <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
           </header>
           <div className="space-y-4">

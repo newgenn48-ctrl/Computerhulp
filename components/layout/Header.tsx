@@ -3,16 +3,17 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { BUSINESS } from '@/lib/constants'
 
 export default function Header() {
+  const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   useEffect(() => {
     let ticking = false
-
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
@@ -22,22 +23,25 @@ export default function Header() {
         ticking = true
       }
     }
-
     window.addEventListener('scroll', handleScroll, { passive: true })
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [pathname])
 
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-white/95 backdrop-blur-md shadow-lg py-3'
+          ? 'bg-white/95 backdrop-blur-md shadow-soft-lg py-3'
           : 'bg-white py-4'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center">
-          {/* Logo — met fallback-tekst als het image-bestand onverhoopt faalt */}
+          {/* Logo — fallback-tekst als image faalt */}
           <Link href="/" className="flex items-center group" aria-label={`Naar de homepage van ${BUSINESS.NAME}`}>
             <div className="relative h-12 w-[150px] sm:h-16 sm:w-[220px] flex items-center">
               <Image
@@ -62,24 +66,11 @@ export default function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-6" aria-label="Hoofdnavigatie">
-            <Link href="/diensten" className="nav-link">
-              Diensten
-            </Link>
-            <Link href="/tarieven" className="nav-link">
-              Tarieven
-            </Link>
-            <Link href="/over-ons" className="nav-link">
-              Over Ons
-            </Link>
-            <Link href="/contact" className="nav-link">
-              Contact
-            </Link>
-            <Link
-              href="/afspraak-maken"
-              className="nav-link font-medium"
-            >
-              Hulp Vragen
-            </Link>
+            <Link href="/diensten" className="nav-link">Diensten</Link>
+            <Link href="/tarieven" className="nav-link">Tarieven</Link>
+            <Link href="/over-ons" className="nav-link">Over Ons</Link>
+            <Link href="/contact" className="nav-link">Contact</Link>
+            <Link href="/afspraak-maken" className="nav-link font-medium">Hulp Vragen</Link>
             <a href={BUSINESS.PHONE_HREF} className="btn-header-cta flex items-center gap-2" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
               {BUSINESS.PHONE}
@@ -111,27 +102,15 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="lg:hidden mt-4 pb-4 border-t border-gray-100">
             <nav className="flex flex-col gap-1 pt-4" aria-label="Mobiele navigatie">
-              <Link href="/diensten" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
-                Diensten
-              </Link>
-              <Link href="/tarieven" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
-                Tarieven
-              </Link>
-              <Link href="/over-ons" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
-                Over Ons
-              </Link>
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">
-                Contact
-              </Link>
+              <Link href="/diensten" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Diensten</Link>
+              <Link href="/tarieven" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Tarieven</Link>
+              <Link href="/over-ons" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Over Ons</Link>
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Contact</Link>
               <a href={BUSINESS.PHONE_HREF} onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium text-blue-600 flex items-center gap-2">
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                 Bel {BUSINESS.PHONE}
               </a>
-              <Link
-                href="/afspraak-maken"
-                onClick={() => setMobileMenuOpen(false)}
-                className="btn-header-cta-mobile mt-2"
-              >
+              <Link href="/afspraak-maken" onClick={() => setMobileMenuOpen(false)} className="btn-header-cta-mobile mt-2">
                 Hulp Vragen
               </Link>
             </nav>

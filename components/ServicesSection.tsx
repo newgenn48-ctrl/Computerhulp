@@ -121,85 +121,61 @@ export const services = [
 interface ServicesSectionProps {
   title?: string
   description?: string
+  /** @deprecated — cards zijn nu altijd compact (image + titel). Prop blijft voor backwards-compat met callers. */
   showFeatures?: boolean
   limitServices?: number
   showAllButton?: boolean
 }
 
 export default function ServicesSection({
-  title = "Waar We U Mee Helpen",
-  description,
-  showFeatures = false,
   limitServices = 0,
   showAllButton = false
 }: ServicesSectionProps) {
   const displayServices = limitServices > 0 ? services.slice(0, limitServices) : services
 
   return (
-    <section className="py-16 sm:py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="text-center max-w-3xl mx-auto mb-12">
+    <section className="section-bg-soft py-20 lg:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-14">
           <h2 className="section-title">
-            {title}
+            Onze diensten
           </h2>
-          {description && (
-            <p className="section-subtitle">
-              {description}
-            </p>
-          )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto">
           {displayServices.map((service, idx) => (
             <Link
               key={idx}
               href={service.slug}
-              className="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-shadow duration-300 flex flex-col bg-white"
+              className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1"
             >
-              {/* Afbeelding — geen overlay, geen tekst er overheen */}
-              <div className="relative w-full h-44 sm:h-40 lg:h-48 overflow-hidden">
+              {/* Uitgezoomd: object-contain zodat de hele foto zichtbaar is, bg-gray-50 als letterbox */}
+              <div className="relative aspect-square overflow-hidden bg-gray-50 p-3">
                 <Image
                   src={service.image}
                   alt={service.title}
                   fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                  className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                  sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
+                  className="object-contain group-hover:scale-105 transition-transform duration-500 p-2"
                 />
               </div>
-
-              {/* Content */}
-              <div className="p-4 sm:p-5 rounded-b-2xl flex-1 flex flex-col">
-                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors leading-tight">
+              <div className="p-4 text-center">
+                <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">
                   {service.title}
                 </h3>
-                {showFeatures ? (
-                  <ul className="hidden sm:block space-y-2 mb-4">
-                    {service.features.map((feature, featureIdx) => (
-                      <li key={featureIdx} className="flex items-start gap-2 text-sm text-gray-700">
-                        <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                ) : null}
-                {/* Meer info — op desktop verborgen tot hover; op touch-devices altijd zichtbaar */}
-                <span className="mt-auto inline-flex items-center gap-2 text-blue-600 font-semibold text-sm transition-all duration-300 lg:opacity-0 lg:-translate-x-1 lg:group-hover:opacity-100 lg:group-hover:translate-x-0">
-                  Meer info
-                  <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
-                </span>
               </div>
             </Link>
           ))}
         </div>
 
         {showAllButton && (
-          <div className="text-center mt-12">
+          <div className="text-center mt-10">
             <Link
               href="/diensten"
-              className="btn-primary"
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
             >
               Alle diensten bekijken
-              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+              <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
             </Link>
           </div>
         )}

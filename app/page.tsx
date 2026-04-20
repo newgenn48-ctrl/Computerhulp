@@ -5,16 +5,16 @@ import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import ServicesSection from '@/components/ServicesSection'
-import TrustBadges from '@/components/TrustBadges'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
   loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
 })
 
 export const metadata: Metadata = {
-  title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u | Vanaf ${PRICING.MINIMUM_TOTAL}`,
+  title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u | Vanaf ${PRICING.MINIMUM_ALL_IN}`,
   description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: `${BUSINESS.NAME} | IT-Hulp aan Huis`,
@@ -201,14 +201,14 @@ export default function HomePage() {
         ],
       }) }} />
 
-      {/* Premium Hero Section */}
+      {/* Premium Hero Section — dark photo-forward */}
       <section className="hero-wrapper" aria-label={`${BUSINESS.NAME} hero`}>
         <div className="absolute inset-0">
           <Image
             src="/Student aan huis.webp"
             alt={`Computerhulp IT-student helpt klant thuis met laptop in ${BUSINESS.REGION}`}
             fill
-            className="object-cover"
+            className="object-cover object-center"
             priority
             sizes="100vw"
           />
@@ -219,28 +219,27 @@ export default function HomePage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <span className="eyebrow">IT-hulp · {BUSINESS.REGION}</span>
+            <p className="hero-eyebrow">IT-Student aan huis · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Computerhulp <span className="text-blue-600">aan huis</span>
+              Computerhulp <span className="text-accent-400">aan huis</span>
             </h1>
 
             <p className="hero-description">
-              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
+              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-white">snel, slim en betrouwbaar</strong> voor je op.
             </p>
 
-            {/* CTA Buttons — phone primary (senior audience prefers calling) */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <a
                 href={BUSINESS.PHONE_HREF}
-                className="btn-primary"
+                className="btn-hero-primary"
                 aria-label={`Bel ons voor computerhulp: ${BUSINESS.PHONE}`}
               >
-                <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                 Bel {BUSINESS.PHONE}
               </a>
               <Link
                 href="/afspraak-maken"
-                className="btn-secondary"
+                className="btn-hero-secondary"
                 aria-label="Vraag computerhulp aan huis aan"
               >
                 Afspraak maken
@@ -248,16 +247,27 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Callback promise — senior-friendly reassurance */}
-            <p className="mt-4 text-sm text-gray-700">
-              Liever teruggebeld worden? <Link href="/afspraak-maken" className="text-blue-600 hover:underline font-medium">Vul het formulier in</Link> — binnen 1 uur reactie, {HOURS.LABEL}.
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Betaalbare tarieven
+              </span>
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Binnen 24 uur
+              </span>
+              <span className="hero-pill">
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                7 dagen per week
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
+
       {/* Trust badges — above-the-fold signals */}
-      <TrustBadges />
 
       {/* Services Section */}
       <ServicesSection
@@ -299,6 +309,7 @@ export default function HomePage() {
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">
               Wat onze klanten zeggen
             </h2>

@@ -133,7 +133,7 @@ export default function ContactPage() {
           <div className="space-y-4">
             {[
               { q: 'Hoe snel reageren jullie?', a: 'Telefonisch zijn we direct bereikbaar. WhatsApp beantwoorden we meestal binnen 1 uur. E-mails binnen 24 uur.' },
-              { q: 'Wat kost computerhulp?', a: `${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijkosten zijn ${PRICING.TRAVEL} in heel Zuid-Holland. Geen abonnement nodig.` },
+              { q: 'Wat kost computerhulp?', a: `${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijkosten zijn ${PRICING.TRAVEL} in heel Zuid-Holland. Betalen pas achteraf via pin of Tikkie.` },
               { q: 'Komen jullie ook in het weekend?', a: 'Ja, we zijn 7 dagen per week beschikbaar van 08:00 tot 22:00 uur. Geen extra kosten voor avond- of weekendbezoeken.' },
               { q: 'Kan ik ook even bellen voor een snelle vraag?', a: `Natuurlijk. Bel gerust naar ${BUSINESS.PHONE}. Soms kunnen we een klein probleem al telefonisch oplossen.` },
             ].map((faq, idx) => (

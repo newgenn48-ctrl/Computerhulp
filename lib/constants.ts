@@ -25,8 +25,12 @@ export const PRICING = {
   TRAVEL: '€10',
   TRAVEL_NUM: 10,
   MINIMUM_QUARTERS: 3,
+  /** 3 kwartier × €14,99 — service alleen (zonder voorrijkosten). Gebruikt in schema.org / structured data. */
   MINIMUM_TOTAL: '€44,97',
   MINIMUM_TOTAL_NUM: 44.97,
+  /** Minimum inclusief voorrijkosten (€44,97 + €10). Gebruikt voor klantgerichte "vanaf"-prijzen. */
+  MINIMUM_ALL_IN: '€54,97',
+  MINIMUM_ALL_IN_NUM: 54.97,
 } as const
 
 export const HOURS = {

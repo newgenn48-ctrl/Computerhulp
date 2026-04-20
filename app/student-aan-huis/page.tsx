@@ -5,11 +5,11 @@ import { Icon } from '@/components/icons'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/PricingSection'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
-import TrustBadges from '@/components/TrustBadges'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 export const metadata: Metadata = {
   title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
@@ -189,34 +189,45 @@ export default function StudentAanHuisPage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <span className="eyebrow">Binnen 24 uur · {BUSINESS.REGION}</span>
+            <p className="hero-eyebrow">IT-Student aan huis · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Student <span className="text-blue-600">aan huis</span>
+              Student <span className="text-accent-400">aan huis</span>
             </h1>
 
             <p className="hero-description">
-              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
+              Een jonge IT-student legt het geduldig uit en lost het probleem rustig op. Zo kun je er <strong className="text-white">zelf weer mee verder</strong>.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
                 Bel {BUSINESS.PHONE}
               </a>
-              <Link href="/afspraak-maken" className="btn-secondary">
+              <Link href="/afspraak-maken" className="btn-hero-secondary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
             </div>
 
-            <p className="mt-4 text-sm text-gray-700">
-              Liever teruggebeld worden? <Link href="/afspraak-maken" className="text-blue-600 hover:underline font-medium">Vul het formulier in</Link> — binnen 1 uur reactie.
-            </p>
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Betaalbare tarieven
+              </span>
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Binnen 24 uur
+              </span>
+              <span className="hero-pill">
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                7 dagen per week
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
-      <TrustBadges />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       <ServicesSection
         title="Waar wij u mee helpen"
@@ -233,6 +244,7 @@ export default function StudentAanHuisPage() {
       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
             <p className="section-subtitle">Dagelijks helpen we mensen in heel {BUSINESS.REGION}</p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
@@ -247,6 +259,7 @@ export default function StudentAanHuisPage() {
       <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">FAQ</p>
             <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
           </header>
           <div className="space-y-4">

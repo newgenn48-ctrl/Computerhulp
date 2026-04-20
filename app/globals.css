@@ -91,6 +91,10 @@
   /* ============================================
      SECTION HEADINGS — Inter, zware gewichten, strakke tracking
      ============================================ */
+  .section-eyebrow {
+    @apply inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 mb-3;
+  }
+
   .section-title {
     @apply text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-gray-900 mb-4 leading-[1.1] tracking-display-tight;
   }
@@ -107,35 +111,73 @@
     @apply text-sm font-semibold text-gray-500 uppercase tracking-widest;
   }
 
+  /* Section achtergrond — licht grijs met subtiel dot-patroon (zoals hulpmetit) */
+  .section-bg-soft {
+    @apply relative bg-ink-50 overflow-hidden;
+  }
+
+  .section-bg-soft::before {
+    content: '';
+    @apply absolute inset-0 pointer-events-none opacity-[0.12];
+    background-image: radial-gradient(circle at 1px 1px, rgb(0 0 0 / 1) 1px, transparent 0);
+    background-size: 24px 24px;
+  }
+
+  .section-bg-soft > * {
+    @apply relative z-10;
+  }
+
+  /* Refined card — subtiele rand, zachte schaduw, opgetilde hover */
+  .card-refined {
+    @apply relative bg-white rounded-2xl shadow-soft hover:shadow-soft-lg hover:-translate-y-0.5 transition-all duration-300 border border-ink-100;
+  }
+
   /* ============================================
-     HERO
+     HERO — dark, photo-forward (zoals hulpmetit-nextgen)
      ============================================ */
   .hero-wrapper {
-    @apply relative min-h-[70vh] md:min-h-screen bg-white overflow-hidden;
+    @apply relative min-h-[600px] lg:min-h-[700px] bg-ink-900 overflow-hidden flex items-center;
   }
 
   .hero-overlay-mobile {
-    @apply absolute inset-0 bg-white/70 md:hidden;
+    @apply absolute inset-0 bg-ink-900/70 md:hidden;
   }
 
   .hero-overlay-desktop-r {
-    @apply absolute inset-0 hidden md:block bg-gradient-to-r from-white/85 via-white/55 to-transparent;
+    @apply absolute inset-0 hidden md:block bg-gradient-to-r from-ink-900 via-ink-900/85 to-ink-900/30 lg:via-ink-900/70 lg:to-ink-900/20;
   }
 
   .hero-overlay-desktop-b {
-    @apply absolute inset-0 hidden md:block bg-gradient-to-b from-white/20 via-transparent to-white/40;
+    @apply absolute inset-0 hidden md:block bg-gradient-to-t from-ink-900/50 via-transparent to-ink-900/40;
   }
 
   .hero-content {
-    @apply relative max-w-7xl mx-auto px-4 sm:px-6 pt-24 md:pt-32 pb-12 md:pb-20 min-h-[70vh] md:min-h-screen flex items-center;
+    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20;
   }
 
   .hero-title {
-    @apply text-4xl sm:text-5xl lg:text-7xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.02] tracking-display-tight;
+    @apply text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-[1.1] tracking-display-tight;
   }
 
   .hero-description {
-    @apply text-lg md:text-xl text-gray-700 mb-6 leading-relaxed max-w-xl;
+    @apply text-lg text-white/80 mb-8 leading-relaxed max-w-lg;
+  }
+
+  .hero-eyebrow {
+    @apply inline-block text-sm font-semibold uppercase tracking-wide text-primary-300 mb-4;
+  }
+
+  /* Hero CTA's — warm accent primary + glass secondary */
+  .btn-hero-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-accent-500 hover:bg-accent-600 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-accent-600/30;
+  }
+
+  .btn-hero-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors;
+  }
+
+  .hero-pill {
+    @apply inline-flex items-center gap-1.5 bg-white/10 backdrop-blur-sm text-white border border-white/15 rounded-full px-3 py-1 text-sm font-medium;
   }
 
   /* ============================================

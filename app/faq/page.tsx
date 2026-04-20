@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import TrustBadges from '@/components/TrustBadges'
 import { BUSINESS, PRICING } from '@/lib/constants'
 
 export const metadata: Metadata = {
@@ -104,8 +103,6 @@ export default function FAQPage() {
             </div>
           </div>
         </section>
-
-        <TrustBadges />
 
         {/* FAQ Content */}
         <section className="py-20 bg-white">

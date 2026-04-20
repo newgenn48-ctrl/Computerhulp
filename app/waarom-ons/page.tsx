@@ -1,15 +1,14 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import TrustBadges from '@/components/TrustBadges'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Waarom ${BUSINESS.NAME}? | Voordelen & Verschillen`,
-  description: `Waarom kiezen klanten voor ${BUSINESS.NAME}? Goedkoper, sneller en lokaal. Geen abonnement nodig. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+  description: `Waarom kiezen klanten voor ${BUSINESS.NAME}? Goedkoper, sneller en lokaal. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: `Waarom ${BUSINESS.NAME}?`,
-    description: `Goedkoper, sneller en lokaal. Geen abonnement nodig. Binnen 24 uur bij u thuis in heel ${BUSINESS.REGION}.`,
+    description: `Goedkoper, sneller en lokaal. Binnen 24 uur bij u thuis in heel ${BUSINESS.REGION}.`,
     type: 'website',
     url: `${BUSINESS.URL}/waarom-ons`,
   },
@@ -54,8 +53,6 @@ export default function WaaromOnsPage() {
           </div>
         </div>
       </section>
-
-      <TrustBadges />
 
       {/* Prijsvergelijking */}
       <section className="py-20 bg-white">
@@ -119,7 +116,7 @@ export default function WaaromOnsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: 'money', title: 'Goedkoopste keuze', desc: `${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Geen abonnement. U betaalt alleen voor wat u gebruikt.` },
+              { icon: 'money', title: 'Goedkoopste keuze', desc: `${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. U betaalt alleen voor wat u gebruikt.` },
               { icon: 'clock', title: 'Binnen 24 uur bij u thuis', desc: 'Geen weken wachten. Meestal komen we al de volgende dag — ook \'s avonds en in het weekend.' },
               { icon: 'location-pin', title: `Lokaal in ${BUSINESS.REGION}`, desc: 'Geen callcenter in een andere provincie. We kennen uw regio en zijn altijd dichtbij.' },
               { icon: 'shield', title: 'Betrouwbaar en verzekerd', desc: `KvK ${BUSINESS.KVK}, verzekerd en gescreend. Uw gegevens en apparatuur zijn in goede handen.` },

@@ -8,8 +8,8 @@ import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
-import TrustBadges from '@/components/TrustBadges'
 import AvailableInCities from '@/components/sections/AvailableInCities'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 export const metadata: Metadata = {
   title: 'Monteur aan Huis Zuid-Holland | Computer & IT Hulp | Binnen 24u',
@@ -82,6 +82,8 @@ const faqData = {
   ],
 }
 
+const heroImage = '/Computerhulp aan huis.webp'
+
 const benefits = [
   { title: 'Binnen 24 uur bij u thuis', description: 'Geen weken wachten. Meestal komen we al de volgende dag — ook \'s avonds en in het weekend.', icon: 'clock' },
   { title: 'Geen verrassingen achteraf', description: `${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. U weet vooraf wat het kost. Betalen achteraf via pin of Tikkie.`, icon: 'money' },
@@ -105,38 +107,62 @@ export default function MonteurAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-50 to-white pt-24 pb-16 lg:pt-32 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.04] tracking-display-tight">
-                <span className="text-blue-600">IT-monteur</span> aan huis nodig?
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                  Bel {BUSINESS.PHONE}
-                </a>
-                <Link href="/afspraak-maken" className="btn-secondary">
-                  Afspraak maken
-                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                </Link>
-              </div>
+      <section className="hero-wrapper" aria-label="IT-monteur aan huis hero">
+        <div className="absolute inset-0">
+          <Image
+            src={heroImage}
+            alt={`IT-monteur aan huis in ${BUSINESS.REGION}`}
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+          />
+          <div className="hero-overlay-mobile" />
+          <div className="hero-overlay-desktop-r" />
+          <div className="hero-overlay-desktop-b" />
+        </div>
+
+        <div className="hero-content">
+          <div className="max-w-2xl">
+            <p className="hero-eyebrow">IT-monteur · {BUSINESS.REGION}</p>
+            <h1 className="hero-title">
+              <span className="text-accent-400">IT-monteur</span> aan huis nodig?
+            </h1>
+
+            <p className="hero-description">
+              Computer, laptop, WiFi, printer of tv — <strong className="text-white">één monteur, alles in één bezoek</strong>. Meestal binnen 24 uur bij je thuis.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
+              </a>
+              <Link href="/afspraak-maken" className="btn-hero-secondary">
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
             </div>
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
-                <Image src="/computerhulp.webp" alt="IT-monteur aan huis helpt klant met computer" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Betaalbare tarieven
+              </span>
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Binnen 24 uur
+              </span>
+              <span className="hero-pill">
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                7 dagen per week
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <TrustBadges />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       {/* Waarom onze monteur */}
       <section className="py-16 sm:py-20 bg-white">
@@ -178,6 +204,7 @@ export default function MonteurAanHuisPage() {
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
             <p className="section-subtitle">Wij helpen dagelijks mensen in heel Zuid-Holland</p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>

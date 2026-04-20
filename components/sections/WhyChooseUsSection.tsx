@@ -45,9 +45,10 @@ export default function WhyChooseUsSection({
   ctaLabel = 'Bel ons nu',
 }: WhyChooseUsSectionProps) {
   return (
-    <section className="py-16 sm:py-24 bg-white">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <header className="text-center mb-12">
+    <section className="py-20 lg:py-28 bg-white">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <header className="text-center mb-14">
+          <p className="section-eyebrow">Waarom wij</p>
           <h2 className="section-title">{title}</h2>
         </header>
 
@@ -55,21 +56,21 @@ export default function WhyChooseUsSection({
           {benefits.map((benefit) => (
             <div
               key={benefit.title}
-              className="flex items-start gap-4 bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 sm:p-7 border border-blue-100 hover:border-blue-300 hover:shadow-md transition-all"
+              className="card-refined flex items-start gap-4 p-6 sm:p-7"
             >
-              <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0 shadow-sm">
-                <Icon name={benefit.icon} className="w-6 h-6 text-white" strokeWidth={2} aria-hidden="true" />
+              <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                <Icon name={benefit.icon} className="w-5 h-5 text-blue-600" strokeWidth={2} aria-hidden="true" />
               </div>
               <div>
-                <h3 className="font-bold text-gray-900 mb-1 text-lg">{benefit.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{benefit.desc}</p>
+                <h3 className="font-bold text-gray-900 mb-1 text-base sm:text-lg">{benefit.title}</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{benefit.desc}</p>
               </div>
             </div>
           ))}
         </div>
 
         {showCta && (
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
             <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               {ctaLabel}: {BUSINESS.PHONE}

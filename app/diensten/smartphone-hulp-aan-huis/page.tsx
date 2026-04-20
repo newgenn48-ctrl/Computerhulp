@@ -8,8 +8,8 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
-import TrustBadges from '@/components/TrustBadges'
 import AvailableInCities from '@/components/sections/AvailableInCities'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
   loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
@@ -291,18 +291,17 @@ export default function SmartphoneHulpAanHuisPage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Hulp nodig met uw <span className="text-blue-600">smartphone</span>?
+              Hulp nodig met je <span className="text-accent-400">smartphone</span>?
             </h1>
 
             <p className="hero-description">
-              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
+              Nieuwe telefoon instellen, contacten overzetten of een app die niet werkt? We regelen het bij je thuis — <strong className="text-white">iPhone, Samsung, Huawei</strong>, alles.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href={BUSINESS.PHONE_HREF}
-                className="btn-primary"
+                className="btn-hero-primary"
                 aria-label={`Bel ${BUSINESS.PHONE}`}
               >
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
@@ -310,7 +309,7 @@ export default function SmartphoneHulpAanHuisPage() {
               </a>
               <Link
                 href="/afspraak-maken"
-                className="btn-secondary"
+                className="btn-hero-secondary"
               >
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
@@ -321,7 +320,7 @@ export default function SmartphoneHulpAanHuisPage() {
 
       </section>
 
-      <TrustBadges />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       <HowItWorksSection />
 
@@ -332,6 +331,7 @@ export default function SmartphoneHulpAanHuisPage() {
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">
               Wat onze klanten zeggen
             </h2>

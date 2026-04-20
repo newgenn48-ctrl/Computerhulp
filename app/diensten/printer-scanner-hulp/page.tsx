@@ -8,8 +8,8 @@ import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING } from '@/lib/constants'
-import TrustBadges from '@/components/TrustBadges'
 import AvailableInCities from '@/components/sections/AvailableInCities'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 export const metadata: Metadata = {
   title: 'Printer & Scanner Hulp aan Huis Zuid-Holland | Binnen 24u',
@@ -90,50 +90,62 @@ export default function PrinterScannerHulpPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
 
       {/* Hero - Split Layout */}
-      <section className="bg-gradient-to-br from-gray-50 to-white pt-24 pb-16 lg:pt-32 lg:pb-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            <div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-5 md:mb-6 leading-[1.04] tracking-display-tight">
-                Hulp met uw <span className="text-blue-600">printer</span> of scanner?
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-                Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                  Bel {BUSINESS.PHONE}
-                </a>
-                <Link href="/afspraak-maken" className="btn-secondary">
-                  Afspraak maken
-                  <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                </Link>
-              </div>
+      <section className="hero-wrapper" aria-label="Printer & Scanner aan huis hero">
+        <div className="absolute inset-0">
+          <Image
+            src={heroImage}
+            alt={`Printer & Scanner aan huis in ${BUSINESS.REGION}`}
+            fill
+            className="object-cover object-center"
+            priority
+            sizes="100vw"
+          />
+          <div className="hero-overlay-mobile" />
+          <div className="hero-overlay-desktop-r" />
+          <div className="hero-overlay-desktop-b" />
+        </div>
+
+        <div className="hero-content">
+          <div className="max-w-2xl">
+            <p className="hero-eyebrow">Printer & Scanner · {BUSINESS.REGION}</p>
+            <h1 className="hero-title">
+              Hulp met je <span className="text-accent-400">printer</span> of scanner?
+            </h1>
+
+            <p className="hero-description">
+              Draadloos printen, scannen of installatie — we regelen het bij je thuis. De meeste printerproblemen zijn <strong className="text-white">in een halfuur opgelost</strong>.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
+              </a>
+              <Link href="/afspraak-maken" className="btn-hero-secondary">
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
             </div>
-            <div className="relative">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px]">
-                <Image src={heroImage} alt="Printer en scanner hulp aan huis in Zuid-Holland" fill sizes="(max-width: 768px) 100vw, 50vw" className="object-cover" priority />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
-              {/* Trust badge */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl p-5 border border-gray-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center">
-                    <Icon name="shield" className="w-6 h-6 text-green-600" strokeWidth={2} />
-                  </div>
-                  <div>
-                    <div className="text-sm font-semibold text-gray-900">Gecertificeerd</div>
-                    <div className="text-xs text-gray-500">10+ jaar ervaring</div>
-                  </div>
-                </div>
-              </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Betaalbare tarieven
+              </span>
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Binnen 24 uur
+              </span>
+              <span className="hero-pill">
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                7 dagen per week
+              </span>
             </div>
           </div>
         </div>
       </section>
 
-      <TrustBadges />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       {/* Wat wij voor u doen — check-list */}
       <section className="py-16 bg-white border-t border-gray-100">
@@ -160,6 +172,7 @@ export default function PrinterScannerHulpPage() {
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">
               Wat onze klanten zeggen
             </h2>

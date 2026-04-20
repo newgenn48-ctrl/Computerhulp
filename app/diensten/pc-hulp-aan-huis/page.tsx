@@ -8,15 +8,15 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
-import TrustBadges from '@/components/TrustBadges'
 import AvailableInCities from '@/components/sections/AvailableInCities'
+import SectionDivider from '@/components/ui/SectionDivider'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
   loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
 })
 
 export const metadata: Metadata = {
-  title: `PC Hulp aan Huis Zuid-Holland | Binnen 24u | Vanaf ${PRICING.MINIMUM_TOTAL}`,
+  title: `PC Hulp aan Huis Zuid-Holland | Binnen 24u | Vanaf ${PRICING.MINIMUM_ALL_IN}`,
   description: `PC hulp aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'PC Hulp aan Huis Zuid-Holland | IT-student aan Huis',
@@ -292,18 +292,17 @@ export default function HomePage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Hulp nodig met uw <span className="text-blue-600">pc</span>?
+              Hulp nodig met je <span className="text-accent-400">pc</span>?
             </h1>
 
             <p className="hero-description">
-              Hulp nodig met je computer, tablet of smartphone? Onze IT-studenten lossen het <strong className="text-gray-900">snel, slim en betrouwbaar</strong> voor je op.
+              Pc traag, vast of rare meldingen? We lossen het bij je thuis op — <strong className="text-white">zonder dat je computer mee hoeft</strong> naar een winkel.
             </p>
 
-            {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3">
               <a
                 href={BUSINESS.PHONE_HREF}
-                className="btn-primary"
+                className="btn-hero-primary"
                 aria-label={`Bel ${BUSINESS.PHONE}`}
               >
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
@@ -311,7 +310,7 @@ export default function HomePage() {
               </a>
               <Link
                 href="/afspraak-maken"
-                className="btn-secondary"
+                className="btn-hero-secondary"
               >
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
@@ -322,7 +321,7 @@ export default function HomePage() {
 
       </section>
 
-      <TrustBadges />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       <HowItWorksSection />
 
@@ -333,6 +332,7 @@ export default function HomePage() {
       <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">
               Wat onze klanten zeggen
             </h2>

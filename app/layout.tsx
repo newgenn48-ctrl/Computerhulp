@@ -45,7 +45,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: `${BUSINESS.NAME} | IT-Problemen Snel Opgelost`,
-    description: `Binnen 24 uur computerhulp aan huis in ${BUSINESS.REGION}. Vanaf ${PRICING.MINIMUM_TOTAL}, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+    description: `Binnen 24 uur computerhulp aan huis in ${BUSINESS.REGION}. All-in vanaf ${PRICING.MINIMUM_ALL_IN} (incl. voorrijkosten). Bel ${BUSINESS.PHONE}.`,
   },
   robots: {
     index: true,
