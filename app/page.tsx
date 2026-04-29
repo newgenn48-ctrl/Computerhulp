@@ -254,8 +254,8 @@ export default function HomePage() {
                 Betaalbare tarieven
               </span>
               <span className="hero-pill">
-                <Icon name="thumbs-up" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Vertrouwd door {BUSINESS.REVIEW_COUNT} klanten
+                <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                HBO-opgeleide studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
