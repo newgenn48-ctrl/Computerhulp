@@ -103,7 +103,7 @@ export default function LaptopComputerReparatiePage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Laptop reparatie · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              <span className="text-accent-400">Laptop</span> of pc kapot?
+              <span className="text-blue-300">Laptop</span> of pc kapot?
             </h1>
 
             <p className="hero-description">

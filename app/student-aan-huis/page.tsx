@@ -191,7 +191,7 @@ export default function StudentAanHuisPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">IT-Student aan huis · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Student <span className="text-accent-400">aan huis</span>
+              Student <span className="text-blue-300">aan huis</span>
             </h1>
 
             <p className="hero-description">

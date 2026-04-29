@@ -103,7 +103,7 @@ export default function TabletSmartphoneHulpPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Tablet & Smartphone · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Hulp met je <span className="text-accent-400">tablet</span> of smartphone?
+              Hulp met je <span className="text-blue-300">tablet</span> of smartphone?
             </h1>
 
             <p className="hero-description">

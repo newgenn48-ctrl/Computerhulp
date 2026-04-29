@@ -189,7 +189,7 @@ export default function ComputerLaptopHulpPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Computer & Laptop · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Hulp nodig met je <span className="text-accent-400">computer</span> of laptop?
+              Hulp nodig met je <span className="text-blue-300">computer</span> of laptop?
             </h1>
 
             <p className="hero-description">

@@ -50,6 +50,18 @@ const config: Config = {
       fontFamily: {
         sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
       },
+      // Font-size schaal overgenomen van hulpmetit-nextgen (groter dan Tailwind default,
+      // betere leesbaarheid voor senior doelgroep).
+      fontSize: {
+        'sm':   ['0.9375rem', { lineHeight: '1.5' }],   // 15px
+        'base': ['1.0625rem', { lineHeight: '1.6' }],   // 17px
+        'lg':   ['1.1875rem', { lineHeight: '1.6' }],   // 19px
+        'xl':   ['1.375rem',  { lineHeight: '1.4' }],   // 22px
+        '2xl':  ['1.75rem',   { lineHeight: '1.3' }],   // 28px
+        '3xl':  ['2.25rem',   { lineHeight: '1.2' }],   // 36px
+        '4xl':  ['2.75rem',   { lineHeight: '1.1' }],   // 44px
+        '5xl':  ['3.5rem',    { lineHeight: '1.1' }],   // 56px
+      },
       letterSpacing: {
         tightest: '-0.04em',
         'display-tight': '-0.025em',

@@ -103,7 +103,7 @@ export default function DataherstelBackupPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Dataherstel · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              <span className="text-accent-400">Bestanden</span> of foto&apos;s kwijt?
+              <span className="text-blue-300">Bestanden</span> of foto&apos;s kwijt?
             </h1>
 
             <p className="hero-description">

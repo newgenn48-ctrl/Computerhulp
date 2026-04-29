@@ -104,7 +104,7 @@ export default function WifiInternetHulpPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">WiFi & Internet · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Problemen met je <span className="text-accent-400">WiFi</span> of internet?
+              Problemen met je <span className="text-blue-300">WiFi</span> of internet?
             </h1>
 
             <p className="hero-description">

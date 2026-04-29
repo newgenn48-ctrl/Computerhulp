@@ -102,7 +102,7 @@ export default function TVInstallatiePage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">TV installatie · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Je <span className="text-accent-400">tv</span> laten ophangen?
+              Je <span className="text-blue-300">tv</span> laten ophangen?
             </h1>
 
             <p className="hero-description">

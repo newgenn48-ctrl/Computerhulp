@@ -285,7 +285,7 @@ export default function HomePage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Beter <span className="text-accent-400">leren</span> werken met de computer?
+              Beter <span className="text-blue-300">leren</span> werken met de computer?
             </h1>
 
             <p className="hero-description">

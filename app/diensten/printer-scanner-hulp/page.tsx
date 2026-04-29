@@ -103,7 +103,7 @@ export default function PrinterScannerHulpPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Printer & Scanner · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Hulp met je <span className="text-accent-400">printer</span> of scanner?
+              Hulp met je <span className="text-blue-300">printer</span> of scanner?
             </h1>
 
             <p className="hero-description">

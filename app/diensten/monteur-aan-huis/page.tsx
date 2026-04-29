@@ -120,7 +120,7 @@ export default function MonteurAanHuisPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">IT-monteur · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              <span className="text-accent-400">IT-monteur</span> aan huis nodig?
+              <span className="text-blue-300">IT-monteur</span> aan huis nodig?
             </h1>
 
             <p className="hero-description">

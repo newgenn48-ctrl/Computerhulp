@@ -285,7 +285,7 @@ export default function SmartphoneHulpAanHuisPage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Hulp nodig met je <span className="text-accent-400">smartphone</span>?
+              Hulp nodig met je <span className="text-blue-300">smartphone</span>?
             </h1>
 
             <p className="hero-description">
