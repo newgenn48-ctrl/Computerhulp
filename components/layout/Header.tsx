@@ -31,6 +31,16 @@ export default function Header() {
     setMobileMenuOpen(false)
   }, [pathname])
 
+  // Sluit mobile menu met Escape — voorkomt focus-trap voor toetsenbordgebruikers
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false)
+    }
+    window.addEventListener('keydown', handleKey)
+    return () => window.removeEventListener('keydown', handleKey)
+  }, [mobileMenuOpen])
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${

@@ -53,7 +53,7 @@ export default function HowItWorksSection({
             <li key={item.step} className="relative flex md:flex-col items-start md:items-center text-left md:text-center gap-4 md:gap-0 md:px-4">
               {/* Icoon-cirkel met Stap-label — hoger dan de verbindingslijn */}
               <div className="relative z-10 w-20 h-20 rounded-2xl bg-white shadow-soft-lg border border-ink-100 flex flex-col items-center justify-center flex-shrink-0 md:mb-6">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-500 leading-none">Stap {item.step}</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider text-blue-700 leading-none">Stap {item.step}</span>
                 <Icon name={item.icon} className="w-6 h-6 text-blue-600 mt-1.5" strokeWidth={2} aria-hidden="true" />
               </div>
 
