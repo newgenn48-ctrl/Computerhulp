@@ -126,14 +126,14 @@ export default function LaptopLatenHerstellenPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                Bel {BUSINESS.PHONE}
-              </a>
-              <Link href="/afspraak-maken" className="btn-hero-secondary">
+              <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
+              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -242,14 +242,14 @@ export default function LaptopLatenHerstellenPage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Laptop Laten Herstellen?</h2>
           <p className="text-xl text-blue-100 mb-10">Bel nu en we komen vandaag of morgen bij u thuis</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-              Bel {BUSINESS.PHONE}
-            </a>
-            <Link href="/afspraak-maken" className="btn-cta-dark">
+            <Link href="/afspraak-maken" className="btn-cta-white">
               Afspraak maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
             </Link>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
+            </a>
           </div>
         </div>
       </section>

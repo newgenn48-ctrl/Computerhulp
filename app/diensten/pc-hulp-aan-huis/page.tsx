@@ -294,21 +294,21 @@ export default function HomePage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
+              <Link
+                href="/afspraak-maken"
+                className="btn-hero-primary"
+              >
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
               <a
                 href={BUSINESS.PHONE_HREF}
-                className="btn-hero-primary"
+                className="btn-hero-secondary"
                 aria-label={`Bel ${BUSINESS.PHONE}`}
               >
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
                 Bel {BUSINESS.PHONE}
               </a>
-              <Link
-                href="/afspraak-maken"
-                className="btn-hero-secondary"
-              >
-                Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
             </div>
           </div>
         </div>
@@ -465,21 +465,21 @@ export default function HomePage() {
             Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link
+              href="/afspraak-maken"
+              className="btn-cta-white"
+            >
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
             <a
               href={BUSINESS.PHONE_HREF}
-              className="btn-cta-white"
+              className="btn-cta-dark"
               aria-label={`Bel ${BUSINESS.PHONE}`}
             >
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               Bel {BUSINESS.PHONE}
             </a>
-            <Link
-              href="/afspraak-maken"
-              className="btn-cta-dark"
-            >
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
           </div>
         </div>
       </section>

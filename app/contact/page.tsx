@@ -159,14 +159,14 @@ export default function ContactPage() {
             Bel ons gerust. We helpen u graag verder.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white">
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-              Bel {BUSINESS.PHONE}
-            </a>
-            <Link href="/afspraak-maken" className="btn-cta-dark">
+            <Link href="/afspraak-maken" className="btn-cta-white">
               Afspraak Maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark">
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+              Bel {BUSINESS.PHONE}
+            </a>
           </div>
         </div>
       </section>

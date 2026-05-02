@@ -89,3 +89,6 @@ Desktop.ini
 # package-lock.json
 # yarn.lock
 # pnpm-lock.yaml
+
+# Google Ads exports & analysis (private data)
+ads-data/

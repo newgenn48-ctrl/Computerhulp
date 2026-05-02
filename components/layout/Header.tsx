@@ -80,11 +80,14 @@ export default function Header() {
             <Link href="/tarieven" className="nav-link">Tarieven</Link>
             <Link href="/over-ons" className="nav-link">Over Ons</Link>
             <Link href="/contact" className="nav-link">Contact</Link>
-            <Link href="/afspraak-maken" className="nav-link font-medium">Hulp Vragen</Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-header-cta flex items-center gap-2" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="nav-link flex items-center gap-1.5 font-medium" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-header-cta flex items-center gap-2">
+              Afspraak Maken
+              <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
+            </Link>
           </nav>
 
           {/* Mobile: Phone + Menu */}

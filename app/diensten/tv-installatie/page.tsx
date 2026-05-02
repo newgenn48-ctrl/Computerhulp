@@ -102,22 +102,22 @@ export default function TVInstallatiePage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">TV installatie · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Je <span className="text-blue-300">tv</span> laten ophangen?
+              <span className="text-blue-300">TV monteur</span> aan huis
             </h1>
 
             <p className="hero-description">
-              Wilt u uw tv laten ophangen? TV ophangen, Smart TV instellen of soundbar aansluiten? We komen bij u thuis en regelen alles — <strong className="text-white">kabels netjes weggewerkt</strong>.
+              Smart TV instellen, soundbar aansluiten, streaming-apps configureren en kabels netjes wegwerken. Wij komen bij u thuis en <strong className="text-white">installeren alles compleet</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                Bel {BUSINESS.PHONE}
-              </a>
-              <Link href="/afspraak-maken" className="btn-hero-secondary">
+              <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                Bel {BUSINESS.PHONE}
+              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -222,14 +222,14 @@ export default function TVInstallatiePage() {
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">TV Installatie Nodig? We Helpen Direct!</h2>
           <p className="text-xl text-blue-100 mb-10">Neem contact op en we komen vandaag of morgen al bij u langs</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-              Bel {BUSINESS.PHONE}
-            </a>
-            <Link href="/afspraak-maken" className="btn-cta-dark">
+            <Link href="/afspraak-maken" className="btn-cta-white">
               Afspraak maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
             </Link>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
+            </a>
           </div>
         </div>
       </section>

@@ -209,14 +209,14 @@ export default function WaaromOnsPage() {
             Bel ons gerust of maak online een afspraak. Binnen 24 uur staan we voor uw deur.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
-              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-              Bel {BUSINESS.PHONE}
-            </a>
-            <Link href="/afspraak-maken" className="btn-cta-dark">
+            <Link href="/afspraak-maken" className="btn-cta-white">
               Afspraak maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
             </Link>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              Bel {BUSINESS.PHONE}
+            </a>
           </div>
         </div>
       </section>
