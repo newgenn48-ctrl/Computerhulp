@@ -190,7 +190,11 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Hulp bij uw computer, laptop, printer, wifi, smartphone of camera. Onze IT-studenten komen vandaag of morgen bij u thuis en leggen alles rustig uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
+              Heeft u problemen met uw computer, tablet of telefoon? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.
+            </p>
+
+            <p className="hero-description">
+              Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat <strong className="text-white">u snapt hoe het werkt</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -210,16 +214,16 @@ export default function ComputerhulpAanHuisPage() {
 
             <div className="flex flex-wrap items-center gap-3">
               <span className="hero-pill">
-                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                {PRICING.PER_QUARTER} per kwartier
-              </span>
-              <span className="hero-pill">
-                <Icon name="check-circle" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur bij u thuis
-              </span>
-              <span className="hero-pill">
                 <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                7 dagen · {HOURS.OPEN}–{HOURS.CLOSE}
+                Vaak binnen 24 uur geholpen
+              </span>
+              <span className="hero-pill">
+                <Icon name="users" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Geduldig en Vakkundig
+              </span>
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Betaalbare Tarieven
               </span>
             </div>
           </div>

@@ -178,7 +178,7 @@ export default function AfspraakForm() {
         </div>
 
         <div>
-          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Wat is het probleem? <span className="text-red-500" aria-hidden="true">*</span></label>
+          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Beschrijving <span className="text-red-500" aria-hidden="true">*</span></label>
           <textarea
             id="probleem"
             name="probleem"
@@ -222,9 +222,6 @@ export default function AfspraakForm() {
           )}
         </button>
 
-        <p className="text-sm text-gray-600 text-center">
-          We bellen u binnen 1 uur terug om de afspraak te bevestigen
-        </p>
       </form>
     </>
   )

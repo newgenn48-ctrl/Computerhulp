@@ -1,20 +1,16 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
-import { HUB_TESTIMONIALS } from '@/lib/testimonials'
-import ServicesSection from '@/components/ServicesSection'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING } from '@/lib/constants'
 import SectionDivider from '@/components/ui/SectionDivider'
 
 export const metadata: Metadata = {
-  title: `IT Hulp aan Huis voor Bedrijven & ZZP | ${BUSINESS.REGION}`,
-  description: `IT hulp aan huis voor ZZP'ers en kleine bedrijven in ${BUSINESS.REGION}. VPN, netwerk, server, Microsoft 365. Binnen 24 uur geholpen. Bel ${BUSINESS.PHONE}.`,
+  title: `IT Hulp aan Huis | ${BUSINESS.REGION}`,
+  description: `IT hulp aan huis in ${BUSINESS.REGION} voor al uw digitale apparaten. Computer, laptop, printer, wifi, smartphone, tablet, smart-tv en smart home. Vaak binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'IT Hulp aan Huis voor Bedrijven & ZZP',
-    description: `Professionele IT hulp voor ZZP'ers en bedrijven in ${BUSINESS.REGION}. VPN, netwerk, server problemen opgelost bij u op kantoor.`,
+    title: `IT Hulp aan Huis | ${BUSINESS.REGION}`,
+    description: `Vriendelijke IT-studenten komen bij u thuis voor al uw digitale apparaten. Vaak binnen 24 uur geholpen.`,
     type: 'website',
     url: `${BUSINESS.URL}/it-hulp`,
   },
@@ -23,21 +19,90 @@ export const metadata: Metadata = {
   },
 }
 
-const PricingSection = dynamic(() => import('@/components/PricingSection'), {
-  loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
-})
+const recognitionPoints = [
+  'Uw computer of laptop is traag',
+  'De printer werkt niet meer',
+  'WiFi valt steeds weg',
+  'U kunt niet meer bij uw e-mail',
+  'Uw telefoon of tablet is lastig te gebruiken',
+]
 
-const cities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel']
+const solutionPoints = [
+  'Het probleem wordt opgelost',
+  'U krijgt duidelijke uitleg',
+  'U kunt daarna zelf weer verder',
+]
+
+const deviceCategories = [
+  { label: 'Computer en laptop', href: '/diensten/computer-laptop-hulp' },
+  { label: 'Printer', href: '/diensten/printer-scanner-hulp' },
+  { label: 'WiFi en internet', href: '/diensten/wifi-internet-hulp' },
+  { label: 'Smartphone en tablet', href: '/diensten/tablet-smartphone-hulp' },
+  { label: 'E-mail', href: '/diensten/email-hulp' },
+  { label: 'Televisie (Smart TV)', href: '/diensten/televisie-radio' },
+  { label: 'Foto’s en bestanden', href: '/diensten/dataherstel-backup' },
+]
+
+const whyPoints = [
+  { title: 'Snel geholpen', desc: 'Vaak al binnen 24 uur.' },
+  { title: 'Rustige uitleg', desc: 'Alles in begrijpelijke taal.' },
+  { title: 'Bij u thuis', desc: 'U hoeft nergens naartoe.' },
+  { title: 'Eerlijke prijzen', desc: 'Geen verrassingen.' },
+]
+
+const testimonials = [
+  { quote: 'Eindelijk iemand die het rustig uitlegt. Alles werkt weer zoals het hoort.', name: 'Mevrouw Gerda' },
+  { quote: 'WiFi en e-mail deden het niet. In één bezoek opgelost.', name: 'De heer Jan' },
+  { quote: 'Nu snap ik eindelijk hoe mijn tablet werkt.', name: 'Mevrouw Ria' },
+]
+
+const pricingPoints = [
+  `${PRICING.PER_QUARTER} per kwartier`,
+  `Voorrijkosten ${PRICING.TRAVEL}`,
+  'Meestal binnen 45–60 minuten klaar',
+  'Betalen achteraf (pin of Tikkie)',
+]
+
+const topCities = [
+  { name: 'Den Haag', slug: 'den-haag' },
+  { name: 'Rotterdam', slug: 'rotterdam' },
+  { name: 'Leiden', slug: 'leiden' },
+  { name: 'Delft', slug: 'delft' },
+]
+
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  serviceType: 'IT Hulp aan Huis',
+  name: `IT Hulp aan Huis ${BUSINESS.REGION}`,
+  description: `Vriendelijke IT-studenten komen bij u thuis voor al uw digitale apparaten in ${BUSINESS.REGION}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, smart-tv, e-mail en smart home.`,
+  provider: {
+    '@type': 'LocalBusiness',
+    name: BUSINESS.NAME,
+    telephone: BUSINESS.PHONE_INTL,
+    email: BUSINESS.EMAIL,
+    address: { '@type': 'PostalAddress', addressRegion: BUSINESS.REGION, addressCountry: BUSINESS.COUNTRY },
+  },
+  areaServed: { '@type': 'State', name: BUSINESS.REGION },
+  offers: {
+    '@type': 'Offer',
+    price: String(PRICING.PER_QUARTER_NUM),
+    priceCurrency: 'EUR',
+    availability: 'https://schema.org/InStock',
+  },
+}
 
 export default function ITHulpPage() {
   return (
     <>
-      {/* Premium Hero Section — dark photo-forward */}
-      <section className="hero-wrapper" aria-label="IT Hulp aan Huis Zuid-Holland hero">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
+
+      {/* 1. HERO */}
+      <section className="hero-wrapper" aria-label="IT hulp aan huis hero">
         <div className="absolute inset-0">
           <Image
             src="/computerhulp.webp"
-            alt="IT hulp aan huis - computerhulp bij u thuis"
+            alt="IT-student helpt klant thuis met computer"
             fill
             className="object-cover object-center"
             priority
@@ -50,203 +115,281 @@ export default function ITHulpPage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <p className="hero-eyebrow">IT-Hulp aan huis · {BUSINESS.REGION}</p>
+            <p className="hero-eyebrow">★ {BUSINESS.REVIEW_COUNT} tevreden klanten in {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              IT Hulp <span className="text-blue-300">aan Huis</span>
+              IT hulp <span className="text-blue-300">aan huis</span>
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw digitale apparaten? Onze IT-studenten lossen het <strong className="text-white">snel, slim en betrouwbaar</strong> voor u op.
+              Lukt iets niet met uw computer, telefoon, tablet of internet? <strong className="text-white">Geen zorgen.</strong> Onze vriendelijke IT-studenten komen bij u thuis en helpen u stap voor stap — in begrijpelijke taal.
+            </p>
+
+            <p className="hero-description">
+              Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+                aria-label={`Bel ${BUSINESS.PHONE}`}
+              >
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
               <span className="hero-pill">
-                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Betaalbare tarieven
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2.5} />
+                Vaak binnen 24 uur geholpen
               </span>
               <span className="hero-pill">
-                <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide studenten
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2.5} />
+                Geduldig en duidelijk uitgelegd
               </span>
               <span className="hero-pill">
-                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                7 dagen per week
+                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2.5} />
+                Gewoon bij u thuis
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#ffffff" />
 
-      {/* Services Section */}
-      <ServicesSection
-        title="Waar wij u mee helpen"
-        showFeatures={false}
-        limitServices={6}
-        showAllButton={true}
-      />
-
-      {/* Pricing Section */}
-      <PricingSection />
-
-      {/* Testimonials - Swipeable Carousel */}
-      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Dagelijks helpen we ondernemers in heel {BUSINESS.REGION}
-            </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
-          </header>
-
-          <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
+      {/* 2. HERKENNING — problem recognition */}
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="recognition-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <h2 id="recognition-heading" className="section-title">
+            Herkent u dit?
+          </h2>
+          <ul className="mt-10 space-y-4 text-left max-w-xl mx-auto">
+            {recognitionPoints.map((point) => (
+              <li key={point} className="flex items-start gap-3 text-lg text-gray-700">
+                <Icon name="check-circle-outline" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-lg text-gray-700 leading-relaxed">
+            Dat is vervelend — zeker als u er zelf niet uitkomt. <strong className="text-gray-900">U hoeft het niet alleen te doen.</strong>
+          </p>
         </div>
       </section>
 
-      {/* SEO Content Section - Hidden on mobile for better conversion */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            <article>
-              <h2 id="seo-content-heading" className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6">
-                Computerhulp bij u thuis
-              </h2>
-              <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Doet uw <strong>computer, laptop, printer of WiFi</strong> niet wat u wilt? Wij komen gewoon bij u op kantoor of thuis. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of een van de andere 50+ gemeenten zit — meestal zijn we binnen 24 uur bij u.
-                </p>
-
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waarom mensen ons bellen</h3>
-
-                <ul className="space-y-3 text-gray-700 mb-6">
-                  <li className="flex items-start gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Snel bij u thuis:</strong> Meestal binnen 24 uur. Is het dringend? Dan vaak nog dezelfde dag.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Transparante prijzen:</strong> {PRICING.PER_QUARTER} per kwartier, {PRICING.TRAVEL} voorrijkosten in heel {BUSINESS.REGION}.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Alle merken:</strong> Windows, Apple, Samsung — wij helpen met alles.</span>
-                  </li>
-                  <li className="flex items-start gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Gewoon duidelijk:</strong> Wij leggen alles rustig uit, in gewone taal.</span>
-                  </li>
-                </ul>
-
-                <p className="text-gray-700 leading-relaxed mb-6">
-                  Onze IT-studenten helpen u met: <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">trage computers</Link>, <Link href="/diensten/laptop-computer-reparatie" className="text-blue-600 hover:underline">laptopreparatie</Link>, <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printerinstallatie</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi-problemen</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mailconfiguratie</Link>, <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet- en smartphonehulp</Link>, <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:underline">smarthome-installatie</Link> en <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">dataherstel</Link>.
-                </p>
-
-                <p className="text-gray-700 leading-relaxed">
-                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. We zijn {HOURS.DAYS} bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur.
-                </p>
-              </div>
-            </article>
-
-            <aside>
-              <div className="sticky top-24">
-                <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
-                  <Image
-                    src="/Computerhulp aan huis.webp"
-                    alt="Computerhulp IT-student aan het werk bij klant thuis"
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                    loading="lazy"
-                  />
+      {/* 3. OPLOSSING */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="solution-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <h2 id="solution-heading" className="section-title">
+            Wij helpen u stap voor stap
+          </h2>
+          <p className="section-subtitle max-w-xl mx-auto">
+            Onze IT-student komt bij u thuis en neemt rustig de tijd om alles op te lossen.
+          </p>
+          <ul className="mt-10 grid sm:grid-cols-3 gap-4 max-w-2xl mx-auto">
+            {solutionPoints.map((point) => (
+              <li key={point} className="bg-white rounded-2xl p-5 border border-gray-100 shadow-sm flex flex-col items-center gap-3 text-center">
+                <div className="w-10 h-10 rounded-full bg-green-50 flex items-center justify-center flex-shrink-0">
+                  <Icon name="check" className="w-5 h-5 text-green-600" strokeWidth={2.5} aria-hidden="true" />
                 </div>
+                <span className="font-semibold text-gray-900">{point}</span>
+              </li>
+            ))}
+          </ul>
+          <p className="mt-10 text-lg text-gray-700">
+            Geen haast, geen moeilijke termen — <strong className="text-gray-900">gewoon heldere hulp</strong>.
+          </p>
+        </div>
+      </section>
 
-                <div className="bg-blue-50 rounded-2xl p-6 border border-blue-100">
-                  <h3 className="text-xl font-bold text-gray-900 mb-4">Waar we komen</h3>
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {cities.map((city, idx) => (
-                      <span key={idx} className="bg-white px-3 py-1 rounded-full text-sm text-gray-700 border border-gray-200">
-                        {city}
-                      </span>
-                    ))}
-                  </div>
-                  <Link href="/computerhulp-aan-huis" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
-                    Bekijk alle 50+ locaties
-                    <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
-                  </Link>
-                </div>
-              </div>
-            </aside>
+      {/* 4. WAT WIJ DOEN — broad scope */}
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="scope-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <header className="text-center mb-12">
+            <h2 id="scope-heading" className="section-title">
+              Hulp bij al uw apparaten
+            </h2>
+            <p className="section-subtitle">Wij helpen u met:</p>
+          </header>
+
+          <ul className="grid sm:grid-cols-2 gap-3 sm:gap-4 max-w-2xl mx-auto">
+            {deviceCategories.map((cat) => (
+              <li key={cat.label}>
+                <Link
+                  href={cat.href}
+                  className="flex items-center gap-3 p-4 rounded-xl border border-gray-200 bg-white hover:border-blue-400 hover:bg-blue-50 transition-colors"
+                >
+                  <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2.5} aria-hidden="true" />
+                  <span className="font-medium text-gray-900">{cat.label}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 text-center">
+            <p className="text-lg text-gray-700 mb-4">
+              Twijfelt u? Bel gerust — we denken met u mee.
+            </p>
+            <a
+              href={BUSINESS.PHONE_HREF}
+              className="btn-primary"
+              aria-label={`Bel ${BUSINESS.PHONE}`}
+            >
+              <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              {BUSINESS.PHONE}
+            </a>
           </div>
         </div>
       </section>
 
-      {/* FAQ Section */}
-      <section className="py-20 bg-white" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      {/* 5. WAAROM VOOR ONS KIEZEN */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="why-heading">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-12">
-            <h2 id="faq-heading" className="section-title">
-              Veelgestelde vragen
+            <p className="section-eyebrow">Waarom wij</p>
+            <h2 id="why-heading" className="section-title">
+              Waarom klanten ons bellen
             </h2>
           </header>
 
-          <div className="space-y-4">
-            {[
-              { q: 'Kunnen jullie ook helpen met thuiswerken (VPN, Teams)?', a: 'Ja, we helpen regelmatig met thuiswerksituaties. Denk aan VPN, Microsoft Teams, Zoom of een printer koppelen aan uw werknetwerk. We zorgen dat u gewoon kunt werken.' },
-              { q: 'Helpen jullie ook met data overzetten naar een nieuwe computer?', a: 'Ja. We zetten al uw bestanden, foto\'s, e-mail en programma\'s over naar uw nieuwe computer of laptop. Daarna controleren we of alles goed werkt.' },
-              { q: 'Kan ik ook even bellen voor een snelle vraag?', a: `Natuurlijk. Bel gerust naar ${BUSINESS.PHONE}. Soms kunnen we een klein probleem al telefonisch oplossen. Is een bezoek nodig, dan plannen we dat meteen in.` },
-              { q: 'Wat als het probleem niet in één keer opgelost is?', a: 'Dat komt zelden voor, maar als er bijvoorbeeld een onderdeel besteld moet worden, komen we kosteloos terug. U betaalt alleen voor de tijd die we daadwerkelijk nodig hebben.' },
-              { q: 'Helpen jullie ook kleine bedrijven en ZZP\'ers?', a: 'Ja, we helpen ook kleine bedrijven en ZZP\'ers. Denk aan netwerk, back-ups, beveiliging en het koppelen van apparaten. Tegen dezelfde tarieven als voor particulieren.' },
-            ].map((faq, idx) => (
-              <details key={idx} className="group faq-item">
-                <summary className="faq-summary">
-                  {faq.q}
-                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
-                </summary>
-                <div className="faq-answer">
-                  {faq.a}
+          <div className="grid sm:grid-cols-2 gap-5 lg:gap-6 max-w-4xl mx-auto">
+            {whyPoints.map((p) => (
+              <div key={p.title} className="bg-white rounded-2xl p-6 sm:p-7 border border-gray-100 shadow-sm flex items-start gap-4">
+                <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
+                  <Icon name="check" className="w-5 h-5 text-blue-600" strokeWidth={2.5} aria-hidden="true" />
                 </div>
-              </details>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1 text-lg">{p.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{p.desc}</p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
+      {/* 6. REVIEWS — short, named */}
+      <section className="py-16 sm:py-20 bg-white" aria-labelledby="reviews-heading">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <header className="text-center mb-12">
+            <p className="section-eyebrow">Klanten aan het woord</p>
+            <h2 id="reviews-heading" className="section-title">
+              Wat klanten zeggen
+            </h2>
+          </header>
+
+          <div className="grid md:grid-cols-3 gap-5">
+            {testimonials.map((t) => (
+              <figure key={t.name} className="bg-gradient-to-br from-blue-50 to-white rounded-2xl p-6 border border-blue-100 flex flex-col gap-4">
+                <Icon name="quote" className="w-7 h-7 text-blue-300" strokeWidth={1.5} aria-hidden="true" />
+                <blockquote className="text-gray-800 leading-relaxed italic">
+                  “{t.quote}”
+                </blockquote>
+                <figcaption className="text-sm font-semibold text-gray-700 mt-auto">
+                  — {t.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 7. TARIEVEN — simple checklist */}
+      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="pricing-heading">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6">
+          <header className="text-center mb-10">
+            <p className="section-eyebrow">Tarieven</p>
+            <h2 id="pricing-heading" className="section-title">
+              Duidelijke en eerlijke tarieven
+            </h2>
+          </header>
+
+          <div className="bg-white rounded-2xl p-8 sm:p-10 border border-gray-100 shadow-sm">
+            <ul className="space-y-4">
+              {pricingPoints.map((p) => (
+                <li key={p} className="flex items-start gap-3 text-lg text-gray-800">
+                  <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
+                  <span>{p}</span>
+                </li>
+              ))}
+            </ul>
+            <p className="mt-8 text-center text-gray-700">
+              <strong className="text-gray-900">U weet vooraf waar u aan toe bent.</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 8. GEBIED */}
+      <section className="py-14 bg-white" aria-labelledby="area-heading">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+          <h2 id="area-heading" className="section-title">
+            Waar wij komen
+          </h2>
+          <p className="mt-4 text-lg text-gray-700">
+            Wij helpen klanten in heel {BUSINESS.REGION}, zoals{' '}
+            {topCities.map((c, i) => (
+              <span key={c.slug}>
+                <Link
+                  href={`/computerhulp-aan-huis-${c.slug}`}
+                  className="text-blue-600 hover:text-blue-700 font-semibold"
+                >
+                  {c.name}
+                </Link>
+                {i < topCities.length - 2 ? ', ' : i === topCities.length - 2 ? ' en ' : ' en omgeving.'}
+              </span>
+            ))}
+          </p>
+          <Link
+            href="/computerhulp-aan-huis"
+            className="inline-flex items-center gap-2 mt-6 text-blue-600 hover:text-blue-700 font-semibold"
+          >
+            Bekijk alle 50+ locaties
+            <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+          </Link>
+        </div>
+      </section>
+
+      {/* 9. FINAL CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-            Kunnen wij u ergens mee helpen?
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            Komt u er niet uit? Bel ons gerust
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Bel ons gerust of stuur een berichtje. We komen graag bij u langs in {BUSINESS.REGION}.
+            Wij helpen u graag — gewoon bij u thuis en zonder gedoe.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
+          </div>
+
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm text-blue-100">
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />
+              Vandaag of morgen al geholpen
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />
+              Ook in de avond bereikbaar
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />
+              7 dagen per week
+            </span>
           </div>
         </div>
       </section>
