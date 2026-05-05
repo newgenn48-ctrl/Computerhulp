@@ -118,7 +118,7 @@ export default function PersoonlijkeTrainingPage() {
               </Link>
               <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                Bel {BUSINESS.PHONE}
+                {BUSINESS.PHONE}
               </a>
             </div>
 
@@ -230,7 +230,7 @@ export default function PersoonlijkeTrainingPage() {
             </Link>
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-              Bel {BUSINESS.PHONE}
+              {BUSINESS.PHONE}
             </a>
           </div>
         </div>

@@ -48,7 +48,7 @@ export default function ContactPage() {
                 </div>
                 <div className="text-center sm:text-left">
                   <p className="text-blue-100 text-sm mb-1">De snelste manier</p>
-                  <div className="text-3xl sm:text-4xl font-bold">Bel {BUSINESS.PHONE}</div>
+                  <div className="text-3xl sm:text-4xl font-bold">{BUSINESS.PHONE}</div>
                   <p className="text-blue-100 text-sm mt-1">{HOURS.DAYS} · {HOURS.OPEN}–{HOURS.CLOSE}</p>
                 </div>
               </div>
@@ -165,7 +165,7 @@ export default function ContactPage() {
             </Link>
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark">
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-              Bel {BUSINESS.PHONE}
+              {BUSINESS.PHONE}
             </a>
           </div>
         </div>

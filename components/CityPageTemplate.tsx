@@ -60,7 +60,7 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig met uw digitale apparaten? Een ICT-specialist komt bij u thuis in {cityName} en lost het <strong className="text-white">meestal binnen 24 uur</strong> op.
+      Hulp bij uw computer, laptop, printer, wifi, smartphone of camera. Onze IT-studenten komen vandaag of morgen bij u thuis in {cityName} en leggen alles rustig uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -119,10 +119,10 @@ function getConfig(variant: CityPageVariant): VariantConfig {
 export function generateComputerhulpPageMetadata(city: City): Metadata {
   return {
     title: `Computerhulp aan Huis ${city.name} | Binnen 24u bij u Thuis`,
-    description: `Betrouwbare computerhulp aan huis in ${city.name}. Computer, laptop, printer en WiFi problemen opgelost. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+    description: `Betrouwbare computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
-      description: `Computerhulp aan huis in ${city.name}. Computer-, laptop- en WiFi-hulp. Binnen 24u, ${PRICING.TRAVEL} voorrijkosten.`,
+      description: `Computerhulp aan huis in ${city.name}. Computer, laptop, printer, wifi, smartphone, tablet en camera. Binnen 24 uur bij u thuis.`,
       type: 'website',
       url: `https://computerhulpzh.nl/computerhulp-aan-huis-${city.slug}`,
     },
@@ -159,14 +159,14 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
 
   const cityDescription = variant === 'computerhulp'
     ? (content
-        ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computer, laptop, printer, WiFi problemen opgelost bij u thuis.`
-        : `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`)
+        ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home — opgelost bij u thuis.`
+        : `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`)
     : (content
         ? `IT-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige IT-studenten bij u thuis.`
         : `Computerhulp aan huis door IT-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`)
 
   const serviceDescription = variant === 'computerhulp'
-    ? `Professionele computerhulp aan huis in ${city.name}. Computer, laptop, printer, WiFi problemen opgelost. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
+    ? `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
     : `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
 
   const localBusiness: Record<string, unknown> = {
@@ -304,7 +304,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: `Welke problemen lost computerhulp aan huis in ${city.name} op?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Wij lossen alle computer-, laptop-, printer-, WiFi-, e-mail- en tabletproblemen op bij u thuis in ${city.name}. Van trage computers tot virusverwijdering en van printerinstallatie tot WiFi-optimalisatie.`
+        text: `Wij lossen problemen op met computer, laptop, printer, wifi, smartphone, tablet, smart-tv, camera, e-mail en smart home bij u thuis in ${city.name}. Van trage computers en virusverwijdering tot printerinstallatie, wifi-optimalisatie en het instellen van een nieuwe smartphone of camera.`
       }
     },
     {
@@ -411,7 +411,7 @@ function getComputerhulpFaqDisplayData(city: City) {
     },
     {
       question: `Waar kunnen jullie mee helpen?`,
-      answer: `Eigenlijk met alles rondom uw computer, laptop, printer, WiFi, e-mail of tablet. Denk aan een trage computer, een printer die niet wil, WiFi-problemen of hulp bij het instellen van uw e-mail.`
+      answer: `Met bijna alles rondom uw computer, laptop, printer, wifi, smartphone, tablet, smart-tv, camera, e-mail of smart home. Denk aan een trage computer, een printer die niet wil, wifi-problemen, het instellen van een nieuwe smartphone of camera, of hulp bij uw e-mail.`
     },
     {
       question: 'Zijn er voorrijkosten?',
@@ -483,33 +483,33 @@ function ComputerhulpContentSection({ city }: { city: City }) {
               {content ? (
                 <>
                   <p>
-                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — {content.description} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer of WiFi. Gewoon bij u aan de keukentafel.
+                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — {content.description} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer, wifi, smartphone, tablet of camera. Gewoon bij u aan de keukentafel.
                   </p>
                   <p>
                     {neighborhoodText} — onze IT-student komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
                   </p>
                   {content.highlights.length > 0 && (
                     <p>
-                      Wij kennen {city.name} en de regio {content.region} goed. Of het nu gaat om een trage computer, een printer die niet wil of WiFi die steeds wegvalt — wij zoeken het rustig uit en zorgen dat het weer werkt.
+                      Wij kennen {city.name} en de regio {content.region} goed. Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone die ingesteld moet worden — wij zoeken het rustig uit en zorgen dat het weer werkt.
                     </p>
                   )}
                   <p>
-                    Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die niet meer verbinden na een Windows-update, WiFi die op bepaalde plekken in huis wegvalt en e-mailprogramma&apos;s die niet goed zijn ingesteld. Dit soort problemen lossen onze IT-studenten dagelijks op.
+                    Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die niet verbinden na een Windows-update, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-studenten dagelijks op.
                   </p>
                 </>
               ) : (
                 <>
                   <p>
-                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — handig als uw computer, laptop, printer of WiFi niet meer doet wat u wilt. U hoeft nergens naartoe, wij komen gewoon bij u thuis.
+                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — handig als uw computer, laptop, printer, wifi, smartphone, tablet of camera niet meer doet wat u wilt. U hoeft nergens naartoe, wij komen gewoon bij u thuis.
                   </p>
                   <p>
                     Of u nu in het centrum van {city.name} woont of wat verder weg — meestal zijn we binnen 24 uur bij u. Ook in de avonduren en in het weekend.
                   </p>
                   <p>
-                    Of het nu gaat om een trage computer, een printer die niet wil of WiFi die wegvalt — wij zoeken het rustig uit en zorgen dat alles weer werkt.
+                    Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone of camera die ingesteld moet worden — wij zoeken het rustig uit en zorgen dat alles weer werkt.
                   </p>
                   <p>
-                    Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die niet meer verbinden na een Windows-update, WiFi die op bepaalde plekken in huis wegvalt en e-mailprogramma&apos;s die niet goed zijn ingesteld. Dit soort problemen lossen onze IT-studenten dagelijks op.
+                    Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die niet verbinden na een Windows-update, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-studenten dagelijks op.
                   </p>
                 </>
               )}
@@ -755,7 +755,11 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <p className="hero-eyebrow">{config.serviceName} · {city.name}</p>
+            {variant === 'computerhulp' ? (
+              <p className="hero-eyebrow">★ 9,2/10 · {BUSINESS.REVIEW_COUNT} klanten in {BUSINESS.REGION}</p>
+            ) : (
+              <p className="hero-eyebrow">{config.serviceName} · {city.name}</p>
+            )}
             <h1 className="hero-title">
               {config.heroTitle(city.name)}
             </h1>
@@ -765,67 +769,166 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              {variant === 'computerhulp' ? (
+                <a
+                  href={BUSINESS.PHONE_HREF}
+                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+                  aria-label={`Bel ${BUSINESS.PHONE}`}
+                >
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
+                  {BUSINESS.PHONE}
+                </a>
+              ) : null}
               <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                Bel {BUSINESS.PHONE}
-              </a>
+              {variant !== 'computerhulp' ? (
+                <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                  {BUSINESS.PHONE}
+                </a>
+              ) : null}
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
-              <span className="hero-pill">
-                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Betaalbare tarieven
-              </span>
-              <span className="hero-pill">
-                <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide studenten
-              </span>
-              <span className="hero-pill">
-                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                7 dagen per week
-              </span>
+              {variant === 'computerhulp' ? (
+                <>
+                  <span className="hero-pill">
+                    <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                    {PRICING.PER_QUARTER} per kwartier
+                  </span>
+                  <span className="hero-pill">
+                    <Icon name="check-circle" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                    Binnen 24 uur bij u thuis
+                  </span>
+                  <span className="hero-pill">
+                    <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                    7 dagen · {HOURS.OPEN}–{HOURS.CLOSE}
+                  </span>
+                </>
+              ) : (
+                <>
+                  <span className="hero-pill">
+                    <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                    Betaalbare tarieven
+                  </span>
+                  <span className="hero-pill">
+                    <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                    HBO-opgeleide studenten
+                  </span>
+                  <span className="hero-pill">
+                    <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                    7 dagen per week
+                  </span>
+                </>
+              )}
             </div>
           </div>
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
-
-      <ServicesSection
-        title="Waar wij mee helpen"
-        showFeatures={false}
-        limitServices={6}
-        showAllButton={true}
+      <SectionDivider
+        variant="soft-curve"
+        topColor="#1c1917"
+        bottomColor={variant === 'computerhulp' ? '#ffffff' : '#fafafa'}
       />
 
-      <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} />
-
-      <PricingSection />
-
-      {/* Testimonials — na prijs: social proof valideert beslissing */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Dagelijks helpen we mensen in heel {BUSINESS.REGION}
+      {/* Apparaat-scope — alleen computerhulp variant: slaat de "doen ze ook X?"-vraag plat */}
+      {variant === 'computerhulp' && (
+        <section className="py-10 bg-white border-b border-gray-100" aria-labelledby="scope-heading">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6">
+            <p id="scope-heading" className="text-center text-sm text-gray-500 uppercase tracking-wider font-semibold mb-5">
+              Wij helpen u bij
             </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
-          </header>
-          <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
-        </div>
-      </section>
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
+              {['Computer', 'Laptop', 'Printer', 'WiFi & Internet', 'Smartphone', 'Tablet', 'Smart-TV', 'Camera’s', 'E-mail', 'Smart Home'].map(item => (
+                <span key={item} className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium">
+                  {item}
+                </span>
+              ))}
+              <Link
+                href="/diensten"
+                className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold hover:bg-blue-100 transition-colors"
+              >
+                Alle apparaten
+                <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+        </section>
+      )}
 
-      <HowItWorksSection background="white" />
+      {variant === 'computerhulp' ? (
+        <>
+          {/* Computerhulp-volgorde: vertrouwen → bewijs → prijs → details */}
+          <HowItWorksSection background="white" />
+
+          {/* Reviews vóór prijs — sociaal bewijs valideert beslissing */}
+          <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header className="text-center mb-12">
+                <p className="section-eyebrow">Klanten aan het woord</p>
+                <h2 id="testimonials-heading" className="section-title">
+                  Wat onze klanten zeggen
+                </h2>
+                <p className="section-subtitle">
+                  Dagelijks helpen we mensen in heel {BUSINESS.REGION}
+                </p>
+                <p className="text-sm text-gray-500 mt-2 lg:hidden">
+                  ← Swipe voor meer reviews →
+                </p>
+              </header>
+              <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
+            </div>
+          </section>
+
+          <PricingSection />
+
+          <ServicesSection
+            title="Waar wij mee helpen"
+            showFeatures={false}
+            limitServices={6}
+            showAllButton={true}
+          />
+
+          <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} />
+        </>
+      ) : (
+        <>
+          {/* Student-volgorde: ongewijzigd */}
+          <ServicesSection
+            title="Waar wij mee helpen"
+            showFeatures={false}
+            limitServices={6}
+            showAllButton={true}
+          />
+
+          <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} />
+
+          <PricingSection />
+
+          <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+              <header className="text-center mb-12">
+                <p className="section-eyebrow">Klanten aan het woord</p>
+                <h2 id="testimonials-heading" className="section-title">
+                  Wat onze klanten zeggen
+                </h2>
+                <p className="section-subtitle">
+                  Dagelijks helpen we mensen in heel {BUSINESS.REGION}
+                </p>
+                <p className="text-sm text-gray-500 mt-2 lg:hidden">
+                  ← Swipe voor meer reviews →
+                </p>
+              </header>
+              <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
+            </div>
+          </section>
+
+          <HowItWorksSection background="white" />
+        </>
+      )}
 
       {/* FAQ */}
       <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="faq-heading">
@@ -901,7 +1004,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             </Link>
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-              Bel {BUSINESS.PHONE}
+              {BUSINESS.PHONE}
             </a>
           </div>
 

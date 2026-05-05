@@ -83,7 +83,7 @@ export default function AfspraakBevestigingPage() {
                 </p>
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
                   <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                  Bel {BUSINESS.PHONE}
+                  {BUSINESS.PHONE}
                 </a>
               </div>
 

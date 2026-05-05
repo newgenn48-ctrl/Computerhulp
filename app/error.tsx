@@ -44,7 +44,7 @@ export default function Error({
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
             <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              Bel {BUSINESS.PHONE}
+              {BUSINESS.PHONE}
             </a>
             <button onClick={reset} className="btn-secondary">
               <Icon name="refresh" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />

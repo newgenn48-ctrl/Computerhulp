@@ -98,7 +98,7 @@ export default function OfferteBevestigingPage() {
                 </p>
                 <a href={BUSINESS.PHONE_HREF} className="btn-primary">
                   <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                  Bel {BUSINESS.PHONE}
+                  {BUSINESS.PHONE}
                 </a>
               </div>
 

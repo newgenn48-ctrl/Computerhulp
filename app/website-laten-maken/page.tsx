@@ -74,7 +74,7 @@ export default function WebsiteLatenMakenPage() {
                     aria-label={`Bel ${BUSINESS.PHONE}`}
                   >
                     <Icon name="phone" className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} aria-hidden="true" />
-                    Bel {BUSINESS.PHONE}
+                    {BUSINESS.PHONE}
                   </a>
 
                   <Link
@@ -552,7 +552,7 @@ export default function WebsiteLatenMakenPage() {
                     className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
                   >
                     <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                    Bel {BUSINESS.PHONE}
+                    {BUSINESS.PHONE}
                   </a>
                   <Link
                     href="/offerte-aanvragen"
@@ -680,7 +680,7 @@ export default function WebsiteLatenMakenPage() {
                 className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-purple-600 rounded-xl font-black text-xl shadow-2xl hover:shadow-white/50 hover:-translate-y-0.5 transition-all"
               >
                 <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-                Bel {BUSINESS.PHONE}
+                {BUSINESS.PHONE}
               </a>
 
               <Link

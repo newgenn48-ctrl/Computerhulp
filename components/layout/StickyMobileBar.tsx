@@ -55,7 +55,7 @@ export default function StickyMobileBar() {
           aria-label={`Bel ${BUSINESS.PHONE}`}
         >
           <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-          Bel {BUSINESS.PHONE}
+          {BUSINESS.PHONE}
         </a>
         <a
           href="/afspraak-maken"

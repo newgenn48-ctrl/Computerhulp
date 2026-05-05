@@ -13,10 +13,10 @@ import SectionDivider from '@/components/ui/SectionDivider'
 
 export const metadata: Metadata = {
   title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u bij u Thuis`,
-  description: `Professionele computerhulp aan huis in ${BUSINESS.REGION}. Binnen 24 uur bij u thuis voor computer, laptop, printer en WiFi. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Professionele computerhulp aan huis in ${BUSINESS.REGION}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u bij u Thuis`,
-    description: `Binnen 24 uur bij u thuis in ${BUSINESS.REGION}. Computer, laptop, printer, WiFi problemen opgelost. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+    description: `Binnen 24 uur bij u thuis in ${BUSINESS.REGION}. Computer, laptop, printer, wifi, smartphone, tablet en camera problemen opgelost. Bel ${BUSINESS.PHONE}.`,
     type: 'website',
     url: `${BUSINESS.URL}/computerhulp-aan-huis`,
   },
@@ -71,7 +71,7 @@ const structuredData = {
       '@id': `${BUSINESS.URL}/computerhulp-aan-huis#service`,
       serviceType: 'Computerhulp aan Huis',
       name: `Computerhulp aan Huis ${BUSINESS.REGION}`,
-      description: `Professionele computerhulp aan huis in heel ${BUSINESS.REGION}. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, WiFi en e-mail problemen.`,
+      description: `Professionele computerhulp aan huis in heel ${BUSINESS.REGION}. We komen binnen 24 uur bij u thuis voor computer, laptop, printer, wifi, smartphone, tablet, camera, e-mail en smart home problemen.`,
       url: `${BUSINESS.URL}/computerhulp-aan-huis`,
       provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
       offers: {
@@ -108,7 +108,7 @@ const structuredData = {
 const faqItems = [
   {
     q: 'Wat is computerhulp aan huis precies?',
-    a: 'Wij komen gewoon bij u thuis om uw computer, laptop, printer of WiFi te repareren of in te stellen. U hoeft nergens naartoe — we nemen alles mee wat nodig is.',
+    a: 'Wij komen gewoon bij u thuis om uw computer, laptop, printer, wifi, smartphone, tablet, smart-tv, camera of smart home te repareren of in te stellen. U hoeft nergens naartoe — we nemen alles mee wat nodig is.',
   },
   {
     q: 'Wat nemen jullie mee bij een huisbezoek?',
@@ -184,58 +184,77 @@ export default function ComputerhulpAanHuisPage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <p className="hero-eyebrow">Binnen 24 uur · {BUSINESS.REGION}</p>
+            <p className="hero-eyebrow">★ 9,2/10 · {BUSINESS.REVIEW_COUNT} klanten in {BUSINESS.REGION}</p>
             <h1 className="hero-title">
               Computerhulp <span className="text-blue-300">aan huis</span>
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw digitale apparaten? Een ICT-specialist komt bij u thuis — <strong className="text-white">meestal binnen 24 uur</strong>, zonder gedoe.
+              Hulp bij uw computer, laptop, printer, wifi, smartphone of camera. Onze IT-studenten komen vandaag of morgen bij u thuis en leggen alles rustig uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+                aria-label={`Bel ${BUSINESS.PHONE}`}
+              >
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                Bel {BUSINESS.PHONE}
-              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
               <span className="hero-pill">
                 <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Betaalbare tarieven
+                {PRICING.PER_QUARTER} per kwartier
               </span>
               <span className="hero-pill">
-                <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide studenten
+                <Icon name="check-circle" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Binnen 24 uur bij u thuis
               </span>
               <span className="hero-pill">
-                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                7 dagen per week
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                7 dagen · {HOURS.OPEN}–{HOURS.CLOSE}
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#ffffff" />
 
-      <ServicesSection
-        title="Waar wij mee helpen"
-        showFeatures={false}
-        limitServices={6}
-        showAllButton={true}
-      />
+      {/* Apparaat-scope — slaat de "doen ze ook X?" vraag plat */}
+      <section className="py-10 bg-white border-b border-gray-100" aria-labelledby="scope-heading">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          <p id="scope-heading" className="text-center text-sm text-gray-500 uppercase tracking-wider font-semibold mb-5">
+            Wij helpen u bij
+          </p>
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
+            {['Computer', 'Laptop', 'Printer', 'WiFi & Internet', 'Smartphone', 'Tablet', 'Smart-TV', 'Camera’s', 'E-mail', 'Smart Home'].map(item => (
+              <span key={item} className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium">
+                {item}
+              </span>
+            ))}
+            <Link
+              href="/diensten"
+              className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold hover:bg-blue-100 transition-colors"
+            >
+              Alle apparaten
+              <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />
+            </Link>
+          </div>
+        </div>
+      </section>
 
-      <WhyChooseUsSection />
+      {/* 1. Hoe het werkt — eerst geruststelling, neemt drempel weg */}
+      <HowItWorksSection background="white" />
 
-      <PricingSection />
-
-      {/* Testimonials — na prijs: social proof valideert beslissing */}
+      {/* 2. Sociaal bewijs — direct na "hoe", voor prijs */}
       <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
@@ -248,7 +267,19 @@ export default function ComputerhulpAanHuisPage() {
         </div>
       </section>
 
-      <HowItWorksSection background="white" />
+      {/* 3. Prijs — concreet, na vertrouwen */}
+      <PricingSection />
+
+      {/* 4. Diensten — details voor wie verder wil lezen */}
+      <ServicesSection
+        title="Waar wij mee helpen"
+        showFeatures={false}
+        limitServices={6}
+        showAllButton={true}
+      />
+
+      {/* 5. Why us */}
+      <WhyChooseUsSection />
 
       {/* FAQ */}
       <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="faq-heading">
@@ -315,7 +346,7 @@ export default function ComputerhulpAanHuisPage() {
             </Link>
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-              Bel {BUSINESS.PHONE}
+              {BUSINESS.PHONE}
             </a>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-100">

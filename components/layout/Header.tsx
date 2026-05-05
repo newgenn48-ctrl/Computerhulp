@@ -121,7 +121,7 @@ export default function Header() {
               <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Contact</Link>
               <a href={BUSINESS.PHONE_HREF} onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium text-blue-600 flex items-center gap-2">
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                Bel {BUSINESS.PHONE}
+                {BUSINESS.PHONE}
               </a>
               <Link href="/afspraak-maken" onClick={() => setMobileMenuOpen(false)} className="btn-header-cta-mobile mt-2">
                 Hulp Vragen

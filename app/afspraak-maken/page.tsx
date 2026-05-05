@@ -38,7 +38,7 @@ export default function AfspraakMakenPage() {
           <p className="text-sm text-gray-600 mb-2">Liever direct bellen?</p>
           <a href={BUSINESS.PHONE_HREF} className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-lg" aria-label={`Bel ${BUSINESS.PHONE}`}>
             <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-            Bel {BUSINESS.PHONE}
+            {BUSINESS.PHONE}
           </a>
           <p className="text-xs text-gray-600 mt-2">{HOURS.DAYS} · {HOURS.OPEN}–{HOURS.CLOSE}</p>
         </div>

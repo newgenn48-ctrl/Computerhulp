@@ -244,7 +244,7 @@ export default function HomePage() {
                 aria-label={`Bel ons voor computerhulp: ${BUSINESS.PHONE}`}
               >
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                Bel {BUSINESS.PHONE}
+                {BUSINESS.PHONE}
               </a>
             </div>
 
@@ -428,7 +428,7 @@ export default function HomePage() {
               className="btn-cta-dark"
             >
               <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
-              Bel {BUSINESS.PHONE}
+              {BUSINESS.PHONE}
             </a>
           </div>
         </div>
