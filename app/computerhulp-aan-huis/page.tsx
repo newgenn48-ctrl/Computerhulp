@@ -184,7 +184,7 @@ export default function ComputerhulpAanHuisPage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <p className="hero-eyebrow">★ 9,2/10 · {BUSINESS.REVIEW_COUNT} klanten in {BUSINESS.REGION}</p>
+            <p className="hero-eyebrow">{BUSINESS.REVIEW_COUNT} tevreden klanten</p>
             <h1 className="hero-title">
               Computerhulp <span className="text-blue-300">aan huis</span>
             </h1>
@@ -212,83 +212,47 @@ export default function ComputerhulpAanHuisPage() {
               </Link>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Vaak binnen 24 uur geholpen
-              </span>
-              <span className="hero-pill">
-                <Icon name="users" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Geduldig en Vakkundig
-              </span>
-              <span className="hero-pill">
-                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Betaalbare Tarieven
-              </span>
-            </div>
           </div>
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#ffffff" />
+      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
-      {/* Apparaat-scope — slaat de "doen ze ook X?" vraag plat */}
-      <section className="py-10 bg-white border-b border-gray-100" aria-labelledby="scope-heading">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <p id="scope-heading" className="text-center text-sm text-gray-500 uppercase tracking-wider font-semibold mb-5">
-            Wij helpen u bij
-          </p>
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
-            {['Computer', 'Laptop', 'Printer', 'WiFi & Internet', 'Smartphone', 'Tablet', 'Smart-TV', 'Camera’s', 'E-mail', 'Smart Home'].map(item => (
-              <span key={item} className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium">
-                {item}
-              </span>
-            ))}
-            <Link
-              href="/diensten"
-              className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold hover:bg-blue-100 transition-colors"
-            >
-              Alle apparaten
-              <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      {/* 1. Diensten — direct onder hero zodat bezoekers zichzelf kwalificeren */}
+      <ServicesSection
+        eyebrow="Onze hulp"
+        title="Waar wij u mee helpen"
+        subtitle="Van een simpele vraag tot een lastig probleem — wij helpen u graag bij u thuis."
+        showDescription={true}
+        limitServices={6}
+        showAllButton={true}
+      />
 
-      {/* 1. Hoe het werkt — eerst geruststelling, neemt drempel weg */}
-      <HowItWorksSection background="white" />
+      {/* 2. Waarom wij — vertrouwen opbouwen vóór prijs */}
+      <WhyChooseUsSection showCta={false} />
 
-      {/* 2. Sociaal bewijs — direct na "hoe", voor prijs */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+      {/* 3. Prijs — concreet, na vertrouwen */}
+      <PricingSection />
+
+      {/* 4. Reviews — sociaal bewijs valideert de prijs */}
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
+          <header className="text-center mb-10">
             <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
-            <p className="section-subtitle">Dagelijks helpen we mensen in heel {BUSINESS.REGION}</p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
           </header>
           <TestimonialsCarousel testimonials={testimonials} />
         </div>
       </section>
 
-      {/* 3. Prijs — concreet, na vertrouwen */}
-      <PricingSection />
-
-      {/* 4. Diensten — details voor wie verder wil lezen */}
-      <ServicesSection
-        title="Waar wij mee helpen"
-        showFeatures={false}
-        limitServices={6}
-        showAllButton={true}
-      />
-
-      {/* 5. Why us */}
-      <WhyChooseUsSection />
+      {/* 5. Hoe het werkt — laatste geruststelling vlak voor FAQ */}
+      <HowItWorksSection background="white" />
 
       {/* FAQ */}
-      <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="faq-heading">
+      <section className="py-12 lg:py-16 bg-gray-50" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-12">
+          <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
             <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
           </header>
@@ -307,9 +271,10 @@ export default function ComputerhulpAanHuisPage() {
       </section>
 
       {/* Werkgebied */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-12">
+          <header className="text-center mb-10">
+            <p className="section-eyebrow">Werkgebied</p>
             <h2 className="section-title">Waar we komen</h2>
             <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — voorrijden {PRICING.TRAVEL}</p>
           </header>

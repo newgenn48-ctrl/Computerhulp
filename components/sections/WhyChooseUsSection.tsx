@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS, HOURS } from '@/lib/constants'
+import { BUSINESS } from '@/lib/constants'
 
 interface Benefit {
   icon: string
@@ -32,9 +32,9 @@ const defaultBenefits: Benefit[] = [
     desc: 'U hoeft nergens naartoe. Wij komen bij u aan de keukentafel en lossen het ter plekke op.',
   },
   {
-    icon: 'shield',
-    title: 'Betrouwbaar en verzekerd',
-    desc: `KvK ${BUSINESS.KVK}, verzekerd en ${HOURS.DAYS} bereikbaar. U bent in goede handen.`,
+    icon: 'money',
+    title: 'Betalen pas na afloop',
+    desc: 'Eerst u tevreden, dan betalen — via Tikkie. Geen abonnement, geen verborgen kosten.',
   },
 ]
 
@@ -45,9 +45,9 @@ export default function WhyChooseUsSection({
   ctaLabel = 'Bel ons nu',
 }: WhyChooseUsSectionProps) {
   return (
-    <section className="py-20 lg:py-28 bg-white">
+    <section className="py-12 lg:py-16 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-14">
+        <header className="text-center mb-10">
           <p className="section-eyebrow">Waarom wij</p>
           <h2 className="section-title">{title}</h2>
         </header>
@@ -70,7 +70,7 @@ export default function WhyChooseUsSection({
         </div>
 
         {showCta && (
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-14">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
             <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               {ctaLabel}: {BUSINESS.PHONE}

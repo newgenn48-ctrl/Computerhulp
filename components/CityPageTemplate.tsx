@@ -470,7 +470,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
   const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
 
   return (
-    <section className="py-24 bg-white">
+    <section className="py-14 lg:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column - City-specific Content */}
@@ -756,7 +756,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         <div className="hero-content">
           <div className="max-w-2xl">
             {variant === 'computerhulp' ? (
-              <p className="hero-eyebrow">★ 9,2/10 · {BUSINESS.REVIEW_COUNT} klanten in {BUSINESS.REGION}</p>
+              <p className="hero-eyebrow">{BUSINESS.REVIEW_COUNT} tevreden klanten</p>
             ) : (
               <p className="hero-eyebrow">{config.serviceName} · {city.name}</p>
             )}
@@ -797,39 +797,22 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
               ) : null}
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
-              {variant === 'computerhulp' ? (
-                <>
-                  <span className="hero-pill">
-                    <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                    Vaak binnen 24 uur geholpen
-                  </span>
-                  <span className="hero-pill">
-                    <Icon name="users" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                    Geduldig en Vakkundig
-                  </span>
-                  <span className="hero-pill">
-                    <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                    Betaalbare Tarieven
-                  </span>
-                </>
-              ) : (
-                <>
-                  <span className="hero-pill">
-                    <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                    Betaalbare tarieven
-                  </span>
-                  <span className="hero-pill">
-                    <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                    HBO-opgeleide studenten
-                  </span>
-                  <span className="hero-pill">
-                    <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                    7 dagen per week
-                  </span>
-                </>
-              )}
-            </div>
+            {variant !== 'computerhulp' && (
+              <div className="flex flex-wrap items-center gap-3">
+                <span className="hero-pill">
+                  <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                  Betaalbare tarieven
+                </span>
+                <span className="hero-pill">
+                  <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                  HBO-opgeleide studenten
+                </span>
+                <span className="hero-pill">
+                  <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                  7 dagen per week
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </section>
@@ -837,50 +820,32 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       <SectionDivider
         variant="soft-curve"
         topColor="#1c1917"
-        bottomColor={variant === 'computerhulp' ? '#ffffff' : '#fafafa'}
+        bottomColor="#fafafa"
       />
-
-      {/* Apparaat-scope — alleen computerhulp variant: slaat de "doen ze ook X?"-vraag plat */}
-      {variant === 'computerhulp' && (
-        <section className="py-10 bg-white border-b border-gray-100" aria-labelledby="scope-heading">
-          <div className="max-w-5xl mx-auto px-4 sm:px-6">
-            <p id="scope-heading" className="text-center text-sm text-gray-500 uppercase tracking-wider font-semibold mb-5">
-              Wij helpen u bij
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-2.5">
-              {['Computer', 'Laptop', 'Printer', 'WiFi & Internet', 'Smartphone', 'Tablet', 'Smart-TV', 'Camera’s', 'E-mail', 'Smart Home'].map(item => (
-                <span key={item} className="inline-flex items-center px-4 py-2 rounded-full bg-gray-100 text-gray-700 text-sm font-medium">
-                  {item}
-                </span>
-              ))}
-              <Link
-                href="/diensten"
-                className="inline-flex items-center gap-1 px-4 py-2 rounded-full bg-blue-50 text-blue-700 text-sm font-semibold hover:bg-blue-100 transition-colors"
-              >
-                Alle apparaten
-                <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
 
       {variant === 'computerhulp' ? (
         <>
-          {/* Computerhulp-volgorde: vertrouwen → bewijs → prijs → details */}
-          <HowItWorksSection background="white" />
+          {/* Computerhulp-volgorde: diensten → waarom → prijs → reviews → hoe */}
+          <ServicesSection
+            eyebrow="Onze hulp"
+            title={`Waar wij u mee helpen in ${city.name}`}
+            subtitle="Van een simpele vraag tot een lastig probleem — wij helpen u graag bij u thuis."
+            showDescription={true}
+            limitServices={6}
+            showAllButton={true}
+          />
 
-          {/* Reviews vóór prijs — sociaal bewijs valideert beslissing */}
-          <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+          <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} showCta={false} />
+
+          <PricingSection />
+
+          <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <header className="text-center mb-12">
+              <header className="text-center mb-10">
                 <p className="section-eyebrow">Klanten aan het woord</p>
                 <h2 id="testimonials-heading" className="section-title">
                   Wat onze klanten zeggen
                 </h2>
-                <p className="section-subtitle">
-                  Dagelijks helpen we mensen in heel {BUSINESS.REGION}
-                </p>
                 <p className="text-sm text-gray-500 mt-2 lg:hidden">
                   ← Swipe voor meer reviews →
                 </p>
@@ -889,16 +854,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             </div>
           </section>
 
-          <PricingSection />
-
-          <ServicesSection
-            title="Waar wij mee helpen"
-            showFeatures={false}
-            limitServices={6}
-            showAllButton={true}
-          />
-
-          <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} />
+          <HowItWorksSection background="white" />
         </>
       ) : (
         <>
@@ -914,9 +870,9 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
           <PricingSection />
 
-          <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+          <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <header className="text-center mb-12">
+              <header className="text-center mb-10">
                 <p className="section-eyebrow">Klanten aan het woord</p>
                 <h2 id="testimonials-heading" className="section-title">
                   Wat onze klanten zeggen
@@ -937,9 +893,9 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       )}
 
       {/* FAQ */}
-      <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="faq-heading">
+      <section className="py-12 lg:py-16 bg-gray-50" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-12">
+          <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
             <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
           </header>
@@ -969,7 +925,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         if (!content || content.neighborhoods.length < 3) return null
 
         return (
-          <section className="py-16 sm:py-20 bg-gray-50">
+          <section className="py-12 lg:py-16 bg-gray-50">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
               <h2 className="section-title">
                 {config.neighborhoodsSectionTitle(city, content.region)}

@@ -152,6 +152,66 @@ export function SvgSprite() {
         <symbol id="icon-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
           <path d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
         </symbol>
+
+        {/* Laptop / computer - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-laptop" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="4" y="5" width="16" height="11" rx="1.5" />
+          <path d="M2 19.5h20l-1.2 1.2a1 1 0 01-.7.3H3.9a1 1 0 01-.7-.3L2 19.5z" />
+        </symbol>
+
+        {/* Printer - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-printer" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M7 8V4a1 1 0 011-1h8a1 1 0 011 1v4" />
+          <rect x="3" y="8" width="18" height="9" rx="1.5" />
+          <rect x="7" y="14" width="10" height="6" rx="1" />
+          <circle cx="17.5" cy="11.5" r="0.75" fill="currentColor" />
+        </symbol>
+
+        {/* WiFi - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M2 9.5a16 16 0 0120 0" />
+          <path d="M5 13a11 11 0 0114 0" />
+          <path d="M8.5 16.5a6 6 0 017 0" />
+          <circle cx="12" cy="20" r="0.75" fill="currentColor" />
+        </symbol>
+
+        {/* Mobile / tablet - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-mobile" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="7" y="3" width="10" height="18" rx="2" />
+          <path d="M11 17.5h2" />
+        </symbol>
+
+        {/* TV - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-tv" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="2.5" y="5" width="19" height="13" rx="1.5" />
+          <path d="M8 21h8M12 18v3" />
+        </symbol>
+
+        {/* Wrench / repair - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M14.7 6.3a4.5 4.5 0 015.7 5.7l-12 12a2.1 2.1 0 11-3-3l12-12a4.5 4.5 0 015.7 5.7" />
+          <path d="M14.7 6.3l-2.4 2.4 2.3 2.3 2.4-2.4" />
+        </symbol>
+
+        {/* Lightbulb / smart home - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-lightbulb" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M12 2a7 7 0 00-4 12.7c.6.5 1 1.2 1 2v1h6v-1c0-.8.4-1.5 1-2A7 7 0 0012 2z" />
+          <path d="M9.5 21h5M10 18h4" />
+        </symbol>
+
+        {/* Database / dataherstel - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <ellipse cx="12" cy="5.5" rx="8" ry="2.5" />
+          <path d="M4 5.5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6" />
+          <path d="M4 11.5v6c0 1.4 3.6 2.5 8 2.5s8-1.1 8-2.5v-6" />
+        </symbol>
+
+        {/* Academic cap / training - stroke, viewBox 0 0 24 24 */}
+        <symbol id="icon-academic-cap" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M22 10L12 5 2 10l10 5 10-5z" />
+          <path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5" />
+          <path d="M22 10v6" />
+        </symbol>
       </defs>
     </svg>
   )
