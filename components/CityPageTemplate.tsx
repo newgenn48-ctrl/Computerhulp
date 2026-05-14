@@ -97,7 +97,7 @@ const studentConfig: VariantConfig = {
     { icon: 'users', title: 'Geduldige IT-studenten', desc: 'Jonge specialisten die uitleggen stap voor stap. Geen vaktermen, wel helder.' },
     { icon: 'clock', title: 'Binnen 24 uur bij u thuis', desc: 'Geen wachtlijst. Meestal de volgende dag al bij u aan de keukentafel.' },
     { icon: 'home', title: 'Gewoon thuis blijven', desc: 'U hoeft nergens naartoe. Wij komen bij u en lossen het ter plekke op.' },
-    { icon: 'shield', title: 'Betrouwbaar en verzekerd', desc: `KvK ${BUSINESS.KVK}, volledig verzekerd. Betalen pas na afloop.` },
+    { icon: 'money', title: 'Betalen pas na afloop', desc: 'Eerst u tevreden, dan betalen — via Tikkie. Geen abonnement, geen verborgen kosten.' },
   ],
   neighborhoodsSectionTitle: (city) => `Student aan huis in alle wijken van ${city.name}`,
   neighborhoodsSectionDescription: (cityName) =>
@@ -574,7 +574,7 @@ function StudentContentSection({ city }: { city: City }) {
   const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
 
   return (
-    <section className="py-16 bg-white">
+    <section className="py-14 lg:py-16 bg-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <h2 className="section-title mb-6">
           Waarom mensen ons bellen in {city.name}
@@ -773,6 +773,11 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
                 Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat <strong className="text-white">u snapt hoe het werkt</strong>.
               </p>
             )}
+            {variant === 'student' && (
+              <p className="hero-description">
+                Trage laptop, WiFi-problemen of nieuwe telefoon? We lossen het op — én <strong className="text-white">u leert er zelf ook van</strong>.
+              </p>
+            )}
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               {variant === 'computerhulp' ? (
@@ -797,22 +802,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
               ) : null}
             </div>
 
-            {variant !== 'computerhulp' && (
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="hero-pill">
-                  <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                  Betaalbare tarieven
-                </span>
-                <span className="hero-pill">
-                  <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                  HBO-opgeleide studenten
-                </span>
-                <span className="hero-pill">
-                  <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                  7 dagen per week
-                </span>
-              </div>
-            )}
           </div>
         </div>
       </section>
@@ -858,15 +847,17 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         </>
       ) : (
         <>
-          {/* Student-volgorde: ongewijzigd */}
+          {/* Student-volgorde: diensten → waarom → prijs → reviews → hoe */}
           <ServicesSection
-            title="Waar wij mee helpen"
-            showFeatures={false}
+            eyebrow="Onze hulp"
+            title={`Waar wij u mee helpen in ${city.name}`}
+            subtitle="Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag bij u thuis."
+            showDescription={true}
             limitServices={6}
             showAllButton={true}
           />
 
-          <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} />
+          <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} showCta={false} />
 
           <PricingSection />
 
@@ -877,9 +868,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
                 <h2 id="testimonials-heading" className="section-title">
                   Wat onze klanten zeggen
                 </h2>
-                <p className="section-subtitle">
-                  Dagelijks helpen we mensen in heel {BUSINESS.REGION}
-                </p>
                 <p className="text-sm text-gray-500 mt-2 lg:hidden">
                   ← Swipe voor meer reviews →
                 </p>

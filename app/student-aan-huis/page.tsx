@@ -144,9 +144,9 @@ const studentBenefits = [
     desc: 'U hoeft nergens naartoe. Wij komen bij u en lossen het ter plekke op.',
   },
   {
-    icon: 'shield',
-    title: 'Betrouwbaar en verzekerd',
-    desc: `KvK ${BUSINESS.KVK}, volledig verzekerd. Betalen pas na afloop.`,
+    icon: 'money',
+    title: 'Betalen pas na afloop',
+    desc: 'Eerst u tevreden, dan betalen — via Tikkie. Geen abonnement, geen verborgen kosten.',
   },
 ]
 
@@ -189,7 +189,7 @@ export default function StudentAanHuisPage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <p className="hero-eyebrow">IT-Student aan huis · {BUSINESS.REGION}</p>
+            <p className="hero-eyebrow">{BUSINESS.REVIEW_COUNT} tevreden klanten</p>
             <h1 className="hero-title">
               Student <span className="text-blue-300">aan huis</span>
             </h1>
@@ -198,30 +198,23 @@ export default function StudentAanHuisPage() {
               Heeft u hulp nodig met uw digitale apparaten? Een jonge IT-student komt bij u thuis en legt alles rustig uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
             </p>
 
+            <p className="hero-description">
+              Trage laptop, WiFi-problemen of nieuwe telefoon? We lossen het op — én <strong className="text-white">u leert er zelf ook van</strong>.
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+                aria-label={`Bel ${BUSINESS.PHONE}`}
+              >
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="hero-pill">
-                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Betaalbare tarieven
-              </span>
-              <span className="hero-pill">
-                <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide studenten
-              </span>
-              <span className="hero-pill">
-                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                7 dagen per week
-              </span>
             </div>
           </div>
         </div>
@@ -230,23 +223,24 @@ export default function StudentAanHuisPage() {
       <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       <ServicesSection
+        eyebrow="Onze hulp"
         title="Waar wij u mee helpen"
-        showFeatures={false}
+        subtitle="Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag bij u thuis."
+        showDescription={true}
         limitServices={6}
         showAllButton={true}
       />
 
-      <WhyChooseUsSection title="Waarom een student aan huis?" benefits={studentBenefits} />
+      <WhyChooseUsSection title="Waarom een student aan huis?" benefits={studentBenefits} showCta={false} />
 
       <PricingSection />
 
-      {/* Testimonials — na prijs: social proof valideert beslissing */}
-      <section className="py-16 sm:py-20 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
+      {/* Reviews — sociaal bewijs valideert de prijs */}
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
+          <header className="text-center mb-10">
             <p className="section-eyebrow">Klanten aan het woord</p>
             <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
-            <p className="section-subtitle">Dagelijks helpen we mensen in heel {BUSINESS.REGION}</p>
             <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
           </header>
           <TestimonialsCarousel testimonials={testimonials} />
@@ -256,9 +250,9 @@ export default function StudentAanHuisPage() {
       <HowItWorksSection background="white" />
 
       {/* FAQ */}
-      <section className="py-16 sm:py-20 bg-gray-50" aria-labelledby="faq-heading">
+      <section className="py-12 lg:py-16 bg-gray-50" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-12">
+          <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
             <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
           </header>
@@ -277,9 +271,10 @@ export default function StudentAanHuisPage() {
       </section>
 
       {/* Werkgebied */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-12">
+          <header className="text-center mb-10">
+            <p className="section-eyebrow">Werkgebied</p>
             <h2 className="section-title">Waar we komen</h2>
             <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — voorrijden {PRICING.TRAVEL}</p>
           </header>

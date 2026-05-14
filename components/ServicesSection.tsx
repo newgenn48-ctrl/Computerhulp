@@ -170,22 +170,22 @@ export default function ServicesSection({
         </div>
 
         {showDescription ? (
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 lg:gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-6xl mx-auto">
             {displayServices.map((service, idx) => (
               <Link
                 key={idx}
                 href={service.slug}
-                className="group flex items-start gap-5 bg-white rounded-2xl p-5 sm:p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                className="group flex md:flex-col items-start md:items-center text-left md:text-center gap-4 md:gap-3 bg-white rounded-2xl p-5 md:p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100"
               >
-                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/60 flex items-center justify-center flex-shrink-0 group-hover:from-blue-100 group-hover:to-blue-200/60 transition-colors">
+                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/60 flex items-center justify-center flex-shrink-0 group-hover:from-blue-100 group-hover:to-blue-200/60 transition-colors">
                   <Icon
                     name={service.icon ?? 'check'}
-                    className="w-7 h-7 sm:w-8 sm:h-8 text-blue-600"
+                    className="w-7 h-7 md:w-8 md:h-8 text-blue-600"
                     strokeWidth={1.75}
                     aria-hidden="true"
                   />
                 </div>
-                <div className="flex flex-col flex-1 min-w-0">
+                <div className="flex flex-col flex-1 min-w-0 md:flex-none md:w-full">
                   <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight mb-1.5">
                     {service.title}
                   </h3>
