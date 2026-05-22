@@ -206,7 +206,7 @@ export default function HomePage() {
       <section className="hero-wrapper" aria-label={`${BUSINESS.NAME} hero`}>
         <div className="absolute inset-0">
           <Image
-            src="/Student aan huis.webp"
+            src="/hero student.png"
             alt={`Computerhulp IT-student helpt klant thuis met laptop in ${BUSINESS.REGION}`}
             fill
             className="object-cover object-center"
@@ -220,46 +220,50 @@ export default function HomePage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <p className="hero-eyebrow">IT-Student aan huis · {BUSINESS.REGION}</p>
+            <p className="hero-eyebrow">{BUSINESS.REVIEW_COUNT} tevreden klanten</p>
             <h1 className="hero-title">
               Computerhulp <span className="text-blue-300">aan huis</span>
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw digitale apparaten? Onze IT-studenten lossen het <strong className="text-white">snel, slim en betrouwbaar</strong> voor u op.
+              Heeft u problemen met uw computer, tablet of telefoon? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.
+            </p>
+
+            <p className="hero-description">
+              Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat <strong className="text-white">u snapt hoe het werkt</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+                aria-label={`Bel ${BUSINESS.PHONE}`}
+              >
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link
                 href="/afspraak-maken"
                 className="btn-hero-primary"
                 aria-label="Vraag computerhulp aan huis aan"
               >
                 Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a
-                href={BUSINESS.PHONE_HREF}
-                className="btn-hero-secondary"
-                aria-label={`Bel ons voor computerhulp: ${BUSINESS.PHONE}`}
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
-                {BUSINESS.PHONE}
-              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
               <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vaak binnen 24 uur geholpen
+              </span>
+              <span className="hero-pill">
                 <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Betaalbare tarieven
+                Achteraf betalen via Tikkie
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide studenten
-              </span>
-              <span className="hero-pill">
-                <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                7 dagen per week
+                Gespecialiseerde IT-studenten
               </span>
             </div>
           </div>
@@ -416,20 +420,21 @@ export default function HomePage() {
             Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <a
+              href={BUSINESS.PHONE_HREF}
+              className="btn-cta-white"
+              aria-label={`Bel ${BUSINESS.PHONE}`}
+            >
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
+              {BUSINESS.PHONE}
+            </a>
             <Link
               href="/afspraak-maken"
-              className="btn-cta-white"
+              className="btn-cta-dark"
             >
               Afspraak Maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
-            <a
-              href={BUSINESS.PHONE_HREF}
-              className="btn-cta-dark"
-            >
-              <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
-              {BUSINESS.PHONE}
-            </a>
           </div>
         </div>
       </section>

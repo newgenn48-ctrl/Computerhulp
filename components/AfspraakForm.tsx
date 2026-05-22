@@ -7,18 +7,18 @@ import { BUSINESS } from '@/lib/constants'
 
 type Field = 'naam' | 'telefoon' | 'email' | 'probleem'
 
-const validationRules: Record<Field, { required: string; pattern?: [RegExp, string]; minLength?: [number, string] }> = {
+const validationRules: Record<Field, { required?: string; pattern?: [RegExp, string]; minLength?: [number, string] }> = {
   naam: { required: 'Naam is verplicht', minLength: [2, 'Naam moet minimaal 2 karakters bevatten'] },
   telefoon: { required: 'Telefoonnummer is verplicht', pattern: [/^[\d\s\-\+\(\)]{10,}$/, 'Voer een geldig telefoonnummer in'] },
-  email: { required: 'E-mailadres is verplicht', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
-  probleem: { required: 'Beschrijf kort uw probleem', minLength: [10, 'Beschrijf uw probleem iets uitgebreider'] },
+  email: { pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
+  probleem: { required: 'Geef een korte beschrijving', minLength: [10, 'Geef iets meer uitleg'] },
 }
 
 function validate(name: Field, value: string): string {
   const rule = validationRules[name]
   if (!rule) return ''
   const trimmed = value.trim()
-  if (!trimmed) return rule.required
+  if (!trimmed) return rule.required ?? ''
   if (rule.pattern && !rule.pattern[0].test(trimmed)) return rule.pattern[1]
   if (rule.minLength && trimmed.length < rule.minLength[0]) return rule.minLength[1]
   return ''
@@ -157,7 +157,9 @@ export default function AfspraakForm() {
         </div>
 
         <div>
-          <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">E-mail <span className="text-red-500" aria-hidden="true">*</span></label>
+          <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
+            E-mail <span className="text-gray-400 font-normal">(optioneel)</span>
+          </label>
           <input
             type="email"
             id="email"
@@ -165,8 +167,6 @@ export default function AfspraakForm() {
             value={formData.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            required
-            aria-required="true"
             autoComplete="email"
             inputMode="email"
             className={inputClass('email')}

@@ -170,8 +170,8 @@ export default function ComputerhulpAanHuisPage() {
       <section className="hero-wrapper">
         <div className="absolute inset-0">
           <Image
-            src="/Computerhulp aan huis.webp"
-            alt={`Computerhulp aan huis — monteur helpt klant in ${BUSINESS.REGION}`}
+            src="/hero student.png"
+            alt={`Computerhulp aan huis — IT-student helpt klant in ${BUSINESS.REGION}`}
             fill
             className="object-cover"
             priority

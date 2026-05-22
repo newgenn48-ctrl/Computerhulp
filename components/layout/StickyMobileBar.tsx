@@ -25,10 +25,7 @@ export default function StickyMobileBar() {
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          const scrolled = window.scrollY
-          const pageHeight = document.documentElement.scrollHeight - window.innerHeight
-          const pct = pageHeight > 0 ? scrolled / pageHeight : 0
-          setShow(pct > 0.1 && scrolled > 300)
+          setShow(window.scrollY > 100)
           ticking = false
         })
         ticking = true

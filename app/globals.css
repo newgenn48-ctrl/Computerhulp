@@ -12,13 +12,7 @@
   }
 
   html {
-    font-size: 17px;
-  }
-
-  @media (min-width: 1024px) {
-    html {
-      font-size: 18px;
-    }
+    font-size: 16px;
   }
 
   * {
@@ -96,11 +90,11 @@
   }
 
   .section-title {
-    @apply text-3xl sm:text-4xl lg:text-[2.75rem] font-bold text-gray-900 mb-4 leading-[1.1] tracking-display-tight;
+    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-[1.15] tracking-display-tight;
   }
 
   .section-title-lg {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 mb-6 leading-[1.05] tracking-display-tight;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-display-tight;
   }
 
   .section-subtitle {
@@ -136,7 +130,7 @@
      HERO — dark, photo-forward (zoals hulpmetit-nextgen)
      ============================================ */
   .hero-wrapper {
-    @apply relative min-h-[600px] lg:min-h-[700px] bg-ink-900 overflow-hidden flex items-center;
+    @apply relative min-h-[520px] lg:min-h-[580px] bg-ink-900 overflow-hidden flex items-center;
   }
 
   .hero-overlay-mobile {
@@ -152,15 +146,15 @@
   }
 
   .hero-content {
-    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-16 lg:pt-32 lg:pb-20;
+    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pt-28 lg:pb-16;
   }
 
   .hero-title {
-    @apply text-4xl sm:text-5xl xl:text-6xl font-extrabold text-white mb-6 leading-[1.1] tracking-display-tight;
+    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-[1.1] tracking-display-tight;
   }
 
   .hero-description {
-    @apply text-lg text-white/80 mb-8 leading-relaxed max-w-lg;
+    @apply text-base sm:text-lg text-white/80 mb-6 leading-relaxed max-w-lg;
   }
 
   .hero-eyebrow {
@@ -267,7 +261,7 @@
      CTA SECTIONS
      ============================================ */
   .cta-section-blue {
-    @apply relative py-20 sm:py-24 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden;
+    @apply relative py-14 sm:py-16 bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 text-white overflow-hidden;
   }
 
   .cta-section-blue::before {

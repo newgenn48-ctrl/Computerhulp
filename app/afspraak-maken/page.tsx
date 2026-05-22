@@ -9,7 +9,7 @@ export default function AfspraakMakenPage() {
             Vraag een afspraak aan
           </h1>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            Vul onderstaande gegevens volledig in en wij nemen zo spoedig mogelijk contact met je op.
+            Vul onderstaande gegevens in en wij nemen zo spoedig mogelijk contact met u op.
           </p>
         </header>
 
