@@ -204,7 +204,7 @@ export default function HomePage() {
 
       {/* Premium Hero Section — dark photo-forward */}
       <section className="hero-wrapper" aria-label={`${BUSINESS.NAME} hero`}>
-        <div className="absolute inset-0">
+        <div className="hero-image-box">
           <Image
             src="/hero student.png"
             alt={`Computerhulp IT-student helpt klant thuis met laptop in ${BUSINESS.REGION}`}

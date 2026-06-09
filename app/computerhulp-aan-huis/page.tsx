@@ -168,7 +168,7 @@ export default function ComputerhulpAanHuisPage() {
 
       {/* Hero */}
       <section className="hero-wrapper">
-        <div className="absolute inset-0">
+        <div className="hero-image-box">
           <Image
             src="/hero student.png"
             alt={`Computerhulp aan huis — IT-student helpt klant in ${BUSINESS.REGION}`}

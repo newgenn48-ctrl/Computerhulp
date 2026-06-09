@@ -134,7 +134,7 @@ export default function ITHulpPage() {
 
       {/* Hero — identieke structuur als homepage, eigen IT-hulp copy */}
       <section className="hero-wrapper" aria-label="IT hulp aan huis hero">
-        <div className="absolute inset-0">
+        <div className="hero-image-box">
           <Image
             src="/hero student.png"
             alt={`IT-student helpt klant thuis met digitale apparaten in ${BUSINESS.REGION}`}

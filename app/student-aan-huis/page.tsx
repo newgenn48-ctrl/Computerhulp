@@ -173,7 +173,7 @@ export default function StudentAanHuisPage() {
 
       {/* Hero */}
       <section className="hero-wrapper">
-        <div className="absolute inset-0">
+        <div className="hero-image-box">
           <Image
             src="/Student aan huis.webp"
             alt={`IT-student helpt klant thuis met computer in ${BUSINESS.REGION}`}
