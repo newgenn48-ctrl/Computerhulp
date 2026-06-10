@@ -133,16 +133,17 @@
     @apply relative min-h-[520px] lg:min-h-[580px] bg-ink-900 overflow-hidden flex items-center;
   }
 
+  /* Hero overlays — blauw-getinte branding (blue-950 + ink-900 mix) */
   .hero-overlay-mobile {
-    @apply absolute inset-0 bg-ink-900/70 md:hidden;
+    @apply absolute inset-0 bg-gradient-to-b from-blue-950/90 via-blue-950/80 to-ink-900/70 md:hidden;
   }
 
   .hero-overlay-desktop-r {
-    @apply absolute inset-0 hidden md:block bg-gradient-to-r from-ink-900 via-ink-900/85 to-ink-900/30 lg:via-ink-900/70 lg:to-ink-900/20;
+    @apply absolute inset-0 hidden md:block bg-gradient-to-r from-blue-950 via-blue-950/85 to-blue-950/30 lg:via-blue-950/75 lg:to-blue-950/20;
   }
 
   .hero-overlay-desktop-b {
-    @apply absolute inset-0 hidden md:block bg-gradient-to-t from-ink-900/50 via-transparent to-ink-900/40;
+    @apply absolute inset-0 hidden md:block bg-gradient-to-t from-blue-950/55 via-transparent to-blue-950/35;
   }
 
   .hero-content {
@@ -151,14 +152,17 @@
 
   .hero-title {
     @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-[1.1] tracking-display-tight;
+    text-shadow: 0 2px 12px rgba(7, 21, 51, 0.6);
   }
 
   .hero-description {
-    @apply text-base sm:text-lg text-white/80 mb-6 leading-relaxed max-w-lg;
+    @apply text-base sm:text-lg text-white mb-6 leading-relaxed max-w-lg;
+    text-shadow: 0 1px 8px rgba(7, 21, 51, 0.55);
   }
 
   .hero-eyebrow {
-    @apply inline-block text-sm font-semibold uppercase tracking-wide text-primary-300 mb-4;
+    @apply inline-block text-sm font-semibold uppercase tracking-wide text-blue-200 mb-4;
+    text-shadow: 0 1px 6px rgba(7, 21, 51, 0.5);
   }
 
   /* Hero CTA's — brand-blau primary + glass secondary (eigen kleuren, niet reference) */

@@ -53,7 +53,7 @@ const computerhulpConfig: VariantConfig = {
   serviceName: 'Computerhulp aan Huis',
   serviceNameLower: 'computerhulp aan huis',
   urlPrefix: 'computerhulp-aan-huis',
-  heroImage: '/hero student.png',
+  heroImage: '/hero student.webp',
   heroAlt: (cityName) => `Computerhulp aan huis in ${cityName} — IT-student bij klant thuis`,
   heroTitle: (cityName) => (
     <>Computerhulp aan Huis <span className="text-blue-300">{cityName}</span></>

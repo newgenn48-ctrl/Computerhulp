@@ -136,7 +136,7 @@ export default function ITHulpPage() {
       <section className="hero-wrapper" aria-label="IT hulp aan huis hero">
         <div className="absolute inset-0">
           <Image
-            src="/hero student.png"
+            src="/hero student.webp"
             alt={`IT-student helpt klant thuis met digitale apparaten in ${BUSINESS.REGION}`}
             fill
             className="object-cover object-center"

@@ -170,7 +170,7 @@ export default function ComputerhulpAanHuisPage() {
       <section className="hero-wrapper">
         <div className="absolute inset-0">
           <Image
-            src="/hero student.png"
+            src="/hero student.webp"
             alt={`Computerhulp aan huis — IT-student helpt klant in ${BUSINESS.REGION}`}
             fill
             className="object-cover"

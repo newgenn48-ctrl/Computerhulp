@@ -206,7 +206,7 @@ export default function HomePage() {
       <section className="hero-wrapper" aria-label={`${BUSINESS.NAME} hero`}>
         <div className="absolute inset-0">
           <Image
-            src="/hero student.png"
+            src="/hero student.webp"
             alt={`Computerhulp IT-student helpt klant thuis met laptop in ${BUSINESS.REGION}`}
             fill
             className="object-cover object-center"
