@@ -130,19 +130,11 @@
      HERO — dark, photo-forward (zoals hulpmetit-nextgen)
      ============================================ */
   .hero-wrapper {
-    @apply relative bg-ink-900 overflow-hidden pt-14;
-    @apply md:flex md:items-center md:pt-0 md:min-h-[520px] lg:min-h-[580px];
+    @apply relative min-h-[520px] lg:min-h-[580px] bg-ink-900 overflow-hidden flex items-center;
   }
 
-  /* Op mobiel: foto wordt een 260-320px hoog blok boven de tekst.
-     Op md+: foto staat absolute achter de tekst zoals voorheen. */
-  .hero-image-box {
-    @apply relative h-[260px] sm:h-[340px] w-full md:absolute md:inset-0 md:h-auto;
-  }
-
-  /* Geen donkere overlay meer op mobiel — tekst staat niet meer over de foto */
   .hero-overlay-mobile {
-    @apply hidden;
+    @apply absolute inset-0 bg-ink-900/70 md:hidden;
   }
 
   .hero-overlay-desktop-r {
@@ -154,8 +146,7 @@
   }
 
   .hero-content {
-    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10;
-    @apply md:pt-24 md:pb-12 lg:pt-28 lg:pb-16;
+    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pt-28 lg:pb-16;
   }
 
   .hero-title {

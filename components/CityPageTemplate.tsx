@@ -739,7 +739,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       {/* Hero Section */}
       <section className="hero-wrapper">
-        <div className="hero-image-box">
+        <div className="absolute inset-0">
           <Image
             src={config.heroImage}
             alt={config.heroAlt(city.name)}
