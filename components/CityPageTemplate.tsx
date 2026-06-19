@@ -13,7 +13,6 @@ import { City } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
-import SectionDivider from '@/components/ui/SectionDivider'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -87,7 +86,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig met uw digitale apparaten? Een jonge IT-student komt bij u thuis in {cityName} en legt alles rustig uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
+      Heeft u problemen met uw computer, tablet of telefoon? Geen zorgen — onze <strong className="text-white">vriendelijke en betrouwbare</strong> IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -775,7 +774,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             )}
             {variant === 'student' && (
               <p className="hero-description">
-                Trage laptop, WiFi-problemen of nieuwe telefoon? We lossen het op — én <strong className="text-white">u leert er zelf ook van</strong>.
+                Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat <strong className="text-white">u snapt hoe het werkt</strong>.
               </p>
             )}
 
@@ -806,11 +805,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         </div>
       </section>
 
-      <SectionDivider
-        variant="soft-curve"
-        topColor="#1c1917"
-        bottomColor="#fafafa"
-      />
 
       {variant === 'computerhulp' ? (
         <>

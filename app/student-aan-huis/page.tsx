@@ -9,7 +9,6 @@ import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
-import SectionDivider from '@/components/ui/SectionDivider'
 
 export const metadata: Metadata = {
   title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
@@ -195,11 +194,11 @@ export default function StudentAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw digitale apparaten? Een jonge IT-student komt bij u thuis en legt alles rustig uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
+              Heeft u problemen met uw computer, tablet of telefoon? Geen zorgen — onze <strong className="text-white">vriendelijke en betrouwbare</strong> IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.
             </p>
 
             <p className="hero-description">
-              Trage laptop, WiFi-problemen of nieuwe telefoon? We lossen het op — én <strong className="text-white">u leert er zelf ook van</strong>.
+              Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat <strong className="text-white">u snapt hoe het werkt</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -219,8 +218,6 @@ export default function StudentAanHuisPage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       <ServicesSection
         eyebrow="Onze hulp"

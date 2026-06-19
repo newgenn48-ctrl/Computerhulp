@@ -9,7 +9,6 @@ import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
-import SectionDivider from '@/components/ui/SectionDivider'
 
 export const metadata: Metadata = {
   title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u bij u Thuis`,
@@ -215,8 +214,6 @@ export default function ComputerhulpAanHuisPage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       {/* 1. Diensten — direct onder hero zodat bezoekers zichzelf kwalificeren */}
       <ServicesSection

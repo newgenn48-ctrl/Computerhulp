@@ -8,7 +8,6 @@ import ServicesSection from '@/components/ServicesSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
-import SectionDivider from '@/components/ui/SectionDivider'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
   loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
@@ -269,10 +268,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
-
-      {/* Trust badges — above-the-fold signals */}
 
       {/* Services Section */}
       <ServicesSection
