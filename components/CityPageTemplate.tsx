@@ -59,7 +59,7 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u problemen met uw computer, tablet of telefoon? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -86,7 +86,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u problemen met uw computer, tablet of telefoon? Geen zorgen — onze <strong className="text-white">vriendelijke en betrouwbare</strong> IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -766,17 +766,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             <p className="hero-description">
               {config.heroDescription(city.name)}
             </p>
-
-            {variant === 'computerhulp' && (
-              <p className="hero-description">
-                Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat <strong className="text-white">u snapt hoe het werkt</strong>.
-              </p>
-            )}
-            {variant === 'student' && (
-              <p className="hero-description">
-                Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat <strong className="text-white">u snapt hoe het werkt</strong>.
-              </p>
-            )}
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               {variant === 'computerhulp' ? (

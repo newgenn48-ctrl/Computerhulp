@@ -189,11 +189,7 @@ export default function ComputerhulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u problemen met uw computer, tablet of telefoon? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.
-            </p>
-
-            <p className="hero-description">
-              Storing, trage laptop of hulp bij e-mail? Wij lossen het op — én zorgen dat <strong className="text-white">u snapt hoe het werkt</strong>.
+              Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">

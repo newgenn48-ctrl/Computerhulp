@@ -60,37 +60,43 @@ export default function OverOnsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
-      {/* Hero Section */}
-      <section className="relative min-h-[70vh] bg-white overflow-hidden">
+      {/* Hero — consistent met homepage/hub/city heroes */}
+      <section className="hero-wrapper" aria-label="Over ons hero">
         <div className="absolute inset-0">
           <Image
-            src="/Student aan huis.webp"
-            alt="Computerhulp IT-student helpt klant thuis"
+            src="/hero student.webp"
+            alt={`Computerhulp IT-student helpt klant thuis in ${BUSINESS.REGION}`}
             fill
-            className="object-cover"
-            sizes="100vw"
+            className="object-cover object-center"
             priority
+            sizes="100vw"
           />
-          <div className="absolute inset-0 bg-white/80 md:hidden" />
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/85 to-transparent" />
-          <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-white/40 via-transparent to-white/70" />
+          <div className="hero-overlay-mobile" />
+          <div className="hero-overlay-desktop-r" />
+          <div className="hero-overlay-desktop-b" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-20 min-h-[70vh] flex items-center">
+        <div className="hero-content">
           <div className="max-w-2xl">
-            <span className="eyebrow">Over het bedrijf</span>
+            <p className="hero-eyebrow">Over ons</p>
             <h1 className="hero-title">
-              Al <span className="text-blue-600">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis
+              Al <span className="text-blue-300">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Al meer dan <strong className="text-gray-900">{BUSINESS.YEARS_ACTIVE} jaar</strong> uw betrouwbare partner voor computerhulp aan huis in <strong className="text-gray-900">{BUSINESS.REGION}</strong>.
+
+            <p className="hero-description">
+              Al meer dan <strong className="text-white">{BUSINESS.YEARS_ACTIVE} jaar</strong> uw betrouwbare partner voor computerhulp aan huis in <strong className="text-white">{BUSINESS.REGION}</strong>. {BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+
+            <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+                aria-label={`Bel ${BUSINESS.PHONE}`}
+              >
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
                 {BUSINESS.PHONE}
               </a>
-              <Link href="/afspraak-maken" className="btn-secondary">
+              <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>

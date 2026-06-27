@@ -154,7 +154,7 @@
   }
 
   .hero-description {
-    @apply text-base sm:text-lg text-white/80 mb-6 leading-relaxed max-w-lg;
+    @apply text-base sm:text-lg text-white mb-6 leading-relaxed max-w-lg;
   }
 
   .hero-eyebrow {

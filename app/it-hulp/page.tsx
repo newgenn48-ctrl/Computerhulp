@@ -155,7 +155,7 @@ export default function ITHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Lukt iets niet met uw computer, telefoon, tablet of internet? <strong className="text-white">Geen zorgen.</strong> Onze vriendelijke IT-studenten komen bij u thuis en helpen u stap voor stap — in begrijpelijke taal.
+              Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen.</strong> Onze vriendelijke IT-studenten komen bij u thuis en helpen u stap voor stap — in begrijpelijke taal.
             </p>
 
             <p className="hero-description">
