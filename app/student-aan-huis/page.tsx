@@ -197,6 +197,10 @@ export default function StudentAanHuisPage() {
               Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.
             </p>
 
+            <p className="hero-description">
+              Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong>.
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <a
                 href={BUSINESS.PHONE_HREF}
@@ -211,15 +215,28 @@ export default function StudentAanHuisPage() {
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
             </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vaak binnen 24 uur geholpen
+              </span>
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Achteraf betalen via Tikkie
+              </span>
+              <span className="hero-pill">
+                <Icon name="users" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Geduldig en duidelijk uitgelegd
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
       <ServicesSection
-        eyebrow="Onze hulp"
         title="Waar wij u mee helpen"
-        subtitle="Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag bij u thuis."
-        showDescription={true}
+        showFeatures={true}
         limitServices={6}
         showAllButton={true}
       />

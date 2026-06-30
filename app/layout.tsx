@@ -93,6 +93,38 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
+        {/* Consent Mode v2 default — MOET vóór GTM laden. Alles default 'denied',
+            CookieConsent component upgrade naar 'granted' bij accept. */}
+        <Script id="consent-default" strategy="beforeInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            window.gtag = function(){dataLayer.push(arguments);}
+            gtag('consent', 'default', {
+              'ad_storage': 'denied',
+              'ad_user_data': 'denied',
+              'ad_personalization': 'denied',
+              'analytics_storage': 'denied',
+              'functionality_storage': 'granted',
+              'personalization_storage': 'denied',
+              'security_storage': 'granted',
+              'wait_for_update': 500
+            });
+            // Restore choice on subsequent visits before GTM evaluates
+            try {
+              var stored = localStorage.getItem('cookie-consent');
+              if (stored === 'accepted') {
+                gtag('consent', 'update', {
+                  'ad_storage': 'granted',
+                  'ad_user_data': 'granted',
+                  'ad_personalization': 'granted',
+                  'analytics_storage': 'granted',
+                  'personalization_storage': 'granted'
+                });
+              }
+            } catch(e) {}
+          `}
+        </Script>
+
         {/* Google Tag Manager */}
         <Script id="gtm-script" strategy="afterInteractive">
           {`

@@ -6,6 +6,7 @@ import FloatingButtons from './FloatingButtons'
 import StickyMobileBar from './StickyMobileBar'
 import Breadcrumb from '@/components/Breadcrumb'
 import SkipLink from '@/components/SkipLink'
+import CookieConsent from '@/components/CookieConsent'
 
 export default function LayoutShell({ children }: { children: React.ReactNode }) {
   return (
@@ -19,6 +20,7 @@ export default function LayoutShell({ children }: { children: React.ReactNode })
       <Footer />
       <FloatingButtons />
       <StickyMobileBar />
+      <CookieConsent />
     </>
   )
 }

@@ -754,11 +754,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            {variant === 'computerhulp' ? (
-              <p className="hero-eyebrow">{BUSINESS.REVIEW_COUNT} tevreden klanten</p>
-            ) : (
-              <p className="hero-eyebrow">{config.serviceName} · {city.name}</p>
-            )}
+            <p className="hero-eyebrow">{BUSINESS.REVIEW_COUNT} tevreden klanten</p>
             <h1 className="hero-title">
               {config.heroTitle(city.name)}
             </h1>
@@ -767,29 +763,39 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
               {config.heroDescription(city.name)}
             </p>
 
+            <p className="hero-description">
+              Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong>.
+            </p>
+
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              {variant === 'computerhulp' ? (
-                <a
-                  href={BUSINESS.PHONE_HREF}
-                  className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
-                  aria-label={`Bel ${BUSINESS.PHONE}`}
-                >
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
-                  {BUSINESS.PHONE}
-                </a>
-              ) : null}
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+                aria-label={`Bel ${BUSINESS.PHONE}`}
+              >
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              {variant !== 'computerhulp' ? (
-                <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                  <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                  {BUSINESS.PHONE}
-                </a>
-              ) : null}
             </div>
 
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Vaak binnen 24 uur geholpen
+              </span>
+              <span className="hero-pill">
+                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Achteraf betalen via Tikkie
+              </span>
+              <span className="hero-pill">
+                <Icon name="users" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Geduldig en duidelijk uitgelegd
+              </span>
+            </div>
           </div>
         </div>
       </section>
@@ -797,12 +803,10 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       {variant === 'computerhulp' ? (
         <>
-          {/* Computerhulp-volgorde: diensten → waarom → prijs → reviews → hoe */}
+          {/* Computerhulp-volgorde: diensten (image-cards, /it-hulp-pattern) → waarom → prijs → reviews → hoe */}
           <ServicesSection
-            eyebrow="Onze hulp"
             title={`Waar wij u mee helpen in ${city.name}`}
-            subtitle="Van een simpele vraag tot een lastig probleem — wij helpen u graag bij u thuis."
-            showDescription={true}
+            showFeatures={true}
             limitServices={6}
             showAllButton={true}
           />
@@ -830,12 +834,10 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         </>
       ) : (
         <>
-          {/* Student-volgorde: diensten → waarom → prijs → reviews → hoe */}
+          {/* Student-volgorde: diensten (image-cards, /it-hulp-pattern) → waarom → prijs → reviews → hoe */}
           <ServicesSection
-            eyebrow="Onze hulp"
             title={`Waar wij u mee helpen in ${city.name}`}
-            subtitle="Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag bij u thuis."
-            showDescription={true}
+            showFeatures={true}
             limitServices={6}
             showAllButton={true}
           />
