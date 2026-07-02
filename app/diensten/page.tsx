@@ -108,7 +108,7 @@ export default function DienstenPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Waar wij u mee helpen</h2>
@@ -162,7 +162,7 @@ export default function DienstenPage() {
       </section>
 
       {/* Pricing Overview */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Wat het kost</h2>
@@ -200,7 +200,7 @@ export default function DienstenPage() {
       </section>
 
       {/* Testimonials — social proof voor verdere conversie */}
-      <section className="py-16 sm:py-20 bg-white" aria-labelledby="testimonials-heading">
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <p className="section-eyebrow">Klanten aan het woord</p>

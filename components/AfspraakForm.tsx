@@ -114,7 +114,7 @@ export default function AfspraakForm() {
         </div>
       )}
 
-      <form onSubmit={handleSubmit} noValidate className="space-y-5">
+      <form onSubmit={handleSubmit} noValidate aria-busy={isSubmitting} className="space-y-5">
         <div>
           <label htmlFor="naam" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Uw naam <span className="text-red-500" aria-hidden="true">*</span></label>
           <input
@@ -130,9 +130,10 @@ export default function AfspraakForm() {
             className={inputClass('naam')}
             placeholder="Voor- en achternaam"
             aria-invalid={touched.naam && errors.naam ? 'true' : 'false'}
+            aria-describedby={touched.naam && errors.naam ? 'naam-error' : undefined}
             disabled={isSubmitting}
           />
-          {touched.naam && errors.naam && <p role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>}
+          {touched.naam && errors.naam && <p id="naam-error" role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>}
         </div>
 
         <div>
@@ -151,14 +152,15 @@ export default function AfspraakForm() {
             className={inputClass('telefoon')}
             placeholder="06-12345678"
             aria-invalid={touched.telefoon && errors.telefoon ? 'true' : 'false'}
+            aria-describedby={touched.telefoon && errors.telefoon ? 'telefoon-error' : undefined}
             disabled={isSubmitting}
           />
-          {touched.telefoon && errors.telefoon && <p role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>}
+          {touched.telefoon && errors.telefoon && <p id="telefoon-error" role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>}
         </div>
 
         <div>
           <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
-            E-mail <span className="text-gray-400 font-normal">(optioneel)</span>
+            E-mail <span className="text-gray-500 font-normal">(optioneel)</span>
           </label>
           <input
             type="email"
@@ -172,9 +174,10 @@ export default function AfspraakForm() {
             className={inputClass('email')}
             placeholder="uw@email.nl"
             aria-invalid={touched.email && errors.email ? 'true' : 'false'}
+            aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
             disabled={isSubmitting}
           />
-          {touched.email && errors.email && <p role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>}
+          {touched.email && errors.email && <p id="email-error" role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>}
         </div>
 
         <div>
@@ -189,9 +192,10 @@ export default function AfspraakForm() {
             className={`${inputClass('probleem')} resize-none`}
             placeholder="Bijv: 'Mijn laptop start niet op' of 'WiFi werkt niet meer'"
             aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'}
+            aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
             disabled={isSubmitting}
           />
-          {touched.probleem && errors.probleem && <p role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>}
+          {touched.probleem && errors.probleem && <p id="probleem-error" role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>}
         </div>
 
         {/* Honeypot — real users won't fill this, bots will */}

@@ -228,7 +228,7 @@ export default function LocatiesPage() {
       </section>
 
       {/* Testimonials — geograpfische social proof */}
-      <section className="py-16 sm:py-20 bg-white" aria-labelledby="locations-testimonials-heading">
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="locations-testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <h2 id="locations-testimonials-heading" className="section-title">Recent geholpen in {BUSINESS.REGION}</h2>
@@ -240,7 +240,7 @@ export default function LocatiesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-20 bg-gradient-to-br from-blue-600 to-blue-700">
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-blue-600 to-blue-700">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Staat uw gemeente er niet bij?

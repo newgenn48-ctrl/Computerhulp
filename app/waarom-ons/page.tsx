@@ -55,7 +55,7 @@ export default function WaaromOnsPage() {
       </section>
 
       {/* Prijsvergelijking */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Wat u bij ons betaalt, en bij anderen meestal niet</h2>
@@ -108,7 +108,7 @@ export default function WaaromOnsPage() {
       </section>
 
       {/* 6 Voordelen */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Wat ons anders maakt</h2>
@@ -149,7 +149,7 @@ export default function WaaromOnsPage() {
       </section>
 
       {/* Hoe het werkt */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Zo simpel is het</h2>
@@ -174,7 +174,7 @@ export default function WaaromOnsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Veelgestelde vragen</h2>

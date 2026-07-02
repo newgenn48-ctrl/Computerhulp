@@ -8,6 +8,8 @@ interface Testimonial {
   quote: string
   name: string
   initials: string
+  city?: string
+  date?: string
 }
 
 interface TestimonialsCarouselProps {
@@ -31,7 +33,14 @@ function TestimonialsFallback({ testimonials }: TestimonialsCarouselProps) {
             <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
               {t.initials}
             </div>
-            <cite className="font-semibold text-gray-900 not-italic">{t.name}</cite>
+            <div>
+              <cite className="block font-semibold text-gray-900 not-italic">{t.name}</cite>
+              {(t.city || t.date) && (
+                <div className="text-xs text-gray-500 mt-0.5">
+                  {t.city}{t.city && t.date ? ' · ' : ''}{t.date}
+                </div>
+              )}
+            </div>
           </footer>
         </div>
       ))}
@@ -126,7 +135,14 @@ function TestimonialsCarouselInner({ testimonials }: TestimonialsCarouselProps) 
               <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                 {testimonial.initials}
               </div>
-              <cite className="font-semibold text-gray-900 not-italic">{testimonial.name}</cite>
+              <div>
+                <cite className="block font-semibold text-gray-900 not-italic">{testimonial.name}</cite>
+                {(testimonial.city || testimonial.date) && (
+                  <div className="text-xs text-gray-500 mt-0.5">
+                    {testimonial.city}{testimonial.city && testimonial.date ? ' · ' : ''}{testimonial.date}
+                  </div>
+                )}
+              </div>
             </footer>
           </div>
         ))}

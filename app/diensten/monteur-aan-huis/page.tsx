@@ -159,7 +159,7 @@ export default function MonteurAanHuisPage() {
       <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       {/* Waarom onze monteur */}
-      <section className="py-16 sm:py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Waarom klanten onze monteur kiezen</h2>
@@ -195,7 +195,7 @@ export default function MonteurAanHuisPage() {
       <PricingSection />
 
       {/* Testimonials */}
-      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <p className="section-eyebrow">Klanten aan het woord</p>
@@ -208,7 +208,7 @@ export default function MonteurAanHuisPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Veelgestelde vragen</h2>

@@ -23,6 +23,8 @@ const allServices = [
   { slug: 'hulp-bij-computerproblemen', name: 'Hulp bij Computerproblemen' },
   { slug: 'smartphone-hulp-aan-huis', name: 'Smartphone Hulp' },
   { slug: 'computerhulp-senioren', name: 'Computerhulp Senioren' },
+  { slug: 'monteur-aan-huis', name: 'Monteur aan Huis' },
+  { slug: 'laptop-laten-herstellen', name: 'Laptop Laten Herstellen' },
 ]
 
 const topCities = [
@@ -53,6 +55,8 @@ const relatedServicesMap: Record<string, string[]> = {
   'hulp-bij-computerproblemen': ['computer-laptop-hulp', 'pc-hulp-aan-huis', 'wifi-internet-hulp', 'printer-scanner-hulp', 'email-hulp'],
   'smartphone-hulp-aan-huis': ['tablet-smartphone-hulp', 'email-hulp', 'persoonlijke-training', 'computerhulp-senioren', 'wifi-internet-hulp'],
   'computerhulp-senioren': ['computercursus-ouderen', 'persoonlijke-training', 'tablet-smartphone-hulp', 'smartphone-hulp-aan-huis', 'email-hulp'],
+  'monteur-aan-huis': ['computer-laptop-hulp', 'laptop-computer-reparatie', 'hulp-bij-computerproblemen', 'pc-hulp-aan-huis', 'printer-scanner-hulp'],
+  'laptop-laten-herstellen': ['laptop-computer-reparatie', 'computer-laptop-hulp', 'dataherstel-backup', 'hulp-bij-computerproblemen', 'monteur-aan-huis'],
 }
 
 export default function ServiceCrossLinks({ currentService, serviceName }: ServiceCrossLinksProps) {

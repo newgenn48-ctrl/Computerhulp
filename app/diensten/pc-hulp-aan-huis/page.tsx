@@ -12,7 +12,7 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import SectionDivider from '@/components/ui/SectionDivider'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
-  loading: () => <div className="py-20 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
+  loading: () => <div className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
 })
 
 export const metadata: Metadata = {
@@ -323,7 +323,7 @@ export default function HomePage() {
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
-      <section className="py-20 bg-white" aria-labelledby="testimonials-heading">
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <header className="text-center mb-12">
             <p className="section-eyebrow">Klanten aan het woord</p>
@@ -343,7 +343,7 @@ export default function HomePage() {
       </section>
 
       {/* SEO Content Section */}
-      <section className="py-12 md:py-20 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
+      <section className="py-12 md:py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>
@@ -391,7 +391,7 @@ export default function HomePage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/Computerhulp aan huis.webp"
-                    alt="Computerhulp IT-student aan het werk bij klant thuis"
+                    alt="IT-student verhelpt PC-probleem bij klant thuis"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -420,7 +420,7 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-white" aria-labelledby="faq-heading">
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-12">
             <h2 id="faq-heading" className="section-title">

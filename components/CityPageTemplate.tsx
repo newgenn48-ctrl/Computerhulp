@@ -53,13 +53,13 @@ const computerhulpConfig: VariantConfig = {
   serviceNameLower: 'computerhulp aan huis',
   urlPrefix: 'computerhulp-aan-huis',
   heroImage: '/hero student.webp',
-  heroAlt: (cityName) => `Computerhulp aan huis in ${cityName} — IT-student bij klant thuis`,
+  heroAlt: (cityName) => `Computerhulp aan huis in ${cityName} — IT-specialist bij klant thuis`,
   heroTitle: (cityName) => (
     <>Computerhulp aan Huis <span className="text-blue-300">{cityName}</span></>
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen <strong className="text-white">vaak binnen 24 uur</strong> bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -86,7 +86,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen <strong className="text-white">vaak binnen 24 uur</strong> bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -485,7 +485,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — {content.description} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer, wifi, smartphone, tablet of camera. Gewoon bij u aan de keukentafel.
                   </p>
                   <p>
-                    {neighborhoodText} — onze IT-student komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
+                    {neighborhoodText} — onze IT-specialist komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
                   </p>
                   {content.highlights.length > 0 && (
                     <p>
@@ -493,7 +493,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     </p>
                   )}
                   <p>
-                    Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die niet verbinden na een Windows-update, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-studenten dagelijks op.
+                    Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die niet verbinden na een Windows-update, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-specialisten dagelijks op.
                   </p>
                 </>
               ) : (
@@ -508,7 +508,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone of camera die ingesteld moet worden — wij zoeken het rustig uit en zorgen dat alles weer werkt.
                   </p>
                   <p>
-                    Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die niet verbinden na een Windows-update, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-studenten dagelijks op.
+                    Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die niet verbinden na een Windows-update, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-specialisten dagelijks op.
                   </p>
                 </>
               )}
@@ -764,7 +764,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             </p>
 
             <p className="hero-description">
-              Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong>.
+              Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong> — achteraf betalen via Tikkie, geen abonnement.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -781,21 +781,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
             </div>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Vaak binnen 24 uur geholpen
-              </span>
-              <span className="hero-pill">
-                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Achteraf betalen via Tikkie
-              </span>
-              <span className="hero-pill">
-                <Icon name="users" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Geduldig en duidelijk uitgelegd
-              </span>
-            </div>
           </div>
         </div>
       </section>
@@ -803,10 +788,12 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       {variant === 'computerhulp' ? (
         <>
-          {/* Computerhulp-volgorde: diensten (image-cards, /it-hulp-pattern) → waarom → prijs → reviews → hoe */}
+          {/* Computerhulp-volgorde: diensten → waarom → prijs → reviews → hoe */}
           <ServicesSection
+            eyebrow="Onze hulp"
             title={`Waar wij u mee helpen in ${city.name}`}
-            showFeatures={true}
+            subtitle="Van een simpele vraag tot een lastig probleem — wij helpen u graag bij u thuis."
+            showDescription={true}
             limitServices={6}
             showAllButton={true}
           />
@@ -834,10 +821,12 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         </>
       ) : (
         <>
-          {/* Student-volgorde: diensten (image-cards, /it-hulp-pattern) → waarom → prijs → reviews → hoe */}
+          {/* Student-volgorde: diensten → waarom → prijs → reviews → hoe */}
           <ServicesSection
+            eyebrow="Onze hulp"
             title={`Waar wij u mee helpen in ${city.name}`}
-            showFeatures={true}
+            subtitle="Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag bij u thuis."
+            showDescription={true}
             limitServices={6}
             showAllButton={true}
           />

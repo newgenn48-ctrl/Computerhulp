@@ -373,6 +373,158 @@ const cityContentData: Record<string, CityContent> = {
     description: 'Goeree-Overflakkee is het meest zuidwestelijke eiland van Zuid-Holland, met de populaire badplaats Ouddorp en de pittoreske havenplaats Goedereede. Het eiland biedt uitgestrekte stranden, Deltawerken en een eigen eilandcultuur.',
     highlights: ['Strand van Ouddorp', 'Haringvlietsluizen (Deltawerken)', 'Goedereede vestingstadje', 'Grevelingenmeer watersport']
   },
+
+  // === WESTLAND KERNEN ===
+  'naaldwijk': {
+    population: 19000,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Kruisbroekweg', 'Verspyckstraat', 'Hoogeland', 'Woerd', 'Dijkweg'],
+    description: 'Naaldwijk is de hoofdkern van gemeente Westland en het bestuurscentrum van het grootste kassengebied ter wereld. De levendige stad heeft een gezellig marktplein, moderne winkelvoorzieningen en vormt het hart van de tuinbouw­innovatie in Zuid-Holland.',
+    highlights: ['Bestuurscentrum Westland', 'Hoogleraar Van Ammersstraat markt', 'Historisch marktplein', 'Nabij Flora Holland veiling']
+  },
+  'wateringen': {
+    population: 17000,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Wateringse Veld', 'Erasmus­kwartier', 'Kwintsheul-grens', 'Meidoornlaan'],
+    description: 'Wateringen ligt aan de rand van Den Haag en combineert een gezellig dorpshart met de moderne nieuwbouwwijk Wateringse Veld. De kern is snel gegroeid door de nabijheid van Den Haag én het Westland en biedt goede voorzieningen voor gezinnen.',
+    highlights: ['Wateringse Veld nieuwbouw', 'Ambachtelijk dorpshart', 'Op fietsafstand van Den Haag', 'Tuinbouwtraditie']
+  },
+  's-gravenzande': {
+    population: 19500,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'De Gravin', 'Oranjewijk', 'Cornelis van der Lelykade', 'Duintuin', 'De Rijnvaart'],
+    description: '\'s-Gravenzande is een van de oudste Westlandse kernen, met een historisch centrum rond de Dorpskerk en directe toegang tot de kust bij Ter Heijde. De stad combineert Westland­traditie met een unieke ligging tussen kassen en duinen.',
+    highlights: ['Historisch dorpshart', 'Dorpskerk uit de 13e eeuw', 'Nabij strand Ter Heijde', 'Duintuinbeleving']
+  },
+  'monster': {
+    population: 12500,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Molenslag', 'Poeldijksepolder', 'Monsterse duinen', 'Choorstraat'],
+    description: 'Monster is een authentiek Westlands kustdorp met eigen strand aan de Noordzee. De kern combineert dorpsleven, glastuinbouw en duinnatuur en is populair bij bezoekers voor de rustige stranden en fietsroutes langs de kust.',
+    highlights: ['Strand van Monster', 'Monsterse duinen', 'Karakteristieke Grote Kerk', 'Bunkers Atlantikwall']
+  },
+  'de-lier': {
+    population: 12500,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Liermolen', 'Kralingerhout', 'Sportlaan', 'Achterdijk'],
+    description: 'De Lier is een compact Westlands dorp aan de Lee, bekend om de karakteristieke lintbebouwing en de bloeiende tuinbouwsector. De kern biedt dorpsgezelligheid met gemakkelijke toegang tot Delft, Naaldwijk en Rotterdam.',
+    highlights: ['Historische molen', 'Lintbebouwing langs De Lee', 'Familie-tuinbouwbedrijven', 'Centraal in het Westland']
+  },
+
+  // === LANSINGERLAND ===
+  'berkel-en-rodenrijs': {
+    population: 30000,
+    region: 'Lansingerland',
+    neighborhoods: ['Centrum', 'Meerpolder', 'Rodenrijs', 'Berkel-West', 'Wolfsbospolder', 'Westpolder'],
+    description: 'Berkel en Rodenrijs is de grootste kern van gemeente Lansingerland en een van de snelst groeiende woongemeenten van Zuid-Holland. Directe RandstadRail-verbinding naar Den Haag en Rotterdam maakt het een geliefde forensen­gemeente.',
+    highlights: ['RandstadRail naar Den Haag/Rotterdam', 'Nieuwbouwwijken', 'Sportcomplex De Meerpolder', 'Glastuinbouw']
+  },
+  'bergschenhoek': {
+    population: 20000,
+    region: 'Lansingerland',
+    neighborhoods: ['Centrum', 'Boterdorp', 'Naardervaart', 'Wilderszijde', 'Parkzoom', 'Vinex-wijken'],
+    description: 'Bergschenhoek ligt ingeklemd tussen Rotterdam en Bleiswijk en heeft zich in twee decennia getransformeerd van dorp tot moderne woongemeente. Groene wijken, RandstadRail-station en Rotterdam The Hague Airport op fietsafstand.',
+    highlights: ['Rottezoom recreatiegebied', 'RandstadRail-station', 'Rotterdam Airport nabij', 'Moderne Vinex-woningen']
+  },
+  'bleiswijk': {
+    population: 11500,
+    region: 'Lansingerland',
+    neighborhoods: ['Centrum', 'Prisma', 'Zoetermeerse Meerpolder', 'Dorpsstraat', 'Merenweg'],
+    description: 'Bleiswijk is de kleinste Lansingerlandse kern en het glastuinbouw­hart van de gemeente. Prisma bedrijventerrein en de Zoetermeerse Plas grenzen aan het dorp, dat een rustige woonomgeving biedt met goede autobereikbaarheid.',
+    highlights: ['Prisma bedrijventerrein', 'Zoetermeerse Plas', 'Bloeiende glastuinbouw', 'Nabij A12']
+  },
+
+  // === PIJNACKER-NOOTDORP ===
+  'pijnacker': {
+    population: 27000,
+    region: 'Haaglanden',
+    neighborhoods: ['Centrum', 'Klapwijk', 'Keijzershof', 'Ackerswoude', 'Tolhek', 'Koningshof', 'Emerald'],
+    description: 'Pijnacker is de hoofdkern van gemeente Pijnacker-Nootdorp en heeft de afgelopen jaren een sterke groeispurt doorgemaakt met nieuwbouwwijken Ackerswoude en Keijzershof. RandstadRail verbindt Pijnacker direct met Den Haag Centraal en Rotterdam.',
+    highlights: ['RandstadRail Pijnacker Centrum', 'Ackerswoude nieuwbouw', 'Bieslandse Bos recreatie', 'Prachtige tuinbouwlint']
+  },
+  'nootdorp': {
+    population: 16500,
+    region: 'Haaglanden',
+    neighborhoods: ['Centrum', 'Craeyenburch', 'Nieuw Nootdorp', 'Ypenburg-grens', 'Vlietrand'],
+    description: 'Nootdorp is een gezellige woonkern aan de rand van Den Haag, met directe verbinding naar de A12. De historische dorpskern rondom de Kerkweg contrasteert met de nieuwbouwwijk Craeyenburch en biedt een groene, kindvriendelijke omgeving.',
+    highlights: ['Historisch dorpshart', 'Craeyenburch nieuwbouw', 'Op fietsafstand van Ypenburg', 'Nabij A12']
+  },
+
+  // === VOORNE AAN ZEE ===
+  'hellevoetsluis': {
+    population: 40000,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Kooistee', 'Boomgaard', 'Nieuwenhoorn', 'Oudenhoorn', 'Ravense Hoek', 'Struijtenburgh'],
+    description: 'Hellevoetsluis is een levendige havenstad aan het Haringvliet, ooit de belangrijkste marinehaven van de Republiek. De historische vestingwerken, het gezellige havenkwartier en de directe ligging aan het water maken het populair bij watersporters.',
+    highlights: ['Historische vesting Hellevoetsluis', 'Droogdok Jan Blanken', 'Haringvliet strand', 'Watersporthaven']
+  },
+  'brielle': {
+    population: 17000,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Slagveld', 'Rugge', 'Zwartewaal', 'Vierpolders'],
+    description: 'Brielle is een van de best bewaarde vestingsteden van Nederland en de plek waar in 1572 de Watergeuzen de stad innamen — het begin van de Nederlandse onafhankelijkheid. De monumentale binnenstad, complete vestingwallen en waterrijke omgeving maken Brielle uniek.',
+    highlights: ['Volledig behouden vestingwal', 'Watergeuzen 1 april', 'Historisch Museum Den Briel', 'Brielse Meer']
+  },
+  'oostvoorne': {
+    population: 9500,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Nieuwe Achterweg', 'Duinrand', 'Rondeburg', 'Kruining­ergors'],
+    description: 'Oostvoorne is een authentiek kustdorp aan de duinen van Voorne, met uitgestrekte natuurgebieden en het brede Oostvoornse Strand. De kern combineert dorpsgezelligheid met de rust van duinen, bos en watersport op de Brielse Meer.',
+    highlights: ['Oostvoornse strand', 'Duinen van Voorne (Natura 2000)', 'Nabij Brielse Meer', 'Rustige woonomgeving']
+  },
+  'rockanje': {
+    population: 5000,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Duinstroom', 'Vissersdijk', 'Bosdreef'],
+    description: 'Rockanje is een gemoedelijk kustdorp aan de Voornse Duinen, met het brede Rockanjese Strand en een gezellig centrum. Populair bij campings en tweede-huisbezitters, biedt het dorp jaarrond een rustige zeewaardige woonomgeving.',
+    highlights: ['Rockanjese Strand', 'Recreatiepark Molenven', 'Duinen van Rockanje', 'Watersporthaven de Punt']
+  },
+
+  // === LEIDSCHENDAM-VOORBURG ===
+  'voorburg': {
+    population: 41500,
+    region: 'Haaglanden',
+    neighborhoods: ['Voorburg-Noord', 'Voorburg-West', 'Bovenveen', 'Damsigt', 'Park Leeuwenbergh', 'Voorburgse binnenstad'],
+    description: 'Voorburg is een van de oudste plaatsen van Nederland, ooit de Romeinse nederzetting Forum Hadriani. De statige villawijken, monumentale binnenstad en de aanwezigheid van paleis Huygens maken Voorburg tot een van de meest geliefde woonplaatsen in de Haagse regio.',
+    highlights: ['Huygens Museum Hofwijck', 'Historische binnenstad', 'Park Vreugd en Rust', 'Romeinse oorsprong Forum Hadriani']
+  },
+  'leidschendam': {
+    population: 35500,
+    region: 'Haaglanden',
+    neighborhoods: ['Centrum', 'De Heuvel', 'Duivenvoorde', 'Prinsenhof', 'Zeeheldenwijk', 'Sijtwende'],
+    description: 'Leidschendam ligt aan de oude vaartroute tussen Leiden en Delft en dankt zijn naam aan de sluis (dam) die deze verbinding beheerste. Het moderne winkelcentrum Leidsenhage, ruime woonwijken en directe HTM tram­verbinding naar Den Haag maken het populair.',
+    highlights: ['Winkelhart Leidsenhage', 'Sluis (rijksmonument)', 'HTM tram naar Den Haag', 'Duivenvoorde bos']
+  },
+
+  // === TEYLINGEN ===
+  'sassenheim': {
+    population: 15500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Woningbouwvereniging Sassenheim', 'Klinkenberg', 'Lubbertijnhof', 'Kagerplassen-zijde'],
+    description: 'Sassenheim is de grootste kern van gemeente Teylingen, gelegen in het hart van de bollenstreek tussen Leiden en Haarlem. Beroemd om Kasteel Sassenheim (Teylingen), voorjaarsbloei van tulpenvelden en het treinstation aan de Oude Lijn.',
+    highlights: ['Ruïne Teylingen', 'Bollenvelden voorjaar', 'Station Sassenheim (Oude Lijn)', 'Nabij Keukenhof']
+  },
+  'voorhout': {
+    population: 10500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Boekhorst', 'Nieuw Rijnhof', 'Oosthout', 'Bloembol'],
+    description: 'Voorhout is een gezellig dorp in de bollenstreek, met de karakteristieke Bartholomeuskerk en tulpenvelden aan alle kanten. De historische Van Pallandtlaan verbindt Voorhout met Noordwijk en de dorpskern biedt goede voorzieningen voor gezinnen.',
+    highlights: ['Bartholomeuskerk (rijksmonument)', 'Bollenvelden en tulpen', 'Nabij Keukenhof', 'Historisch dorpshart']
+  },
+  'warmond': {
+    population: 5500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Kaageiland', 'Meerwijk', 'Norremeer', 'Trekvaart'],
+    description: 'Warmond ligt aan de Kagerplassen en is een van de mooiste watersportdorpen van Zuid-Holland. Met eigen haven, zeilscholen en de historische Grote Kerk biedt Warmond een unieke combinatie van dorpsleven en waterrecreatie op de Kaag.',
+    highlights: ['Kagerplassen watersport', 'Kasteel Oud-Teylingen', 'Norremeer haven', 'Trekvaart naar Leiden']
+  },
+  'spijkenisse': {
+    population: 73000,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Sterrenkwartier', 'Waterland', 'Groenewoud', 'Vriesland', 'De Elementen', 'Vogelenzang', 'Maaswijk', 'De Hoek'],
+    description: 'Spijkenisse is de grootste stad van gemeente Voorne aan Zee en groeide vanaf 1970 uit tot een moderne woonstad met eigen metroverbinding naar Rotterdam. Het centrum rondom de Stadswinkel, de Boekenberg-bibliotheek en het Metrostation bieden alle stedelijke voorzieningen aan de rand van Voorne.',
+    highlights: ['Metrolijn D naar Rotterdam', 'Boekenberg (grootste bibliotheek NL)', 'Stadswinkel centrum', 'Uitwaaien in de Bernissepolder']
+  },
 }
 
 /**

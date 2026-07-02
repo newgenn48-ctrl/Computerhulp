@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import Hero from '@/components/sections/Hero'
 import PricingSection from '@/components/PricingSection'
 import ServicesSection from '@/components/ServicesSection'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
@@ -111,7 +111,7 @@ const faqItems = [
   },
   {
     q: 'Wat nemen jullie mee bij een huisbezoek?',
-    a: 'Onze IT-studenten nemen gereedschap, kabels, adapters en veelgebruikte onderdelen mee. De meeste problemen lossen we ter plekke op, zonder dat uw apparaat mee hoeft.',
+    a: 'Onze IT-specialisten nemen gereedschap, kabels, adapters en veelgebruikte onderdelen mee. De meeste problemen lossen we ter plekke op, zonder dat uw apparaat mee hoeft.',
   },
   {
     q: 'Wat als mijn computer niet ter plekke gerepareerd kan worden?',
@@ -165,74 +165,23 @@ export default function ComputerhulpAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
-      {/* Hero */}
-      <section className="hero-wrapper">
-        <div className="absolute inset-0">
-          <Image
-            src="/hero student.webp"
-            alt={`Computerhulp aan huis — IT-student helpt klant in ${BUSINESS.REGION}`}
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
-        </div>
+      <Hero
+        imageSrc="/hero student.webp"
+        imageAlt={`Computerhulp aan huis — IT-specialist helpt klant in ${BUSINESS.REGION}`}
+        eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
+        title={<>Computerhulp <span className="text-blue-300">aan huis</span></>}
+        descriptions={[
+          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen <strong className="text-white">vaak binnen 24 uur</strong> bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
+          <>Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong> — achteraf betalen via Tikkie, geen abonnement.</>,
+        ]}
+      />
 
-        <div className="hero-content">
-          <div className="max-w-2xl">
-            <p className="hero-eyebrow">{BUSINESS.REVIEW_COUNT} tevreden klanten</p>
-            <h1 className="hero-title">
-              Computerhulp <span className="text-blue-300">aan huis</span>
-            </h1>
-
-            <p className="hero-description">
-              Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.
-            </p>
-
-            <p className="hero-description">
-              Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong>.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <a
-                href={BUSINESS.PHONE_HREF}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
-                aria-label={`Bel ${BUSINESS.PHONE}`}
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
-              <Link href="/afspraak-maken" className="btn-hero-primary">
-                Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Vaak binnen 24 uur geholpen
-              </span>
-              <span className="hero-pill">
-                <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Achteraf betalen via Tikkie
-              </span>
-              <span className="hero-pill">
-                <Icon name="users" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Geduldig en duidelijk uitgelegd
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 1. Diensten — image-based compact (zelfde pattern als /it-hulp) */}
+      {/* 1. Diensten — direct onder hero zodat bezoekers zichzelf kwalificeren */}
       <ServicesSection
+        eyebrow="Onze hulp"
         title="Waar wij u mee helpen"
-        showFeatures={true}
+        subtitle="Van een simpele vraag tot een lastig probleem — wij helpen u graag bij u thuis."
+        showDescription={true}
         limitServices={6}
         showAllButton={true}
       />

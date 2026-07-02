@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import Hero from '@/components/sections/Hero'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
@@ -60,53 +61,19 @@ export default function OverOnsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
-      {/* Hero — consistent met homepage/hub/city heroes */}
-      <section className="hero-wrapper" aria-label="Over ons hero">
-        <div className="absolute inset-0">
-          <Image
-            src="/hero student.webp"
-            alt={`Computerhulp IT-student helpt klant thuis in ${BUSINESS.REGION}`}
-            fill
-            className="object-cover object-center"
-            priority
-            sizes="100vw"
-          />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
-        </div>
-
-        <div className="hero-content">
-          <div className="max-w-2xl">
-            <p className="hero-eyebrow">Over ons</p>
-            <h1 className="hero-title">
-              Al <span className="text-blue-300">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis
-            </h1>
-
-            <p className="hero-description">
-              Al meer dan <strong className="text-white">{BUSINESS.YEARS_ACTIVE} jaar</strong> uw betrouwbare partner voor computerhulp aan huis in <strong className="text-white">{BUSINESS.REGION}</strong>. {BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <a
-                href={BUSINESS.PHONE_HREF}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
-                aria-label={`Bel ${BUSINESS.PHONE}`}
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
-              <Link href="/afspraak-maken" className="btn-hero-primary">
-                Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero
+        imageSrc="/hero student.webp"
+        imageAlt={`Computerhulp IT-student helpt klant thuis in ${BUSINESS.REGION}`}
+        ariaLabel="Over ons hero"
+        eyebrow="Over ons"
+        title={<>Al <span className="text-blue-300">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis</>}
+        descriptions={[
+          <>Al meer dan <strong className="text-white">{BUSINESS.YEARS_ACTIVE} jaar</strong> uw betrouwbare partner voor computerhulp aan huis in <strong className="text-white">{BUSINESS.REGION}</strong>. {BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.</>,
+        ]}
+      />
 
       {/* Ons Verhaal */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="section-title">
@@ -134,7 +101,7 @@ export default function OverOnsPage() {
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/Computerhulp aan huis.webp"
-                alt="Computerhulp IT-student aan het werk bij klant thuis"
+                alt={`${BUSINESS.NAME} team aan het werk bij klant thuis`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -145,7 +112,7 @@ export default function OverOnsPage() {
       </section>
 
       {/* Waarom Wij */}
-      <section className="py-20 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="section-title">
@@ -178,7 +145,7 @@ export default function OverOnsPage() {
       </section>
 
       {/* Het team */}
-      <section className="py-20 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-12">
             <h2 className="section-title">Ons team</h2>
@@ -186,6 +153,25 @@ export default function OverOnsPage() {
               IT-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Stuk voor stuk gescreend, verzekerd en met minimaal 2 jaar praktijkervaring.
             </p>
           </header>
+
+          {/* Team-leden — vervang placeholder-avatars door echte foto's in /public/team/ */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
+            {[
+              { first: 'Lars', role: 'HBO Informatica', bio: 'Gespecialiseerd in Windows, WiFi en printers. Legt alles rustig uit.', initials: 'L' },
+              { first: 'Sanne', role: 'HBO IT', bio: 'Apple-expert. Helpt met iPhone, iPad en Mac. Geduldig met alle vragen.', initials: 'S' },
+              { first: 'Tim', role: 'TU Delft Informatica', bio: 'Reparatie en dataherstel. Zorgt dat uw bestanden veilig zijn.', initials: 'T' },
+              { first: 'Emma', role: 'HBO Technische Informatica', bio: 'Smart home, tv en internet. Perfect voor moderne apparaten.', initials: 'E' },
+            ].map((member, idx) => (
+              <div key={idx} className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100 text-center">
+                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl sm:text-3xl font-bold shadow-md" aria-hidden="true">
+                  {member.initials}
+                </div>
+                <h3 className="font-bold text-gray-900 text-base sm:text-lg">{member.first}</h3>
+                <p className="text-xs sm:text-sm text-blue-600 font-medium mb-2">{member.role}</p>
+                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{member.bio}</p>
+              </div>
+            ))}
+          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {[
@@ -210,7 +196,7 @@ export default function OverOnsPage() {
       </section>
 
       {/* Onze Garanties */}
-      <section className="py-20 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">

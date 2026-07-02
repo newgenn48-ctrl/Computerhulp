@@ -41,6 +41,16 @@ export default function Header() {
     return () => window.removeEventListener('keydown', handleKey)
   }, [mobileMenuOpen])
 
+  // Body scroll lock — voorkomt dat achtergrond scrollt terwijl menu open is
+  useEffect(() => {
+    if (!mobileMenuOpen) return
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = prev
+    }
+  }, [mobileMenuOpen])
+
   return (
     <header
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -117,7 +127,7 @@ export default function Header() {
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-100">
+          <div className="md:hidden mt-4 pb-4 border-t border-gray-100 relative z-10 bg-white">
             <nav className="flex flex-col gap-1 pt-4" aria-label="Mobiele navigatie">
               <Link href="/diensten" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Diensten</Link>
               <Link href="/tarieven" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Tarieven</Link>
@@ -134,6 +144,15 @@ export default function Header() {
           </div>
         )}
       </div>
+
+      {/* Backdrop — sluit menu bij tap buiten */}
+      {mobileMenuOpen && (
+        <div
+          className="md:hidden fixed inset-0 top-full bg-black/40 -z-10"
+          onClick={() => setMobileMenuOpen(false)}
+          aria-hidden="true"
+        />
+      )}
     </header>
   )
 }

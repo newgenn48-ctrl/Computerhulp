@@ -361,7 +361,7 @@ export default function WebsiteLatenMakenPage() {
         </section>
 
         {/* Technology Options Section */}
-        <section className="py-20 px-4 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-12 lg:py-16 px-4 bg-gradient-to-b from-white to-gray-50">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4">

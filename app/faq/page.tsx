@@ -105,7 +105,7 @@ export default function FAQPage() {
         </section>
 
         {/* FAQ Content */}
-        <section className="py-20 bg-white">
+        <section className="py-12 lg:py-16 bg-white">
           <div className="max-w-4xl mx-auto px-4 sm:px-6">
             {faqCategories.map((category, idx) => (
               <div key={idx} className="mb-16 last:mb-0">
