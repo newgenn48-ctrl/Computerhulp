@@ -10,7 +10,7 @@ type Field = 'naam' | 'telefoon' | 'email' | 'probleem'
 const validationRules: Record<Field, { required?: string; pattern?: [RegExp, string]; minLength?: [number, string] }> = {
   naam: { required: 'Naam is verplicht', minLength: [2, 'Naam moet minimaal 2 karakters bevatten'] },
   telefoon: { required: 'Telefoonnummer is verplicht', pattern: [/^[\d\s\-\+\(\)]{10,}$/, 'Voer een geldig telefoonnummer in'] },
-  email: { pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
+  email: { required: 'E-mailadres is verplicht', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
   probleem: { required: 'Geef een korte beschrijving', minLength: [10, 'Geef iets meer uitleg'] },
 }
 
@@ -160,7 +160,7 @@ export default function AfspraakForm() {
 
         <div>
           <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
-            E-mail <span className="text-gray-500 font-normal">(optioneel)</span>
+            E-mail <span className="text-red-500" aria-hidden="true">*</span>
           </label>
           <input
             type="email"
@@ -169,6 +169,8 @@ export default function AfspraakForm() {
             value={formData.email}
             onChange={handleChange}
             onBlur={handleBlur}
+            required
+            aria-required="true"
             autoComplete="email"
             inputMode="email"
             className={inputClass('email')}

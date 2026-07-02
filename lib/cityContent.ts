@@ -525,6 +525,707 @@ const cityContentData: Record<string, CityContent> = {
     description: 'Spijkenisse is de grootste stad van gemeente Voorne aan Zee en groeide vanaf 1970 uit tot een moderne woonstad met eigen metroverbinding naar Rotterdam. Het centrum rondom de Stadswinkel, de Boekenberg-bibliotheek en het Metrostation bieden alle stedelijke voorzieningen aan de rand van Voorne.',
     highlights: ['Metrolijn D naar Rotterdam', 'Boekenberg (grootste bibliotheek NL)', 'Stadswinkel centrum', 'Uitwaaien in de Bernissepolder']
   },
+
+  'honselersdijk': {
+    population: 4500,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Kerkstraat', 'Prinses Julianastraat', 'Bosweg', 'Broekpolder'],
+    description: 'Honselersdijk is een compact Westlands kassendorp met een historische kern rond de kerk en het oude paleisterrein. De kern was ooit thuisbasis van paleis Honselersdijk en herbergt tegenwoordig een levendige tuinbouwsector.',
+    highlights: ['Voormalig paleisterrein Honselersdijk', 'Historische dorpskern', 'Kassencentrum']
+  },
+  'poeldijk': {
+    population: 6500,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Dorpsplein', 'Julianastraat', 'Verburgh', 'Wittebrug'],
+    description: 'Poeldijk is een authentiek Westlands dorp aan de rand van Monster en \'s-Gravenzande, bekend om de Bartholomeuskerk en de karakteristieke lintbebouwing langs de Nieuweweg. Populair bij tuinbouwondernemers en forensen naar Den Haag.',
+    highlights: ['Bartholomeuskerk', 'Lintdorpstructuur', 'Nabij strand Ter Heijde']
+  },
+  'kwintsheul': {
+    population: 3500,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Kerkstraat', 'Heulweg', 'Bovendijk'],
+    description: 'Kwintsheul is een klein maar bruisend kassendorp in het hart van Westland, met een sterke dorpsgemeenschap en actieve verenigingen. Het dorp ligt strategisch tussen Naaldwijk en Wateringen.',
+    highlights: ['Heulweg lintbebouwing', 'Kleinschalige tuinbouw', 'Centraal in Westland']
+  },
+  'maasdijk': {
+    population: 3000,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Oranjeplein', 'Maasdijkseweg', 'Nieuwe Weg'],
+    description: 'Maasdijk is een dijkdorp op de grens van Westland en Nieuwe Waterweg, met karakteristieke dijkbebouwing en historische banden met de scheepvaart. De ligging bij de A20 maakt Maasdijk goed bereikbaar.',
+    highlights: ['Historische dijkbebouwing', 'Nabij Nieuwe Waterweg', 'Kort bij Maassluis']
+  },
+  'ter-heijde': {
+    population: 900,
+    region: 'Westland',
+    neighborhoods: ['Centrum', 'Kerkstraat', 'Nieuweweg', 'Boulevard'],
+    description: 'Ter Heijde is een klein Westlands kustdorp direct aan zee, populair bij zomergasten en surfers. De kern telt slechts een handvol straten en biedt uniek uitzicht op zee, duinen en kassen.',
+    highlights: ['Strand van Ter Heijde', 'Surfspot Noordzeekust', 'Kleinste kustdorp Zuid-Holland']
+  },
+  'delfgauw': {
+    population: 8000,
+    region: 'Haaglanden',
+    neighborhoods: ['Centrum', 'Emerald', 'Delftechpark', 'Ackerdijk'],
+    description: 'Delfgauw ligt tussen Delft en Pijnacker en is uitgegroeid tot een moderne woonkern met de wijk Emerald. De kern combineert dorpse rust met de nabijheid van TU Delft en Rotterdam.',
+    highlights: ['Emerald nieuwbouwwijk', 'Ackerdijkse Plassen natuurgebied', 'Nabij TU Delft']
+  },
+  'stompwijk': {
+    population: 2500,
+    region: 'Haaglanden',
+    neighborhoods: ['Centrum', 'Dr. van Noortstraat', 'Meerlaan', 'Klaverblad'],
+    description: 'Stompwijk is een landelijk dorp aan de rand van Leidschendam-Voorburg, ingeklemd tussen weilanden en de A4. Het dorp bewaart een dorps karakter met een historische Sint-Laurentiuskerk en agrarische wortels.',
+    highlights: ['Sint-Laurentiuskerk', 'Groen weidegebied', 'Agrarische traditie']
+  },
+  'maasland': {
+    population: 7500,
+    region: 'Midden-Delfland',
+    neighborhoods: ['Centrum', '\'t Hooghe Land', 'Molenpolder', 'Lange Kruisweg'],
+    description: 'Maasland is een historisch dijkdorp in Midden-Delfland, met een authentieke dorpskern rond de Oude Kerk. De polders en molens rondom het dorp maken het een geliefde uitvalsbasis voor fietsers en wandelaars.',
+    highlights: ['Oude Kerk Maasland', 'Weidepolders Midden-Delfland', 'Commandeurspolder']
+  },
+  'schipluiden': {
+    population: 4500,
+    region: 'Midden-Delfland',
+    neighborhoods: ['Centrum', 'Dorpshuis', 'Vlaardingsekade', 'De Zweth'],
+    description: 'Schipluiden is de hoofdkern van gemeente Midden-Delfland, gelegen aan de Gaag met een pittoresk haventje. Het dorp bewaart een landelijk karakter met historische boerderijen en molens.',
+    highlights: ['Haventje aan de Gaag', 'Molen \'t Poeltje', 'Landelijk Midden-Delfland']
+  },
+  'den-hoorn': {
+    population: 6500,
+    region: 'Haaglanden',
+    neighborhoods: ['Centrum', 'De Kreek', 'Look-West', 'Harnaschpolder'],
+    description: 'Den Hoorn ligt direct ten westen van Delft en is een groeikern met moderne woonwijken zoals De Kreek. Het dorp biedt goede voorzieningen en snelle bereikbaarheid via de A4.',
+    highlights: ['De Kreek nieuwbouw', 'Harnaschpolder bedrijventerrein', 'Kort bij Delft centrum']
+  },
+  'nieuwenhoorn': {
+    population: 2500,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Kerkring', 'Nieuwenhoornsedijk'],
+    description: 'Nieuwenhoorn is een klein dijkdorp bij Hellevoetsluis, met een karakteristieke ronde kerk en historische lintbebouwing. Het dorp bewaart landelijke rust in het Voornese polderlandschap.',
+    highlights: ['Historische ronde Kerkring', 'Landelijk Voornes polderland', 'Nabij Hellevoetsluis']
+  },
+  'zwartewaal': {
+    population: 1700,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Havendijk', 'Dorpsstraat'],
+    description: 'Zwartewaal is een oud haventje aan de Bernisse tussen Brielle en Rockanje, met een pittoreske dorpshaven en historische visserstraditie. De rust en het uitzicht op het water maken het geliefd.',
+    highlights: ['Dorpshaven Zwartewaal', 'Historische visserstraditie', 'Bernisse rivier']
+  },
+  'abbenbroek': {
+    population: 1400,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Kerkstraat', 'Molendijk'],
+    description: 'Abbenbroek is een piepklein Voornes dorp met een monumentale hervormde kerk en historische polderbebouwing. Het dorp ligt centraal op Voorne tussen Spijkenisse en Hellevoetsluis.',
+    highlights: ['Hervormde kerk uit de 15e eeuw', 'Historisch dorpshart', 'Polderlandschap']
+  },
+  'geervliet': {
+    population: 1500,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Kaai', 'Kerkstraat'],
+    description: 'Geervliet is een middeleeuws stadje aan de Bernisse, met stadsrechten sinds 1381 en het oudste stadhuis van Voorne. Het intieme historische centrum trekt liefhebbers van middeleeuwse architectuur.',
+    highlights: ['Middeleeuws stadhuis', 'Stadsrechten sinds 1381', 'Bernisse haventje']
+  },
+  'hekelingen': {
+    population: 3200,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Groene Kruisweg', 'Voorstraat'],
+    description: 'Hekelingen is een dorp direct bij Spijkenisse, met een sterke agrarische identiteit en het bekende Bernissegebied als achtertuin. De kern combineert dorpse rust met de nabijheid van stedelijke voorzieningen.',
+    highlights: ['Bernissegebied recreatie', 'Nabij Spijkenisse', 'Groen buitengebied']
+  },
+  'zuidland': {
+    population: 5500,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Ring', 'Kloosterweg', 'Beetgatsedijk'],
+    description: 'Zuidland is een levendig dorp centraal op Voorne, met een historische Ring rond de kerk en actieve dorpsverenigingen. De ligging bij het Bernisse-gebied maakt het aantrekkelijk voor buitenrecreatie.',
+    highlights: ['Historische Ring', 'Bernissegebied', 'Actief dorpsleven']
+  },
+  'heenvliet': {
+    population: 1500,
+    region: 'Voorne aan Zee',
+    neighborhoods: ['Centrum', 'Ring', 'Dorpsstraat'],
+    description: 'Heenvliet is een monumentaal dorp met de restanten van kasteel Ravestein en een historisch dorpshart rond de Ring. Het dorp is beschermd stadsgezicht en trekt bezoekers voor de sfeervolle sfeer.',
+    highlights: ['Kasteel Ravestein (ruïne)', 'Beschermd dorpsgezicht', 'Historische Ring']
+  },
+  'goudswaard': {
+    population: 1500,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Dorpshoek', 'Molendijk'],
+    description: 'Goudswaard is een klein Hoeksche Waards dijkdorp met een historische kerk en typische polderbebouwing. De open landschap en rust maken het populair bij wandelaars en fietsers.',
+    highlights: ['Historische dijkbebouwing', 'Open polderland', 'Hoeksche Waards karakter']
+  },
+  'oud-beijerland': {
+    population: 24000,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Oost', 'West', 'De Belder', 'Poortwijk', 'Zinkweg'],
+    description: 'Oud-Beijerland is de hoofdkern van Hoeksche Waard en het regionale winkel- en zorgcentrum van het eiland. De historische binnenstad rond het Marktplein contrasteert met moderne woonwijken.',
+    highlights: ['Regiocentrum Hoeksche Waard', 'Historisch marktplein', 'Ziekenhuis en winkelcentrum']
+  },
+  'strijen': {
+    population: 8500,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Mookhoek', 'Kaai', 'Boomdijk'],
+    description: 'Strijen is een van de oudste dorpen van Hoeksche Waard, met een monumentale Grote Kerk en historische banden met de Grafelijkheid. Het dorp bewaart een landelijk karakter tussen weilanden en riviertjes.',
+    highlights: ['Historische Grote Kerk', 'Grafelijk verleden', 'Rustig polderdorp']
+  },
+  'klaaswaal': {
+    population: 3500,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Molendijk', 'Kerkstraat'],
+    description: 'Klaaswaal is een compact Hoeksche Waards polderdorp, bekend om de karakteristieke ronde kerk en het open landschap. Het dorp biedt rust en ligging tussen Oud-Beijerland en Numansdorp.',
+    highlights: ['Ronde kerk Klaaswaal', 'Polderweidegebied', 'Centraal in de Hoeksche Waard']
+  },
+  'numansdorp': {
+    population: 5500,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Buitenom', 'Molendijk', 'Havenkade'],
+    description: 'Numansdorp is een levendig dorp aan het Hollands Diep, met een haven, veerpont en het bekende recreatiegebied de Krammer. De ligging aan het water maakt het geliefd bij watersporters.',
+    highlights: ['Haven aan Hollands Diep', 'Krammer recreatiegebied', 'Veerpont naar Willemstad']
+  },
+  'piershil': {
+    population: 1700,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Molendijk', 'Kerkring'],
+    description: 'Piershil is een minidorp op de rand van Hoeksche Waard aan het Spui, met een sfeervol Kerkring en directe verbinding naar Nissewaard via de brug. Populair bij mensen die rust zoeken aan het water.',
+    highlights: ['Historisch Kerkring', 'Uitzicht over het Spui', 'Verbinding naar Nissewaard']
+  },
+  'zuid-beijerland': {
+    population: 3300,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Molendijk', 'Kerkweg'],
+    description: 'Zuid-Beijerland is een polderdorp centraal in Hoeksche Waard, met een historische korenmolen en agrarisch verleden. Het dorp biedt rustige woonstraten en het open landschap van de Beijerlanden.',
+    highlights: ['Korenmolen Zuid-Beijerland', 'Beijerlands polderland', 'Landelijke rust']
+  },
+  'puttershoek': {
+    population: 7500,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Zomerlanden', 'Suikerplein', 'Dwarsdijk'],
+    description: 'Puttershoek is een dorp aan de Oude Maas, ooit thuis van de suikerfabriek waar het Suikerplein aan herinnert. Het dorp is populair bij forensen naar Rotterdam via de Kiltunnel.',
+    highlights: ['Voormalige suikerfabriek', 'Uitzicht Oude Maas', 'Kiltunnel naar Dordrecht']
+  },
+  'maasdam': {
+    population: 2700,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Rijkestraat', 'Molendijk'],
+    description: 'Maasdam is een gezellig polderdorp centraal op Hoeksche Waard, met korte lijnen naar Oud-Beijerland en Puttershoek. Het dorp staat bekend om de gemoedelijke sfeer en dorpsfeesten.',
+    highlights: ['Actieve dorpsvereniging', 'Centraal in Hoeksche Waard', 'Nabij Oude Maas']
+  },
+  'heinenoord': {
+    population: 2700,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Ring', 'Dorpsstraat'],
+    description: 'Heinenoord is een historisch polderdorp direct bij de Heinenoordtunnel naar Rotterdam. De strategische ligging maakt het geliefd bij forensen, terwijl de dorpskern rustig blijft.',
+    highlights: ['Heinenoordtunnel A29', 'Historisch dorpshart', 'Snelle verbinding Rotterdam']
+  },
+  'mijnsheerenland': {
+    population: 5500,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Lange Wei', 'Kerkstraat', 'De Waag'],
+    description: 'Mijnsheerenland is een aantrekkelijk woondorp in Hoeksche Waard, met een historische kern rondom de Lange Wei en moderne uitbreidingen. Het dorp combineert dorpse gezelligheid met goede voorzieningen.',
+    highlights: ['Historische Lange Wei', 'Kerktoren monument', 'Hoeksche Waards karakter']
+  },
+  'nieuw-beijerland': {
+    population: 3800,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Molendijk', 'Kerkweg', 'Vaartweg'],
+    description: 'Nieuw-Beijerland is een polderdorp aan de rand van Hoeksche Waard, richting het Spui. Het dorp biedt rust en heeft actieve verenigingen die het dorpsleven levendig houden.',
+    highlights: ['Molen aan de Molendijk', 'Rust en polders', 'Sterke dorpsgemeenschap']
+  },
+  'rhoon': {
+    population: 12000,
+    region: 'Rijnmond',
+    neighborhoods: ['Centrum', 'Portland', 'De Landsheer', 'Julianastraat', 'De Elementen'],
+    description: 'Rhoon is de grootste kern van gemeente Albrandswaard en biedt een unieke mix van kasteel Rhoon, historisch centrum en de moderne wijk Portland. Directe metroverbinding naar Rotterdam.',
+    highlights: ['Kasteel Rhoon', 'Portland nieuwbouw', 'Metro naar Rotterdam', 'Rhoonse Grienden natuur']
+  },
+  'poortugaal': {
+    population: 8500,
+    region: 'Rijnmond',
+    neighborhoods: ['Centrum', 'Delta psychiatrisch', 'Poortugaalse Polder', 'Overhoeken'],
+    description: 'Poortugaal is een historisch dijkdorp aan de Oude Maas, bekend om het Delta terrein en de karakteristieke kerktoren. Metrostation Poortugaal verbindt het dorp direct met Rotterdam.',
+    highlights: ['Metrostation Poortugaal', 'Delta psychiatrisch centrum', 'Oude Maas dijk', 'Historisch centrum']
+  },
+  'middelharnis': {
+    population: 10000,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Menheerse Weg', 'Vinkendreef', 'Havendijk'],
+    description: 'Middelharnis is de bestuurskern van Goeree-Overflakkee en het regionale winkelcentrum van het eiland. De haven aan het Haringvliet en de historische Sint-Michaëlskerk zijn beeldbepalend.',
+    highlights: ['Haven Middelharnis', 'Sint-Michaëlskerk', 'Regiocentrum eiland']
+  },
+  'ouddorp': {
+    population: 6500,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Strandweg', 'Klepperstee', 'Vroongronden'],
+    description: 'Ouddorp is dé badplaats van Goeree-Overflakkee, met kilometers strand, duinen en talloze campings en vakantieparken. In de zomer telt het dorp veel meer bezoekers dan bewoners.',
+    highlights: ['Uitgestrekt Ouddorpse strand', 'Vuurtoren Westhoofd', 'Vakantieparken', 'Klepperstee natuur']
+  },
+  'dirksland': {
+    population: 3500,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Ziekenhuisplein', 'Molenkade'],
+    description: 'Dirksland is het zorgcentrum van Goeree-Overflakkee, met het Van Weel-Bethesda Ziekenhuis en een compact dorpshart. Het dorp biedt rust en centraal gelegen voorzieningen op het eiland.',
+    highlights: ['Van Weel-Bethesda Ziekenhuis', 'Centraal op Goeree-Overflakkee', 'Polderdorpje']
+  },
+  'goedereede': {
+    population: 2000,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Havenkade', 'Marktveld'],
+    description: 'Goedereede is een pittoreske voormalige vestingstad met een monumentaal centrum, ronde havenkom en de karakteristieke Toren van Goedereede. Het stadje verkreeg al in 1312 stadsrechten.',
+    highlights: ['Toren van Goedereede', 'Ronde haven', 'Stadsrechten sinds 1312', 'Monumentaal centrum']
+  },
+  'sommelsdijk': {
+    population: 8000,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Simon van der Stelplein', 'Voorstraat'],
+    description: 'Sommelsdijk is direct verbonden met Middelharnis en vormt samen het bestuurlijk en commercieel hart van Goeree-Overflakkee. De Voorstraat is een populair winkelgebied.',
+    highlights: ['Voorstraat winkelgebied', 'Aansluitend aan Middelharnis', 'Historisch stadhuis']
+  },
+  'stellendam': {
+    population: 3500,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Havenkade', 'Marktveld'],
+    description: 'Stellendam ligt aan de Haringvlietsluizen en heeft een levendige vissershaven met een van de grootste vissersvloten van Nederland. Het dorp is vertrekpunt voor watersport op de Noordzee.',
+    highlights: ['Vissershaven Stellendam', 'Haringvlietsluizen (Deltawerken)', 'Faassen visafslag']
+  },
+  'oude-tonge': {
+    population: 4000,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Molendijk', 'Voorstraat'],
+    description: 'Oude-Tonge is een van de oudste kernen op Goeree-Overflakkee, met een historisch dorpshart en het Watersnoodmonument als herinnering aan 1953. Het dorp biedt landelijke rust.',
+    highlights: ['Watersnoodmonument 1953', 'Historisch dorpshart', 'Polderland']
+  },
+  'nieuwe-tonge': {
+    population: 2400,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Dorpsplein', 'Molendijk'],
+    description: 'Nieuwe-Tonge is een compact polderdorp in het oosten van Goeree-Overflakkee, met een sfeervolle dorpskerk en agrarische identiteit. De rust en het weidse landschap maken het aantrekkelijk.',
+    highlights: ['Dorpskerk Nieuwe-Tonge', 'Agrarisch landschap', 'Rustig karakter']
+  },
+  'ooltgensplaat': {
+    population: 2500,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Havenkade', 'Ring'],
+    description: 'Ooltgensplaat is een polderdorp aan het Volkerak, met een gezellige haven en het beroemde Fort Prins Frederik uit de 19e eeuw. Populair bij watersporters op het Volkerakmeer.',
+    highlights: ['Fort Prins Frederik', 'Haven aan Volkerak', 'Watersportgebied']
+  },
+  'den-bommel': {
+    population: 1500,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Molendijk', 'Dorpsstraat'],
+    description: 'Den Bommel is een klein polderdorp in het oosten van Goeree-Overflakkee, met een authentiek dorpshart en zicht op het Volkerak. Het dorp bewaart landelijke sfeer en rust.',
+    highlights: ['Uitzicht Volkerak', 'Landelijke rust', 'Historische dorpskerk']
+  },
+  'herkingen': {
+    population: 700,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Havenweg', 'Dijk'],
+    description: 'Herkingen is een piepklein havendorp aan het Grevelingenmeer, populair bij zeilers en watersporters. De haven en de nabijheid van watersportgebieden zijn de belangrijkste trekkers.',
+    highlights: ['Haven aan Grevelingenmeer', 'Watersportparadijs', 'Kleinste kern van het eiland']
+  },
+  'melissant': {
+    population: 1600,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Middelweg', 'Molendijk'],
+    description: 'Melissant is een klein polderdorp centraal op Goeree-Overflakkee, met een karakteristieke molen en landelijk karakter. Het dorp ligt centraal tussen Dirksland en Stellendam.',
+    highlights: ['Molen Melissant', 'Centrale ligging', 'Landelijk karakter']
+  },
+  'bodegraven': {
+    population: 20000,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Vromade', 'Weideveld', 'Broekvelden'],
+    description: 'Bodegraven is een levendige plaats in het Groene Hart, aan de Oude Rijn. Bekend om de kaasproductie, de wekelijkse kaasmarkt en directe treinverbinding met Utrecht en Leiden.',
+    highlights: ['Kaasmarkt Bodegraven', 'Station op Oude Lijn', 'Reeuwijkse Plassen nabij', 'Oude Rijn']
+  },
+  'reeuwijk': {
+    population: 13000,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Reeuwijkse Plassen', 'Sluipwijk', 'Middelburg'],
+    description: 'Reeuwijk staat wereldberoemd om de Reeuwijkse Plassen — een uitgestrekt gebied van 12 aaneengesloten plassen, ideaal voor zeilen, wandelen en fietsen. Een van de mooiste natuurgebieden van het Groene Hart.',
+    highlights: ['Reeuwijkse Plassen (12 plassen)', 'Watersport en zeilen', 'Groene Hart natuur', 'Nabij Gouda']
+  },
+  'driebruggen': {
+    population: 1400,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Molendijk'],
+    description: 'Driebruggen is een klein Groene-Hart dorp aan de Enkele Wiericke, met een landelijk karakter en agrarische wortels. Populair bij mensen die rust en groen zoeken.',
+    highlights: ['Enkele Wiericke rivier', 'Weidse polders', 'Landelijk dorpje']
+  },
+  'schoonhoven': {
+    population: 12500,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'Wilgenkroon', 'De Bloemendaal', 'De Meent'],
+    description: 'Schoonhoven is de zilverstad van Nederland, met een monumentale binnenstad, het Nederlands Zilvermuseum en een rijke edelsmeed-traditie. De stad ligt aan de Lek met een pontverbinding naar Utrecht.',
+    highlights: ['Nederlands Zilvermuseum', 'Historische zilverstad', 'Pont over de Lek', 'Vestingwerken']
+  },
+  'bergambacht': {
+    population: 5500,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'Middelblok', 'Berkenwoudsedijk'],
+    description: 'Bergambacht is een landelijk dijkdorp aan de Lek, met een compacte dorpskern en typisch polderlandschap eromheen. Populair bij fietsers vanwege de Krimpenerwaard-route.',
+    highlights: ['Lekdijk uitzicht', 'Krimpenerwaardse polders', 'Compact dorpshart']
+  },
+  'lekkerkerk': {
+    population: 8500,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'Zuidbroek', 'Bosman', 'Kerkweg'],
+    description: 'Lekkerkerk is een dijkdorp aan de Lek tegenover Krimpen aan de IJssel, met een levendig dorpshart en directe verbinding met de veerpont. Het dorp combineert dorpsleven met stadse nabijheid.',
+    highlights: ['Lekveer Lekkerkerk', 'Historisch dijkdorp', 'Lek uitzicht']
+  },
+  'stolwijk': {
+    population: 4500,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'Kerkweg', 'Beijersche', 'Bilwijk'],
+    description: 'Stolwijk is een boerendorp in het hart van de Krimpenerwaard, bekend om Stolwijker kaas en het typisch open weidelandschap. Rust en boerenerven bepalen het beeld.',
+    highlights: ['Stolwijker kaastraditie', 'Open weidegebied', 'Boerenerven']
+  },
+  'haastrecht': {
+    population: 3900,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'Bilwijk', 'Vlist', 'Provinciale weg'],
+    description: 'Haastrecht is een historisch dorp aan de Vlist en de Hollandse IJssel, met een monumentale kerk en het pittoreske Bisdom van Vliet museum. Vroeger belangrijk aan de handelsroute Gouda-Utrecht.',
+    highlights: ['Bisdom van Vliet museum', 'Historisch dorpshart', 'Vlist en Hollandse IJssel']
+  },
+  'ammerstol': {
+    population: 1400,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'Voorstraat', 'Lekdijk'],
+    description: 'Ammerstol is een klein dijkdorp aan de Lek, ooit belangrijk voor de zalmvisserij. Nu is het een rustig woondorpje met karakteristieke dijkbebouwing.',
+    highlights: ['Historische zalmvisserij', 'Karakteristieke Lekdijk', 'Klein dijkdorp']
+  },
+  'berkenwoude': {
+    population: 1900,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Molendijk'],
+    description: 'Berkenwoude is een klein weidedorp in de Krimpenerwaard, met een landelijk karakter en het open polderlandschap als achtertuin. Populair bij weekendfietsers.',
+    highlights: ['Weids weidelandschap', 'Fietsroutes Krimpenerwaard', 'Rustig dorpje']
+  },
+  'gouderak': {
+    population: 3500,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'IJsseldijk', 'Middelblok'],
+    description: 'Gouderak ligt aan de Hollandse IJssel tussen Gouda en Krimpen. Het dorp heeft een sfeervol dorpshart en biedt uitzicht over de rivier vanaf de IJsseldijk.',
+    highlights: ['Hollandse IJssel uitzicht', 'IJsseldijk fietsroute', 'Compact dorpshart']
+  },
+  'krimpen-aan-de-lek': {
+    population: 6500,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'Buitenkerk', 'Molendijk', 'Waaier'],
+    description: 'Krimpen aan de Lek ligt aan de samenkomst van Lek en Noord, met de Algerabrug als markant punt. Het dorp heeft historische banden met de scheepsbouw.',
+    highlights: ['Algerabrug', 'Samenkomst Lek en Noord', 'Scheepsbouwtraditie', 'Historisch dorpshart']
+  },
+  'ouderkerk-aan-den-ijssel': {
+    population: 8000,
+    region: 'Krimpenerwaard',
+    neighborhoods: ['Centrum', 'IJsseldijk', 'Kromme', 'Lageweg'],
+    description: 'Ouderkerk aan den IJssel is een langgerekt dijkdorp langs de Hollandse IJssel, met karakteristieke lintbebouwing en scheepswerftraditie. Het dorp biedt rustige woonstraten en dijkuitzicht.',
+    highlights: ['Historische scheepswerf', 'Hollandse IJssel dijk', 'Lintbebouwing', 'Molens aan de IJssel']
+  },
+  'kinderdijk': {
+    population: 500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Molendijk', 'Molens'],
+    description: 'Kinderdijk staat op de UNESCO Werelderfgoedlijst met zijn 19 historische molens die het polderlandschap bepalen. Het dorpje zelf is klein maar trekt jaarlijks honderdduizenden bezoekers.',
+    highlights: ['19 molens (UNESCO Werelderfgoed)', 'Molentochten', 'Wereldberoemde skyline', 'Waterschap geschiedenis']
+  },
+  'nieuw-lekkerland': {
+    population: 9500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Middenweg', 'Lekdijk', 'De Klok'],
+    description: 'Nieuw-Lekkerland ligt aan de Lek tegenover Krimpen, met het beroemde Molens van Kinderdijk gebied binnen de gemeente. Het dorp heeft een compact centrum en goede voorzieningen.',
+    highlights: ['Molens van Kinderdijk', 'Lek uitzicht', 'Dorpskern', 'Nabij Alblasserdam']
+  },
+  'groot-ammers': {
+    population: 3500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Fortuinstraat', 'Molendijk'],
+    description: 'Groot-Ammers is een dorp aan de Lek in de Alblasserwaard, bekend om het Vogelasiel en het historische dorpshart. De rust en het rivierlandschap zijn de belangrijkste trekkers.',
+    highlights: ['Vogelasiel De Wulp', 'Lek uitzicht', 'Historisch centrum']
+  },
+  'bleskensgraaf': {
+    population: 2500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Kerkweg', 'Molendijk'],
+    description: 'Bleskensgraaf is een polderdorp in de Alblasserwaard, met een compact dorpshart en agrarische wortels. Het dorp is bekend om de kaasboerderijen in de omgeving.',
+    highlights: ['Kaasboerderijen', 'Weidepolders Alblasserwaard', 'Rustig dorpje']
+  },
+  'arkel': {
+    population: 3800,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Rietveld', 'Kanaaldijk'],
+    description: 'Arkel ligt aan het Merwedekanaal tussen Gorinchem en Leerdam, met een historisch dorpshart en watertoren als markant punt. Het dorp heeft eigen station op de Betuweroute.',
+    highlights: ['Station Arkel', 'Merwedekanaal', 'Historische watertoren']
+  },
+  'giessenburg': {
+    population: 3000,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Doetsehoek', 'Bovenkerkweg'],
+    description: 'Giessenburg is een langgerekt dorp langs de Giessen in de Alblasserwaard, ontstaan door samenvoeging van Giessendam en Giessen-Oudekerk. Landelijk karakter met sterke gemeenschap.',
+    highlights: ['Rivier de Giessen', 'Lintbebouwing', 'Alblasserwaards karakter']
+  },
+  'hoornaar': {
+    population: 1500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Dorpsweg', 'Molendijk'],
+    description: 'Hoornaar is een klein polderdorp in de Alblasserwaard, met een monumentale kerk en typisch open weidelandschap. Rustig en landelijk.',
+    highlights: ['Historische kerk', 'Open weidegebied', 'Dorpsgemeenschap']
+  },
+  'nieuwpoort': {
+    population: 1200,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Vestingwallen', 'Havenkade'],
+    description: 'Nieuwpoort is een van de best bewaarde vestingsteden van Nederland, gelegen aan de Lek en Merwedekanaal. Het minivestingstadje bewaart complete wallen en grachten.',
+    highlights: ['Complete vestingwallen', 'Stadsrechten sinds 1283', 'Rijksmonumenten', 'Lek uitzicht']
+  },
+  'streefkerk': {
+    population: 2500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Lekdijk', 'Middelblok'],
+    description: 'Streefkerk is een dijkdorp aan de Lek in de Alblasserwaard, met karakteristieke lintbebouwing en historische molens. De dijkroute is populair bij fietsers.',
+    highlights: ['Lekdijk fietsroute', 'Historische molens', 'Karakteristiek dijkdorp']
+  },
+  'oud-alblas': {
+    population: 1800,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Molendijk', 'Landweg'],
+    description: 'Oud-Alblas is een klein polderdorp in de Alblasserwaard, met een sfeervolle dorpskerk en het open weidelandschap dat de streek kenmerkt. Rust en groen bepalen het beeld.',
+    highlights: ['Historische dorpskerk', 'Weids polderland', 'Rustig dorpje']
+  },
+  'noordeloos': {
+    population: 1500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Dorpsweg', 'Overslingeland'],
+    description: 'Noordeloos is een landelijk dorpje in de Alblasserwaard, met een historisch centrum rond de kerk. Het dorp bewaart de Alblasserwaardse dorpssfeer.',
+    highlights: ['Historisch dorpshart', 'Alblasserwaards karakter', 'Groen polderland']
+  },
+  'schelluinen': {
+    population: 1600,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'A15-zijde', 'Dorpsstraat'],
+    description: 'Schelluinen ligt strategisch bij de A15 en Betuweroute, met een compact dorpshart en directe autoverbindingen naar Rotterdam en Utrecht. Bekend om het bedrijventerrein A15.',
+    highlights: ['Bedrijventerrein A15', 'Nabij Gorinchem', 'Historisch dorpshart']
+  },
+  'langerak': {
+    population: 1500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Lekdijk', 'Molendijk'],
+    description: 'Langerak is een langgerekt dijkdorp aan de Lek in de Alblasserwaard, met karakteristieke lintbebouwing en zicht op de rivier. Rustig en landelijk.',
+    highlights: ['Lek uitzicht', 'Lintbebouwing', 'Historische dijk']
+  },
+  'hardinxveld': {
+    population: 10500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Boven-Hardinxveld', 'Neder-Hardinxveld', 'Waterweg'],
+    description: 'Hardinxveld is de westelijke kern van gemeente Hardinxveld-Giessendam, langs de Beneden-Merwede met een sterke scheepvaarttraditie. Het dorp is bekend om de scheepswerven.',
+    highlights: ['Scheepswerven Beneden-Merwede', 'Dijkbebouwing', 'Merwede uitzicht']
+  },
+  'giessendam': {
+    population: 8500,
+    region: 'Alblasserwaard',
+    neighborhoods: ['Centrum', 'Kerkweg', 'Gieserwaard'],
+    description: 'Giessendam is de oostelijke kern van gemeente Hardinxveld-Giessendam, met een eigen dorpshart en agrarische wortels. Samen met Hardinxveld vormt het een dijklint langs de Merwede.',
+    highlights: ['Historisch dorpshart', 'Merwede uitzicht', 'Landelijke omgeving']
+  },
+  'boskoop': {
+    population: 15500,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Snijdelwijk', 'Bomenkwekerijen', 'Snijdelwijk-West'],
+    description: 'Boskoop is het boomkwekerijencentrum van Nederland, met honderden kwekerijen langs de Gouwe. Het dorp heeft een sterke tuinbouwidentiteit en organiseert jaarlijks het beroemde Grootste Bloemencorso.',
+    highlights: ['Boomkwekerij hoofdstad', 'Boomkwekerij museum', 'Bloemencorso', 'Historische Gouwe']
+  },
+  'hazerswoude-dorp': {
+    population: 4500,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Rijndijk-Noord'],
+    description: 'Hazerswoude-Dorp ligt in het Groene Hart, met een gezellig dorpshart en directe verbinding met de N11. Populair bij forensen naar Leiden en Alphen.',
+    highlights: ['Compact dorpshart', 'Nabij N11', 'Groene Hart karakter']
+  },
+  'hazerswoude-rijndijk': {
+    population: 5500,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Rijndijk', 'Buurtschap'],
+    description: 'Hazerswoude-Rijndijk is een langgerekte kern langs de Oude Rijn, met karakteristieke lintbebouwing en historische banden met de scheepvaart. Rust en waterrust bepalen het beeld.',
+    highlights: ['Oude Rijn dijk', 'Lintbebouwing', 'Nabij Alphen aan den Rijn']
+  },
+  'benthuizen': {
+    population: 3800,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Bentwoud'],
+    description: 'Benthuizen ligt aan het Bentwoud, een van de grootste jonge bossen van Zuid-Holland. Het dorp is populair bij natuurliefhebbers en fietsers.',
+    highlights: ['Het Bentwoud recreatie', 'Groene Hart karakter', 'Rustig woondorp']
+  },
+  'koudekerk-aan-den-rijn': {
+    population: 3800,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Rijndijk', 'De Bulk'],
+    description: 'Koudekerk aan den Rijn is een dorp langs de Oude Rijn tussen Leiden en Alphen, met een historisch dorpshart en actieve dorpsvereniging. Landelijke rust dichtbij de stad.',
+    highlights: ['Oude Rijn', 'Historische dorpskern', 'Landelijk karakter']
+  },
+  'zwammerdam': {
+    population: 1500,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Rijndijk', 'Dorpsstraat'],
+    description: 'Zwammerdam is een klein Rijndijk-dorp bij Bodegraven, met historische betekenis als Romeinse vindplaats. Zes Romeinse riviersepen zijn hier opgegraven.',
+    highlights: ['Romeinse vindplaats', 'Rijndijk lint', 'Klein historisch dorpje']
+  },
+  'aarlanderveen': {
+    population: 2200,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Molendriegang'],
+    description: 'Aarlanderveen is een klein dorp in het Groene Hart met een unieke molendriegang — drie werkende molens op een rij. Deze zeldzaamheid trekt molenliefhebbers uit het hele land.',
+    highlights: ['Molendriegang (3 molens op rij)', 'Uniek in Nederland', 'Groene Hart']
+  },
+  'leimuiden': {
+    population: 3500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Braassem', 'Dorpshoek'],
+    description: 'Leimuiden ligt aan het Braassemermeer en biedt een dorpse woonomgeving met watersportmogelijkheden. Het dorp heeft een gezellig centrum en directe verbindingen naar Schiphol.',
+    highlights: ['Braassemermeer watersport', 'Nabij Schiphol', 'Dorpshart']
+  },
+  'roelofarendsveen': {
+    population: 8500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Alkeburg', 'Braassem-West', 'Meerbaan'],
+    description: 'Roelofarendsveen is de hoofdkern van gemeente Kaag en Braassem, met een levendig centrum en directe ligging aan het Braassemermeer. Populair bij forensen naar Leiden en Amsterdam.',
+    highlights: ['Braassemermeer', 'Centraal in Kaag en Braassem', 'Winkelvoorzieningen']
+  },
+  'oude-wetering': {
+    population: 2800,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Kerkstraat', 'Havenweg'],
+    description: 'Oude Wetering ligt aan het Braassemermeer, aansluitend aan Roelofarendsveen. Het dorp heeft een gezellig dorpshart en biedt watersportmogelijkheden.',
+    highlights: ['Braassemermeer', 'Historisch dorpshart', 'Watersporttoegang']
+  },
+  'woubrugge': {
+    population: 2500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Kerkweg', 'Rondom Woudsedijk'],
+    description: 'Woubrugge is een authentiek Groene-Hart dorp aan de Woudwetering, met een monumentale kerk en typische polderbebouwing. Rustig en landelijk.',
+    highlights: ['Historische kerk', 'Woudwetering', 'Groene Hart']
+  },
+  'hoogmade': {
+    population: 1500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Landweg'],
+    description: 'Hoogmade is een klein Groene-Hart dorp met een authentiek dorpshart en agrarische wortels. Het dorp bewaart een landelijk karakter tussen Leiden en Alphen.',
+    highlights: ['Landelijk karakter', 'Groene Hart', 'Historisch centrum']
+  },
+  'rijnsburg': {
+    population: 15000,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Bloemfontein', 'Vroomstaten', 'Frederiksoord'],
+    description: 'Rijnsburg is een levendige kern van gemeente Katwijk, wereldbekend om Bloemenveiling Royal FloraHolland Rijnsburg — de grootste bloemenveiling ter wereld. Historisch banden met Spinoza.',
+    highlights: ['Royal FloraHolland Rijnsburg', 'Spinoza museum', 'Bollenstreek', 'Uitloper Oude Rijn']
+  },
+  'valkenburg-zh': {
+    population: 4500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Marinerie', 'Broekpolder'],
+    description: 'Valkenburg (ZH) is een kern in gemeente Katwijk, gelegen op de plek van een oud Romeins Castellum. Het voormalige vliegveld Valkenburg wordt getransformeerd tot woonwijk.',
+    highlights: ['Romeins Castellum', 'Voormalig Marinevliegveld', 'Nieuwbouw Valkenburg']
+  },
+  'noordwijkerhout': {
+    population: 15500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Zeeburg', 'Zeeburgh', 'Boekhorst'],
+    description: 'Noordwijkerhout ligt in het hart van de bollenstreek, tussen Noordwijk en Hillegom. Bekend om de bollenvelden, De Zilk en de gastvrije horeca.',
+    highlights: ['Bollenvelden en tulpen', 'Nabij Keukenhof', 'Kust van Noordwijk', 'Historisch centrum']
+  },
+  'de-zilk': {
+    population: 2500,
+    region: 'Holland Rijnland',
+    neighborhoods: ['Centrum', 'Zilkerbinnenweg', 'Dorpsstraat'],
+    description: 'De Zilk is een klein dorpje in de bollenstreek, direct grenzend aan de duinen. Het dorp is populair bij bollenlopers en biedt de rust van de bollenvelden.',
+    highlights: ['Bollenvelden aan de duinen', 'Rustig bollendorp', 'Nabij Amsterdam duinen']
+  },
+  'rozenburg': {
+    population: 12500,
+    region: 'Rijnmond',
+    neighborhoods: ['Centrum', 'Beatrixstraat', 'De Elementen', 'Blankenburg'],
+    description: 'Rozenburg is een kern van gemeente Rotterdam, gelegen op het voormalige eiland Rozenburg tussen Nieuwe Waterweg en Calandkanaal. Bekend om de Havenlijn en industrie in de omgeving.',
+    highlights: ['Nieuwe Waterweg', 'Rotterdamse havens', 'Kompas De Beer natuurgebied', 'Blankenburgtunnel']
+  },
+  'hoek-van-holland': {
+    population: 10000,
+    region: 'Rijnmond',
+    neighborhoods: ['Centrum', 'Strandweg', 'Nieuwlandsedijk', 'Dorpsstraat'],
+    description: 'Hoek van Holland is het strand-stadsdeel van Rotterdam, met eigen strand, ferry-terminal naar Engeland en de Hoekse Lijn metro. Populair bij Rotterdammers voor een dag naar zee.',
+    highlights: ['Strand Hoek van Holland', 'Metro Hoekse Lijn', 'Ferryhaven', 'Atlantikwall bunkers']
+  },
+  'hoogvliet': {
+    population: 34000,
+    region: 'Rijnmond',
+    neighborhoods: ['Centrum', 'Zalmplaat', 'Meeuwenplaat', 'Middengebied', 'Nieuw Engeland'],
+    description: 'Hoogvliet is een gebiedsdeel van Rotterdam ten zuiden van de Oude Maas, met een winkelcentrum, metroverbinding en gevarieerde woonwijken. Bekend om Botlekbrug en industrie.',
+    highlights: ['Metro D en E', 'Winkelcentrum Hoogvliet', 'Botlekbrug', 'Groenzones']
+  },
+  'ijsselmonde': {
+    population: 61000,
+    region: 'Rijnmond',
+    neighborhoods: ['Beverwaard', 'Groenenhagen', 'Lombardijen', 'Sportdorp', 'Oud-IJsselmonde'],
+    description: 'IJsselmonde is een dichtbevolkte deelgemeente in Rotterdam-Zuid, met historische kern Oud-IJsselmonde en moderne wijken zoals Beverwaard. Metroverbinding naar Rotterdam centrum.',
+    highlights: ['Oud-IJsselmonde historisch', 'Ahoy Rotterdam nabij', 'Metrolijn D', 'IJsselmondse hoofd']
+  },
+  'pernis': {
+    population: 5000,
+    region: 'Rijnmond',
+    neighborhoods: ['Centrum', 'Pernis-Rotterdam', 'Groene Kruisweg'],
+    description: 'Pernis is een klein Rotterdams stadsdeel, ingeklemd tussen de havens van Rotterdam. Bekend als een van de oudste polderdorpen en om de kerk aan de rand van de haven.',
+    highlights: ['Oudste Rotterdamse dorpje', 'Havenview', 'Historische kerk']
+  },
+  'overschie': {
+    population: 17500,
+    region: 'Rijnmond',
+    neighborhoods: ['Kleinpolder', 'Zestienhoven', 'Overschie centrum', 'Landzicht'],
+    description: 'Overschie is een groen deelgebied van Rotterdam, met historische banden met de scheepvaart op de Schie. Rotterdam The Hague Airport ligt binnen het gebied.',
+    highlights: ['Rotterdam Airport', 'Historische Schie', 'Overschieplein', 'Van Nelle Fabriek (UNESCO)']
+  },
+  'hillegersberg': {
+    population: 22000,
+    region: 'Rijnmond',
+    neighborhoods: ['Centrum', 'Hillegersberg-Zuid', 'Bergse Bos', 'Molenlaan'],
+    description: 'Hillegersberg is een groen en welvarend deelgebied van Rotterdam-Noord, met de Bergse Voorplas en Achterplas, monumentale villa\'s en het gezellige Bergse Dorpsstraat.',
+    highlights: ['Bergse Voorplas + Achterplas', 'Monumentale villas', 'Bergsche Dorpsstraat', 'Bergse Bos']
+  },
+  'ter-aar': {
+    population: 5500,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Aardam', 'Langeraar', 'Nieuwveenseweg'],
+    description: 'Ter Aar is een kern van gemeente Nieuwkoop, aan de Aar tussen Alphen en Nieuwkoop. Het dorp heeft eigen voorzieningen en ligging in het Groene Hart.',
+    highlights: ['Rivier de Aar', 'Groene Hart landschap', 'Compact dorpshart']
+  },
+  'nieuwveen': {
+    population: 2400,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Molenweg'],
+    description: 'Nieuwveen is een klein dorp in het Groene Hart, met een authentiek dorpshart en Nieuwveense Plassen als achtertuin. Populair bij natuurliefhebbers.',
+    highlights: ['Nieuwveense Plassen', 'Historisch centrum', 'Groene Hart natuur']
+  },
+  'noorden': {
+    population: 1200,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Overkant'],
+    description: 'Noorden is een pittoresk plassendorp aan de Nieuwkoopse Plassen, populair bij watersporters en natuurliefhebbers. Het dorp heeft een sfeervolle jachthaven.',
+    highlights: ['Nieuwkoopse Plassen', 'Jachthaven Noorden', 'Watersporten']
+  },
+  'zevenhoven': {
+    population: 2500,
+    region: 'Groene Hart',
+    neighborhoods: ['Centrum', 'Dorpsstraat', 'Molendijk'],
+    description: 'Zevenhoven is een klein polderdorp in gemeente Nieuwkoop, met een gezellige dorpskern en agrarische omgeving. Rust en groen bepalen het beeld.',
+    highlights: ['Agrarische omgeving', 'Groene Hart karakter', 'Rustig dorpje']
+  },
+  's-gravendeel': {
+    population: 9500,
+    region: 'Hoeksche Waard',
+    neighborhoods: ['Centrum', 'Molendijk', 'Kiltunnelweg', 'Trekdam'],
+    description: '\'s-Gravendeel ligt aan de Dordtse Kil, direct verbonden met Dordrecht via de Kiltunnel. Het dorp heeft een sfeervol dorpshart en is een populaire woonplek voor forensen naar Dordrecht en Rotterdam.',
+    highlights: ['Kiltunnel naar Dordrecht', 'Uitzicht Dordtse Kil', 'Compact dorpshart', 'Historische molen']
+  },
+  'stad-aan-t-haringvliet': {
+    population: 1500,
+    region: 'Goeree-Overflakkee',
+    neighborhoods: ['Centrum', 'Havenkade', 'Dorpsstraat'],
+    description: 'Stad aan \'t Haringvliet is een klein havendorp aan het Haringvliet, met een pittoreske haven en een authentiek dorpshart. Populair bij zeilers en natuurliefhebbers.',
+    highlights: ['Haven aan Haringvliet', 'Authentiek dorpshart', 'Zeilerspardaijs']
+  },
 }
 
 /**
