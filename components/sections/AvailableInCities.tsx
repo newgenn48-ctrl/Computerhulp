@@ -36,7 +36,7 @@ export default function AvailableInCities({
             {serviceLabel} in uw regio
           </h2>
           <p className="section-subtitle">
-            Actief in 50+ gemeenten in {BUSINESS.REGION} — voorrijden {PRICING.TRAVEL}
+            Actief in 50+ gemeenten in {BUSINESS.REGION} — {PRICING.TRAVEL} voorrijden
           </p>
         </header>
 

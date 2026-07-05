@@ -68,7 +68,7 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Wat kost het om een laptop te laten herstellen?', acceptedAnswer: { '@type': 'Answer', text: `Laptop herstel kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijkosten zijn slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. De meeste problemen lossen we op voor minder dan €55.` } },
+    { '@type': 'Question', name: 'Wat kost het om een laptop te laten herstellen?', acceptedAnswer: { '@type': 'Answer', text: `Laptop herstel kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden is gratis in heel ${BUSINESS.REGION}. De meeste problemen lossen we op voor minder dan €55.` } },
     { '@type': 'Question', name: 'Hoe snel kan mijn laptop hersteld worden?', acceptedAnswer: { '@type': 'Answer', text: 'Wij komen meestal binnen 24 uur bij u thuis. De meeste laptop herstelwerkzaamheden zijn binnen 1 tot 2 uur afgerond. Bij onderdelen die besteld moeten worden, komen we kosteloos terug.' } },
     { '@type': 'Question', name: 'Herstellen jullie alle merken laptops?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, wij herstellen alle merken laptops: HP, Lenovo, Dell, Acer, ASUS, Apple MacBook, Microsoft Surface en meer. Zowel Windows als macOS.' } },
     { '@type': 'Question', name: 'Moet mijn laptop mee naar een werkplaats?', acceptedAnswer: { '@type': 'Answer', text: 'Nee, wij herstellen uw laptop bij u thuis. Alleen bij zeer complexe hardwareproblemen kan het nodig zijn om uw laptop tijdelijk mee te nemen. Dit bespreken we altijd vooraf.' } },
@@ -90,7 +90,7 @@ const services = [
 ]
 
 const faqs = [
-  { question: 'Wat kost het om een laptop te laten herstellen?', answer: `Laptop herstel kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijkosten zijn ${PRICING.TRAVEL} in heel Zuid-Holland. De meeste problemen lossen we op in 45 tot 90 minuten.` },
+  { question: 'Wat kost het om een laptop te laten herstellen?', answer: `Laptop herstel kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden is gratis in heel Zuid-Holland. De meeste problemen lossen we op in 45 tot 90 minuten.` },
   { question: 'Hoe snel kan mijn laptop hersteld worden?', answer: 'Wij komen meestal binnen 24 uur bij u thuis. De meeste herstelwerkzaamheden zijn binnen 1 tot 2 uur afgerond. Bij onderdelen die besteld moeten worden, komen we kosteloos terug.' },
   { question: 'Herstellen jullie alle merken laptops?', answer: 'Ja, we herstellen alle merken: HP, Lenovo, Dell, Acer, ASUS, Apple MacBook, Microsoft Surface en meer. Zowel Windows als macOS.' },
   { question: 'Moet mijn laptop mee naar een werkplaats?', answer: 'Nee, wij herstellen uw laptop gewoon bij u thuis. Alleen bij zeer complexe hardwareproblemen kan het nodig zijn om uw laptop tijdelijk mee te nemen. Dit bespreken we altijd vooraf met u.' },

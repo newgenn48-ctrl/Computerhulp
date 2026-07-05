@@ -171,8 +171,12 @@ export default function ComputerhulpAanHuisPage() {
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Computerhulp <span className="text-blue-300">aan huis</span></>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen <strong className="text-white">vaak binnen 24 uur</strong> bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
-          <>Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong> — achteraf betalen via Tikkie, geen abonnement.</>,
+          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
+        ]}
+        pills={[
+          { icon: 'clock', label: 'Binnen 24 uur geholpen' },
+          { icon: 'check-circle-outline', label: 'Gratis voorrijkosten' },
+          { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
 
@@ -234,7 +238,7 @@ export default function ComputerhulpAanHuisPage() {
           <header className="text-center mb-10">
             <p className="section-eyebrow">Werkgebied</p>
             <h2 className="section-title">Waar we komen</h2>
-            <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — voorrijden {PRICING.TRAVEL}</p>
+            <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — {PRICING.TRAVEL} voorrijden</p>
           </header>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">

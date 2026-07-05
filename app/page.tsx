@@ -16,7 +16,7 @@ const PricingSection = dynamic(() => import('@/components/PricingSection'), {
 
 export const metadata: Metadata = {
   title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u | Vanaf ${PRICING.MINIMUM_ALL_IN}`,
-  description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: `${BUSINESS.NAME} | IT-Hulp aan Huis`,
     description: `${BUSINESS.NAME}: uw IT-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
@@ -49,7 +49,7 @@ const faqItems = [
   },
   {
     q: 'Wat kost het?',
-    a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt pas achteraf, gewoon via pin, contant of Tikkie.`,
+    a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden is gratis in heel ${BUSINESS.REGION}. U betaalt pas achteraf, gewoon via pin, contant of Tikkie.`,
   },
   {
     q: 'Waar kunnen jullie mee helpen?',

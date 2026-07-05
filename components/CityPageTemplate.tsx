@@ -59,7 +59,7 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen <strong className="text-white">vaak binnen 24 uur</strong> bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -86,7 +86,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen <strong className="text-white">vaak binnen 24 uur</strong> bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -100,7 +100,7 @@ const studentConfig: VariantConfig = {
   ],
   neighborhoodsSectionTitle: (city) => `Student aan huis in alle wijken van ${city.name}`,
   neighborhoodsSectionDescription: (cityName) =>
-    `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont — voorrijden kost slechts ${PRICING.TRAVEL}.`,
+    `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont — voorrijden is gratis.`,
   pricingBenefits: (cityName) => [
     `${PRICING.TRAVEL} voorrijkosten in ${cityName}`,
     'Eerlijke inschatting vooraf, geen verrassingen',
@@ -134,10 +134,10 @@ export function generateComputerhulpPageMetadata(city: City): Metadata {
 export function generateStudentPageMetadata(city: City): Metadata {
   return {
     title: `Student aan Huis ${city.name} | IT-Hulp Binnen 24u bij u Thuis`,
-    description: `IT-student aan huis in ${city.name}. Geduldige hulp bij computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+    description: `IT-student aan huis in ${city.name}. Geduldige hulp bij computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       title: `Student aan Huis ${city.name} | Vanaf ${PRICING.MINIMUM_TOTAL}`,
-      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden. Bel ${BUSINESS.PHONE}.`,
       type: 'website',
       url: `https://computerhulpzh.nl/student-aan-huis-${city.slug}`,
     },
@@ -159,14 +159,14 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
   const cityDescription = variant === 'computerhulp'
     ? (content
         ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home — opgelost bij u thuis.`
-        : `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`)
+        : `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden.`)
     : (content
         ? `IT-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige IT-studenten bij u thuis.`
         : `Computerhulp aan huis door IT-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`)
 
   const serviceDescription = variant === 'computerhulp'
-    ? `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
-    : `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
+    ? `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden.`
+    : `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden.`
 
   const localBusiness: Record<string, unknown> = {
     '@type': 'LocalBusiness',
@@ -287,7 +287,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: `Wat kost computerhulp aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Computerhulp aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL}.`
+        text: `Computerhulp aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden is gratis.`
       }
     },
     {
@@ -311,7 +311,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: 'Zijn er voorrijkosten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Voorrijden kost slechts ${PRICING.TRAVEL} voor computerhulp aan huis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de daadwerkelijke hulp.`
+        text: `Voorrijden is gratis voor computerhulp aan huis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de daadwerkelijke hulp.`
       }
     }
   ]
@@ -322,7 +322,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: `In welke wijken van ${city.name} bieden jullie computerhulp aan?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Wij bieden computerhulp aan huis in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. In de hele regio ${content.region} is voorrijden slechts ${PRICING.TRAVEL}.`
+        text: `Wij bieden computerhulp aan huis in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. In de hele regio ${content.region} is voorrijden gratis.`
       }
     })
   }
@@ -344,7 +344,7 @@ function generateStudentFaqQuestions(city: City) {
       name: `Wat kost student aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Student aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in ${city.name} en omgeving. U betaalt na afloop via pin of Tikkie.`
+        text: `Student aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden is gratis in ${city.name} en omgeving. U betaalt na afloop via pin of Tikkie.`
       }
     },
     {
@@ -387,7 +387,7 @@ function generateStudentFaqQuestions(city: City) {
       name: `In welke wijken van ${city.name} komen jullie IT-studenten?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Onze IT-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts ${PRICING.TRAVEL} in de hele regio ${content.region}.`
+        text: `Onze IT-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is gratis in de hele regio ${content.region}.`
       }
     })
   }
@@ -402,7 +402,7 @@ function getComputerhulpFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost computerhulp aan huis in ${city.name}?`,
-      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} — u betaalt dus alleen voor de hulp zelf.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden is gratis — u betaalt dus alleen voor de hulp zelf.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} komen?`,
@@ -414,13 +414,13 @@ function getComputerhulpFaqDisplayData(city: City) {
     },
     {
       question: 'Zijn er voorrijkosten?',
-      answer: `Voorrijden kost slechts ${PRICING.TRAVEL} in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de hulp zelf.`
+      answer: `Voorrijden is gratis in ${city.name} en heel Zuid-Holland. U betaalt alleen voor de hulp zelf.`
     },
   ]
   if (content && content.neighborhoods.length >= 3) {
     items.push({
       question: `Komen jullie ook in mijn wijk in ${city.name}?`,
-      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts ${PRICING.TRAVEL}.`
+      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is gratis.`
     })
   }
   return items
@@ -431,7 +431,7 @@ function getStudentFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost student aan huis in ${city.name}?`,
-      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}. Betalen doet u achteraf — via pin of Tikkie.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden is gratis. Betalen doet u achteraf — via pin of Tikkie.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} langskomen?`,
@@ -454,7 +454,7 @@ function getStudentFaqDisplayData(city: City) {
   if (content && content.neighborhoods.length >= 3) {
     items.push({
       question: `Komen jullie ook in mijn wijk in ${city.name}?`,
-      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts ${PRICING.TRAVEL}.`
+      answer: `Ja, we komen in alle wijken van ${city.name}, zoals ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden is gratis.`
     })
   }
 
@@ -763,10 +763,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
               {config.heroDescription(city.name)}
             </p>
 
-            <p className="hero-description">
-              Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong> — achteraf betalen via Tikkie, geen abonnement.
-            </p>
-
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
               <a
                 href={BUSINESS.PHONE_HREF}
@@ -780,6 +776,21 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
+            </div>
+
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="hero-pill">
+                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Binnen 24 uur geholpen
+              </span>
+              <span className="hero-pill">
+                <Icon name="check-circle-outline" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                Gratis voorrijkosten
+              </span>
+              <span className="hero-pill">
+                <Icon name="calendar" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
+                7 dagen per week
+              </span>
             </div>
           </div>
         </div>

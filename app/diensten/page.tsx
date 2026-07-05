@@ -226,7 +226,7 @@ export default function DienstenPage() {
               Onze IT-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp — we helpen vakkundig en persoonlijk, in gewone taal.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met slechts {PRICING.TRAVEL} voorrijkosten. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen binnen 24 uur bij u langs.
+              Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met {PRICING.TRAVEL} voorrijden. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen binnen 24 uur bij u langs.
             </p>
           </div>
         </div>

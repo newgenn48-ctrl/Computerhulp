@@ -74,7 +74,7 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Wat kost een monteur aan huis?', acceptedAnswer: { '@type': 'Answer', text: `Onze monteur aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijkosten zijn slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` } },
+    { '@type': 'Question', name: 'Wat kost een monteur aan huis?', acceptedAnswer: { '@type': 'Answer', text: `Onze monteur aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden is gratis in heel ${BUSINESS.REGION}.` } },
     { '@type': 'Question', name: 'Hoe snel kan een monteur bij mij thuis zijn?', acceptedAnswer: { '@type': 'Answer', text: 'In de meeste gevallen kan onze monteur binnen 24 uur bij u thuis zijn. Bij acute problemen proberen we vaak nog dezelfde dag langs te komen.' } },
     { '@type': 'Question', name: 'Waarmee kan de monteur mij helpen?', acceptedAnswer: { '@type': 'Answer', text: 'Onze monteur helpt met computers, laptops, printers, WiFi, e-mail, smartphones, tablets, smart home apparaten en meer. Eigenlijk alles met een stekker of batterij.' } },
     { '@type': 'Question', name: 'Komt de monteur ook in het weekend?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, onze monteur is 7 dagen per week beschikbaar, ook in de avonduren tot 22:00 uur. Geen extra kosten voor avond- of weekendbezoeken.' } },
@@ -92,11 +92,11 @@ const benefits = [
 ]
 
 const faqs = [
-  { question: 'Wat kost een monteur aan huis?', answer: `Onze monteur aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijkosten zijn ${PRICING.TRAVEL} in heel Zuid-Holland. De meeste problemen lossen we op in 45 tot 90 minuten.` },
+  { question: 'Wat kost een monteur aan huis?', answer: `Onze monteur aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden is gratis in heel Zuid-Holland. De meeste problemen lossen we op in 45 tot 90 minuten.` },
   { question: 'Hoe snel kan een monteur bij mij thuis zijn?', answer: 'In de meeste gevallen kan onze monteur binnen 24 uur bij u thuis zijn. Bij acute problemen proberen we vaak nog dezelfde dag langs te komen. We zijn 7 dagen per week beschikbaar.' },
   { question: 'Waarmee kan de monteur mij helpen?', answer: 'Onze monteur helpt met alles op IT-gebied: computers, laptops, printers, WiFi, e-mail, smartphones, tablets, smart home apparaten, data-herstel en meer. Eigenlijk alles met een stekker of batterij.' },
   { question: 'Komt de monteur ook in het weekend en \'s avonds?', answer: 'Ja, onze monteur is 7 dagen per week beschikbaar, ook in de avonduren tot 22:00 uur. Geen extra kosten voor avond- of weekendbezoeken.' },
-  { question: 'In welke plaatsen komt de monteur aan huis?', answer: `Onze monteur komt in heel Zuid-Holland aan huis: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn en alle kleinere plaatsen. Overal met slechts ${PRICING.TRAVEL} voorrijkosten.` },
+  { question: 'In welke plaatsen komt de monteur aan huis?', answer: `Onze monteur komt in heel Zuid-Holland aan huis: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn en alle kleinere plaatsen. Overal met ${PRICING.TRAVEL} voorrijden.` },
 ]
 
 export default function MonteurAanHuisPage() {

@@ -21,8 +21,8 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Wat kost computerhulp aan huis?', acceptedAnswer: { '@type': 'Answer', text: `Computerhulp aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijkosten zijn ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` } },
-    { '@type': 'Question', name: 'Zijn er voorrijkosten?', acceptedAnswer: { '@type': 'Answer', text: `Ja, voorrijkosten zijn ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Dit is een vast bedrag, ongeacht waar u woont.` } },
+    { '@type': 'Question', name: 'Wat kost computerhulp aan huis?', acceptedAnswer: { '@type': 'Answer', text: `Computerhulp aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden is gratis in heel ${BUSINESS.REGION}.` } },
+    { '@type': 'Question', name: 'Zijn er voorrijkosten?', acceptedAnswer: { '@type': 'Answer', text: `Ja, voorrijden is gratis in heel ${BUSINESS.REGION}. Dit is een vast bedrag, ongeacht waar u woont.` } },
     { '@type': 'Question', name: 'Heb ik een abonnement nodig?', acceptedAnswer: { '@type': 'Answer', text: 'Nee, bij ons is geen abonnement nodig. U betaalt per bezoek, geen maandelijkse of jaarlijkse kosten.' } },
     { '@type': 'Question', name: 'Zijn er extra kosten in het weekend?', acceptedAnswer: { '@type': 'Answer', text: 'Nee, wij rekenen hetzelfde tarief op alle dagen en tijden. Ook in de avond en het weekend.' } },
   ],
@@ -134,7 +134,7 @@ export default function TarievenPage() {
           </div>
           <div className="space-y-4">
             {[
-              { q: 'Wat kost computerhulp aan huis?', a: `Wij rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijkosten zijn ${PRICING.TRAVEL} in heel Zuid-Holland.` },
+              { q: 'Wat kost computerhulp aan huis?', a: `Wij rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden is gratis in heel Zuid-Holland.` },
               { q: 'Heb ik een abonnement nodig?', a: 'Nee. Bij ons betaalt u per bezoek. Geen maandelijkse kosten, geen jaarlijks lidmaatschap, geen verplichtingen.' },
               { q: 'Zijn er extra kosten in de avond of het weekend?', a: `Nee, wij rekenen hetzelfde tarief op alle dagen en tijden. Of u nu op maandag om 10:00 of op zaterdag om 20:00 belt — u betaalt gewoon ${PRICING.PER_QUARTER} per kwartier.` },
               { q: 'Hoe kan ik betalen?', a: 'U kunt na afloop betalen via pin of Tikkie. We rekenen af zodra het werk klaar is. Facturen zijn ook mogelijk voor bedrijven.' },

@@ -17,7 +17,7 @@ const PricingSection = dynamic(() => import('@/components/PricingSection'), {
 
 export const metadata: Metadata = {
   title: 'Hulp bij Computerproblemen | Binnen 24u | Zuid-Holland',
-  description: `Hulp bij computerproblemen aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Hulp bij computerproblemen aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Hulp bij Computerproblemen | IT-student aan Huis',
     description: `Hulp bij computerproblemen in ${BUSINESS.REGION}: uw IT-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
@@ -184,7 +184,7 @@ const faqData = {
       name: 'Wat kost hulp bij computerproblemen aan huis in Zuid-Holland?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Onze hulp bij computerproblemen aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen kan na afloop via pin of Tikkie.`
+        text: `Onze hulp bij computerproblemen aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden is gratis in heel ${BUSINESS.REGION}. Betalen kan na afloop via pin of Tikkie.`
       }
     },
     {
@@ -430,7 +430,7 @@ export default function HulpBijComputerproblemenPage() {
           <div className="space-y-4">
             {[
               { q: 'Hoe snel kunnen jullie langskomen?', a: 'Meestal staan we binnen een dag bij u aan de deur. Heeft u haast? Dan proberen we vaak nog dezelfde dag langs te komen. We zijn elke dag bereikbaar, ook in de avond.' },
-              { q: 'Wat kost het?', a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin of Tikkie.` },
+              { q: 'Wat kost het?', a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden is gratis in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin of Tikkie.` },
               { q: 'Waar kunnen jullie mee helpen?', a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, WiFi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.' },
               { q: 'Komen jullie ook in mijn woonplaats?', a: `Wij komen in heel Zuid-Holland bij u thuis. Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en meer dan 50 andere gemeenten. Overal ${PRICING.TRAVEL} voorrijkosten.` },
               { q: 'Moet ik iets voorbereiden?', a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele wachtwoorden alvast klaar. Verder nemen wij alles mee wat nodig is.' },

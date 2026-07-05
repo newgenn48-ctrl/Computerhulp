@@ -158,7 +158,7 @@ export default function WaaromOnsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'U belt of mailt ons', desc: `Vertel kort wat er aan de hand is. Even bellen op ${BUSINESS.PHONE} of online een afspraak maken.` },
-              { step: '2', title: 'We komen bij u thuis', desc: `Binnen 24 uur staat onze IT-student voor de deur. Voorrijkosten slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` },
+              { step: '2', title: 'We komen bij u thuis', desc: `Binnen 24 uur staat onze IT-student voor de deur. Voorrijden is gratis in heel ${BUSINESS.REGION}.` },
               { step: '3', title: 'Probleem opgelost', desc: 'U kunt weer verder. Betalen doet u achteraf via pin of Tikkie — alleen voor de tijd die we nodig hadden.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -185,7 +185,7 @@ export default function WaaromOnsPage() {
               { q: 'Heb ik een abonnement nodig?', a: 'Nee, bij ons is geen abonnement nodig. U betaalt gewoon per bezoek. Geen maandelijkse kosten, geen jaarlijkse opzegging.' },
               { q: 'Hoe snel kunnen jullie komen?', a: `In de meeste gevallen binnen 24 uur. Bij spoed vaak nog dezelfde dag. We zijn ${HOURS.DAYS} beschikbaar van ${HOURS.OPEN} tot ${HOURS.CLOSE} uur.` },
               { q: 'Zijn jullie ook goedkoper dan de computerwinkel?', a: 'Ja, en u hoeft niet eens uw huis uit. Wij komen bij u thuis, lossen het ter plekke op, en u betaalt alleen voor de tijd die we nodig hebben. Geen weken wachten, geen extra kosten.' },
-              { q: 'In welke plaatsen komen jullie?', a: `In heel ${BUSINESS.REGION}: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn en alle kleinere plaatsen. Voorrijkosten zijn overal slechts ${PRICING.TRAVEL}.` },
+              { q: 'In welke plaatsen komen jullie?', a: `In heel ${BUSINESS.REGION}: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht, Alphen aan den Rijn en alle kleinere plaatsen. Voorrijden is overal gratis.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">

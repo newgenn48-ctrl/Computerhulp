@@ -34,7 +34,7 @@ const faqStructuredData = {
       name: 'Wat zijn de kosten voor computerhulp?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.`
+        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden is gratis in heel ${BUSINESS.REGION}.`
       }
     },
     {
@@ -42,7 +42,7 @@ const faqStructuredData = {
       name: 'Zijn er voorrijkosten?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Nee, in heel ${BUSINESS.REGION} is voorrijden slechts ${PRICING.TRAVEL}. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.`
+        text: `Nee, in heel ${BUSINESS.REGION} is voorrijden gratis. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.`
       }
     },
     {

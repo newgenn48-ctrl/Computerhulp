@@ -3,7 +3,7 @@ import { BUSINESS, PRICING } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'IT Hulp aan Huis | Computerhulp Zuid-Holland | Binnen 24u',
-  description: `Professionele IT-hulp aan huis in ${BUSINESS.REGION}. Computer, laptop, WiFi en printer problemen opgelost. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Professionele IT-hulp aan huis in ${BUSINESS.REGION}. Computer, laptop, WiFi en printer problemen opgelost. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden. Bel ${BUSINESS.PHONE}.`,
 }
 
 const jsonLd = {
