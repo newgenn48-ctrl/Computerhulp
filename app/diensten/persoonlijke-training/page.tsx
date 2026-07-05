@@ -104,7 +104,7 @@ export default function PersoonlijkeTrainingPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Training aan huis · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Meer <span className="text-blue-300">leren</span> over je computer?
+              Meer <span className="hero-highlight">leren</span> over je computer?
             </h1>
 
             <p className="hero-description">

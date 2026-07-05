@@ -137,7 +137,7 @@ export default function ITHulpPage() {
         imageAlt={`IT-student helpt klant thuis met digitale apparaten in ${BUSINESS.REGION}`}
         ariaLabel="IT hulp aan huis hero"
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
-        title={<>IT hulp <span className="text-blue-300">aan huis</span></>}
+        title={<>IT hulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen.</strong> Onze vriendelijke IT-studenten komen bij u thuis en helpen u stap voor stap — in begrijpelijke taal.</>,
           <>Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong>.</>,

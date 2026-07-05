@@ -174,7 +174,7 @@ export default function StudentAanHuisPage() {
         imageSrc="/Student aan huis.webp"
         imageAlt={`IT-student helpt klant thuis met computer in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
-        title={<>Student <span className="text-blue-300">aan huis</span></>}
+        title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
         ]}

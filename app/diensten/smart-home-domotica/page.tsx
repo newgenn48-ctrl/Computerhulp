@@ -103,7 +103,7 @@ export default function SmartHomeDomoticaPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Smart home · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              <span className="text-blue-300">Slimme apparaten</span> laten installeren?
+              <span className="hero-highlight">Slimme apparaten</span> laten installeren?
             </h1>
 
             <p className="hero-description">

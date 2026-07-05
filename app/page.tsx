@@ -207,7 +207,7 @@ export default function HomePage() {
         imageAlt={`Computerhulp IT-student helpt klant thuis met laptop in ${BUSINESS.REGION}`}
         ariaLabel={`${BUSINESS.NAME} hero`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
-        title={<>Computerhulp <span className="text-blue-300">aan huis</span></>}
+        title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
         ]}

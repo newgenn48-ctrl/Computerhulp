@@ -102,7 +102,7 @@ export default function TVInstallatiePage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">TV installatie · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              <span className="text-blue-300">TV monteur</span> aan huis
+              <span className="hero-highlight">TV monteur</span> aan huis
             </h1>
 
             <p className="hero-description">

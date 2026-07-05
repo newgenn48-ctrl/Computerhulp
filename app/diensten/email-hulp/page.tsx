@@ -103,7 +103,7 @@ export default function EmailHulpPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">E-mail hulp · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Hulp nodig met je <span className="text-blue-300">e-mail</span>?
+              Hulp nodig met je <span className="hero-highlight">e-mail</span>?
             </h1>
 
             <p className="hero-description">

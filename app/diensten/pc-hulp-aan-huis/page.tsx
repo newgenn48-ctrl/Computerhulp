@@ -286,7 +286,7 @@ export default function HomePage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Hulp nodig met je <span className="text-blue-300">pc</span>?
+              Hulp nodig met je <span className="hero-highlight">pc</span>?
             </h1>
 
             <p className="hero-description">

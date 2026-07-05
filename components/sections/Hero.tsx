@@ -17,7 +17,7 @@ interface HeroProps {
   ariaLabel?: string
   /** Kleine tekst boven H1 — meestal "5000+ tevreden klanten" */
   eyebrow: string
-  /** H1-inhoud — JSX toegestaan zodat je een <span className="text-blue-300"> highlight kunt inzetten */
+  /** H1-inhoud — JSX toegestaan zodat je een <span className="hero-highlight"> highlight kunt inzetten */
   title: ReactNode
   /** 1 of 2 paragrafen. Elke item wordt in eigen <p className="hero-description"> gerenderd */
   descriptions?: ReactNode[]

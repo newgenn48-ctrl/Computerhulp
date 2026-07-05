@@ -66,7 +66,7 @@ export default function OverOnsPage() {
         imageAlt={`Computerhulp IT-student helpt klant thuis in ${BUSINESS.REGION}`}
         ariaLabel="Over ons hero"
         eyebrow="Over ons"
-        title={<>Al <span className="text-blue-300">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis</>}
+        title={<>Al <span className="hero-highlight">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis</>}
         descriptions={[
           <>Al meer dan <strong className="text-white">{BUSINESS.YEARS_ACTIVE} jaar</strong> uw betrouwbare partner voor computerhulp aan huis in <strong className="text-white">{BUSINESS.REGION}</strong>. {BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.</>,
         ]}
@@ -153,25 +153,6 @@ export default function OverOnsPage() {
               IT-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Stuk voor stuk gescreend, verzekerd en met minimaal 2 jaar praktijkervaring.
             </p>
           </header>
-
-          {/* Team-leden — vervang placeholder-avatars door echte foto's in /public/team/ */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-12">
-            {[
-              { first: 'Lars', role: 'HBO Informatica', bio: 'Gespecialiseerd in Windows, WiFi en printers. Legt alles rustig uit.', initials: 'L' },
-              { first: 'Sanne', role: 'HBO IT', bio: 'Apple-expert. Helpt met iPhone, iPad en Mac. Geduldig met alle vragen.', initials: 'S' },
-              { first: 'Tim', role: 'TU Delft Informatica', bio: 'Reparatie en dataherstel. Zorgt dat uw bestanden veilig zijn.', initials: 'T' },
-              { first: 'Emma', role: 'HBO Technische Informatica', bio: 'Smart home, tv en internet. Perfect voor moderne apparaten.', initials: 'E' },
-            ].map((member, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-5 sm:p-6 shadow-sm border border-gray-100 text-center">
-                <div className="w-20 h-20 sm:w-24 sm:h-24 bg-gradient-to-br from-blue-500 to-blue-700 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl sm:text-3xl font-bold shadow-md" aria-hidden="true">
-                  {member.initials}
-                </div>
-                <h3 className="font-bold text-gray-900 text-base sm:text-lg">{member.first}</h3>
-                <p className="text-xs sm:text-sm text-blue-600 font-medium mb-2">{member.role}</p>
-                <p className="text-xs sm:text-sm text-gray-600 leading-relaxed">{member.bio}</p>
-              </div>
-            ))}
-          </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {[

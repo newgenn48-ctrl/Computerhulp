@@ -118,7 +118,7 @@ export default function LaptopLatenHerstellenPage() {
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Laptop herstellen · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              <span className="text-blue-300">Laptop</span> laten herstellen?
+              <span className="hero-highlight">Laptop</span> laten herstellen?
             </h1>
 
             <p className="hero-description">

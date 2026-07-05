@@ -55,7 +55,7 @@ const computerhulpConfig: VariantConfig = {
   heroImage: '/hero student.webp',
   heroAlt: (cityName) => `Computerhulp aan huis in ${cityName} — IT-specialist bij klant thuis`,
   heroTitle: (cityName) => (
-    <>Computerhulp aan Huis <span className="text-blue-300">{cityName}</span></>
+    <>Computerhulp aan Huis <span className="hero-highlight">{cityName}</span></>
   ),
   heroDescription: (cityName) => (
     <>
@@ -82,7 +82,7 @@ const studentConfig: VariantConfig = {
   heroImage: '/Student aan huis.webp',
   heroAlt: (cityName) => `IT-student helpt klant thuis met computer in ${cityName}`,
   heroTitle: (cityName) => (
-    <>Student aan Huis <span className="text-blue-300">{cityName}</span></>
+    <>Student aan Huis <span className="hero-highlight">{cityName}</span></>
   ),
   heroDescription: (cityName) => (
     <>

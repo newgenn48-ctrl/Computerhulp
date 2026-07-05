@@ -6,7 +6,8 @@
   :root {
     --color-primary: 37 99 235;
     --color-primary-dark: 30 64 175;
-    --color-accent: 249 115 22;
+    --color-accent: 217 119 6;
+    --color-accent-soft: 245 158 11;
     --color-ink: 28 25 23;
     --color-ink-soft: 68 64 60;
   }
@@ -175,6 +176,28 @@
 
   .hero-title {
     @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-[1.1] tracking-display-tight;
+  }
+
+  /* Signature-highlight — warme amber marker achter een keyword in de H1.
+     Vervangt text-blue-300 accent voor herkenbare, niet-generieke branding. */
+  .hero-highlight {
+    @apply relative inline-block text-white;
+  }
+  .hero-highlight::after {
+    content: '';
+    position: absolute;
+    left: -0.05em;
+    right: -0.05em;
+    bottom: 0.06em;
+    height: 0.32em;
+    background: linear-gradient(
+      90deg,
+      rgb(var(--color-accent) / 0.55) 0%,
+      rgb(var(--color-accent-soft) / 0.55) 100%
+    );
+    border-radius: 6px;
+    z-index: -1;
+    transform: skewX(-4deg);
   }
 
   .hero-description {

@@ -169,7 +169,7 @@ export default function ComputerhulpAanHuisPage() {
         imageSrc="/hero student.webp"
         imageAlt={`Computerhulp aan huis — IT-specialist helpt klant in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
-        title={<>Computerhulp <span className="text-blue-300">aan huis</span></>}
+        title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
         ]}
