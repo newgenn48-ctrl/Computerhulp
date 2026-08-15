@@ -175,7 +175,7 @@ export default function ComputerhulpAanHuisPage() {
         ]}
         pills={[
           { icon: 'clock', label: 'Binnen 24 uur geholpen' },
-          { icon: 'check-circle-outline', label: 'Gratis voorrijkosten' },
+          { icon: 'book', label: 'Betrouwbare Informatica-experts' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
@@ -238,7 +238,7 @@ export default function ComputerhulpAanHuisPage() {
           <header className="text-center mb-10">
             <p className="section-eyebrow">Werkgebied</p>
             <h2 className="section-title">Waar we komen</h2>
-            <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — {PRICING.TRAVEL} voorrijden</p>
+            <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — voorrijden {PRICING.TRAVEL}</p>
           </header>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">

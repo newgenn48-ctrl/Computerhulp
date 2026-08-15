@@ -12,10 +12,10 @@ import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 export const metadata: Metadata = {
   title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
-  description: `IT-student aan huis in ${BUSINESS.REGION}. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden. Bel ${BUSINESS.PHONE}.`,
+  description: `IT-student aan huis in ${BUSINESS.REGION}. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
-    description: `IT-student aan huis in ${BUSINESS.REGION}. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL.toLowerCase()} voorrijden. Bel ${BUSINESS.PHONE}.`,
+    description: `IT-student aan huis in ${BUSINESS.REGION}. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
     type: 'website',
     url: `${BUSINESS.URL}/student-aan-huis`,
   },
@@ -180,7 +180,7 @@ export default function StudentAanHuisPage() {
         ]}
         pills={[
           { icon: 'clock', label: 'Binnen 24 uur geholpen' },
-          { icon: 'check-circle-outline', label: 'Gratis voorrijkosten' },
+          { icon: 'book', label: 'Betrouwbare Informatica-studenten' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
@@ -239,7 +239,7 @@ export default function StudentAanHuisPage() {
           <header className="text-center mb-10">
             <p className="section-eyebrow">Werkgebied</p>
             <h2 className="section-title">Waar we komen</h2>
-            <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — {PRICING.TRAVEL} voorrijden</p>
+            <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — voorrijden {PRICING.TRAVEL}</p>
           </header>
 
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
