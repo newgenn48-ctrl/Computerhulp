@@ -45,6 +45,13 @@
     touch-action: manipulation;
   }
 
+  /* Cookie-banner verbergen zodra er een keuze vastligt. Het inline
+     head-script zet data-consent vóór de eerste paint, dus terugkerende
+     bezoekers zien de banner nooit oplichten. */
+  html[data-consent] .cookie-consent {
+    display: none;
+  }
+
   /* Zachte tap-highlight in brand-blauw i.p.v. de grijze systeemflits */
   a,
   button,

@@ -18,24 +18,28 @@ function updateConsent(granted: boolean) {
 }
 
 export default function CookieConsent() {
-  const [visible, setVisible] = useState(false)
+  /* Start op `true` zodat de banner in de server-HTML staat en bij de eerste
+     paint zichtbaar is. Wie al gekozen heeft ziet hem niet: het inline
+     head-script zet data-consent op <html> en CSS verbergt hem dan meteen.
+     Het effect hieronder ruimt hem vervolgens netjes uit de DOM op. */
+  const [visible, setVisible] = useState(true)
 
   useEffect(() => {
     try {
-      const stored = localStorage.getItem(STORAGE_KEY)
-      if (!stored) setVisible(true)
+      if (localStorage.getItem(STORAGE_KEY)) setVisible(false)
     } catch {
-      // localStorage geblokkeerd — toon banner alsnog
-      setVisible(true)
+      // localStorage geblokkeerd — banner blijft staan
     }
   }, [])
 
   const decide = (granted: boolean) => {
+    const choice = granted ? 'accepted' : 'rejected'
     try {
-      localStorage.setItem(STORAGE_KEY, granted ? 'accepted' : 'rejected')
+      localStorage.setItem(STORAGE_KEY, choice)
     } catch {
       // negeer storage-fout
     }
+    document.documentElement.setAttribute('data-consent', choice)
     updateConsent(granted)
     setVisible(false)
   }
@@ -48,7 +52,7 @@ export default function CookieConsent() {
       aria-live="polite"
       aria-label="Cookie-toestemming"
       /* mb-[76px] op mobiel houdt de sticky bel-balk volledig vrij */
-      className="fixed inset-x-0 bottom-0 z-[60] px-3 pb-3 mb-[76px] sm:mb-0 sm:px-6 sm:pb-6"
+      className="cookie-consent fixed inset-x-0 bottom-0 z-[60] px-3 pb-3 mb-[76px] sm:mb-0 sm:px-6 sm:pb-6"
     >
       <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-xl shadow-2xl px-4 py-3 sm:px-5 sm:py-4">
         <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">

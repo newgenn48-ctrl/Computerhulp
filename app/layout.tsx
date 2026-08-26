@@ -94,7 +94,11 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Consent Mode v2 default — MOET vóór GTM laden. Alles default 'denied',
-            CookieConsent component upgrade naar 'granted' bij accept. */}
+            CookieConsent component upgradet naar 'granted' bij accept.
+
+            Geen wait_for_update: een eerdere keuze wordt hieronder synchroon
+            hersteld, dus er valt niets te wachten. Een wachtvenster zou alleen
+            het conversie-event vertragen dat op een tel:-klik afgaat. */}
         <Script id="consent-default" strategy="beforeInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
@@ -106,12 +110,16 @@ export default function RootLayout({
               'analytics_storage': 'denied',
               'functionality_storage': 'granted',
               'personalization_storage': 'denied',
-              'security_storage': 'granted',
-              'wait_for_update': 500
+              'security_storage': 'granted'
             });
-            // Restore choice on subsequent visits before GTM evaluates
+            // Eerdere keuze herstellen vóór GTM evalueert, en vóór de eerste
+            // paint markeren op <html> zodat de banner niet flitst bij
+            // terugkerende bezoekers.
             try {
               var stored = localStorage.getItem('cookie-consent');
+              if (stored) {
+                document.documentElement.setAttribute('data-consent', stored);
+              }
               if (stored === 'accepted') {
                 gtag('consent', 'update', {
                   'ad_storage': 'granted',
