@@ -7,10 +7,21 @@ import { usePathname } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { BUSINESS } from '@/lib/constants'
 
+const NAV_ITEMS: { href: string; label: string; desktopClass?: string }[] = [
+  { href: '/diensten', label: 'Diensten' },
+  { href: '/tarieven', label: 'Tarieven' },
+  { href: '/over-ons', label: 'Over Ons', desktopClass: 'hidden lg:inline' },
+  { href: '/contact', label: 'Contact' },
+]
+
 export default function Header() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  // Actieve pagina markeren, ook voor subpaden (/diensten/wifi-internet-hulp)
+  const isActive = (href: string) =>
+    pathname === href || pathname.startsWith(href + '/')
 
   useEffect(() => {
     let ticking = false
@@ -53,7 +64,7 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      className={`fixed top-0 w-full z-50 transition duration-300 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-md shadow-soft-lg py-2'
           : 'bg-white py-3'
@@ -86,13 +97,22 @@ export default function Header() {
 
           {/* Desktop Navigation — toont vanaf md (768px) zodat ook smallere laptops items zien */}
           <nav className="hidden md:flex items-center gap-4 lg:gap-5" aria-label="Hoofdnavigatie">
-            <Link href="/diensten" className="nav-link text-sm lg:text-base">Diensten</Link>
-            <Link href="/tarieven" className="nav-link text-sm lg:text-base">Tarieven</Link>
-            <Link href="/over-ons" className="nav-link text-sm lg:text-base hidden lg:inline">Over Ons</Link>
-            <Link href="/contact" className="nav-link text-sm lg:text-base">Contact</Link>
+            {NAV_ITEMS.map(item => (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+                className={`nav-link text-sm lg:text-base ${item.desktopClass ?? ''} ${
+                  isActive(item.href) ? 'nav-link-active' : ''
+                }`}
+              >
+                {item.label}
+              </Link>
+            ))}
             <a
               href={BUSINESS.PHONE_HREF}
-              className="nav-link flex items-center gap-1.5 font-medium text-sm lg:text-base"
+              translate="no"
+              className="nav-link flex items-center gap-1.5 font-medium text-sm lg:text-base whitespace-nowrap"
               aria-label={`Bel ${BUSINESS.PHONE}`}
             >
               <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
@@ -129,10 +149,19 @@ export default function Header() {
         {mobileMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-gray-100 relative z-10 bg-white">
             <nav className="flex flex-col gap-1 pt-4" aria-label="Mobiele navigatie">
-              <Link href="/diensten" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Diensten</Link>
-              <Link href="/tarieven" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Tarieven</Link>
-              <Link href="/over-ons" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Over Ons</Link>
-              <Link href="/contact" onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium">Contact</Link>
+              {NAV_ITEMS.map(item => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  onClick={() => setMobileMenuOpen(false)}
+                  aria-current={isActive(item.href) ? 'page' : undefined}
+                  className={`nav-mobile-link font-medium ${
+                    isActive(item.href) ? 'nav-mobile-link-active' : ''
+                  }`}
+                >
+                  {item.label}
+                </Link>
+              ))}
               <a href={BUSINESS.PHONE_HREF} onClick={() => setMobileMenuOpen(false)} className="nav-mobile-link font-medium text-blue-600 flex items-center gap-2">
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                 {BUSINESS.PHONE}

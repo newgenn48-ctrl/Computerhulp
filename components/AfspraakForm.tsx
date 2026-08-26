@@ -59,7 +59,17 @@ export default function AfspraakForm() {
     })
     setErrors(newErrors)
     setTouched(newTouched)
-    if (Object.keys(newErrors).length > 0) return
+    if (Object.keys(newErrors).length > 0) {
+      // Spring naar het eerste foute veld — anders lijkt het formulier
+      // stil te falen wanneer de fout buiten beeld staat.
+      const firstInvalid = fields.find(field => newErrors[field])
+      if (firstInvalid) {
+        const el = document.getElementById(firstInvalid)
+        el?.focus({ preventScroll: true })
+        el?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      }
+      return
+    }
 
     // Offline check — spaart een timeout-ronde als netwerk weg is
     if (typeof navigator !== 'undefined' && navigator.onLine === false) {
@@ -108,7 +118,7 @@ export default function AfspraakForm() {
             <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
             <div>
               <h3 className="text-red-800 font-semibold">Er ging iets mis</h3>
-              <p className="text-red-700 mt-1">Probeer het opnieuw of bel ons direct op <a href={BUSINESS.PHONE_HREF} className="font-bold underline">{BUSINESS.PHONE}</a></p>
+              <p className="text-red-700 mt-1">Probeer het opnieuw of bel ons direct op <a href={BUSINESS.PHONE_HREF} translate="no" className="font-bold underline whitespace-nowrap">{BUSINESS.PHONE}</a></p>
             </div>
           </div>
         </div>
@@ -149,6 +159,7 @@ export default function AfspraakForm() {
             aria-required="true"
             autoComplete="tel"
             inputMode="tel"
+            spellCheck={false}
             className={inputClass('telefoon')}
             placeholder="06-12345678"
             aria-invalid={touched.telefoon && errors.telefoon ? 'true' : 'false'}
@@ -173,6 +184,8 @@ export default function AfspraakForm() {
             aria-required="true"
             autoComplete="email"
             inputMode="email"
+            spellCheck={false}
+            autoCapitalize="none"
             className={inputClass('email')}
             placeholder="uw@email.nl"
             aria-invalid={touched.email && errors.email ? 'true' : 'false'}
@@ -221,7 +234,7 @@ export default function AfspraakForm() {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              Bezig met verzenden...
+              Hulp Vragen
             </span>
           ) : (
             'Hulp Vragen'

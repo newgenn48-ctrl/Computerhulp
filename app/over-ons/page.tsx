@@ -132,7 +132,7 @@ export default function OverOnsPage() {
               { icon: 'home', title: 'Bij u thuis', desc: `Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, ${PRICING.TRAVEL} voorrijkosten.` },
               { icon: 'shield', title: 'Bewezen betrouwbaar', desc: `KvK ${BUSINESS.KVK}, verzekerd en al ${BUSINESS.YEARS_ACTIVE} jaar actief. ${BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.` },
             ].map((item, idx) => (
-              <div key={idx} className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg border border-gray-100 hover:border-blue-200 transition-all">
+              <div key={idx} className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg border border-gray-100 hover:border-blue-200 transition">
                 <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-5 shadow-sm">
                   <Icon name={item.icon} className="w-7 h-7 text-white" strokeWidth={2} aria-hidden="true" />
                 </div>

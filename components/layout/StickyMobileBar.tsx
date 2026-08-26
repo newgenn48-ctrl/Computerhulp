@@ -48,7 +48,8 @@ export default function StickyMobileBar() {
       <div className="bg-white border-t border-gray-200 shadow-lg px-3 py-3 flex gap-2">
         <a
           href={BUSINESS.PHONE_HREF}
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 font-semibold text-base shadow-sm"
+          translate="no"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 font-semibold text-base shadow-sm whitespace-nowrap"
           aria-label={`Bel ${BUSINESS.PHONE}`}
         >
           <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />

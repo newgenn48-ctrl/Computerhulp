@@ -70,7 +70,7 @@ export default function WebsiteLatenMakenPage() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <a
                     href={BUSINESS.PHONE_HREF}
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition-all hover:-translate-y-0.5"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition hover:-translate-y-0.5"
                     aria-label={`Bel ${BUSINESS.PHONE}`}
                   >
                     <Icon name="phone" className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} aria-hidden="true" />
@@ -79,7 +79,7 @@ export default function WebsiteLatenMakenPage() {
 
                   <Link
                     href="/offerte-aanvragen"
-                    className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all hover:border-blue-500"
+                    className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-white border-2 border-gray-200 text-gray-900 rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-lg hover:shadow-xl transition hover:border-blue-500"
                   >
                     Vraag offerte aan
                     <Icon name="arrow-right-short" className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} aria-hidden="true" />
@@ -296,7 +296,7 @@ export default function WebsiteLatenMakenPage() {
               ].map((feature, idx) => (
                 <div
                   key={idx}
-                  className={`${feature.size} group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 card-tilt perspective-card overflow-hidden`}
+                  className={`${feature.size} group relative bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition duration-500 card-tilt perspective-card overflow-hidden`}
                   style={{
                     animation: `fade-in 0.5s ease-out ${idx * 0.1}s both`
                   }}
@@ -304,7 +304,7 @@ export default function WebsiteLatenMakenPage() {
                   <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-10 transition-opacity`}></div>
 
                   <div className="relative">
-                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition-all`}>
+                    <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${feature.color} flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 group-hover:rotate-6 transition`}>
                       {feature.icon}
                     </div>
                     <h3 className="text-2xl font-bold text-gray-900 mb-3">{feature.title}</h3>
@@ -344,7 +344,7 @@ export default function WebsiteLatenMakenPage() {
                   }}
                 >
                   <div className="text-center">
-                    <div className={`${step.color} w-20 h-20 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl shadow-xl transform hover:scale-110 hover:rotate-6 transition-all`}>
+                    <div className={`${step.color} w-20 h-20 rounded-2xl mx-auto mb-4 flex items-center justify-center text-3xl shadow-xl transform hover:scale-110 hover:rotate-6 transition`}>
                       {step.icon}
                     </div>
                     <div className="text-sm font-bold text-gray-400 mb-1">STAP {step.num}</div>
@@ -374,8 +374,8 @@ export default function WebsiteLatenMakenPage() {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* Custom Code Option */}
-              <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-blue-200 hover:border-blue-500">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 transition-all">
+              <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition border-2 border-blue-200 hover:border-blue-500">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 transition">
                   💻
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Code (Op Maat)</h3>
@@ -407,8 +407,8 @@ export default function WebsiteLatenMakenPage() {
               </div>
 
               {/* Platform Option */}
-              <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition-all border-2 border-purple-200 hover:border-purple-500">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 transition-all">
+              <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition border-2 border-purple-200 hover:border-purple-500">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 transition">
                   🚀
                 </div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4">Platform (WordPress, Shopify, Wix)</h3>
@@ -549,14 +549,14 @@ export default function WebsiteLatenMakenPage() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href={BUSINESS.PHONE_HREF}
-                    className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition"
                   >
                     <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                     {BUSINESS.PHONE}
                   </a>
                   <Link
                     href="/offerte-aanvragen"
-                    className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white border-2 border-gray-300 text-gray-900 rounded-xl font-bold text-lg hover:border-blue-500 hover:shadow-lg transition-all"
+                    className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white border-2 border-gray-300 text-gray-900 rounded-xl font-bold text-lg hover:border-blue-500 hover:shadow-lg transition"
                   >
                     Vraag Gratis Offerte Aan
                     <Icon name="arrow-right-short" className="w-5 h-5 text-blue-600" strokeWidth={2} />
@@ -619,7 +619,7 @@ export default function WebsiteLatenMakenPage() {
               ].map((faq, idx) => (
                 <div
                   key={idx}
-                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all overflow-hidden"
+                  className="bg-white rounded-2xl shadow-lg hover:shadow-xl transition overflow-hidden"
                 >
                   <button
                     type="button"
@@ -633,7 +633,7 @@ export default function WebsiteLatenMakenPage() {
                     <Icon name="chevron-down" className={`w-6 h-6 text-blue-600 flex-shrink-0 transition-transform duration-300 ${openFaqIndex === idx ? 'rotate-180' : ''}`} strokeWidth={2} />
                   </button>
                   <div
-                    className={`overflow-hidden transition-all duration-300 ${openFaqIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
+                    className={`overflow-hidden transition duration-300 ${openFaqIndex === idx ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}`}
                   >
                     <div className="px-6 pb-6">
                       <p className="text-gray-600 leading-relaxed pt-2 border-t border-gray-100">
@@ -651,7 +651,7 @@ export default function WebsiteLatenMakenPage() {
               </p>
               <Link
                 href="/offerte-aanvragen"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition"
               >
                 Stel Uw Vraag
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
@@ -677,7 +677,7 @@ export default function WebsiteLatenMakenPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <a
                 href={BUSINESS.PHONE_HREF}
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-purple-600 rounded-xl font-black text-xl shadow-2xl hover:shadow-white/50 hover:-translate-y-0.5 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-purple-600 rounded-xl font-black text-xl shadow-2xl hover:shadow-white/50 hover:-translate-y-0.5 transition"
               >
                 <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
                 {BUSINESS.PHONE}
@@ -685,7 +685,7 @@ export default function WebsiteLatenMakenPage() {
 
               <Link
                 href="/offerte-aanvragen"
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold text-xl hover:bg-white/20 transition-all"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white/10 backdrop-blur-sm border-2 border-white text-white rounded-xl font-bold text-xl hover:bg-white/20 transition"
               >
                 Vraag Offerte Aan
                 <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />

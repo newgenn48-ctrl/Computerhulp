@@ -123,7 +123,7 @@ export default function WaaromOnsPage() {
               { icon: 'home', title: 'Gewoon thuis blijven', desc: 'U hoeft nergens naartoe. Onze IT-student komt bij u aan huis en lost het ter plekke op.' },
               { icon: 'calendar', title: HOURS.DAYS, desc: `Beschikbaar van ${HOURS.OPEN} tot ${HOURS.CLOSE} uur, ook in het weekend. Zonder extra kosten.` },
             ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-4 bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all">
+              <div key={idx} className="flex items-start gap-4 bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition">
                 <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Icon name={item.icon} className="w-6 h-6 text-white" strokeWidth={2} />
                 </div>

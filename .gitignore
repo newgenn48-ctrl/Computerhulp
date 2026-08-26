@@ -92,3 +92,7 @@ Desktop.ini
 
 # Google Ads exports & analysis (private data)
 ads-data/
+
+# agent skills (vendored via skills-lock.json, opnieuw te installeren met npx skills add)
+.agents/
+.claude/skills/

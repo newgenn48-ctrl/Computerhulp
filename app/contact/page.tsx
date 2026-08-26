@@ -38,7 +38,7 @@ export default function ContactPage() {
           {/* Primary: Bellen card — vol breed op mobiel, groter op desktop */}
           <a
             href={BUSINESS.PHONE_HREF}
-            className="group block bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 sm:p-10 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-200 mb-6"
+            className="group block bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 sm:p-10 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition duration-200 mb-6"
             aria-label={`Bel ${BUSINESS.PHONE}`}
           >
             <div className="flex flex-col sm:flex-row items-center gap-6 justify-between">
@@ -62,7 +62,7 @@ export default function ContactPage() {
               href={`${BUSINESS.WHATSAPP_HREF}?text=Hallo!%20Ik%20heb%20een%20vraag%20over%20computerhulp.`}
               target="_blank"
               rel="noopener noreferrer"
-              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover:border-green-300 flex items-center gap-4"
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-gray-100 hover:border-green-300 flex items-center gap-4"
             >
               <div className="w-12 h-12 bg-[#25D366] rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:-translate-y-0.5 transition-transform">
                 <Icon name="whatsapp" className="w-6 h-6" aria-hidden="true" />
@@ -75,7 +75,7 @@ export default function ContactPage() {
 
             <a
               href={BUSINESS.EMAIL_HREF}
-              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition-all border border-gray-100 hover:border-blue-300 flex items-center gap-4"
+              className="group bg-white rounded-2xl p-6 shadow-sm hover:shadow-md transition border border-gray-100 hover:border-blue-300 flex items-center gap-4"
             >
               <div className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white flex-shrink-0 group-hover:-translate-y-0.5 transition-transform">
                 <Icon name="email" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />

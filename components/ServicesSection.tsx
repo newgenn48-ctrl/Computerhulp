@@ -175,7 +175,7 @@ export default function ServicesSection({
               <Link
                 key={idx}
                 href={service.slug}
-                className="group flex md:flex-col items-start md:items-center text-left md:text-center gap-4 md:gap-3 bg-white rounded-2xl p-5 md:p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1 border border-gray-100"
+                className="group flex md:flex-col items-start md:items-center text-left md:text-center gap-4 md:gap-3 bg-white rounded-2xl p-5 md:p-6 shadow-soft hover:shadow-soft-lg transition duration-300 hover:-translate-y-1 border border-gray-100"
               >
                 <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-blue-50 to-blue-100/60 flex items-center justify-center flex-shrink-0 group-hover:from-blue-100 group-hover:to-blue-200/60 transition-colors">
                   <Icon
@@ -202,7 +202,7 @@ export default function ServicesSection({
               <Link
                 key={idx}
                 href={service.slug}
-                className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition-all duration-300 hover:-translate-y-1"
+                className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition duration-300 hover:-translate-y-1"
               >
                 <div className="relative aspect-square overflow-hidden bg-gray-50">
                   <Image

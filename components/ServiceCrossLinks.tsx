@@ -110,7 +110,7 @@ export default function ServiceCrossLinks({ currentService, serviceName }: Servi
               <Link
                 key={service.slug}
                 href={`/diensten/${service.slug}`}
-                className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group"
+                className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition group"
               >
                 <Icon name="arrow-right-short" className="w-5 h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
                 <span className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">{service.name}</span>

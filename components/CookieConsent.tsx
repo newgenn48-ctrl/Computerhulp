@@ -47,29 +47,29 @@ export default function CookieConsent() {
       role="dialog"
       aria-live="polite"
       aria-label="Cookie-toestemming"
-      className="fixed inset-x-0 bottom-0 z-[60] p-4 sm:p-6"
+      /* mb-[76px] op mobiel houdt de sticky bel-balk volledig vrij */
+      className="fixed inset-x-0 bottom-0 z-[60] px-3 pb-3 mb-[76px] sm:mb-0 sm:px-6 sm:pb-6"
     >
-      <div className="max-w-4xl mx-auto bg-white border border-gray-200 rounded-2xl shadow-2xl p-5 sm:p-6">
-        <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:gap-6">
-          <div className="flex-1 text-sm sm:text-base text-gray-700 leading-relaxed">
-            Wij gebruiken cookies om de site te verbeteren en relevante advertenties te tonen. U bepaalt zelf wat u toestaat.{' '}
+      <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-xl shadow-2xl px-4 py-3 sm:px-5 sm:py-4">
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-5">
+          <p className="flex-1 text-sm text-gray-700 leading-snug">
+            Wij gebruiken cookies voor de website en advertenties.{' '}
             <Link href="/privacy" className="text-blue-600 hover:text-blue-700 underline font-medium">
               Lees meer
             </Link>
-            .
-          </div>
-          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 flex-shrink-0">
+          </p>
+          <div className="flex flex-row gap-2 flex-shrink-0">
             <button
               type="button"
               onClick={() => decide(false)}
-              className="px-5 py-3 text-sm sm:text-base font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-xl transition-colors"
+              className="flex-1 sm:flex-none px-4 py-2.5 text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
             >
               Weigeren
             </button>
             <button
               type="button"
               onClick={() => decide(true)}
-              className="px-5 py-3 text-sm sm:text-base font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-xl transition-colors shadow-sm"
+              className="flex-1 sm:flex-none px-4 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm"
             >
               Accepteren
             </button>

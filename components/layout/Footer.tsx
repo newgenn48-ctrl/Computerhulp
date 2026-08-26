@@ -99,7 +99,7 @@ export default function Footer() {
             <h3 className="font-bold text-lg mb-4">Contact</h3>
             <ul className="space-y-3 text-sm">
               <li>
-                <a href={BUSINESS.PHONE_HREF} className="footer-link flex items-center gap-2">
+                <a href={BUSINESS.PHONE_HREF} translate="no" className="footer-link flex items-center gap-2 whitespace-nowrap">
                   <Icon name="phone" className="w-4 h-4" strokeWidth={2} />
                   {BUSINESS.PHONE}
                 </a>

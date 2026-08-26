@@ -165,7 +165,7 @@ export default function LocatiesPage() {
                 <Link
                   key={slug}
                   href={`/computerhulp-aan-huis-${slug}`}
-                  className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition-all duration-300"
+                  className="group bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition duration-300"
                 >
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center group-hover:bg-blue-600 transition-colors">

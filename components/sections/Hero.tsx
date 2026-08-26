@@ -66,7 +66,7 @@ export default function Hero({
           <div className="flex flex-col sm:flex-row gap-3 mb-6">
             <a
               href={BUSINESS.PHONE_HREF}
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition-all duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+              className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
               aria-label={`Bel ${BUSINESS.PHONE}`}
             >
               <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />

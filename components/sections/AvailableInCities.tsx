@@ -45,7 +45,7 @@ export default function AvailableInCities({
             <Link
               key={city.slug}
               href={`/${pagePrefix}-${city.slug}`}
-              className="flex items-center gap-2 bg-white rounded-xl p-3 border border-gray-200 hover:border-blue-400 hover:shadow-md transition-all group"
+              className="flex items-center gap-2 bg-white rounded-xl p-3 border border-gray-200 hover:border-blue-400 hover:shadow-md transition group"
             >
               <Icon name="location-pin" className="w-4 h-4 text-blue-600 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
               <span className="font-medium text-sm text-gray-900 group-hover:text-blue-600 transition-colors truncate">

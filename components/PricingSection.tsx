@@ -22,7 +22,7 @@ export default function PricingSection() {
             {rows.map((row) => (
               <div key={row.label} className="flex items-baseline justify-between py-3 first:pt-0 last:pb-0">
                 <dt className="text-gray-600">{row.label}</dt>
-                <dd className="text-xl font-bold text-gray-900 tracking-tight">{row.value}</dd>
+                <dd className="text-xl font-bold text-gray-900 tracking-tight tabular-nums">{row.value}</dd>
               </div>
             ))}
           </dl>

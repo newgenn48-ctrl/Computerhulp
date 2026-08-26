@@ -41,7 +41,7 @@ export default function FloatingButtons() {
 
   return (
     <div
-      className={`fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-40 transition-all duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+      className={`fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-40 transition duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
       role="complementary"
       aria-label="Snelle actieknoppen"
     >

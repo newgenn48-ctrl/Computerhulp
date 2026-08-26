@@ -122,7 +122,7 @@ export default function DienstenPage() {
               <Link
                 key={idx}
                 href={service.slug}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:border-blue-500 hover:shadow-2xl transition-all duration-300 flex flex-col"
+                className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:border-blue-500 hover:shadow-2xl transition duration-300 flex flex-col"
               >
                 {/* Image */}
                 <div className="relative h-44 sm:h-48 overflow-hidden">
@@ -150,7 +150,7 @@ export default function DienstenPage() {
                     ))}
                   </ul>
 
-                  <span className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition-all">
+                  <span className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition">
                     Meer informatie
                     <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />
                   </span>

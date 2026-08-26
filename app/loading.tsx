@@ -7,7 +7,7 @@ export default function Loading() {
 
         {/* Loading text */}
         <p className="text-white text-lg font-medium">
-          Laden...
+          Laden…
         </p>
       </div>
     </div>
