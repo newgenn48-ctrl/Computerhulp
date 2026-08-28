@@ -3,24 +3,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
-import SectionDivider from '@/components/ui/SectionDivider'
+import { cityCount } from '@/lib/cities'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
-  loading: () => <div className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
+  loading: () => <div className="py-12 lg:py-16 bg-surface" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
 })
 
 export const metadata: Metadata = {
   title: 'Smartphone Hulp aan Huis | Binnen 24u | Zuid-Holland',
   description: `Smartphone hulp aan huis in ${BUSINESS.REGION}. Telefoon instellen, data overzetten, apps installeren en problemen oplossen. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Smartphone Hulp aan Huis Zuid-Holland | IT-student aan Huis',
-    description: `Smartphone hulp aan huis in ${BUSINESS.REGION}: uw IT-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Smartphone Hulp aan Huis Zuid-Holland | IT-specialist aan Huis',
+    description: `Smartphone hulp aan huis in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis',
     siteName: 'Computerhulp Zuid-Holland',
@@ -78,8 +78,8 @@ const localBusinessData = {
   email: BUSINESS.EMAIL,
   logo: 'https://computerhulpzh.nl/logo.png',
   image: [
-    'https://computerhulpzh.nl/Student%20aan%20huis.webp',
-    'https://computerhulpzh.nl/Computerhulp%20aan%20huis.webp'
+    'https://computerhulpzh.nl/hero-computerhulp.webp',
+    'https://computerhulpzh.nl/hero-student.webp'
   ],
   address: {
     '@type': 'PostalAddress',
@@ -173,42 +173,42 @@ const faqData = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Hoe snel kunnen jullie langskomen voor computerhulp?',
+      name: `Raken mijn foto's en contacten kwijt bij een nieuwe telefoon?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In de meeste gevallen komen we binnen 24 uur bij u langs voor computerhulp aan huis. Bij spoed proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren tot 22:00.'
+        text: `Nee. We zetten eerst alles veilig over — contacten, foto's en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.`
       }
     },
     {
       '@type': 'Question',
-      name: 'Wat kost computerhulp aan huis in Zuid-Holland?',
+      name: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Onze computerhulp aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen kan na afloop via pin of Tikkie.`
+        text: `Ja. We ruimen op, zetten uw foto's veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.`
       }
     },
     {
       '@type': 'Question',
-      name: 'Welke computerproblemen kunnen jullie oplossen?',
+      name: `Helpen jullie met Android én met iPhone?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Wij helpen met alle IT-problemen: trage computers, laptop reparatie, printers installeren, WiFi problemen, e-mailconfiguratie, tablets, smartphones, software-installatie, virusverwijdering en dataherstel. Ook voor persoonlijke uitleg en training kunt u bij ons terecht.'
+        text: `Allebei. Samsung, Apple of een ander merk: we kennen alle systemen en leggen de verschillen rustig uit.`
       }
     },
     {
       '@type': 'Question',
-      name: 'In welke plaatsen bieden jullie computerhulp aan huis?',
+      name: `Kunnen jullie apps installeren en uitleggen?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Wij bieden computerhulp aan huis in heel Zuid-Holland, waaronder Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en meer dan 50 andere gemeenten.'
+        text: `Ja — en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.`
       }
     },
     {
       '@type': 'Question',
-      name: 'Moet ik iets voorbereiden voor de computerhulp afspraak?',
+      name: `Wat kost smartphone-hulp aan huis?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Nee, u hoeft niets voor te bereiden. Zorg alleen dat u eventuele wachtwoorden bij de hand heeft en dat de apparatuur bereikbaar is. Wij nemen al het gereedschap mee dat nodig is voor de computerhulp.'
+        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.`
       }
     }
   ]
@@ -285,7 +285,7 @@ export default function SmartphoneHulpAanHuisPage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Hulp nodig met je <span className="hero-highlight">smartphone</span>?
+              Hulp nodig met uw <span className="hero-highlight">smartphone</span>?
             </h1>
 
             <p className="hero-description">
@@ -293,6 +293,14 @@ export default function SmartphoneHulpAanHuisPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="btn-hero-phone"
+                aria-label={`Bel ${BUSINESS.PHONE}`}
+              >
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link
                 href="/afspraak-maken"
                 className="btn-hero-primary"
@@ -300,21 +308,12 @@ export default function SmartphoneHulpAanHuisPage() {
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a
-                href={BUSINESS.PHONE_HREF}
-                className="btn-hero-secondary"
-                aria-label={`Bel ${BUSINESS.PHONE}`}
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
             </div>
           </div>
         </div>
 
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       <HowItWorksSection />
 
@@ -322,61 +321,47 @@ export default function SmartphoneHulpAanHuisPage() {
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
-            </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
-          </header>
-
-          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={SHORT_TESTIMONIALS}
+        subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
+      />
 
       {/* SEO Content Section */}
-      <section className="py-12 md:py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
+      <section className="py-12 lg:py-16 bg-surface" aria-labelledby="seo-content-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>
               <h2 id="seo-content-heading" className="section-title mb-6">
-                Computerhulp bij u thuis
+                Smartphone-hulp: van instellen tot foto’s overzetten
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Loopt uw <strong>computer, laptop, printer of WiFi</strong> niet lekker? Dat is vervelend, maar geen reden tot stress. Wij komen gewoon bij u thuis en helpen het oplossen. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of ergens anders in Zuid-Holland woont — wij staan meestal binnen een dag bij u aan de deur.
+                  Een nieuwe telefoon is leuk — tot alles overgezet moet worden. Wij maken uw smartphone werkklaar: contacten, foto’s en apps mee, e-mail ingesteld en de belangrijkste instellingen uitgelegd. Ook bij een volle opslag, haperende apps of een onbegrijpelijke melding komen we gewoon bij u thuis. Android of iPhone: allebei prima.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waarom mensen ons bellen</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waar we mee helpen</h3>
 
                 <ul className="space-y-3 text-gray-700 mb-6">
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Snel bij u thuis:</strong> Meestal binnen een dag. Bij spoed vaak nog dezelfde dag.</span>
+                    <span><strong>Nieuwe telefoon werkklaar:</strong> Alles overgezet en ingesteld — u mist geen contact en geen foto.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Transparante prijzen:</strong> {PRICING.PER_QUARTER} per kwartier, {PRICING.TRAVEL} voorrijkosten in heel Zuid-Holland.</span>
+                    <span><strong>Opslag vol opgelost:</strong> We ruimen op en zetten foto’s veilig, zodat er weer ruimte is.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Alle merken:</strong> Windows, Apple, Samsung — het maakt niet uit, wij helpen u.</span>
+                    <span><strong>Apps en updates:</strong> Installeren, opruimen en uitleggen — alleen wat ú nodig heeft.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Gewoon duidelijk:</strong> Wij leggen alles rustig uit, zonder vaktermen.</span>
+                    <span><strong>Android én iPhone:</strong> Samsung, Apple of een ander merk: we kennen ze allemaal.</span>
                   </li>
                 </ul>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Waar kunnen wij u mee helpen? Onder andere met: <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">een trage computer</Link>, <Link href="/diensten/laptop-computer-reparatie" className="text-blue-600 hover:underline">een kapotte laptop</Link>, <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">een printer die niet werkt</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi dat hapert</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail instellen</Link>, <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet en telefoon</Link>, <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:underline">slimme apparaten</Link> en <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">bestanden terughalen</Link>.
+                  Zie ook: <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet- en smartphonehulp</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail instellen</Link> en <Link href="/diensten/persoonlijke-training" className="text-blue-600 hover:underline">persoonlijke training</Link>.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
@@ -389,8 +374,8 @@ export default function SmartphoneHulpAanHuisPage() {
               <div className="sticky top-24">
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
-                    src="/Computerhulp aan huis.webp"
-                    alt="IT-student legt smartphone-gebruik uit aan klant thuis"
+                    src="/hero-student.webp"
+                    alt="IT-specialist legt aan de keukentafel iets uit op een tablet aan een oudere klant"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -408,7 +393,7 @@ export default function SmartphoneHulpAanHuisPage() {
                     ))}
                   </div>
                   <Link href="/computerhulp-aan-huis" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
-                    Bekijk alle 50+ locaties
+                    Bekijk alle {cityCount} locaties
                     <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                   </Link>
                 </div>
@@ -429,11 +414,11 @@ export default function SmartphoneHulpAanHuisPage() {
 
           <div className="space-y-4">
             {[
-              { q: 'Hoe snel kunnen jullie langskomen?', a: 'Meestal staan we binnen een dag bij u aan de deur. Heeft u haast? Dan proberen we vaak nog dezelfde dag langs te komen. We zijn elke dag bereikbaar, ook in de avond.' },
-              { q: 'Wat kost het?', a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin of Tikkie.` },
-              { q: 'Waar kunnen jullie mee helpen?', a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, WiFi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.' },
-              { q: 'Komen jullie ook in mijn woonplaats?', a: `Wij komen in heel Zuid-Holland bij u thuis. Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en meer dan 50 andere gemeenten. Overal ${PRICING.TRAVEL} voorrijkosten.` },
-              { q: 'Moet ik iets voorbereiden?', a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele wachtwoorden alvast klaar. Verder nemen wij alles mee wat nodig is.' },
+              { q: `Raken mijn foto's en contacten kwijt bij een nieuwe telefoon?`, a: `Nee. We zetten eerst alles veilig over — contacten, foto's en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` },
+              { q: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, a: `Ja. We ruimen op, zetten uw foto's veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.` },
+              { q: `Helpen jullie met Android én met iPhone?`, a: `Allebei. Samsung, Apple of een ander merk: we kennen alle systemen en leggen de verschillen rustig uit.` },
+              { q: `Kunnen jullie apps installeren en uitleggen?`, a: `Ja — en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` },
+              { q: `Wat kost smartphone-hulp aan huis?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
@@ -456,28 +441,28 @@ export default function SmartphoneHulpAanHuisPage() {
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          <h2 className="cta-title mb-6">
             Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/afspraak-maken"
-              className="btn-cta-white"
-            >
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
             <a
               href={BUSINESS.PHONE_HREF}
-              className="btn-cta-dark"
+              className="btn-cta-white"
               aria-label={`Bel ${BUSINESS.PHONE}`}
             >
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link
+              href="/afspraak-maken"
+              className="btn-cta-dark"
+            >
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

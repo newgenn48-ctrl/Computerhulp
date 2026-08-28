@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { BUSINESS } from '@/lib/constants'
+import { BUSINESS, PRICING } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Algemene Voorwaarden | Computerhulp Zuid-Holland',
@@ -14,13 +14,13 @@ export default function VoorwaardenPage() {
   return (
     <div className="pt-24 pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Algemene Voorwaarden</h1>
+        <h1 className="section-title-lg mb-8">Algemene Voorwaarden</h1>
 
         <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
           <p className="text-sm text-gray-500">Laatst bijgewerkt: 14 februari 2026</p>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Definities</h2>
+            <h2 className="content-title mt-8 mb-4">1. Definities</h2>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Computerhulp Zuid-Holland:</strong> De dienstverlener, gevestigd in Zuid-Holland, Nederland (KvK: 91310318)</li>
               <li><strong>Klant:</strong> De natuurlijke of rechtspersoon die gebruik maakt van onze diensten</li>
@@ -29,7 +29,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Toepasselijkheid</h2>
+            <h2 className="content-title mt-8 mb-4">2. Toepasselijkheid</h2>
             <p>
               Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen, opdrachten en overeenkomsten tussen Computerhulp Zuid-Holland en de klant.
             </p>
@@ -39,7 +39,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">3. Totstandkoming Overeenkomst</h2>
+            <h2 className="content-title mt-8 mb-4">3. Totstandkoming Overeenkomst</h2>
             <p>Een overeenkomst komt tot stand door:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Mondelinge of schriftelijke afspraak tussen klant en Computerhulp Zuid-Holland</li>
@@ -49,12 +49,12 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Prijzen en Betaling</h2>
+            <h2 className="content-title mt-8 mb-4">4. Prijzen en Betaling</h2>
             <p>
-              <strong>Tarief:</strong> €14,99 per kwartier (15 minuten), minimaal 3 kwartier (€44,97).
+              <strong>Tarief:</strong> {PRICING.PER_QUARTER} per kwartier (15 minuten), minimaal 3 kwartier (€44,97).
             </p>
             <p className="mt-4">
-              <strong>Voorrijkosten:</strong> €10 in heel Zuid-Holland.
+              <strong>Voorrijkosten:</strong> {PRICING.TRAVEL} in heel Zuid-Holland.
             </p>
             <p className="mt-4">
               <strong>Betaling:</strong> Direct na afloop van werkzaamheden via pin, contant of Tikkie, tenzij anders overeengekomen.
@@ -68,7 +68,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">5. Uitvoering Werkzaamheden</h2>
+            <h2 className="content-title mt-8 mb-4">5. Uitvoering Werkzaamheden</h2>
             <p>
               Computerhulp Zuid-Holland zal de werkzaamheden naar beste kunnen en volgens de eisen van goed vakmanschap uitvoeren.
             </p>
@@ -81,7 +81,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. Annulering</h2>
+            <h2 className="content-title mt-8 mb-4">6. Annulering</h2>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Door klant:</strong> Gratis annuleren tot 24 uur voor de afspraak. Bij annulering binnen 24 uur kunnen we €44,97 (minimumtarief) in rekening brengen.</li>
               <li><strong>Door ons:</strong> Als wij moeten annuleren, doen we dit zo snel mogelijk en plannen we een nieuwe afspraak zonder extra kosten.</li>
@@ -89,7 +89,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">7. Aansprakelijkheid</h2>
+            <h2 className="content-title mt-8 mb-4">7. Aansprakelijkheid</h2>
             <p>
               <strong>Zorgvuldigheid:</strong> Wij werken altijd met de grootst mogelijke zorgvuldigheid.
             </p>
@@ -111,7 +111,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">8. Garantie</h2>
+            <h2 className="content-title mt-8 mb-4">8. Garantie</h2>
             <p>
               Op uitgevoerde werkzaamheden geldt een garantie van 30 dagen, mits:
             </p>
@@ -126,7 +126,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">9. Privacy en Geheimhouding</h2>
+            <h2 className="content-title mt-8 mb-4">9. Privacy en Geheimhouding</h2>
             <p>
               Wij gaan vertrouwelijk om met alle informatie die wij tijdens onze werkzaamheden tegenkomen.
               Zie ook onze <a href="/privacy" className="text-blue-600 hover:underline">Privacyverklaring</a>.
@@ -134,7 +134,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">10. Klachten</h2>
+            <h2 className="content-title mt-8 mb-4">10. Klachten</h2>
             <p>
               Klachten moeten binnen 14 dagen na afronding van werkzaamheden worden gemeld via:
             </p>
@@ -148,7 +148,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">11. Geschillen</h2>
+            <h2 className="content-title mt-8 mb-4">11. Geschillen</h2>
             <p>
               Bij geschillen proberen we eerst samen tot een oplossing te komen.
               Lukt dit niet, dan is de rechtbank in het arrondissement waar Computerhulp Zuid-Holland is gevestigd bevoegd.
@@ -159,7 +159,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">12. Wijzigingen Voorwaarden</h2>
+            <h2 className="content-title mt-8 mb-4">12. Wijzigingen Voorwaarden</h2>
             <p>
               Wij kunnen deze voorwaarden wijzigen. De laatste versie staat altijd op deze pagina.
               De voorwaarden die golden bij totstandkoming van de overeenkomst blijven van toepassing.
@@ -167,14 +167,14 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">13. Toepasselijk Recht</h2>
+            <h2 className="content-title mt-8 mb-4">13. Toepasselijk Recht</h2>
             <p>
               Op alle overeenkomsten is Nederlands recht van toepassing.
             </p>
           </section>
 
           <section className="mt-12 pt-8 border-t border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Contact</h2>
+            <h2 className="content-title mb-4">Contact</h2>
             <p>
               <strong>Computerhulp Zuid-Holland</strong>
             </p>

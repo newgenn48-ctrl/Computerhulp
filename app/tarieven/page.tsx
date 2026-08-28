@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Tarieven Computerhulp aan Huis Zuid-Holland | Transparante Prijzen',
@@ -34,7 +34,7 @@ export default function TarievenPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-50 to-white pt-28 pb-16">
+      <section className="bg-surface pt-28 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <span className="eyebrow">Tarieven</span>
           <h1 className="section-title-lg mb-4">
@@ -58,7 +58,7 @@ export default function TarievenPage() {
       </section>
 
       {/* Pricing Card */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-2 border-blue-500">
             <div className="bg-gradient-to-r from-blue-600 to-blue-700 px-8 py-8 text-white text-center">
@@ -95,7 +95,7 @@ export default function TarievenPage() {
       </section>
 
       {/* Voorbeeld berekeningen */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Wat kost het in de praktijk?</h2>
@@ -127,7 +127,7 @@ export default function TarievenPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Veelgestelde vragen over onze tarieven</h2>
@@ -156,21 +156,21 @@ export default function TarievenPage() {
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          <h2 className="cta-title mb-6">
             Hulp nodig? Bel ons gerust
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             We zijn 7 dagen per week bereikbaar van 08:00 tot 22:00 uur
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak Maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark">
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white">
               <Icon name="phone" className="w-7 h-7" strokeWidth={2} />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak Maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>

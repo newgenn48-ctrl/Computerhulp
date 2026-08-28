@@ -62,8 +62,8 @@ export default function OverOnsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
       <Hero
-        imageSrc="/hero student.webp"
-        imageAlt={`Computerhulp IT-student helpt klant thuis in ${BUSINESS.REGION}`}
+        imageSrc="/hero-student.webp"
+        imageAlt={`IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel="Over ons hero"
         eyebrow="Over ons"
         title={<>Al <span className="hero-highlight">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis</>}
@@ -100,8 +100,8 @@ export default function OverOnsPage() {
             </div>
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/Computerhulp aan huis.webp"
-                alt={`${BUSINESS.NAME} team aan het werk bij klant thuis`}
+                src="/hero-computerhulp.webp"
+                alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -112,7 +112,7 @@ export default function OverOnsPage() {
       </section>
 
       {/* Waarom Wij */}
-      <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-16">
             <h2 className="section-title">
@@ -145,7 +145,7 @@ export default function OverOnsPage() {
       </section>
 
       {/* Het team */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-12">
             <h2 className="section-title">Ons team</h2>
@@ -177,7 +177,7 @@ export default function OverOnsPage() {
       </section>
 
       {/* Onze Garanties */}
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">
@@ -195,7 +195,7 @@ export default function OverOnsPage() {
               { title: 'Eerlijke prijzen', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. We geven altijd een eerlijke inschatting vooraf.` },
               { title: 'Privacy & veiligheid', desc: 'Uw gegevens zijn veilig bij ons. We behandelen uw informatie met de grootst mogelijke zorgvuldigheid.' },
             ].map((item, idx) => (
-              <div key={idx} className="flex items-start gap-4 bg-gradient-to-br from-gray-50 to-blue-50 rounded-xl p-6 border border-gray-200">
+              <div key={idx} className="flex items-start gap-4 bg-surface rounded-xl p-6 border border-gray-200">
                 <Icon name="check-circle" className="w-7 h-7 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
@@ -210,19 +210,19 @@ export default function OverOnsPage() {
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Hulp nodig?</h2>
+          <h2 className="cta-title mb-6">Hulp nodig?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Neem contact op voor persoonlijke computerhulp aan huis. Binnen 24 uur bij u in {BUSINESS.REGION}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

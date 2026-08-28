@@ -77,21 +77,22 @@ export default function RootLayout({
   const gtmId = 'GTM-WBZ74G2V'
 
   return (
-    <html lang="nl" className={`scroll-smooth ${inter.variable}`}>
+    /* suppressHydrationWarning hoort hier: het inline script hieronder zet
+       data-consent op <html> vóór React hydrateert, dus dat attribuut staat
+       per definitie wél in de client-DOM en niet in de server-HTML. Zonder
+       deze vlag meldt React dat als mismatch. Geldt alleen voor dit element,
+       niet voor de rest van de boom. */
+    <html lang="nl" className={`scroll-smooth ${inter.variable}`} suppressHydrationWarning>
       <head>
         {/* DNS Prefetch & Preconnect for Performance */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         <link rel="dns-prefetch" href="https://www.google-analytics.com" />
         <link rel="dns-prefetch" href="https://googleads.g.doubleclick.net" />
         <link rel="dns-prefetch" href="https://www.googleadservices.com" />
-        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
-        <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
 
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" crossOrigin="anonymous" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
 
         {/* Consent Mode v2 default — MOET vóór GTM laden. Alles default 'denied',
             CookieConsent component upgradet naar 'granted' bij accept.

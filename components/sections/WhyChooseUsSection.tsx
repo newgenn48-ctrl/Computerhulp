@@ -15,6 +15,7 @@ interface WhyChooseUsSectionProps {
   ctaLabel?: string
 }
 
+// Default = de computerhulp-variant. Studentpagina's geven hun eigen set mee.
 const defaultBenefits: Benefit[] = [
   {
     icon: 'clock',
@@ -23,8 +24,8 @@ const defaultBenefits: Benefit[] = [
   },
   {
     icon: 'users',
-    title: 'Ervaren IT-studenten',
-    desc: `Opgeleide specialisten die al ${BUSINESS.YEARS_ACTIVE} jaar problemen oplossen — rustig, duidelijk, zonder vaktermen.`,
+    title: 'Ervaren IT-specialisten',
+    desc: `Specialisten die al ${BUSINESS.YEARS_ACTIVE} jaar problemen oplossen — rustig, duidelijk, zonder vaktermen.`,
   },
   {
     icon: 'home',
@@ -54,16 +55,15 @@ export default function WhyChooseUsSection({
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 lg:gap-6 max-w-4xl mx-auto">
           {benefits.map((benefit) => (
-            <div
-              key={benefit.title}
-              className="card-refined flex items-start gap-4 p-6 sm:p-7"
-            >
-              <div className="w-11 h-11 rounded-xl bg-blue-50 flex items-center justify-center flex-shrink-0">
-                <Icon name={benefit.icon} className="w-5 h-5 text-blue-600" strokeWidth={2} aria-hidden="true" />
-              </div>
-              <div>
-                <h3 className="font-bold text-gray-900 mb-1 text-base sm:text-lg">{benefit.title}</h3>
-                <p className="text-gray-600 text-sm sm:text-base leading-relaxed">{benefit.desc}</p>
+            <div key={benefit.title} className="card-bezel">
+              <div className="card-bezel-inner flex items-start gap-4 p-6 sm:p-7 h-full">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center flex-shrink-0 shadow-md shadow-blue-700/20">
+                  <Icon name={benefit.icon} className="w-6 h-6 text-white" strokeWidth={2} aria-hidden="true" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-gray-900 mb-1.5 text-lg">{benefit.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{benefit.desc}</p>
+                </div>
               </div>
             </div>
           ))}

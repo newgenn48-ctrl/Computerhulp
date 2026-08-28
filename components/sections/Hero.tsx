@@ -23,6 +23,8 @@ interface HeroProps {
   descriptions?: ReactNode[]
   /** Optionele trust-pills onder de CTAs */
   pills?: HeroPill[]
+  /** Regel met groen vinkje direct onder de knoppen. Lege string verbergt hem. */
+  trustLine?: string
 }
 
 /**
@@ -37,6 +39,7 @@ export default function Hero({
   title,
   descriptions = [],
   pills,
+  trustLine = 'Meestal binnen 24 uur geholpen',
 }: HeroProps) {
   return (
     <section className="hero-wrapper" aria-label={ariaLabel}>
@@ -63,10 +66,10 @@ export default function Hero({
             <p key={i} className="hero-description">{desc}</p>
           ))}
 
-          <div className="flex flex-col sm:flex-row gap-3 mb-6">
+          <div className="flex flex-col sm:flex-row gap-3 mb-3">
             <a
               href={BUSINESS.PHONE_HREF}
-              className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
+              className="btn-hero-phone"
               aria-label={`Bel ${BUSINESS.PHONE}`}
             >
               <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
@@ -77,6 +80,13 @@ export default function Hero({
               <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
             </Link>
           </div>
+
+          {trustLine && (
+            <p className="flex items-center gap-2 text-sm font-medium text-white mb-5">
+              <Icon name="check-circle" className="w-4 h-4 text-green-400" strokeWidth={2.5} aria-hidden="true" />
+              {trustLine}
+            </p>
+          )}
 
           {pills && pills.length > 0 && (
             <div className="flex flex-wrap items-center gap-3">

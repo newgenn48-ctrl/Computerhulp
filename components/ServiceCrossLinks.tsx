@@ -27,17 +27,6 @@ const allServices = [
   { slug: 'laptop-laten-herstellen', name: 'Laptop Laten Herstellen' },
 ]
 
-const topCities = [
-  { slug: 'den-haag', name: 'Den Haag' },
-  { slug: 'rotterdam', name: 'Rotterdam' },
-  { slug: 'leiden', name: 'Leiden' },
-  { slug: 'delft', name: 'Delft' },
-  { slug: 'zoetermeer', name: 'Zoetermeer' },
-  { slug: 'dordrecht', name: 'Dordrecht' },
-  { slug: 'gouda', name: 'Gouda' },
-  { slug: 'alphen-aan-den-rijn', name: 'Alphen aan den Rijn' },
-]
-
 const relatedServicesMap: Record<string, string[]> = {
   'computer-laptop-hulp': ['laptop-computer-reparatie', 'dataherstel-backup', 'wifi-internet-hulp', 'email-hulp', 'persoonlijke-training'],
   'laptop-computer-reparatie': ['computer-laptop-hulp', 'dataherstel-backup', 'wifi-internet-hulp', 'tablet-smartphone-hulp', 'persoonlijke-training'],
@@ -67,53 +56,30 @@ export default function ServiceCrossLinks({ currentService, serviceName }: Servi
 
   return (
     <>
-      {/* Werkgebied links */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-            {serviceName} in uw regio
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Wij komen bij u thuis in heel Zuid-Holland, onder andere in:
-          </p>
-          <div className="flex flex-wrap gap-3">
-            {topCities.map(city => (
-              <Link
-                key={city.slug}
-                href={`/computerhulp-aan-huis-${city.slug}`}
-                className="bg-white px-4 py-2 rounded-full text-sm font-medium text-gray-700 border border-gray-200 hover:border-blue-400 hover:text-blue-600 transition-colors"
-              >
-                {city.name}
-              </Link>
-            ))}
-            <Link
-              href="/computerhulp-aan-huis"
-              className="bg-blue-50 px-4 py-2 rounded-full text-sm font-medium text-blue-600 border border-blue-200 hover:bg-blue-100 transition-colors"
-            >
-              Alle 50+ locaties →
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Gerelateerde diensten */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-            Andere diensten
-          </h2>
-          <p className="text-gray-600 mb-8">
-            Naast {serviceName.toLowerCase()} helpen wij u ook met:
-          </p>
+          <header className="text-center mb-10">
+            <p className="section-eyebrow">Meer hulp</p>
+            <h2 className="section-title">Andere diensten</h2>
+            <p className="section-subtitle">
+              Naast {serviceName.toLowerCase()} helpen wij u ook met:
+            </p>
+          </header>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {relatedServices.map(service => (
               <Link
                 key={service.slug}
                 href={`/diensten/${service.slug}`}
-                className="flex items-center gap-3 bg-gray-50 rounded-xl p-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition group"
+                className="group flex items-center justify-between gap-3 bg-white rounded-xl p-4 border border-gray-200 hover:border-blue-300 hover:shadow-soft transition duration-200"
               >
-                <Icon name="arrow-right-short" className="w-5 h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
-                <span className="font-medium text-gray-900 group-hover:text-blue-600 transition-colors">{service.name}</span>
+                <span className="font-medium text-gray-900 group-hover:text-blue-700 transition-colors">{service.name}</span>
+                <span
+                  className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center flex-shrink-0 transition-transform duration-300 group-hover:translate-x-1"
+                  aria-hidden="true"
+                >
+                  <Icon name="arrow-right-short" className="w-4 h-4 text-blue-700" strokeWidth={2.5} />
+                </span>
               </Link>
             ))}
           </div>

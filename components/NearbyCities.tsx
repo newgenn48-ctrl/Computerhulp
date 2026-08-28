@@ -23,7 +23,7 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
     : { url: '/computerhulp-aan-huis', text: 'Bekijk alle steden in Zuid-Holland' }
 
   return (
-    <section className="py-12 bg-gray-50">
+    <section className="py-12 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <h2 className="text-2xl font-bold text-gray-900 mb-6">
           {titleText}

@@ -1,0 +1,172 @@
+# Claude Code Audit Prompt — computerhulpzh.nl
+
+## Your role
+
+You are a senior full-stack engineer, technical SEO specialist, and conversion optimizer. You are auditing a production Next.js site deployed on Vercel for a local computer-repair business in Zuid-Holland, NL. The primary audience is seniors (60+) who are tech-averse. The primary conversion goals are phone calls and a short booking form. The site is Dutch-only.
+
+## Known context — do not re-verify, build on it
+
+- **Stack:** Next.js on Vercel (confirmed via response headers: `Server: Vercel`, `X-Nextjs-Prerender: 1`, `X-Vercel-Cache: HIT`, `X-Nextjs-Stale-Time: 300`)
+- **Security headers already in place:** HSTS, CSP (with `unsafe-inline` + `unsafe-eval` on `script-src`), Permissions-Policy, X-Frame-Options SAMEORIGIN, Referrer-Policy, `object-src 'none'`, `base-uri 'self'`
+- **Analytics / ads allowlisted in CSP:** GTM, GA4, Google Ads, DoubleClick
+- **Homepage HTML is 156 KB uncompressed** — large for a Next.js prerendered page, investigate why
+- **`X-XSS-Protection` header is present** — deprecated, should be removed
+- **External HTTPS fetchers consistently receive 403** even with normal browser UAs, while actual browsers get 200 — likely middleware or Vercel Firewall rule. Investigate and verify Googlebot/Bingbot are not affected.
+
+## Known issues to verify in the code and include in findings
+
+These were identified from outside the codebase. Confirm them by reading the source, pinpoint the files, and treat them as priority fixes in the final report.
+
+1. **NAP / pricing inconsistency across pages**
+   - Homepage: phone `06-42548451`, rate `€14,50 per kwartier`, "geen voorrijkosten"
+   - Sub-pages (e.g. `/student-aan-huis-lisse`, `/student-aan-huis-dordrecht`): phone `085-8002006`, rate `€14,99 per kwartier`, `€10 voorrijkosten`
+   - Also inconsistent minimum-afname: some say "3 kwartier", Rotterdam says "45 minuten", Lisse shows a price range
+   - Search the entire codebase for hardcoded phone numbers, rates, and voorrijkosten strings. Consolidate into one source of truth (`config/business.ts` or similar). This is hurting both conversion (visitor confusion) and local SEO (NAP signals are inconsistent).
+
+2. **Duplicate / near-duplicate location pages**
+   - Many `/student-aan-huis-<city>` and `/computerhulp-aan-huis-<city>` pages appear structurally identical, only the city name varies. This risks Google de-ranking all but one as near-duplicates. Audit actual uniqueness and recommend a per-city content strategy (local casus, buurt-specifieke info, reistijd, lokaal referentiepunt).
+
+3. **Request filtering (403 to bots)**
+   - Check `middleware.ts`, `next.config.js` headers, and Vercel's Firewall settings. The current rule blocks legitimate external tools (SEO crawlers, uptime monitors, URL inspectors). Confirm via Google Search Console URL Inspection that Googlebot can render the page correctly.
+
+## Audit scope — six domains
+
+For every finding, capture:
+
+- **Severity:** Critical / High / Medium / Low
+- **File(s):** `path/to/file.tsx:42`
+- **Current:** what the code does now (quote the relevant snippet if short)
+- **Recommended:** concrete fix, with code suggestion where useful
+- **Effort:** S (<1h) / M (1–4h) / L (>4h)
+- **Impact:** SEO / Conv / Perf / A11y / Sec
+
+### 1. Architecture & code quality
+
+- Next.js version, router (App vs Pages), rendering strategy per route (SSG, ISR, SSR)
+- Component structure and reuse — are location pages sharing one template with data-driven props, or duplicated?
+- Data sourcing for location pages: static config, JSON, CMS, or hardcoded duplicates?
+- TypeScript strictness (`strict: true`, `noUncheckedIndexedAccess`?)
+- Dependency hygiene: outdated, duplicate, or unused packages (`pnpm outdated`, `depcheck`)
+- Dead code, commented-out blocks, TODOs
+- Consistent code style (ESLint + Prettier config present and enforced?)
+
+### 2. Technical SEO
+
+- `app/sitemap.ts` or static `sitemap.xml` — present, complete, correctly referenced in `robots.txt`
+- `app/robots.ts` or `/public/robots.txt` — allows crawling, references sitemap, no accidental disallows
+- **Metadata API usage per route:** `title`, `description`, `openGraph`, `twitter`, `alternates.canonical`
+- **JSON-LD structured data:**
+  - `LocalBusiness` with correct NAP, opening hours, `areaServed`, price range — on homepage and every location page
+  - `Service` markup for each service page
+  - `BreadcrumbList` on deep pages
+  - `FAQPage` where FAQ content exists
+  - `AggregateRating` if reviews are genuine and verifiable
+- Heading hierarchy: exactly one H1 per page, primary keyword in H1, logical H2/H3 nesting, no level-skipping
+- Image `alt` attributes: descriptive Dutch, never empty on meaningful images, never filename-style
+- Internal linking: location pages should link to each other and to service pages; siloed hub-and-spoke structure preferred
+- URL consistency: trailing slash handling, casing, no duplicate URLs for same content
+- Pagination, canonicals, no orphan pages
+
+### 3. Performance
+
+- Run `next build` and review the route-by-route bundle size output
+- **Investigate why the homepage HTML is 156 KB** — inline images as base64? over-rendered SSG content? unnecessary structured data bloat?
+- Image strategy: `next/image` usage everywhere, AVIF/WebP formats, correct `sizes` attribute, `priority` on LCP image, lazy-load below fold
+- Font loading: `next/font` preferred; self-hosted; `font-display: swap`; avoid FOUT/FOIT
+- Third-party scripts: loaded via `next/script` with `afterInteractive` or `lazyOnload`; GTM should not block LCP
+- Expected Core Web Vitals on 4G mobile: LCP <2.5s, CLS <0.1, INP <200ms — run Lighthouse locally and note actual numbers
+- Preconnect / preload hints: currently `fonts.googleapis.com`, `fonts.gstatic.com`, `googletagmanager.com` — check if needed or if `next/font` makes them redundant
+
+### 4. Accessibility (WCAG 2.1 AA, with senior-friendly focus)
+
+- Color contrast on body text — target 7:1 (AAA), not just 4.5:1, because of the senior audience
+- Base font size — target 17–18 px minimum, never below 16 px
+- Touch target size — 44×44 px minimum, with adequate spacing
+- Focus states visible on every interactive element (no `outline: none` without a replacement)
+- Forms: `<label>` associated with every input, clear error messages in plain Dutch, correct `autocomplete` attributes (`tel`, `email`, `name`), `inputmode` where helpful
+- Alt text on all meaningful images; `alt=""` on purely decorative ones
+- Skip-to-content link
+- `<html lang="nl">` set correctly
+- Landmarks used correctly: `<main>`, `<nav>`, `<header>`, `<footer>` — one main per page
+- Keyboard navigation: can a user tab through the entire page and reach every interactive element in logical order?
+
+### 5. Content & conversion
+
+- **NAP consistency** (see Known issues #1) — single source of truth across all pages including footer, meta descriptions, and structured data
+- **Primary CTA:** one dominant CTA per page. For this audience, a huge tappable phone number in the header + sticky on mobile should beat the form. Verify.
+- **Form length:** maximum 3 fields (naam, telefoon, probleem). Eliminate email and address as required fields — seniors abandon long forms.
+- **Trust signals placement:** "500+ klanten", KvK, verzekerd, reviews — all visible above the fold on mobile
+- **Senior-friendly copy:** short sentences, no jargon, concrete outcomes ("uw computer werkt weer" > "optimale prestaties"). Scan for marketing-speak and flag it.
+- **Pricing clarity:** upfront, simple, no per-city variations (currently fragmented)
+- **Location pages:** each one needs genuine local content to avoid near-duplicate penalty
+- **Call-back option:** a visible "wij bellen u terug binnen 1 uur" promise converts better than "bel ons" for this demographic
+
+### 6. Security & deployment
+
+- CSP hardening plan: `unsafe-inline` and `unsafe-eval` are required by Next.js + GTM today, but nonces can eliminate them. Document the plan even if not fixing now.
+- Remove deprecated `X-XSS-Protection` header
+- `middleware.ts` review — what does it do, is it the source of the 403 behavior?
+- Vercel Firewall / WAF rules — list them, flag anything that blocks SEO bots
+- Environment variables — no secrets in the repo, `.env*` in `.gitignore`, required vars documented
+- Form submission endpoint — rate-limited? spam protection (honeypot, Cloudflare Turnstile, or similar)? Basic CSRF protection?
+- Dependencies — `pnpm audit` or `npm audit` output, any high/critical?
+
+## Deliverable
+
+Create `AUDIT.md` at the project root with exactly this structure:
+
+```markdown
+# Audit — computerhulpzh.nl
+Date: YYYY-MM-DD
+Commit: <short-sha>
+
+## Executive summary
+(5 bullets max — what matters most, in business terms)
+
+## Critical findings
+(only Severity: Critical — things actively hurting SEO, conversion, or security right now)
+
+## Findings by domain
+### 1. Architecture & code
+### 2. Technical SEO
+### 3. Performance
+### 4. Accessibility
+### 5. Content & conversion
+### 6. Security & deployment
+
+(Each finding uses the format defined in "Audit scope")
+
+## Prioritized roadmap
+### Quick wins (this afternoon, <1h each)
+### Week 1
+### Week 2–3
+### Backlog
+
+## Metrics to track (baseline snapshot)
+- Core Web Vitals on / and /student-aan-huis-rotterdam (mobile + desktop)
+- Google Search Console: impressions, CTR, average position
+- GA4: phone-click events, form submissions, bounce rate per landing page
+- Conversion rate per traffic source
+```
+
+## Rules of engagement
+
+- **Do not implement fixes in this pass.** Audit only. The user reviews `AUDIT.md` first, then decides what to ship.
+- **Verify every assumption by reading the actual files.** Don't guess stack specifics — open `package.json`, `next.config.js`, `tsconfig.json`, and the route files.
+- **Be specific.** "Homepage is slow" is useless. "`app/page.tsx` renders 23 `<Testimonial>` components server-side, each with a 40 KB inline base64 image, inflating the HTML to 156 KB and likely pushing LCP past 3s on 4G" is useful.
+- **Be opinionated.** If something is wrong, say so. If a tradeoff is justified, say that too.
+- **Dutch content stays Dutch.** Technical commentary in English is fine.
+- **Think about the senior user in every UX finding** — contrast, font size, tap targets, copy tone.
+
+## How to start
+
+```bash
+git log -1 --oneline
+cat package.json
+ls -la
+# then pick one of:
+ls app/    # App Router
+ls pages/  # Pages Router
+```
+
+Build your mental model of the codebase first (routing, data flow, shared components). Then go domain by domain. Write `AUDIT.md` incrementally as you find things — don't wait until the end.

@@ -23,23 +23,22 @@ function TestimonialsFallback({ testimonials }: TestimonialsCarouselProps) {
     <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" role="list" aria-label="Klantbeoordelingen">
       {testimonials.slice(0, 6).map((t, idx) => (
         <div key={idx} className="carousel-card" role="listitem">
-          <div className="flex items-center gap-1 mb-4" role="img" aria-label="5 van 5 sterren">
-            {[...Array(5)].map((_, i) => (
-              <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-            ))}
+          <div className="flex items-center justify-between gap-3 mb-4">
+            <div className="flex items-center gap-1" role="img" aria-label="5 van 5 sterren">
+              {[...Array(5)].map((_, i) => (
+                <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" aria-hidden="true" />
+              ))}
+            </div>
+            {t.date && <span className="text-sm text-gray-400">{t.date}</span>}
           </div>
-          <blockquote className="text-gray-700 mb-6 leading-relaxed text-base">&ldquo;{t.quote}&rdquo;</blockquote>
-          <footer className="flex items-center gap-3">
-            <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
+          <blockquote className="text-gray-800 mb-6 leading-relaxed text-[1.0625rem] sm:text-lg">&ldquo;{t.quote}&rdquo;</blockquote>
+          <footer className="flex items-center gap-3 pt-4 border-t border-gray-100">
+            <div className="w-11 h-11 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
               {t.initials}
             </div>
             <div>
               <cite className="block font-semibold text-gray-900 not-italic">{t.name}</cite>
-              {(t.city || t.date) && (
-                <div className="text-xs text-gray-500 mt-0.5">
-                  {t.city}{t.city && t.date ? ' · ' : ''}{t.date}
-                </div>
-              )}
+              {t.city && <div className="text-sm text-gray-500 mt-0.5">{t.city}</div>}
             </div>
           </footer>
         </div>
@@ -60,12 +59,15 @@ function TestimonialsCarouselInner({ testimonials }: TestimonialsCarouselProps) 
   const scrollRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
+  const [activeIdx, setActiveIdx] = useState(0)
 
   const checkScroll = () => {
     if (scrollRef.current) {
       const { scrollLeft, scrollWidth, clientWidth } = scrollRef.current
       setCanScrollLeft(scrollLeft > 0)
       setCanScrollRight(scrollLeft < scrollWidth - clientWidth - 10)
+      const card = scrollRef.current.querySelector('[role="listitem"]') as HTMLElement | null
+      if (card) setActiveIdx(Math.round(scrollLeft / (card.offsetWidth + 24)))
     }
   }
 
@@ -124,23 +126,25 @@ function TestimonialsCarouselInner({ testimonials }: TestimonialsCarouselProps) 
             className="carousel-card"
             role="listitem"
           >
-            <Icon name="quote" className="absolute top-6 right-6 w-10 h-10 text-blue-100" aria-hidden="true" />
-            <div className="flex items-center gap-1 mb-4" role="img" aria-label="5 van 5 sterren">
-              {[...Array(5)].map((_, i) => (
-                <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" aria-hidden="true" />
-              ))}
+            <div className="flex items-center justify-between gap-3 mb-4">
+              <div className="flex items-center gap-1" role="img" aria-label="5 van 5 sterren">
+                {[...Array(5)].map((_, i) => (
+                  <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" aria-hidden="true" />
+                ))}
+              </div>
+              {testimonial.date && (
+                <span className="text-sm text-gray-400">{testimonial.date}</span>
+              )}
             </div>
-            <blockquote className="text-gray-700 mb-6 leading-relaxed text-base">&ldquo;{testimonial.quote}&rdquo;</blockquote>
-            <footer className="flex items-center gap-3">
-              <div className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
+            <blockquote className="text-gray-800 mb-6 leading-relaxed text-[1.0625rem] sm:text-lg">&ldquo;{testimonial.quote}&rdquo;</blockquote>
+            <footer className="flex items-center gap-3 pt-4 border-t border-gray-100">
+              <div className="w-11 h-11 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                 {testimonial.initials}
               </div>
               <div>
                 <cite className="block font-semibold text-gray-900 not-italic">{testimonial.name}</cite>
-                {(testimonial.city || testimonial.date) && (
-                  <div className="text-xs text-gray-500 mt-0.5">
-                    {testimonial.city}{testimonial.city && testimonial.date ? ' · ' : ''}{testimonial.date}
-                  </div>
+                {testimonial.city && (
+                  <div className="text-sm text-gray-500 mt-0.5">{testimonial.city}</div>
                 )}
               </div>
             </footer>
@@ -151,7 +155,12 @@ function TestimonialsCarouselInner({ testimonials }: TestimonialsCarouselProps) 
       {/* Scroll indicators (dots) - Mobile only */}
       <div className="flex justify-center gap-2 mt-6 lg:hidden" aria-hidden="true">
         {testimonials.map((_, idx) => (
-          <div key={idx} className="w-2 h-2 rounded-full bg-gray-300" />
+          <div
+            key={idx}
+            className={`h-2 rounded-full transition-colors duration-200 ${
+              idx === activeIdx ? 'w-5 bg-blue-600' : 'w-2 bg-gray-300'
+            }`}
+          />
         ))}
       </div>
     </div>

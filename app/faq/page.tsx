@@ -82,7 +82,7 @@ export default function FAQPage() {
 
       <div className="pb-20">
         {/* Hero */}
-        <section className="bg-gradient-to-br from-gray-50 to-white pt-28 pb-12 sm:pb-16">
+        <section className="bg-surface pt-28 pb-12 sm:pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <span className="eyebrow">Hulp & informatie</span>
             <h1 className="section-title-lg mb-4">
@@ -134,19 +134,19 @@ export default function FAQPage() {
         {/* CTA */}
         <section className="cta-section-blue" aria-label="Contact opnemen">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Staat uw vraag er niet bij?</h2>
+            <h2 className="cta-title mb-4">Staat uw vraag er niet bij?</h2>
             <p className="text-xl text-blue-100 mb-8">
               Bel ons direct of stuur een bericht — we helpen u graag verder.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/afspraak-maken" className="btn-cta-white">
-                Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
-              <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
                 <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
                 {BUSINESS.PHONE}
               </a>
+              <Link href="/afspraak-maken" className="btn-cta-dark">
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
             </div>
           </div>
         </section>

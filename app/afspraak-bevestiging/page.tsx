@@ -27,7 +27,7 @@ export default function AfspraakBevestigingPage() {
             <div className="inline-flex items-center justify-center w-20 h-20 bg-white rounded-full mb-6">
               <Icon name="check" className="w-12 h-12 text-blue-600" strokeWidth={2} />
             </div>
-            <h1 className="text-3xl sm:text-4xl font-bold mb-3">Aanvraag ontvangen</h1>
+            <h1 className="section-title">Aanvraag ontvangen</h1>
             <p className="text-xl text-blue-100">Bedankt voor uw vertrouwen in {BUSINESS.NAME}</p>
           </div>
 

@@ -141,7 +141,7 @@ export default function OfferteAanvragenPage() {
   return (
     <div className="pt-24 pb-20">
       {/* Hero */}
-      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
+      <section className="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <h1
             className="text-4xl sm:text-5xl font-bold mb-4"
@@ -162,7 +162,7 @@ export default function OfferteAanvragenPage() {
       </section>
 
       {/* Formulier */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="bg-white rounded-2xl shadow-2xl p-8 sm:p-12">
             {/* Success Message */}
@@ -441,9 +441,9 @@ export default function OfferteAanvragenPage() {
       </section>
 
       {/* Waarom Offerte Aanvragen */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
+          <h2 className="section-title mb-10 text-center">
             Wat Gebeurt Er Na Uw Aanvraag?
           </h2>
 
@@ -459,8 +459,8 @@ export default function OfferteAanvragenPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-purple-600">2</span>
+              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-700">2</span>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Contact</h3>
               <p className="text-gray-600">
@@ -469,8 +469,8 @@ export default function OfferteAanvragenPage() {
             </div>
 
             <div className="text-center">
-              <div className="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-2xl font-bold text-pink-600">3</span>
+              <div className="w-16 h-16 bg-indigo-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-indigo-700">3</span>
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Offerte</h3>
               <p className="text-gray-600">
@@ -482,9 +482,9 @@ export default function OfferteAanvragenPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-3xl font-bold text-gray-900 mb-10 text-center">
+          <h2 className="section-title mb-10 text-center">
             Veelgestelde vragen
           </h2>
 

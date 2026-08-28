@@ -2,14 +2,13 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
-import SectionDivider from '@/components/ui/SectionDivider'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'Monteur aan Huis Zuid-Holland | Computer & IT Hulp | Binnen 24u',
@@ -82,8 +81,6 @@ const faqData = {
   ],
 }
 
-const heroImage = '/Computerhulp aan huis.webp'
-
 const benefits = [
   { title: 'Binnen 24 uur bij u thuis', description: 'Geen weken wachten. Meestal komen we al de volgende dag — ook \'s avonds en in het weekend.', icon: 'clock' },
   { title: 'Geen verrassingen achteraf', description: `${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. U weet vooraf wat het kost. Betalen achteraf via pin of Tikkie.`, icon: 'money' },
@@ -108,12 +105,19 @@ export default function MonteurAanHuisPage() {
 
       {/* Hero */}
       <section className="hero-wrapper" aria-label="IT-monteur aan huis hero">
-        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 opacity-[0.08]"
-            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero-computerhulp.webp"
+            alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center center' }}
+            priority
+            sizes="100vw"
           />
+          <div className="hero-overlay-mobile" />
+          <div className="hero-overlay-desktop-r" />
+          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -128,14 +132,14 @@ export default function MonteurAanHuisPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-phone" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -145,7 +149,7 @@ export default function MonteurAanHuisPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide studenten
+                HBO-opgeleide IT-specialisten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -156,10 +160,9 @@ export default function MonteurAanHuisPage() {
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       {/* Waarom onze monteur */}
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Waarom klanten onze monteur kiezen</h2>
@@ -195,22 +198,16 @@ export default function MonteurAanHuisPage() {
       <PricingSection />
 
       {/* Testimonials */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
-            <p className="section-subtitle">Wij helpen dagelijks mensen in heel Zuid-Holland</p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
-          </header>
-          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={SHORT_TESTIMONIALS}
+        subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
+      />
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
+            <p className="section-eyebrow">FAQ</p>
             <h2 className="section-title">Veelgestelde vragen</h2>
             <p className="section-subtitle">Over onze monteur aan huis service</p>
           </div>
@@ -229,11 +226,11 @@ export default function MonteurAanHuisPage() {
       </section>
 
       {/* SEO Content */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Monteur aan Huis in Zuid-Holland</h2>
+          <h2 className="content-title mb-4">Monteur aan Huis in Zuid-Holland</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een monteur aan huis biedt u het gemak van professionele IT-hulp zonder dat u uw huis uit hoeft. Onze ervaren IT-studenten komen bij u langs met alle benodigde gereedschappen en kennis om uw probleem ter plekke op te lossen. Of het nu gaat om een <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">trage computer</Link>, een <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi-probleem</Link>, een <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printer die niet werkt</Link> of een <Link href="/diensten/laptop-laten-herstellen" className="text-blue-600 hover:underline">laptop die hersteld moet worden</Link> — wij helpen u graag.</p>
+            <p>Een monteur aan huis biedt u het gemak van professionele IT-hulp zonder dat u uw huis uit hoeft. Onze ervaren IT-specialisten komen bij u langs met alle benodigde gereedschappen en kennis om uw probleem ter plekke op te lossen. Of het nu gaat om een <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">trage computer</Link>, een <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi-probleem</Link>, een <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printer die niet werkt</Link> of een <Link href="/diensten/laptop-laten-herstellen" className="text-blue-600 hover:underline">laptop die hersteld moet worden</Link> — wij helpen u graag.</p>
             <p>Onze monteur komt in heel Zuid-Holland aan huis: van <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link> en <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link> tot <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> en alle kleinere plaatsen. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak online een afspraak</Link>.</p>
           </div>
         </div>
@@ -246,17 +243,17 @@ export default function MonteurAanHuisPage() {
       {/* Final CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Monteur aan Huis Nodig?</h2>
+          <h2 className="cta-title mb-6">Monteur aan Huis Nodig?</h2>
           <p className="text-xl text-blue-100 mb-10">Bel nu en we komen vandaag of morgen bij u thuis</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

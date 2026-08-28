@@ -7,6 +7,7 @@
     --color-primary: 37 99 235;
     --color-primary-dark: 30 64 175;
     --color-accent: 217 119 6;
+    --color-action: 21 128 61;
     --color-accent-soft: 245 158 11;
     --color-ink: 28 25 23;
     --color-ink-soft: 68 64 60;
@@ -18,6 +19,12 @@
 
   * {
     @apply border-gray-200;
+  }
+
+  /* Native selects renderen in Windows-darkmode met systeemkleuren als je
+     ze niet expliciet zet - dan krijg je witte tekst op een wit veld. */
+  select {
+    @apply bg-white text-gray-900;
   }
 
   body {
@@ -65,8 +72,10 @@
   /* ============================================
      BUTTONS — refined with gradient + active press
      ============================================ */
+  /* Groen = conversie. Blauw blijft de merkkleur; groen betekent overal
+     op de site precies een ding: bellen of een afspraak maken. */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-3 bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-md shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md transition duration-200;
+    @apply inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-md shadow-blue-700/25 hover:shadow-xl hover:shadow-blue-700/35 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md transition duration-200;
   }
 
   .btn-secondary {
@@ -86,7 +95,7 @@
   }
 
   .btn-submit {
-    @apply w-full bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-md shadow-blue-600/20 hover:shadow-xl hover:shadow-blue-600/30 hover:-translate-y-0.5 active:translate-y-0 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-md;
+    @apply w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-md shadow-blue-700/25 hover:shadow-xl hover:shadow-blue-700/35 hover:-translate-y-0.5 active:translate-y-0 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-md;
   }
 
   /* ============================================
@@ -104,32 +113,68 @@
      TYPOGRAPHY — editorial
      ============================================ */
   .eyebrow {
-    @apply inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] text-blue-600 mb-3;
-  }
-
-  .eyebrow-accent {
-    @apply inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.15em] text-accent-600 mb-3;
+    @apply inline-block uppercase text-blue-700 mb-3;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
   }
 
   /* ============================================
      SECTION HEADINGS — Inter, zware gewichten, strakke tracking
      ============================================ */
+  /* Alle maten hieronder zijn vloeiend (clamp): geen sprong meer tussen
+     een 13-inch laptop en een breed scherm, en op een kleine laptop wordt
+     de kop juist iets rustiger in plaats van meteen 56px.
+
+     Koppen: zwaar, strak gespatieerd, dicht op elkaar.
+     Lopende tekst: het omgekeerde — ruim, want die moet gelezen worden. */
   .section-eyebrow {
-    @apply inline-block text-xs sm:text-sm font-semibold uppercase tracking-[0.18em] text-blue-600 mb-3;
+    @apply inline-block uppercase text-blue-700 mb-3;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
   }
 
   .section-title {
-    @apply text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-[1.15] tracking-display-tight;
+    @apply font-bold text-gray-900 mb-4;
+    font-size: clamp(1.75rem, 1.2rem + 1.75vw, 2.5rem);
+    line-height: 1.14;
+    letter-spacing: -0.035em;
     text-wrap: balance;
   }
 
   .section-title-lg {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-900 mb-6 leading-[1.1] tracking-display-tight;
+    @apply font-extrabold text-gray-900 mb-6;
+    font-size: clamp(2rem, 1.35rem + 2vw, 3rem);
+    line-height: 1.08;
+    letter-spacing: -0.042em;
+    text-wrap: balance;
+  }
+
+  /* Kop op de blauwe afsluitband. Zelfde vloeiende schaal als
+     .section-title, maar wit. Geen ondermarge: die verschilt per band. */
+  .cta-title {
+    @apply font-bold text-white;
+    font-size: clamp(1.75rem, 1.2rem + 1.75vw, 2.5rem);
+    line-height: 1.14;
+    letter-spacing: -0.035em;
+    text-wrap: balance;
+  }
+
+  /* Tussenkop binnen een lopend tekstblok. Bewust kleiner dan
+     .section-title, want die markeert een hele sectie en deze een alinea. */
+  .content-title {
+    @apply font-bold text-gray-900;
+    font-size: clamp(1.375rem, 1.18rem + 0.6vw, 1.625rem);
+    line-height: 1.25;
+    letter-spacing: -0.025em;
     text-wrap: balance;
   }
 
   .section-subtitle {
-    @apply text-lg text-gray-600 leading-relaxed;
+    @apply text-gray-600;
+    font-size: clamp(1.0625rem, 1.02rem + 0.25vw, 1.1875rem);
+    line-height: 1.75;
     text-wrap: pretty;
   }
 
@@ -137,20 +182,11 @@
     @apply text-sm font-semibold text-gray-500 uppercase tracking-widest;
   }
 
-  /* Section achtergrond — licht grijs met subtiel dot-patroon (zoals hulpmetit) */
+  /* Zachte sectie-achtergrond. Vlak, zonder patroon: de site kent nu nog
+     maar twee tinten — wit voor kaarten, surface voor de achtergrond
+     eronder. Dat is wat kaarten laat drijven en secties laat aftekenen. */
   .section-bg-soft {
-    @apply relative bg-ink-50 overflow-hidden;
-  }
-
-  .section-bg-soft::before {
-    content: '';
-    @apply absolute inset-0 pointer-events-none opacity-[0.12];
-    background-image: radial-gradient(circle at 1px 1px, rgb(0 0 0 / 1) 1px, transparent 0);
-    background-size: 24px 24px;
-  }
-
-  .section-bg-soft > * {
-    @apply relative z-10;
+    @apply relative bg-surface;
   }
 
   /* ============================================
@@ -175,6 +211,20 @@
   }
   .card-flat:hover {
     @apply border-blue-200;
+  }
+
+  /* Kaart in een tray. Een dun buitenvlak met haarlijn, met daarbinnen de
+     eigenlijke witte kaart. De twee radii lopen concentrisch: 28px buiten,
+     22px binnen (28 min de 6px padding). Dat geeft diepte zonder zware
+     schaduwen, en het blijft rustig genoeg voor onze doelgroep. */
+  .card-bezel {
+    @apply block rounded-3xl bg-white/70 p-1.5 ring-1 ring-gray-900/[0.06] transition duration-300;
+  }
+  .card-bezel:hover {
+    @apply bg-white ring-gray-900/[0.12] -translate-y-1;
+  }
+  .card-bezel-inner {
+    @apply relative overflow-hidden rounded-[1.375rem] bg-white shadow-soft;
   }
 
   /* Legacy alias — bestaand code gebruikt .card-refined */
@@ -206,7 +256,10 @@
   }
 
   .hero-title {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-5 leading-[1.1] tracking-display-tight;
+    @apply font-extrabold text-white mb-5;
+    font-size: clamp(2.25rem, 1.25rem + 3vw, 3.5rem);
+    line-height: 1.05;
+    letter-spacing: -0.04em;
     text-wrap: balance;
   }
 
@@ -214,6 +267,9 @@
      Vervangt text-blue-300 accent voor herkenbare, niet-generieke branding. */
   .hero-highlight {
     @apply relative inline-block text-white;
+    /* Eigen stapelcontext, anders valt het ::after met z-index -1 achter
+       de herofoto in plaats van achter de tekst. */
+    isolation: isolate;
   }
   .hero-highlight::after {
     content: '';
@@ -233,21 +289,29 @@
   }
 
   .hero-description {
-    @apply text-base sm:text-lg text-white mb-6 leading-relaxed max-w-lg;
+    @apply text-white mb-6 max-w-lg;
+    font-size: clamp(1.0625rem, 1.02rem + 0.25vw, 1.1875rem);
+    font-weight: 500;
+    line-height: 1.7;
     text-wrap: pretty;
   }
 
   .hero-eyebrow {
-    @apply inline-block text-sm font-semibold uppercase tracking-wide text-primary-300 mb-4;
+    @apply inline-block uppercase text-primary-300 mb-4;
+    font-size: 0.875rem;
+    font-weight: 800;
+    letter-spacing: 0.1em;
   }
 
   /* Hero CTA's — brand-blau primary + glass secondary (eigen kleuren, niet reference) */
   .btn-hero-primary {
-    @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 rounded-xl transition duration-200 hover:-translate-y-0.5 shadow-lg shadow-blue-700/40;
+    @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 rounded-xl transition duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30;
   }
 
-  .btn-hero-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-white/10 backdrop-blur-sm border border-white/20 hover:bg-white/20 rounded-xl transition-colors;
+  /* De belknop in elke hero. Wit wint het op een donkere hero van elke
+     kleur, dus dit is daar de primaire actie - groen is dat op licht. */
+  .btn-hero-phone {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30;
   }
 
   .hero-pill {
@@ -398,20 +462,17 @@
     @apply text-blue-700 font-semibold bg-blue-50;
   }
 
-  .nav-dropdown-link {
-    @apply block px-4 py-2.5 text-gray-700 hover:bg-gray-50 hover:text-gray-900 transition-colors focus:bg-gray-50 focus:text-gray-900 focus:outline-none;
-  }
 
   .nav-mobile-link {
     @apply px-4 py-3.5 text-base text-gray-700 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-colors;
   }
 
   .btn-header-cta {
-    @apply bg-gradient-to-br from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-3 rounded-xl font-semibold shadow-sm shadow-blue-600/20 hover:shadow-md hover:shadow-blue-600/30 transition duration-200;
+    @apply bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-6 py-3 rounded-xl font-semibold shadow-sm shadow-blue-700/25 hover:shadow-md hover:shadow-blue-700/35 transition duration-200;
   }
 
   .btn-header-cta-mobile {
-    @apply mt-2 bg-gradient-to-br from-blue-600 to-blue-700 text-white px-6 py-3 rounded-xl font-semibold text-center shadow-sm shadow-blue-600/20;
+    @apply mt-2 bg-gradient-to-r from-blue-600 to-indigo-700 text-white px-6 py-3 rounded-xl font-semibold text-center shadow-sm shadow-blue-700/25;
   }
 
   /* ============================================
@@ -419,10 +480,6 @@
      ============================================ */
   .floating-btn {
     @apply relative w-14 h-14 text-white rounded-2xl shadow-lg flex items-center justify-center transition duration-200 hover:shadow-xl hover:-translate-y-0.5;
-  }
-
-  .floating-tooltip {
-    @apply absolute right-16 top-1/2 -translate-y-1/2 bg-gray-900 text-white text-sm px-3 py-2 rounded-lg whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none shadow-lg;
   }
 
   /* ============================================
@@ -461,22 +518,6 @@
     @apply font-extrabold tracking-display-tight;
   }
 
-  .accent-underline {
-    position: relative;
-    display: inline-block;
-  }
-
-  .accent-underline::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -0.08em;
-    height: 0.35em;
-    background: linear-gradient(90deg, rgba(249, 115, 22, 0.25) 0%, rgba(249, 115, 22, 0) 100%);
-    z-index: -1;
-    border-radius: 4px;
-  }
 }
 
 @layer utilities {
@@ -533,6 +574,8 @@ html {
 .btn-cta-white[href^="tel:"],
 .btn-cta-dark[href^="tel:"],
 .btn-cta-ghost[href^="tel:"],
+.btn-hero-phone[href^="tel:"],
+.btn-hero-primary[href^="tel:"],
 .btn-header-cta[href^="tel:"],
 .btn-header-cta-mobile[href^="tel:"],
 .floating-btn[href^="tel:"],

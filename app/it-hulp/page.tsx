@@ -6,12 +6,13 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
+import { cityCount } from '@/lib/cities'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
-  loading: () => <div className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
+  loading: () => <div className="py-12 lg:py-16 bg-surface" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
 })
 
 export const metadata: Metadata = {
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   description: `IT hulp aan huis in ${BUSINESS.REGION} voor al uw digitale apparaten. Computer, laptop, printer, wifi, smartphone, tablet, smart-tv en smart home. Vaak binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: `IT Hulp aan Huis | ${BUSINESS.REGION}`,
-    description: `Vriendelijke IT-studenten komen bij u thuis voor al uw digitale apparaten. Vaak binnen 24 uur geholpen.`,
+    description: `Onze IT-specialisten komen bij u thuis voor al uw digitale apparaten. Vaak binnen 24 uur geholpen.`,
     type: 'website',
     url: `${BUSINESS.URL}/it-hulp`,
   },
@@ -76,7 +77,7 @@ const localBusinessData = {
   '@type': 'LocalBusiness',
   '@id': `${BUSINESS.URL}/#localbusiness`,
   name: BUSINESS.NAME,
-  description: `IT hulp aan huis in ${BUSINESS.REGION}. Vriendelijke IT-studenten lossen problemen op met computer, laptop, printer, WiFi en meer.`,
+  description: `IT hulp aan huis in ${BUSINESS.REGION}. Onze IT-specialisten lossen problemen op met computer, laptop, printer, WiFi en meer.`,
   url: BUSINESS.URL,
   telephone: BUSINESS.PHONE_INTL,
   email: BUSINESS.EMAIL,
@@ -95,7 +96,7 @@ const serviceData = {
   '@id': `${BUSINESS.URL}/it-hulp#service`,
   serviceType: 'IT Hulp aan Huis',
   name: `IT Hulp aan Huis ${BUSINESS.REGION}`,
-  description: `Vriendelijke IT-studenten komen bij u thuis voor al uw digitale apparaten in ${BUSINESS.REGION}.`,
+  description: `Onze IT-specialisten komen bij u thuis voor al uw digitale apparaten in ${BUSINESS.REGION}.`,
   provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
   areaServed: { '@type': 'State', name: BUSINESS.REGION },
   offers: {
@@ -133,26 +134,28 @@ export default function ITHulpPage() {
       }) }} />
 
       <Hero
-        imageSrc="/hero student.webp"
-        imageAlt={`IT-student helpt klant thuis met digitale apparaten in ${BUSINESS.REGION}`}
+        imageSrc="/hero-computerhulp.webp"
+        imageAlt={`IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
         ariaLabel="IT hulp aan huis hero"
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>IT hulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen.</strong> Onze vriendelijke IT-studenten komen bij u thuis en helpen u stap voor stap — in begrijpelijke taal.</>,
+          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen.</strong> Onze IT-specialisten komen bij u thuis en helpen u stap voor stap — in begrijpelijke taal.</>,
           <>Van kleine vragen tot grotere problemen: wij lossen het voor u op en zorgen dat <strong className="text-white">u weer verder kunt</strong>.</>,
         ]}
         pills={[
-          { icon: 'clock', label: 'Vaak binnen 24 uur geholpen' },
-          { icon: 'money', label: 'Achteraf betalen via Tikkie' },
-          { icon: 'users', label: 'Geduldig en duidelijk uitgelegd' },
+          { icon: 'academic-cap', label: 'HBO-opgeleide IT-specialisten' },
+          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
 
       {/* Diensten — zelfde component als homepage, eigen titel */}
       <ServicesSection
+        eyebrow="Onze hulp"
         title="Waar wij u mee helpen"
-        showFeatures={true}
+        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
+        photoCards={true}
         limitServices={6}
         showAllButton={true}
       />
@@ -164,19 +167,12 @@ export default function ITHulpPage() {
       <PricingSection />
 
       {/* Reviews */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-10">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
-          </header>
-          <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={HUB_TESTIMONIALS}
+      />
 
       {/* SEO content — eigen tekst voor "IT hulp" zoekwoord */}
-      <section className="py-12 md:py-16 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
+      <section className="py-12 lg:py-16 bg-surface" aria-labelledby="seo-content-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>
@@ -223,8 +219,8 @@ export default function ITHulpPage() {
               <div className="sticky top-24">
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
-                    src="/Computerhulp aan huis.webp"
-                    alt="IT-student helpt klant thuis aan de keukentafel"
+                    src="/hero-student.webp"
+                    alt="IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -242,7 +238,7 @@ export default function ITHulpPage() {
                     ))}
                   </div>
                   <Link href="/computerhulp-aan-huis" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
-                    Bekijk alle 50+ locaties
+                    Bekijk alle {cityCount} locaties
                     <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                   </Link>
                 </div>
@@ -279,7 +275,7 @@ export default function ITHulpPage() {
       {/* Final CTA — copy uniek aan IT-hulp */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+          <h2 className="cta-title mb-4">
             Komt u er niet uit? Bel ons gerust
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">

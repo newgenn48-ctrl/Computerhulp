@@ -99,7 +99,7 @@ export default function Breadcrumb() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
       />
-      <nav aria-label="Breadcrumb" className="bg-gray-50 border-b border-gray-200">
+      <nav aria-label="Breadcrumb" className="bg-surface border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
           <ol className="flex items-center gap-2 text-sm text-gray-600 flex-wrap">
             {breadcrumbItems.map((item, index) => (

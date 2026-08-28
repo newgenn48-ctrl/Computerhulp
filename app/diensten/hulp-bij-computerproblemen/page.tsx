@@ -3,24 +3,24 @@ import Image from 'next/image'
 import Link from 'next/link'
 import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
-import SectionDivider from '@/components/ui/SectionDivider'
+import { cityCount } from '@/lib/cities'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 const PricingSection = dynamic(() => import('@/components/PricingSection'), {
-  loading: () => <div className="py-12 lg:py-16 bg-gradient-to-b from-white to-gray-50" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
+  loading: () => <div className="py-12 lg:py-16 bg-surface" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
 })
 
 export const metadata: Metadata = {
   title: 'Hulp bij Computerproblemen | Binnen 24u | Zuid-Holland',
   description: `Hulp bij computerproblemen aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Hulp bij Computerproblemen | IT-student aan Huis',
-    description: `Hulp bij computerproblemen in ${BUSINESS.REGION}: uw IT-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Hulp bij Computerproblemen | IT-specialist aan Huis',
+    description: `Hulp bij computerproblemen in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/hulp-bij-computerproblemen',
     siteName: 'Computerhulp Zuid-Holland',
@@ -78,8 +78,8 @@ const localBusinessData = {
   email: BUSINESS.EMAIL,
   logo: 'https://computerhulpzh.nl/logo.png',
   image: [
-    'https://computerhulpzh.nl/Student%20aan%20huis.webp',
-    'https://computerhulpzh.nl/Computerhulp%20aan%20huis.webp'
+    'https://computerhulpzh.nl/hero-computerhulp.webp',
+    'https://computerhulpzh.nl/hero-computerhulp.webp'
   ],
   address: {
     '@type': 'PostalAddress',
@@ -173,42 +173,42 @@ const faqData = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Hoe snel kunnen jullie langskomen voor hulp bij computerproblemen?',
+      name: `Mijn computer start helemaal niet meer op. Komen jullie dan ook?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'In de meeste gevallen komen we binnen 24 uur bij u langs voor hulp bij computerproblemen aan huis. Bij spoed proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren tot 22:00.'
+        text: `Ja. Vaak is zo'n computer gewoon te herstellen — en lukt dat niet, dan doen we ons uiterste best om in elk geval uw bestanden en foto's veilig te stellen.`
       }
     },
     {
       '@type': 'Question',
-      name: 'Wat kost hulp bij computerproblemen aan huis in Zuid-Holland?',
+      name: `Kunnen jullie virussen en pop-ups verwijderen?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Onze hulp bij computerproblemen aan huis kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen kan na afloop via pin of Tikkie.`
+        text: `Ja. We verwijderen schadelijke software grondig en zetten er betere beveiliging voor in de plaats, zodat het probleem niet volgende week terug is.`
       }
     },
     {
       '@type': 'Question',
-      name: 'Welke computerproblemen kunnen jullie oplossen?',
+      name: `Raak ik mijn bestanden kwijt bij een reparatie?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Wij helpen met alle IT-problemen: trage computers, laptop reparatie, printers installeren, WiFi problemen, e-mailconfiguratie, tablets, smartphones, software-installatie, virusverwijdering en dataherstel. Ook voor persoonlijke uitleg en training kunt u bij ons terecht.'
+        text: `Daar doen we alles aan om het te voorkomen: waar mogelijk stellen we eerst uw documenten en foto's veilig, en pas daarna grijpen we in.`
       }
     },
     {
       '@type': 'Question',
-      name: 'In welke plaatsen bieden jullie hulp bij computerproblemen aan huis?',
+      name: `Wat als mijn computer niet meer te redden is?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Wij bieden hulp bij computerproblemen aan huis in heel Zuid-Holland, waaronder Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda, Alphen aan den Rijn, Westland, Schiedam, Vlaardingen en meer dan 50 andere gemeenten.'
+        text: `Dan zeggen we dat eerlijk. U betaalt alleen de tijd van de diagnose, en we vertellen u — zonder verkooppraatje — waar u op moet letten bij een vervanger.`
       }
     },
     {
       '@type': 'Question',
-      name: 'Moet ik iets voorbereiden voor de hulp bij computerproblemen afspraak?',
+      name: `Wat kost het oplossen van een computerprobleem?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Nee, u hoeft niets voor te bereiden. Zorg alleen dat u eventuele wachtwoorden bij de hand heeft en dat de apparatuur bereikbaar is. Wij nemen al het gereedschap mee dat nodig is voor de hulp bij computerproblemen.'
+        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.`
       }
     }
   ]
@@ -274,12 +274,19 @@ export default function HulpBijComputerproblemenPage() {
 
       {/* Premium Hero Section */}
       <section className="hero-wrapper" aria-label="Hulp bij Computerproblemen hero">
-        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 opacity-[0.08]"
-            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
+        <div className="absolute inset-0">
+          <Image
+            src="/hero-computerhulp.webp"
+            alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center center' }}
+            priority
+            sizes="100vw"
           />
+          <div className="hero-overlay-mobile" />
+          <div className="hero-overlay-desktop-r" />
+          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -293,6 +300,14 @@ export default function HulpBijComputerproblemenPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
+              <a
+                href={BUSINESS.PHONE_HREF}
+                className="btn-hero-phone"
+                aria-label={`Bel ${BUSINESS.PHONE}`}
+              >
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link
                 href="/afspraak-maken"
                 className="btn-hero-primary"
@@ -300,21 +315,12 @@ export default function HulpBijComputerproblemenPage() {
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a
-                href={BUSINESS.PHONE_HREF}
-                className="btn-hero-secondary"
-                aria-label={`Bel ${BUSINESS.PHONE}`}
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
             </div>
           </div>
         </div>
 
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       <HowItWorksSection />
 
@@ -322,61 +328,47 @@ export default function HulpBijComputerproblemenPage() {
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
-            </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
-          </header>
-
-          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={SHORT_TESTIMONIALS}
+        subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
+      />
 
       {/* SEO Content Section */}
-      <section className="py-12 md:py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white" aria-labelledby="seo-content-heading">
+      <section className="py-12 lg:py-16 bg-surface" aria-labelledby="seo-content-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>
               <h2 id="seo-content-heading" className="section-title mb-6">
-                Computerhulp bij u thuis
+                Van foutmelding tot oplossing
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Loopt uw <strong>computer, laptop, printer of WiFi</strong> niet lekker? Dat is vervelend, maar geen reden tot stress. Wij komen gewoon bij u thuis en helpen het oplossen. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of ergens anders in Zuid-Holland woont — wij staan meestal binnen een dag bij u aan de deur.
+                  Een computer die traag is, vastloopt, rare meldingen geeft of helemaal niet meer opstart: we zien het dagelijks. We beginnen altijd met een eerlijke diagnose — éérst begrijpen wat er aan de hand is, dan pas repareren. Zo betaalt u nooit voor werk dat niet nodig is.
                 </p>
 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waarom mensen ons bellen</h3>
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Zo pakken we een probleem aan</h3>
 
                 <ul className="space-y-3 text-gray-700 mb-6">
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Snel bij u thuis:</strong> Meestal binnen een dag. Bij spoed vaak nog dezelfde dag.</span>
+                    <span><strong>Eerst de oorzaak:</strong> We zoeken uit wáárom het misgaat, in plaats van symptomen te bestrijden.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Transparante prijzen:</strong> {PRICING.PER_QUARTER} per kwartier, {PRICING.TRAVEL} voorrijkosten in heel Zuid-Holland.</span>
+                    <span><strong>Virussen en pop-ups:</strong> Schadelijke software verwijderen we grondig, inclusief betere beveiliging.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Alle merken:</strong> Windows, Apple, Samsung — het maakt niet uit, wij helpen u.</span>
+                    <span><strong>Start niet meer op?:</strong> Vaak is het te herstellen — en uw bestanden proberen we altijd veilig te stellen.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Gewoon duidelijk:</strong> Wij leggen alles rustig uit, zonder vaktermen.</span>
+                    <span><strong>Eerlijk advies:</strong> Is repareren niet meer zinvol, dan zeggen we dat gewoon.</span>
                   </li>
                 </ul>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Waar kunnen wij u mee helpen? Onder andere met: <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">een trage computer</Link>, <Link href="/diensten/laptop-computer-reparatie" className="text-blue-600 hover:underline">een kapotte laptop</Link>, <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">een printer die niet werkt</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi dat hapert</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail instellen</Link>, <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet en telefoon</Link>, <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:underline">slimme apparaten</Link> en <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">bestanden terughalen</Link>.
+                  Verwante hulp: <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">computer- en laptophulp</Link>, <Link href="/diensten/laptop-computer-reparatie" className="text-blue-600 hover:underline">reparatie aan huis</Link>, <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">bestanden terughalen</Link> en <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi-problemen</Link>.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
@@ -389,8 +381,8 @@ export default function HulpBijComputerproblemenPage() {
               <div className="sticky top-24">
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
-                    src="/Computerhulp aan huis.webp"
-                    alt="IT-student lost computerprobleem op bij klant aan de keukentafel"
+                    src="/hero-computerhulp.webp"
+                    alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -408,7 +400,7 @@ export default function HulpBijComputerproblemenPage() {
                     ))}
                   </div>
                   <Link href="/computerhulp-aan-huis" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
-                    Bekijk alle 50+ locaties
+                    Bekijk alle {cityCount} locaties
                     <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                   </Link>
                 </div>
@@ -429,11 +421,11 @@ export default function HulpBijComputerproblemenPage() {
 
           <div className="space-y-4">
             {[
-              { q: 'Hoe snel kunnen jullie langskomen?', a: 'Meestal staan we binnen een dag bij u aan de deur. Heeft u haast? Dan proberen we vaak nog dezelfde dag langs te komen. We zijn elke dag bereikbaar, ook in de avond.' },
-              { q: 'Wat kost het?', a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel Zuid-Holland. U betaalt pas achteraf, gewoon via pin of Tikkie.` },
-              { q: 'Waar kunnen jullie mee helpen?', a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, WiFi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.' },
-              { q: 'Komen jullie ook in mijn woonplaats?', a: `Wij komen in heel Zuid-Holland bij u thuis. Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en meer dan 50 andere gemeenten. Overal ${PRICING.TRAVEL} voorrijkosten.` },
-              { q: 'Moet ik iets voorbereiden?', a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele wachtwoorden alvast klaar. Verder nemen wij alles mee wat nodig is.' },
+              { q: `Mijn computer start helemaal niet meer op. Komen jullie dan ook?`, a: `Ja. Vaak is zo'n computer gewoon te herstellen — en lukt dat niet, dan doen we ons uiterste best om in elk geval uw bestanden en foto's veilig te stellen.` },
+              { q: `Kunnen jullie virussen en pop-ups verwijderen?`, a: `Ja. We verwijderen schadelijke software grondig en zetten er betere beveiliging voor in de plaats, zodat het probleem niet volgende week terug is.` },
+              { q: `Raak ik mijn bestanden kwijt bij een reparatie?`, a: `Daar doen we alles aan om het te voorkomen: waar mogelijk stellen we eerst uw documenten en foto's veilig, en pas daarna grijpen we in.` },
+              { q: `Wat als mijn computer niet meer te redden is?`, a: `Dan zeggen we dat eerlijk. U betaalt alleen de tijd van de diagnose, en we vertellen u — zonder verkooppraatje — waar u op moet letten bij een vervanger.` },
+              { q: `Wat kost het oplossen van een computerprobleem?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
@@ -457,28 +449,28 @@ export default function HulpBijComputerproblemenPage() {
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          <h2 className="cta-title mb-6">
             Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/afspraak-maken"
-              className="btn-cta-white"
-            >
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
             <a
               href={BUSINESS.PHONE_HREF}
-              className="btn-cta-dark"
+              className="btn-cta-white"
               aria-label={`Bel ${BUSINESS.PHONE}`}
             >
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link
+              href="/afspraak-maken"
+              className="btn-cta-dark"
+            >
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

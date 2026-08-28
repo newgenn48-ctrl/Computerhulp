@@ -47,7 +47,7 @@ export default function WebsiteLatenMakenPage() {
 
       <div className="min-h-screen bg-white">
         {/* Hero Section - 2 Columns */}
-        <section className="relative flex items-center pt-24 pb-16 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-purple-50">
+        <section className="relative flex items-center pt-24 pb-16 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-surface">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left Column - Content */}
@@ -56,9 +56,9 @@ export default function WebsiteLatenMakenPage() {
                   animation: 'slide-in 0.8s ease-out'
                 }}
               >
-                <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black text-gray-900 mb-4 sm:mb-6 leading-tight">
+                <h1 className="section-title-lg mb-4 sm:mb-6">
                   Website Laten Maken
-                  <span className="block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <span className="block bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 bg-clip-text text-transparent">
                     in Zuid-Holland
                   </span>
                 </h1>
@@ -70,7 +70,7 @@ export default function WebsiteLatenMakenPage() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
                   <a
                     href={BUSINESS.PHONE_HREF}
-                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition hover:-translate-y-0.5"
+                    className="group inline-flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-lg sm:rounded-xl font-bold text-base sm:text-lg shadow-xl hover:shadow-2xl transition hover:-translate-y-0.5"
                     aria-label={`Bel ${BUSINESS.PHONE}`}
                   >
                     <Icon name="phone" className="w-4 h-4 sm:w-5 sm:h-5" strokeWidth={2} aria-hidden="true" />
@@ -143,7 +143,7 @@ export default function WebsiteLatenMakenPage() {
                       </div>
 
                       {/* Website Content Preview */}
-                      <div className="aspect-video bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 relative overflow-hidden">
+                      <div className="aspect-video bg-gradient-to-br from-blue-500 via-blue-600 to-indigo-700 relative overflow-hidden">
                         {/* Hero section simulation */}
                         <div className="absolute inset-0 p-3 sm:p-6 lg:p-8 flex flex-col">
                           <div className="space-y-1.5 sm:space-y-2 lg:space-y-3 mb-3 sm:mb-4 lg:mb-6">
@@ -204,7 +204,7 @@ export default function WebsiteLatenMakenPage() {
                       <div className="absolute top-2 left-1/2 -translate-x-1/2 w-16 h-5 bg-gray-900 rounded-b-2xl z-10"></div>
 
                       {/* Screen */}
-                      <div className="aspect-[9/19] bg-gradient-to-br from-blue-400 via-purple-400 to-pink-400 rounded-2xl relative overflow-hidden">
+                      <div className="aspect-[9/19] bg-gradient-to-br from-blue-400 via-blue-500 to-indigo-600 rounded-2xl relative overflow-hidden">
                         <div className="p-3 space-y-2">
                           <div className="h-2 bg-white/80 rounded w-3/4"></div>
                           <div className="h-2 bg-white/60 rounded w-1/2"></div>
@@ -239,7 +239,7 @@ export default function WebsiteLatenMakenPage() {
                   {/* Floating Design Icon */}
                   <div className="absolute top-1/3 -right-3 lg:-right-6 z-40"
                     style={{ animation: 'float 4.5s ease-in-out infinite', animationDelay: '1s' }}>
-                    <div className="bg-gradient-to-br from-purple-600 to-pink-600 w-14 h-14 lg:w-20 lg:h-20 rounded-xl lg:rounded-2xl shadow-2xl flex items-center justify-center text-2xl lg:text-4xl transform rotate-12 border-2 border-white/20">
+                    <div className="bg-gradient-to-br from-indigo-600 to-blue-700 w-14 h-14 lg:w-20 lg:h-20 rounded-xl lg:rounded-2xl shadow-2xl flex items-center justify-center text-2xl lg:text-4xl transform rotate-12 border-2 border-white/20">
                       🎨
                     </div>
                   </div>
@@ -247,7 +247,7 @@ export default function WebsiteLatenMakenPage() {
                   {/* Floating Speed Icon */}
                   <div className="absolute bottom-20 -right-4 lg:-right-8 z-40"
                     style={{ animation: 'float 5s ease-in-out infinite', animationDelay: '1.5s' }}>
-                    <div className="bg-gradient-to-br from-orange-500 to-red-500 w-12 h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl shadow-2xl flex items-center justify-center text-2xl lg:text-3xl transform -rotate-12 border-2 border-white/20">
+                    <div className="bg-gradient-to-br from-blue-700 to-indigo-800 w-12 h-12 lg:w-16 lg:h-16 rounded-xl lg:rounded-2xl shadow-2xl flex items-center justify-center text-2xl lg:text-3xl transform -rotate-12 border-2 border-white/20">
                       ⚡
                     </div>
                   </div>
@@ -255,16 +255,16 @@ export default function WebsiteLatenMakenPage() {
                   {/* Floating SEO Icon */}
                   <div className="absolute -bottom-4 left-1/4 lg:left-1/3 z-40"
                     style={{ animation: 'float 4.8s ease-in-out infinite', animationDelay: '2s' }}>
-                    <div className="bg-gradient-to-br from-green-500 to-emerald-600 w-10 h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl shadow-2xl flex items-center justify-center text-xl lg:text-2xl border-2 border-white/20">
+                    <div className="bg-gradient-to-br from-action-600 to-action-700 w-10 h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl shadow-2xl flex items-center justify-center text-xl lg:text-2xl border-2 border-white/20">
                       🔍
                     </div>
                   </div>
 
                   {/* Background glow effects */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full pointer-events-none">
-                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-pink-500/20 rounded-full blur-3xl"
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-blue-600/20 to-indigo-700/20 rounded-full blur-3xl"
                       style={{ animation: 'pulse-ring 4s ease-out infinite' }}></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-pink-500/20 via-purple-500/20 to-blue-500/20 rounded-full blur-3xl"
+                    <div className="absolute inset-0 bg-gradient-to-r from-indigo-700/20 via-blue-600/20 to-blue-500/20 rounded-full blur-3xl"
                       style={{ animation: 'pulse-ring 4s ease-out infinite', animationDelay: '2s' }}></div>
                   </div>
                 </div>
@@ -274,10 +274,10 @@ export default function WebsiteLatenMakenPage() {
         </section>
 
         {/* Features - Bento Grid Style */}
-        <section className="py-32 px-4">
+        <section className="py-12 lg:py-16 px-4 bg-surface">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4">
+              <h2 className="section-title-lg mb-4">
                 Waarom Uw Website Laten Maken Bij Ons?
               </h2>
               <p className="text-xl text-gray-600">
@@ -287,12 +287,12 @@ export default function WebsiteLatenMakenPage() {
 
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {[
-                { icon: '🎨', title: 'Maatwerk Design', desc: 'Uniek design dat perfect past bij uw merk', color: 'from-blue-500 to-cyan-500', size: 'col-span-1' },
-                { icon: '⚙️', title: 'Uw Keuze', desc: 'Custom code óf WordPress, Shopify, Wix - wat u wilt', color: 'from-purple-500 to-pink-500', size: 'col-span-1' },
-                { icon: '📱', title: 'Mobile First', desc: 'Perfect op alle schermformaten', color: 'from-orange-500 to-red-500', size: 'col-span-1' },
-                { icon: '🔍', title: 'SEO Proof', desc: 'Bovenaan in Google vanaf dag 1', color: 'from-green-500 to-emerald-500', size: 'col-span-1' },
-                { icon: '⚡', title: 'Supersnel', desc: 'Optimale performance gegarandeerd', color: 'from-indigo-500 to-blue-500', size: 'col-span-1' },
-                { icon: '💬', title: 'Direct Contact', desc: 'Persoonlijk aanspreekpunt, altijd', color: 'from-pink-500 to-rose-500', size: 'col-span-1' }
+                { icon: '🎨', title: 'Maatwerk Design', desc: 'Uniek design dat perfect past bij uw merk', color: 'from-blue-500 to-blue-700', size: 'col-span-1' },
+                { icon: '⚙️', title: 'Uw Keuze', desc: 'Custom code óf WordPress, Shopify, Wix - wat u wilt', color: 'from-indigo-500 to-indigo-700', size: 'col-span-1' },
+                { icon: '📱', title: 'Mobile First', desc: 'Perfect op alle schermformaten', color: 'from-blue-700 to-indigo-800', size: 'col-span-1' },
+                { icon: '🔍', title: 'SEO Proof', desc: 'Bovenaan in Google vanaf dag 1', color: 'from-action-600 to-action-700', size: 'col-span-1' },
+                { icon: '⚡', title: 'Supersnel', desc: 'Optimale performance gegarandeerd', color: 'from-indigo-600 to-blue-600', size: 'col-span-1' },
+                { icon: '💬', title: 'Direct Contact', desc: 'Persoonlijk aanspreekpunt, altijd', color: 'from-blue-600 to-indigo-600', size: 'col-span-1' }
               ].map((feature, idx) => (
                 <div
                   key={idx}
@@ -317,10 +317,10 @@ export default function WebsiteLatenMakenPage() {
         </section>
 
         {/* Process - Visual Timeline */}
-        <section className="py-32 px-4 bg-white">
+        <section className="py-12 lg:py-16 px-4 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4">
+              <h2 className="section-title-lg mb-4">
                 Hoe Werkt Website Laten Maken?
               </h2>
               <p className="text-xl text-gray-600">
@@ -331,9 +331,9 @@ export default function WebsiteLatenMakenPage() {
             <div className="grid md:grid-cols-5 gap-4">
               {[
                 { num: '1', title: 'Intake', desc: 'Gratis kennismaking', icon: '💬', color: 'bg-blue-500' },
-                { num: '2', title: 'Ontwerp', desc: 'Visueel concept', icon: '🎨', color: 'bg-purple-500' },
-                { num: '3', title: 'Bouwen', desc: 'Ontwikkeling', icon: '⚙️', color: 'bg-pink-500' },
-                { num: '4', title: 'Testen', desc: 'Alles nakijken', icon: '🔍', color: 'bg-orange-500' },
+                { num: '2', title: 'Ontwerp', desc: 'Visueel concept', icon: '🎨', color: 'bg-blue-600' },
+                { num: '3', title: 'Bouwen', desc: 'Ontwikkeling', icon: '⚙️', color: 'bg-indigo-600' },
+                { num: '4', title: 'Testen', desc: 'Alles nakijken', icon: '🔍', color: 'bg-blue-700' },
                 { num: '5', title: 'Live!', desc: 'Publiceren', icon: '🚀', color: 'bg-green-500' }
               ].map((step, idx) => (
                 <div
@@ -361,10 +361,10 @@ export default function WebsiteLatenMakenPage() {
         </section>
 
         {/* Technology Options Section */}
-        <section className="py-12 lg:py-16 px-4 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-12 lg:py-16 px-4 bg-surface">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4">
+              <h2 className="section-title-lg mb-4">
                 Website Laten Maken: Kies Uw Technologie
               </h2>
               <p className="text-xl text-gray-600">
@@ -375,10 +375,10 @@ export default function WebsiteLatenMakenPage() {
             <div className="grid md:grid-cols-2 gap-8">
               {/* Custom Code Option */}
               <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition border-2 border-blue-200 hover:border-blue-500">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 transition">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-600 to-indigo-700 flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 transition">
                   💻
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Custom Code (Op Maat)</h3>
+                <h3 className="content-title mb-4">Custom Code (Op Maat)</h3>
                 <p className="text-gray-600 mb-6">
                   Uw website laten maken met volledig maatwerk, geprogrammeerd volgens uw specifieke wensen. Perfect voor unieke projecten die standaard oplossingen niet kunnen bieden.
                 </p>
@@ -407,11 +407,11 @@ export default function WebsiteLatenMakenPage() {
               </div>
 
               {/* Platform Option */}
-              <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition border-2 border-purple-200 hover:border-purple-500">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 transition">
+              <div className="group bg-white rounded-3xl p-8 shadow-lg hover:shadow-2xl transition border-2 border-blue-200 hover:border-blue-500">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-blue-700 flex items-center justify-center text-3xl mb-6 shadow-lg transform group-hover:scale-110 transition">
                   🚀
                 </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">Platform (WordPress, Shopify, Wix)</h3>
+                <h3 className="content-title mb-4">Platform (WordPress, Shopify, Wix)</h3>
                 <p className="text-gray-600 mb-6">
                   Uw website laten maken op gebruiksvriendelijke platformen waarmee u zelf eenvoudig aanpassingen kunt doen. Perfect voor snelle lancering en flexibel beheer.
                 </p>
@@ -454,10 +454,10 @@ export default function WebsiteLatenMakenPage() {
         </section>
 
         {/* Pricing - Offerte Section */}
-        <section className="py-32 px-4 bg-gradient-to-b from-gray-50 to-white">
+        <section className="py-12 lg:py-16 px-4 bg-white">
           <div className="max-w-5xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4">
+              <h2 className="section-title-lg mb-4">
                 Wat Kost Het Om Een Website Te Laten Maken?
               </h2>
               <p className="text-xl text-gray-600">
@@ -469,7 +469,7 @@ export default function WebsiteLatenMakenPage() {
               <div className="text-center mb-12">
                 <div className="inline-flex items-baseline gap-2 mb-4">
                   <span className="text-2xl text-gray-600">Vanaf</span>
-                  <span className="text-7xl font-black bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+                  <span className="text-6xl font-extrabold tracking-display-tight bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 bg-clip-text text-transparent">
                     €795
                   </span>
                 </div>
@@ -491,7 +491,7 @@ export default function WebsiteLatenMakenPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-purple-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-blue-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
@@ -501,7 +501,7 @@ export default function WebsiteLatenMakenPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-pink-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-blue-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01" />
                     </svg>
                     <div>
@@ -510,7 +510,7 @@ export default function WebsiteLatenMakenPage() {
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-orange-600 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-6 h-6 text-blue-700 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                     </svg>
                     <div>
@@ -520,7 +520,7 @@ export default function WebsiteLatenMakenPage() {
                   </div>
                 </div>
 
-                <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8">
+                <div className="bg-gradient-to-br from-blue-50 to-surface rounded-2xl p-8">
                   <h3 className="text-xl font-bold text-gray-900 mb-4">Wat is altijd inbegrepen?</h3>
                   <div className="space-y-3">
                     {[
@@ -549,7 +549,7 @@ export default function WebsiteLatenMakenPage() {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a
                     href={BUSINESS.PHONE_HREF}
-                    className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition"
+                    className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition"
                   >
                     <Icon name="phone" className="w-5 h-5" strokeWidth={2} />
                     {BUSINESS.PHONE}
@@ -571,10 +571,10 @@ export default function WebsiteLatenMakenPage() {
         </section>
 
         {/* FAQ Section */}
-        <section className="py-32 px-4 bg-gradient-to-b from-white to-gray-50">
+        <section className="py-12 lg:py-16 px-4 bg-surface">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl sm:text-5xl font-black text-gray-900 mb-4">
+              <h2 className="section-title-lg mb-4">
                 Veelgestelde Vragen Over Website Laten Maken
               </h2>
               <p className="text-xl text-gray-600">
@@ -651,7 +651,7 @@ export default function WebsiteLatenMakenPage() {
               </p>
               <Link
                 href="/offerte-aanvragen"
-                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-700 text-white rounded-xl font-bold text-lg shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition"
               >
                 Stel Uw Vraag
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
@@ -661,13 +661,13 @@ export default function WebsiteLatenMakenPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="py-32 px-4 bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 relative overflow-hidden">
+        <section className="py-12 lg:py-16 px-4 bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-800 relative overflow-hidden">
           {/* Decorative circles */}
           <div className="absolute top-0 left-0 w-96 h-96 bg-white/10 rounded-full -translate-x-1/2 -translate-y-1/2 blur-3xl"></div>
           <div className="absolute bottom-0 right-0 w-96 h-96 bg-white/10 rounded-full translate-x-1/2 translate-y-1/2 blur-3xl"></div>
 
           <div className="relative max-w-4xl mx-auto text-center">
-            <h2 className="text-4xl sm:text-6xl font-black text-white mb-6">
+            <h2 className="cta-title mb-6">
               Klaar Om Uw Website Te Laten Maken?
             </h2>
             <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
@@ -677,7 +677,7 @@ export default function WebsiteLatenMakenPage() {
             <div className="flex flex-col sm:flex-row gap-6 justify-center mb-12">
               <a
                 href={BUSINESS.PHONE_HREF}
-                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-purple-600 rounded-xl font-black text-xl shadow-2xl hover:shadow-white/50 hover:-translate-y-0.5 transition"
+                className="inline-flex items-center justify-center gap-2 px-10 py-5 bg-white text-blue-700 rounded-xl font-bold text-xl shadow-2xl hover:shadow-white/50 hover:-translate-y-0.5 transition"
               >
                 <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
                 {BUSINESS.PHONE}

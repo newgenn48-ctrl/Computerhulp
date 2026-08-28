@@ -33,6 +33,25 @@ const config: Config = {
           600: '#ea580c',
           700: '#c2410c',
         },
+        // Actie/conversie — groen. Uitsluitend voor bellen en afspraak maken,
+        // zodat blauw het merk blijft en groen altijd 'hier klikken' betekent.
+        // action-700 haalt 5.0:1 op wit — ruim AA, ook voor kleine labels.
+        action: {
+          50:  '#f0fdf4',
+          100: '#dcfce7',
+          200: '#bbf7d0',
+          300: '#86efac',
+          400: '#4ade80',
+          500: '#22c55e',
+          600: '#16a34a',
+          700: '#15803d',
+          800: '#166534',
+          900: '#14532d',
+        },
+        // Eén zachte paginakleur. Wit = kaart, surface = achtergrond.
+        // Daardoor lezen kaarten als losse objecten in plaats van als
+        // vlakken die in de pagina oplossen.
+        surface: '#f4f5f7',
         // Neutral ink — zachter dan pure black, warmer dan slate
         ink: {
           50: '#fafafa',
@@ -52,24 +71,40 @@ const config: Config = {
       },
       // Font-size schaal overgenomen van hulpmetit-nextgen (groter dan Tailwind default,
       // betere leesbaarheid voor senior doelgroep).
+      // Lopende tekst krijgt ruime regelafstand (1.7). Dat is waar een
+      // pagina lucht van krijgt en het scheelt onze doelgroep echt moeite.
+      // Koppen blijven juist dicht op elkaar staan.
       fontSize: {
-        'sm':   ['0.9375rem', { lineHeight: '1.5' }],   // 15px
-        'base': ['1.0625rem', { lineHeight: '1.6' }],   // 17px
-        'lg':   ['1.1875rem', { lineHeight: '1.6' }],   // 19px
-        'xl':   ['1.375rem',  { lineHeight: '1.4' }],   // 22px
+        'sm':   ['0.9375rem', { lineHeight: '1.6' }],   // 15px
+        'base': ['1.0625rem', { lineHeight: '1.7' }],   // 17px
+        'lg':   ['1.1875rem', { lineHeight: '1.7' }],   // 19px
+        'xl':   ['1.375rem',  { lineHeight: '1.5' }],   // 22px
         '2xl':  ['1.75rem',   { lineHeight: '1.3' }],   // 28px
         '3xl':  ['2.25rem',   { lineHeight: '1.2' }],   // 36px
         '4xl':  ['2.75rem',   { lineHeight: '1.1' }],   // 44px
         '5xl':  ['3.5rem',    { lineHeight: '1.1' }],   // 56px
       },
+      // Rondere hoeken dan Tailwind standaard geeft. Eén stap zachter over
+      // de hele lijn, zodat kaarten en knoppen minder hard ogen zonder dat
+      // er 219 losse klassen aangepast hoeven te worden.
+      borderRadius: {
+        'md':  '0.5rem',    // 8px  (was 6)
+        'lg':  '0.625rem',  // 10px (was 8)
+        'xl':  '0.875rem',  // 14px (was 12)
+        '2xl': '1.25rem',   // 20px (was 16)
+        '3xl': '1.75rem',   // 28px (was 24)
+      },
       letterSpacing: {
         tightest: '-0.04em',
         'display-tight': '-0.025em',
       },
+      // Grote, zachte schaduwen met een blauwzwarte tint (slate-900) in
+      // plaats van krappe grijze randjes. Dat is wat een witte kaart op een
+      // grijze achtergrond echt laat drijven.
       boxShadow: {
         'card-hover': '0 20px 40px -12px rgb(37 99 235 / 0.15)',
-        'soft': '0 1px 3px 0 rgb(0 0 0 / 0.04), 0 1px 2px -1px rgb(0 0 0 / 0.04)',
-        'soft-lg': '0 10px 25px -5px rgb(0 0 0 / 0.08), 0 4px 10px -3px rgb(0 0 0 / 0.05)',
+        'soft': '0 6px 18px -4px rgb(15 23 42 / 0.06), 0 2px 6px -2px rgb(15 23 42 / 0.04)',
+        'soft-lg': '0 18px 46px -12px rgb(15 23 42 / 0.14), 0 6px 16px -6px rgb(15 23 42 / 0.08)',
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',

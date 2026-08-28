@@ -45,6 +45,12 @@ export default function Footer() {
               <Link href="/over-ons" className="footer-link">
                 Over Ons
               </Link>
+              <Link href="/waarom-ons" className="footer-link">
+                Waarom Ons
+              </Link>
+              <Link href="/tarieven" className="footer-link">
+                Tarieven
+              </Link>
               <Link href="/faq" className="footer-link">
                 FAQ
               </Link>
@@ -69,6 +75,11 @@ export default function Footer() {
               <li>
                 <Link href="/student-aan-huis" className="footer-link">
                   Student aan Huis
+                </Link>
+              </li>
+              <li>
+                <Link href="/it-hulp" className="footer-link">
+                  IT-Hulp aan Huis
                 </Link>
               </li>
               <li>

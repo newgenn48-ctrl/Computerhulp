@@ -4,11 +4,12 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import PricingSection from '@/components/PricingSection'
 import ServicesSection from '@/components/ServicesSection'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
+import { cityCount } from '@/lib/cities'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u bij u Thuis`,
@@ -166,16 +167,16 @@ export default function ComputerhulpAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Hero
-        imageSrc="/hero student.webp"
-        imageAlt={`Computerhulp aan huis — IT-specialist helpt klant in ${BUSINESS.REGION}`}
+        imageSrc="/hero-computerhulp.webp"
+        imageAlt={`IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
         ]}
         pills={[
-          { icon: 'clock', label: 'Binnen 24 uur geholpen' },
-          { icon: 'book', label: 'Betrouwbare Informatica-experts' },
+          { icon: 'academic-cap', label: 'HBO-opgeleide IT-specialisten' },
+          { icon: 'money', label: 'Betaalbare tarieven' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
@@ -184,8 +185,8 @@ export default function ComputerhulpAanHuisPage() {
       <ServicesSection
         eyebrow="Onze hulp"
         title="Waar wij u mee helpen"
-        subtitle="Van een simpele vraag tot een lastig probleem — wij helpen u graag bij u thuis."
-        showDescription={true}
+        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
+        photoCards={true}
         limitServices={6}
         showAllButton={true}
       />
@@ -197,22 +198,15 @@ export default function ComputerhulpAanHuisPage() {
       <PricingSection />
 
       {/* 4. Reviews — sociaal bewijs valideert de prijs */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-10">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
-          </header>
-          <TestimonialsCarousel testimonials={testimonials} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={testimonials}
+      />
 
       {/* 5. Hoe het werkt — laatste geruststelling vlak voor FAQ */}
-      <HowItWorksSection background="white" />
+      <HowItWorksSection background="gray" />
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-gray-50" aria-labelledby="faq-heading">
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
@@ -233,7 +227,7 @@ export default function ComputerhulpAanHuisPage() {
       </section>
 
       {/* Werkgebied */}
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-10">
             <p className="section-eyebrow">Werkgebied</p>
@@ -256,7 +250,7 @@ export default function ComputerhulpAanHuisPage() {
 
           <div className="text-center mt-8">
             <Link href="/locaties" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
-              Bekijk alle 50+ locaties
+              Bekijk alle {cityCount} locaties
               <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
             </Link>
           </div>
@@ -266,19 +260,19 @@ export default function ComputerhulpAanHuisPage() {
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Kunnen wij u ergens mee helpen?</h2>
+          <h2 className="cta-title mb-6">Kunnen wij u ergens mee helpen?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Bel ons gerust of stuur een berichtje. We komen graag bij u langs in {BUSINESS.REGION}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-100">
             <span className="flex items-center gap-2">

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from 'react'
 import { usePathname } from 'next/navigation'
-import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import { BUSINESS } from '@/lib/constants'
 
@@ -59,16 +58,19 @@ export default function FloatingButtons() {
         </button>
       </div>
 
-      {/* Desktop: Afspraak maken */}
+      {/* Desktop: het belnummer zelf, leesbaar. Een tel:-link is op een
+          laptop weinig waard, het nummer kunnen aflezen wel. De agenda-CTA
+          staat op desktop al permanent in de header. */}
       <div className="hidden sm:block">
-        <Link
-          href="/afspraak-maken"
-          className="group floating-btn bg-blue-600 hover:bg-blue-700 shadow-2xl"
-          aria-label="Afspraak maken"
+        <a
+          href={BUSINESS.PHONE_HREF}
+          translate="no"
+          className="inline-flex items-center gap-2.5 h-14 px-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold text-lg shadow-2xl transition duration-200 hover:-translate-y-0.5 whitespace-nowrap"
+          aria-label={`Bel ${BUSINESS.PHONE}`}
         >
-          <Icon name="calendar" className="w-6 h-6" strokeWidth={2} />
-          <span className="floating-tooltip">Afspraak maken</span>
-        </Link>
+          <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+          {BUSINESS.PHONE}
+        </a>
       </div>
     </div>
   )

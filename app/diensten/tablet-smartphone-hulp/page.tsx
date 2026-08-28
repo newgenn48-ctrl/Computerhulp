@@ -2,14 +2,13 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
-import SectionDivider from '@/components/ui/SectionDivider'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'Tablet & Smartphone Hulp aan Huis Zuid-Holland | 24u',
@@ -61,8 +60,6 @@ const faqData = {
   ]
 }
 
-const heroImage = '/Tablet & Smartphone Hulp.webp'
-
 const services = [
   'Nieuwe tablet of telefoon instellen',
   'Contacten en foto\'s overzetten',
@@ -76,7 +73,7 @@ const services = [
 
 const faqs = [
   { question: 'Kunnen jullie apps en data overzetten naar een nieuwe telefoon?', answer: 'Ja, we zetten al uw apps inclusief alle chats, foto\'s en video\'s over naar uw nieuwe telefoon. We zorgen dat alles behouden blijft en leggen uit hoe het werkt.' },
-  { question: 'Helpen jullie met alle merken tablets en smartphones?', answer: 'Ja, we helpen met alle merken tablets en smartphones. Onze IT-studenten kennen alle systemen.' },
+  { question: 'Helpen jullie met alle merken tablets en smartphones?', answer: 'Ja, we helpen met alle merken tablets en smartphones. Onze IT-specialisten kennen alle systemen.' },
   { question: 'Kunnen jullie apps installeren en uitleggen hoe ze werken?', answer: 'Absoluut! We installeren alle apps die u nodig heeft en nemen de tijd om rustig uit te leggen hoe ze werken. Van berichtenapps tot online bankieren.' },
   { question: 'Mijn tablet is heel traag, kunnen jullie dat verhelpen?', answer: 'Ja, we kunnen uw tablet opschonen, onnodige apps verwijderen en het geheugen vrijmaken. Vaak wordt uw tablet daardoor weer een stuk sneller.' },
   { question: 'Kunnen jullie foto\'s van mijn telefoon naar de computer zetten?', answer: 'Ja, we zetten al uw foto\'s over naar uw computer en kunnen ook een backup naar de cloud instellen zodat u nooit meer foto\'s kwijtraakt.' }
@@ -91,34 +88,41 @@ export default function TabletSmartphoneHulpPage() {
 
       {/* Hero - Split Layout */}
       <section className="hero-wrapper" aria-label="Tablet & Smartphone aan huis hero">
-        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 opacity-[0.08]"
-            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
+        <div className="absolute inset-0">
+          <Image
+            src="/dienst-tablet-smartphone.webp"
+            alt="Tablet in de handen van een oudere vrouw"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center 45%' }}
+            priority
+            sizes="100vw"
           />
+          <div className="hero-overlay-mobile" />
+          <div className="hero-overlay-desktop-r" />
+          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
           <div className="max-w-2xl">
             <p className="hero-eyebrow">Tablet & Smartphone · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
-              Hulp met je <span className="hero-highlight">tablet</span> of smartphone?
+              Hulp met uw <span className="hero-highlight">tablet</span> of smartphone?
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw tablet of smartphone? Instellen, apps, data overzetten of een scherm dat raar doet? Een IT-student regelt het bij u thuis — <strong className="text-white">alle merken</strong>.
+              Heeft u hulp nodig met uw tablet of smartphone? Instellen, apps, data overzetten of een scherm dat raar doet? Een IT-specialist regelt het bij u thuis — <strong className="text-white">alle merken</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-phone" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -128,7 +132,7 @@ export default function TabletSmartphoneHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide studenten
+                HBO-opgeleide IT-specialisten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -139,22 +143,26 @@ export default function TabletSmartphoneHulpPage() {
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       {/* Wat wij voor u doen — check-list */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
+            <p className="section-eyebrow">Onze hulp</p>
             <h2 className="section-title">Wat wij voor u doen</h2>
             <p className="section-subtitle">Alles rondom tablets en smartphones — instellen, overzetten, uitleggen.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-2xl mx-auto">
+          <div className="card-bezel max-w-3xl mx-auto">
+            <div className="card-bezel-inner p-6 sm:p-8">
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
             {services.map((service, idx) => (
               <div key={idx} className="flex items-start gap-3 py-1">
                 <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
+            </div>
+            </div>
           </div>
         </div>
       </section>
@@ -163,28 +171,16 @@ export default function TabletSmartphoneHulpPage() {
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
-            </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
-          </header>
-          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={SHORT_TESTIMONIALS}
+        subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
+      />
 
       {/* FAQ Section */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
+            <p className="section-eyebrow">FAQ</p>
             <h2 className="section-title">Veelgestelde vragen</h2>
             <p className="section-subtitle">Over tablet en smartphone hulp aan huis</p>
           </div>
@@ -203,12 +199,12 @@ export default function TabletSmartphoneHulpPage() {
       </section>
 
       {/* SEO Content */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Tablet en Smartphone Hulp voor Iedereen</h2>
+          <h2 className="content-title mb-4">Tablet en Smartphone Hulp voor Iedereen</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Uw tablet of smartphone is tegenwoordig onmisbaar: voor contact met familie, bankzaken, foto&apos;s en nog veel meer. Maar wat als uw apparaat traag wordt, apps niet werken, of u niet weet hoe u iets moet instellen? Daar helpen wij mee.</p>
-            <p>Onze IT-studenten helpen met alle merken en modellen: Apple iPad en iPhone, Samsung Galaxy, en alle andere Android apparaten. Van het overzetten van data naar een nieuw toestel tot het instellen van e-mail en apps. We werken op uw tempo en leggen alles uit in begrijpelijke taal.</p>
+            <p>Onze IT-specialisten helpen met alle merken en modellen: Apple iPad en iPhone, Samsung Galaxy, en alle andere Android apparaten. Van het overzetten van data naar een nieuw toestel tot het instellen van e-mail en apps. We werken op uw tempo en leggen alles uit in begrijpelijke taal.</p>
           </div>
         </div>
       </section>
@@ -220,17 +216,17 @@ export default function TabletSmartphoneHulpPage() {
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Tablet of Smartphone Probleem?</h2>
+          <h2 className="cta-title mb-6">Tablet of Smartphone Probleem?</h2>
           <p className="text-xl text-blue-100 mb-10">Neem contact op en we komen vandaag of morgen al bij u langs</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

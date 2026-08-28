@@ -3,16 +3,16 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
-import { cities } from '@/lib/cities'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { cities, cityCount } from '@/lib/cities'
+import { BUSINESS, PRICING } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 export const metadata: Metadata = {
-  title: 'Computerhulp Locaties Zuid-Holland | 50+ Gemeenten',
-  description: `Computerhulp aan huis in heel ${BUSINESS.REGION}. Bekijk alle 50+ gemeenten waar wij actief zijn. Van Den Haag tot Dordrecht. Bel ${BUSINESS.PHONE}.`,
+  title: `Computerhulp Locaties Zuid-Holland | ${cityCount} Plaatsen`,
+  description: `Computerhulp aan huis in heel ${BUSINESS.REGION}. Bekijk alle ${cityCount} plaatsen waar wij actief zijn. Van Den Haag tot Dordrecht. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Computerhulp Locaties Zuid-Holland | 50+ Gemeenten',
-    description: 'Computerhulp aan huis in heel Zuid-Holland. Bekijk alle 50+ gemeenten waar wij actief zijn.',
+    title: `Computerhulp Locaties Zuid-Holland | ${cityCount} Plaatsen`,
+    description: `Computerhulp aan huis in heel Zuid-Holland. Bekijk alle ${cityCount} plaatsen waar wij actief zijn.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/locaties'
   },
@@ -91,7 +91,7 @@ export default function LocatiesPage() {
       <section className="relative min-h-[70vh] bg-white overflow-hidden">
         <div className="absolute inset-0">
           <Image
-            src="/Computerhulp Zuid Holland Over ons.webp"
+            src="/hero-locaties.webp"
             alt="Computerhulp Zuid-Holland locaties"
             fill
             className="object-cover"
@@ -127,7 +127,7 @@ export default function LocatiesPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-white border-b border-gray-100">
+      <section className="py-12 bg-surface border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -151,10 +151,10 @@ export default function LocatiesPage() {
       </section>
 
       {/* Featured Cities */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Populaire Locaties</h2>
+            <h2 className="section-title">Populaire Locaties</h2>
             <p className="text-lg text-gray-600">Onze meest gevraagde werkgebieden</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -184,10 +184,10 @@ export default function LocatiesPage() {
       </section>
 
       {/* All Cities A-Z */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4">Alle Locaties A-Z</h2>
+            <h2 className="section-title">Alle Locaties A-Z</h2>
             <p className="text-lg text-gray-600">Klik op uw gemeente voor meer informatie</p>
           </div>
 
@@ -240,23 +240,23 @@ export default function LocatiesPage() {
       </section>
 
       {/* CTA */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-blue-600 to-blue-700">
+      <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
+          <h2 className="cta-title mb-6">
             Staat uw gemeente er niet bij?
           </h2>
           <p className="text-xl text-blue-100 mb-10">
             Wij zijn actief in heel {BUSINESS.REGION}. Neem contact op en we kijken wat we voor u kunnen betekenen.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

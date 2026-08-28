@@ -14,13 +14,13 @@ export default function PrivacyPage() {
   return (
     <div className="pt-24 pb-20">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacyverklaring</h1>
+        <h1 className="section-title-lg mb-8">Privacyverklaring</h1>
 
         <div className="prose prose-lg max-w-none text-gray-700 space-y-6">
           <p className="text-sm text-gray-500">Laatst bijgewerkt: 14 februari 2026</p>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">1. Wie zijn wij?</h2>
+            <h2 className="content-title mt-8 mb-4">1. Wie zijn wij?</h2>
             <p>
               Computerhulp Zuid-Holland, gevestigd te Zuid-Holland, Nederland, is verantwoordelijk voor de verwerking van persoonsgegevens zoals weergegeven in deze privacyverklaring.
             </p>
@@ -33,7 +33,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">2. Welke gegevens verzamelen wij?</h2>
+            <h2 className="content-title mt-8 mb-4">2. Welke gegevens verzamelen wij?</h2>
             <p>Wij verzamelen alleen gegevens die nodig zijn voor onze dienstverlening:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Contactgegevens (naam, telefoonnummer, e-mailadres)</li>
@@ -45,7 +45,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">3. Waarom verwerken wij uw gegevens?</h2>
+            <h2 className="content-title mt-8 mb-4">3. Waarom verwerken wij uw gegevens?</h2>
             <p>Wij gebruiken uw gegevens alleen voor:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Het uitvoeren van afspraken en dienstverlening</li>
@@ -62,7 +62,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">4. Hoe lang bewaren wij uw gegevens?</h2>
+            <h2 className="content-title mt-8 mb-4">4. Hoe lang bewaren wij uw gegevens?</h2>
             <p>Wij bewaren uw gegevens niet langer dan nodig:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Contactgegevens: tot 2 jaar na laatste contact</li>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">5. Delen wij uw gegevens?</h2>
+            <h2 className="content-title mt-8 mb-4">5. Delen wij uw gegevens?</h2>
             <p>
               Wij delen uw gegevens <strong>alleen</strong> als dit noodzakelijk is voor onze dienstverlening of wettelijk verplicht:
             </p>
@@ -87,7 +87,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">6. Beveiliging van uw gegevens</h2>
+            <h2 className="content-title mt-8 mb-4">6. Beveiliging van uw gegevens</h2>
             <p>Wij nemen beveiliging serieus:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Beveiligde verbindingen (SSL/HTTPS)</li>
@@ -98,7 +98,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">7. Uw rechten</h2>
+            <h2 className="content-title mt-8 mb-4">7. Uw rechten</h2>
             <p>U heeft altijd het recht om:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li><strong>Inzage:</strong> vragen welke gegevens wij van u hebben</li>
@@ -113,7 +113,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">8. Cookies</h2>
+            <h2 className="content-title mt-8 mb-4">8. Cookies</h2>
             <p>
               Wij gebruiken alleen functionele cookies die noodzakelijk zijn voor de werking van de website.
               Voor Google Analytics vragen wij eerst uw toestemming.
@@ -121,7 +121,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">9. Klachten</h2>
+            <h2 className="content-title mt-8 mb-4">9. Klachten</h2>
             <p>
               Heeft u een klacht over hoe wij met uw gegevens omgaan? Neem eerst contact met ons op.
               Als u niet tevreden bent met onze reactie, kunt u een klacht indienen bij de Autoriteit Persoonsgegevens.
@@ -129,7 +129,7 @@ export default function PrivacyPage() {
           </section>
 
           <section>
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">10. Wijzigingen</h2>
+            <h2 className="content-title mt-8 mb-4">10. Wijzigingen</h2>
             <p>
               Wij kunnen deze privacyverklaring aanpassen. De laatste versie staat altijd op deze pagina.
               Grote wijzigingen communiceren we actief naar onze klanten.
@@ -137,7 +137,7 @@ export default function PrivacyPage() {
           </section>
 
           <section className="mt-12 pt-8 border-t border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-4">Vragen?</h2>
+            <h2 className="content-title mb-4">Vragen?</h2>
             <p>
               Heeft u vragen over deze privacyverklaring of uw gegevens?
               Neem gerust contact op:

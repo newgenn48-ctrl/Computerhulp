@@ -2,14 +2,13 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
-import SectionDivider from '@/components/ui/SectionDivider'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'Dataherstel & Backup aan Huis Zuid-Holland | Binnen 24u',
@@ -61,8 +60,6 @@ const faqData = {
   ]
 }
 
-const heroImage = '/Data herstel.webp'
-
 const services = [
   'Verwijderde bestanden terughalen',
   'Data redden van kapotte harde schijf',
@@ -91,12 +88,19 @@ export default function DataherstelBackupPage() {
 
       {/* Hero - Split Layout */}
       <section className="hero-wrapper" aria-label="Dataherstel aan huis hero">
-        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 opacity-[0.08]"
-            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
+        <div className="absolute inset-0">
+          <Image
+            src="/dienst-dataherstel.webp"
+            alt="Externe harde schijf naast een open fotoalbum"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center center' }}
+            priority
+            sizes="100vw"
           />
+          <div className="hero-overlay-mobile" />
+          <div className="hero-overlay-desktop-r" />
+          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">
@@ -111,14 +115,14 @@ export default function DataherstelBackupPage() {
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
+              <a href={BUSINESS.PHONE_HREF} className="btn-hero-phone" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
               <Link href="/afspraak-maken" className="btn-hero-primary">
                 Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>
-              <a href={BUSINESS.PHONE_HREF} className="btn-hero-secondary" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
             </div>
 
             <div className="flex flex-wrap items-center gap-3">
@@ -128,7 +132,7 @@ export default function DataherstelBackupPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide studenten
+                HBO-opgeleide IT-specialisten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -139,22 +143,26 @@ export default function DataherstelBackupPage() {
         </div>
       </section>
 
-      <SectionDivider variant="soft-curve" topColor="#1c1917" bottomColor="#fafafa" />
 
       {/* Wat wij voor u doen — check-list */}
-      <section className="py-16 bg-white border-t border-gray-100">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
+            <p className="section-eyebrow">Onze hulp</p>
             <h2 className="section-title">Wat wij voor u doen</h2>
             <p className="section-subtitle">Data redden, backups instellen, verloren bestanden terughalen.</p>
           </div>
-          <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3 max-w-2xl mx-auto">
+          <div className="card-bezel max-w-3xl mx-auto">
+            <div className="card-bezel-inner p-6 sm:p-8">
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
             {services.map((service, idx) => (
               <div key={idx} className="flex items-start gap-3 py-1">
                 <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
+            </div>
+            </div>
           </div>
         </div>
       </section>
@@ -163,29 +171,16 @@ export default function DataherstelBackupPage() {
       <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">
-              Wat onze klanten zeggen
-            </h2>
-            <p className="section-subtitle">
-              Wij helpen dagelijks mensen in heel Zuid-Holland
-            </p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">
-              ← Swipe voor meer reviews →
-            </p>
-          </header>
-
-          <TestimonialsCarousel testimonials={SHORT_TESTIMONIALS} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={SHORT_TESTIMONIALS}
+        subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
+      />
 
       {/* FAQ Section */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
+            <p className="section-eyebrow">FAQ</p>
             <h2 className="section-title">Veelgestelde vragen</h2>
             <p className="section-subtitle">Over dataherstel en backup aan huis</p>
           </div>
@@ -204,12 +199,12 @@ export default function DataherstelBackupPage() {
       </section>
 
       {/* SEO Content */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4">Uw Data Is Kostbaar — Wij Beschermen Het</h2>
+          <h2 className="content-title mb-4">Uw Data Is Kostbaar — Wij Beschermen Het</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Niets is zo vervelend als het verliezen van belangrijke bestanden, dierbare foto&apos;s of zakelijke documenten. Of uw harde schijf nu defect is geraakt, u per ongeluk bestanden heeft verwijderd, of uw computer niet meer opstart — er is vaak meer te redden dan u denkt.</p>
-            <p>Onze IT-studenten komen bij u thuis en maken een grondige diagnose. We zijn altijd eerlijk over de mogelijkheden voordat we beginnen. Daarnaast helpen we u met het opzetten van een betrouwbaar backupsysteem, zodat u in de toekomst nooit meer data kwijtraakt. We werken met zowel lokale backups als cloud-oplossingen.</p>
+            <p>Onze IT-specialisten komen bij u thuis en maken een grondige diagnose. We zijn altijd eerlijk over de mogelijkheden voordat we beginnen. Daarnaast helpen we u met het opzetten van een betrouwbaar backupsysteem, zodat u in de toekomst nooit meer data kwijtraakt. We werken met zowel lokale backups als cloud-oplossingen.</p>
           </div>
         </div>
       </section>
@@ -221,17 +216,17 @@ export default function DataherstelBackupPage() {
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">Data Kwijt of Backup Nodig?</h2>
+          <h2 className="cta-title mb-6">Data Kwijt of Backup Nodig?</h2>
           <p className="text-xl text-blue-100 mb-10">We helpen u direct. Bel nu en we komen vandaag of morgen al langs!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

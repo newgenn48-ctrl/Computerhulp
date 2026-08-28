@@ -1,7 +1,9 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import AfspraakForm from '@/components/AfspraakForm'
 import { BUSINESS, HOURS, PRICING } from '@/lib/constants'
+import { cityCount } from '@/lib/cities'
 
 export const metadata: Metadata = {
   title: `Contact | ${BUSINESS.NAME} | ${BUSINESS.PHONE}`,
@@ -21,9 +23,9 @@ export default function ContactPage() {
   return (
     <div className="pt-24 pb-20">
       {/* Hero */}
-      <section className="cta-section-blue py-16">
+      <section className="cta-section-blue py-12 lg:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
-          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+          <h1 className="cta-title mb-4">
             Neem contact op
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
@@ -33,26 +35,31 @@ export default function ContactPage() {
       </section>
 
       {/* Contact Opties — bellen is primair, visueel groter */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           {/* Primary: Bellen card — vol breed op mobiel, groter op desktop */}
           <a
             href={BUSINESS.PHONE_HREF}
-            className="group block bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-6 sm:p-10 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition duration-200 mb-6"
+            className="group block bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-5 sm:p-8 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition duration-200 mb-6"
             aria-label={`Bel ${BUSINESS.PHONE}`}
           >
-            <div className="flex flex-col sm:flex-row items-center gap-6 justify-between">
-              <div className="flex items-center gap-5">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 rounded-2xl flex items-center justify-center flex-shrink-0">
-                  <Icon name="phone" className="w-8 h-8 sm:w-10 sm:h-10 text-white" strokeWidth={2} aria-hidden="true" />
+            <div className="flex items-center gap-4 sm:gap-6 justify-between">
+              <div className="flex items-center gap-4 sm:gap-5 min-w-0">
+                <div className="w-12 h-12 sm:w-16 sm:h-16 bg-white/20 rounded-xl sm:rounded-2xl flex items-center justify-center flex-shrink-0">
+                  <Icon name="phone" className="w-6 h-6 sm:w-8 sm:h-8 text-white" strokeWidth={2} aria-hidden="true" />
                 </div>
-                <div className="text-center sm:text-left">
-                  <p className="text-blue-100 text-sm mb-1">De snelste manier</p>
-                  <div className="text-3xl sm:text-4xl font-bold">{BUSINESS.PHONE}</div>
-                  <p className="text-blue-100 text-sm mt-1">{HOURS.DAYS} · {HOURS.OPEN}–{HOURS.CLOSE}</p>
+                <div className="min-w-0">
+                  <p className="text-blue-100 text-sm mb-0.5">De snelste manier</p>
+                  <div translate="no" className="text-2xl sm:text-4xl font-bold whitespace-nowrap tabular-nums tracking-tight">
+                    {BUSINESS.PHONE}
+                  </div>
+                  <p className="text-blue-100 text-sm mt-0.5">
+                    <span className="whitespace-nowrap">{HOURS.DAYS}</span>{' '}
+                    <span className="whitespace-nowrap">· {HOURS.OPEN}–{HOURS.CLOSE}</span>
+                  </p>
                 </div>
               </div>
-              <Icon name="arrow-right-short" className="w-8 h-8 text-white/80 group-hover:translate-x-1 transition-transform hidden sm:block" strokeWidth={2} aria-hidden="true" />
+              <Icon name="arrow-right-short" className="w-7 h-7 text-white/80 group-hover:translate-x-1 transition-transform flex-shrink-0 hidden sm:block" strokeWidth={2} aria-hidden="true" />
             </div>
           </a>
 
@@ -87,28 +94,27 @@ export default function ContactPage() {
             </a>
           </div>
 
-          {/* Afspraak maken CTA */}
-          <div className="bg-white rounded-2xl shadow-lg p-8 text-center border border-gray-200">
-            <h2 className="text-2xl font-bold text-gray-900 mb-3">
-              Direct een afspraak maken?
-            </h2>
-            <p className="text-gray-600 mb-6">
-              Vul het formulier in en we bellen u binnen enkele uren terug
-            </p>
-            <Link href="/afspraak-maken" className="btn-primary">
-              Afspraak Maken
-              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
-            </Link>
+          {/* Formulier — direct op de pagina, niet achter een extra klik */}
+          <div id="afspraak" className="bg-white rounded-2xl shadow-lg p-6 sm:p-8 border border-gray-200 scroll-mt-28">
+            <div className="text-center mb-6">
+              <h2 className="content-title mb-2">
+                Liever dat wij u bellen?
+              </h2>
+              <p className="text-gray-600">
+                Laat uw gegevens achter en we nemen binnen enkele uren contact op.
+              </p>
+            </div>
+            <AfspraakForm />
           </div>
         </div>
       </section>
 
       {/* Werkgebied */}
-      <section className="py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-8">
             <h2 className="section-title">Ons werkgebied</h2>
-            <p className="section-subtitle">Wij komen in heel Zuid-Holland. Voorrijkosten slechts €10.</p>
+            <p className="section-subtitle">Wij komen in heel Zuid-Holland. Voorrijkosten {PRICING.TRAVEL}.</p>
           </div>
           <div className="flex flex-wrap gap-3 justify-center mb-8">
             {['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel'].map((city) => (
@@ -117,7 +123,7 @@ export default function ContactPage() {
           </div>
           <div className="text-center">
             <Link href="/locaties" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
-              Bekijk alle 50+ locaties
+              Bekijk alle {cityCount} locaties
               <Icon name="arrow-right" className="w-5 h-5" strokeWidth={2} />
             </Link>
           </div>
@@ -125,7 +131,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Veelgestelde vragen</h2>
@@ -152,21 +158,21 @@ export default function ContactPage() {
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          <h2 className="cta-title mb-6">
             Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10">
             Bel ons gerust. We helpen u graag verder.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak Maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark">
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white">
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak Maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
+            </Link>
           </div>
         </div>
       </section>

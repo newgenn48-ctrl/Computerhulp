@@ -49,7 +49,7 @@ export default function StickyMobileBar() {
         <a
           href={BUSINESS.PHONE_HREF}
           translate="no"
-          className="flex-1 inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white rounded-xl py-3 font-semibold text-base shadow-sm whitespace-nowrap"
+          className="flex-1 inline-flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white rounded-xl py-3 font-semibold text-base shadow-sm whitespace-nowrap"
           aria-label={`Bel ${BUSINESS.PHONE}`}
         >
           <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />

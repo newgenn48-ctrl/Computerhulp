@@ -4,11 +4,11 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/PricingSection'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
@@ -35,7 +35,7 @@ const structuredData = {
       telephone: BUSINESS.PHONE_INTL,
       email: BUSINESS.EMAIL,
       logo: `${BUSINESS.URL}/logo.png`,
-      image: `${BUSINESS.URL}/Student%20aan%20huis.webp`,
+      image: `${BUSINESS.URL}/hero-student.webp`,
       address: {
         '@type': 'PostalAddress',
         addressRegion: BUSINESS.REGION,
@@ -171,16 +171,16 @@ export default function StudentAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Hero
-        imageSrc="/Student aan huis.webp"
-        imageAlt={`IT-student helpt klant thuis met computer in ${BUSINESS.REGION}`}
+        imageSrc="/hero-student.webp"
+        imageAlt={`IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
         ]}
         pills={[
-          { icon: 'clock', label: 'Binnen 24 uur geholpen' },
-          { icon: 'book', label: 'Betrouwbare Informatica-studenten' },
+          { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
+          { icon: 'money', label: 'Betaalbare tarieven' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
@@ -188,8 +188,8 @@ export default function StudentAanHuisPage() {
       <ServicesSection
         eyebrow="Onze hulp"
         title="Waar wij u mee helpen"
-        subtitle="Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag bij u thuis."
-        showDescription={true}
+        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
+        photoCards={true}
         limitServices={6}
         showAllButton={true}
       />
@@ -199,21 +199,14 @@ export default function StudentAanHuisPage() {
       <PricingSection />
 
       {/* Reviews — sociaal bewijs valideert de prijs */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-10">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
-          </header>
-          <TestimonialsCarousel testimonials={testimonials} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={testimonials}
+      />
 
-      <HowItWorksSection background="white" />
+      <HowItWorksSection background="gray" />
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-gray-50" aria-labelledby="faq-heading">
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
@@ -234,7 +227,7 @@ export default function StudentAanHuisPage() {
       </section>
 
       {/* Werkgebied */}
-      <section className="py-12 lg:py-16 bg-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-10">
             <p className="section-eyebrow">Werkgebied</p>
@@ -267,19 +260,19 @@ export default function StudentAanHuisPage() {
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Kunnen wij u helpen?</h2>
+          <h2 className="cta-title mb-6">Kunnen wij u helpen?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Bel ons gerust of stuur een berichtje. We komen graag bij u langs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
           <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-100">
             <span className="flex items-center gap-2">

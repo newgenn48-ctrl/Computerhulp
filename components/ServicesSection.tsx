@@ -7,7 +7,8 @@ export const services = [
     title: 'Computer & Laptop',
     description: 'Storing, trage pc of nieuwe laptop instellen — wij lossen het op en maken alles weer snel.',
     icon: 'laptop',
-    image: '/Computer & Laptop Hulp.webp',
+    image: '/dienst-computer-laptop.webp',
+    imageAlt: 'Open laptop op een eettafel, handen op het toetsenbord',
     slug: '/diensten/computer-laptop-hulp',
     features: [
       'Nieuwe computer installeren en instellen',
@@ -21,7 +22,8 @@ export const services = [
     title: 'Printer & Scanner',
     description: 'Printer doet het niet, draadloos printen of nieuwe printer aansluiten — wij lossen het op.',
     icon: 'printer',
-    image: '/Printer & Randapparatuur.webp',
+    image: '/dienst-printer-scanner.webp',
+    imageAlt: 'All-in-one printer met een foto die uit de lade komt',
     slug: '/diensten/printer-scanner-hulp',
     features: [
       'Nieuwe printer aansluiten en instellen',
@@ -34,7 +36,8 @@ export const services = [
     title: 'E-mail',
     description: 'E-mail werkt niet, instellen of beveiligen — wij lossen storingen op en helpen u op weg.',
     icon: 'email',
-    image: '/E-mail Hulp.webp',
+    image: '/dienst-email.webp',
+    imageAlt: 'Laptopscherm met een geopende e-mail',
     slug: '/diensten/email-hulp',
     features: [
       'E-mail instellen op computer of telefoon',
@@ -47,7 +50,8 @@ export const services = [
     title: 'WiFi & Netwerk',
     description: 'WiFi-storing, slechte verbinding of dood punt in huis? Wij lossen het op en verbeteren bereik.',
     icon: 'wifi',
-    image: '/WiFi & Netwerk Hulp.webp',
+    image: '/dienst-wifi.webp',
+    imageAlt: 'Witte wifi-router op een kast, hand aan de kabel',
     slug: '/diensten/wifi-internet-hulp',
     features: [
       'WiFi router installeren en instellen',
@@ -60,7 +64,8 @@ export const services = [
     title: 'Tablet & Smartphone',
     description: 'Telefoon of tablet werkt niet of nieuwe instellen — wij lossen het op en leggen rustig uit.',
     icon: 'mobile',
-    image: '/Tablet & Smartphone Hulp.webp',
+    image: '/dienst-tablet-smartphone.webp',
+    imageAlt: 'Tablet in de handen van een oudere vrouw',
     slug: '/diensten/tablet-smartphone-hulp',
     features: [
       'Nieuwe tablet of telefoon instellen',
@@ -73,7 +78,8 @@ export const services = [
     title: 'Televisie & Radio',
     description: 'TV-storing, decoder of streamen — wij lossen het op en stellen zenders goed in.',
     icon: 'tv',
-    image: '/TV hulp.webp',
+    image: '/dienst-tv.webp',
+    imageAlt: 'Televisie aan de wand met soundbar eronder',
     slug: '/diensten/televisie-radio',
     features: [
       'Smart TV installeren en instellen',
@@ -88,6 +94,7 @@ export const services = [
     description: 'Kapot scherm, lege accu of andere storing? Wij repareren laptops en pc’s bij u thuis.',
     icon: 'wrench',
     image: '/Reparatie.webp',
+    imageAlt: 'Geopende laptop met precisieschroevendraaier ernaast',
     slug: '/diensten/laptop-computer-reparatie',
     features: [
       'Alle merken laptops en computers',
@@ -101,7 +108,8 @@ export const services = [
     title: 'Smart Home',
     description: 'Slimme lampen, deurbel of speakers — wij koppelen alles en lossen storingen op.',
     icon: 'lightbulb',
-    image: '/Smart Home.webp',
+    image: '/dienst-smart-home.webp',
+    imageAlt: 'Slimme thermostaat aan de muur, hand aan de knop',
     slug: '/diensten/smart-home-domotica',
     features: [
       'Smart TV installeren en koppelen',
@@ -114,7 +122,8 @@ export const services = [
     title: 'Dataherstel',
     description: 'Foto’s of bestanden kwijt na storing of crash? Wij halen ze terug en zetten een back-up op.',
     icon: 'database',
-    image: '/Data herstel.webp',
+    image: '/dienst-dataherstel.webp',
+    imageAlt: 'Externe harde schijf naast een open fotoalbum',
     slug: '/diensten/dataherstel-backup',
     features: [
       'Verwijderde bestanden terughalen',
@@ -127,7 +136,8 @@ export const services = [
     title: 'Persoonlijke Training',
     description: 'Stap voor stap leren met uw apparaten — op uw tempo, in gewone taal.',
     icon: 'academic-cap',
-    image: '/Student aan huis.webp',
+    image: '/dienst-training.webp',
+    imageAlt: 'Beschreven notitieblok naast een laptop',
     slug: '/diensten/persoonlijke-training',
     features: [
       'Basistraining voor uw computer',
@@ -142,10 +152,11 @@ interface ServicesSectionProps {
   title?: string
   subtitle?: string
   eyebrow?: string
-  /** @deprecated — cards zijn nu altijd compact (image + titel). Prop blijft voor backwards-compat met callers. */
-  showFeatures?: boolean
   /** Toon korte beschrijving onder de titel — gebruikt voor zelf-kwalificatie op landingspagina's. */
   showDescription?: boolean
+  /** Grote fotokaarten met dubbele rand. Het apparaat op de foto vertelt
+      meteen waar de dienst over gaat — sterker dan een icoon. */
+  photoCards?: boolean
   limitServices?: number
   showAllButton?: boolean
 }
@@ -155,6 +166,7 @@ export default function ServicesSection({
   subtitle,
   eyebrow,
   showDescription = false,
+  photoCards = false,
   limitServices = 0,
   showAllButton = false,
 }: ServicesSectionProps) {
@@ -169,7 +181,42 @@ export default function ServicesSection({
           {subtitle && <p className="section-subtitle max-w-2xl mx-auto mt-3">{subtitle}</p>}
         </div>
 
-        {showDescription ? (
+        {photoCards ? (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            {displayServices.map((service, idx) => (
+              <Link key={idx} href={service.slug} className="group card-bezel">
+                <article className="card-bezel-inner flex flex-col h-full">
+                  <div className="relative aspect-[4/3] overflow-hidden bg-surface">
+                    <Image
+                      src={service.image}
+                      alt={service.imageAlt ?? ''}
+                      fill
+                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                    />
+                  </div>
+                  <div className="flex flex-col flex-1 p-5 sm:p-6">
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-sm sm:text-base text-gray-600 leading-snug mb-5 flex-1">
+                      {service.description}
+                    </p>
+                    <span className="inline-flex items-center gap-2.5 text-sm font-semibold text-blue-700">
+                      Bekijk deze hulp
+                      <span
+                        className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1"
+                        aria-hidden="true"
+                      >
+                        <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2.5} />
+                      </span>
+                    </span>
+                  </div>
+                </article>
+              </Link>
+            ))}
+          </div>
+        ) : showDescription ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6 max-w-6xl mx-auto">
             {displayServices.map((service, idx) => (
               <Link
@@ -192,36 +239,17 @@ export default function ServicesSection({
                   <p className="text-sm text-gray-600 leading-snug">
                     {service.description}
                   </p>
+                  {/* Zichtbare klik-aanwijzing: de hele kaart is een link, maar
+                      onze doelgroep ontdekt dat niet via hover. */}
+                  <span className="mt-3 inline-flex items-center gap-1.5 self-start md:self-center text-sm font-semibold text-blue-700 group-hover:text-blue-800">
+                    Bekijk deze hulp
+                    <Icon name="arrow-right-short" className="w-4 h-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden="true" />
+                  </span>
                 </div>
               </Link>
             ))}
           </div>
-        ) : (
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto">
-            {displayServices.map((service, idx) => (
-              <Link
-                key={idx}
-                href={service.slug}
-                className="group flex flex-col bg-white rounded-2xl overflow-hidden shadow-soft hover:shadow-soft-lg transition duration-300 hover:-translate-y-1"
-              >
-                <div className="relative aspect-square overflow-hidden bg-gray-50">
-                  <Image
-                    src={service.image}
-                    alt={service.title}
-                    fill
-                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 200px"
-                    className="object-contain group-hover:scale-105 transition-transform duration-500 p-2"
-                  />
-                </div>
-                <div className="px-3 py-2.5 text-center">
-                  <h3 className="text-sm sm:text-base font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight">
-                    {service.title}
-                  </h3>
-                </div>
-              </Link>
-            ))}
-          </div>
-        )}
+        ) : null}
 
         {showAllButton && (
           <div className="text-center mt-10">

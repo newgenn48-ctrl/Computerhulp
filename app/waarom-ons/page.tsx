@@ -32,7 +32,7 @@ export default function WaaromOnsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
       {/* Hero */}
-      <section className="bg-gradient-to-br from-gray-50 to-white pt-24 pb-16 lg:pt-32 lg:pb-24">
+      <section className="bg-surface pt-24 pb-16 lg:pt-32 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <span className="eyebrow">Waarom ons · vergelijking</span>
           <h1 className="section-title-lg">
@@ -68,34 +68,34 @@ export default function WaaromOnsPage() {
                 <tr>
                   <th className="p-4 text-gray-500 font-medium text-sm"></th>
                   <th className="p-4 bg-blue-600 text-white font-bold rounded-t-xl text-center">{BUSINESS.NAME}</th>
-                  <th className="p-4 text-gray-700 font-medium text-center bg-gray-50">Marktgemiddelde</th>
+                  <th className="p-4 text-gray-700 font-medium text-center bg-surface">Marktgemiddelde</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">1 uur aan huis</td>
                   <td className="p-4 bg-blue-50 text-center font-bold text-blue-700 text-lg">€54,97</td>
-                  <td className="p-4 text-center text-gray-600 bg-gray-50">€65–€90</td>
+                  <td className="p-4 text-center text-gray-600 bg-surface">€65–€90</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">Voorrijkosten</td>
                   <td className="p-4 bg-blue-50 text-center font-bold text-blue-700">{PRICING.TRAVEL}</td>
-                  <td className="p-4 text-center text-gray-600 bg-gray-50">€12,50–€25</td>
+                  <td className="p-4 text-center text-gray-600 bg-surface">€12,50–€25</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">Abonnement nodig?</td>
                   <td className="p-4 bg-blue-50 text-center font-bold text-blue-700">Nee</td>
-                  <td className="p-4 text-center text-gray-600 bg-gray-50">Vaak ja</td>
+                  <td className="p-4 text-center text-gray-600 bg-surface">Vaak ja</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">Weekendtoeslag?</td>
                   <td className="p-4 bg-blue-50 text-center font-bold text-blue-700">Nee</td>
-                  <td className="p-4 text-center text-gray-600 bg-gray-50">Soms</td>
+                  <td className="p-4 text-center text-gray-600 bg-surface">Soms</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">Beschikbaarheid</td>
                   <td className="p-4 bg-blue-50 text-center font-bold text-blue-700 rounded-b-xl">{HOURS.OPEN} - {HOURS.CLOSE}, {HOURS.DAYS}</td>
-                  <td className="p-4 text-center text-gray-600 bg-gray-50">Kantooruren</td>
+                  <td className="p-4 text-center text-gray-600 bg-surface">Kantooruren</td>
                 </tr>
               </tbody>
             </table>
@@ -108,7 +108,7 @@ export default function WaaromOnsPage() {
       </section>
 
       {/* 6 Voordelen */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Wat ons anders maakt</h2>
@@ -174,7 +174,7 @@ export default function WaaromOnsPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Veelgestelde vragen</h2>
@@ -202,21 +202,21 @@ export default function WaaromOnsPage() {
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          <h2 className="cta-title mb-6">
             Overtuigd? Wij helpen u graag
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Bel ons gerust of maak online een afspraak. Binnen 24 uur staan we voor uw deur.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

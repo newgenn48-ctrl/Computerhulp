@@ -3,9 +3,31 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/components/ServicesSection'
 import { Icon } from '@/components/icons'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
+
+// Elke pagina onder app/diensten/. Houd gelijk aan lib/cities.ts -> services.
+const ALL_TOPICS = [
+  { slug: 'computer-laptop-hulp', label: 'Computer & laptop hulp' },
+  { slug: 'pc-hulp-aan-huis', label: 'Pc-hulp aan huis' },
+  { slug: 'hulp-bij-computerproblemen', label: 'Hulp bij computerproblemen' },
+  { slug: 'computerhulp-senioren', label: 'Computerhulp voor senioren' },
+  { slug: 'computercursus-ouderen', label: 'Computercursus voor ouderen' },
+  { slug: 'persoonlijke-training', label: 'Persoonlijke training' },
+  { slug: 'laptop-computer-reparatie', label: 'Laptop- en pc-reparatie' },
+  { slug: 'laptop-laten-herstellen', label: 'Laptop laten herstellen' },
+  { slug: 'monteur-aan-huis', label: 'IT-monteur aan huis' },
+  { slug: 'printer-scanner-hulp', label: 'Printer & scanner' },
+  { slug: 'email-hulp', label: 'E-mail instellen en herstellen' },
+  { slug: 'wifi-internet-hulp', label: 'WiFi & internet' },
+  { slug: 'tablet-smartphone-hulp', label: 'Tablet & smartphone' },
+  { slug: 'smartphone-hulp-aan-huis', label: 'Smartphone-hulp aan huis' },
+  { slug: 'televisie-radio', label: 'Televisie & radio' },
+  { slug: 'tv-installatie', label: 'TV installeren en ophangen' },
+  { slug: 'smart-home-domotica', label: 'Smart home & domotica' },
+  { slug: 'dataherstel-backup', label: 'Dataherstel & back-up' },
+] as const
 
 export const metadata: Metadata = {
   title: 'Alle Computerhulpdiensten aan Huis in Zuid-Holland',
@@ -74,7 +96,7 @@ export default function DienstenPage() {
       <section className="relative min-h-screen bg-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image src="/Student aan huis.webp" alt="Computerhulpdiensten aan huis in Zuid-Holland" fill sizes="100vw" className="object-cover" priority />
+          <Image src="/hero-computerhulp.webp" alt="IT-specialist sluit de wifi-router aan bij een klant thuis" fill sizes="100vw" className="object-cover" priority />
           {/* Light overlay for text readability */}
           <div className="absolute inset-0 bg-white/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/80 to-transparent" />
@@ -108,7 +130,7 @@ export default function DienstenPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-12 lg:py-16 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-12">
             <h2 className="section-title">Waar wij u mee helpen</h2>
@@ -122,15 +144,16 @@ export default function DienstenPage() {
               <Link
                 key={idx}
                 href={service.slug}
-                className="group bg-white rounded-2xl overflow-hidden shadow-lg border border-gray-200 hover:border-blue-500 hover:shadow-2xl transition duration-300 flex flex-col"
+                className="group card-bezel flex flex-col"
               >
+                <article className="card-bezel-inner flex flex-col h-full">
                 {/* Image */}
-                <div className="relative h-44 sm:h-48 overflow-hidden">
+                <div className="relative aspect-[4/3] overflow-hidden bg-surface">
                   <Image
                     src={service.image}
                     alt={service.title}
                     fill
-                    className="object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </div>
@@ -150,13 +173,39 @@ export default function DienstenPage() {
                     ))}
                   </ul>
 
-                  <span className="inline-flex items-center gap-2 text-blue-600 font-semibold group-hover:gap-3 transition">
-                    Meer informatie
-                    <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />
+                  <span className="inline-flex items-center gap-2.5 text-sm font-semibold text-blue-700">
+                    Bekijk deze hulp
+                    <span
+                      className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1"
+                      aria-hidden="true"
+                    >
+                      <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2.5} />
+                    </span>
                   </span>
                 </div>
+                </article>
               </Link>
             ))}
+          </div>
+
+          {/* Alle onderwerpen. Zorgt dat elke dienstenpagina vanaf hier
+              bereikbaar is - acht ervan kregen voorheen geen enkele link. */}
+          <div className="mt-12 pt-10 border-t border-gray-200">
+            <h3 className="text-lg font-bold text-gray-900 mb-2">Alle hulponderwerpen</h3>
+            <p className="text-gray-600 mb-5">Zoekt u iets specifieks? Hier staat alles op een rij.</p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-1">
+              {ALL_TOPICS.map(topic => (
+                <li key={topic.slug}>
+                  <Link
+                    href={`/diensten/${topic.slug}`}
+                    className="group flex items-center gap-2 py-2 text-blue-700 hover:text-blue-800 font-medium"
+                  >
+                    <Icon name="arrow-right-short" className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden="true" />
+                    {topic.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
@@ -200,20 +249,14 @@ export default function DienstenPage() {
       </section>
 
       {/* Testimonials — social proof voor verdere conversie */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <header className="text-center mb-12">
-            <p className="section-eyebrow">Klanten aan het woord</p>
-            <h2 id="testimonials-heading" className="section-title">Wat onze klanten zeggen</h2>
-            <p className="section-subtitle">Dagelijks helpen we mensen in heel {BUSINESS.REGION}</p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
-          </header>
-          <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
-        </div>
-      </section>
+      <TestimonialsSection
+        testimonials={HUB_TESTIMONIALS}
+        subtitle={<>Dagelijks helpen we mensen in heel {BUSINESS.REGION}</>}
+        background="soft"
+      />
 
       {/* SEO Content */}
-      <section className="py-16 px-4 bg-gradient-to-b from-gray-50 to-white">
+      <section className="py-12 lg:py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">
             Computerhulp aan huis in {BUSINESS.REGION}
@@ -223,7 +266,7 @@ export default function DienstenPage() {
               Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Een compleet pakket IT-diensten voor particulieren en kleine ondernemers in heel {BUSINESS.REGION}. Van computer- en laptophulp tot WiFi-installatie, van printerproblemen tot smart-home-oplossingen.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Onze IT-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp — we helpen vakkundig en persoonlijk, in gewone taal.
+              Onze IT-specialisten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp — we helpen vakkundig en persoonlijk, in gewone taal.
             </p>
             <p className="text-gray-700 leading-relaxed">
               Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met slechts {PRICING.TRAVEL} voorrijkosten. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen binnen 24 uur bij u langs.
@@ -235,19 +278,19 @@ export default function DienstenPage() {
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">Hulp nodig met computer of techniek?</h2>
+          <h2 className="cta-title mb-6">Hulp nodig met computer of techniek?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
             Bel ons of maak een afspraak — we helpen u graag met uw computerprobleem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
         </div>
       </section>

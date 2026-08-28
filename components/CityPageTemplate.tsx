@@ -1,18 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Metadata } from 'next'
 import PricingSection from '@/components/PricingSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
+import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { Icon } from '@/components/icons'
-import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { City } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
+import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
 
@@ -52,8 +52,8 @@ const computerhulpConfig: VariantConfig = {
   serviceName: 'Computerhulp aan Huis',
   serviceNameLower: 'computerhulp aan huis',
   urlPrefix: 'computerhulp-aan-huis',
-  heroImage: '/hero student.webp',
-  heroAlt: (cityName) => `Computerhulp aan huis in ${cityName} — IT-specialist bij klant thuis`,
+  heroImage: '/hero-computerhulp.webp',
+  heroAlt: (cityName) => `IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt in ${cityName}`,
   heroTitle: (cityName) => (
     <>Computerhulp aan Huis <span className="hero-highlight">{cityName}</span></>
   ),
@@ -79,8 +79,8 @@ const studentConfig: VariantConfig = {
   serviceName: 'Student aan Huis',
   serviceNameLower: 'student aan huis',
   urlPrefix: 'student-aan-huis',
-  heroImage: '/Student aan huis.webp',
-  heroAlt: (cityName) => `IT-student helpt klant thuis met computer in ${cityName}`,
+  heroImage: '/hero-student.webp',
+  heroAlt: (cityName) => `IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${cityName}`,
   heroTitle: (cityName) => (
     <>Student aan Huis <span className="hero-highlight">{cityName}</span></>
   ),
@@ -204,7 +204,7 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
   }
 
   if (variant === 'student') {
-    localBusiness.image = `${baseUrl}/Student%20aan%20huis.webp`
+    localBusiness.image = `${baseUrl}/hero-student.webp`
   }
 
   const serviceEntity: Record<string, unknown> = {
@@ -469,7 +469,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
   const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
 
   return (
-    <section className="py-14 lg:py-16 bg-white">
+    <section className="py-12 lg:py-16 bg-surface">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column - City-specific Content */}
@@ -573,7 +573,7 @@ function StudentContentSection({ city }: { city: City }) {
   const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
 
   return (
-    <section className="py-14 lg:py-16 bg-white">
+    <section className="py-12 lg:py-16 bg-surface">
       <div className="max-w-4xl mx-auto px-4 sm:px-6">
         <h2 className="section-title mb-6">
           Waarom mensen ons bellen in {city.name}
@@ -736,137 +736,48 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      {/* Hero Section */}
-      <section className="hero-wrapper">
-        <div className="absolute inset-0">
-          <Image
-            src={config.heroImage}
-            alt={config.heroAlt(city.name)}
-            fill
-            className="object-cover"
-            priority
-            sizes="100vw"
-          />
-          <div className="hero-overlay-mobile"></div>
-          <div className="hero-overlay-desktop-r"></div>
-          <div className="hero-overlay-desktop-b"></div>
-        </div>
-
-        <div className="hero-content">
-          <div className="max-w-2xl">
-            <p className="hero-eyebrow">{BUSINESS.REVIEW_COUNT} tevreden klanten</p>
-            <h1 className="hero-title">
-              {config.heroTitle(city.name)}
-            </h1>
-
-            <p className="hero-description">
-              {config.heroDescription(city.name)}
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3 mb-6">
-              <a
-                href={BUSINESS.PHONE_HREF}
-                className="inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30"
-                aria-label={`Bel ${BUSINESS.PHONE}`}
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
-              <Link href="/afspraak-maken" className="btn-hero-primary">
-                Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
-            </div>
-
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="hero-pill">
-                <Icon name="clock" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                Binnen 24 uur geholpen
-              </span>
-              <span className="hero-pill">
-                <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                {variant === 'student' ? 'Betrouwbare Informatica-studenten' : 'Betrouwbare Informatica-experts'}
-              </span>
-              <span className="hero-pill">
-                <Icon name="calendar" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                7 dagen per week
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Hero
+        imageSrc={config.heroImage}
+        imageAlt={config.heroAlt(city.name)}
+        eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
+        title={config.heroTitle(city.name)}
+        descriptions={[config.heroDescription(city.name)]}
+        pills={[
+          {
+            icon: 'academic-cap',
+            label: variant === 'student'
+              ? 'HBO-opgeleide studenten'
+              : 'HBO-opgeleide IT-specialisten',
+          },
+          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'calendar', label: '7 dagen per week' },
+        ]}
+      />
 
 
-      {variant === 'computerhulp' ? (
-        <>
-          {/* Computerhulp-volgorde: diensten → waarom → prijs → reviews → hoe */}
-          <ServicesSection
-            eyebrow="Onze hulp"
-            title={`Waar wij u mee helpen in ${city.name}`}
-            subtitle="Van een simpele vraag tot een lastig probleem — wij helpen u graag bij u thuis."
-            showDescription={true}
-            limitServices={6}
-            showAllButton={true}
-          />
+      {/* Vaste volgorde voor beide varianten: diensten → waarom → prijs
+          → reviews → hoe. Wat per variant verschilt zit in config. */}
+      <ServicesSection
+        eyebrow="Onze hulp"
+        title={`Waar wij u mee helpen in ${city.name}`}
+        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
+        photoCards={true}
+        limitServices={6}
+        showAllButton={true}
+      />
 
-          <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} showCta={false} />
+      <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} showCta={false} />
 
-          <PricingSection />
+      <PricingSection />
 
-          <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <header className="text-center mb-10">
-                <p className="section-eyebrow">Klanten aan het woord</p>
-                <h2 id="testimonials-heading" className="section-title">
-                  Wat onze klanten zeggen
-                </h2>
-                <p className="text-sm text-gray-500 mt-2 lg:hidden">
-                  ← Swipe voor meer reviews →
-                </p>
-              </header>
-              <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
-            </div>
-          </section>
+      <TestimonialsSection
+        testimonials={HUB_TESTIMONIALS}
+      />
 
-          <HowItWorksSection background="white" />
-        </>
-      ) : (
-        <>
-          {/* Student-volgorde: diensten → waarom → prijs → reviews → hoe */}
-          <ServicesSection
-            eyebrow="Onze hulp"
-            title={`Waar wij u mee helpen in ${city.name}`}
-            subtitle="Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag bij u thuis."
-            showDescription={true}
-            limitServices={6}
-            showAllButton={true}
-          />
-
-          <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} showCta={false} />
-
-          <PricingSection />
-
-          <section className="py-12 lg:py-16 bg-gradient-to-br from-gray-50 to-white" aria-labelledby="testimonials-heading">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <header className="text-center mb-10">
-                <p className="section-eyebrow">Klanten aan het woord</p>
-                <h2 id="testimonials-heading" className="section-title">
-                  Wat onze klanten zeggen
-                </h2>
-                <p className="text-sm text-gray-500 mt-2 lg:hidden">
-                  ← Swipe voor meer reviews →
-                </p>
-              </header>
-              <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
-            </div>
-          </section>
-
-          <HowItWorksSection background="white" />
-        </>
-      )}
+      <HowItWorksSection background="gray" />
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-gray-50" aria-labelledby="faq-heading">
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
@@ -898,7 +809,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         if (!content || content.neighborhoods.length < 3) return null
 
         return (
-          <section className="py-12 lg:py-16 bg-gray-50">
+          <section className="py-12 lg:py-16 bg-white">
             <div className="max-w-7xl mx-auto px-4 sm:px-6">
               <h2 className="section-title">
                 {config.neighborhoodsSectionTitle(city, content.region)}
@@ -925,7 +836,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       {/* Final CTA — consistent met hub pages */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+          <h2 className="cta-title mb-6">
             Kunnen wij u helpen in {city.name}?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
@@ -933,14 +844,14 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
-            <Link href="/afspraak-maken" className="btn-cta-white">
-              Afspraak maken
-              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-            </Link>
-            <a href={BUSINESS.PHONE_HREF} className="btn-cta-dark" aria-label={`Bel ${BUSINESS.PHONE}`}>
+            <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
               <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
               {BUSINESS.PHONE}
             </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
           </div>
 
           <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-100">

@@ -207,6 +207,9 @@ export const cities: City[] = [
 // Utility functions
 export const citySlugs = cities.map(c => c.slug)
 
+/** Aantal plaatsen waarvoor een eigen landingspagina bestaat. */
+export const cityCount = cities.length
+
 export function getCityBySlug(slug: string): City | undefined {
   return cities.find(c => c.slug === slug)
 }
@@ -234,9 +237,16 @@ export function getNearbyCities(slug: string, count: number = 6): City[] {
   return withDistances.slice(0, count)
 }
 
-// Services data
+// Services data - moet elke map onder app/diensten/ bevatten,
+// anders ontbreekt die pagina in de sitemap.
 export const services = [
   'computer-laptop-hulp',
+  'computercursus-ouderen',
+  'computerhulp-senioren',
+  'hulp-bij-computerproblemen',
+  'pc-hulp-aan-huis',
+  'smartphone-hulp-aan-huis',
+  'tv-installatie',
   'printer-scanner-hulp',
   'email-hulp',
   'wifi-internet-hulp',
