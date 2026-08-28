@@ -29,7 +29,7 @@ interface HeroProps {
 
 /**
  * Eén shared Hero voor alle landingspagina's.
- * CTA-volgorde is vast: witte bel-knop primair, gradient Afspraak Maken secundair.
+ * CTA-volgorde is vast: witte bel-knop primair, gradient Afspraak maken secundair.
  */
 export default function Hero({
   imageSrc,

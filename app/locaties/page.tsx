@@ -118,7 +118,7 @@ export default function LocatiesPage() {
                 {BUSINESS.PHONE}
               </a>
               <Link href="/afspraak-maken" className="btn-secondary">
-                Afspraak Maken
+                Afspraak maken
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
             </div>

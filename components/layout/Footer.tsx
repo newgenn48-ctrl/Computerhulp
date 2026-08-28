@@ -20,7 +20,7 @@ export default function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="bg-gray-900 text-white">
+    <footer className="bg-ink-900 text-white">
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
@@ -121,6 +121,17 @@ export default function Footer() {
                   {BUSINESS.EMAIL}
                 </a>
               </li>
+              <li>
+                <a
+                  href={BUSINESS.WHATSAPP_HREF}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="footer-link flex items-center gap-2 whitespace-nowrap"
+                >
+                  <Icon name="whatsapp" className="w-4 h-4" />
+                  <span translate="no">{BUSINESS.WHATSAPP}</span>
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -136,14 +147,14 @@ export default function Footer() {
               </li>
               <li>
                 <div className="font-semibold text-white">Bereikbaar</div>
-                <div>Ma-Zo: {HOURS.OPEN} - {HOURS.CLOSE}</div>
+                <div>Ma–zo · {HOURS.OPEN}–{HOURS.CLOSE}</div>
               </li>
             </ul>
           </div>
         </div>
 
         {/* Steden */}
-        <div className="mt-10 pt-8 border-t border-gray-800">
+        <div className="mt-10 pt-8 border-t border-ink-800">
           <div className="flex items-center justify-between mb-3">
             <span className="text-sm text-gray-300">We werken in heel Zuid-Holland, waaronder:</span>
             <Link href="/locaties" className="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
@@ -166,7 +177,7 @@ export default function Footer() {
       </div>
 
       {/* Disclaimer */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-ink-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <p className="text-xs text-gray-400 text-center">
             {BUSINESS.NAME} is een onafhankelijke dienstverlener (KvK: {BUSINESS.KVK}) en is niet gelieerd aan enige fabrikant of softwareleverancier.
@@ -175,7 +186,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-800">
+      <div className="border-t border-ink-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">
           <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-300">
             <div>

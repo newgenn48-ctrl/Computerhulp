@@ -48,7 +48,7 @@ export default function CookieConsent() {
 
   return (
     <div
-      role="dialog"
+      role="region"
       aria-live="polite"
       aria-label="Cookie-toestemming"
       /* mb-[76px] op mobiel houdt de sticky bel-balk volledig vrij */
@@ -73,7 +73,7 @@ export default function CookieConsent() {
             <button
               type="button"
               onClick={() => decide(true)}
-              className="flex-1 sm:flex-none px-4 py-2.5 text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors shadow-sm"
+              className="flex-1 sm:flex-none px-4 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 rounded-lg transition-colors shadow-sm"
             >
               Accepteren
             </button>

@@ -93,7 +93,7 @@ export default function DienstenPage() {
       />
 
       {/* Premium Hero with Photo Background */}
-      <section className="relative min-h-screen bg-white overflow-hidden">
+      <section className="relative bg-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image src="/hero-computerhulp.webp" alt="IT-specialist sluit de wifi-router aan bij een klant thuis" fill sizes="100vw" className="object-cover" priority />
@@ -103,14 +103,14 @@ export default function DienstenPage() {
           <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-white/30 via-transparent to-white/60" />
         </div>
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-24 min-h-screen flex items-center">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 pt-32 pb-16 lg:pb-20">
           <div className="max-w-2xl">
-            <span className="eyebrow">Alle diensten · Zuid-Holland</span>
+            <p className="section-eyebrow">Alle diensten · Zuid-Holland</p>
             <h1 className="section-title-lg">
               Alle Diensten <span className="text-blue-600">Zuid-Holland</span>
             </h1>
 
-            <p className="text-xl sm:text-2xl text-gray-600 mb-10 leading-relaxed max-w-xl">
+            <p className="section-subtitle mb-8 max-w-xl">
               Heeft u hulp nodig met uw digitale apparaten? Van computer tot WiFi, van printer tot smart home — we helpen met <strong className="text-gray-900 font-semibold">alles rondom uw apparaten</strong>, bij u thuis.
             </p>
 
@@ -213,17 +213,21 @@ export default function DienstenPage() {
       {/* Pricing Overview */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-12">
+          <div className="text-center mb-10">
+            <p className="section-eyebrow">Tarieven</p>
             <h2 className="section-title">Wat het kost</h2>
             <p className="section-subtitle">Voor elke dienst hetzelfde transparante tarief</p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-50 to-white rounded-3xl p-8 sm:p-10 border-2 border-blue-200 shadow-xl">
-            <div className="text-5xl sm:text-6xl font-bold text-blue-600 mb-2 text-center">{PRICING.PER_QUARTER}</div>
-            <div className="text-xl sm:text-2xl text-gray-700 mb-1 text-center">per kwartier</div>
+          <div className="card-bezel">
+            <div className="card-bezel-inner">
+            <div className="h-1.5 bg-gradient-to-r from-blue-600 to-indigo-700" aria-hidden="true" />
+            <div className="p-6 sm:p-10">
+            <div className="text-5xl sm:text-6xl font-extrabold tracking-display-tight text-gray-900 tabular-nums mb-2 text-center">{PRICING.PER_QUARTER}</div>
+            <div className="text-xl text-gray-600 mb-1 text-center font-medium">per kwartier</div>
             <div className="text-base sm:text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier + voorrijkosten — all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
 
-            <div className="bg-white rounded-xl p-6 mb-8 shadow-sm">
+            <div className="border-t border-gray-200 pt-6 mb-8">
               <ul className="grid md:grid-cols-2 gap-4">
                 {[
                   `${PRICING.TRAVEL} voorrijkosten in heel ${BUSINESS.REGION}`,
@@ -241,9 +245,18 @@ export default function DienstenPage() {
               </ul>
             </div>
 
-            <a href={BUSINESS.PHONE_HREF} className="btn-submit block text-center" aria-label={`Bel ${BUSINESS.PHONE}`}>
-              {BUSINESS.PHONE}
-            </a>
+            <div className="grid sm:grid-cols-2 gap-3">
+              <a href={BUSINESS.PHONE_HREF} translate="no" className="btn-primary text-base px-6 whitespace-nowrap" aria-label={`Bel ${BUSINESS.PHONE}`}>
+                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                {BUSINESS.PHONE}
+              </a>
+              <Link href="/afspraak-maken" className="btn-secondary text-base px-6">
+                Afspraak maken
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
+            </div>
+            </div>
+            </div>
           </div>
         </div>
       </section>
@@ -258,7 +271,7 @@ export default function DienstenPage() {
       {/* SEO Content */}
       <section className="py-12 lg:py-16 px-4 bg-white">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="section-title mb-6">
             Computerhulp aan huis in {BUSINESS.REGION}
           </h2>
           <div className="prose prose-lg max-w-none">

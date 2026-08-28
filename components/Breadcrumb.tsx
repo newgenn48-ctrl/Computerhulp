@@ -59,7 +59,7 @@ export default function Breadcrumb() {
     } else if (segment === 'over-ons') {
       label = 'Over Ons'
     } else if (segment === 'afspraak-maken') {
-      label = 'Afspraak Maken'
+      label = 'Afspraak maken'
     } else if (segment === 'offerte-aanvragen') {
       label = 'Offerte Aanvragen'
     } else if (segment === 'website-laten-maken') {

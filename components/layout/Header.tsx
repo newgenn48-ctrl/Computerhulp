@@ -119,7 +119,7 @@ export default function Header() {
               {BUSINESS.PHONE}
             </a>
             <Link href="/afspraak-maken" className="btn-header-cta flex items-center gap-2 text-sm lg:text-base">
-              Afspraak Maken
+              Afspraak maken
               <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
             </Link>
           </nav>
@@ -167,7 +167,7 @@ export default function Header() {
                 {BUSINESS.PHONE}
               </a>
               <Link href="/afspraak-maken" onClick={() => setMobileMenuOpen(false)} className="btn-header-cta-mobile mt-2">
-                Hulp Vragen
+                Hulp vragen
               </Link>
             </nav>
           </div>

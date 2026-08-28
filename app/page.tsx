@@ -376,7 +376,7 @@ export default function HomePage() {
               href="/afspraak-maken"
               className="btn-cta-dark"
             >
-              Afspraak Maken
+              Afspraak maken
               <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} />
             </Link>
           </div>
