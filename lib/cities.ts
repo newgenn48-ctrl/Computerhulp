@@ -207,6 +207,22 @@ export const cities: City[] = [
 // Utility functions
 export const citySlugs = cities.map(c => c.slug)
 
+/** De grootste plaatsen — de vaste selectie voor footers, chips en schema's. */
+export const TOP_CITIES = [
+  { name: 'Den Haag', slug: 'den-haag' },
+  { name: 'Rotterdam', slug: 'rotterdam' },
+  { name: 'Leiden', slug: 'leiden' },
+  { name: 'Delft', slug: 'delft' },
+  { name: 'Zoetermeer', slug: 'zoetermeer' },
+  { name: 'Dordrecht', slug: 'dordrecht' },
+  { name: 'Gouda', slug: 'gouda' },
+  { name: 'Alphen aan den Rijn', slug: 'alphen-aan-den-rijn' },
+  { name: 'Westland', slug: 'westland' },
+  { name: 'Schiedam', slug: 'schiedam' },
+  { name: 'Vlaardingen', slug: 'vlaardingen' },
+  { name: 'Capelle aan den IJssel', slug: 'capelle-aan-den-ijssel' },
+] as const
+
 /** Aantal plaatsen waarvoor een eigen landingspagina bestaat. */
 export const cityCount = cities.length
 

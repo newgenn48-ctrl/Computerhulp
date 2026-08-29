@@ -2,19 +2,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import { BUSINESS, HOURS } from '@/lib/constants'
+import { TOP_CITIES } from '@/lib/cities'
 
-const footerCities = [
-  { name: 'Den Haag', slug: 'den-haag' },
-  { name: 'Rotterdam', slug: 'rotterdam' },
-  { name: 'Leiden', slug: 'leiden' },
-  { name: 'Delft', slug: 'delft' },
-  { name: 'Zoetermeer', slug: 'zoetermeer' },
-  { name: 'Gouda', slug: 'gouda' },
-  { name: 'Dordrecht', slug: 'dordrecht' },
-  { name: 'Alphen aan den Rijn', slug: 'alphen-aan-den-rijn' },
-  { name: 'Westland', slug: 'westland' },
-  { name: 'Capelle aan den IJssel', slug: 'capelle-aan-den-ijssel' },
-]
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -163,7 +152,7 @@ export default function Footer() {
             </Link>
           </div>
           <div className="flex flex-wrap gap-2">
-            {footerCities.map(city => (
+            {TOP_CITIES.map(city => (
               <Link
                 key={city.slug}
                 href={`/computerhulp-aan-huis-${city.slug}`}

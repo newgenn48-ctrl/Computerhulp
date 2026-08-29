@@ -5,11 +5,12 @@ import {
   getCityName,
   getNearbyCities,
   services,
+  TOP_CITIES,
 } from '../cities'
 
 describe('cities data', () => {
-  it('should have 49 cities', () => {
-    expect(cities.length).toBe(49)
+  it('should have 169 cities', () => {
+    expect(cities.length).toBe(169)
   })
 
   it('should have unique slugs', () => {
@@ -44,7 +45,7 @@ describe('cities data', () => {
 
 describe('citySlugs', () => {
   it('should contain all city slugs', () => {
-    expect(citySlugs.length).toBe(49)
+    expect(citySlugs.length).toBe(169)
     expect(citySlugs).toContain('rotterdam')
     expect(citySlugs).toContain('den-haag')
     expect(citySlugs).toContain('leiden')
@@ -90,10 +91,16 @@ describe('getNearbyCities', () => {
   })
 
   it('should return cities sorted by distance', () => {
-    const nearby = getNearbyCities('rotterdam', 3)
-    // Schiedam should be very close to Rotterdam
+    // Schiedam ligt vlak naast Rotterdam; alleen deelwijken kunnen dichterbij zijn
+    const nearby = getNearbyCities('rotterdam', 15)
     const slugs = nearby.map(c => c.slug)
     expect(slugs).toContain('schiedam')
+
+    const dist = (a: { latitude: number; longitude: number }, b: { latitude: number; longitude: number }) =>
+      Math.hypot(a.latitude - b.latitude, a.longitude - b.longitude)
+    const rotterdam = getCityBySlug('rotterdam')!
+    const distances = nearby.map(c => dist(rotterdam, c))
+    expect(distances).toEqual([...distances].sort((a, b) => a - b))
   })
 
   it('should not include the current city', () => {
@@ -112,9 +119,23 @@ describe('getNearbyCities', () => {
   })
 })
 
+describe('TOP_CITIES', () => {
+  it('should list 12 cities that all have a landing page', () => {
+    expect(TOP_CITIES.length).toBe(12)
+    TOP_CITIES.forEach(({ name, slug }) => {
+      expect(citySlugs).toContain(slug)
+      expect(getCityName(slug)).toBe(name)
+    })
+  })
+
+  it('should have unique slugs', () => {
+    expect(new Set(TOP_CITIES.map(c => c.slug)).size).toBe(TOP_CITIES.length)
+  })
+})
+
 describe('services', () => {
-  it('should have 9 services', () => {
-    expect(services.length).toBe(9)
+  it('should have 18 services', () => {
+    expect(services.length).toBe(18)
   })
 
   it('should include common services', () => {

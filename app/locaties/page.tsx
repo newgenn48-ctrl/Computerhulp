@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
-import { cities, cityCount } from '@/lib/cities'
+import { cities, cityCount, TOP_CITIES } from '@/lib/cities'
 import { BUSINESS, PRICING } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
@@ -49,14 +49,7 @@ const localBusinessData = {
     '@type': 'State',
     name: 'Zuid-Holland',
     containsPlace: [
-      { '@type': 'City', name: 'Den Haag' },
-      { '@type': 'City', name: 'Rotterdam' },
-      { '@type': 'City', name: 'Leiden' },
-      { '@type': 'City', name: 'Delft' },
-      { '@type': 'City', name: 'Zoetermeer' },
-      { '@type': 'City', name: 'Dordrecht' },
-      { '@type': 'City', name: 'Gouda' },
-      { '@type': 'City', name: 'Alphen aan den Rijn' }
+      ...TOP_CITIES.map((c) => ({ '@type': 'City', name: c.name })),
     ]
   },
   openingHoursSpecification: {

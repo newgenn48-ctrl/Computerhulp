@@ -1,22 +1,8 @@
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import { BUSINESS, PRICING } from '@/lib/constants'
-import { cityCount } from '@/lib/cities'
+import { cityCount, TOP_CITIES } from '@/lib/cities'
 
-const TOP_CITIES = [
-  { name: 'Den Haag', slug: 'den-haag' },
-  { name: 'Rotterdam', slug: 'rotterdam' },
-  { name: 'Leiden', slug: 'leiden' },
-  { name: 'Delft', slug: 'delft' },
-  { name: 'Zoetermeer', slug: 'zoetermeer' },
-  { name: 'Dordrecht', slug: 'dordrecht' },
-  { name: 'Gouda', slug: 'gouda' },
-  { name: 'Alphen aan den Rijn', slug: 'alphen-aan-den-rijn' },
-  { name: 'Westland', slug: 'westland' },
-  { name: 'Schiedam', slug: 'schiedam' },
-  { name: 'Vlaardingen', slug: 'vlaardingen' },
-  { name: 'Capelle aan den IJssel', slug: 'capelle-aan-den-ijssel' },
-]
 
 interface AvailableInCitiesProps {
   /** Omschrijf de dienst (bijv. "WiFi-hulp", "computerhulp") — gebruikt in titel */

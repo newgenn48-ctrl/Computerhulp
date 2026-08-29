@@ -38,9 +38,6 @@ export function SvgSprite() {
         </symbol>
 
         {/* Quote - filled, viewBox 0 0 24 24 */}
-        <symbol id="icon-quote" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-        </symbol>
 
         {/* Shield - stroke, viewBox 0 0 24 24 */}
         <symbol id="icon-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
@@ -58,9 +55,6 @@ export function SvgSprite() {
         </symbol>
 
         {/* Thumbs up - stroke, viewBox 0 0 24 24 */}
-        <symbol id="icon-thumbs-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.5" />
-        </symbol>
 
         {/* Location pin - stroke, viewBox 0 0 24 24 */}
         <symbol id="icon-location-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
@@ -114,9 +108,6 @@ export function SvgSprite() {
         </symbol>
 
         {/* Arrow down - stroke, viewBox 0 0 24 24 */}
-        <symbol id="icon-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-        </symbol>
 
         {/* Clock - stroke, viewBox 0 0 24 24 */}
         <symbol id="icon-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
@@ -134,9 +125,6 @@ export function SvgSprite() {
         </symbol>
 
         {/* External link - stroke, viewBox 0 0 24 24 */}
-        <symbol id="icon-external-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-        </symbol>
 
         {/* Check circle outline - stroke, viewBox 0 0 24 24 */}
         <symbol id="icon-check-circle-outline" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">

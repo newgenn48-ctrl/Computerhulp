@@ -3,7 +3,7 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import AfspraakForm from '@/components/AfspraakForm'
 import { BUSINESS, HOURS, PRICING } from '@/lib/constants'
-import { cityCount } from '@/lib/cities'
+import { cityCount, TOP_CITIES } from '@/lib/cities'
 
 export const metadata: Metadata = {
   title: `Contact | ${BUSINESS.NAME} | ${BUSINESS.PHONE}`,
@@ -112,7 +112,7 @@ export default function ContactPage() {
                     In heel {BUSINESS.REGION} — voorrijkosten {PRICING.TRAVEL}.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
-                    {['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Gouda', 'Dordrecht', 'Westland'].map((city) => (
+                    {TOP_CITIES.slice(0, 8).map(({ name: city }) => (
                       <span key={city} className="bg-surface px-3 py-1.5 rounded-full text-sm text-gray-700 border border-gray-200">
                         {city}
                       </span>

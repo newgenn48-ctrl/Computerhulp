@@ -1,19 +1,16 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
-import { cityCount } from '@/lib/cities'
+import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
+import PricingSection from '@/components/PricingSection'
 
-const PricingSection = dynamic(() => import('@/components/PricingSection'), {
-  loading: () => <div className="py-12 lg:py-16 bg-surface" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
-})
 
 export const metadata: Metadata = {
   title: `IT Hulp aan Huis | ${BUSINESS.REGION}`,
@@ -56,7 +53,7 @@ const faqItems = [
   },
 ]
 
-const topCities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel']
+const topCities = TOP_CITIES.map((c) => c.name)
 
 const organizationData = {
   '@type': 'Organization',

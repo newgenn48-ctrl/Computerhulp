@@ -9,6 +9,7 @@ import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
+import { TOP_CITIES } from '@/lib/cities'
 
 export const metadata: Metadata = {
   title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
@@ -149,20 +150,7 @@ const studentBenefits = [
   },
 ]
 
-const topCities = [
-  { name: 'Den Haag', slug: 'den-haag' },
-  { name: 'Rotterdam', slug: 'rotterdam' },
-  { name: 'Leiden', slug: 'leiden' },
-  { name: 'Delft', slug: 'delft' },
-  { name: 'Zoetermeer', slug: 'zoetermeer' },
-  { name: 'Dordrecht', slug: 'dordrecht' },
-  { name: 'Gouda', slug: 'gouda' },
-  { name: 'Alphen aan den Rijn', slug: 'alphen-aan-den-rijn' },
-  { name: 'Westland', slug: 'westland' },
-  { name: 'Schiedam', slug: 'schiedam' },
-  { name: 'Vlaardingen', slug: 'vlaardingen' },
-  { name: 'Capelle aan den IJssel', slug: 'capelle-aan-den-ijssel' },
-]
+const topCities = TOP_CITIES
 
 export default function StudentAanHuisPage() {
   return (

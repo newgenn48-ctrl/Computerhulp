@@ -90,24 +90,12 @@
     @apply inline-flex items-center justify-center gap-3 bg-white/10 hover:bg-white/20 text-white px-10 py-5 rounded-xl font-bold text-xl border border-white/30 hover:border-white/50 backdrop-blur-sm transition duration-200;
   }
 
-  .btn-cta-ghost {
-    @apply inline-flex items-center justify-center gap-3 bg-transparent hover:bg-white/10 text-white px-10 py-5 rounded-xl font-semibold text-lg border border-white/30 hover:border-white/60 transition duration-200;
-  }
 
   .btn-submit {
     @apply w-full bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-md shadow-blue-700/25 hover:shadow-xl hover:shadow-blue-700/35 hover:-translate-y-0.5 active:translate-y-0 transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:translate-y-0 disabled:hover:shadow-md;
   }
 
-  /* ============================================
-     USP / TRUST BADGES
-     ============================================ */
-  .usp-badge {
-    @apply inline-flex items-center gap-2 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium text-gray-700 shadow-sm border border-gray-100;
-  }
 
-  .trust-indicator {
-    @apply flex items-center gap-2 text-sm text-gray-600;
-  }
 
   /* ============================================
      TYPOGRAPHY — editorial
@@ -193,25 +181,10 @@
      CARDS — 3 canonieke varianten voor consistentie site-breed
      ============================================ */
   /* Standaard content-card (default keuze) */
-  .card-standard {
-    @apply relative bg-white rounded-2xl shadow-soft border border-gray-100 transition duration-300;
-  }
-  .card-standard:hover {
-    @apply shadow-soft-lg -translate-y-0.5;
-  }
 
   /* Featured card — meer nadruk, brand-accent border */
-  .card-featured {
-    @apply relative bg-white rounded-2xl shadow-soft-lg border-2 border-blue-500 transition duration-300;
-  }
 
   /* Flat card — geen schaduw, geschikt voor grids met veel elementen */
-  .card-flat {
-    @apply relative bg-white rounded-xl border border-gray-100 transition-colors duration-200;
-  }
-  .card-flat:hover {
-    @apply border-blue-200;
-  }
 
   /* Kaart in een tray. Een dun buitenvlak met haarlijn, met daarbinnen de
      eigenlijke witte kaart. De twee radii lopen concentrisch: 28px buiten,
@@ -228,9 +201,6 @@
   }
 
   /* Legacy alias — bestaand code gebruikt .card-refined */
-  .card-refined {
-    @apply card-standard;
-  }
 
   /* ============================================
      HERO — dark, photo-forward (zoals hulpmetit-nextgen)
@@ -321,13 +291,7 @@
   /* ============================================
      CARDS — subtle accent, refined shadows
      ============================================ */
-  .info-card {
-    @apply bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition duration-300 border border-gray-100;
-  }
 
-  .testimonial-card {
-    @apply bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition duration-300 border border-gray-100;
-  }
 
   .faq-item {
     @apply bg-white rounded-xl overflow-hidden border border-gray-100 hover:border-gray-200 transition-colors;
@@ -356,50 +320,14 @@
     @apply bg-gray-50 px-4 py-2 rounded-full text-sm font-medium text-gray-700 hover:bg-blue-50 hover:text-blue-700 hover:border-blue-200 border border-gray-100 transition-colors;
   }
 
-  /* ============================================
-     STEP / TIMELINE
-     ============================================ */
-  .step-number {
-    @apply w-14 h-14 bg-gray-900 rounded-2xl flex items-center justify-center text-white text-xl font-bold;
-  }
 
-  .step-number-round {
-    @apply w-20 h-20 bg-gradient-to-br from-blue-600 to-blue-700 rounded-full flex items-center justify-center text-white text-3xl font-bold shadow-lg shadow-blue-600/30;
-  }
 
-  .step-number-done {
-    @apply w-14 h-14 bg-green-600 rounded-2xl flex items-center justify-center text-white;
-  }
 
-  /* ============================================
-     FORM — refined inputs
-     ============================================ */
-  .form-input {
-    @apply w-full px-4 py-3.5 border-2 border-gray-200 rounded-xl bg-white focus:border-blue-500 focus:bg-white transition-colors outline-none placeholder:text-gray-500;
-  }
 
-  .form-input-error {
-    @apply border-red-500 focus:border-red-500 bg-red-50/50;
-  }
 
-  .form-input-normal {
-    @apply border-gray-200 focus:border-blue-500;
-  }
 
-  .form-label {
-    @apply block text-sm sm:text-base font-medium text-gray-700 mb-2;
-  }
 
-  .form-error {
-    @apply mt-1.5 text-sm text-red-600 font-medium;
-  }
 
-  /* ============================================
-     PRICING
-     ============================================ */
-  .pricing-box {
-    @apply bg-gradient-to-br from-blue-600 to-blue-700 rounded-2xl p-10 text-white text-center shadow-xl shadow-blue-600/20;
-  }
 
   /* ============================================
      CTA SECTIONS
@@ -420,16 +348,10 @@
     @apply relative z-10;
   }
 
-  .cta-section-dark {
-    @apply py-24 bg-white;
-  }
 
   /* ============================================
      ALERTS
      ============================================ */
-  .alert-success {
-    @apply mb-6 p-6 bg-green-50 border-l-4 border-green-500 rounded-lg;
-  }
 
   .alert-error {
     @apply mb-6 p-6 bg-red-50 border-l-4 border-red-500 rounded-lg;
@@ -442,9 +364,6 @@
     @apply flex items-start gap-3;
   }
 
-  .contact-card {
-    @apply bg-white rounded-2xl p-8 shadow-soft hover:shadow-soft-lg transition duration-300 border border-gray-100;
-  }
 
   /* ============================================
      NAVIGATION (Header)
@@ -514,16 +433,10 @@
   /* ============================================
      ACCENT / DECORATIVE
      ============================================ */
-  .display-stat {
-    @apply font-extrabold tracking-display-tight;
-  }
 
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
 
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
@@ -561,11 +474,6 @@ html {
   @apply bg-blue-100 text-gray-900;
 }
 
-@media print {
-  .no-print {
-    display: none !important;
-  }
-}
 
 /* Phone link styling: only strip underline on button-styled phone links,
    keep it on inline prose phone links so users recognise them. */
@@ -573,14 +481,12 @@ html {
 .btn-secondary[href^="tel:"],
 .btn-cta-white[href^="tel:"],
 .btn-cta-dark[href^="tel:"],
-.btn-cta-ghost[href^="tel:"],
 .btn-hero-phone[href^="tel:"],
 .btn-hero-primary[href^="tel:"],
 .btn-header-cta[href^="tel:"],
 .btn-header-cta-mobile[href^="tel:"],
 .floating-btn[href^="tel:"],
 .footer-link[href^="tel:"],
-.contact-card[href^="tel:"],
 .nav-link[href^="tel:"],
 .nav-mobile-link[href^="tel:"] {
   text-decoration: none;

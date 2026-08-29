@@ -1,19 +1,16 @@
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import dynamic from 'next/dynamic'
 import { Icon } from '@/components/icons'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
-import { cityCount } from '@/lib/cities'
+import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
+import PricingSection from '@/components/PricingSection'
 
-const PricingSection = dynamic(() => import('@/components/PricingSection'), {
-  loading: () => <div className="py-12 lg:py-16 bg-surface" aria-busy="true"><div className="max-w-4xl mx-auto px-4 text-center"><div className="h-8 bg-gray-200 rounded w-48 mx-auto mb-4 animate-pulse" /><div className="h-4 bg-gray-200 rounded w-64 mx-auto animate-pulse" /></div></div>
-})
 
 export const metadata: Metadata = {
   title: 'Hulp bij Computerproblemen | Binnen 24u | Zuid-Holland',
@@ -92,12 +89,7 @@ const localBusinessData = {
     longitude: 4.3571
   },
   areaServed: [
-    { '@type': 'City', name: 'Den Haag' },
-    { '@type': 'City', name: 'Rotterdam' },
-    { '@type': 'City', name: 'Leiden' },
-    { '@type': 'City', name: 'Delft' },
-    { '@type': 'City', name: 'Zoetermeer' },
-    { '@type': 'City', name: 'Dordrecht' },
+    ...TOP_CITIES.map((c) => ({ '@type': 'City', name: c.name })),
     { '@type': 'State', name: 'Zuid-Holland' }
   ],
   priceRange: '€€',
@@ -253,7 +245,7 @@ const breadcrumbData = {
   ]
 }
 
-const cities = ['Den Haag', 'Rotterdam', 'Leiden', 'Delft', 'Zoetermeer', 'Dordrecht', 'Gouda', 'Alphen aan den Rijn', 'Westland', 'Schiedam', 'Vlaardingen', 'Capelle aan den IJssel']
+const cities = TOP_CITIES.map((c) => c.name)
 
 export default function HulpBijComputerproblemenPage() {
   return (

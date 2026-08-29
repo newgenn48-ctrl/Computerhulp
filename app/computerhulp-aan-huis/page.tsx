@@ -8,7 +8,7 @@ import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
-import { cityCount } from '@/lib/cities'
+import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
@@ -57,14 +57,8 @@ const structuredData = {
       ],
       areaServed: [
         { '@type': 'State', name: BUSINESS.REGION },
-        { '@type': 'City', name: 'Den Haag' },
-        { '@type': 'City', name: 'Rotterdam' },
-        { '@type': 'City', name: 'Leiden' },
-        { '@type': 'City', name: 'Delft' },
-        { '@type': 'City', name: 'Zoetermeer' },
-        { '@type': 'City', name: 'Gouda' },
-        { '@type': 'City', name: 'Dordrecht' },
-      ],
+        ...TOP_CITIES.map((c) => ({ '@type': 'City', name: c.name })),
+    ],
     },
     {
       '@type': 'Service',
@@ -141,24 +135,7 @@ const faqSchema = {
 
 const testimonials = HUB_TESTIMONIALS
 
-const topCities = [
-  { name: 'Den Haag', slug: 'den-haag' },
-  { name: 'Rotterdam', slug: 'rotterdam' },
-  { name: 'Leiden', slug: 'leiden' },
-  { name: 'Delft', slug: 'delft' },
-  { name: 'Zoetermeer', slug: 'zoetermeer' },
-  { name: 'Dordrecht', slug: 'dordrecht' },
-  { name: 'Gouda', slug: 'gouda' },
-  { name: 'Alphen aan den Rijn', slug: 'alphen-aan-den-rijn' },
-  { name: 'Westland', slug: 'westland' },
-  { name: 'Schiedam', slug: 'schiedam' },
-  { name: 'Vlaardingen', slug: 'vlaardingen' },
-  { name: 'Capelle aan den IJssel', slug: 'capelle-aan-den-ijssel' },
-  { name: 'Maassluis', slug: 'maassluis' },
-  { name: 'Rijswijk', slug: 'rijswijk' },
-  { name: 'Katwijk', slug: 'katwijk' },
-  { name: 'Leidschendam-Voorburg', slug: 'leidschendam-voorburg' },
-]
+const topCities = TOP_CITIES
 
 export default function ComputerhulpAanHuisPage() {
   return (

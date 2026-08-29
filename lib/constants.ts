@@ -4,7 +4,6 @@ export const BUSINESS = {
   PHONE_INTL: '+31858002006',
   PHONE_HREF: 'tel:+31858002006',
   WHATSAPP: '06-42548451',
-  WHATSAPP_NUMBER: '31642548451',
   WHATSAPP_HREF: 'https://wa.me/31642548451',
   EMAIL: 'info@computerhulpzh.nl',
   EMAIL_HREF: 'mailto:info@computerhulpzh.nl',
@@ -30,7 +29,6 @@ export const PRICING = {
   MINIMUM_TOTAL_NUM: 44.97,
   /** Minimum inclusief voorrijkosten (€44,97 + €10). Gebruikt voor klantgerichte "vanaf"-prijzen. */
   MINIMUM_ALL_IN: '€54,97',
-  MINIMUM_ALL_IN_NUM: 54.97,
 } as const
 
 export const HOURS = {
