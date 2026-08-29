@@ -6,7 +6,7 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: 'Computer & Laptop Hulp aan Huis Zuid-Holland | Binnen 24u',
   description: `Computer traag, laptop kapot of pc problemen? Professionele hulp aan huis in ${BUSINESS.REGION}. Alle merken, binnen 24 uur. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: 'Computer & Laptop Hulp aan Huis',
     description: `Computer of laptop problemen? Traag, vast, crash of defect? We komen bij u thuis in ${BUSINESS.REGION} en maken het weer als nieuw. Binnen 24 uur geholpen.`,
     type: 'website',

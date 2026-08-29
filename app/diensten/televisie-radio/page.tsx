@@ -6,7 +6,7 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: 'TV & Radio Hulp aan Huis Zuid-Holland | Installatie | 24u',
   description: `TV of radio problemen? Zenders weg, storing of installatie nodig? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: 'Televisie & Radio Hulp aan Huis',
     description: `TV of radio problemen? Zenders weg, storing, of installatie nodig? We komen bij u thuis in ${BUSINESS.REGION} en helpen direct. Binnen 24 uur geholpen. Bel.`,
     type: 'website',

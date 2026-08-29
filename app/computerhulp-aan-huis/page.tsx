@@ -6,15 +6,16 @@ import PricingSection from '@/components/PricingSection'
 import ServicesSection from '@/components/ServicesSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u bij u Thuis`,
-  description: `Professionele computerhulp aan huis in ${BUSINESS.REGION}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+  description: `Computerhulp aan huis in heel ${BUSINESS.REGION}: computer, laptop, printer, wifi en smart home. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u bij u Thuis`,
     description: `Binnen 24 uur bij u thuis in ${BUSINESS.REGION}. Computer, laptop, printer, wifi, smartphone, tablet en camera problemen opgelost. Bel ${BUSINESS.PHONE}.`,
     type: 'website',

@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Veelgestelde vragen (FAQ) | ${BUSINESS.NAME}`,
   description: `Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Binnen 24u geholpen. Bel ons op ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: `Veelgestelde vragen (FAQ) | ${BUSINESS.NAME}`,
     description: 'Antwoorden op veelgestelde vragen over onze computerhulp diensten, prijzen en werkgebied.',
     type: 'website',

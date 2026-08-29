@@ -6,14 +6,15 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Monteur aan Huis Zuid-Holland | Computer & IT Hulp | Binnen 24u',
-  description: `IT-monteur aan huis nodig? Wij komen binnen 24 uur bij u thuis in ${BUSINESS.REGION}. Computer, laptop, WiFi, printer — alles opgelost. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  title: 'IT-Monteur aan Huis Zuid-Holland | Binnen 24u bij u Thuis',
+  description: `IT-monteur aan huis nodig? Wij komen binnen 24 uur bij u thuis in ${BUSINESS.REGION}. Computer, laptop, WiFi, printer — alles opgelost. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: 'Monteur aan Huis Zuid-Holland | Computer & IT Hulp | Binnen 24u',
     description: `IT-monteur aan huis nodig? Binnen 24 uur bij u thuis in heel ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
     type: 'website',

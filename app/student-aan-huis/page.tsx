@@ -6,7 +6,7 @@ import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import { TOP_CITIES } from '@/lib/cities'
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
   description: `IT-student aan huis in ${BUSINESS.REGION}. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
     description: `IT-student aan huis in ${BUSINESS.REGION}. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
     type: 'website',

@@ -2,12 +2,17 @@ import { ImageResponse } from 'next/og'
 import { BUSINESS, PRICING } from '@/lib/constants'
 
 export const runtime = 'edge'
-export const alt = `${BUSINESS.NAME} - IT-Problemen Snel Opgelost`
+export const alt = `${BUSINESS.NAME} – computerhulp aan huis in heel Zuid-Holland`
 export const size = {
   width: 1200,
   height: 630,
 }
 export const contentType = 'image/png'
+
+/* Satori (de renderer) eist expliciete display:flex op elke div met meerdere
+   kinderen en kan geen emoji/dingbats renderen zonder externe font-download —
+   daarom bolletjes-divs in plaats van vinkjes. */
+const usps = ['Meestal binnen 24 uur', '7 dagen per week', `${PRICING.PER_QUARTER} per kwartier`]
 
 export default async function Image() {
   return new ImageResponse(
@@ -20,22 +25,10 @@ export default async function Image() {
           justifyContent: 'center',
           width: '100%',
           height: '100%',
-          background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%)',
-          fontFamily: 'system-ui, sans-serif',
+          background: 'linear-gradient(135deg, #2563eb 0%, #4338ca 100%)',
+          fontFamily: 'sans-serif',
         }}
       >
-        {/* Pattern overlay */}
-        <div
-          style={{
-            position: 'absolute',
-            inset: 0,
-            opacity: 0.1,
-            backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.15) 1px, transparent 0)',
-            backgroundSize: '40px 40px',
-          }}
-        />
-
-        {/* Logo/Icon */}
         <div
           style={{
             display: 'flex',
@@ -43,84 +36,47 @@ export default async function Image() {
             justifyContent: 'center',
             width: 120,
             height: 120,
-            background: 'linear-gradient(135deg, #3b82f6, #2563eb)',
-            borderRadius: 20,
-            marginBottom: 40,
-            fontSize: 60,
-            fontWeight: 'bold',
-            color: 'white',
-            boxShadow: '0 20px 40px rgba(0,0,0,0.3)',
+            background: 'white',
+            borderRadius: 24,
+            marginBottom: 44,
+            fontSize: 56,
+            fontWeight: 700,
+            color: '#2563eb',
           }}
         >
           CH
         </div>
 
-        {/* Title */}
+        <div style={{ display: 'flex', fontSize: 68, fontWeight: 700, color: 'white', marginBottom: 18 }}>
+          {BUSINESS.NAME}
+        </div>
+        <div style={{ display: 'flex', fontSize: 34, color: '#dbeafe', marginBottom: 52 }}>
+          Computerhulp aan huis in heel Zuid-Holland
+        </div>
+
+        <div style={{ display: 'flex', gap: 40 }}>
+          {usps.map((usp) => (
+            <div
+              key={usp}
+              style={{ display: 'flex', alignItems: 'center', gap: 12, fontSize: 26, color: 'white' }}
+            >
+              <div style={{ display: 'flex', width: 12, height: 12, borderRadius: 9999, background: '#93c5fd' }} />
+              <div style={{ display: 'flex' }}>{usp}</div>
+            </div>
+          ))}
+        </div>
+
         <div
           style={{
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center',
-            maxWidth: 900,
-            padding: '0 60px',
-          }}
-        >
-          <h1
-            style={{
-              fontSize: 72,
-              fontWeight: 'bold',
-              color: 'white',
-              margin: 0,
-              marginBottom: 20,
-              lineHeight: 1.1,
-            }}
-          >
-            {BUSINESS.NAME}
-          </h1>
-          <p
-            style={{
-              fontSize: 36,
-              color: '#93c5fd',
-              margin: 0,
-              marginBottom: 40,
-            }}
-          >
-            IT-Problemen Snel Opgelost
-          </p>
-
-          {/* Features */}
-          <div
-            style={{
-              display: 'flex',
-              gap: 30,
-              fontSize: 24,
-              color: '#dbeafe',
-            }}
-          >
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              ✓ Binnen 24 uur
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              ✓ Aan huis service
-            </div>
-            <div style={{ display: 'flex', alignItems: 'center' }}>
-              ✓ {PRICING.PER_QUARTER} per kwartier
-            </div>
-          </div>
-        </div>
-
-        {/* Phone */}
-        <div
-          style={{
             position: 'absolute',
-            bottom: 50,
-            fontSize: 32,
+            bottom: 46,
+            fontSize: 30,
+            fontWeight: 700,
             color: 'white',
-            fontWeight: 'bold',
           }}
         >
-          📞 {BUSINESS.PHONE}
+          Bel {BUSINESS.PHONE}
         </div>
       </div>
     ),

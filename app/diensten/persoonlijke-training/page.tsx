@@ -6,7 +6,7 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   description: `Computer basics leren, internet veilig gebruiken of Word en Excel leren? Persoonlijke training aan huis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
 
   openGraph: {
+    images: OG_IMAGE,
     title: 'Persoonlijke Training aan Huis',
     description: `Computer basics leren, internet veilig gebruiken of Word en Excel onder de knie krijgen? We komen bij u thuis in ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
     type: 'website',

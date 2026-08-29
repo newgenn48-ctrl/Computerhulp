@@ -6,14 +6,15 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'TV Installatie aan Huis | TV Ophangen & Installeren | Zuid-Holland',
-  description: `TV installatie aan huis. TV ophangen, Smart TV instellen, soundbar aansluiten en streaming apps configureren. Wij komen bij u thuis in ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
+  title: 'TV Installatie aan Huis | TV Ophangen | Zuid-Holland',
+  description: `TV installatie aan huis: TV ophangen, Smart TV instellen en soundbar aansluiten. Wij komen bij u thuis in ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: 'TV Installatie aan Huis',
     description: `Professionele TV installatie aan huis. TV ophangen, Smart TV instellen, soundbar aansluiten en streaming configureren in ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
     type: 'website',

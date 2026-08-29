@@ -2,13 +2,14 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import AfspraakForm from '@/components/AfspraakForm'
-import { BUSINESS, HOURS, PRICING } from '@/lib/constants'
+import { BUSINESS, HOURS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { cityCount, TOP_CITIES } from '@/lib/cities'
 
 export const metadata: Metadata = {
   title: `Contact | ${BUSINESS.NAME} | ${BUSINESS.PHONE}`,
   description: `Neem contact op met ${BUSINESS.NAME}. Bel ${BUSINESS.PHONE} (ma-zo ${HOURS.OPEN}-${HOURS.CLOSE}), mail ${BUSINESS.EMAIL} of maak online een afspraak.`,
   openGraph: {
+    images: OG_IMAGE,
     title: `Contact | ${BUSINESS.NAME}`,
     description: `Bel ${BUSINESS.PHONE}, mail ${BUSINESS.EMAIL} of maak online een afspraak. ${HOURS.DAYS} bereikbaar.`,
     type: 'website',

@@ -1,10 +1,15 @@
 import { Metadata } from 'next'
-import { BUSINESS } from '@/lib/constants'
+import { BUSINESS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Privacyverklaring | Computerhulp Zuid-Holland',
   description: 'Privacyverklaring van Computerhulp Zuid-Holland. Lees hoe wij omgaan met uw persoonlijke gegevens.',
-  robots: { index: false, follow: true },
+  openGraph: {
+    images: OG_IMAGE,
+    title: 'Privacyverklaring | Computerhulp Zuid-Holland',
+    type: 'website',
+    url: 'https://computerhulpzh.nl/privacy',
+  },
   alternates: {
     canonical: 'https://computerhulpzh.nl/privacy',
   },

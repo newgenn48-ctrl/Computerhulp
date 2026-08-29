@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/components/ServicesSection'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -34,6 +34,7 @@ export const metadata: Metadata = {
   description: `Bekijk al onze computerhulpdiensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
 
   openGraph: {
+    images: OG_IMAGE,
     title: 'Alle Computerhulpdiensten aan Huis',
     description: `Computerhulp aan huis in ${BUSINESS.REGION}. Van laptopreparatie tot smarthome-installatie. Binnen 24u.`,
     type: 'website',

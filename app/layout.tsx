@@ -6,7 +6,7 @@ import { Analytics } from '@vercel/analytics/next'
 import { SpeedInsights } from '@vercel/speed-insights/next'
 import LayoutShell from '@/components/layout/LayoutShell'
 import { SvgSprite } from '@/components/icons'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 
 // Inter overal — senior-vriendelijk, hoge leesbaarheid op scherm,
 // karakterrijk bij zware gewichten (700-800) voor professionele koppen.
@@ -35,6 +35,7 @@ export const metadata: Metadata = {
     telephone: true,
   },
   openGraph: {
+    images: OG_IMAGE,
     type: 'website',
     locale: 'nl_NL',
     url: BUSINESS.URL,
@@ -42,10 +43,9 @@ export const metadata: Metadata = {
     title: `${BUSINESS.NAME} | IT-Problemen Snel Opgelost`,
     description: `Computer, laptop, printer of WiFi problemen? Binnen 24 uur bij u thuis in ${BUSINESS.REGION}.`,
   },
+  /* Alleen het kaarttype; titel en beschrijving erven per pagina uit Open Graph. */
   twitter: {
     card: 'summary_large_image',
-    title: `${BUSINESS.NAME} | IT-Problemen Snel Opgelost`,
-    description: `Binnen 24 uur computerhulp aan huis in ${BUSINESS.REGION}. All-in vanaf ${PRICING.MINIMUM_ALL_IN} (incl. voorrijkosten). Bel ${BUSINESS.PHONE}.`,
   },
   robots: {
     index: true,

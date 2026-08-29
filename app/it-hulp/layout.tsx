@@ -22,20 +22,14 @@ const jsonLd = {
         name: 'Zuid-Holland',
         containedInPlace: { '@type': 'Country', name: 'Nederland' },
       },
-      priceRange: 'Vanaf \u20AC43,50',
+      priceRange: 'Vanaf \u20AC44,97',
       currenciesAccepted: 'EUR',
       paymentAccepted: 'Cash, Pin, Overschrijving',
       openingHoursSpecification: {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
         opens: '08:00',
-        closes: '21:00',
-      },
-      aggregateRating: {
-        '@type': 'AggregateRating',
-        ratingValue: '4.9',
-        reviewCount: '500',
-        bestRating: '5',
+        closes: '22:00',
       },
     },
     {

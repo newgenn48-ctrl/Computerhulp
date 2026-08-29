@@ -6,7 +6,7 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -15,6 +15,7 @@ export const metadata: Metadata = {
   description: `Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel nu.`,
 
   openGraph: {
+    images: OG_IMAGE,
     title: 'Smart Home & Domotica Hulp aan Huis',
     description: `Slimme apparaten installeren? Hulp nodig met slimme verlichting of speakers? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
     type: 'website',

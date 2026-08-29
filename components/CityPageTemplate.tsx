@@ -10,7 +10,7 @@ import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { Icon } from '@/components/icons'
 import { City } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -116,10 +116,18 @@ function getConfig(variant: CityPageVariant): VariantConfig {
 // ─── Metadata generators ─────────────────────────────────────────────────────
 
 export function generateComputerhulpPageMetadata(city: City): Metadata {
+  /* Google toont ~60 tekens van een title; lange plaatsnamen krijgen een
+     kortere variant zodat de naam nooit wordt afgekapt. */
+  const title =
+    [
+      `Computerhulp aan Huis ${city.name} | Binnen 24u bij u Thuis`,
+      `Computerhulp aan Huis ${city.name} | Binnen 24u`,
+    ].find((t) => t.length <= 60) ?? `Computerhulp ${city.name} | Binnen 24u`
   return {
-    title: `Computerhulp aan Huis ${city.name} | Binnen 24u bij u Thuis`,
-    description: `Betrouwbare computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+    title,
+    description: `Computerhulp aan huis in ${city.name}: computer, laptop, printer, wifi en smart home. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
+      images: OG_IMAGE,
       title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
       description: `Computerhulp aan huis in ${city.name}. Computer, laptop, printer, wifi, smartphone, tablet en camera. Binnen 24 uur bij u thuis.`,
       type: 'website',
@@ -132,10 +140,17 @@ export function generateComputerhulpPageMetadata(city: City): Metadata {
 }
 
 export function generateStudentPageMetadata(city: City): Metadata {
+  const title =
+    [
+      `Student aan Huis ${city.name} | IT-Hulp Binnen 24u bij u Thuis`,
+      `Student aan Huis ${city.name} | IT-Hulp Binnen 24u`,
+      `Student aan Huis ${city.name} | Binnen 24u`,
+    ].find((t) => t.length <= 60) ?? `Student aan Huis ${city.name}`
   return {
-    title: `Student aan Huis ${city.name} | IT-Hulp Binnen 24u bij u Thuis`,
+    title,
     description: `IT-student aan huis in ${city.name}. Geduldige hulp bij computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
+      images: OG_IMAGE,
       title: `Student aan Huis ${city.name} | Vanaf ${PRICING.MINIMUM_TOTAL}`,
       description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
       type: 'website',

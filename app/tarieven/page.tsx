@@ -1,12 +1,13 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Tarieven Computerhulp aan Huis Zuid-Holland | Transparante Prijzen',
+  title: `Tarieven Computerhulp aan Huis | ${PRICING.PER_QUARTER} per Kwartier`,
   description: `Wat kost computerhulp aan huis? ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Transparante prijzen zonder verrassingen. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: 'Tarieven Computerhulp aan Huis | Zuid-Holland',
     description: `Transparante tarieven. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Eerlijke prijzen, geen verrassingen.`,
     type: 'website',

@@ -6,7 +6,7 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -14,6 +14,7 @@ export const metadata: Metadata = {
   title: 'Printer & Scanner Hulp aan Huis Zuid-Holland | Binnen 24u',
   description: `Printer print niet of scanner werkt niet? Wij komen bij u thuis in ${BUSINESS.REGION} en lossen het op. ${PRICING.TRAVEL} voorrijkosten, binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: 'Printer & Scanner Hulp aan Huis',
     description: `Printer print niet of scanner doet het niet? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
     type: 'website',

@@ -4,13 +4,14 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { cities, cityCount, TOP_CITIES } from '@/lib/cities'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 export const metadata: Metadata = {
   title: `Computerhulp Locaties Zuid-Holland | ${cityCount} Plaatsen`,
   description: `Computerhulp aan huis in heel ${BUSINESS.REGION}. Bekijk alle ${cityCount} plaatsen waar wij actief zijn. Van Den Haag tot Dordrecht. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: `Computerhulp Locaties Zuid-Holland | ${cityCount} Plaatsen`,
     description: `Computerhulp aan huis in heel Zuid-Holland. Bekijk alle ${cityCount} plaatsen waar wij actief zijn.`,
     type: 'website',

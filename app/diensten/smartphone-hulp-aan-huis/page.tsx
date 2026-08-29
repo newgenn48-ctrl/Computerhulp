@@ -14,7 +14,7 @@ import PricingSection from '@/components/PricingSection'
 
 export const metadata: Metadata = {
   title: 'Smartphone Hulp aan Huis | Binnen 24u | Zuid-Holland',
-  description: `Smartphone hulp aan huis in ${BUSINESS.REGION}. Telefoon instellen, data overzetten, apps installeren en problemen oplossen. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Smartphone hulp aan huis in ${BUSINESS.REGION}. Telefoon instellen, data overzetten en apps installeren. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Smartphone Hulp aan Huis Zuid-Holland | IT-specialist aan Huis',
     description: `Smartphone hulp aan huis in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,

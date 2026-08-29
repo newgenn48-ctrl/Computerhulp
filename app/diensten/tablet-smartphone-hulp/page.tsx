@@ -6,14 +6,15 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'Tablet & Smartphone Hulp aan Huis Zuid-Holland | 24u',
-  description: `Tablet of smartphone hulp nodig? iPad, iPhone of Android problemen? Wij komen bij u thuis in ${BUSINESS.REGION} voor installatie, data overzetten en meer. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Tablet of smartphone hulp aan huis: iPad, iPhone en Android. Installatie en data overzetten in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: 'Tablet & Smartphone Hulp aan Huis',
     description: `Tablet of smartphone hulp nodig? Wij helpen aan huis in ${BUSINESS.REGION}.`,
     type: 'website',

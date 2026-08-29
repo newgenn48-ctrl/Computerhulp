@@ -37,3 +37,13 @@ export const HOURS = {
   DAYS: '7 dagen per week',
   LABEL: '08:00 - 22:00, 7 dagen per week',
 } as const
+
+/** Standaard social-share-afbeelding; gerenderd door app/opengraph-image.tsx. */
+export const OG_IMAGE = [
+  {
+    url: BUSINESS.URL + '/opengraph-image',
+    width: 1200,
+    height: 630,
+    alt: 'Computerhulp Zuid-Holland – computerhulp aan huis, meestal binnen 24 uur',
+  },
+]

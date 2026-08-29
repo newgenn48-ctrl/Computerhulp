@@ -5,7 +5,7 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
@@ -14,8 +14,9 @@ import PricingSection from '@/components/PricingSection'
 
 export const metadata: Metadata = {
   title: `IT Hulp aan Huis | ${BUSINESS.REGION}`,
-  description: `IT hulp aan huis in ${BUSINESS.REGION} voor al uw digitale apparaten. Computer, laptop, printer, wifi, smartphone, tablet, smart-tv en smart home. Vaak binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+  description: `IT-hulp aan huis in ${BUSINESS.REGION}: computer, laptop, printer, wifi, tablet en smart home. Vaak binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: `IT Hulp aan Huis | ${BUSINESS.REGION}`,
     description: `Onze IT-specialisten komen bij u thuis voor al uw digitale apparaten. Vaak binnen 24 uur geholpen.`,
     type: 'website',

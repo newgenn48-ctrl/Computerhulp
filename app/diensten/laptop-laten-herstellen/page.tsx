@@ -6,14 +6,15 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'Laptop Laten Herstellen aan Huis | Binnen 24u | Zuid-Holland',
-  description: `Laptop laten herstellen? Wij komen bij u thuis in ${BUSINESS.REGION}. Trage laptop, kapot scherm, virus of crasht? Binnen 24 uur geholpen. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Laptop laten herstellen? Wij komen bij u thuis in ${BUSINESS.REGION}. Traag, kapot scherm of virus? Binnen 24 uur geholpen. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: 'Laptop Laten Herstellen aan Huis | Zuid-Holland',
     description: `Laptop kapot of traag? Wij herstellen uw laptop bij u thuis. Binnen 24 uur in heel ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
     type: 'website',

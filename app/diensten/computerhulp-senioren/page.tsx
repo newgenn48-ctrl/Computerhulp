@@ -14,7 +14,7 @@ import PricingSection from '@/components/PricingSection'
 
 export const metadata: Metadata = {
   title: 'Computerhulp voor Senioren | Binnen 24u | Zuid-Holland',
-  description: `Computerhulp voor senioren aan huis in ${BUSINESS.REGION}. Geduldig, duidelijk en op uw gemak. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Computerhulp voor senioren aan huis in ${BUSINESS.REGION}. Geduldig, duidelijk en op uw gemak. Laptop, WiFi en printer. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Computerhulp voor Senioren | IT-specialist aan Huis',
     description: `Computerhulp voor senioren in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,

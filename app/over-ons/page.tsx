@@ -3,12 +3,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
-import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Over ons — uw IT-student aan huis in ${BUSINESS.REGION}`,
   description: `Maak kennis met ${BUSINESS.NAME}. Meer dan ${BUSINESS.YEARS_ACTIVE} jaar ervaring in computerhulp aan huis. Persoonlijk, eerlijk en vakkundig. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
+    images: OG_IMAGE,
     title: `Over ons | ${BUSINESS.NAME}`,
     description: `Meer dan ${BUSINESS.YEARS_ACTIVE} jaar ervaring, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
     type: 'website',
