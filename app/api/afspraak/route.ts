@@ -26,7 +26,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { naam, telefoon, email, probleem, website } = body
+    const { naam, telefoon, email, adres, postcode, plaats, probleem, website } = body
 
     // Honeypot — bots fill hidden fields, humans don't
     if (website) {
@@ -34,7 +34,7 @@ export async function POST(request: NextRequest) {
     }
 
     // Validatie - alle velden verplicht
-    if (!naam || !telefoon || !email || !probleem) {
+    if (!naam || !telefoon || !email || !adres || !postcode || !plaats || !probleem) {
       return NextResponse.json(
         { error: 'Alle velden zijn verplicht' },
         { status: 400 }
@@ -45,6 +45,9 @@ export async function POST(request: NextRequest) {
     if (!validateLength(naam, 100) ||
         !validateLength(telefoon, 20) ||
         !validateLength(email, 254) ||
+        !validateLength(adres, 120) ||
+        !validateLength(postcode, 10) ||
+        !validateLength(plaats, 80) ||
         !validateLength(probleem, 2000)) {
       return NextResponse.json(
         { error: 'Een of meerdere velden zijn te lang' },
@@ -55,6 +58,13 @@ export async function POST(request: NextRequest) {
     if (!validateEmail(email)) {
       return NextResponse.json(
         { error: 'Ongeldig e-mailadres' },
+        { status: 400 }
+      )
+    }
+
+    if (!/^[1-9]\d{3}\s?[A-Za-z]{2}$/.test(postcode.trim())) {
+      return NextResponse.json(
+        { error: 'Ongeldige postcode' },
         { status: 400 }
       )
     }
@@ -71,11 +81,19 @@ export async function POST(request: NextRequest) {
     const safeTelefoon = sanitizeHtml(telefoon.trim())
     const safeEmail = sanitizeHtml(email.trim().toLowerCase())
     const safeProbleem = sanitizeHtml(probleem.trim())
+    const safeAdres = sanitizeHtml(adres.trim())
+    const safePostcode = sanitizeHtml(postcode.trim().toUpperCase())
+    const safePlaats = sanitizeHtml(plaats.trim())
 
     const textNaam = sanitizeText(naam.trim())
     const textTelefoon = sanitizeText(telefoon.trim())
     const textEmail = sanitizeText(email.trim().toLowerCase())
     const textProbleem = sanitizeText(probleem.trim())
+    const textAdres = sanitizeText(adres.trim())
+    const textPostcode = sanitizeText(postcode.trim().toUpperCase())
+    const textPlaats = sanitizeText(plaats.trim())
+    const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' +
+      encodeURIComponent(`${textAdres}, ${textPostcode} ${textPlaats}`)
 
     // Create transporter
     const port = parseInt(process.env.SMTP_PORT || '587')
@@ -134,6 +152,13 @@ export async function POST(request: NextRequest) {
                     <div class="label">Email</div>
                     <div class="value"><a href="mailto:${safeEmail}" style="color: #2563eb;">${safeEmail}</a></div>
                   </div>
+                  <div class="field">
+                    <div class="label">Adres</div>
+                    <div class="value">
+                      ${safeAdres}, ${safePostcode} ${safePlaats}<br>
+                      <a href="${mapsUrl}" style="color: #2563eb; font-size: 14px;">Open in Google Maps</a>
+                    </div>
+                  </div>
                 </div>
 
                 <div class="info-box">
@@ -160,6 +185,7 @@ Nieuwe Hulpvraag
 Naam: ${textNaam}
 Telefoon: ${textTelefoon}
 Email: ${textEmail}
+Adres: ${textAdres}, ${textPostcode} ${textPlaats}
 
 Probleem:
 ${textProbleem}

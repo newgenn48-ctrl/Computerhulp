@@ -5,12 +5,15 @@ import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { BUSINESS } from '@/lib/constants'
 
-type Field = 'naam' | 'telefoon' | 'email' | 'probleem'
+type Field = 'naam' | 'telefoon' | 'email' | 'adres' | 'postcode' | 'plaats' | 'probleem'
 
 const validationRules: Record<Field, { required?: string; pattern?: [RegExp, string]; minLength?: [number, string] }> = {
   naam: { required: 'Naam is verplicht', minLength: [2, 'Naam moet minimaal 2 karakters bevatten'] },
   telefoon: { required: 'Telefoonnummer is verplicht', pattern: [/^[\d\s\-\+\(\)]{10,}$/, 'Voer een geldig telefoonnummer in'] },
   email: { required: 'E-mailadres is verplicht', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
+  adres: { required: 'Straat en huisnummer zijn verplicht', minLength: [4, 'Vul straat en huisnummer in'] },
+  postcode: { required: 'Postcode is verplicht', pattern: [/^[1-9]\d{3}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2511 CV)'] },
+  plaats: { required: 'Woonplaats is verplicht', minLength: [2, 'Vul uw woonplaats in'] },
   probleem: { required: 'Geef een korte beschrijving', minLength: [10, 'Geef iets meer uitleg'] },
 }
 
@@ -26,7 +29,7 @@ function validate(name: Field, value: string): string {
 
 export default function AfspraakForm() {
   const router = useRouter()
-  const [formData, setFormData] = useState({ naam: '', telefoon: '', email: '', probleem: '', website: '' })
+  const [formData, setFormData] = useState({ naam: '', telefoon: '', email: '', adres: '', postcode: '', plaats: '', probleem: '', website: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -194,6 +197,76 @@ export default function AfspraakForm() {
           />
           {touched.email && errors.email && <p id="email-error" role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>}
         </div>
+
+        <div>
+          <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer <span className="text-red-500" aria-hidden="true">*</span></label>
+          <input
+            type="text"
+            id="adres"
+            name="adres"
+            value={formData.adres}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+            aria-required="true"
+            autoComplete="street-address"
+            className={inputClass('adres')}
+            placeholder="Bijv. Stationsweg 12"
+            aria-invalid={touched.adres && errors.adres ? 'true' : 'false'}
+            aria-describedby={touched.adres && errors.adres ? 'adres-error' : undefined}
+            disabled={isSubmitting}
+          />
+          {touched.adres && errors.adres && <p id="adres-error" role="alert" className="mt-1 text-sm text-red-600">{errors.adres}</p>}
+        </div>
+
+        <div className="grid grid-cols-[8.5rem_1fr] gap-3">
+          <div>
+            <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode <span className="text-red-500" aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="postcode"
+              name="postcode"
+              value={formData.postcode}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+              aria-required="true"
+              autoComplete="postal-code"
+              spellCheck={false}
+              className={inputClass('postcode')}
+              placeholder="2511 CV"
+              aria-invalid={touched.postcode && errors.postcode ? 'true' : 'false'}
+              aria-describedby={touched.postcode && errors.postcode ? 'postcode-error' : undefined}
+              disabled={isSubmitting}
+            />
+          </div>
+          <div>
+            <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats <span className="text-red-500" aria-hidden="true">*</span></label>
+            <input
+              type="text"
+              id="plaats"
+              name="plaats"
+              value={formData.plaats}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+              aria-required="true"
+              autoComplete="address-level2"
+              className={inputClass('plaats')}
+              placeholder="Bijv. Den Haag"
+              aria-invalid={touched.plaats && errors.plaats ? 'true' : 'false'}
+              aria-describedby={touched.plaats && errors.plaats ? 'plaats-error' : undefined}
+              disabled={isSubmitting}
+            />
+          </div>
+        </div>
+        {/* Fouten van het postcode/plaats-paar onder de rij, zodat de kolommen niet verspringen */}
+        {((touched.postcode && errors.postcode) || (touched.plaats && errors.plaats)) && (
+          <div className="-mt-3">
+            {touched.postcode && errors.postcode && <p id="postcode-error" role="alert" className="text-sm text-red-600">{errors.postcode}</p>}
+            {touched.plaats && errors.plaats && <p id="plaats-error" role="alert" className="text-sm text-red-600">{errors.plaats}</p>}
+          </div>
+        )}
 
         <div>
           <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Beschrijving <span className="text-red-500" aria-hidden="true">*</span></label>
