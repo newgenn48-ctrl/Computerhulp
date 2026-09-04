@@ -33,36 +33,42 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: 'Hulpvraag succesvol verzonden!' }, { status: 200 })
     }
 
-    // Validatie - alle velden verplicht
-    if (!naam || !telefoon || !email || !adres || !postcode || !plaats || !probleem) {
+    // Validatie - alleen naam en telefoon verplicht; de rest is optioneel
+    if (!naam || !telefoon) {
       return NextResponse.json(
-        { error: 'Alle velden zijn verplicht' },
+        { error: 'Naam en telefoonnummer zijn verplicht' },
         { status: 400 }
       )
     }
 
+    const optEmail = typeof email === 'string' ? email.trim() : ''
+    const optAdres = typeof adres === 'string' ? adres.trim() : ''
+    const optPostcode = typeof postcode === 'string' ? postcode.trim() : ''
+    const optPlaats = typeof plaats === 'string' ? plaats.trim() : ''
+    const optProbleem = typeof probleem === 'string' ? probleem.trim() : ''
+
     // Validatie - Length limits
     if (!validateLength(naam, 100) ||
         !validateLength(telefoon, 20) ||
-        !validateLength(email, 254) ||
-        !validateLength(adres, 120) ||
-        !validateLength(postcode, 10) ||
-        !validateLength(plaats, 80) ||
-        !validateLength(probleem, 2000)) {
+        !validateLength(optEmail, 254) ||
+        !validateLength(optAdres, 120) ||
+        !validateLength(optPostcode, 10) ||
+        !validateLength(optPlaats, 80) ||
+        !validateLength(optProbleem, 2000)) {
       return NextResponse.json(
         { error: 'Een of meerdere velden zijn te lang' },
         { status: 400 }
       )
     }
 
-    if (!validateEmail(email)) {
+    if (optEmail && !validateEmail(optEmail)) {
       return NextResponse.json(
         { error: 'Ongeldig e-mailadres' },
         { status: 400 }
       )
     }
 
-    if (!/^[1-9]\d{3}\s?[A-Za-z]{2}$/.test(postcode.trim())) {
+    if (optPostcode && !/^[1-9]\d{3}\s?[A-Za-z]{2}$/.test(optPostcode)) {
       return NextResponse.json(
         { error: 'Ongeldige postcode' },
         { status: 400 }
@@ -79,21 +85,26 @@ export async function POST(request: NextRequest) {
     // Sanitize inputs
     const safeNaam = sanitizeHtml(naam.trim())
     const safeTelefoon = sanitizeHtml(telefoon.trim())
-    const safeEmail = sanitizeHtml(email.trim().toLowerCase())
-    const safeProbleem = sanitizeHtml(probleem.trim())
-    const safeAdres = sanitizeHtml(adres.trim())
-    const safePostcode = sanitizeHtml(postcode.trim().toUpperCase())
-    const safePlaats = sanitizeHtml(plaats.trim())
+    const NIET_INGEVULD = '(niet ingevuld)'
+    const safeEmail = optEmail ? sanitizeHtml(optEmail.toLowerCase()) : ''
+    const safeProbleem = optProbleem ? sanitizeHtml(optProbleem) : NIET_INGEVULD
+    const safeAdres = optAdres ? sanitizeHtml(optAdres) : ''
+    const safePostcode = optPostcode ? sanitizeHtml(optPostcode.toUpperCase()) : ''
+    const safePlaats = optPlaats ? sanitizeHtml(optPlaats) : ''
 
     const textNaam = sanitizeText(naam.trim())
     const textTelefoon = sanitizeText(telefoon.trim())
-    const textEmail = sanitizeText(email.trim().toLowerCase())
-    const textProbleem = sanitizeText(probleem.trim())
-    const textAdres = sanitizeText(adres.trim())
-    const textPostcode = sanitizeText(postcode.trim().toUpperCase())
-    const textPlaats = sanitizeText(plaats.trim())
-    const mapsUrl = 'https://www.google.com/maps/search/?api=1&query=' +
-      encodeURIComponent(`${textAdres}, ${textPostcode} ${textPlaats}`)
+    const textEmail = optEmail ? sanitizeText(optEmail.toLowerCase()) : NIET_INGEVULD
+    const textProbleem = optProbleem ? sanitizeText(optProbleem) : NIET_INGEVULD
+    const textAdres = optAdres ? sanitizeText(optAdres) : ''
+    const textPostcode = optPostcode ? sanitizeText(optPostcode.toUpperCase()) : ''
+    const textPlaats = optPlaats ? sanitizeText(optPlaats) : ''
+    const hasAdres = Boolean(textAdres || textPostcode || textPlaats)
+    const adresRegel = hasAdres ? `${textAdres}${textAdres && (textPostcode || textPlaats) ? ', ' : ''}${textPostcode} ${textPlaats}`.trim() : NIET_INGEVULD
+    const safeAdresRegel = hasAdres ? `${safeAdres}${safeAdres && (safePostcode || safePlaats) ? ', ' : ''}${safePostcode} ${safePlaats}`.trim() : NIET_INGEVULD
+    const mapsUrl = hasAdres
+      ? 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(adresRegel)
+      : ''
 
     // Create transporter
     const port = parseInt(process.env.SMTP_PORT || '587')
@@ -150,13 +161,12 @@ export async function POST(request: NextRequest) {
                   </div>
                   <div class="field">
                     <div class="label">Email</div>
-                    <div class="value"><a href="mailto:${safeEmail}" style="color: #2563eb;">${safeEmail}</a></div>
+                    <div class="value">${safeEmail ? `<a href="mailto:${safeEmail}" style="color: #2563eb;">${safeEmail}</a>` : NIET_INGEVULD}</div>
                   </div>
                   <div class="field">
                     <div class="label">Adres</div>
                     <div class="value">
-                      ${safeAdres}, ${safePostcode} ${safePlaats}<br>
-                      <a href="${mapsUrl}" style="color: #2563eb; font-size: 14px;">Open in Google Maps</a>
+                      ${safeAdresRegel}${mapsUrl ? `<br><a href="${mapsUrl}" style="color: #2563eb; font-size: 14px;">Open in Google Maps</a>` : ''}
                     </div>
                   </div>
                 </div>
@@ -168,7 +178,7 @@ export async function POST(request: NextRequest) {
 
                 <div class="action-buttons">
                   <a href="tel:${safeTelefoon}" class="button">Bel Klant</a>
-                  <a href="mailto:${safeEmail}" class="button" style="background: #3b82f6;">Stuur Email</a>
+                  ${safeEmail ? `<a href="mailto:${safeEmail}" class="button" style="background: #3b82f6;">Stuur Email</a>` : ''}
                 </div>
               </div>
               <div class="footer">
@@ -185,7 +195,7 @@ Nieuwe Hulpvraag
 Naam: ${textNaam}
 Telefoon: ${textTelefoon}
 Email: ${textEmail}
-Adres: ${textAdres}, ${textPostcode} ${textPlaats}
+Adres: ${adresRegel}
 
 Probleem:
 ${textProbleem}
@@ -280,9 +290,11 @@ KvK: ${BUSINESS.KVK}
       `,
     }
 
-    // Verstuur admin + klant-bevestiging
+    // Verstuur admin-mail; klant-bevestiging alleen als er een e-mailadres is opgegeven
     await transporter.sendMail(adminMailOptions)
-    await transporter.sendMail(customerMailOptions)
+    if (safeEmail) {
+      await transporter.sendMail(customerMailOptions)
+    }
 
     return NextResponse.json(
       { message: 'Hulpvraag succesvol verzonden!' },

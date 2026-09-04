@@ -3,18 +3,21 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
+import { LEAD_SENT_KEY } from '@/components/ConversionTracker'
 import { BUSINESS } from '@/lib/constants'
 
 type Field = 'naam' | 'telefoon' | 'email' | 'adres' | 'postcode' | 'plaats' | 'probleem'
 
 const validationRules: Record<Field, { required?: string; pattern?: [RegExp, string]; minLength?: [number, string] }> = {
+  // Alleen naam en telefoon zijn verplicht: de rest vragen we aan de telefoon.
+  // Optionele velden worden wel gecontroleerd zodra ze zijn ingevuld.
   naam: { required: 'Naam is verplicht', minLength: [2, 'Naam moet minimaal 2 karakters bevatten'] },
   telefoon: { required: 'Telefoonnummer is verplicht', pattern: [/^[\d\s\-\+\(\)]{10,}$/, 'Voer een geldig telefoonnummer in'] },
-  email: { required: 'E-mailadres is verplicht', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
-  adres: { required: 'Straat en huisnummer zijn verplicht', minLength: [4, 'Vul straat en huisnummer in'] },
-  postcode: { required: 'Postcode is verplicht', pattern: [/^[1-9]\d{3}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2511 CV)'] },
-  plaats: { required: 'Woonplaats is verplicht', minLength: [2, 'Vul uw woonplaats in'] },
-  probleem: { required: 'Geef een korte beschrijving', minLength: [10, 'Geef iets meer uitleg'] },
+  email: { pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
+  adres: {},
+  postcode: { pattern: [/^[1-9]\d{3}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2511 CV)'] },
+  plaats: {},
+  probleem: {},
 }
 
 function validate(name: Field, value: string): string {
@@ -34,6 +37,7 @@ export default function AfspraakForm() {
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
+  const [serverError, setServerError] = useState('')
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -96,8 +100,16 @@ export default function AfspraakForm() {
 
       if (response.ok) {
         setSubmitStatus('success')
+        try {
+          window.sessionStorage.setItem(LEAD_SENT_KEY, '1')
+        } catch {
+          // sessionStorage kan geblokkeerd zijn; dan telt de bedankpagina niets, liever te weinig dan dubbel
+        }
         router.push('/afspraak-bevestiging')
       } else {
+        // Toon de reden van de server (bijv. ongeldig telefoonnummer) in plaats van een algemene melding
+        const data = await response.json().catch(() => null)
+        setServerError(typeof data?.error === 'string' ? data.error : '')
         setSubmitStatus('error')
       }
     } catch {
@@ -121,7 +133,7 @@ export default function AfspraakForm() {
             <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
             <div>
               <h3 className="text-red-800 font-semibold">Er ging iets mis</h3>
-              <p className="text-red-700 mt-1">Probeer het opnieuw of bel ons direct op <a href={BUSINESS.PHONE_HREF} translate="no" className="font-bold underline whitespace-nowrap">{BUSINESS.PHONE}</a></p>
+              <p className="text-red-700 mt-1">{serverError ? `${serverError}. Of ` : 'Probeer het opnieuw of '}bel ons direct op <a href={BUSINESS.PHONE_HREF} translate="no" className="font-bold underline whitespace-nowrap">{BUSINESS.PHONE}</a></p>
             </div>
           </div>
         </div>
@@ -174,7 +186,7 @@ export default function AfspraakForm() {
 
         <div>
           <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
-            E-mail <span className="text-red-500" aria-hidden="true">*</span>
+            E-mail <span className="font-normal text-gray-500">(optioneel)</span>
           </label>
           <input
             type="email"
@@ -183,8 +195,6 @@ export default function AfspraakForm() {
             value={formData.email}
             onChange={handleChange}
             onBlur={handleBlur}
-            required
-            aria-required="true"
             autoComplete="email"
             inputMode="email"
             spellCheck={false}
@@ -199,7 +209,7 @@ export default function AfspraakForm() {
         </div>
 
         <div>
-          <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer <span className="text-red-500" aria-hidden="true">*</span></label>
+          <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer <span className="font-normal text-gray-500">(optioneel)</span></label>
           <input
             type="text"
             id="adres"
@@ -207,8 +217,6 @@ export default function AfspraakForm() {
             value={formData.adres}
             onChange={handleChange}
             onBlur={handleBlur}
-            required
-            aria-required="true"
             autoComplete="street-address"
             className={inputClass('adres')}
             placeholder="Bijv. Stationsweg 12"
@@ -221,7 +229,7 @@ export default function AfspraakForm() {
 
         <div className="grid grid-cols-[8.5rem_1fr] gap-3">
           <div>
-            <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode <span className="text-red-500" aria-hidden="true">*</span></label>
+            <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode <span className="font-normal text-gray-500">(optioneel)</span></label>
             <input
               type="text"
               id="postcode"
@@ -229,8 +237,6 @@ export default function AfspraakForm() {
               value={formData.postcode}
               onChange={handleChange}
               onBlur={handleBlur}
-              required
-              aria-required="true"
               autoComplete="postal-code"
               spellCheck={false}
               className={inputClass('postcode')}
@@ -241,7 +247,7 @@ export default function AfspraakForm() {
             />
           </div>
           <div>
-            <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats <span className="text-red-500" aria-hidden="true">*</span></label>
+            <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats <span className="font-normal text-gray-500">(optioneel)</span></label>
             <input
               type="text"
               id="plaats"
@@ -249,8 +255,6 @@ export default function AfspraakForm() {
               value={formData.plaats}
               onChange={handleChange}
               onBlur={handleBlur}
-              required
-              aria-required="true"
               autoComplete="address-level2"
               className={inputClass('plaats')}
               placeholder="Bijv. Den Haag"
@@ -269,7 +273,7 @@ export default function AfspraakForm() {
         )}
 
         <div>
-          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Beschrijving <span className="text-red-500" aria-hidden="true">*</span></label>
+          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Waar gaat het om? <span className="font-normal text-gray-500">(optioneel)</span></label>
           <textarea
             id="probleem"
             name="probleem"
