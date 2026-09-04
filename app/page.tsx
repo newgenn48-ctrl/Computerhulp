@@ -61,7 +61,7 @@ const faqItems = [
   },
   {
     q: 'Moet ik iets voorbereiden?',
-    a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele wachtwoorden alvast klaar. Verder nemen wij alles mee wat nodig is.',
+    a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele inloggegevens alvast klaar. Verder nemen wij alles mee wat nodig is.',
   },
 ]
 

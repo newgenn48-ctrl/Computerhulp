@@ -61,7 +61,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: '2 augustus 2026',
   },
   {
-    quote: 'Virus op mijn laptop en al mijn wachtwoorden kwijt. Alles hersteld én nu goed beveiligd.',
+    quote: 'Mijn laptop deed het niet meer en ik kon nergens meer bij. Alles rustig in orde gemaakt en duidelijk uitgelegd.',
     name: 'De heer Willem',
     initials: 'W',
     city: 'Alphen aan den Rijn',

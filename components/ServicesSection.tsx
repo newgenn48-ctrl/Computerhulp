@@ -13,9 +13,9 @@ export const services = [
     features: [
       'Nieuwe computer installeren en instellen',
       'Trage computer weer snel maken',
-      'Schadelijke software opruimen',
+      'Computer weer schoon en snel',
       'Programma\'s installeren en bijwerken',
-      'Windows, Mac en alle merken'
+      'Alle merken en systemen'
     ]
   },
   {
@@ -34,7 +34,7 @@ export const services = [
   },
   {
     title: 'E-mail',
-    description: 'E-mail werkt niet, instellen of beveiligen — wij lossen storingen op en helpen u op weg.',
+    description: 'E-mail werkt niet, instellen of op orde brengen — wij lossen storingen op en helpen u op weg.',
     icon: 'email',
     image: '/dienst-email.webp',
     imageAlt: 'Laptopscherm met een geopende e-mail',
@@ -43,7 +43,7 @@ export const services = [
       'E-mail instellen op computer of telefoon',
       'Outlook, Gmail en andere programma\'s',
       'Ongewenste mail stoppen',
-      'Wachtwoord herstellen'
+      'E-mail weer toegankelijk maken'
     ]
   },
   {
@@ -70,7 +70,7 @@ export const services = [
     features: [
       'Nieuwe tablet of telefoon instellen',
       'Apps installeren en instellen',
-      'Alle merken (Samsung, Apple, etc.)',
+      'Alle merken tablets en telefoons',
       'Foto\'s en contacten overzetten'
     ]
   },

@@ -318,7 +318,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: `Welke problemen lost computerhulp aan huis in ${city.name} op?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Wij lossen problemen op met computer, laptop, printer, wifi, smartphone, tablet, smart-tv, camera, e-mail en smart home bij u thuis in ${city.name}. Van trage computers en virusverwijdering tot printerinstallatie, wifi-optimalisatie en het instellen van een nieuwe smartphone of camera.`
+        text: `Wij lossen problemen op met computer, laptop, printer, wifi, smartphone, tablet, smart-tv, camera, e-mail en smart home bij u thuis in ${city.name}. Van trage computers en een computer die weer schoon en snel moet tot printerinstallatie, wifi-optimalisatie en het instellen van een nieuwe smartphone of camera.`
       }
     },
     {
@@ -508,7 +508,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     </p>
                   )}
                   <p>
-                    Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die niet verbinden na een Windows-update, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-specialisten dagelijks op.
+                    Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die na een update niet meer verbinden, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-specialisten dagelijks op.
                   </p>
                 </>
               ) : (
@@ -523,7 +523,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone of camera die ingesteld moet worden — wij zoeken het rustig uit en zorgen dat alles weer werkt.
                   </p>
                   <p>
-                    Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die niet verbinden na een Windows-update, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-specialisten dagelijks op.
+                    Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die na een update niet meer verbinden, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-specialisten dagelijks op.
                   </p>
                 </>
               )}
