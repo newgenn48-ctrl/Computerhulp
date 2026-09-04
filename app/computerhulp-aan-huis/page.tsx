@@ -150,11 +150,11 @@ export default function ComputerhulpAanHuisPage() {
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
+          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze HBO-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
         ]}
         pills={[
-          { icon: 'academic-cap', label: 'HBO-opgeleide IT-specialisten' },
-          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
+          { icon: 'money', label: `All-in vanaf ${PRICING.MINIMUM_ALL_IN}` },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />

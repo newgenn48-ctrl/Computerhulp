@@ -21,7 +21,9 @@ export default function FloatingButtons() {
           const windowHeight = window.innerHeight
           const documentHeight = document.documentElement.scrollHeight
 
-          const pastHero = scrollY > windowHeight * 0.5
+          // Eerder tonen: na een kwart scherm in plaats van een half, zodat de knop
+          // niet pas onder de vouw en achter de cookie-banner verschijnt
+          const pastHero = scrollY > windowHeight * 0.25
           const nearFooter = scrollY + windowHeight > documentHeight - 400
 
           setShow(pastHero && !nearFooter)
@@ -49,6 +51,11 @@ export default function FloatingButtons() {
         <button
           onClick={() => {
             const msg = encodeURIComponent('Hallo! Ik heb een vraag over computerhulp aan huis.')
+            // WhatsApp-klik meten als event (geen Ads-conversie: dat blijft bellen en formulier)
+            const w = window as Window & { gtag?: (...args: unknown[]) => void }
+            if (typeof w.gtag === 'function') {
+              w.gtag('event', 'whatsapp_click', { event_category: 'contact', transport_type: 'beacon' })
+            }
             window.open(`${BUSINESS.WHATSAPP_HREF}?text=${msg}`, '_blank', 'noopener,noreferrer')
           }}
           className="group floating-btn bg-[#25D366] hover:bg-[#128C7E] shadow-2xl"

@@ -49,8 +49,11 @@ export default function PricingSection({ background = 'soft' }: PricingSectionPr
                 </div>
               </dl>
 
-              <p className="mt-5 text-sm text-gray-600 leading-relaxed text-center">
-                U hoort altijd eerst wat het kost — dan pas beginnen we.
+              <p className="mt-5 text-base font-semibold text-gray-900 text-center">
+                Een bezoek kost dus vanaf {PRICING.MINIMUM_ALL_IN} all-in
+              </p>
+              <p className="mt-2 text-sm text-gray-600 leading-relaxed text-center">
+                {PRICING.MINIMUM_QUARTERS} kwartier plus voorrijkosten. U hoort altijd eerst wat het kost — dan pas beginnen we.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-3 mt-6">

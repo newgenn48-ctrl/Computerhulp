@@ -205,14 +205,18 @@ export default function LocatiesPage() {
                 <h3 className="text-2xl font-bold text-gray-900 mb-6 pb-2 border-b border-gray-200">{letter}</h3>
                 <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {groupedCities[letter].map(city => (
-                    <Link
-                      key={city.slug}
-                      href={`/computerhulp-aan-huis-${city.slug}`}
-                      className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group"
-                    >
-                      <Icon name="location-pin" className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors" strokeWidth={2} />
-                      <span className="text-gray-700 group-hover:text-blue-600 transition-colors">{city.name}</span>
-                    </Link>
+                    <div key={city.slug} className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group">
+                      <Icon name="location-pin" className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors flex-shrink-0" strokeWidth={2} />
+                      <span className="flex flex-col min-w-0">
+                        <Link href={`/computerhulp-aan-huis-${city.slug}`} className="text-gray-700 group-hover:text-blue-600 transition-colors">
+                          {city.name}
+                        </Link>
+                        {/* Ook de student-variant bereikbaar maken: die kreeg tot nu toe geen interne links */}
+                        <Link href={`/student-aan-huis-${city.slug}`} className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                          Student aan huis {city.name}
+                        </Link>
+                      </span>
+                    </div>
                   ))}
                 </div>
               </div>

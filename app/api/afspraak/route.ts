@@ -238,7 +238,7 @@ Neem zo snel mogelijk contact op!
                 <p style="font-size: 16px;">Beste ${safeNaam},</p>
 
                 <p style="font-size: 16px;">
-                  Bedankt voor uw hulpvraag. We nemen <strong>binnen enkele uren</strong> telefonisch contact met u op.
+                  Bedankt voor uw hulpvraag. We bellen u <strong>meestal binnen een uur</strong> (tussen ${HOURS.OPEN} en ${HOURS.CLOSE} uur).
                 </p>
 
                 <div class="info-box">
@@ -246,7 +246,7 @@ Neem zo snel mogelijk contact op!
                   <ul>
                     <li>We bellen u om uw probleem te bespreken</li>
                     <li>Samen plannen we een afspraak in</li>
-                    <li>Onze IT-student komt bij u thuis</li>
+                    <li>Onze HBO-student komt bij u thuis</li>
                   </ul>
                 </div>
 
@@ -272,12 +272,12 @@ Neem zo snel mogelijk contact op!
       text: `
 Beste ${textNaam},
 
-Bedankt voor uw hulpvraag. We nemen binnen enkele uren telefonisch contact met u op.
+Bedankt voor uw hulpvraag. We bellen u meestal binnen een uur (tussen ${HOURS.OPEN} en ${HOURS.CLOSE} uur).
 
 Wat gebeurt er nu?
 - We bellen u om uw probleem te bespreken
 - Samen plannen we een afspraak in
-- Onze IT-student komt bij u thuis
+- Onze HBO-student komt bij u thuis
 
 Spoed? Bel ons direct op ${BUSINESS.PHONE}
 We zijn bereikbaar van ${HOURS.LABEL}.

@@ -50,7 +50,7 @@ export default function AfspraakBevestigingPage() {
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                     <div>
                       <p className="font-semibold text-gray-900">Binnen 24 uur</p>
-                      <p className="text-gray-700">Onze IT-student komt bij u thuis om het probleem op te lossen</p>
+                      <p className="text-gray-700">Onze HBO-student komt bij u thuis en helpt u rustig verder</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
@@ -90,7 +90,7 @@ export default function AfspraakBevestigingPage() {
               <div className="border-t pt-6">
                 <h3 className="font-bold text-gray-900 mb-4">Wat u kunt verwachten</h3>
                 <div className="grid sm:grid-cols-2 gap-4">
-                  {[`${PRICING.TRAVEL} voorrijkosten`, `Transparant tarief ${PRICING.PER_QUARTER}/kwartier`, 'Ervaren IT-student', 'Oplossing ter plekke'].map((item, idx) => (
+                  {[`${PRICING.TRAVEL} voorrijkosten`, `Transparant tarief ${PRICING.PER_QUARTER}/kwartier`, 'HBO-student, uitleg in gewone taal', 'Meestal direct ter plekke geholpen'].map((item, idx) => (
                     <div key={idx} className="flex items-start gap-3">
                       <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
                       <p className="text-gray-700">{item}</p>
