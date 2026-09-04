@@ -25,7 +25,7 @@ const cityContentData: Record<string, CityContent> = {
     population: 120000,
     region: 'Drechtsteden',
     neighborhoods: ['Centrum', 'Krispijn', 'Dubbeldam', 'Sterrenburg', 'Stadspolders', 'Wielwijk', 'Reeland', 'De Staart', 'Oud-Krispijn', 'Nieuw-Krispijn'],
-    description: 'Dordrecht is de oudste stad van Holland en het kloppend hart van de Drechtsteden. Met ruim 120.000 inwoners biedt deze historische eilandstad een unieke mix van monumentale binnenstad, havens en moderne woonwijken omringd door water.',
+    description: 'Dordrecht is de oudste stad van Holland en ligt als een eiland tussen de rivieren. Achter de monumentale gevels van de binnenstad zitten woningen met dikke muren en smalle trappen, waar wifi het op de eerste verdieping al opgeeft. In Sterrenburg, Crabbehof en Wielwijk wonen veel mensen die er in de jaren zestig en zeventig kwamen en nu op leeftijd zijn; daar helpen we vaak met een tablet voor beeldbellen of een printer die na de overstap naar glasvezel niets meer doet. Dubbeldam en Stadspolders zijn ruimer opgezet, met eengezinswoningen waar de laptop op zolder ver van de router staat. Een HBO-student van ons komt bij u langs, doet het rustig aan en laat zien hoe alles werkt, zodat u het daarna zelf kunt. We zetten een nieuwe laptop compleet klaar, brengen e-mail over naar de nieuwe telefoon en helpen bij het activeren van de DigiD-app voor het Albert Schweitzer ziekenhuis of de gemeente. Dordrecht heeft een intercitystation en de Waterbus, dus vanuit Rotterdam zijn we er snel, ook \'s avonds en in het weekend.',
     highlights: ['Oudste stad van Holland', 'Grote Kerk', 'Dordts Museum', 'Biesbosch Nationaal Park']
   },
   'hendrik-ido-ambacht': {
@@ -69,35 +69,35 @@ const cityContentData: Record<string, CityContent> = {
     population: 655000,
     region: 'Rijnmond',
     neighborhoods: ['Centrum', 'Kralingen-Crooswijk', 'Delfshaven', 'Feijenoord', 'Noord', 'Hillegersberg-Schiebroek', 'Overschie', 'Prins Alexander', 'Charlois', 'IJsselmonde', 'Hoogvliet', 'Hoek van Holland'],
-    description: 'Rotterdam is de tweede stad van Nederland en heeft de grootste haven van Europa. Deze bruisende havenstad staat bekend om zijn spectaculaire skyline, vernieuwende architectuur en multiculturele karakter. Van de Erasmusbrug tot de Markthal — Rotterdam verrast altijd.',
+    description: 'Rotterdam is een stad van hoogbouw, havens en wijken die elk hun eigen gezicht hebben. In Ommoord en de rest van Prins Alexander staan de bekende hoge flats uit de jaren zeventig, waar veel bewoners al tientallen jaren wonen en waar wifi soms de keuken wel haalt maar het balkon niet. In Hillegersberg-Schiebroek en Kralingen zien we grote huizen met meerdere verdiepingen, waar één router zelden genoeg is. Op Zuid, in IJsselmonde, Charlois en Hoogvliet, helpen we regelmatig mensen die voor het eerst een tablet hebben gekregen en willen beeldbellen met de kinderen in een andere stad. Een HBO-student uit ons team komt gewoon bij u thuis, neemt de tijd en legt uit wat hij doet. Denk aan een printer die na een verhuizing niet meer meewerkt, e-mail die op de nieuwe telefoon moet worden ingesteld, of de DigiD-app die u nodig heeft voor de zorgverzekeraar of de gemeente. Dankzij de metro, de tram en een goede fiets zijn we in alle stadsdelen snel ter plaatse, van Overschie tot Hoek van Holland, en meestal binnen 24 uur.',
     highlights: ['Erasmusbrug', 'Markthal', 'Euromast', 'Havens van Rotterdam', 'Kubuswoningen']
   },
   'schiedam': {
     population: 80000,
     region: 'Rijnmond',
     neighborhoods: ['Centrum', 'Oost', 'West', 'Zuid', 'Nieuwland', 'Groenoord', 'Kethel', 'Woudhoek', 'Spaland'],
-    description: 'Schiedam is de jeneverstad van Nederland, met de hoogste windmolens ter wereld en een prachtige historische binnenstad vol grachten. Direct naast Rotterdam gelegen, combineert Schiedam stedelijke voorzieningen met eigen karakter.',
+    description: 'Schiedam is de jeneverstad met de hoogste molens ter wereld, maar achter dat historische centrum ligt een stad van heel verschillende wijken. Groenoord is in de jaren zestig en zeventig volgebouwd met hoge flats, en veel bewoners wonen daar nog altijd; het beton houdt het wifi-signaal tegen en de tablet valt op het balkon steeds uit. In Nieuwland is veel vernieuwd, in Kethel, Woudhoek en Spaland staan ruime eengezinswoningen waar de laptop op zolder de router beneden niet vindt. Onze HBO-student komt gewoon bij u aan huis en neemt de tijd. Vragen die we in Schiedam veel horen: de nieuwe telefoon overnemen van de oude, inclusief e-mail en foto\'s, een printer die na een nieuw modem van de provider zwijgt, en een tablet klaarmaken voor beeldbellen met de kinderen die in de regio of verder weg wonen. Ook helpen we met de DigiD-app voor het Franciscus Vlietland ziekenhuis en met bankieren op de telefoon. Schiedam is via metro, tram en station uitstekend bereikbaar, dus we zijn er meestal binnen 24 uur, ook \'s avonds en in het weekend.',
     highlights: ['Hoogste windmolens ter wereld', 'Jenevermuseum', 'Historische grachten', 'Stadskantoor']
   },
   'vlaardingen': {
     population: 73000,
     region: 'Rijnmond',
     neighborhoods: ['Centrum', 'Holy', 'Westwijk', 'Vlaardinger Ambacht', 'Babberspolder', 'VOP', 'Oostwijk', 'Rivierzone'],
-    description: 'Vlaardingen is een voormalige haringstad aan de Nieuwe Waterweg met een rijke visserijgeschiedenis. De stad ondergaat een grote transformatie met de herontwikkeling van het Rivierzone-gebied en biedt betaalbaar wonen nabij Rotterdam.',
+    description: 'Vlaardingen was ooit een haringstad en is nu een woonstad aan de Nieuwe Waterweg met een sterk vergrijzende bevolking, vooral in Holy. Holy-Noord en Holy-Zuid zijn in de jaren zestig en zeventig gebouwd, met flats en rijtjeshuizen waar veel bewoners inmiddels tachtig zijn en toch graag zelf hun bankzaken en de zorgverzekering online regelen. In de Westwijk en de Babberspolder zien we galerijflats waar het wifi-signaal na twee muren op is. Het centrum en de Oostwijk hebben oudere panden met smalle trappen. Onze HBO-student komt bij u thuis, bekijkt waar de router staat en zorgt dat u in de hele woning kunt internetten. Ook helpen we bij een nieuwe laptop die ingesteld moet worden, een printer die niet meer met de laptop wil, e-mail die op de telefoon moet en de DigiD-app die u nodig heeft voor de huisarts of MijnOverheid. Beeldbellen met de kleinkinderen leren we u stap voor stap. Sinds de Hoekse Lijn metro is geworden, zijn we vanuit Rotterdam snel bij u, ook \'s avonds en in het weekend, meestal binnen 24 uur.',
     highlights: ['Visserijmuseum', 'Oude Haven', 'Rivierzone herontwikkeling', 'Broekpolder recreatiegebied']
   },
   'maassluis': {
     population: 33000,
     region: 'Rijnmond',
     neighborhoods: ['Centrum', 'Sluispolder', 'Kapelpolder', 'Koningshoek', 'Steendijkpolder', 'Wilgenrijk'],
-    description: 'Maassluis is een gezellige havenstad aan de Nieuwe Waterweg, bekend van de sleepboten en de jaarlijkse intocht van Sinterklaas. Met de nieuwe wijk Wilgenrijk groeit de stad, terwijl het historische centrum zijn charme behoudt.',
+    description: 'Maassluis is een havenstadje aan de Nieuwe Waterweg dat bekend is van de sleepboten en de landelijke Sinterklaasintocht. De bevolking is relatief grijs: in de Sluispolder en de Kapelpolder wonen veel mensen die er in de jaren zestig en zeventig kwamen en nu tachtig zijn, vaak in een flat waar het wifi-signaal aan de galerijkant sterk is en aan de balkonkant wegvalt. In Koningshoek en de Steendijkpolder staan eengezinswoningen, en in Wilgenrijk nieuwe huizen vol slimme apparaten. Onze HBO-student komt bij u thuis, kijkt rustig mee en zorgt dat de tablet, de laptop en de printer weer met elkaar praten. Veelgevraagd in Maassluis: beeldbellen met de kleinkinderen leren, de printer die na een nieuw modem niets meer afdrukt, een nieuwe telefoon overnemen met e-mail en foto\'s, en de DigiD-app voor de zorgverzekeraar of het pensioenfonds. We komen ook langs in de seniorenappartementen rond het centrum en de haven. Sinds de Hoekse Lijn metro is geworden, met haltes Maassluis West, Centrum en Steendijkpolder, zijn we er snel, ook \'s avonds en in het weekend.',
     highlights: ['Nationaal Sleepvaart Museum', 'Sinterklaasintocht (landelijk)', 'Stadshart aan de haven']
   },
   'capelle-aan-den-ijssel': {
     population: 67000,
     region: 'Rijnmond',
     neighborhoods: ['Schollevaar', 'Schenkel', 'Fascinatio', 'Capelle-West', 'Middelwatering', 'Oostgaarde', '\'s-Gravenland'],
-    description: 'Capelle aan den IJssel is een stad direct ten oosten van Rotterdam, gelegen aan de Hollandse IJssel. Bekend om het moderne bedrijventerrein Rivium en de diverse woonwijken, biedt Capelle stedelijk gemak met veel groen en water.',
+    description: 'Capelle aan den IJssel ligt direct tegen Rotterdam aan, maar voelt door het vele groen en water als een eigen stad. Middelwatering en Oostgaarde zijn in de jaren zeventig gebouwd, met flats en rijtjeshuizen waar de bewoners van toen nu gepensioneerd zijn en graag zelf bijblijven. In Schollevaar, gebouwd in de jaren tachtig rond het Schollebos, zien we ruime eengezinswoningen waar één router niet genoeg is voor de zolder en de tuin. Fascinatio en \'s-Gravenland zijn nieuwer, met woningen vol apparaten die allemaal op hetzelfde netwerk willen. Onze HBO-student komt gewoon bij u aan huis en helpt bij wat u nodig heeft: een nieuwe laptop klaarzetten en de oude foto\'s overzetten, een printer die niet meer met de tablet wil, of e-mail die op de nieuwe telefoon moet. Beeldbellen met de kleinkinderen oefenen we samen tot het lukt, en de DigiD-app zetten we klaar voor het IJsselland Ziekenhuis en de zorgverzekeraar. Met metrostations als Capelsebrug, Slotlaan en De Terp zijn we overal in Capelle snel, meestal binnen 24 uur en ook \'s avonds en in het weekend.',
     highlights: ['Bedrijvenpark Rivium', 'Schollebos park', 'Hollandse IJssel waterfront']
   },
   'krimpen-aan-den-ijssel': {
@@ -111,14 +111,14 @@ const cityContentData: Record<string, CityContent> = {
     population: 47000,
     region: 'Rijnmond',
     neighborhoods: ['Centrum', 'Drievliet', 'Ridderkerk-West', 'Slikkerveer', 'Bolnes', 'Oostendam', 'Rijsoord'],
-    description: 'Ridderkerk is een groene gemeente op het eiland IJsselmonde, centraal gelegen tussen Rotterdam en Dordrecht. Met wijken als Bolnes en Slikkerveer langs het water biedt Ridderkerk een rustige woonomgeving met uitstekende bereikbaarheid.',
+    description: 'Ridderkerk ligt op het eiland IJsselmonde, tussen Rotterdam en Dordrecht, en is een van de grijzere gemeenten van de regio: ruim een op de vijf inwoners is 65 jaar of ouder. In Drievliet en Ridderkerk-West wonen veel mensen die er in de jaren zeventig kwamen en nu zelfstandig willen blijven, met een tablet voor beeldbellen en een laptop voor de bankzaken. Slikkerveer en Bolnes liggen langs het water, met oudere huizen en dikke muren waar het wifi-signaal snel wegzakt. In Rijsoord en Oostendam is het dorps, met vrijstaande woningen waar één router de bovenverdieping niet haalt. Onze HBO-student komt bij u thuis en zet het rustig recht: de printer die na een nieuw modem van de provider niets meer afdrukt, e-mail die op de nieuwe telefoon moet, foto\'s van de kleinkinderen die op de tablet moeten komen, of de DigiD-app voor het Maasstad Ziekenhuis en de gemeente. We leggen alles uit in gewone woorden. Via de A15 en A16 en de Waterbus bij De Schans zijn we er snel, meestal binnen 24 uur, ook \'s avonds en in het weekend.',
     highlights: ['Eiland IJsselmonde', 'Watersportmogelijkheden', 'Knooppunt A15/A16']
   },
   'barendrecht': {
     population: 49000,
     region: 'Rijnmond',
     neighborhoods: ['Centrum', 'Carnisselande', 'Buitenoord', 'Vrijenburg', 'Molenvliet', 'Riederhoek', 'De Stee'],
-    description: 'Barendrecht is een welvarende forensengemeente ten zuiden van Rotterdam, bekend om de grote veiling BGB en de Heinenoordtunnel. De moderne wijk Carnisselande en het gezellige oude dorpscentrum maken Barendrecht een populaire woonplaats.',
+    description: 'Barendrecht bestaat uit twee heel verschillende delen: het oude dorp rond de Dorpsstraat en de grote nieuwbouwwijk Carnisselande uit de jaren negentig en daarna. In het oude dorp, met wijken als Buitenoord, Molenvliet en Vrijenburg, wonen veel mensen die er al decennia zijn en die de kinderen naar Carnisselande of verder zagen vertrekken. Beeldbellen op de tablet is daarom populair, net als foto\'s delen met de familie. In Carnisselande staan ruime huizen met meerdere verdiepingen, waar het wifi-signaal uit de meterkast de werkkamer boven niet haalt. Onze HBO-student komt bij u thuis en kijkt hoe uw apparaten met elkaar samenwerken: een nieuwe laptop instellen, de printer die na een nieuw modem van de provider niet meer wil, e-mail op de telefoon zetten of de DigiD-app activeren voor de apotheek en de gemeente. We leggen alles uit in gewone woorden en schrijven de belangrijkste stappen voor u op. Barendrecht heeft een station en tram 25 naar Carnisselande, en de A15 en A29 liggen om de hoek, dus we zijn er meestal binnen 24 uur.',
     highlights: ['Fruit- en groenteveiling', 'Barendrechtse Brug', 'Winkelcentrum Carnisse Veste']
   },
   'albrandswaard': {
@@ -155,21 +155,21 @@ const cityContentData: Record<string, CityContent> = {
     population: 550000,
     region: 'Haaglanden',
     neighborhoods: ['Centrum', 'Scheveningen', 'Loosduinen', 'Laak', 'Segbroek', 'Escamp', 'Leyenburg', 'Benoordenhout', 'Bezuidenhout', 'Haagse Hout', 'Leidschenveen-Ypenburg', 'Mariahoeve'],
-    description: 'Den Haag is de residentiestad van Nederland, zetel van de regering en het Internationaal Gerechtshof. Met de mondaine kust van Scheveningen, het Binnenhof en een bruisend cultureel leven is Den Haag een unieke stad waar politiek, cultuur en strand samenkomen.',
+    description: 'Den Haag is de stad van regering, strand en statige lanen, met stadsdelen die onderling sterk verschillen. In Benoordenhout, Haagse Hout en Loosduinen wonen relatief veel ouderen, vaak in ruime appartementen of in een portiekflat waar het wifi-signaal aan de achterkant van de woning niet altijd sterk genoeg is. In Escamp en Mariahoeve staan veel flats uit de jaren zestig en zeventig, met dikke muren die het draadloze netwerk flink afzwakken. Een HBO-student uit ons team komt bij u langs, bekijkt waar de router staat en zorgt dat u ook in de slaapkamer gewoon kunt internetten. Andere vragen die we in Den Haag vaak horen: een nieuwe laptop uit de doos halen en netjes klaarzetten, de printer die na een verhuizing binnen de stad niet meer met de laptop wil praten, of de DigiD-app installeren zodat u zaken met de gemeente en de zorgverzekeraar vanuit uw stoel kunt regelen. Ook helpen we graag met beeldbellen op de tablet, zodat u de kleinkinderen in Scheveningen of ver daarbuiten ziet opgroeien. Met de tram, RandstadRail en de fiets zijn we overal in de stad snel, en we komen ook \'s avonds en in het weekend.',
     highlights: ['Binnenhof', 'Vredespaleis', 'Scheveningen strand', 'Mauritshuis', 'Madurodam']
   },
   'delft': {
     population: 104000,
     region: 'Haaglanden',
     neighborhoods: ['Centrum', 'Wippolder', 'Voorhof', 'Buitenhof', 'TU-wijk', 'Tanthof', 'Vrijenban', 'Hof van Delft'],
-    description: 'Delft is wereldberoemd om het Delfts Blauw aardewerk en de historische banden met het Koninklijk Huis. De stad is ook thuisbasis van de Technische Universiteit Delft en combineert eeuwenoude grachten met innovatieve technologie.',
+    description: 'Delft is een stad waar oude grachten en nieuwe techniek naast elkaar bestaan, en dat zien we terug in de huizen waar we komen. In de binnenstad zijn de woningen smal en hoog, met dikke muren die het wifi-signaal tegenhouden voordat het de bovenverdieping bereikt. In Voorhof en Buitenhof staan veel galerijflats uit de jaren zestig, waar bewoners van het eerste uur nu vaak alleen wonen en graag iemand aan tafel hebben die de tijd neemt. In Tanthof en Hof van Delft zien we meer eengezinswoningen, waar de laptop op zolder en de printer beneden elkaar niet kunnen vinden. Onze HBO-studenten helpen graag met een tablet voor het beeldbellen, het instellen van e-mail op de telefoon of de DigiD-app voor de apotheek en de gemeente. Ook een nieuwe laptop uit de doos halen en alle oude foto\'s en documenten overzetten doen we samen met u, stap voor stap, in gewone woorden. Delft is compact en goed bereikbaar met tram 1 en 19, dus de student is meestal binnen 24 uur bij u, ook \'s avonds en in het weekend.',
     highlights: ['Delfts Blauw aardewerk', 'TU Delft campus', 'Nieuwe Kerk (Koninklijke grafkelder)', 'Vermeer Centrum']
   },
   'rijswijk': {
     population: 55000,
     region: 'Haaglanden',
-    neighborhoods: ['Centrum', 'Bomenbuurt', 'Muziekbuurt', 'Stationskwartier', 'Plaspoelpolder', 'Te Werve', 'Oud Rijswijk'],
-    description: 'Rijswijk ligt centraal tussen Den Haag en Delft en is bekend van de Vrede van Rijswijk. Met het vernieuwde Stationskwartier, veel internationale bedrijven en een mix van stadse en dorpse wijken is Rijswijk een veelzijdige gemeente.',
+    neighborhoods: ['Centrum', 'Bomenbuurt', 'Muziekbuurt', 'Stationskwartier', 'Plaspoelpolder', 'Te Werve', 'Oud Rijswijk', 'Steenvoorde', 'RijswijkBuiten'],
+    description: 'Rijswijk ligt ingeklemd tussen Den Haag en Delft en is een van de meer vergrijsde gemeenten van de regio. Langs de Generaal Spoorlaan en in Steenvoorde en Te Werve staan veel flats en seniorenappartementen uit de jaren zestig, waar bewoners al lang wonen en vaak zelfstandig hun zaken willen blijven regelen. In Oud Rijswijk zien we juist oude, smalle huizen rond de Herenstraat, waar de router beneden staat en het signaal boven wegvalt. In de nieuwe wijk RijswijkBuiten wonen gezinnen die willen dat de laptop, de printer en de tablet gewoon met elkaar praten. Onze HBO-student komt bij u thuis en helpt bij wat u nodig heeft: een nieuwe laptop uit de doos en klaarzetten, de printer die na een verhuizing binnen Rijswijk niet meer meewerkt, of e-mail die op de nieuwe telefoon moet komen. Beeldbellen met de kleinkinderen leggen we rustig uit, en de DigiD-app zetten we samen aan voor de zorgverzekeraar en MijnOverheid. Met tram 1 en 17 en station Rijswijk zijn we er snel, ook \'s avonds en in het weekend.',
     highlights: ['Vrede van Rijswijk (1697)', 'In de Bogaard winkelcentrum', 'Plaspoelpolder bedrijvengebied']
   },
   'leidschendam-voorburg': {
@@ -211,7 +211,7 @@ const cityContentData: Record<string, CityContent> = {
     population: 127000,
     region: 'Haaglanden',
     neighborhoods: ['Centrum', 'Meerzicht', 'Buytenwegh', 'Seghwaert', 'Stadshart', 'Rokkeveen', 'Oosterheem', 'Palenstein', 'Driemanspolder'],
-    description: 'Zoetermeer is in vijftig jaar uitgegroeid van dorp tot de derde stad van Zuid-Holland. Met het moderne Stadshart, SnowWorld en directe RandstadRail naar Den Haag biedt Zoetermeer een jong en dynamisch woonklimaat.',
+    description: 'Zoetermeer groeide in vijftig jaar van een dorp aan de Dorpsstraat uit tot de derde stad van Zuid-Holland. De mensen die in de jaren zeventig als jong gezin in Meerzicht, Buytenwegh of Seghwaert kwamen wonen, zijn nu gepensioneerd, en daardoor zien we hier veel vragen van senioren die de digitale wereld willen bijhouden zonder iemand lastig te vallen. In de flats van Palenstein en Meerzicht zorgt betonbouw ervoor dat wifi niet verder komt dan de woonkamer. In Rokkeveen en Oosterheem gaat het vaker om een groot huis met een werkkamer op zolder waar de laptop het niet doet. Onze HBO-student komt langs, kijkt mee en lost het ter plekke op. Veel Zoetermeerders vragen ons om de tablet in te richten voor beeldbellen met de kinderen, de printer weer aan de praat te krijgen, e-mail op de telefoon te zetten of de DigiD-app te installeren voor MijnOverheid en de zorgverzekeraar. Met RandstadRail 3 en 4 en de A12 zijn we vanuit Den Haag en Leiden snel bij u, ook \'s avonds en in het weekend.',
     highlights: ['SnowWorld indoor skihal', 'Stadshart winkelcentrum', 'RandstadRail naar Den Haag', 'Buytenpark recreatie']
   },
 
@@ -220,21 +220,21 @@ const cityContentData: Record<string, CityContent> = {
     population: 126000,
     region: 'Holland Rijnland',
     neighborhoods: ['Centrum', 'Leiden-Noord', 'Merenwijk', 'Stevenshof', 'Roomburg', 'De Kooi', 'Pancras-West', 'Mors', 'Professorenwijk', 'Zuidwest'],
-    description: 'Leiden is de oudste universiteitsstad van Nederland, geboorteplaats van Rembrandt en thuisbasis van het LUMC. De stad combineert een monumentale binnenstad vol grachten met een levendig studentenleven en wetenschappelijke innovatie.',
+    description: 'Leiden is een universiteitsstad met een binnenstad vol grachten, hofjes en smalle straten. In die oude panden zijn de muren dik en zit de router vaak beneden bij de voordeur, terwijl u boven wilt lezen op de tablet. In de Merenwijk, gebouwd in de jaren zeventig, wonen veel mensen van het eerste uur die nu met pensioen zijn en graag bijblijven. In de Stevenshof en Roomburg zien we jongere gezinnen naast oudere bewoners, en in de Professorenwijk en Burgemeesterswijk grote huizen waar één wifipunt niet genoeg is. Onze HBO-studenten kennen de stad goed en fietsen overal naartoe. Ze helpen bijvoorbeeld met een nieuwe laptop die ingesteld moet worden, foto\'s van de oude computer overzetten, een printer die weigert na een nieuw modem, of de DigiD-app voor het LUMC en MijnOverheid. Beeldbellen met de kleinkinderen leren we u stap voor stap, en we schrijven de stappen op zodat u ze later kunt nalezen. De student is meestal binnen 24 uur bij u, ook \'s avonds en in het weekend.',
     highlights: ['Universiteit Leiden (1575)', 'Rijksmuseum van Oudheden', 'Naturalis', 'Rembrandt geboorteplaats', 'Hortus Botanicus']
   },
   'leiderdorp': {
     population: 27500,
     region: 'Holland Rijnland',
-    neighborhoods: ['Centrum', 'Elisabethhof', 'Plantage', 'Ouderzorg', 'Voorhof', 'De Bloemerd', 'Buitenhof'],
-    description: 'Leiderdorp grenst direct aan Leiden en biedt een rustige, groene woonomgeving met uitstekende bereikbaarheid. Het winkelcentrum Winkelhof en de nabijheid van het Bio Science Park maken Leiderdorp een populaire woonplaats in de Leidse regio.',
-    highlights: ['Winkelcentrum Winkelhof', 'Leidse Hout park', 'Bio Science Park nabijheid', 'DoeMere recreatieplas']
+    neighborhoods: ['Centrum', 'Elisabethhof', 'Ouderzorg', 'Voorhof', 'Buitenhof', 'Binnenhof', 'Zijlkwartier', 'Kerkwijk', 'Leyhof'],
+    description: 'Leiderdorp grenst direct aan Leiden, maar heeft een eigen dorps karakter met de Winkelhof als middelpunt en het Alrijne ziekenhuis om de hoek. Wijken als Ouderzorg, Voorhof en Buitenhof zijn in de jaren zestig en zeventig gebouwd en hier wonen veel mensen die er sinds het begin zijn; zij willen graag zelf hun zaken met de zorgverzekeraar en de gemeente online regelen. In Elisabethhof en de Leyhof staan nieuwere gezinswoningen waar meerdere laptops, telefoons en een printer op hetzelfde netwerk moeten werken. Onze HBO-student komt bij u thuis en kijkt naar de hele situatie: waar staat de router, waarom valt de tablet in de slaapkamer uit, en waarom drukt de printer wel vanaf de laptop maar niet vanaf de telefoon. Ook een nieuwe laptop uit de doos halen en de oude documenten overzetten, e-mail op de telefoon zetten, beeldbellen met de kleinkinderen uitleggen en de DigiD-app activeren voor het ziekenhuisportaal doen we rustig samen. Leiderdorp ligt aan de A4 en is vanaf Leiden Centraal met de bus zo bereikt, dus we zijn er meestal binnen 24 uur, ook \'s avonds en in het weekend.',
+    highlights: ['Winkelcentrum Winkelhof', 'Alrijne Ziekenhuis Leiderdorp', 'Park De Houtkamp', 'Bio Science Park nabijheid'],
   },
   'oegstgeest': {
     population: 24500,
     region: 'Holland Rijnland',
     neighborhoods: ['Centrum', 'Poelgeest', 'Haaswijk', 'Morsebel', 'Nieuw-Rhijngeest', 'Endegeest'],
-    description: 'Oegstgeest is een groen en welgesteld dorp naast Leiden, met historische landgoederen en een dorps karakter. De gemeente biedt rust en ruimte op loopafstand van de Leidse binnenstad, universiteit en het Bio Science Park.',
+    description: 'Oegstgeest is een groen, welvarend dorp tegen Leiden aan, met landgoederen, brede lanen en relatief veel oudere inwoners die hier al lang wonen. In Haaswijk en Morsebel staan ruime eengezinswoningen uit de jaren zeventig en tachtig, in Poelgeest en Nieuw-Rhijngeest nieuwere huizen en appartementen, en rond de Terweeweg en het oude dorp vrijstaande villa\'s met dikke muren en meerdere verdiepingen. Daar komt het wifi-signaal van de router in de hal zelden op de bovenste etage. Onze HBO-student komt langs, plaatst waar nodig een extra punt en laat u zien dat de tablet daarna in de tuin ook werkt. Veel Oegstgeestenaren vragen ons om te helpen met beeldbellen met kinderen die in het buitenland wonen, met een nieuwe laptop die klaargezet moet worden, met een printer die na een update niet meer met de laptop wil, of met e-mail op de nieuwe telefoon. Ook de DigiD-app voor het LUMC en MijnOverheid stellen we samen rustig in. Oegstgeest ligt aan de A44 en op fietsafstand van Leiden Centraal, dus we zijn er meestal binnen 24 uur.',
     highlights: ['Landgoed Endegeest', 'Poelgeest kasteel', 'Rijn- en Schiekanaal', 'Groene villawijken']
   },
   'voorschoten': {
@@ -263,8 +263,8 @@ const cityContentData: Record<string, CityContent> = {
   'noordwijk': {
     population: 43000,
     region: 'Bollenstreek',
-    neighborhoods: ['Noordwijk aan Zee', 'Noordwijk-Binnen', 'De Grent', 'Boechorst', 'Offem', 'Zeewijk'],
-    description: 'Noordwijk is de badplaats van de Bollenstreek, bekend om het brede zandstrand, de Space Expo en de kleurrijke bollenvelden in het voorjaar. Als congress- en badplaats trekt Noordwijk jaarrond bezoekers en biedt het een uniek kust-woonklimaat.',
+    neighborhoods: ['Noordwijk aan Zee', 'Noordwijk-Binnen', 'Noordwijkerhout', 'De Zilk', 'Boechorst', 'Offem', 'Zeewijk'],
+    description: 'Noordwijk is een badplaats met een hoog aandeel senioren, en dat merken we: veel mensen zijn hier na hun werkzame leven aan zee komen wonen. In Noordwijk aan Zee staan appartementen met zicht op de boulevard, waar de zeewind heerlijk is maar de betonnen vloeren het wifi-signaal tussen de kamers tegenhouden. In Noordwijk-Binnen, Boechorst en Offem zien we ruime huizen met een tuin, waar de laptop boven de router beneden niet vindt. Sinds de fusie horen ook Noordwijkerhout en De Zilk bij de gemeente, met dorpse straten en veel eigen woningen. Onze HBO-student komt bij u thuis en helpt bij wat er speelt: een tablet inrichten om te beeldbellen met de kleinkinderen die verderop in het land wonen, een printer die na jaren ineens weigert, foto\'s van het strand van de telefoon naar de laptop zetten, of e-mail op de nieuwe telefoon. Voor de DigiD-app, het zorgportaal van de huisarts en bankieren op de telefoon nemen we ruim de tijd. Noordwijk ligt aan de N206 dicht bij Leiden, dus we zijn er meestal binnen 24 uur.',
     highlights: ['Noordwijk aan Zee strand', 'Space Expo (ESA)', 'Bollenvelden', 'Vuurtoren']
   },
   'katwijk': {
@@ -278,14 +278,14 @@ const cityContentData: Record<string, CityContent> = {
     population: 22000,
     region: 'Bollenstreek',
     neighborhoods: ['Centrum', 'Elsbroek', 'Hillegom-Zuid', 'Pastoorslaan-buurt', 'Meer en Duin', 'De Zanderij'],
-    description: 'Hillegom is een bloemenbol-gemeente in het hart van de Bollenstreek, gelegen tussen Haarlem en Leiden. In het voorjaar kleuren de velden rond Hillegom in alle tinten, terwijl het dorpscentrum een gezellige winkelstraat biedt.',
+    description: 'Hillegom is een bollendorp tussen Haarlem en Leiden, met een gezellige Hoofdstraat en in het voorjaar velden vol kleur. Veel Hillegommers wonen al hun hele leven in het dorp, in wijken als Elsbroek, Treslong en Hillegom-Zuid, en zien de kinderen en kleinkinderen in Haarlem, Leiden of ver daarbuiten. Beeldbellen op de tablet is hier dan ook een veelgehoorde wens, en wij leren het u geduldig. De woningen in Hillegom zijn vaak ruime eengezinshuizen met een diepe tuin, waar de router vooraan in de gang staat en het signaal in de tuinkamer verdwijnt. Onze HBO-student kijkt mee, plaatst zo nodig een versterker en test of de tablet daarna overal werkt. Andere vragen die we vaak krijgen: een nieuwe laptop uit de doos en klaarzetten, een printer die na de overstap naar een andere provider niet meer afdrukt, e-mail die op de nieuwe telefoon moet en de DigiD-app voor de huisarts of de belastingaangifte. Hillegom heeft een eigen station aan de lijn Leiden-Haarlem en ligt aan de N208, dus we zijn er meestal binnen 24 uur, ook \'s avonds en in het weekend.',
     highlights: ['Bollenvelden in voorjaar', 'Keukenhof nabijheid', 'Vogelenzang bosgebied', 'Treslong landgoed']
   },
   'lisse': {
     population: 23000,
     region: 'Bollenstreek',
-    neighborhoods: ['Centrum', 'Poelpolder', 'Meer en Dorp', 'Heereweg-gebied', 'Waterbolk', 'Lisserbroek'],
-    description: 'Lisse is de thuisbasis van de wereldberoemde Keukenhof en het kloppend hart van de Nederlandse bloembollenteelt. Elk voorjaar is Lisse het middelpunt van de bollentijd met miljoenen bezoekers uit de hele wereld.',
+    neighborhoods: ['Centrum', 'Poelpolder', 'Meerenburgh', 'Heereweg-gebied', 'Dever-Zuid', 'Geestwater'],
+    description: 'Lisse is het dorp van de Keukenhof en de bollenvelden, met in het voorjaar drukte en de rest van het jaar dorpse rust. In wijken als de Poelpolder en rond de Heereweg wonen veel mensen die hier al hun hele leven zijn en nu hun kinderen en kleinkinderen elders in het land hebben. Beeldbellen op de tablet is daarom een van de meest gevraagde dingen waar onze HBO-studenten bij helpen. Ook een printer die na jaren trouwe dienst ineens niet meer wil, een nieuwe laptop die klaargezet moet worden of e-mail die op de nieuwe telefoon moet komen, komen we hier regelmatig tegen. Veel woningen in Lisse zijn ruim gebouwde eengezinshuizen met een tuin, waar het signaal van de router in de tuinkamer of op de bovenverdieping tekortschiet. De student kijkt naar de plek van de router en zet zo nodig een extra versterker neer. Voor de DigiD-app, het zorgportaal van de huisarts of het bankieren op de telefoon nemen we rustig de tijd. Lisse ligt tussen Haarlem en Leiden aan de N208, dus we zijn er meestal binnen 24 uur.',
     highlights: ['Keukenhof (7 miljoen bezoekers/jaar)', 'Bloemencorso', 'Museum De Zwarte Tulp', 'Kasteel Keukenhof']
   },
   'teylingen': {
@@ -301,14 +301,14 @@ const cityContentData: Record<string, CityContent> = {
     population: 74000,
     region: 'Groene Hart',
     neighborhoods: ['Centrum', 'Goverwelle', 'Bloemendaal', 'Plaswijck', 'Kort Haarlem', 'Achterwillens', 'Oosterwei', 'Noord'],
-    description: 'Gouda is wereldberoemd om de Goudse kaas, stroopwafels en de prachtige Sint-Janskerk met de langste gebrandschilderde ramen van Nederland. De historische kaasmarkt op het Marktplein en Gouda bij Kaarslicht in december trekken jaarlijks duizenden bezoekers.',
+    description: 'Gouda is bekend van kaas, stroopwafels en de Sint-Janskerk, maar wij kennen de stad vooral van de keukentafels. De binnenstad is oud en staat op slappe veengrond, met smalle panden waar het wifi-signaal maar moeilijk door de verdiepingen heen komt. In Bloemendaal en Plaswijck, gebouwd in de jaren zeventig en tachtig, wonen veel gepensioneerden die er al vanaf het begin zitten. In Goverwelle en de nieuwe wijk Westergouwe zien we ruime huizen waar de router beneden staat en de laptop boven niet meedoet. Onze HBO-student komt bij u thuis en zoekt het samen met u uit, in gewone taal. Vaak gaat het om een tablet die klaargemaakt moet worden om te beeldbellen met de kleinkinderen, een printer die na een update van de provider niets meer afdrukt, of e-mail die op de nieuwe telefoon moet worden ingesteld. Ook de DigiD-app voor het Groene Hart Ziekenhuis of de gemeente zetten we rustig met u klaar. Gouda ligt aan de A12 en A20 en heeft een goed station, dus we zijn er meestal binnen 24 uur, ook \'s avonds en in het weekend.',
     highlights: ['Goudse Waag en kaasmarkt', 'Sint-Janskerk (langste glazen)', 'Gouda bij Kaarslicht', 'Stadhuis (een van de oudste van Nederland)']
   },
   'alphen-aan-den-rijn': {
     population: 112000,
     region: 'Groene Hart',
     neighborhoods: ['Centrum', 'Ridderveld', 'Kerk en Zanen', 'De Baronie', 'Oudshoorn', 'Gnephoek', 'Boskoop', 'Hazerswoude-Dorp', 'Hazerswoude-Rijndijk', 'Benthuizen'],
-    description: 'Alphen aan den Rijn is de grootste stad van het Groene Hart, gelegen aan de Oude Rijn. Met Archeon, het Avifauna vogelpark en de fusie met Boskoop (stad van de boomkwekerij) biedt Alphen een veelzijdige woonomgeving in het groen.',
+    description: 'Alphen aan den Rijn is de grootste stad van het Groene Hart en sinds de fusie met Boskoop en Rijnwoude een gemeente met veel dorpskernen. Dat betekent dat we hier de ene dag in een flat in Ridderveld staan en de andere dag bij een kwekerswoning in Boskoop of een dijkhuis in Hazerswoude-Rijndijk. Ridderveld is in de jaren zeventig gebouwd en vergrijst nu, en veel bewoners willen leren beeldbellen met kinderen die naar Leiden of Utrecht zijn verhuisd. In Kerk en Zanen wonen jongere gezinnen naast ouderen, in ruime huizen waar het wifi-signaal de tweede verdieping niet haalt. Onze HBO-student komt langs, plaatst waar nodig een versterker en laat zien hoe u de tablet, de laptop en de printer met elkaar laat samenwerken. Ook helpen we met een gloednieuwe laptop die uit de doos moet, met e-mail op de telefoon en met het activeren van de DigiD-app voor het Alrijne ziekenhuis of de belastingaangifte. Alphen ligt aan de N11 en heeft een station aan de lijn Leiden-Utrecht, dus we zijn er meestal binnen 24 uur.',
     highlights: ['Archeon themapark', 'Avifauna vogelpark', 'Boskoop boomkwekerijen', 'Zegerplas recreatieplas']
   },
   'bodegraven-reeuwijk': {
@@ -455,7 +455,7 @@ const cityContentData: Record<string, CityContent> = {
     population: 40000,
     region: 'Voorne aan Zee',
     neighborhoods: ['Centrum', 'Kooistee', 'Boomgaard', 'Nieuwenhoorn', 'Oudenhoorn', 'Ravense Hoek', 'Struijtenburgh'],
-    description: 'Hellevoetsluis is een levendige havenstad aan het Haringvliet, ooit de belangrijkste marinehaven van de Republiek. De historische vestingwerken, het gezellige havenkwartier en de directe ligging aan het water maken het populair bij watersporters.',
+    description: 'Hellevoetsluis groeide in de jaren zeventig en tachtig in korte tijd uit rond de oude vesting aan het Haringvliet. De bewoners van toen wonen er vaak nog steeds, waardoor het een van de plaatsen op Voorne is waar we veel senioren helpen. In wijken als Kooistee, De Struyten en Ravense Hoek staan ruime eengezinswoningen waar de router in de meterkast staat en het signaal op de bovenverdieping wegzakt. In het centrum en rond de haven zijn de woningen ouder en soms lastig van binnen te bekabelen. Wij sturen een HBO-student die rustig meekijkt en de wifi zo neerzet dat u ook in de tuinkamer kunt internetten. Vaak gestelde vragen hier: een tablet klaarmaken om te beeldbellen met de kleinkinderen die in Rotterdam of verder weg wonen, de printer die na een nieuw modem van de provider niets meer afdrukt, e-mail op een nieuwe telefoon zetten en de DigiD-app activeren voor de huisartsenpost of het pensioenfonds. Omdat Hellevoetsluis wat verder van de grote stad ligt, plannen we ruim en komen we ook \'s avonds en in het weekend, meestal binnen 24 uur.',
     highlights: ['Historische vesting Hellevoetsluis', 'Droogdok Jan Blanken', 'Haringvliet strand', 'Watersporthaven']
   },
   'brielle': {
@@ -520,9 +520,9 @@ const cityContentData: Record<string, CityContent> = {
   },
   'spijkenisse': {
     population: 73000,
-    region: 'Voorne aan Zee',
+    region: 'Voorne-Putten',
     neighborhoods: ['Centrum', 'Sterrenkwartier', 'Waterland', 'Groenewoud', 'Vriesland', 'De Elementen', 'Vogelenzang', 'Maaswijk', 'De Hoek'],
-    description: 'Spijkenisse is de grootste stad van gemeente Voorne aan Zee en groeide vanaf 1970 uit tot een moderne woonstad met eigen metroverbinding naar Rotterdam. Het centrum rondom de Stadswinkel, de Boekenberg-bibliotheek en het Metrostation bieden alle stedelijke voorzieningen aan de rand van Voorne.',
+    description: 'Spijkenisse werd vanaf de jaren zeventig in hoog tempo gebouwd als woonstad voor Rotterdam, en de eerste bewoners zijn nu de senioren van Voorne-Putten. In wijken als Groenewoud, Waterland en Sterrenkwartier staan rijtjeshuizen en flats uit die tijd, waar wifi de bovenverdieping vaak niet bereikt. De Elementen en Maaswijk zijn nieuwer en ruimer, met woningen waar de router in de meterkast verstopt zit. Onze HBO-student komt bij u thuis, kijkt waar het signaal wegvalt en zet alles zo neer dat de tablet in de tuin gewoon werkt. In Spijkenisse helpen we vaak mensen die hun eerste tablet hebben gekregen en willen beeldbellen met de kinderen in Rotterdam of daarbuiten. Ook een printer die na een nieuwe telefoon of laptop niet meer meedoet, e-mail die op de telefoon moet, of de DigiD-app voor het Spijkenisse Medisch Centrum en de gemeente pakken we rustig met u op. Met metrolijn C en D vanaf Spijkenisse Centrum en De Akkers zijn we vanuit Rotterdam snel bij u, en we komen ook \'s avonds en in het weekend.',
     highlights: ['Metrolijn D naar Rotterdam', 'Boekenberg (grootste bibliotheek NL)', 'Stadswinkel centrum', 'Uitwaaien in de Bernissepolder']
   },
 
