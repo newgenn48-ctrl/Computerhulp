@@ -154,7 +154,7 @@ export default function ComputerhulpAanHuisPage() {
         ]}
         pills={[
           { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
-          { icon: 'money', label: `All-in vanaf ${PRICING.MINIMUM_ALL_IN}` },
+          { icon: 'money', label: 'Betaalbare tarieven' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
