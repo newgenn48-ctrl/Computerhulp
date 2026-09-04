@@ -179,17 +179,6 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
         ? `IT-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige IT-studenten bij u thuis.`
         : `Computerhulp aan huis door IT-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`)
 
-  // De stadsbeschrijving is sinds september 2026 150-250 woorden; op de pagina
-  // tonen we de eerste zin in de openingsalinea en de rest in alinea's van drie zinnen.
-  const descSentences = content
-    ? (content.description.match(/[^.!?]+[.!?]+/g) ?? [content.description]).map((s) => s.trim())
-    : []
-  const descLead = descSentences[0] ?? ''
-  const descParas: string[] = []
-  for (let i = 1; i < descSentences.length; i += 3) {
-    descParas.push(descSentences.slice(i, i + 3).join(' '))
-  }
-
   const serviceDescription = variant === 'computerhulp'
     ? `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
     : `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
@@ -495,6 +484,16 @@ function ComputerhulpContentSection({ city }: { city: City }) {
   const content = getCityContent(city.slug)
   const populationText = content ? getPopulationDescription(content.population) : ''
   const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
+  // De stadsbeschrijving is sinds september 2026 150-250 woorden; op de pagina
+  // tonen we de eerste zin in de openingsalinea en de rest in alinea's van drie zinnen.
+  const descSentences = content
+    ? (content.description.match(/[^.!?]+[.!?]+/g) ?? [content.description]).map((s) => s.trim())
+    : []
+  const descLead = descSentences[0] ?? ''
+  const descParas: string[] = []
+  for (let i = 1; i < descSentences.length; i += 3) {
+    descParas.push(descSentences.slice(i, i + 3).join(' '))
+  }
 
   return (
     <section className="py-12 lg:py-16 bg-surface">
