@@ -179,6 +179,17 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
         ? `IT-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige IT-studenten bij u thuis.`
         : `Computerhulp aan huis door IT-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`)
 
+  // De stadsbeschrijving is sinds september 2026 150-250 woorden; op de pagina
+  // tonen we de eerste zin in de openingsalinea en de rest in alinea's van drie zinnen.
+  const descSentences = content
+    ? (content.description.match(/[^.!?]+[.!?]+/g) ?? [content.description]).map((s) => s.trim())
+    : []
+  const descLead = descSentences[0] ?? ''
+  const descParas: string[] = []
+  for (let i = 1; i < descSentences.length; i += 3) {
+    descParas.push(descSentences.slice(i, i + 3).join(' '))
+  }
+
   const serviceDescription = variant === 'computerhulp'
     ? `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
     : `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
@@ -499,11 +510,14 @@ function ComputerhulpContentSection({ city }: { city: City }) {
               {content ? (
                 <>
                   <p>
-                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — {content.description} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer, wifi, smartphone, tablet of camera. Gewoon bij u aan de keukentafel.
+                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — {descLead} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer, wifi, smartphone, tablet of camera. Gewoon bij u aan de keukentafel.
                   </p>
                   <p>
                     {neighborhoodText} — onze IT-specialist komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
                   </p>
+                  {descParas.map((para, idx) => (
+                    <p key={idx}>{para}</p>
+                  ))}
                   {content.highlights.length > 0 && (
                     <p>
                       Wij kennen {city.name} en de regio {content.region} goed. Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone die ingesteld moet worden — wij zoeken het rustig uit en zorgen dat het weer werkt.
