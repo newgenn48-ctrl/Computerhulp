@@ -12,7 +12,7 @@ import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24u bij u Thuis`,
+  title: `Computerhulp aan Huis in ${BUSINESS.REGION} | Binnen 24 uur bij u thuis`,
   description: `Computerhulp aan huis in heel ${BUSINESS.REGION}: computer, laptop, printer, wifi en smart home. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,

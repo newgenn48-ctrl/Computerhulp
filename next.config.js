@@ -13,6 +13,15 @@ const nextConfig = {
         destination: 'https://computerhulpzh.nl/:path*',
         permanent: true,
       },
+      // Oude WordPress-URL's die nog in Google staan (Search Console toont er nog vertoningen op):
+      // permanent doorsturen zodat linkwaarde en bezoekers niet op een 404 landen
+      { source: '/index.php/:path*', destination: '/:path*', permanent: true },
+      { source: '/hello-world', destination: '/', permanent: true },
+      { source: '/category/:path*', destination: '/', permanent: true },
+      { source: '/computerhulp-aan-huis-in-den-haag', destination: '/computerhulp-aan-huis-den-haag', permanent: true },
+      { source: '/wp-content/uploads/2024/10/Algemene-voorwaarden.pdf', destination: '/voorwaarden', permanent: true },
+      { source: '/wp-content/uploads/2024/10/Privacyverklaring-AVG.pdf', destination: '/privacy', permanent: true },
+      { source: '/wp-content/:path*', destination: '/', permanent: true },
     ]
   },
   images: {

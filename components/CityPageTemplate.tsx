@@ -140,15 +140,17 @@ export function generateComputerhulpPageMetadata(city: City): Metadata {
 }
 
 export function generateStudentPageMetadata(city: City): Metadata {
+  /* Zoekers op 'student aan huis [plaats]' vergelijken met abonnementsdiensten: de titel en
+     omschrijving noemen daarom wat ons onderscheidt (HBO-student, geen abonnement, prijs). */
   const title =
     [
-      `Student aan Huis ${city.name} | IT-Hulp Binnen 24u bij u Thuis`,
-      `Student aan Huis ${city.name} | IT-Hulp Binnen 24u`,
+      `Student aan Huis ${city.name} | HBO-student, geen abonnement`,
+      `Student aan Huis ${city.name} | Geen abonnement`,
       `Student aan Huis ${city.name} | Binnen 24u`,
     ].find((t) => t.length <= 60) ?? `Student aan Huis ${city.name}`
   return {
     title,
-    description: `IT-student aan huis in ${city.name}. Geduldige hulp bij computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+    description: `Student aan huis in ${city.name}: een HBO-student helpt u thuis met computer, laptop, wifi, tablet of telefoon. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten, geen abonnement. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       images: OG_IMAGE,
       title: `Student aan Huis ${city.name} | Vanaf ${PRICING.MINIMUM_TOTAL}`,

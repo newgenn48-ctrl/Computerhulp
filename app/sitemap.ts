@@ -1,9 +1,14 @@
 import { MetadataRoute } from 'next'
 import { citySlugs, services } from '@/lib/cities'
+import { getCityContent } from '@/lib/cityContent'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://computerhulpzh.nl'
-  const now = new Date()
+  // Echte wijzigingsdatums in plaats van de buildtijd: Google negeert een lastmod die bij
+  // elke build voor alle 370 URL's tegelijk verspringt, en vertrouwt de sitemap dan minder.
+  const contentUpdate = new Date('2026-09-05')
+  const layoutUpdate = new Date('2026-08-29')
+  const now = contentUpdate
 
   // Basis paginas met prioriteit
   const basePages: MetadataRoute.Sitemap = [
@@ -36,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Stad paginas - Student aan huis
   const studentCityPages: MetadataRoute.Sitemap = citySlugs.map(city => ({
     url: `${baseUrl}/student-aan-huis-${city}`,
-    lastModified: now,
+    lastModified: getCityContent(city) ? contentUpdate : layoutUpdate,
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))
@@ -44,7 +49,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Stad paginas - Computerhulp aan huis
   const computerhulpCityPages: MetadataRoute.Sitemap = citySlugs.map(city => ({
     url: `${baseUrl}/computerhulp-aan-huis-${city}`,
-    lastModified: now,
+    lastModified: getCityContent(city) ? contentUpdate : layoutUpdate,
     changeFrequency: 'monthly' as const,
     priority: 0.85,
   }))

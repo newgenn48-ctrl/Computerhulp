@@ -12,8 +12,8 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import { TOP_CITIES } from '@/lib/cities'
 
 export const metadata: Metadata = {
-  title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
-  description: `IT-student aan huis in ${BUSINESS.REGION}. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  title: `Student aan Huis ${BUSINESS.REGION} | HBO-student, geen abonnement`,
+  description: `Student aan huis in ${BUSINESS.REGION}: een geduldige HBO-student helpt u thuis met computer, laptop, wifi en tablet. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten, geen abonnement. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
     title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
@@ -186,6 +186,43 @@ export default function StudentAanHuisPage() {
       <WhyChooseUsSection title="Waarom een student aan huis?" benefits={studentBenefits} showCta={false} />
 
       <PricingSection />
+
+      {/* Kosten uitgelegd: 'student aan huis kosten' is de grootste organische zoekvraag op deze pagina
+          (positie ~10). Eén duidelijke sectie met de vergelijking die zoekers maken. */}
+      <section className="py-12 lg:py-16 bg-white" aria-labelledby="kosten-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <header className="text-center mb-8">
+            <p className="section-eyebrow">Kosten</p>
+            <h2 id="kosten-heading" className="section-title">Wat kost een student aan huis?</h2>
+            <p className="section-subtitle">Geen abonnement, geen lidmaatschap: u betaalt alleen de tijd die de student bij u is.</p>
+          </header>
+          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
+            <div className="rounded-2xl border border-gray-200 p-5 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-1">{PRICING.PER_QUARTER}</div>
+              <div className="text-gray-600">per kwartier, minimaal 3 kwartier</div>
+            </div>
+            <div className="rounded-2xl border border-gray-200 p-5 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-1">{PRICING.TRAVEL}</div>
+              <div className="text-gray-600">voorrijkosten in heel {BUSINESS.REGION}</div>
+            </div>
+            <div className="rounded-2xl border border-gray-200 p-5 text-center">
+              <div className="text-3xl font-bold text-blue-600 mb-1">€0</div>
+              <div className="text-gray-600">abonnement of jaarlijkse bijdrage</div>
+            </div>
+          </div>
+          <div className="prose prose-gray max-w-none text-gray-700">
+            <p>
+              Een gemiddeld bezoek duurt drie tot vier kwartier. Daarin lost de student het probleem op, legt uit wat er aan de hand was en
+              laat zien hoe u het zelf voorkomt. U weet vooraf wat een kwartier kost en betaalt na afloop via pin of Tikkie.
+            </p>
+            <p>
+              Landelijke diensten werken vaak met een lidmaatschap of jaarbijdrage bovenop het uurtarief. Bij ons is er geen instapdrempel:
+              u belt, we plannen meestal binnen 24 uur een moment, en u betaalt alleen de tijd die u afneemt. Duurt iets langer dan verwacht,
+              dan overleggen we dat eerst. Bekijk alle <Link href="/tarieven" className="text-blue-600 hover:text-blue-800 font-medium">tarieven</Link>.
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* Reviews — sociaal bewijs valideert de prijs */}
       <TestimonialsSection
