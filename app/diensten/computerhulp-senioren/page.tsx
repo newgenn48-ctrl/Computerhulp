@@ -206,35 +206,6 @@ const faqData = {
   ]
 }
 
-// HowTo Schema
-const howToData = {
-  '@context': 'https://schema.org',
-  '@type': 'HowTo',
-  name: 'Computerhulp voor senioren aanvragen',
-  description: 'Zo vraagt u computerhulp voor senioren aan bij Computerhulp Zuid-Holland',
-  step: [
-    {
-      '@type': 'HowToStep',
-      position: 1,
-      name: 'Neem contact op',
-      text: `Bel ${BUSINESS.PHONE} of maak een afspraak via de website. Vertel kort wat het probleem is.`
-    },
-    {
-      '@type': 'HowToStep',
-      position: 2,
-      name: 'Afspraak maken',
-      text: 'We plannen samen een moment dat u uitkomt. Vaak kunnen we binnen 24 uur langskomen.'
-    },
-    {
-      '@type': 'HowToStep',
-      position: 3,
-      name: 'Probleem oplossen',
-      text: 'We komen bij u thuis en lossen het probleem direct op. Betalen na afloop.'
-    }
-  ],
-  totalTime: 'PT24H'
-}
-
 // BreadcrumbList
 const breadcrumbData = {
   '@context': 'https://schema.org',
@@ -260,7 +231,6 @@ export default function ComputerhulpSeniorenPage() {
           websiteData,
           serviceData,
           faqData,
-          howToData,
           breadcrumbData,
         ].map(({ '@context': _, ...rest }) => rest)
       }) }} />

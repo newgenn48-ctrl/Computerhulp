@@ -4,6 +4,17 @@ const nextConfig = {
   poweredByHeader: false,
   compress: true,
   productionBrowserSourceMaps: false,
+  async redirects() {
+    return [
+      // Eén host: www → hoofddomein (308), zodat Ads, analytics en canonicals dezelfde URL zien
+      {
+        source: '/:path*',
+        has: [{ type: 'host', value: 'www.computerhulpzh.nl' }],
+        destination: 'https://computerhulpzh.nl/:path*',
+        permanent: true,
+      },
+    ]
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
     remotePatterns: [],

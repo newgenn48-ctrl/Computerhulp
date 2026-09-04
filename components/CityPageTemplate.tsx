@@ -185,7 +185,9 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
 
   const localBusiness: Record<string, unknown> = {
     '@type': 'LocalBusiness',
-    '@id': `${baseUrl}/#localbusiness`,
+    // Eigen ID per pagina: het bedrijf is één, maar de stadsvermelding (naam, plaats, coördinaten)
+    // verschilt per pagina en mag niet onder één gedeeld ID botsen.
+    '@id': `${pageUrl}#localbusiness`,
     name: variant === 'computerhulp' ? `Computerhulp aan Huis ${city.name}` : 'Computerhulp Zuid-Holland',
     url: baseUrl,
     telephone: BUSINESS.PHONE_INTL,
@@ -203,7 +205,7 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
       latitude: String(city.latitude),
       longitude: String(city.longitude)
     },
-    priceRange: variant === 'computerhulp' ? '$$' : '€€',
+    priceRange: '€€',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -229,7 +231,7 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
     name: serviceName,
     description: serviceDescription,
     url: pageUrl,
-    provider: { '@id': `${baseUrl}/#localbusiness` },
+    provider: { '@id': `${pageUrl}#localbusiness` },
     areaServed: { '@type': 'City', name: city.name },
     offers: {
       '@type': 'Offer',

@@ -81,24 +81,11 @@ export default function Breadcrumb() {
     }
   })
 
-  // Schema.org structured data for breadcrumbs
-  const breadcrumbSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: breadcrumbItems.map((item, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      name: item.label,
-      ...(item.href && { item: `https://computerhulpzh.nl${item.href}` })
-    }))
-  }
+  // Geen eigen BreadcrumbList-schema meer: de pagina's leveren die zelf in hun
+  // JSON-LD-graph, en twee lijsten met verschillende labels op één pagina botsen.
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
       <nav aria-label="Breadcrumb" className="bg-surface border-b border-gray-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3">
           <ol className="flex items-center gap-2 text-sm text-gray-600 flex-wrap">
