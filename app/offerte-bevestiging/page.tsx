@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { Metadata } from 'next'
-import ConversionTracker from '@/components/ConversionTracker'
 import { Icon } from '@/components/icons'
 import { BUSINESS } from '@/lib/constants'
 
@@ -16,10 +15,8 @@ export const metadata: Metadata = {
 export default function OfferteBevestigingPage() {
   return (
     <>
-      <ConversionTracker
-        conversionId="AW-16733341823"
-        conversionLabel="aDxYCK7Ct-gaEP-Qiqs-"
-      />
+      {/* Geen Google Ads-conversie hier: een website-offerte is geen computerhulp-lead.
+          Voorheen deelde deze pagina het label van het afspraakformulier. */}
       <div className="min-h-screen bg-gradient-to-br from-blue-50 to-white pt-24 pb-20">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <div className="bg-white rounded-2xl shadow-2xl overflow-hidden">

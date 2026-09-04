@@ -15,15 +15,28 @@ declare global {
   }
 }
 
+/** sessionStorage-sleutel die het formulier zet vlak vóór de doorverwijzing naar de bedankpagina. */
+export const LEAD_SENT_KEY = 'chzh-lead-sent'
+
 /**
- * Fires a Google Ads conversion event on mount.
- * Used on afspraak-bevestiging + offerte-bevestiging to track form submits.
+ * Fires a Google Ads conversion event on mount — maar alleen als het formulier
+ * daadwerkelijk zojuist is verzonden. Zonder deze vlag (direct bezoek, verversen,
+ * terugknop) telt de bedankpagina niets, zodat één inzending één conversie is.
  */
 export default function ConversionTracker({ conversionId, conversionLabel }: ConversionTrackerProps) {
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.gtag) {
+    if (typeof window === 'undefined') return
+    let sent = false
+    try {
+      sent = window.sessionStorage.getItem(LEAD_SENT_KEY) === '1'
+      if (sent) window.sessionStorage.removeItem(LEAD_SENT_KEY)
+    } catch {
+      sent = false
+    }
+    if (sent && window.gtag) {
       window.gtag('event', 'conversion', {
         send_to: `${conversionId}/${conversionLabel}`,
+        transaction_id: `lead-${Date.now()}`,
       })
     }
   }, [conversionId, conversionLabel])

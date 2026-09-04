@@ -162,34 +162,23 @@ export default function RootLayout({
         {/* Google Ads Click-to-Call Conversions */}
         <Script id="google-ads-conversion" strategy="afterInteractive">
           {`
-            function gtag_report_conversion(url) {
-              var callbackFired = false;
-              var callback = function () {
-                if (!callbackFired) {
-                  callbackFired = true;
-                  if (typeof(url) != 'undefined') {
-                    window.location = url;
-                  }
-                }
-              };
-              gtag('event', 'conversion', {
-                'send_to': 'AW-16733341823/KWVeCKj-u_gbEP-Qiqs-',
-                'value': 1.0,
-                'currency': 'EUR',
-                'event_callback': callback
-              });
-              setTimeout(callback, 1000);
-              return false;
-            }
-
-            // Auto-track all phone link clicks
+            // Bel-conversie: meet de klik als beacon en laat de telefoon direct openen.
+            // Geen preventDefault en geen wachttijd meer: de klant wacht niet op de meting.
+            // Maximaal één telling per bezoek, zodat herhaald tikken niet dubbel telt.
+            var chzhCallCounted = false;
             document.addEventListener('click', function(e) {
-              var link = e.target.closest('a[href^="tel:"]');
-              if (link) {
-                e.preventDefault();
-                gtag_report_conversion(link.href);
+              var link = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
+              if (!link || chzhCallCounted) return;
+              chzhCallCounted = true;
+              if (typeof gtag === 'function') {
+                gtag('event', 'conversion', {
+                  'send_to': 'AW-16733341823/KWVeCKj-u_gbEP-Qiqs-',
+                  'value': 1.0,
+                  'currency': 'EUR',
+                  'transport_type': 'beacon'
+                });
               }
-            });
+            }, true);
           `}
         </Script>
 
