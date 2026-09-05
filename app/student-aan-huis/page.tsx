@@ -13,7 +13,7 @@ import { TOP_CITIES } from '@/lib/cities'
 
 export const metadata: Metadata = {
   title: `Student aan Huis ${BUSINESS.REGION} | HBO-student, geen abonnement`,
-  description: `Student aan huis in ${BUSINESS.REGION}: een geduldige HBO-student helpt u thuis met computer, laptop, wifi en tablet. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten, geen abonnement. Bel ${BUSINESS.PHONE}.`,
+  description: `Student aan huis in ${BUSINESS.REGION}: een geduldige HBO-student helpt u thuis met computer, laptop, wifi en tablet. ${PRICING.PER_QUARTER} per kwartier, geen abonnement. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
     title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,

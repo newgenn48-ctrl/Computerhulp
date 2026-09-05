@@ -1,5 +1,15 @@
 [
   {
+    "source": "/student-aan-huis-wateringen",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-wateringen",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
     "source": "/student-aan-huis-stad-aan-t-haringvliet",
     "destination": "/student-aan-huis-goeree-overflakkee",
     "permanent": true

@@ -60,7 +60,6 @@ export const cities: City[] = [
   { slug: 'zoetermeer', name: 'Zoetermeer', latitude: 52.0571, longitude: 4.4931 },
   { slug: 'zoeterwoude', name: 'Zoeterwoude', latitude: 52.1167, longitude: 4.4833 },
   { slug: 'zwijndrecht', name: 'Zwijndrecht', latitude: 51.8167, longitude: 4.6333 },
-  { slug: 'wateringen', name: 'Wateringen', latitude: 52.02, longitude: 4.27 },
   { slug: 'hellevoetsluis', name: 'Hellevoetsluis', latitude: 51.83, longitude: 4.13 },
   { slug: 'spijkenisse', name: 'Spijkenisse', latitude: 51.85, longitude: 4.33 },
 ]
@@ -78,6 +77,7 @@ export interface Village {
 }
 
 export const villages: Village[] = [
+  { slug: 'wateringen', name: 'Wateringen', municipality: 'westland' },
   { slug: 's-gravendeel', name: "'s-Gravendeel", municipality: 'hoeksche-waard' },
   { slug: 's-gravenzande', name: "'s-Gravenzande", municipality: 'westland' },
   { slug: 'stad-aan-t-haringvliet', name: "Stad aan 't Haringvliet", municipality: 'goeree-overflakkee' },

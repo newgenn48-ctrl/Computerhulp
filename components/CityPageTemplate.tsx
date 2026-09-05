@@ -117,7 +117,7 @@ function getConfig(variant: CityPageVariant): VariantConfig {
 
 /** ' (ook Naaldwijk, Monster en De Lier)' voor gemeenten met dorpen; anders leeg. */
 function villageSuffix(city: City): string {
-  const names = getVillagesOf(city.slug).slice(0, 3).map(v => v.name)
+  const names = getVillagesOf(city.slug).slice(0, 2).map(v => v.name)
   if (names.length === 0) return ''
   const lijst = names.length > 1 ? `${names.slice(0, -1).join(', ')} en ${names[names.length - 1]}` : names[0]
   return ` (ook ${lijst})`
@@ -133,7 +133,7 @@ export function generateComputerhulpPageMetadata(city: City): Metadata {
     ].find((t) => t.length <= 60) ?? `Computerhulp ${city.name} | Binnen 24u`
   return {
     title,
-    description: `Computerhulp aan huis in ${city.name}${villageSuffix(city)}: computer, laptop, printer, wifi en smart home. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+    description: `Computerhulp aan huis in ${city.name}${villageSuffix(city)}: computer, laptop, printer en wifi. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       images: OG_IMAGE,
       title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
@@ -158,7 +158,7 @@ export function generateStudentPageMetadata(city: City): Metadata {
     ].find((t) => t.length <= 60) ?? `Student aan Huis ${city.name}`
   return {
     title,
-    description: `Student aan huis in ${city.name}${villageSuffix(city)}: een HBO-student helpt u thuis met computer, laptop, wifi, tablet of telefoon. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten, geen abonnement. Bel ${BUSINESS.PHONE}.`,
+    description: `Student aan huis in ${city.name}${villageSuffix(city)}: HBO-student voor computer, laptop en wifi. ${PRICING.PER_QUARTER} per kwartier, geen abonnement. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       images: OG_IMAGE,
       title: `Student aan Huis ${city.name} | Vanaf ${PRICING.MINIMUM_TOTAL}`,
