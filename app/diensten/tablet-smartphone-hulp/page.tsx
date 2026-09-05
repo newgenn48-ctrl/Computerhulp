@@ -69,12 +69,12 @@ const services = [
   'E-mail en agenda koppelen',
   'Back-up maken (iCloud, Google)',
   'Opslag vrijmaken',
-  'Alle merken: iPhone, Samsung, Huawei',
+  'Alle merken tablets en telefoons',
 ]
 
 const faqs = [
   { question: 'Kunnen jullie apps en data overzetten naar een nieuwe telefoon?', answer: 'Ja, we zetten al uw apps inclusief alle chats, foto\'s en video\'s over naar uw nieuwe telefoon. We zorgen dat alles behouden blijft en leggen uit hoe het werkt.' },
-  { question: 'Helpen jullie met alle merken tablets en smartphones?', answer: 'Ja, we helpen met alle merken tablets en smartphones. Onze IT-specialisten kennen alle systemen.' },
+  { question: 'Helpen jullie met alle merken tablets en smartphones?', answer: 'Ja, we helpen met alle merken tablets en smartphones. Onze HBO-studenten kennen alle systemen.' },
   { question: 'Kunnen jullie apps installeren en uitleggen hoe ze werken?', answer: 'Absoluut! We installeren alle apps die u nodig heeft en nemen de tijd om rustig uit te leggen hoe ze werken. Van berichtenapps tot online bankieren.' },
   { question: 'Mijn tablet is heel traag, kunnen jullie dat verhelpen?', answer: 'Ja, we kunnen uw tablet opschonen, onnodige apps verwijderen en het geheugen vrijmaken. Vaak wordt uw tablet daardoor weer een stuk sneller.' },
   { question: 'Kunnen jullie foto\'s van mijn telefoon naar de computer zetten?', answer: 'Ja, we zetten al uw foto\'s over naar uw computer en kunnen ook een backup naar de cloud instellen zodat u nooit meer foto\'s kwijtraakt.' }
@@ -112,7 +112,7 @@ export default function TabletSmartphoneHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw tablet of smartphone? Instellen, apps, data overzetten of een scherm dat raar doet? Een IT-specialist regelt het bij u thuis — <strong className="text-white">alle merken</strong>.
+              Heeft u hulp nodig met uw tablet of smartphone? Instellen, apps, data overzetten of een scherm dat raar doet? Een HBO-student regelt het bij u thuis — <strong className="text-white">alle merken</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -133,7 +133,7 @@ export default function TabletSmartphoneHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -205,7 +205,7 @@ export default function TabletSmartphoneHulpPage() {
           <h2 className="content-title mb-4">Tablet en Smartphone Hulp voor Iedereen</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Uw tablet of smartphone is tegenwoordig onmisbaar: voor contact met familie, bankzaken, foto&apos;s en nog veel meer. Maar wat als uw apparaat traag wordt, apps niet werken, of u niet weet hoe u iets moet instellen? Daar helpen wij mee.</p>
-            <p>Onze IT-specialisten helpen met alle merken en modellen: Apple iPad en iPhone, Samsung Galaxy, en alle andere Android apparaten. Van het overzetten van data naar een nieuw toestel tot het instellen van e-mail en apps. We werken op uw tempo en leggen alles uit in begrijpelijke taal.</p>
+            <p>Onze HBO-studenten helpen met alle merken en modellen: iPad en iPhone, Android-tablets en -telefoons. Van het overzetten van data naar een nieuw toestel tot het instellen van e-mail en apps. We werken op uw tempo en leggen alles uit in begrijpelijke taal.</p>
           </div>
         </div>
       </section>

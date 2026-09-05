@@ -137,8 +137,8 @@ export default function LocatiesPage() {
               <div className="text-gray-600">Voorrijkosten</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">{BUSINESS.YEARS_ACTIVE}</div>
-              <div className="text-gray-600">Jaar ervaring</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">7 dagen</div>
+              <div className="text-gray-600">Per week bereikbaar</div>
             </div>
           </div>
         </div>

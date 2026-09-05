@@ -67,7 +67,7 @@ const faqStructuredData = {
       name: 'Welke problemen kunnen jullie oplossen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, e-mail, tablets, smartphones, software installeren, virussen verwijderen, dataherstel en persoonlijke training.'
+        text: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, e-mail, tablets, smartphones, software installeren, pop-ups en ongewenste programma’s weghalen, bestanden terughalen en persoonlijke training.'
       }
     }
   ]
@@ -162,7 +162,7 @@ const faqCategories = [
     questions: [
       {
         question: 'Wat zijn de kosten voor computerhulp?',
-        answer: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Dit is een all-in prijs - er komen geen extra kosten bij.`
+        answer: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}), plus ${PRICING.TRAVEL} voorrijkosten. Een bezoek kost dus vanaf ${PRICING.MINIMUM_ALL_IN} all-in; daar komt niets meer bij.`
       },
       {
         question: 'Zijn er voorrijkosten?',
@@ -199,7 +199,7 @@ const faqCategories = [
       },
       {
         question: 'Hoe maak ik een afspraak?',
-        answer: `Bel ons op ${BUSINESS.PHONE} of vul het contactformulier in. We reageren altijd binnen 1 uur en plannen samen een moment dat u uitkomt.`
+        answer: `Bel ons op ${BUSINESS.PHONE} of vul het contactformulier in. We bellen u meestal binnen een uur terug en plannen samen een moment dat u uitkomt.`
       }
     ]
   },
@@ -208,7 +208,7 @@ const faqCategories = [
     questions: [
       {
         question: 'Welke problemen kunnen jullie oplossen?',
-        answer: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, e-mail, tablets, smartphones, software installeren, virussen verwijderen, dataherstel en persoonlijke training. Als het met technologie te maken heeft, helpen we.'
+        answer: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, e-mail, tablets, smartphones, software installeren, pop-ups en ongewenste programma’s weghalen, bestanden terughalen en persoonlijke training. Als het met technologie te maken heeft, helpen we.'
       },
       {
         question: 'Helpen jullie met alle merken computers?',
@@ -246,7 +246,7 @@ const faqCategories = [
     questions: [
       {
         question: 'Zijn mijn gegevens veilig bij jullie?',
-        answer: 'Ja, we behandelen uw gegevens met de grootst mogelijke zorgvuldigheid. We kijken alleen naar wat nodig is voor de reparatie en delen nooit informatie met derden.'
+        answer: 'Ja, we behandelen uw gegevens met de grootst mogelijke zorgvuldigheid. We kijken alleen naar wat nodig is voor de hulp en delen nooit informatie met derden.'
       },
       {
         question: 'Zijn jullie verzekerd?',
@@ -262,12 +262,12 @@ const faqCategories = [
     title: 'Overige Vragen',
     questions: [
       {
-        question: 'Moet ik thuis blijven tijdens de reparatie?',
-        answer: 'Dat hangt van het probleem af. Voor de meeste dingen werken we bij u thuis terwijl u er bent. Voor sommige reparaties kunnen we het apparaat meenemen (met uw toestemming).'
+        question: 'Moet ik thuis blijven tijdens het bezoek?',
+        answer: 'Dat hangt van het probleem af. Voor de meeste dingen werken we bij u thuis terwijl u er bent. We werken altijd bij u thuis; uw apparaat blijft gewoon bij u.'
       },
       {
         question: 'Wat moet ik klaar hebben?',
-        answer: 'Alleen het apparaat waar u hulp mee nodig heeft. Wachtwoorden en inloggegevens zijn handig om bij de hand te hebben. Verder zorgen wij voor alle benodigde tools.'
+        answer: 'Alleen het apparaat waar u hulp mee nodig heeft. Inloggegevens zijn handig om bij de hand te hebben. Verder zorgen wij voor alle benodigde tools.'
       },
       {
         question: 'Helpen jullie ook bedrijven?',

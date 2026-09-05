@@ -26,7 +26,7 @@ export default function Footer() {
               />
             </Link>
             <p className="text-gray-300 text-sm mb-4 max-w-md">
-              Al meer dan {BUSINESS.YEARS_ACTIVE} jaar uw partner voor computerhulp, printerhulp en IT-ondersteuning
+              Uw partner voor computerhulp, printerhulp en IT-ondersteuning
               aan huis in heel {BUSINESS.REGION}. Binnen 24 uur bij u thuis.
             </p>
             {/* Info links */}
@@ -64,11 +64,6 @@ export default function Footer() {
               <li>
                 <Link href="/student-aan-huis" className="footer-link">
                   Student aan Huis
-                </Link>
-              </li>
-              <li>
-                <Link href="/computerhulp-aan-huis" className="footer-link">
-                  IT-Hulp aan Huis
                 </Link>
               </li>
               <li>
@@ -159,6 +154,18 @@ export default function Footer() {
                 className="footer-city-tag"
               >
                 {city.name}
+              </Link>
+            ))}
+          </div>
+          {/* Studentpagina's per stad: die kregen te weinig interne links om goed te ranken */}
+          <div className="flex flex-wrap gap-2 mt-3">
+            {TOP_CITIES.slice(0, 8).map(city => (
+              <Link
+                key={`student-${city.slug}`}
+                href={`/student-aan-huis-${city.slug}`}
+                className="footer-city-tag"
+              >
+                Student aan huis {city.name}
               </Link>
             ))}
           </div>

@@ -12,11 +12,11 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'E-mail Hulp aan Huis Zuid-Holland | Outlook & Gmail | 24u',
-  description: `E-mail problemen? Wachtwoord vergeten of mailbox vol? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `E-mail problemen? Niet meer kunnen inloggen of mailbox vol? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
     title: 'E-mail Hulp aan Huis',
-    description: `E-mail problemen? Wachtwoord vergeten? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
+    description: `E-mail problemen? Niet meer kunnen inloggen? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/email-hulp'},
   alternates: {
@@ -53,7 +53,7 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: 'Kunnen jullie mijn e-mail wachtwoord herstellen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we helpen u bij het herstellen van wachtwoorden voor alle e-mailproviders. We zorgen ook dat uw account weer veilig is.' } },
+    { '@type': 'Question', name: 'Ik kan niet meer inloggen op mijn e-mail. Helpen jullie?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we helpen u weer toegang te krijgen tot uw e-mail bij alle providers. We zorgen ook dat uw account weer veilig is.' } },
     { '@type': 'Question', name: 'Helpen jullie ook met e-mail op mijn telefoon?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we stellen uw e-mail in op al uw apparaten: computer, laptop, tablet en telefoon. Zo heeft u overal toegang tot uw mail.' } },
     { '@type': 'Question', name: 'Mijn mailbox is vol, wat nu?', acceptedAnswer: { '@type': 'Answer', text: 'We helpen u uw mailbox op te ruimen door oude en onnodige e-mails te verwijderen. Ook kunnen we uw opslag uitbreiden of e-mails archiveren.' } },
     { '@type': 'Question', name: 'Ik krijg veel spam, kunnen jullie dat stoppen?', acceptedAnswer: { '@type': 'Answer', text: 'We configureren uw spamfilter optimaal en leren u hoe u spam kunt herkennen en blokkeren. Bij ernstige gevallen kunnen we extra maatregelen nemen.' } },
@@ -64,7 +64,7 @@ const faqData = {
 const services = [
   'E-mail instellen op computer, tablet en telefoon',
   'Outlook of Gmail configureren',
-  'Wachtwoord herstellen',
+  'Weer toegang tot uw e-mail',
   'Spam en ongewenste mail filteren',
   'Volle mailbox opruimen',
   'Mail migreren naar andere provider',
@@ -73,7 +73,7 @@ const services = [
 ]
 
 const faqs = [
-  { question: 'Kunnen jullie mijn e-mail wachtwoord herstellen?', answer: 'Ja, we helpen u bij het herstellen van wachtwoorden voor alle e-mailproviders. We zorgen ook dat uw account weer veilig is.' },
+  { question: 'Ik kan niet meer inloggen op mijn e-mail. Helpen jullie?', answer: 'Ja, we helpen u weer toegang te krijgen tot uw e-mail bij alle providers. We zorgen ook dat uw account weer veilig is.' },
   { question: 'Helpen jullie ook met e-mail op mijn telefoon?', answer: 'Ja, we stellen uw e-mail in op al uw apparaten: computer, laptop, tablet en telefoon. Zo heeft u overal toegang tot uw mail.' },
   { question: 'Mijn mailbox is vol, wat nu?', answer: 'We helpen u uw mailbox op te ruimen door oude en onnodige e-mails te verwijderen. Ook kunnen we uw opslag uitbreiden of e-mails archiveren.' },
   { question: 'Ik krijg veel spam, kunnen jullie dat stoppen?', answer: 'We configureren uw spamfilter optimaal en leren u hoe u spam kunt herkennen en blokkeren. Bij ernstige gevallen kunnen we extra maatregelen nemen.' },
@@ -112,7 +112,7 @@ export default function EmailHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u problemen met uw e-mail? Wachtwoord kwijt, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in — <strong className="text-white">meestal in een halfuur klaar</strong>.
+              Heeft u problemen met uw e-mail? Niet meer kunnen inloggen, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in — <strong className="text-white">meestal in een halfuur klaar</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -133,7 +133,7 @@ export default function EmailHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -204,7 +204,7 @@ export default function EmailHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">E-mailproblemen Snel en Vakkundig Opgelost</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>E-mail is voor veel mensen het belangrijkste communicatiemiddel. Als uw e-mail niet werkt, uw wachtwoord kwijt is, of u overspoeld wordt met spam, dan kan dat enorm veel stress opleveren. Onze IT-specialisten helpen u met alle e-mailproviders: Outlook, Gmail, Yahoo, Ziggo, KPN en meer.</p>
+            <p>E-mail is voor veel mensen het belangrijkste communicatiemiddel. Als uw e-mail niet werkt, u niet meer kunt inloggen, of u overspoeld wordt met spam, dan kan dat enorm veel stress opleveren. Onze HBO-studenten helpen u met alle e-mailproviders: Outlook, Gmail, Yahoo, Ziggo, KPN en meer.</p>
             <p>We stellen uw e-mail in op al uw apparaten — computer, laptop, tablet en telefoon — zodat u overal bij uw berichten kunt. Ook helpen we met het migreren van e-mails naar een nieuwe provider, het opruimen van een volle mailbox, en het instellen van goede spam-filters. Alles bij u thuis, met duidelijke uitleg.</p>
           </div>
         </div>

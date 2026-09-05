@@ -98,7 +98,7 @@ const faqData = {
     },
     {
       '@type': 'Question',
-      name: 'Repareren jullie alle merken laptops?',
+      name: 'Helpen jullie met alle merken laptops?',
       acceptedAnswer: {
         '@type': 'Answer',
         text: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem.'
@@ -114,10 +114,10 @@ const faqData = {
     },
     {
       '@type': 'Question',
-      name: 'Kan ik ook een SSD upgrade laten doen om mijn computer sneller te maken?',
+      name: 'Kan mijn oudere computer nog sneller worden?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Absoluut! Een SSD upgrade is een van onze meest populaire diensten. Uw computer kan tot 10x sneller worden. We zetten al uw data over naar de nieuwe SSD.'
+        text: 'Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.'
       }
     }
   ]
@@ -126,10 +126,10 @@ const faqData = {
 const services = [
   'Nieuwe computer installeren en instellen',
   'Trage computer weer snel maken',
-  'Schadelijke software opruimen',
+  'Ongewenste meldingen en pop-ups weghalen',
   'Programma\'s installeren en bijwerken',
   'Bestanden overzetten naar nieuwe computer',
-  'Windows-updates uitvoeren',
+  'Systeemupdates uitvoeren',
   'Opstartproblemen oplossen',
   'Onderhoud en opschoning',
 ]
@@ -144,16 +144,16 @@ const faqs = [
     answer: 'Ja, in veel gevallen kunnen we data terughalen van defecte computers of harde schijven. We maken eerst een diagnose en geven u een eerlijk advies over de mogelijkheden.'
   },
   {
-    question: 'Repareren jullie alle merken laptops?',
-    answer: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem. Onze IT-specialisten hebben ervaring met alle systemen.'
+    question: 'Helpen jullie met alle merken laptops?',
+    answer: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem. Onze HBO-studenten hebben ervaring met alle systemen.'
   },
   {
     question: 'Wat als het probleem niet opgelost kan worden?',
     answer: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). We zijn altijd eerlijk over de mogelijkheden voordat we beginnen.'
   },
   {
-    question: 'Kan ik ook een SSD upgrade laten doen om mijn computer sneller te maken?',
-    answer: 'Absoluut! Een SSD upgrade is een van onze meest populaire diensten. Uw computer kan tot 10x sneller worden. We zetten al uw data over naar de nieuwe SSD.'
+    question: 'Kan mijn oudere computer nog sneller worden?',
+    answer: 'Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.'
   }
 ]
 
@@ -198,7 +198,7 @@ export default function ComputerLaptopHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u problemen met uw computer of laptop? Een IT-specialist komt bij u thuis, kijkt rustig mee en legt alles uit — <strong className="text-white">in gewone taal</strong>.
+              Heeft u problemen met uw computer of laptop? Een HBO-student komt bij u thuis, kijkt rustig mee en legt alles uit — <strong className="text-white">in gewone taal</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -219,7 +219,7 @@ export default function ComputerLaptopHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -296,8 +296,8 @@ export default function ComputerLaptopHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Professionele Computerhulp bij U Thuis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een trage computer of laptop die vastloopt is niet alleen frustrerend, het kost u ook tijd en productiviteit. Of het nu gaat om een Windows pc die niet meer opstart, een Mac die crasht, of een laptop waarvan het scherm niet meer werkt — onze IT-specialisten hebben de kennis en ervaring om het probleem snel te diagnosticeren en op te lossen.</p>
-            <p>Wij komen bij u thuis in heel Zuid-Holland, van Den Haag tot Rotterdam en van Leiden tot Dordrecht. Geen gedoe met uw computer naar een winkel brengen, geen wachttijden van weken. Binnen 24 uur staat onze IT-specialist aan uw deur, en in de meeste gevallen is het probleem ter plekke verholpen. Van SSD upgrades en virusverwijdering tot complete systeemherstel — wij regelen het.</p>
+            <p>Een trage computer of laptop die vastloopt is niet alleen frustrerend, het kost u ook tijd en productiviteit. Of het nu gaat om een computer die niet meer opstart, een laptop die steeds vastloopt of programma’s die foutmeldingen geven — onze HBO-studenten hebben de kennis en ervaring om het probleem snel te diagnosticeren en op te lossen.</p>
+            <p>Wij komen bij u thuis in heel Zuid-Holland, van Den Haag tot Rotterdam en van Leiden tot Dordrecht. Geen gedoe met uw computer naar een winkel brengen, geen wachttijden van weken. Binnen 24 uur staat onze HBO-student aan uw deur, en in de meeste gevallen is het probleem ter plekke verholpen. Van opschonen en opnieuw instellen tot bestanden overzetten — wij regelen het.</p>
           </div>
         </div>
       </section>

@@ -27,14 +27,14 @@ const allServices = [
 ]
 
 const relatedServicesMap: Record<string, string[]> = {
-  'computer-laptop-hulp': ['laptop-computer-reparatie', 'dataherstel-backup', 'wifi-internet-hulp', 'email-hulp', 'persoonlijke-training'],
+  'computer-laptop-hulp': ['hulp-bij-computerproblemen', 'dataherstel-backup', 'wifi-internet-hulp', 'email-hulp', 'monteur-aan-huis'],
   'laptop-computer-reparatie': ['computer-laptop-hulp', 'dataherstel-backup', 'wifi-internet-hulp', 'tablet-smartphone-hulp', 'persoonlijke-training'],
-  'wifi-internet-hulp': ['smart-home-domotica', 'printer-scanner-hulp', 'televisie-radio', 'computer-laptop-hulp', 'tablet-smartphone-hulp'],
-  'printer-scanner-hulp': ['computer-laptop-hulp', 'wifi-internet-hulp', 'email-hulp', 'laptop-computer-reparatie', 'persoonlijke-training'],
+  'wifi-internet-hulp': ['smart-home-domotica', 'printer-scanner-hulp', 'tv-installatie', 'computer-laptop-hulp', 'smartphone-hulp-aan-huis'],
+  'printer-scanner-hulp': ['computer-laptop-hulp', 'wifi-internet-hulp', 'email-hulp', 'monteur-aan-huis', 'persoonlijke-training'],
   'email-hulp': ['computer-laptop-hulp', 'tablet-smartphone-hulp', 'wifi-internet-hulp', 'persoonlijke-training', 'printer-scanner-hulp'],
   'tablet-smartphone-hulp': ['email-hulp', 'wifi-internet-hulp', 'persoonlijke-training', 'smart-home-domotica', 'computer-laptop-hulp'],
   'televisie-radio': ['tv-installatie', 'smart-home-domotica', 'wifi-internet-hulp', 'tablet-smartphone-hulp', 'computer-laptop-hulp'],
-  'smart-home-domotica': ['wifi-internet-hulp', 'televisie-radio', 'tablet-smartphone-hulp', 'computer-laptop-hulp', 'persoonlijke-training'],
+  'smart-home-domotica': ['wifi-internet-hulp', 'tv-installatie', 'televisie-radio', 'smartphone-hulp-aan-huis', 'persoonlijke-training'],
   'dataherstel-backup': ['computer-laptop-hulp', 'laptop-computer-reparatie', 'email-hulp', 'tablet-smartphone-hulp', 'persoonlijke-training'],
   'persoonlijke-training': ['computer-laptop-hulp', 'tablet-smartphone-hulp', 'email-hulp', 'wifi-internet-hulp', 'computercursus-ouderen'],
   'computercursus-ouderen': ['persoonlijke-training', 'tablet-smartphone-hulp', 'email-hulp', 'computer-laptop-hulp', 'wifi-internet-hulp'],

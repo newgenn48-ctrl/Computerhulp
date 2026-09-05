@@ -53,13 +53,13 @@ const computerhulpConfig: VariantConfig = {
   serviceNameLower: 'computerhulp aan huis',
   urlPrefix: 'computerhulp-aan-huis',
   heroImage: '/hero-computerhulp.webp',
-  heroAlt: (cityName) => `IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt in ${cityName}`,
+  heroAlt: (cityName) => `HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${cityName}`,
   heroTitle: (cityName) => (
     <>Computerhulp aan Huis <span className="hero-highlight">{cityName}</span></>
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-specialisten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
@@ -522,7 +522,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — {descLead} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer, wifi, smartphone, tablet of camera. Gewoon bij u aan de keukentafel.
                   </p>
                   <p>
-                    {neighborhoodText} — onze IT-specialist komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
+                    {neighborhoodText} — onze HBO-student komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
                   </p>
                   {descParas.map((para, idx) => (
                     <p key={idx}>{para}</p>
@@ -533,7 +533,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     </p>
                   )}
                   <p>
-                    Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die na een update niet meer verbinden, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-specialisten dagelijks op.
+                    Veelvoorkomende problemen die wij in {city.name} tegenkomen zijn trage computers door verouderde software, printers die na een update niet meer verbinden, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze HBO-studenten dagelijks op.
                   </p>
                 </>
               ) : (
@@ -548,7 +548,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone of camera die ingesteld moet worden — wij zoeken het rustig uit en zorgen dat alles weer werkt.
                   </p>
                   <p>
-                    Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die na een update niet meer verbinden, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze IT-specialisten dagelijks op.
+                    Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die na een update niet meer verbinden, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze HBO-studenten dagelijks op.
                   </p>
                 </>
               )}
@@ -787,7 +787,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             icon: 'academic-cap',
             label: variant === 'student'
               ? 'HBO-opgeleide studenten'
-              : 'HBO-opgeleide IT-specialisten',
+              : 'HBO-opgeleide HBO-studenten',
           },
           { icon: 'money', label: 'Betaalbare tarieven' },
           { icon: 'calendar', label: '7 dagen per week' },

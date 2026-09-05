@@ -24,8 +24,8 @@ const defaultBenefits: Benefit[] = [
   },
   {
     icon: 'users',
-    title: 'Ervaren IT-specialisten',
-    desc: `Specialisten die al ${BUSINESS.YEARS_ACTIVE} jaar problemen oplossen — rustig, duidelijk, zonder vaktermen.`,
+    title: 'HBO-studenten die dit dagelijks doen',
+    desc: 'Rustig, duidelijk, zonder vaktermen — en met het geduld om het nog een keer uit te leggen.',
   },
   {
     icon: 'home',

@@ -109,7 +109,7 @@ export default function MonteurAanHuisPage() {
         <div className="absolute inset-0">
           <Image
             src="/hero-computerhulp.webp"
-            alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
+            alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
             fill
             className="object-cover"
             style={{ objectPosition: 'center center' }}
@@ -150,7 +150,7 @@ export default function MonteurAanHuisPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -231,7 +231,7 @@ export default function MonteurAanHuisPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Monteur aan Huis in Zuid-Holland</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een monteur aan huis biedt u het gemak van professionele IT-hulp zonder dat u uw huis uit hoeft. Onze ervaren IT-specialisten komen bij u langs met alle benodigde gereedschappen en kennis om uw probleem ter plekke op te lossen. Of het nu gaat om een <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">trage computer</Link>, een <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi-probleem</Link>, een <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printer die niet werkt</Link> of een <Link href="/diensten/laptop-laten-herstellen" className="text-blue-600 hover:underline">laptop die hersteld moet worden</Link> — wij helpen u graag.</p>
+            <p>Een monteur aan huis biedt u het gemak van professionele IT-hulp zonder dat u uw huis uit hoeft. Onze ervaren HBO-studenten komen bij u langs met alle benodigde gereedschappen en kennis om uw probleem ter plekke op te lossen. Of het nu gaat om een <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">trage computer</Link>, een <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi-probleem</Link>, een <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printer die niet werkt</Link> of een <Link href="/diensten/laptop-laten-herstellen" className="text-blue-600 hover:underline">laptop die hersteld moet worden</Link> — wij helpen u graag.</p>
             <p>Onze monteur komt in heel Zuid-Holland aan huis: van <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link> en <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link> tot <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> en alle kleinere plaatsen. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak online een afspraak</Link>.</p>
           </div>
         </div>

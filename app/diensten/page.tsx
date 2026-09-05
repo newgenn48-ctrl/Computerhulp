@@ -18,7 +18,7 @@ const ALL_TOPICS = [
   { slug: 'laptop-computer-reparatie', label: 'Laptop- en pc-reparatie' },
   { slug: 'monteur-aan-huis', label: 'IT-monteur aan huis' },
   { slug: 'printer-scanner-hulp', label: 'Printer & scanner' },
-  { slug: 'email-hulp', label: 'E-mail instellen en herstellen' },
+  { slug: 'email-hulp', label: 'E-mail instellen en op orde brengen' },
   { slug: 'wifi-internet-hulp', label: 'WiFi & internet' },
   { slug: 'tablet-smartphone-hulp', label: 'Tablet & smartphone' },
   { slug: 'smartphone-hulp-aan-huis', label: 'Smartphone-hulp aan huis' },
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: OG_IMAGE,
     title: 'Alle Computerhulpdiensten aan Huis',
-    description: `Computerhulp aan huis in ${BUSINESS.REGION}. Van laptopreparatie tot smarthome-installatie. Binnen 24u.`,
+    description: `Computerhulp aan huis in ${BUSINESS.REGION}. Van laptophulp tot smarthome-installatie. Binnen 24u.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten'},
   robots: {
@@ -96,7 +96,7 @@ export default function DienstenPage() {
       <section className="relative bg-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image src="/hero-computerhulp.webp" alt="IT-specialist sluit de wifi-router aan bij een klant thuis" fill sizes="100vw" className="object-cover" priority />
+          <Image src="/hero-computerhulp.webp" alt="HBO-student sluit de wifi-router aan bij een klant thuis" fill sizes="100vw" className="object-cover" priority />
           {/* Light overlay for text readability */}
           <div className="absolute inset-0 bg-white/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/80 to-transparent" />
@@ -279,7 +279,7 @@ export default function DienstenPage() {
               Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Een compleet pakket IT-diensten voor particulieren en kleine ondernemers in heel {BUSINESS.REGION}. Van computer- en laptophulp tot WiFi-installatie, van printerproblemen tot smart-home-oplossingen.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Onze IT-specialisten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp — we helpen vakkundig en persoonlijk, in gewone taal.
+              Onze HBO-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp — we helpen vakkundig en persoonlijk, in gewone taal.
             </p>
             <p className="text-gray-700 leading-relaxed">
               Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met slechts {PRICING.TRAVEL} voorrijkosten. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen binnen 24 uur bij u langs.

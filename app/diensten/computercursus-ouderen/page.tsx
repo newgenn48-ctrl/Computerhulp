@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: 'Computercursus voor Ouderen | Binnen 24u | Zuid-Holland',
   description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}. Persoonlijke uitleg over laptop, tablet, smartphone en meer. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Computercursus voor Ouderen | IT-specialist aan Huis',
-    description: `Computercursus voor ouderen in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Computercursus voor Ouderen | HBO-student aan Huis',
+    description: `Computercursus voor ouderen in ${BUSINESS.REGION}: uw HBO-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/computercursus-ouderen',
     siteName: 'Computerhulp Zuid-Holland',
@@ -344,7 +344,7 @@ export default function HomePage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/hero-student.webp"
-                    alt="IT-specialist legt aan de keukentafel iets uit op een tablet aan een oudere klant"
+                    alt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"

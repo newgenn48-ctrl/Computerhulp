@@ -7,11 +7,11 @@ import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Over ons — uw IT-student aan huis in ${BUSINESS.REGION}`,
-  description: `Maak kennis met ${BUSINESS.NAME}. Meer dan ${BUSINESS.YEARS_ACTIVE} jaar ervaring in computerhulp aan huis. Persoonlijk, eerlijk en vakkundig. Bel ${BUSINESS.PHONE}.`,
+  description: `Maak kennis met ${BUSINESS.NAME}. HBO-studenten die bij u thuis komen voor computerhulp. Persoonlijk, eerlijk en in gewone taal. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
     title: `Over ons | ${BUSINESS.NAME}`,
-    description: `Meer dan ${BUSINESS.YEARS_ACTIVE} jaar ervaring, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
+    description: `Computerhulp door HBO-studenten, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
     type: 'website',
     url: `${BUSINESS.URL}/over-ons`,
   },
@@ -32,7 +32,7 @@ const organizationSchema = {
     width: '250',
     height: '60',
   },
-  description: `Professionele computerhulp aan huis in heel ${BUSINESS.REGION}. Meer dan ${BUSINESS.YEARS_ACTIVE} jaar ervaring, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
+  description: `Professionele computerhulp aan huis in heel ${BUSINESS.REGION}. Computerhulp door HBO-studenten, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
   address: {
     '@type': 'PostalAddress',
     addressRegion: BUSINESS.REGION,
@@ -40,7 +40,6 @@ const organizationSchema = {
   },
   telephone: BUSINESS.PHONE_INTL,
   email: BUSINESS.EMAIL,
-  foundingDate: '2013',
   areaServed: {
     '@type': 'State',
     name: BUSINESS.REGION,
@@ -67,9 +66,9 @@ export default function OverOnsPage() {
         imageAlt={`IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel="Over ons hero"
         eyebrow="Over ons"
-        title={<>Al <span className="hero-highlight">{BUSINESS.YEARS_ACTIVE} jaar</span> uw IT-hulp aan huis</>}
+        title={<>Uw <span className="hero-highlight">IT-student</span> aan huis</>}
         descriptions={[
-          <>Al meer dan <strong className="text-white">{BUSINESS.YEARS_ACTIVE} jaar</strong> uw betrouwbare partner voor computerhulp aan huis in <strong className="text-white">{BUSINESS.REGION}</strong>. {BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.</>,
+          <>Uw betrouwbare partner voor <strong className="text-white">computerhulp aan huis</strong> in <strong className="text-white">{BUSINESS.REGION}</strong>. {BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.</>,
         ]}
       />
 
@@ -95,14 +94,14 @@ export default function OverOnsPage() {
                   Dus startten we <strong>{BUSINESS.NAME}</strong>. Het concept was eenvoudig: bij mensen thuis komen, in begrijpelijke taal uitleggen wat er aan de hand is, en het probleem ter plekke oplossen. Geen jargon, geen onnodige verkoop.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Wat klein begon, groeide uit tot heel {BUSINESS.REGION}. Inmiddels hebben we {BUSINESS.REVIEW_COUNT} mensen geholpen met alles van een trage laptop tot complexe netwerkinstallaties — sinds {BUSINESS.FOUNDING_YEAR}. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
+                  Wat klein begon, groeide uit tot heel {BUSINESS.REGION}. Inmiddels hebben we {BUSINESS.REVIEW_COUNT} mensen geholpen met alles van een trage laptop tot complexe netwerkinstallaties. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
                 </p>
               </div>
             </div>
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
                 src="/hero-computerhulp.webp"
-                alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
+                alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -128,10 +127,10 @@ export default function OverOnsPage() {
             {[
               { icon: 'users', title: 'Persoonlijk & geduldig', desc: 'We nemen de tijd om alles rustig uit te leggen. Geen haast, geen irritatie als iets niet direct lukt.' },
               { icon: 'check-circle', title: 'Eerlijk & transparant', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. Geen verrassingen achteraf. We verkopen niets onnodigs.` },
-              { icon: 'clock', title: 'Snel & vakkundig', desc: `Door ${BUSINESS.YEARS_ACTIVE} jaar ervaring lossen we problemen snel op. Meestal binnen 24 uur bij u thuis.` },
+              { icon: 'clock', title: 'Snel & vakkundig', desc: `Onze studenten doen dit dagelijks en lossen de meeste problemen ter plekke op. Meestal binnen 24 uur bij u thuis.` },
               { icon: 'heart', title: 'Voor alle leeftijden', desc: 'Of u nu 25 bent of 85 — we helpen iedereen. We passen ons tempo en onze uitleg aan uw niveau aan.' },
               { icon: 'home', title: 'Bij u thuis', desc: `Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, ${PRICING.TRAVEL} voorrijkosten.` },
-              { icon: 'shield', title: 'Bewezen betrouwbaar', desc: `KvK ${BUSINESS.KVK}, verzekerd en al ${BUSINESS.YEARS_ACTIVE} jaar actief. ${BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.` },
+              { icon: 'shield', title: 'Bewezen betrouwbaar', desc: `KvK ${BUSINESS.KVK}, verzekerd en gescreend. ${BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.` },
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg border border-gray-100 hover:border-blue-200 transition">
                 <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-5 shadow-sm">
@@ -191,7 +190,7 @@ export default function OverOnsPage() {
 
           <div className="space-y-4">
             {[
-              { title: `Reactie ${BUSINESS.RESPONSE_TIME}`, desc: 'We bellen altijd binnen 1 uur terug na uw aanvraag. In spoedsituaties vaak nog dezelfde dag bij u thuis.' },
+              { title: `Reactie ${BUSINESS.RESPONSE_TIME}`, desc: `We bellen u meestal binnen een uur terug (tussen ${HOURS.OPEN} en ${HOURS.CLOSE} uur). In spoedsituaties vaak nog dezelfde dag bij u thuis.` },
               { title: `${PRICING.TRAVEL} voorrijkosten`, desc: `In heel ${BUSINESS.REGION} komen we bij u langs. ${HOURS.DAYS}, ook in de avond.` },
               { title: 'Eerlijke prijzen', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. We geven altijd een eerlijke inschatting vooraf.` },
               { title: 'Privacy & veiligheid', desc: 'Uw gegevens zijn veilig bij ons. We behandelen uw informatie met de grootst mogelijke zorgvuldigheid.' },

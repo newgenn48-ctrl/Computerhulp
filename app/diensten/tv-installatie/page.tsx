@@ -68,7 +68,7 @@ const services = [
   'Soundbar aansluiten en instellen',
   'Decoder en receiver koppelen',
   'Zenders instellen en sorteren',
-  'Mediaplayer koppelen (Chromecast, Apple TV)',
+  'Mediaplayer of streamingkastje koppelen',
 ]
 
 const faqs = [
@@ -132,7 +132,7 @@ export default function TVInstallatiePage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -203,8 +203,8 @@ export default function TVInstallatiePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Professionele TV Installatie Service aan Huis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een nieuwe TV kopen is het leuke deel — het installeren vaak minder. Van het ophangen aan de muur tot het instellen van Smart TV-functies, het aansluiten van een soundbar en het configureren van streaming apps: er komt meer bij kijken dan u denkt. Onze IT-specialisten komen bij u thuis en regelen de complete TV installatie, zodat u direct kunt genieten.</p>
-            <p>Wij werken met alle merken televisies: Samsung, LG, Sony, Philips en meer. Of het nu gaat om een TV aan de muur monteren, zenders op volgorde zetten, Netflix en Disney+ instellen of een compleet surround sound systeem aansluiten — wij zorgen ervoor dat alles perfect werkt. Snel, vakkundig en met {PRICING.TRAVEL} voorrijkosten in heel {BUSINESS.REGION}.</p>
+            <p>Een nieuwe TV kopen is het leuke deel — het installeren vaak minder. Van het ophangen aan de muur tot het instellen van Smart TV-functies, het aansluiten van een soundbar en het configureren van streaming apps: er komt meer bij kijken dan u denkt. Onze HBO-studenten komen bij u thuis en regelen de complete TV installatie, zodat u direct kunt genieten.</p>
+            <p>Wij werken met alle merken televisies. Of het nu gaat om een TV aan de muur monteren, zenders op volgorde zetten, Netflix en Disney+ instellen of een compleet surround sound systeem aansluiten — wij zorgen ervoor dat alles perfect werkt. Snel, vakkundig en met {PRICING.TRAVEL} voorrijkosten in heel {BUSINESS.REGION}.</p>
           </div>
         </div>
       </section>

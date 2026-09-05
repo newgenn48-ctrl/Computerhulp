@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: 'Computerhulp voor Senioren | Binnen 24u | Zuid-Holland',
   description: `Computerhulp voor senioren aan huis in ${BUSINESS.REGION}. Geduldig, duidelijk en op uw gemak. Laptop, WiFi en printer. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Computerhulp voor Senioren | IT-specialist aan Huis',
-    description: `Computerhulp voor senioren in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Computerhulp voor Senioren | HBO-student aan Huis',
+    description: `Computerhulp voor senioren in ${BUSINESS.REGION}: uw HBO-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/computerhulp-senioren',
     siteName: 'Computerhulp Zuid-Holland',
@@ -192,7 +192,7 @@ const faqData = {
       name: `Helpen jullie ook met de tablet en de telefoon?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Zeker. Van iPad tot Samsung: instellen, apps, foto's en videobellen met de kleinkinderen — u zegt maar waar u mee zit.`
+        text: `Zeker. Van tablet tot telefoon: instellen, apps, foto's en videobellen met de kleinkinderen — u zegt maar waar u mee zit.`
       }
     },
     {
@@ -259,7 +259,7 @@ export default function ComputerhulpSeniorenPage() {
             </h1>
 
             <p className="hero-description">
-              Trage computer, vreemde meldingen of iets dat niet werkt? Een IT-specialist komt bij u thuis en legt alles <strong className="text-white">rustig uit, op uw tempo</strong>.
+              Trage computer, vreemde meldingen of iets dat niet werkt? Een HBO-student komt bij u thuis en legt alles <strong className="text-white">rustig uit, op uw tempo</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -345,7 +345,7 @@ export default function ComputerhulpSeniorenPage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/hero-student.webp"
-                    alt="IT-specialist legt aan de keukentafel iets uit op een tablet aan een oudere klant"
+                    alt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -387,7 +387,7 @@ export default function ComputerhulpSeniorenPage() {
               { q: `Ik ben niet handig met computers. Is dat erg?`, a: `Helemaal niet — juist daarvoor komen we. We nemen de tijd, gebruiken gewone woorden en gaan pas verder als het duidelijk is. Twee keer dezelfde vraag stellen is bij ons heel normaal.` },
               { q: `Kunnen jullie het opschrijven, zodat ik het kan nalezen?`, a: `Ja. De belangrijkste stappen zetten we voor u op papier, in duidelijke taal, zodat u ze later rustig zelf kunt herhalen.` },
               { q: `Mag mijn zoon of dochter erbij zijn?`, a: `Natuurlijk, dat is zelfs handig. Vier oren onthouden meer dan twee — en uw familie weet daarna precies hoe alles is ingesteld.` },
-              { q: `Helpen jullie ook met de tablet en de telefoon?`, a: `Zeker. Van iPad tot Samsung: instellen, apps, foto's en videobellen met de kleinkinderen — u zegt maar waar u mee zit.` },
+              { q: `Helpen jullie ook met de tablet en de telefoon?`, a: `Zeker. Van tablet tot telefoon: instellen, apps, foto's en videobellen met de kleinkinderen — u zegt maar waar u mee zit.` },
               { q: `Wat kost computerhulp voor senioren?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">

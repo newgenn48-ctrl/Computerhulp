@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: 'Smartphone Hulp aan Huis | Binnen 24u | Zuid-Holland',
   description: `Smartphone hulp aan huis in ${BUSINESS.REGION}. Telefoon instellen, data overzetten en apps installeren. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Smartphone Hulp aan Huis Zuid-Holland | IT-specialist aan Huis',
-    description: `Smartphone hulp aan huis in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Smartphone Hulp aan Huis Zuid-Holland | HBO-student aan Huis',
+    description: `Smartphone hulp aan huis in ${BUSINESS.REGION}: uw HBO-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis',
     siteName: 'Computerhulp Zuid-Holland',
@@ -184,7 +184,7 @@ const faqData = {
       name: `Helpen jullie met Android én met iPhone?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Allebei. Samsung, Apple of een ander merk: we kennen alle systemen en leggen de verschillen rustig uit.`
+        text: `Allebei. Android, iPhone of een ander merk: we kennen alle systemen en leggen de verschillen rustig uit.`
       }
     },
     {
@@ -318,7 +318,7 @@ export default function SmartphoneHulpAanHuisPage() {
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Android én iPhone:</strong> Samsung, Apple of een ander merk: we kennen ze allemaal.</span>
+                    <span><strong>Android én iPhone:</strong> Android, iPhone of een ander merk: we kennen ze allemaal.</span>
                   </li>
                 </ul>
 
@@ -337,7 +337,7 @@ export default function SmartphoneHulpAanHuisPage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/hero-student.webp"
-                    alt="IT-specialist legt aan de keukentafel iets uit op een tablet aan een oudere klant"
+                    alt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -378,7 +378,7 @@ export default function SmartphoneHulpAanHuisPage() {
             {[
               { q: `Raken mijn foto's en contacten kwijt bij een nieuwe telefoon?`, a: `Nee. We zetten eerst alles veilig over — contacten, foto's en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` },
               { q: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, a: `Ja. We ruimen op, zetten uw foto's veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.` },
-              { q: `Helpen jullie met Android én met iPhone?`, a: `Allebei. Samsung, Apple of een ander merk: we kennen alle systemen en leggen de verschillen rustig uit.` },
+              { q: `Helpen jullie met Android én met iPhone?`, a: `Allebei. Android, iPhone of een ander merk: we kennen alle systemen en leggen de verschillen rustig uit.` },
               { q: `Kunnen jullie apps installeren en uitleggen?`, a: `Ja — en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` },
               { q: `Wat kost smartphone-hulp aan huis?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (

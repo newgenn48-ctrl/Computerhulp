@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: 'Hulp bij Computerproblemen | Binnen 24u | Zuid-Holland',
   description: `Hulp bij computerproblemen aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Hulp bij Computerproblemen | IT-specialist aan Huis',
-    description: `Hulp bij computerproblemen in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Hulp bij Computerproblemen | HBO-student aan Huis',
+    description: `Hulp bij computerproblemen in ${BUSINESS.REGION}: uw HBO-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/hulp-bij-computerproblemen',
     siteName: 'Computerhulp Zuid-Holland',
@@ -168,20 +168,20 @@ const faqData = {
       name: `Mijn computer start helemaal niet meer op. Komen jullie dan ook?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Ja. Vaak is zo'n computer gewoon te herstellen — en lukt dat niet, dan doen we ons uiterste best om in elk geval uw bestanden en foto's veilig te stellen.`
+        text: `Ja. Vaak krijgen we zo'n computer gewoon weer aan de praat — en lukt dat niet, dan doen we ons uiterste best om in elk geval uw bestanden en foto's veilig te stellen.`
       }
     },
     {
       '@type': 'Question',
-      name: `Kunnen jullie virussen en pop-ups verwijderen?`,
+      name: `Kunnen jullie ongewenste pop-ups en meldingen weghalen?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Ja. We verwijderen schadelijke software grondig en zetten er betere beveiliging voor in de plaats, zodat het probleem niet volgende week terug is.`
+        text: `Ja. We halen ongewenste programma’s weg en zetten de instellingen zo, zodat het probleem niet volgende week terug is.`
       }
     },
     {
       '@type': 'Question',
-      name: `Raak ik mijn bestanden kwijt bij een reparatie?`,
+      name: `Raak ik mijn bestanden kwijt als jullie het oplossen?`,
       acceptedAnswer: {
         '@type': 'Answer',
         text: `Daar doen we alles aan om het te voorkomen: waar mogelijk stellen we eerst uw documenten en foto's veilig, en pas daarna grijpen we in.`
@@ -239,7 +239,7 @@ export default function HulpBijComputerproblemenPage() {
         <div className="absolute inset-0">
           <Image
             src="/hero-computerhulp.webp"
-            alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
+            alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
             fill
             className="object-cover"
             style={{ objectPosition: 'center center' }}
@@ -317,15 +317,15 @@ export default function HulpBijComputerproblemenPage() {
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Virussen en pop-ups:</strong> Schadelijke software verwijderen we grondig, inclusief betere beveiliging.</span>
+                    <span><strong>Pop-ups en meldingen:</strong> Ongewenste programma's halen we weg en we zetten uw instellingen goed.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Start niet meer op?:</strong> Vaak is het te herstellen — en uw bestanden proberen we altijd veilig te stellen.</span>
+                    <span><strong>Start niet meer op?:</strong> Vaak krijgen we hem weer aan de praat — en uw bestanden proberen we altijd veilig te stellen.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Eerlijk advies:</strong> Is repareren niet meer zinvol, dan zeggen we dat gewoon.</span>
+                    <span><strong>Eerlijk advies:</strong> Is oplossen niet meer zinvol, dan zeggen we dat gewoon.</span>
                   </li>
                 </ul>
 
@@ -344,7 +344,7 @@ export default function HulpBijComputerproblemenPage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/hero-computerhulp.webp"
-                    alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
+                    alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -383,9 +383,9 @@ export default function HulpBijComputerproblemenPage() {
 
           <div className="space-y-4">
             {[
-              { q: `Mijn computer start helemaal niet meer op. Komen jullie dan ook?`, a: `Ja. Vaak is zo'n computer gewoon te herstellen — en lukt dat niet, dan doen we ons uiterste best om in elk geval uw bestanden en foto's veilig te stellen.` },
-              { q: `Kunnen jullie virussen en pop-ups verwijderen?`, a: `Ja. We verwijderen schadelijke software grondig en zetten er betere beveiliging voor in de plaats, zodat het probleem niet volgende week terug is.` },
-              { q: `Raak ik mijn bestanden kwijt bij een reparatie?`, a: `Daar doen we alles aan om het te voorkomen: waar mogelijk stellen we eerst uw documenten en foto's veilig, en pas daarna grijpen we in.` },
+              { q: `Mijn computer start helemaal niet meer op. Komen jullie dan ook?`, a: `Ja. Vaak krijgen we zo'n computer gewoon weer aan de praat — en lukt dat niet, dan doen we ons uiterste best om in elk geval uw bestanden en foto's veilig te stellen.` },
+              { q: `Kunnen jullie ongewenste pop-ups en meldingen weghalen?`, a: `Ja. We halen ongewenste programma’s weg en zetten de instellingen zo, zodat het probleem niet volgende week terug is.` },
+              { q: `Raak ik mijn bestanden kwijt als jullie het oplossen?`, a: `Daar doen we alles aan om het te voorkomen: waar mogelijk stellen we eerst uw documenten en foto's veilig, en pas daarna grijpen we in.` },
               { q: `Wat als mijn computer niet meer te redden is?`, a: `Dan zeggen we dat eerlijk. U betaalt alleen de tijd van de diagnose, en we vertellen u — zonder verkooppraatje — waar u op moet letten bij een vervanger.` },
               { q: `Wat kost het oplossen van een computerprobleem?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (

@@ -68,7 +68,7 @@ const services = [
   'Automatische cloud-backup instellen (OneDrive, iCloud, Google Drive)',
   'Externe harde schijf als backup configureren',
   'Data overzetten naar nieuwe computer',
-  'Bestanden redden na ransomware',
+  'Bestanden redden na een vastgelopen systeem',
   'Schijf klonen voor vervanging',
 ]
 
@@ -133,7 +133,7 @@ export default function DataherstelBackupPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -205,7 +205,7 @@ export default function DataherstelBackupPage() {
           <h2 className="content-title mb-4">Uw Data Is Kostbaar — Wij Beschermen Het</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Niets is zo vervelend als het verliezen van belangrijke bestanden, dierbare foto&apos;s of zakelijke documenten. Of uw harde schijf nu defect is geraakt, u per ongeluk bestanden heeft verwijderd, of uw computer niet meer opstart — er is vaak meer te redden dan u denkt.</p>
-            <p>Onze IT-specialisten komen bij u thuis en maken een grondige diagnose. We zijn altijd eerlijk over de mogelijkheden voordat we beginnen. Daarnaast helpen we u met het opzetten van een betrouwbaar backupsysteem, zodat u in de toekomst nooit meer data kwijtraakt. We werken met zowel lokale backups als cloud-oplossingen.</p>
+            <p>Onze HBO-studenten komen bij u thuis en maken een grondige diagnose. We zijn altijd eerlijk over de mogelijkheden voordat we beginnen. Daarnaast helpen we u met het opzetten van een betrouwbaar backupsysteem, zodat u in de toekomst nooit meer data kwijtraakt. We werken met zowel lokale backups als cloud-oplossingen.</p>
           </div>
         </div>
       </section>

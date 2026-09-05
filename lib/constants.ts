@@ -15,7 +15,7 @@ export const BUSINESS = {
   REVIEW_COUNT: '5000+',
   YEARS_ACTIVE: '10+',
   FOUNDING_YEAR: 2013,
-  RESPONSE_TIME: 'binnen 1 uur',
+  RESPONSE_TIME: 'meestal binnen 1 uur',
 } as const
 
 export const PRICING = {

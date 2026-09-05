@@ -6,7 +6,7 @@ import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Afspraak Bevestiging — ${BUSINESS.NAME}`,
-  description: 'Bedankt voor uw afspraakaanvraag. We bellen u binnen 1 uur terug.',
+  description: 'Bedankt voor uw afspraakaanvraag. We bellen u meestal binnen een uur terug.',
   robots: {
     index: false,
     follow: false,

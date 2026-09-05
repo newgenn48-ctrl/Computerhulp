@@ -86,7 +86,7 @@ export default function ContactPage() {
                     <div className="min-w-0">
                       <div className="font-bold text-gray-900">WhatsApp</div>
                       <div className="text-sm text-gray-600">
-                        <span translate="no" className="whitespace-nowrap">{BUSINESS.WHATSAPP}</span> · binnen 1 uur
+                        <span translate="no" className="whitespace-nowrap">{BUSINESS.WHATSAPP}</span> · reactie meestal binnen 1 uur
                       </div>
                     </div>
                   </div>

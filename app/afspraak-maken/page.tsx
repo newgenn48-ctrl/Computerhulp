@@ -24,7 +24,7 @@ export default function AfspraakMakenPage() {
           <h2 id="vervolg-heading" className="content-title text-center mb-6">Hoe het verdergaat</h2>
           <ol className="space-y-4">
             {[
-              'Wij bellen u terug — meestal binnen een paar uur, altijd dezelfde dag.',
+              'Wij bellen u terug — meestal binnen een uur, altijd dezelfde dag (tussen 08:00 en 22:00).',
               'We plannen een moment dat u uitkomt. Vaak kunnen we al binnen 24 uur langskomen, ook \'s avonds en in het weekend.',
               'Onze specialist komt bij u thuis, lost het op en legt het rustig uit. U betaalt achteraf per kwartier, via pin of Tikkie.',
             ].map((stap, idx) => (

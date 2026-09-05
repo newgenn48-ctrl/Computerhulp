@@ -103,15 +103,15 @@ const structuredData = {
 const faqItems = [
   {
     q: 'Wat is computerhulp aan huis precies?',
-    a: 'Wij komen gewoon bij u thuis om uw computer, laptop, printer, wifi, smartphone, tablet, smart-tv, camera of smart home te repareren of in te stellen. U hoeft nergens naartoe — we nemen alles mee wat nodig is.',
+    a: 'Wij komen gewoon bij u thuis om uw computer, laptop, printer, wifi, smartphone, tablet, smart-tv, camera of smart home in orde te maken of in te stellen. U hoeft nergens naartoe — we nemen alles mee wat nodig is.',
   },
   {
     q: 'Wat nemen jullie mee bij een huisbezoek?',
-    a: 'Onze IT-specialisten nemen gereedschap, kabels, adapters en veelgebruikte onderdelen mee. De meeste problemen lossen we ter plekke op, zonder dat uw apparaat mee hoeft.',
+    a: 'Onze HBO-studenten nemen kabels en adapters mee. De meeste problemen lossen we ter plekke op, zonder dat uw apparaat mee hoeft.',
   },
   {
-    q: 'Wat als mijn computer niet ter plekke gerepareerd kan worden?',
-    a: 'Dat komt zelden voor. Als het toch nodig is nemen we uw apparaat mee. We bespreken dat altijd eerst met u. Meestal heeft u het binnen een paar werkdagen terug.',
+    q: 'Wat als het probleem niet ter plekke opgelost kan worden?',
+    a: 'Dat komt zelden voor. Wij werken bij u thuis en nemen geen apparaten mee. Lukt iets echt niet ter plekke, dan zeggen we dat eerlijk en adviseren we de beste vervolgstap.',
   },
   {
     q: 'Komen jullie ook in het weekend?',
@@ -146,7 +146,7 @@ export default function ComputerhulpAanHuisPage() {
 
       <Hero
         imageSrc="/hero-computerhulp.webp"
-        imageAlt={`IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
+        imageAlt={`HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[

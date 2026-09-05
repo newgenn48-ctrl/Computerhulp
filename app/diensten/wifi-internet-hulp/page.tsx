@@ -57,7 +57,7 @@ const faqData = {
     { '@type': 'Question', name: 'Hoe verbeter ik mijn WiFi-bereik?', acceptedAnswer: { '@type': 'Answer', text: 'We analyseren uw situatie en adviseren de beste oplossing: router verplaatsen, WiFi-versterker, meshsysteem of powerline-adapters.' } },
     { '@type': 'Question', name: 'Kunnen jullie mijn nieuwe router installeren?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we installeren alle merken routers en zorgen dat al uw apparaten weer verbonden zijn.' } },
     { '@type': 'Question', name: 'Waarom is mijn internet zo traag?', acceptedAnswer: { '@type': 'Answer', text: 'Dit kan vele oorzaken hebben: slechte routerpositie, te veel apparaten, oude router, storing van buren, of een providerprobleem. We onderzoeken dit en lossen het op.' } },
-    { '@type': 'Question', name: 'Kan ik mijn WiFi-wachtwoord laten wijzigen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we kunnen uw WiFi-wachtwoord wijzigen en zorgen dat al uw apparaten het nieuwe wachtwoord krijgen.' } },
+    { '@type': 'Question', name: 'Kunnen jullie mijn wifi-netwerk opnieuw beveiligen?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we beveiligen uw wifi-netwerk opnieuw en zorgen dat al uw apparaten weer verbinding maken.' } },
     { '@type': 'Question', name: 'Helpen jullie ook met bekabeld internet?', acceptedAnswer: { '@type': 'Answer', text: 'Ja, we leggen ook netwerkkabels aan en installeren switches voor een stabielere verbinding, bijvoorbeeld voor gaming of thuiswerken.' } }
   ]
 }
@@ -66,7 +66,7 @@ const services = [
   'Nieuwe router installeren en configureren',
   'WiFi-bereik verbeteren met meshsysteem',
   'Alle apparaten op WiFi aansluiten',
-  'WiFi-wachtwoord wijzigen',
+  'Wifi-netwerk beveiligen',
   'Netwerk beveiligen',
   'Gastnetwerk voor bezoekers instellen',
   'Traag internet diagnosticeren',
@@ -77,7 +77,7 @@ const faqs = [
   { question: 'Hoe verbeter ik mijn WiFi-bereik in huis?', answer: 'We analyseren uw situatie en adviseren de beste oplossing: router verplaatsen, WiFi-versterker, meshsysteem of powerline-adapters. Vaak is een combinatie het meest effectief.' },
   { question: 'Kunnen jullie mijn nieuwe router installeren?', answer: 'Ja, we installeren alle merken routers en zorgen dat al uw apparaten weer verbonden zijn. We stellen ook de beveiliging en optimale instellingen in.' },
   { question: 'Waarom is mijn internet zo traag?', answer: 'Dit kan vele oorzaken hebben: slechte routerpositie, te veel apparaten, oude router, storing van buren, of een providerprobleem. We onderzoeken dit en lossen het op.' },
-  { question: 'Kan ik mijn WiFi-wachtwoord laten wijzigen?', answer: 'Ja, we kunnen uw WiFi-wachtwoord wijzigen en zorgen dat al uw apparaten het nieuwe wachtwoord krijgen.' },
+  { question: 'Kunnen jullie mijn wifi-netwerk opnieuw beveiligen?', answer: 'Ja, we beveiligen uw wifi-netwerk opnieuw en zorgen dat al uw apparaten weer verbinding maken.' },
   { question: 'Helpen jullie ook met bekabeld internet?', answer: 'Ja, we leggen ook netwerkkabels aan en installeren switches voor een stabielere verbinding, bijvoorbeeld voor gaming of thuiswerken.' }
 ]
 
@@ -134,7 +134,7 @@ export default function WifiInternetHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -206,7 +206,7 @@ export default function WifiInternetHulpPage() {
           <h2 className="content-title mb-4">WiFi en Internet Problemen Vakkundig Opgelost</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Slecht WiFi-bereik, traag internet of apparaten die steeds de verbinding verliezen — het zijn problemen die in bijna elk huishouden voorkomen. De oorzaak kan vari&euml;ren van een verkeerd geplaatste router tot een verouderd netwerk of storing van buitenaf.</p>
-            <p>Onze IT-specialisten analyseren uw situatie ter plekke en bieden een passende oplossing: router herplaatsen, een WiFi-versterker of meshsysteem installeren, of uw netwerk helemaal opnieuw configureren. We zorgen dat al uw apparaten — van laptop en telefoon tot Smart TV en printer — stabiel verbonden zijn.</p>
+            <p>Onze HBO-studenten analyseren uw situatie ter plekke en bieden een passende oplossing: router herplaatsen, een WiFi-versterker of meshsysteem installeren, of uw netwerk helemaal opnieuw configureren. We zorgen dat al uw apparaten — van laptop en telefoon tot Smart TV en printer — stabiel verbonden zijn.</p>
           </div>
         </div>
       </section>

@@ -40,7 +40,7 @@ export default function WaaromOnsPage() {
             Waarom klanten voor <span className="text-blue-600">ons</span> kiezen
           </h1>
           <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
-            Goedkoper dan de concurrentie, sneller bij u thuis, en geen abonnement nodig. Gewoon eerlijke computerhulp bij u aan de keukentafel.
+            Scherp geprijsd, snel bij u thuis, en geen abonnement nodig. Gewoon eerlijke computerhulp bij u aan de keukentafel.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
@@ -69,19 +69,19 @@ export default function WaaromOnsPage() {
                 <tr>
                   <th className="p-4 text-gray-500 font-medium text-sm"></th>
                   <th className="p-4 bg-blue-600 text-white font-bold rounded-t-xl text-center">{BUSINESS.NAME}</th>
-                  <th className="p-4 text-gray-700 font-medium text-center bg-surface">Marktgemiddelde</th>
+                  <th className="p-4 text-gray-700 font-medium text-center bg-surface">Veel andere aanbieders</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">1 uur aan huis</td>
                   <td className="p-4 bg-blue-50 text-center font-bold text-blue-700 text-lg">€54,97</td>
-                  <td className="p-4 text-center text-gray-600 bg-surface">€65–€90</td>
+                  <td className="p-4 text-center text-gray-600 bg-surface">Vaak hoger, of per uur</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">Voorrijkosten</td>
                   <td className="p-4 bg-blue-50 text-center font-bold text-blue-700">{PRICING.TRAVEL}</td>
-                  <td className="p-4 text-center text-gray-600 bg-surface">€12,50–€25</td>
+                  <td className="p-4 text-center text-gray-600 bg-surface">Wisselend</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">Abonnement nodig?</td>
@@ -103,7 +103,7 @@ export default function WaaromOnsPage() {
           </div>
 
           <p className="text-sm text-gray-500 mt-4 text-center">
-            Marktgemiddelde gebaseerd op publiek beschikbare tarieven van reguliere computerhulp-aanbieders in Nederland (2026). Prijzen inclusief BTW.
+            Gebaseerd op openbare tarieven en voorwaarden van landelijke computerhulpdiensten (september 2026). Prijzen inclusief btw.
           </p>
         </div>
       </section>
@@ -117,7 +117,7 @@ export default function WaaromOnsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
-              { icon: 'money', title: 'Goedkoopste keuze', desc: `${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. U betaalt alleen voor wat u gebruikt.` },
+              { icon: 'money', title: 'Scherpe prijs, geen abonnement', desc: `${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. U betaalt alleen voor wat u gebruikt.` },
               { icon: 'clock', title: 'Binnen 24 uur bij u thuis', desc: 'Geen weken wachten. Meestal komen we al de volgende dag — ook \'s avonds en in het weekend.' },
               { icon: 'location-pin', title: `Lokaal in ${BUSINESS.REGION}`, desc: 'Geen callcenter in een andere provincie. We kennen uw regio en zijn altijd dichtbij.' },
               { icon: 'shield', title: 'Betrouwbaar en verzekerd', desc: `KvK ${BUSINESS.KVK}, verzekerd en gescreend. Uw gegevens en apparatuur zijn in goede handen.` },
@@ -159,7 +159,7 @@ export default function WaaromOnsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'U belt of mailt ons', desc: `Vertel kort wat er aan de hand is. Even bellen op ${BUSINESS.PHONE} of online een afspraak maken.` },
-              { step: '2', title: 'We komen bij u thuis', desc: `Binnen 24 uur staat onze IT-student voor de deur. Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` },
+              { step: '2', title: 'We komen bij u thuis', desc: `Meestal binnen 24 uur staat onze IT-student voor de deur. Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` },
               { step: '3', title: 'Probleem opgelost', desc: 'U kunt weer verder. Betalen doet u achteraf via pin of Tikkie — alleen voor de tijd die we nodig hadden.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -207,7 +207,7 @@ export default function WaaromOnsPage() {
             Overtuigd? Wij helpen u graag
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Bel ons gerust of maak online een afspraak. Binnen 24 uur staan we voor uw deur.
+            Bel ons gerust of maak online een afspraak. Meestal binnen 24 uur staan we voor uw deur.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>

@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: `PC Hulp aan Huis Zuid-Holland | Binnen 24u | Vanaf ${PRICING.MINIMUM_ALL_IN}`,
   description: `PC hulp aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'PC Hulp aan Huis Zuid-Holland | IT-specialist aan Huis',
-    description: `PC hulp aan huis in ${BUSINESS.REGION}: uw IT-specialist aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'PC Hulp aan Huis Zuid-Holland | HBO-student aan Huis',
+    description: `PC hulp aan huis in ${BUSINESS.REGION}: uw HBO-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/pc-hulp-aan-huis',
     siteName: 'Computerhulp Zuid-Holland',
@@ -173,10 +173,10 @@ const faqData = {
     },
     {
       '@type': 'Question',
-      name: `Mijn pc is traag. Heeft een SSD-upgrade zin?`,
+      name: `Mijn pc is traag. Is daar nog wat aan te doen?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Meestal wel — het is de grootste snelheidswinst die een oudere pc kan krijgen. We kijken eerst of het bij uw computer kan en zinvol is, en zeggen het eerlijk als dat niet zo is.`
+        text: `Meestal wel. We ruimen op, zetten programma’s uit die op de achtergrond meedraaien en werken het systeem bij. Heeft dat geen zin meer, dan zeggen we dat eerlijk.`
       }
     },
     {
@@ -189,10 +189,10 @@ const faqData = {
     },
     {
       '@type': 'Question',
-      name: `Helpen jullie ook met Windows en updates?`,
+      name: `Helpen jullie ook met updates?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Zeker. We werken Windows bij, ruimen op wat u niet meer gebruikt en zetten de instellingen zo dat uw pc er weer jaren tegen kan.`
+        text: `Zeker. We werken het systeem bij, ruimen op wat u niet meer gebruikt en zetten de instellingen zo dat uw pc er weer jaren tegen kan.`
       }
     },
     {
@@ -318,7 +318,7 @@ export default function HomePage() {
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Sneller met een SSD:</strong> Een trage pc knapt enorm op van een SSD-upgrade. We adviseren eerlijk of het zin heeft.</span>
+                    <span><strong>Weer snel:</strong> Een trage pc knapt vaak enorm op van opschonen en de juiste instellingen. We adviseren eerlijk wat zin heeft.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
@@ -326,7 +326,7 @@ export default function HomePage() {
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Windows op orde:</strong> Updates, opschonen en instellingen — uw pc is weer klaar voor jaren.</span>
+                    <span><strong>Systeem op orde:</strong> Updates, opschonen en instellingen — uw pc is weer klaar voor jaren.</span>
                   </li>
                 </ul>
 
@@ -345,7 +345,7 @@ export default function HomePage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/hero-computerhulp.webp"
-                    alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
+                    alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -385,9 +385,9 @@ export default function HomePage() {
           <div className="space-y-4">
             {[
               { q: `Moet ik mijn computer loskoppelen voordat jullie komen?`, a: `Nee, laat alles gewoon staan zoals het staat. Wij werken op de plek waar uw pc staat en sluiten alles daarna weer netjes aan.` },
-              { q: `Mijn pc is traag. Heeft een SSD-upgrade zin?`, a: `Meestal wel — het is de grootste snelheidswinst die een oudere pc kan krijgen. We kijken eerst of het bij uw computer kan en zinvol is, en zeggen het eerlijk als dat niet zo is.` },
+              { q: `Mijn pc is traag. Is daar nog wat aan te doen?`, a: `Meestal wel. We ruimen op, zetten programma’s uit die op de achtergrond meedraaien en werken het systeem bij. Heeft dat geen zin meer, dan zeggen we dat eerlijk.` },
               { q: `Sluiten jullie ook een nieuwe computer aan?`, a: `Ja. We sluiten alles aan, zetten uw bestanden en programma's over van de oude computer, en zorgen dat printer en internet meteen werken.` },
-              { q: `Helpen jullie ook met Windows en updates?`, a: `Zeker. We werken Windows bij, ruimen op wat u niet meer gebruikt en zetten de instellingen zo dat uw pc er weer jaren tegen kan.` },
+              { q: `Helpen jullie ook met updates?`, a: `Zeker. We werken het systeem bij, ruimen op wat u niet meer gebruikt en zetten de instellingen zo dat uw pc er weer jaren tegen kan.` },
               { q: `Wat kost pc-hulp aan huis?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">

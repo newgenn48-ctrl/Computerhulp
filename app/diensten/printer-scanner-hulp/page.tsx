@@ -133,7 +133,7 @@ export default function PrinterScannerHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -204,7 +204,7 @@ export default function PrinterScannerHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Printer en Scanner Hulp bij U Thuis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een printer die niet print, een scanner die niet scant, of een apparaat dat niet wil verbinden met uw computer — het zijn frustrerende problemen die uw dagelijkse werk verstoren. Onze IT-specialisten kennen alle merken en modellen: HP, Canon, Epson, Brother, Samsung en meer.</p>
+            <p>Een printer die niet print, een scanner die niet scant, of een apparaat dat niet wil verbinden met uw computer — het zijn frustrerende problemen die uw dagelijkse werk verstoren. Onze HBO-studenten kennen alle merken en modellen: HP, Canon, Epson, Brother, Samsung en meer.</p>
             <p>We installeren nieuwe printers, lossen papierstoringen op, configureren draadloos printen via WiFi, en stellen scan-naar-e-mail in. Alles bij u thuis, met duidelijke uitleg zodat u het voortaan zelf kunt. En als uw printer echt aan vervanging toe is, adviseren we u eerlijk welk model bij u past.</p>
           </div>
         </div>

@@ -133,7 +133,7 @@ export default function LaptopComputerReparatiePage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -204,7 +204,7 @@ export default function LaptopComputerReparatiePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Laptop Reparatie zonder Gedoe</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een kapotte laptop of pc hoeft niet meteen vervangen te worden. Veel problemen zijn sneller en goedkoper op te lossen dan u denkt. Of het nu gaat om een gebroken scherm, een laptop die niet meer opstart, of een pc die constant crasht — onze IT-specialisten repareren het bij u thuis.</p>
+            <p>Een kapotte laptop of pc hoeft niet meteen vervangen te worden. Veel problemen zijn sneller en goedkoper op te lossen dan u denkt. Of het nu gaat om een gebroken scherm, een laptop die niet meer opstart, of een pc die constant crasht — onze HBO-studenten repareren het bij u thuis.</p>
             <p>We werken met alle merken en modellen: HP, Lenovo, Dell, Acer, ASUS, Apple MacBook en meer. Van hardware reparaties zoals scherm- en toetsenbordvervanging tot softwareproblemen zoals een vastgelopen besturingssysteem. En als een upgrade meer zin heeft dan een reparatie, adviseren we u eerlijk.</p>
           </div>
         </div>

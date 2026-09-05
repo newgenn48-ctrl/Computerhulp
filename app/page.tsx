@@ -296,7 +296,7 @@ export default function HomePage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/hero-computerhulp.webp"
-                    alt="IT-specialist sluit de wifi-router aan terwijl de bewoonster meekijkt"
+                    alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"

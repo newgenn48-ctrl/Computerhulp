@@ -44,7 +44,7 @@ const euro = (n: number) => '\u20ac' + n.toFixed(2).replace('.', ',')
 /* Rekenvoorbeelden uit constants - een prijswijziging loopt automatisch mee. */
 const voorbeelden = [
   { label: 'Simpel probleem', kwartier: 3, tijd: '45 minuten', voorbeeld: 'Printer instellen, e-mail configureren, WiFi fixen', featured: false },
-  { label: 'Gemiddeld probleem', kwartier: 4, tijd: '60 minuten', voorbeeld: 'Trage computer opschonen, virus verwijderen, data overzetten', featured: true },
+  { label: 'Gemiddeld probleem', kwartier: 4, tijd: '60 minuten', voorbeeld: 'Trage computer opschonen, pop-ups weghalen, data overzetten', featured: true },
   { label: 'Complex probleem', kwartier: 6, tijd: '90 minuten', voorbeeld: 'Netwerk instellen, meerdere apparaten, volledige installatie', featured: false },
 ]
 

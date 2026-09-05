@@ -133,7 +133,7 @@ export default function TelevisieRadioPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide IT-specialisten
+                HBO-opgeleide HBO-studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -204,7 +204,7 @@ export default function TelevisieRadioPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">TV en Audio Hulp aan Huis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een nieuwe Smart TV installeren, zenders op volgorde zetten, een soundbar aansluiten of streamingdiensten instellen — het klinkt eenvoudig maar in de praktijk loopt het vaak anders. Onze IT-specialisten helpen u met alle merken televisies en audio-apparatuur.</p>
+            <p>Een nieuwe Smart TV installeren, zenders op volgorde zetten, een soundbar aansluiten of streamingdiensten instellen — het klinkt eenvoudig maar in de praktijk loopt het vaak anders. Onze HBO-studenten helpen u met alle merken televisies en audio-apparatuur.</p>
             <p>We komen bij u thuis en zorgen dat alles perfect werkt: van het instellen van Netflix, NPO en Disney+ tot het programmeren van uw afstandsbediening. Ook helpen we met het aansluiten van externe speakers, soundbars en surround systemen. Zodat u optimaal kunt genieten van uw TV en muziek.</p>
           </div>
         </div>
