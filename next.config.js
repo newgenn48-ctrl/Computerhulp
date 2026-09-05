@@ -15,6 +15,8 @@ const nextConfig = {
       },
       // Oude WordPress-URL's die nog in Google staan (Search Console toont er nog vertoningen op):
       // permanent doorsturen zodat linkwaarde en bezoekers niet op een 404 landen
+      // Oude blogposts (/index.php/2025/08/07/hello-world/) hebben geen tegenhanger: naar de homepage
+      { source: '/index.php/:year(\d{4})/:path*', destination: '/', permanent: true },
       { source: '/index.php/:path*', destination: '/:path*', permanent: true },
       { source: '/hello-world', destination: '/', permanent: true },
       { source: '/category/:path*', destination: '/', permanent: true },
