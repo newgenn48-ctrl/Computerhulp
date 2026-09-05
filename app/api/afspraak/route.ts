@@ -33,10 +33,15 @@ export async function POST(request: NextRequest) {
       return NextResponse.json({ message: 'Hulpvraag succesvol verzonden!' }, { status: 200 })
     }
 
-    // Validatie - alleen naam en telefoon verplicht; de rest is optioneel
-    if (!naam || !telefoon) {
+    // Validatie - alle velden zijn verplicht (zelfde regels als het formulier)
+    const verplicht: Array<[unknown, string]> = [
+      [naam, 'naam'], [telefoon, 'telefoonnummer'], [email, 'e-mailadres'],
+      [adres, 'straat en huisnummer'], [postcode, 'postcode'], [plaats, 'woonplaats'], [probleem, 'omschrijving'],
+    ]
+    const ontbreekt = verplicht.filter(([v]) => typeof v !== 'string' || !v.trim()).map(([, label]) => label)
+    if (ontbreekt.length > 0) {
       return NextResponse.json(
-        { error: 'Naam en telefoonnummer zijn verplicht' },
+        { error: `Vul alle velden in (ontbreekt: ${ontbreekt.join(', ')})` },
         { status: 400 }
       )
     }

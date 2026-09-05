@@ -9,15 +9,14 @@ import { BUSINESS } from '@/lib/constants'
 type Field = 'naam' | 'telefoon' | 'email' | 'adres' | 'postcode' | 'plaats' | 'probleem'
 
 const validationRules: Record<Field, { required?: string; pattern?: [RegExp, string]; minLength?: [number, string] }> = {
-  // Alleen naam en telefoon zijn verplicht: de rest vragen we aan de telefoon.
-  // Optionele velden worden wel gecontroleerd zodra ze zijn ingevuld.
+  // Alle velden zijn verplicht: zo staat elke aanvraag compleet in de mail en hoeft niemand na te bellen voor het adres.
   naam: { required: 'Naam is verplicht', minLength: [2, 'Naam moet minimaal 2 karakters bevatten'] },
   telefoon: { required: 'Telefoonnummer is verplicht', pattern: [/^[\d\s\-\+\(\)]{10,}$/, 'Voer een geldig telefoonnummer in'] },
-  email: { pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
-  adres: {},
-  postcode: { pattern: [/^[1-9]\d{3}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2511 CV)'] },
-  plaats: {},
-  probleem: {},
+  email: { required: 'E-mailadres is verplicht', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
+  adres: { required: 'Straat en huisnummer zijn verplicht' },
+  postcode: { required: 'Postcode is verplicht', pattern: [/^[1-9]\d{3}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2511 CV)'] },
+  plaats: { required: 'Woonplaats is verplicht' },
+  probleem: { required: 'Beschrijf kort waar het om gaat', minLength: [10, 'Beschrijf in minimaal 10 tekens waar het om gaat'] },
 }
 
 function validate(name: Field, value: string): string {
@@ -186,12 +185,14 @@ export default function AfspraakForm() {
 
         <div>
           <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
-            E-mail <span className="font-normal text-gray-500">(optioneel)</span>
+            E-mail
           </label>
           <input
             type="email"
             id="email"
             name="email"
+            required
+            aria-required="true"
             value={formData.email}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -209,11 +210,13 @@ export default function AfspraakForm() {
         </div>
 
         <div>
-          <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer <span className="font-normal text-gray-500">(optioneel)</span></label>
+          <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer</label>
           <input
             type="text"
             id="adres"
             name="adres"
+            required
+            aria-required="true"
             value={formData.adres}
             onChange={handleChange}
             onBlur={handleBlur}
@@ -229,11 +232,13 @@ export default function AfspraakForm() {
 
         <div className="grid grid-cols-[8.5rem_1fr] gap-3">
           <div>
-            <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode <span className="font-normal text-gray-500">(optioneel)</span></label>
+            <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode</label>
             <input
               type="text"
               id="postcode"
               name="postcode"
+              required
+              aria-required="true"
               value={formData.postcode}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -247,11 +252,13 @@ export default function AfspraakForm() {
             />
           </div>
           <div>
-            <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats <span className="font-normal text-gray-500">(optioneel)</span></label>
+            <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats</label>
             <input
               type="text"
               id="plaats"
               name="plaats"
+              required
+              aria-required="true"
               value={formData.plaats}
               onChange={handleChange}
               onBlur={handleBlur}
@@ -273,10 +280,12 @@ export default function AfspraakForm() {
         )}
 
         <div>
-          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Waar gaat het om? <span className="font-normal text-gray-500">(optioneel)</span></label>
+          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Waar gaat het om?</label>
           <textarea
             id="probleem"
             name="probleem"
+            required
+            aria-required="true"
             value={formData.probleem}
             onChange={handleChange}
             onBlur={handleBlur}
