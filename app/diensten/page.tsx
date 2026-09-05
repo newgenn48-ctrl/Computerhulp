@@ -16,7 +16,6 @@ const ALL_TOPICS = [
   { slug: 'computercursus-ouderen', label: 'Computercursus voor ouderen' },
   { slug: 'persoonlijke-training', label: 'Persoonlijke training' },
   { slug: 'laptop-computer-reparatie', label: 'Laptop- en pc-reparatie' },
-  { slug: 'laptop-laten-herstellen', label: 'Laptop laten herstellen' },
   { slug: 'monteur-aan-huis', label: 'IT-monteur aan huis' },
   { slug: 'printer-scanner-hulp', label: 'Printer & scanner' },
   { slug: 'email-hulp', label: 'E-mail instellen en herstellen' },

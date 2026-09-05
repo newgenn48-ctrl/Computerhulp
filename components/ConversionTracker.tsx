@@ -34,6 +34,8 @@ export default function ConversionTracker({ conversionId, conversionLabel }: Con
       sent = false
     }
     if (sent && window.gtag) {
+      // Zelfde verzending ook als GA4-gebeurtenis (belangrijke gebeurtenis 'lead_form')
+      window.gtag('event', 'lead_form', { event_category: 'contact' })
       window.gtag('event', 'conversion', {
         send_to: `${conversionId}/${conversionLabel}`,
         transaction_id: `lead-${Date.now()}`,

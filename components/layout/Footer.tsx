@@ -67,7 +67,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/it-hulp" className="footer-link">
+                <Link href="/computerhulp-aan-huis" className="footer-link">
                   IT-Hulp aan Huis
                 </Link>
               </li>

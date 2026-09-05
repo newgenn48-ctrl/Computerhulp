@@ -171,6 +171,8 @@ export default function RootLayout({
               if (!link || chzhCallCounted) return;
               chzhCallCounted = true;
               if (typeof gtag === 'function') {
+                // Zelfde klik ook als GA4-gebeurtenis (belangrijke gebeurtenis 'tel_click')
+                gtag('event', 'tel_click', { 'event_category': 'contact', 'transport_type': 'beacon' });
                 gtag('event', 'conversion', {
                   'send_to': 'AW-16733341823/KWVeCKj-u_gbEP-Qiqs-',
                   'value': 1.0,

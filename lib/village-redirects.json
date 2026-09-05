@@ -1,0 +1,1182 @@
+[
+  {
+    "source": "/student-aan-huis-stad-aan-t-haringvliet",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-stad-aan-t-haringvliet",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-s-gravenzande",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-s-gravenzande",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-s-gravendeel",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-s-gravendeel",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-naaldwijk",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-naaldwijk",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-monster",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-monster",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-de-lier",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-de-lier",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-honselersdijk",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-honselersdijk",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-poeldijk",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-poeldijk",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-kwintsheul",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-kwintsheul",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-maasdijk",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-maasdijk",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-ter-heijde",
+    "destination": "/computerhulp-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-ter-heijde",
+    "destination": "/student-aan-huis-westland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-berkel-en-rodenrijs",
+    "destination": "/computerhulp-aan-huis-lansingerland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-berkel-en-rodenrijs",
+    "destination": "/student-aan-huis-lansingerland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-bleiswijk",
+    "destination": "/computerhulp-aan-huis-lansingerland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-bleiswijk",
+    "destination": "/student-aan-huis-lansingerland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-bergschenhoek",
+    "destination": "/computerhulp-aan-huis-lansingerland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-bergschenhoek",
+    "destination": "/student-aan-huis-lansingerland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-pijnacker",
+    "destination": "/computerhulp-aan-huis-pijnacker-nootdorp",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-pijnacker",
+    "destination": "/student-aan-huis-pijnacker-nootdorp",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-nootdorp",
+    "destination": "/computerhulp-aan-huis-pijnacker-nootdorp",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-nootdorp",
+    "destination": "/student-aan-huis-pijnacker-nootdorp",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-delfgauw",
+    "destination": "/computerhulp-aan-huis-pijnacker-nootdorp",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-delfgauw",
+    "destination": "/student-aan-huis-pijnacker-nootdorp",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-voorburg",
+    "destination": "/computerhulp-aan-huis-leidschendam-voorburg",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-voorburg",
+    "destination": "/student-aan-huis-leidschendam-voorburg",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-leidschendam",
+    "destination": "/computerhulp-aan-huis-leidschendam-voorburg",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-leidschendam",
+    "destination": "/student-aan-huis-leidschendam-voorburg",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-stompwijk",
+    "destination": "/computerhulp-aan-huis-leidschendam-voorburg",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-stompwijk",
+    "destination": "/student-aan-huis-leidschendam-voorburg",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-sassenheim",
+    "destination": "/computerhulp-aan-huis-teylingen",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-sassenheim",
+    "destination": "/student-aan-huis-teylingen",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-voorhout",
+    "destination": "/computerhulp-aan-huis-teylingen",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-voorhout",
+    "destination": "/student-aan-huis-teylingen",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-warmond",
+    "destination": "/computerhulp-aan-huis-teylingen",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-warmond",
+    "destination": "/student-aan-huis-teylingen",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-brielle",
+    "destination": "/computerhulp-aan-huis-westvoorne",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-brielle",
+    "destination": "/student-aan-huis-westvoorne",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-oostvoorne",
+    "destination": "/computerhulp-aan-huis-westvoorne",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-oostvoorne",
+    "destination": "/student-aan-huis-westvoorne",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-rockanje",
+    "destination": "/computerhulp-aan-huis-westvoorne",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-rockanje",
+    "destination": "/student-aan-huis-westvoorne",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-nieuwenhoorn",
+    "destination": "/computerhulp-aan-huis-hellevoetsluis",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-nieuwenhoorn",
+    "destination": "/student-aan-huis-hellevoetsluis",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-zwartewaal",
+    "destination": "/computerhulp-aan-huis-westvoorne",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-zwartewaal",
+    "destination": "/student-aan-huis-westvoorne",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-abbenbroek",
+    "destination": "/computerhulp-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-abbenbroek",
+    "destination": "/student-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-geervliet",
+    "destination": "/computerhulp-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-geervliet",
+    "destination": "/student-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hekelingen",
+    "destination": "/computerhulp-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hekelingen",
+    "destination": "/student-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-zuidland",
+    "destination": "/computerhulp-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-zuidland",
+    "destination": "/student-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-heenvliet",
+    "destination": "/computerhulp-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-heenvliet",
+    "destination": "/student-aan-huis-nissewaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-oud-beijerland",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-oud-beijerland",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-strijen",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-strijen",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-klaaswaal",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-klaaswaal",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-numansdorp",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-numansdorp",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-piershil",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-piershil",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-zuid-beijerland",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-zuid-beijerland",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-puttershoek",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-puttershoek",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-maasdam",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-maasdam",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-heinenoord",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-heinenoord",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-mijnsheerenland",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-mijnsheerenland",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-nieuw-beijerland",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-nieuw-beijerland",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-goudswaard",
+    "destination": "/computerhulp-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-goudswaard",
+    "destination": "/student-aan-huis-hoeksche-waard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-rhoon",
+    "destination": "/computerhulp-aan-huis-albrandswaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-rhoon",
+    "destination": "/student-aan-huis-albrandswaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-poortugaal",
+    "destination": "/computerhulp-aan-huis-albrandswaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-poortugaal",
+    "destination": "/student-aan-huis-albrandswaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-middelharnis",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-middelharnis",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-ouddorp",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-ouddorp",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-dirksland",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-dirksland",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-goedereede",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-goedereede",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-sommelsdijk",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-sommelsdijk",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-stellendam",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-stellendam",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-oude-tonge",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-oude-tonge",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-nieuwe-tonge",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-nieuwe-tonge",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-ooltgensplaat",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-ooltgensplaat",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-den-bommel",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-den-bommel",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-herkingen",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-herkingen",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-melissant",
+    "destination": "/computerhulp-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-melissant",
+    "destination": "/student-aan-huis-goeree-overflakkee",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-bodegraven",
+    "destination": "/computerhulp-aan-huis-bodegraven-reeuwijk",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-bodegraven",
+    "destination": "/student-aan-huis-bodegraven-reeuwijk",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-reeuwijk",
+    "destination": "/computerhulp-aan-huis-bodegraven-reeuwijk",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-reeuwijk",
+    "destination": "/student-aan-huis-bodegraven-reeuwijk",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-driebruggen",
+    "destination": "/computerhulp-aan-huis-bodegraven-reeuwijk",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-driebruggen",
+    "destination": "/student-aan-huis-bodegraven-reeuwijk",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-schoonhoven",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-schoonhoven",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-bergambacht",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-bergambacht",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-lekkerkerk",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-lekkerkerk",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-stolwijk",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-stolwijk",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-haastrecht",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-haastrecht",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-ammerstol",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-ammerstol",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-berkenwoude",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-berkenwoude",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-gouderak",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-gouderak",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-krimpen-aan-de-lek",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-krimpen-aan-de-lek",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-ouderkerk-aan-den-ijssel",
+    "destination": "/computerhulp-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-ouderkerk-aan-den-ijssel",
+    "destination": "/student-aan-huis-krimpenerwaard",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-kinderdijk",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-kinderdijk",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-nieuw-lekkerland",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-nieuw-lekkerland",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-groot-ammers",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-groot-ammers",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-bleskensgraaf",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-bleskensgraaf",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-arkel",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-arkel",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-giessenburg",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-giessenburg",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hoornaar",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hoornaar",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-nieuwpoort",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-nieuwpoort",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-streefkerk",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-streefkerk",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-oud-alblas",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-oud-alblas",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-noordeloos",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-noordeloos",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-schelluinen",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-schelluinen",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-langerak",
+    "destination": "/computerhulp-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-langerak",
+    "destination": "/student-aan-huis-molenlanden",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-boskoop",
+    "destination": "/computerhulp-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-boskoop",
+    "destination": "/student-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hazerswoude-dorp",
+    "destination": "/computerhulp-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hazerswoude-dorp",
+    "destination": "/student-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hazerswoude-rijndijk",
+    "destination": "/computerhulp-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hazerswoude-rijndijk",
+    "destination": "/student-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-benthuizen",
+    "destination": "/computerhulp-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-benthuizen",
+    "destination": "/student-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-koudekerk-aan-den-rijn",
+    "destination": "/computerhulp-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-koudekerk-aan-den-rijn",
+    "destination": "/student-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-zwammerdam",
+    "destination": "/computerhulp-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-zwammerdam",
+    "destination": "/student-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-aarlanderveen",
+    "destination": "/computerhulp-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-aarlanderveen",
+    "destination": "/student-aan-huis-alphen-aan-den-rijn",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-leimuiden",
+    "destination": "/computerhulp-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-leimuiden",
+    "destination": "/student-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-roelofarendsveen",
+    "destination": "/computerhulp-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-roelofarendsveen",
+    "destination": "/student-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-oude-wetering",
+    "destination": "/computerhulp-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-oude-wetering",
+    "destination": "/student-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-woubrugge",
+    "destination": "/computerhulp-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-woubrugge",
+    "destination": "/student-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hoogmade",
+    "destination": "/computerhulp-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hoogmade",
+    "destination": "/student-aan-huis-kaag-en-braassem",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-rijnsburg",
+    "destination": "/computerhulp-aan-huis-katwijk",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-rijnsburg",
+    "destination": "/student-aan-huis-katwijk",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-valkenburg-zh",
+    "destination": "/computerhulp-aan-huis-katwijk",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-valkenburg-zh",
+    "destination": "/student-aan-huis-katwijk",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-noordwijkerhout",
+    "destination": "/computerhulp-aan-huis-noordwijk",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-noordwijkerhout",
+    "destination": "/student-aan-huis-noordwijk",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-de-zilk",
+    "destination": "/computerhulp-aan-huis-noordwijk",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-de-zilk",
+    "destination": "/student-aan-huis-noordwijk",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-rozenburg",
+    "destination": "/computerhulp-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-rozenburg",
+    "destination": "/student-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hoek-van-holland",
+    "destination": "/computerhulp-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hoek-van-holland",
+    "destination": "/student-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hoogvliet",
+    "destination": "/computerhulp-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hoogvliet",
+    "destination": "/student-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-ijsselmonde",
+    "destination": "/computerhulp-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-ijsselmonde",
+    "destination": "/student-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-pernis",
+    "destination": "/computerhulp-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-pernis",
+    "destination": "/student-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-overschie",
+    "destination": "/computerhulp-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-overschie",
+    "destination": "/student-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hillegersberg",
+    "destination": "/computerhulp-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hillegersberg",
+    "destination": "/student-aan-huis-rotterdam",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-maasland",
+    "destination": "/computerhulp-aan-huis-midden-delfland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-maasland",
+    "destination": "/student-aan-huis-midden-delfland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-schipluiden",
+    "destination": "/computerhulp-aan-huis-midden-delfland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-schipluiden",
+    "destination": "/student-aan-huis-midden-delfland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-den-hoorn",
+    "destination": "/computerhulp-aan-huis-midden-delfland",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-den-hoorn",
+    "destination": "/student-aan-huis-midden-delfland",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-ter-aar",
+    "destination": "/computerhulp-aan-huis-nieuwkoop",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-ter-aar",
+    "destination": "/student-aan-huis-nieuwkoop",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-nieuwveen",
+    "destination": "/computerhulp-aan-huis-nieuwkoop",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-nieuwveen",
+    "destination": "/student-aan-huis-nieuwkoop",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-noorden",
+    "destination": "/computerhulp-aan-huis-nieuwkoop",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-noorden",
+    "destination": "/student-aan-huis-nieuwkoop",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-zevenhoven",
+    "destination": "/computerhulp-aan-huis-nieuwkoop",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-zevenhoven",
+    "destination": "/student-aan-huis-nieuwkoop",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-hardinxveld",
+    "destination": "/computerhulp-aan-huis-hardinxveld-giessendam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-hardinxveld",
+    "destination": "/student-aan-huis-hardinxveld-giessendam",
+    "permanent": true
+  },
+  {
+    "source": "/computerhulp-aan-huis-giessendam",
+    "destination": "/computerhulp-aan-huis-hardinxveld-giessendam",
+    "permanent": true
+  },
+  {
+    "source": "/student-aan-huis-giessendam",
+    "destination": "/student-aan-huis-hardinxveld-giessendam",
+    "permanent": true
+  },
+  {
+    "source": "/it-hulp",
+    "destination": "/computerhulp-aan-huis",
+    "permanent": true
+  },
+  {
+    "source": "/diensten/laptop-laten-herstellen",
+    "destination": "/diensten/laptop-computer-reparatie",
+    "permanent": true
+  }
+]

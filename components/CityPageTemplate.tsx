@@ -8,7 +8,7 @@ import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
 import { Icon } from '@/components/icons'
-import { City } from '@/lib/cities'
+import { City, getVillagesOf } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
@@ -115,6 +115,14 @@ function getConfig(variant: CityPageVariant): VariantConfig {
 
 // ─── Metadata generators ─────────────────────────────────────────────────────
 
+/** ' (ook Naaldwijk, Monster en De Lier)' voor gemeenten met dorpen; anders leeg. */
+function villageSuffix(city: City): string {
+  const names = getVillagesOf(city.slug).slice(0, 3).map(v => v.name)
+  if (names.length === 0) return ''
+  const lijst = names.length > 1 ? `${names.slice(0, -1).join(', ')} en ${names[names.length - 1]}` : names[0]
+  return ` (ook ${lijst})`
+}
+
 export function generateComputerhulpPageMetadata(city: City): Metadata {
   /* Google toont ~60 tekens van een title; lange plaatsnamen krijgen een
      kortere variant zodat de naam nooit wordt afgekapt. */
@@ -125,7 +133,7 @@ export function generateComputerhulpPageMetadata(city: City): Metadata {
     ].find((t) => t.length <= 60) ?? `Computerhulp ${city.name} | Binnen 24u`
   return {
     title,
-    description: `Computerhulp aan huis in ${city.name}: computer, laptop, printer, wifi en smart home. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+    description: `Computerhulp aan huis in ${city.name}${villageSuffix(city)}: computer, laptop, printer, wifi en smart home. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       images: OG_IMAGE,
       title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
@@ -150,7 +158,7 @@ export function generateStudentPageMetadata(city: City): Metadata {
     ].find((t) => t.length <= 60) ?? `Student aan Huis ${city.name}`
   return {
     title,
-    description: `Student aan huis in ${city.name}: een HBO-student helpt u thuis met computer, laptop, wifi, tablet of telefoon. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten, geen abonnement. Bel ${BUSINESS.PHONE}.`,
+    description: `Student aan huis in ${city.name}${villageSuffix(city)}: een HBO-student helpt u thuis met computer, laptop, wifi, tablet of telefoon. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten, geen abonnement. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       images: OG_IMAGE,
       title: `Student aan Huis ${city.name} | Vanaf ${PRICING.MINIMUM_TOTAL}`,
@@ -852,6 +860,34 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
               <div className="flex flex-wrap gap-3">
                 {content.neighborhoods.map((neighborhood) => (
                   <span key={neighborhood} className="city-tag">{neighborhood}</span>
+                ))}
+              </div>
+            </div>
+          </section>
+        )
+      })()}
+
+      {/* Dorpen en kernen van deze gemeente: ze hebben geen eigen pagina meer, maar zoekers
+          uit die plaatsen moeten zichzelf hier herkennen (en Google ook). */}
+      {(() => {
+        const vs = getVillagesOf(city.slug)
+        if (vs.length === 0) return null
+        const names = vs.map(v => v.name)
+        const lijst = names.length > 1 ? `${names.slice(0, -1).join(', ')} en ${names[names.length - 1]}` : names[0]
+        return (
+          <section className="py-12 lg:py-16 bg-surface" aria-labelledby="dorpen-heading">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+              <h2 id="dorpen-heading" className="section-title">
+                {variant === 'computerhulp' ? `Ook computerhulp aan huis in ${lijst}` : `Ook een student aan huis in ${lijst}`}
+              </h2>
+              <p className="section-subtitle mb-8">
+                De gemeente {city.name} bestaat uit meer dan één kern. Wij komen in alle dorpen en wijken
+                van {city.name}, voor dezelfde prijs en meestal binnen 24 uur. Voorrijden kost {PRICING.TRAVEL},
+                waar u in {city.name} ook woont.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {names.map((n) => (
+                  <span key={n} className="city-tag">{n}</span>
                 ))}
               </div>
             </div>

@@ -1,4 +1,7 @@
 /** @type {import('next').NextConfig} */
+// Dorpspagina's zijn samengevoegd in hun gemeentepagina; oude URL's sturen permanent door.
+const villageRedirects = require('./lib/village-redirects.json')
+
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -24,6 +27,7 @@ const nextConfig = {
       { source: '/wp-content/uploads/2024/10/Algemene-voorwaarden.pdf', destination: '/voorwaarden', permanent: true },
       { source: '/wp-content/uploads/2024/10/Privacyverklaring-AVG.pdf', destination: '/privacy', permanent: true },
       { source: '/wp-content/:path*', destination: '/', permanent: true },
+      ...villageRedirects,
     ]
   },
   images: {
