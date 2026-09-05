@@ -80,12 +80,14 @@ const nextConfig = {
             value: [
               "default-src 'self'",
               "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://*.google.com https://*.gstatic.com https://*.googletagmanager.com https://*.google-analytics.com https://*.doubleclick.net",
-              "script-src-elem 'self' 'unsafe-inline' https://*.google.com https://*.gstatic.com https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.doubleclick.net",
+              "script-src-elem 'self' 'unsafe-inline' https://*.google.com https://*.gstatic.com https://*.googletagmanager.com https://*.google-analytics.com https://*.googleadservices.com https://*.doubleclick.net https://*.googlesyndication.com",
               "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
               "font-src 'self' https://fonts.gstatic.com",
               "img-src 'self' data: https: https://*.google.com https://*.google-analytics.com https://*.googletagmanager.com https://*.googleadservices.com https://*.gstatic.com https://*.ggpht.com https://*.googleapis.com https://*.doubleclick.net",
-              "connect-src 'self' https://*.google.com https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com",
-              "frame-src 'self' https://*.google.com https://*.doubleclick.net https://*.googletagmanager.com",
+              // googlesyndication en google.nl: daar stuurt de Ads-tag zijn cookieloze metingen naartoe
+              // (consent mode); zonder deze regel blokkeert de browser die pings en telt Google Ads te weinig.
+              "connect-src 'self' https://*.google.com https://*.google.nl https://*.google-analytics.com https://*.analytics.google.com https://*.googletagmanager.com https://*.doubleclick.net https://*.googleadservices.com https://*.googlesyndication.com",
+              "frame-src 'self' https://*.google.com https://*.doubleclick.net https://*.googletagmanager.com https://*.googlesyndication.com",
               "object-src 'none'",
               "base-uri 'self'",
               "form-action 'self'",
