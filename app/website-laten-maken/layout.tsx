@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { BUSINESS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Website Laten Maken Zuid-Holland | Professioneel & Betaalbaar',
+  title: 'Website Laten Maken Zuid-Holland | Vanaf €795',
   description: `Website laten maken in ${BUSINESS.REGION}. Custom of WordPress/Shopify. 2-3 weken geleverd, SEO-geoptimaliseerd. Gratis offerte. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Website Laten Maken Zuid-Holland | Professioneel',

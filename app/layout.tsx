@@ -121,17 +121,33 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Google Ads Tag (gtag.js) */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=AW-16733341823"
-          strategy="afterInteractive"
-        />
+        {/* Google Ads Tag (gtag.js). De stub hieronder staat er meteen, het script zelf laden we
+            pas bij de eerste interactie of na 3,5 seconden: zo blokkeert het de eerste weergave niet.
+            Alles wat vóór het laden gebeurt (consent, config, een belklik-conversie) staat in de
+            dataLayer-wachtrij en wordt verstuurd zodra gtag.js binnen is. */}
         <Script id="google-ads" strategy="afterInteractive">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'AW-16733341823');
+            (function(){
+              var loaded = false;
+              function loadGtag(){
+                if (loaded) return; loaded = true;
+                var s = document.createElement('script');
+                s.async = true;
+                s.src = 'https://www.googletagmanager.com/gtag/js?id=AW-16733341823';
+                document.head.appendChild(s);
+                ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){
+                  window.removeEventListener(ev, loadGtag, true);
+                });
+              }
+              ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){
+                window.addEventListener(ev, loadGtag, { capture: true, passive: true, once: true });
+              });
+              setTimeout(loadGtag, 3500);
+            })();
           `}
         </Script>
 

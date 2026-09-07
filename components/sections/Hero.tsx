@@ -50,6 +50,7 @@ export default function Hero({
           fill
           className="object-cover object-center"
           priority
+          quality={65}
           sizes="100vw"
         />
         <div className="hero-overlay-mobile" />

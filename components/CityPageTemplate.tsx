@@ -158,7 +158,7 @@ export function generateStudentPageMetadata(city: City): Metadata {
     ].find((t) => t.length <= 60) ?? `Student aan Huis ${city.name}`
   return {
     title,
-    description: `Student aan huis in ${city.name}${villageSuffix(city)}: HBO-student voor computer, laptop en wifi. ${PRICING.PER_QUARTER} per kwartier, geen abonnement. Bel ${BUSINESS.PHONE}.`,
+    description: `Student aan huis in ${city.name}${villageSuffix(city)}: een geduldige HBO-student voor computer, laptop en wifi. ${PRICING.PER_QUARTER} per kwartier, geen abonnement.`,
     openGraph: {
       images: OG_IMAGE,
       title: `Student aan Huis ${city.name} | Vanaf ${PRICING.MINIMUM_TOTAL}`,
