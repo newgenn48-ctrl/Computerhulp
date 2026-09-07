@@ -67,22 +67,28 @@ const config: Config = {
         },
       },
       fontFamily: {
-        sans: ['var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        // Zelfde stack als de referentiesite: het systeemlettertype (Segoe UI op Windows,
+        // SF op Mac). Geen webfont-download meer, tekst staat er direct.
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
       },
       // Font-size schaal overgenomen van hulpmetit-nextgen (groter dan Tailwind default,
       // betere leesbaarheid voor senior doelgroep).
       // Lopende tekst krijgt ruime regelafstand (1.7). Dat is waar een
       // pagina lucht van krijgt en het scheelt onze doelgroep echt moeite.
       // Koppen blijven juist dicht op elkaar staan.
+      // Tekstschaal van de referentiesite (computerhulpnh.nl): compactere
+      // lopende tekst (0,9-0,95rem), leadtekst 1,22rem, koppen 2rem en groter.
       fontSize: {
-        'sm':   ['0.9375rem', { lineHeight: '1.6' }],   // 15px
-        'base': ['1.0625rem', { lineHeight: '1.7' }],   // 17px
-        'lg':   ['1.1875rem', { lineHeight: '1.7' }],   // 19px
-        'xl':   ['1.375rem',  { lineHeight: '1.5' }],   // 22px
-        '2xl':  ['1.75rem',   { lineHeight: '1.3' }],   // 28px
-        '3xl':  ['2.25rem',   { lineHeight: '1.2' }],   // 36px
-        '4xl':  ['2.75rem',   { lineHeight: '1.1' }],   // 44px
-        '5xl':  ['3.5rem',    { lineHeight: '1.1' }],   // 56px
+        'xs':   ['0.75rem',   { lineHeight: '1.5' }],   // 12px
+        'sm':   ['0.875rem',  { lineHeight: '1.6' }],   // 14px
+        'base': ['0.95rem',   { lineHeight: '1.7' }],   // 15,2px
+        'lg':   ['1.05rem',   { lineHeight: '1.7' }],   // 16,8px
+        'xl':   ['1.22rem',   { lineHeight: '1.75' }],  // 19,5px
+        '2xl':  ['1.5rem',    { lineHeight: '1.3' }],   // 24px
+        '3xl':  ['2rem',      { lineHeight: '1.2' }],   // 32px
+        '4xl':  ['2.7rem',    { lineHeight: '1.1' }],   // 43px
+        '5xl':  ['3.5rem',    { lineHeight: '1.06' }],  // 56px
+        '6xl':  ['5.1rem',    { lineHeight: '1.06' }],  // 82px
       },
       // Rondere hoeken dan Tailwind standaard geeft. Eén stap zachter over
       // de hele lijn, zodat kaarten en knoppen minder hard ogen zonder dat

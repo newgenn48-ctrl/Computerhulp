@@ -1,5 +1,4 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
@@ -7,17 +6,6 @@ import { SpeedInsights } from '@vercel/speed-insights/next'
 import LayoutShell from '@/components/layout/LayoutShell'
 import { SvgSprite } from '@/components/icons'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
-
-// Inter overal — senior-vriendelijk, hoge leesbaarheid op scherm,
-// karakterrijk bij zware gewichten (700-800) voor professionele koppen.
-const inter = Inter({
-  subsets: ['latin'],
-  display: 'swap',
-  preload: true,
-  adjustFontFallback: true,
-  fallback: ['system-ui', 'arial'],
-  variable: '--font-inter',
-})
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || BUSINESS.URL),
@@ -82,7 +70,7 @@ export default function RootLayout({
        per definitie wél in de client-DOM en niet in de server-HTML. Zonder
        deze vlag meldt React dat als mismatch. Geldt alleen voor dit element,
        niet voor de rest van de boom. */
-    <html lang="nl" className={`scroll-smooth ${inter.variable}`} suppressHydrationWarning>
+    <html lang="nl" className="scroll-smooth" suppressHydrationWarning>
       <head>
         {/* DNS Prefetch & Preconnect for Performance */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
