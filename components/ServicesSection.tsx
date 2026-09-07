@@ -4,7 +4,7 @@ import { Icon } from '@/components/icons'
 
 export const services = [
   {
-    title: 'Computer traag of vastgelopen',
+    title: 'Computer en Laptop',
     description: 'Trage computer of laptop weer snel: opschonen, updates, opstartproblemen en rustige uitleg.',
     icon: 'laptop',
     image: '/dienst-computer-laptop.webp',
