@@ -190,8 +190,8 @@ export default function StudentAanHuisPage() {
 
       {/* Kosten uitgelegd: 'student aan huis kosten' is de grootste organische zoekvraag op deze pagina
           (positie ~10). Eén duidelijke sectie met de vergelijking die zoekers maken. */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="kosten-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section" aria-labelledby="kosten-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-8">
             <p className="section-eyebrow">Kosten</p>
             <h2 id="kosten-heading" className="section-title">Wat kost een student aan huis?</h2>

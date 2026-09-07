@@ -28,8 +28,8 @@ export default function ContactPage() {
   return (
     <div className="pt-24">
       {/* Paginakop */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <section className="panel-section">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center panel panel-pad">
           <p className="section-eyebrow">Contact</p>
           <h1 className="section-title-lg mb-4">Neem contact op</h1>
           <p className="section-subtitle">
@@ -40,8 +40,8 @@ export default function ContactPage() {
       </section>
 
       {/* Contactmanieren + formulier */}
-      <section className="py-12 lg:py-16 bg-surface">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Links: bereiken */}
             <div className="space-y-4">
@@ -144,8 +144,8 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
             <h2 className="section-title">Veelgestelde vragen</h2>

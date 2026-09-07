@@ -130,8 +130,8 @@ export default function DienstenPage() {
       </section>
 
       {/* Services Grid */}
-      <section className="py-12 lg:py-16 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-12">
             <h2 className="section-title">Waar wij u mee helpen</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
@@ -211,8 +211,8 @@ export default function DienstenPage() {
       </section>
 
       {/* Pricing Overview */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-10">
             <p className="section-eyebrow">Tarieven</p>
             <h2 className="section-title">Wat het kost</h2>

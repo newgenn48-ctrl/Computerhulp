@@ -117,7 +117,7 @@ function getConfig(variant: CityPageVariant): VariantConfig {
 
 /** ' (ook Naaldwijk, Monster en De Lier)' voor gemeenten met dorpen; anders leeg. */
 function villageSuffix(city: City): string {
-  const names = getVillagesOf(city.slug).slice(0, 2).map(v => v.name)
+  const names = getVillagesOf(city.slug).slice(0, city.name.length > 12 ? 1 : 2).map(v => v.name)
   if (names.length === 0) return ''
   const lijst = names.length > 1 ? `${names.slice(0, -1).join(', ')} en ${names[names.length - 1]}` : names[0]
   return ` (ook ${lijst})`
@@ -506,8 +506,8 @@ function ComputerhulpContentSection({ city }: { city: City }) {
   }
 
   return (
-    <section className="py-12 lg:py-16 bg-surface">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+    <section className="panel-section">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Column - City-specific Content */}
           <div>
@@ -613,8 +613,8 @@ function StudentContentSection({ city }: { city: City }) {
   const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
 
   return (
-    <section className="py-12 lg:py-16 bg-surface">
-      <div className="max-w-4xl mx-auto px-4 sm:px-6">
+    <section className="panel-section">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
         <h2 className="section-title mb-6">
           Waarom mensen ons bellen in {city.name}
         </h2>
@@ -849,8 +849,8 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         if (!content || content.neighborhoods.length < 3) return null
 
         return (
-          <section className="py-12 lg:py-16 bg-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <section className="panel-section">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
               <h2 className="section-title">
                 {config.neighborhoodsSectionTitle(city, content.region)}
               </h2>
@@ -875,8 +875,8 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         const names = vs.map(v => v.name)
         const lijst = names.length > 1 ? `${names.slice(0, -1).join(', ')} en ${names[names.length - 1]}` : names[0]
         return (
-          <section className="py-12 lg:py-16 bg-surface" aria-labelledby="dorpen-heading">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <section className="panel-section" aria-labelledby="dorpen-heading">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
               <h2 id="dorpen-heading" className="section-title">
                 {variant === 'computerhulp' ? `Ook computerhulp aan huis in ${lijst}` : `Ook een student aan huis in ${lijst}`}
               </h2>

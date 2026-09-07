@@ -158,8 +158,8 @@ export default function LocatiesPage() {
       </section>
 
       {/* Featured Cities */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-12">
             <h2 className="section-title">Populaire Locaties</h2>
             <p className="text-lg text-gray-600">Onze meest gevraagde werkgebieden</p>
@@ -191,8 +191,8 @@ export default function LocatiesPage() {
       </section>
 
       {/* All Cities A-Z */}
-      <section className="py-12 lg:py-16 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-12">
             <h2 className="section-title">Alle Locaties A-Z</h2>
             <p className="text-lg text-gray-600">Klik op uw gemeente voor meer informatie</p>
@@ -239,8 +239,8 @@ export default function LocatiesPage() {
       </section>
 
       {/* Testimonials — geograpfische social proof */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="locations-testimonials-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="panel-section" aria-labelledby="locations-testimonials-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 panel panel-pad">
           <header className="text-center mb-12">
             <h2 id="locations-testimonials-heading" className="section-title">Recent geholpen in {BUSINESS.REGION}</h2>
             <p className="section-subtitle">Klanten uit Delft, Rotterdam, Den Haag, Gouda en meer</p>

@@ -29,7 +29,7 @@ function TestimonialsFallback({ testimonials }: TestimonialsCarouselProps) {
                 <Icon key={i} name="star" className="w-5 h-5 text-yellow-400" aria-hidden="true" />
               ))}
             </div>
-            {t.date && <span className="text-sm text-gray-400">{t.date}</span>}
+            {t.date && <span className="text-sm text-gray-500">{t.date}</span>}
           </div>
           <blockquote className="text-gray-800 mb-6 leading-relaxed text-[1.0625rem] sm:text-lg">&ldquo;{t.quote}&rdquo;</blockquote>
           <footer className="flex items-center gap-3 pt-4 border-t border-gray-100">
@@ -133,7 +133,7 @@ function TestimonialsCarouselInner({ testimonials }: TestimonialsCarouselProps) 
                 ))}
               </div>
               {testimonial.date && (
-                <span className="text-sm text-gray-400">{testimonial.date}</span>
+                <span className="text-sm text-gray-500">{testimonial.date}</span>
               )}
             </div>
             <blockquote className="text-gray-800 mb-6 leading-relaxed text-[1.0625rem] sm:text-lg">&ldquo;{testimonial.quote}&rdquo;</blockquote>

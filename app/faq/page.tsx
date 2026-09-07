@@ -106,8 +106,8 @@ export default function FAQPage() {
         </section>
 
         {/* FAQ Content */}
-        <section className="py-12 lg:py-16 bg-white">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <section className="panel-section">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
             {faqCategories.map((category, idx) => (
               <div key={idx} className="mb-16 last:mb-0">
                 <h2 className="section-title flex items-center gap-3">

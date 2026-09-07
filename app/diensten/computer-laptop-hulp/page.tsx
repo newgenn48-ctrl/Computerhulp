@@ -297,7 +297,7 @@ export default function ComputerLaptopHulpPage() {
           <h2 className="content-title mb-4">Professionele Computerhulp bij U Thuis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Een trage computer of laptop die vastloopt is niet alleen frustrerend, het kost u ook tijd en productiviteit. Of het nu gaat om een computer die niet meer opstart, een laptop die steeds vastloopt of programma’s die foutmeldingen geven — onze HBO-studenten hebben de kennis en ervaring om het probleem snel te diagnosticeren en op te lossen.</p>
-            <p>Wij komen bij u thuis in heel Zuid-Holland, van Den Haag tot Rotterdam en van Leiden tot Dordrecht. Geen gedoe met uw computer naar een winkel brengen, geen wachttijden van weken. Binnen 24 uur staat onze HBO-student aan uw deur, en in de meeste gevallen is het probleem ter plekke verholpen. Van opschonen en opnieuw instellen tot bestanden overzetten — wij regelen het.</p>
+            <p>Wij komen bij u thuis in heel Zuid-Holland, van Den Haag tot Rotterdam en van Leiden tot Dordrecht. Geen gedoe met uw computer naar een winkel brengen, geen wachttijden van weken. Meestal binnen 24 uur staat onze HBO-student aan uw deur, en in de meeste gevallen is het probleem ter plekke verholpen. Van opschonen en opnieuw instellen tot bestanden overzetten — wij regelen het.</p>
           </div>
         </div>
       </section>

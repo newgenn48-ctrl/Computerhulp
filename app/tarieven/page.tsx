@@ -78,8 +78,8 @@ export default function TarievenPage() {
       </section>
 
       {/* Pricing Card */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="card-bezel">
             <div className="card-bezel-inner">
             <div className="bg-gradient-to-r from-blue-600 to-indigo-700 px-8 py-8 text-white text-center">
@@ -124,8 +124,8 @@ export default function TarievenPage() {
       </section>
 
       {/* Voorbeeld berekeningen */}
-      <section className="py-12 lg:py-16 bg-surface">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-10">
             <p className="section-eyebrow">Rekenvoorbeelden</p>
             <h2 className="section-title">Wat kost het in de praktijk?</h2>
@@ -159,8 +159,8 @@ export default function TarievenPage() {
       </section>
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
             <h2 className="section-title">Veelgestelde vragen over onze tarieven</h2>

@@ -73,8 +73,8 @@ export default function OverOnsPage() {
       />
 
       {/* Ons Verhaal */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-16">
             <h2 className="section-title">
               Ons Verhaal
@@ -112,8 +112,8 @@ export default function OverOnsPage() {
       </section>
 
       {/* Waarom Wij */}
-      <section className="py-12 lg:py-16 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-16">
             <h2 className="section-title">
               Waarom mensen ons bellen
@@ -145,8 +145,8 @@ export default function OverOnsPage() {
       </section>
 
       {/* Het team */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-12">
             <h2 className="section-title">Ons team</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
@@ -177,8 +177,8 @@ export default function OverOnsPage() {
       </section>
 
       {/* Onze Garanties */}
-      <section className="py-12 lg:py-16 bg-surface">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-12">
             <h2 className="section-title">
               Onze Garanties
