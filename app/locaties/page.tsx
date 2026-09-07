@@ -3,7 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
-import { cities, cityCount, TOP_CITIES } from '@/lib/cities'
+import { cities, cityCount, villages, TOP_CITIES } from '@/lib/cities'
+import LocationSearch from '@/components/LocationSearch'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
@@ -75,6 +76,17 @@ const sortedLetters = Object.keys(groupedCities).sort()
 // Featured cities (largest/most popular)
 const featuredCities = ['den-haag', 'rotterdam', 'leiden', 'delft', 'zoetermeer', 'dordrecht', 'gouda', 'alphen-aan-den-rijn']
 
+// Zoeklijst: gemeenten en dorpen samen, zodat 'Naaldwijk' naar Westland leidt
+const searchPlaces = [
+  ...cities.map((c) => ({ slug: c.slug, name: c.name })),
+  ...villages.map((v) => ({
+    slug: v.slug,
+    name: v.name,
+    municipality: v.municipality,
+    municipalityName: cities.find((c) => c.slug === v.municipality)?.name,
+  })),
+]
+
 export default function LocatiesPage() {
   return (
     <>
@@ -101,12 +113,13 @@ export default function LocatiesPage() {
           <div className="max-w-2xl">
             <span className="eyebrow">Werkgebied · Zuid-Holland</span>
             <h1 className="section-title-lg">
-              Onze <span className="text-blue-600">Locaties</span>
+              Computerhulp aan huis in <span className="text-blue-600">uw woonplaats</span>
             </h1>
-            <p className="text-xl sm:text-2xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Wij bieden computerhulp aan huis in meer dan <strong className="text-gray-900">50 gemeenten</strong> in <strong className="text-gray-900">{BUSINESS.REGION}</strong>. {PRICING.TRAVEL} voorrijkosten, binnen 24 uur bij u thuis.
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
+              Wij komen in alle <strong className="text-gray-900">{cityCount} gemeenten</strong> van <strong className="text-gray-900">{BUSINESS.REGION}</strong>, en in de dorpen daartussen. {PRICING.TRAVEL} voorrijkosten, meestal binnen 24 uur bij u thuis.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <LocationSearch places={searchPlaces} />
+            <div className="flex flex-wrap gap-4 mt-8">
               <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
                 {BUSINESS.PHONE}
@@ -121,7 +134,7 @@ export default function LocatiesPage() {
       </section>
 
       {/* Stats */}
-      <section className="py-12 bg-surface border-b border-gray-100">
+      <section className="py-10 border-b border-white/60">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
@@ -129,8 +142,8 @@ export default function LocatiesPage() {
               <div className="text-gray-600">Gemeenten</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">&lt; 1u</div>
-              <div className="text-gray-600">Reactietijd</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{villages.length}+</div>
+              <div className="text-gray-600">Dorpen en kernen</div>
             </div>
             <div>
               <div className="text-4xl font-bold text-blue-600 mb-2">{PRICING.TRAVEL}</div>

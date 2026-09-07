@@ -111,6 +111,7 @@ const config: Config = {
         'card-hover': '0 20px 40px -12px rgb(37 99 235 / 0.15)',
         'soft': '0 6px 18px -4px rgb(15 23 42 / 0.06), 0 2px 6px -2px rgb(15 23 42 / 0.04)',
         'soft-lg': '0 18px 46px -12px rgb(15 23 42 / 0.14), 0 6px 16px -6px rgb(15 23 42 / 0.08)',
+        'panel': '0 18px 60px rgb(15 23 42 / 0.08), 0 2px 8px rgb(15 23 42 / 0.04)',
       },
       backgroundImage: {
         'gradient-primary': 'linear-gradient(135deg, #2563eb 0%, #1e40af 100%)',

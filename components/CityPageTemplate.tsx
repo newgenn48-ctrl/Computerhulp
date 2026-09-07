@@ -6,7 +6,7 @@ import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
+import ComfortSection from '@/components/sections/ComfortSection'
 import { Icon } from '@/components/icons'
 import { City, getVillagesOf } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
@@ -806,7 +806,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         showAllButton={true}
       />
 
-      <WhyChooseUsSection title={config.whyTitle} benefits={config.benefits} showCta={false} />
+      <ComfortSection cityName={city.name} variant={variant} />
 
       <PricingSection />
 
@@ -814,11 +814,11 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         testimonials={HUB_TESTIMONIALS}
       />
 
-      <HowItWorksSection background="gray" />
+      <HowItWorksSection />
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
             <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>

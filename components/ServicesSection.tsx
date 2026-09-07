@@ -4,8 +4,8 @@ import { Icon } from '@/components/icons'
 
 export const services = [
   {
-    title: 'Computer & Laptop',
-    description: 'Storing, trage pc of nieuwe laptop instellen — wij lossen het op en maken alles weer snel.',
+    title: 'Computer traag of vastgelopen',
+    description: 'Trage computer of laptop weer snel: opschonen, updates, opstartproblemen en rustige uitleg.',
     icon: 'laptop',
     image: '/dienst-computer-laptop.webp',
     imageAlt: 'Open laptop op een eettafel, handen op het toetsenbord',
@@ -19,36 +19,8 @@ export const services = [
     ]
   },
   {
-    title: 'Printer & Scanner',
-    description: 'Printer doet het niet, draadloos printen of nieuwe printer aansluiten — wij lossen het op.',
-    icon: 'printer',
-    image: '/dienst-printer-scanner.webp',
-    imageAlt: 'All-in-one printer met een foto die uit de lade komt',
-    slug: '/diensten/printer-scanner-hulp',
-    features: [
-      'Nieuwe printer aansluiten en instellen',
-      'Scanner instellen',
-      'Draadloos printen instellen',
-      'Printer doet het niet? Wij fixen het'
-    ]
-  },
-  {
-    title: 'E-mail',
-    description: 'E-mail werkt niet, instellen of op orde brengen — wij lossen storingen op en helpen u op weg.',
-    icon: 'email',
-    image: '/dienst-email.webp',
-    imageAlt: 'Laptopscherm met een geopende e-mail',
-    slug: '/diensten/email-hulp',
-    features: [
-      'E-mail instellen op computer of telefoon',
-      'Outlook, Gmail en andere programma\'s',
-      'Ongewenste mail stoppen',
-      'E-mail weer toegankelijk maken'
-    ]
-  },
-  {
-    title: 'WiFi & Netwerk',
-    description: 'WiFi-storing, slechte verbinding of dood punt in huis? Wij lossen het op en verbeteren bereik.',
+    title: 'Wifi & internet',
+    description: 'Traag internet, wegvallende wifi of slechte dekking in huis: wij lossen het op en verbeteren het bereik.',
     icon: 'wifi',
     image: '/dienst-wifi.webp',
     imageAlt: 'Witte wifi-router op een kast, hand aan de kabel',
@@ -61,8 +33,36 @@ export const services = [
     ]
   },
   {
-    title: 'Tablet & Smartphone',
-    description: 'Telefoon of tablet werkt niet of nieuwe instellen — wij lossen het op en leggen rustig uit.',
+    title: 'Printer installeren',
+    description: 'Nieuwe printer aansluiten, draadloos printen, scanner instellen en printerstoringen oplossen.',
+    icon: 'printer',
+    image: '/dienst-printer-scanner.webp',
+    imageAlt: 'All-in-one printer met een foto die uit de lade komt',
+    slug: '/diensten/printer-scanner-hulp',
+    features: [
+      'Nieuwe printer aansluiten en instellen',
+      'Scanner instellen',
+      'Draadloos printen instellen',
+      'Printer doet het niet? Wij fixen het'
+    ]
+  },
+  {
+    title: 'E-mail & accounts',
+    description: 'E-mail instellen op computer of telefoon, weer toegang krijgen en ongewenste mail stoppen.',
+    icon: 'email',
+    image: '/dienst-email.webp',
+    imageAlt: 'Laptopscherm met een geopende e-mail',
+    slug: '/diensten/email-hulp',
+    features: [
+      'E-mail instellen op computer of telefoon',
+      'Outlook, Gmail en andere programma\'s',
+      'Ongewenste mail stoppen',
+      'E-mail weer toegankelijk maken'
+    ]
+  },
+  {
+    title: 'Tablet & telefoon',
+    description: 'Nieuwe tablet of telefoon instellen, apps, foto’s overzetten en videobellen, rustig uitgelegd.',
     icon: 'mobile',
     image: '/dienst-tablet-smartphone.webp',
     imageAlt: 'Tablet in de handen van een oudere vrouw',
@@ -75,8 +75,8 @@ export const services = [
     ]
   },
   {
-    title: 'Televisie & Radio',
-    description: 'TV-storing, decoder of streamen — wij lossen het op en stellen zenders goed in.',
+    title: 'Televisie & streamen',
+    description: 'Smart-tv instellen, zenders op volgorde, decoder en Netflix werkend, soundbar aangesloten.',
     icon: 'tv',
     image: '/dienst-tv.webp',
     imageAlt: 'Televisie aan de wand met soundbar eronder',
@@ -90,8 +90,8 @@ export const services = [
     ]
   },
   {
-    title: 'Laptop & Computer Reparatie',
-    description: 'Kapot scherm, lege accu of andere storing? Wij repareren laptops en pc’s bij u thuis.',
+    title: 'Laptop of pc doet het niet',
+    description: 'Start niet op, loopt vast of geeft foutmeldingen? Wij kijken bij u thuis wat er aan de hand is.',
     icon: 'wrench',
     image: '/Reparatie.webp',
     imageAlt: 'Geopende laptop met precisieschroevendraaier ernaast',
@@ -119,8 +119,8 @@ export const services = [
     ]
   },
   {
-    title: 'Dataherstel',
-    description: 'Foto’s of bestanden kwijt na storing of crash? Wij halen ze terug en zetten een back-up op.',
+    title: 'Foto’s en bestanden veilig',
+    description: 'Bestanden kwijt na een storing? Wij halen terug wat kan en zetten een automatische back-up op.',
     icon: 'database',
     image: '/dienst-dataherstel.webp',
     imageAlt: 'Externe harde schijf naast een open fotoalbum',
@@ -133,8 +133,8 @@ export const services = [
     ]
   },
   {
-    title: 'Persoonlijke Training',
-    description: 'Stap voor stap leren met uw apparaten — op uw tempo, in gewone taal.',
+    title: 'Uitleg en training',
+    description: 'Stap voor stap leren werken met uw apparaten, in uw tempo en in gewone taal.',
     icon: 'academic-cap',
     image: '/dienst-training.webp',
     imageAlt: 'Beschreven notitieblok naast een laptop',
@@ -173,7 +173,7 @@ export default function ServicesSection({
   const displayServices = limitServices > 0 ? services.slice(0, limitServices) : services
 
   return (
-    <section className="section-bg-soft py-12 lg:py-16">
+    <section className="panel-section">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           {eyebrow && <p className="section-eyebrow">{eyebrow}</p>}
@@ -253,12 +253,9 @@ export default function ServicesSection({
 
         {showAllButton && (
           <div className="text-center mt-10">
-            <Link
-              href="/diensten"
-              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors"
-            >
+            <Link href="/diensten" className="btn-secondary">
               Alle diensten bekijken
-              <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
+              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
             </Link>
           </div>
         )}

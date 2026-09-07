@@ -4,7 +4,8 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
-import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
+import ComfortSection from '@/components/sections/ComfortSection'
+import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
@@ -204,9 +205,9 @@ export default function HomePage() {
         imageAlt={`IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel={`${BUSINESS.NAME} hero`}
         eyebrow={`In heel ${BUSINESS.REGION}`}
-        title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
+        title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
+          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — een geduldige HBO-student komt bij u thuis, lost het op en legt alles uit in gewone taal.</>,
         ]}
         pills={[
           { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
@@ -226,40 +227,16 @@ export default function HomePage() {
         showAllButton={true}
       />
 
-      {/* Wat mensen echt tegenhoudt is geen prijs of snelheid, maar de vraag
-          of ze niet voor gek worden gezet. Dat blok stond er nog niet. */}
-      <WhyChooseUsSection
-        title="Waarom mensen ons bellen"
-        showCta={false}
-        benefits={[
-          {
-            icon: 'chat',
-            title: 'Gewone taal, geen vaktermen',
-            desc: 'Wij leggen uit wat we doen en waarom. Snapt u het niet? Dan vertellen we het gewoon nog een keer.',
-          },
-          {
-            icon: 'heart',
-            title: 'Geen vraag is te klein',
-            desc: 'Een knop die u niet vindt is net zo goed een reden om te bellen als een computer die niet opstart.',
-          },
-          {
-            icon: 'shield',
-            title: 'U hoeft niets te kopen',
-            desc: 'Wij verkopen geen abonnementen en geen nieuwe apparaten. We lossen op wat u heeft.',
-          },
-          {
-            icon: 'money',
-            title: 'Betalen pas als het werkt',
-            desc: 'Achteraf, gewoon via pin of Tikkie.',
-          },
-        ]}
-      />
+      <ComfortSection />
 
       {/* Zo werkt het */}
-      <HowItWorksSection background="gray" />
+      <HowItWorksSection />
 
       {/* Prijs — met een uitgewerkt voorbeeld in plaats van een tarievenlijst */}
-      <PricingSection background="white" />
+      <PricingSection />
+
+      {/* Plaatsen met een eigen zin per stad */}
+      <LocalCitiesSection />
 
       {/* Testimonials */}
       <TestimonialsSection
@@ -269,9 +246,9 @@ export default function HomePage() {
       />
 
       {/* SEO Content Section */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="seo-content-heading">
+      <section className="panel-section" aria-labelledby="seo-content-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
+          <div className="panel panel-pad grid lg:grid-cols-2 gap-12 items-start">
             <article>
               <h2 id="seo-content-heading" className="section-title mb-6">
                 Computerhulp bij u thuis
@@ -325,9 +302,9 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section — shares data with JSON-LD above */}
-      <section className="py-12 lg:py-16 bg-surface" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-12">
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <header className="text-center mb-10">
             <h2 id="faq-heading" className="section-title">
               Veelgestelde vragen
             </h2>
@@ -335,7 +312,7 @@ export default function HomePage() {
 
           <div className="space-y-4">
             {faqItems.map((faq, idx) => (
-              <details key={idx} className="group faq-item">
+              <details key={idx} className="group faq-item-white">
                 <summary className="faq-summary">
                   {faq.q}
                   <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />

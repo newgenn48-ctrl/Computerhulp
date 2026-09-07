@@ -28,8 +28,15 @@
   }
 
   body {
-    @apply bg-white text-gray-900 antialiased;
-    font-feature-settings: "rlig" 1, "calt" 1, "cv11" 1;
+    @apply text-gray-900 antialiased;
+    /* Zachte verloopachtergrond in onze eigen blauw- en indigotinten. Secties
+       liggen er als witte panelen op; dat geeft de rust die de doelgroep nodig
+       heeft en het onderscheid tussen secties zonder harde grijze banden. */
+    background-color: #f5f7fb;
+    background-image:
+      radial-gradient(60rem 40rem at 0% 0%, rgb(219 234 254 / 0.9), transparent 60%),
+      radial-gradient(60rem 40rem at 100% 20%, rgb(224 231 255 / 0.8), transparent 60%),
+      radial-gradient(50rem 40rem at 50% 100%, rgb(236 253 245 / 0.7), transparent 60%);
   }
 
   /* Koppen: systeemlettertype, gewicht 700, letterafstand -0,02em
@@ -191,7 +198,7 @@
      maar twee tinten — wit voor kaarten, surface voor de achtergrond
      eronder. Dat is wat kaarten laat drijven en secties laat aftekenen. */
   .section-bg-soft {
-    @apply relative bg-surface;
+    @apply relative bg-transparent;
   }
 
   /* ============================================
@@ -207,6 +214,31 @@
      eigenlijke witte kaart. De twee radii lopen concentrisch: 28px buiten,
      22px binnen (28 min de 6px padding). Dat geeft diepte zonder zware
      schaduwen, en het blijft rustig genoeg voor onze doelgroep. */
+  /* ── Panelen: elke sectie als afgerond wit vlak op de zachte achtergrond ── */
+  .panel-section {
+    @apply py-6 lg:py-8;
+  }
+  .panel {
+    @apply rounded-[2rem] bg-white/90 border border-white shadow-panel;
+  }
+  .panel-pad {
+    @apply p-6 sm:p-10 lg:p-12;
+  }
+  /* Grijze banden bestaan niet meer: de achtergrond loopt door en de kaarten
+     erin zijn wit. Zo ogen alle pagina's hetzelfde zonder 60 secties te wijzigen. */
+  section.bg-surface {
+    background-color: transparent;
+  }
+  .comfort-pill {
+    @apply inline-flex items-center gap-2 rounded-full bg-blue-50 border border-blue-100 px-3.5 py-2 text-sm font-semibold text-blue-900;
+  }
+  .city-card {
+    @apply block rounded-2xl bg-white border border-gray-100 shadow-soft p-5 sm:p-6 transition duration-300 hover:-translate-y-0.5 hover:shadow-soft-lg hover:border-blue-200;
+  }
+  .step-card {
+    @apply rounded-2xl bg-white border border-gray-100 shadow-soft p-6 h-full;
+  }
+
   .card-bezel {
     @apply block rounded-3xl bg-white/70 p-1.5 ring-1 ring-gray-900/[0.06] transition duration-300;
   }

@@ -7,68 +7,54 @@ const steps = [
   {
     step: '1',
     title: 'Bel of plan online',
-    desc: 'Vertel kort wat er niet werkt — dat is genoeg.',
+    desc: 'Vertel kort wat er niet werkt. U hoeft geen technische termen te kennen.',
   },
   {
     step: '2',
-    title: 'Wij komen bij u thuis',
-    desc: 'Meestal binnen 24 uur aan de deur, op een moment dat u schikt.',
+    title: 'We kiezen een rustig moment',
+    desc: 'We spreken af wanneer we langskomen en wat u kunt verwachten. Meestal binnen 24 uur.',
   },
   {
     step: '3',
-    title: 'Opgelost én uitgelegd',
-    desc: 'We laten zien wat er aan de hand was, zodat u het zelf weer snapt.',
+    title: 'We helpen aan uw eigen tafel',
+    desc: 'We kijken mee op uw eigen apparaat en lossen het probleem stap voor stap op.',
+  },
+  {
+    step: '4',
+    title: 'Samen controleren',
+    desc: 'We testen of alles werkt en leggen rustig uit wat handig is om te onthouden.',
   },
 ]
 
 /**
- * Drie stappen als verbonden tijdlijn: de lijn tussen de nummers maakt de
- * volgorde fysiek zichtbaar. Desktop horizontaal, mobiel verticaal met een
- * doorlopende rail — hetzelfde beeld, gekanteld.
+ * Vier stappen als kaarten. De vierde stap, samen controleren, is wat de
+ * doelgroep het meest geruststelt: er wordt niet weggelopen zodra het werkt.
  */
 export default function HowItWorksSection({
-  title = 'Zo werkt het',
-  background = 'white',
+  title = 'In vier eenvoudige stappen',
 }: HowItWorksSectionProps) {
   return (
-    <section className={`py-12 lg:py-16 ${background === 'gray' ? 'section-bg-soft' : 'bg-white'}`}>
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="text-center mb-10 lg:mb-12">
-          <p className="section-eyebrow">In 3 stappen</p>
-          <h2 className="section-title">{title}</h2>
-        </header>
+    <section className="panel-section" aria-labelledby="how-heading">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="panel panel-pad">
+          <header className="mb-8">
+            <p className="section-eyebrow">Zo werkt het</p>
+            <h2 id="how-heading" className="section-title">{title}</h2>
+            <p className="section-subtitle">Geen ingewikkeld proces. We nemen rustig met u door wat er gebeurt.</p>
+          </header>
 
-        <ol className="grid grid-cols-1 sm:grid-cols-3">
-          {steps.map((item, i) => (
-            <li
-              key={item.step}
-              className="relative flex sm:flex-col items-start sm:items-center gap-x-5 sm:text-center"
-            >
-              {/* Desktop: cirkel met lijnstukken links en rechts. De helften
-                  van buurkolommen sluiten op elkaar aan tot één lijn. */}
-              <div className="hidden sm:flex items-center w-full" aria-hidden="true">
-                <div className={`h-px flex-1 ${i === 0 ? 'bg-transparent' : 'bg-blue-200'}`} />
-                <div className="w-14 h-14 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white text-xl font-extrabold flex items-center justify-center shadow-lg shadow-blue-700/25 shrink-0">
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-5">
+            {steps.map((item) => (
+              <li key={item.step} className="step-card">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white text-lg font-bold flex items-center justify-center shadow-md shadow-blue-700/20 mb-4" aria-hidden="true">
                   {item.step}
                 </div>
-                <div className={`h-px flex-1 ${i === steps.length - 1 ? 'bg-transparent' : 'bg-blue-200'}`} />
-              </div>
-
-              {/* Mobiel: cirkel links met verticale rail naar de volgende stap */}
-              <div className="sm:hidden flex flex-col items-center self-stretch" aria-hidden="true">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white text-lg font-extrabold flex items-center justify-center shadow-lg shadow-blue-700/25 shrink-0">
-                  {item.step}
-                </div>
-                {i < steps.length - 1 && <div className="w-px flex-1 bg-blue-200 my-2" />}
-              </div>
-
-              <div className="flex-1 sm:flex-none sm:mt-5 pb-8 sm:pb-0 pt-1.5 sm:pt-0 sm:px-4">
-                <h3 className="font-bold text-gray-900 text-lg mb-1.5">{item.title}</h3>
+                <h3 className="font-bold text-gray-900 text-lg leading-snug mb-1.5">{item.title}</h3>
                 <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-              </div>
-            </li>
-          ))}
-        </ol>
+              </li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   )

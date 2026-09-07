@@ -5,7 +5,8 @@ import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import WhyChooseUsSection from '@/components/sections/WhyChooseUsSection'
+import ComfortSection from '@/components/sections/ComfortSection'
+import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
@@ -163,7 +164,7 @@ export default function StudentAanHuisPage() {
         imageSrc="/hero-student.webp"
         imageAlt={`IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
-        title={<>Student <span className="hero-highlight">aan huis</span></>}
+        title={<>Student <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
         ]}
@@ -183,7 +184,7 @@ export default function StudentAanHuisPage() {
         showAllButton={true}
       />
 
-      <WhyChooseUsSection title="Waarom een student aan huis?" benefits={studentBenefits} showCta={false} />
+      <ComfortSection variant="student" />
 
       <PricingSection />
 
@@ -229,11 +230,11 @@ export default function StudentAanHuisPage() {
         testimonials={testimonials}
       />
 
-      <HowItWorksSection background="gray" />
+      <HowItWorksSection />
 
       {/* FAQ */}
-      <section className="py-12 lg:py-16 bg-white" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
             <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
@@ -252,36 +253,7 @@ export default function StudentAanHuisPage() {
         </div>
       </section>
 
-      {/* Werkgebied */}
-      <section className="py-12 lg:py-16 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <header className="text-center mb-10">
-            <p className="section-eyebrow">Werkgebied</p>
-            <h2 className="section-title">Waar we komen</h2>
-            <p className="section-subtitle">50+ gemeenten in {BUSINESS.REGION} — voorrijden {PRICING.TRAVEL}</p>
-          </header>
-
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-            {topCities.map((city) => (
-              <Link
-                key={city.slug}
-                href={`/student-aan-huis-${city.slug}`}
-                className="flex items-center gap-2 sm:gap-3 bg-white rounded-xl p-3 sm:p-4 border border-gray-200 hover:border-blue-400 hover:shadow-md transition group"
-              >
-                <Icon name="location-pin" className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
-                <span className="font-medium text-sm sm:text-base text-gray-900 group-hover:text-blue-600 transition-colors">{city.name}</span>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-8">
-            <Link href="/locaties" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
-              Bekijk alle locaties
-              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
+      <LocalCitiesSection pagePrefix="student-aan-huis" />
 
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
