@@ -183,6 +183,18 @@ const breadcrumbData = {
   ]
 }
 
+const services = [
+  `Nieuwe telefoon of tablet instellen`,
+  `Contacten, foto’s en apps overzetten`,
+  `E-mail en agenda op uw toestel zetten`,
+  `WhatsApp en videobellen instellen en oefenen`,
+  `Apps installeren, opruimen en uitleggen`,
+  `Volle opslag oplossen zonder iets kwijt te raken`,
+  `Automatische back-up en beveiliging instellen`,
+  `Koppelen aan wifi, printer en smart-tv`,
+  `Alle merken telefoons en tablets`,
+]
+
 const cities = TOP_CITIES.map((c) => c.name)
 
 export default function SmartphoneHulpAanHuisPage() {
@@ -250,6 +262,29 @@ export default function SmartphoneHulpAanHuisPage() {
 
       </section>
 
+
+      {/* Wat wij voor u doen — check-list */}
+      <section className="py-12 lg:py-16 bg-surface">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <p className="section-eyebrow">Onze hulp</p>
+            <h2 className="section-title">Wat wij voor u doen</h2>
+            <p className="section-subtitle">Telefoon- en tabletklussen die we dagelijks doen, bij u thuis.</p>
+          </div>
+          <div className="card-bezel max-w-3xl mx-auto">
+            <div className="card-bezel-inner p-6 sm:p-8">
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {services.map((service, idx) => (
+              <div key={idx} className="flex items-start gap-3 py-1">
+                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                <span className="text-gray-700">{service}</span>
+              </div>
+            ))}
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <HowItWorksSection />
 

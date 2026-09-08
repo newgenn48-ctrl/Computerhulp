@@ -184,6 +184,18 @@ const breadcrumbData = {
   ]
 }
 
+const services = [
+  `Basis: muis, toetsenbord en het bureaublad`,
+  `E-mailen en een bijlage meesturen`,
+  `Veilig internetbankieren en DigiD`,
+  `Videobellen en appen met familie`,
+  `Foto’s ordenen, bewaren en delen`,
+  `Brieven in Word en lijstjes in Excel`,
+  `Sociale media zonder zorgen`,
+  `Nepmails en oplichting herkennen`,
+  `Stappen op papier om na te lezen`,
+]
+
 const cities = TOP_CITIES.map((c) => c.name)
 
 export default function ComputercursusOuderenPage() {
@@ -251,6 +263,29 @@ export default function ComputercursusOuderenPage() {
 
       </section>
 
+
+      {/* Wat wij voor u doen — check-list */}
+      <section className="py-12 lg:py-16 bg-surface">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <p className="section-eyebrow">Onze hulp</p>
+            <h2 className="section-title">Wat wij voor u doen</h2>
+            <p className="section-subtitle">Wat u bij ons kunt leren, aan uw eigen keukentafel.</p>
+          </div>
+          <div className="card-bezel max-w-3xl mx-auto">
+            <div className="card-bezel-inner p-6 sm:p-8">
+              <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
+            {services.map((service, idx) => (
+              <div key={idx} className="flex items-start gap-3 py-1">
+                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                <span className="text-gray-700">{service}</span>
+              </div>
+            ))}
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <HowItWorksSection />
 
