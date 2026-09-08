@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { BUSINESS } from '@/lib/constants'
@@ -65,19 +66,19 @@ export default function FloatingButtons() {
         </button>
       </div>
 
-      {/* Desktop: het belnummer zelf, leesbaar. Een tel:-link is op een
-          laptop weinig waard, het nummer kunnen aflezen wel. De agenda-CTA
-          staat op desktop al permanent in de header. */}
+      {/* Computer en tablet: afspraak maken. Het telefoonnummer staat op deze
+          schermen al permanent in de header; een tel:-link is daar weinig waard.
+          Op de telefoon houdt StickyMobileBar het belnummer vooraan. */}
       <div className="hidden sm:block">
-        <a
-          href={BUSINESS.PHONE_HREF}
-          translate="no"
+        <Link
+          href="/afspraak-maken"
           className="inline-flex items-center gap-2.5 h-14 px-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold text-lg shadow-2xl transition duration-200 hover:-translate-y-0.5 whitespace-nowrap"
-          aria-label={`Bel ${BUSINESS.PHONE}`}
+          aria-label="Online een afspraak maken"
         >
-          <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-          {BUSINESS.PHONE}
-        </a>
+          <Icon name="calendar" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+          Afspraak maken
+          <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+        </Link>
       </div>
     </div>
   )
