@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import './globals.css'
 import Script from 'next/script'
 import { Analytics } from '@vercel/analytics/next'
@@ -44,9 +44,6 @@ export const metadata: Metadata = {
       'max-video-preview': -1,
       'max-image-preview': 'large',
       'max-snippet': -1}},
-  other: {
-    'theme-color': '#2563eb',
-  },
   icons: {
     icon: [
       { url: '/favicon.ico', sizes: '32x32' },
@@ -56,6 +53,16 @@ export const metadata: Metadata = {
     apple: [
       { url: '/apple-touch-icon.png', sizes: '180x180', type: 'image/png' },
     ]}}
+
+/* Browserbalk in dezelfde tint als de pagina-achtergrond; viewport-fit zodat
+   env(safe-area-inset-*) werkt op telefoons met een notch. */
+export const viewport: Viewport = {
+  themeColor: '#f5f7fb',
+  colorScheme: 'light',
+  viewportFit: 'cover',
+  width: 'device-width',
+  initialScale: 1,
+}
 
 export default function RootLayout({
   children}: {

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { LEAD_SENT_KEY } from '@/components/ConversionTracker'
@@ -37,6 +37,15 @@ export default function AfspraakForm() {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [serverError, setServerError] = useState('')
+
+  // Waarschuw bij wegklikken als er al iets is ingevuld en nog niet is verstuurd
+  const isDirty = Object.entries(formData).some(([k, v]) => k !== 'website' && v.trim() !== '')
+  useEffect(() => {
+    if (!isDirty || submitStatus === 'success') return
+    const warn = (e: BeforeUnloadEvent) => { e.preventDefault() }
+    window.addEventListener('beforeunload', warn)
+    return () => window.removeEventListener('beforeunload', warn)
+  }, [isDirty, submitStatus])
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -291,7 +300,7 @@ export default function AfspraakForm() {
             onBlur={handleBlur}
             rows={4}
             className={`${inputClass('probleem')} resize-none`}
-            placeholder="Bijv: 'Mijn laptop start niet op' of 'Wifi werkt niet meer'"
+            placeholder="Bijv. ‘Mijn laptop start niet op’ of ‘Wifi werkt niet meer’"
             aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'}
             aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
             disabled={isSubmitting}
@@ -320,7 +329,7 @@ export default function AfspraakForm() {
                 <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
                 <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
               </svg>
-              Hulp vragen
+              Versturen…
             </span>
           ) : (
             'Hulp vragen'

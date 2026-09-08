@@ -45,7 +45,7 @@ export default function StickyMobileBar() {
       }`}
       aria-hidden={!show}
     >
-      <div className="bg-white border-t border-gray-200 shadow-lg px-3 py-3 flex gap-2">
+      <div className="bg-white border-t border-gray-200 shadow-lg px-3 py-3 flex gap-2" style={{ paddingBottom: 'calc(0.75rem + env(safe-area-inset-bottom))' }}>
         <a
           href={BUSINESS.PHONE_HREF}
           translate="no"
