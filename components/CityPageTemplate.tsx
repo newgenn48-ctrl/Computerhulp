@@ -55,14 +55,14 @@ const computerhulpConfig: VariantConfig = {
   heroImage: '/hero-computerhulp.webp',
   heroAlt: (cityName) => `HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${cityName}`,
   heroTitle: (cityName) => (
-    <>Computerhulp aan Huis <span className="hero-highlight">{cityName}</span></>
+    <>Computerhulp aan huis <span className="hero-highlight">{cityName}</span></>
   ),
   heroDescription: (cityName) => (
     <>
       Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
-  servicesTitle: (cityName) => `Computerhulp aan Huis ${cityName}`,
+  servicesTitle: (cityName) => `Computerhulp aan huis ${cityName}`,
   servicesDescription: 'Van een simpele vraag tot een lastig probleem — wij helpen u graag',
   whyTitle: 'Waarom klanten voor ons kiezen',
   neighborhoodsSectionTitle: (_city, region) => `Computerhulp in de regio ${region}`,
@@ -82,7 +82,7 @@ const studentConfig: VariantConfig = {
   heroImage: '/hero-student.webp',
   heroAlt: (cityName) => `HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${cityName}`,
   heroTitle: (cityName) => (
-    <>Student aan Huis <span className="hero-highlight">{cityName}</span></>
+    <>Student aan huis <span className="hero-highlight">{cityName}</span></>
   ),
   heroDescription: (cityName) => (
     <>
@@ -773,7 +773,7 @@ function StudentCrossLinkSection({ city }: { city: City }) {
             href={`/computerhulp-aan-huis-${city.slug}`}
             className="city-tag-link"
           >
-            Computerhulp aan Huis {city.name}
+            Computerhulp aan huis {city.name}
           </Link>
           <Link
             href="/diensten/computer-laptop-hulp"
@@ -803,7 +803,7 @@ function StudentCrossLinkSection({ city }: { city: City }) {
             href="/student-aan-huis"
             className="bg-blue-50 px-4 py-2 rounded-full text-sm font-medium text-blue-600 border border-blue-200 hover:bg-blue-100 transition-colors"
           >
-            Alle locaties Student aan Huis →
+            Alle plaatsen met een student aan huis →
           </Link>
         </div>
       </div>

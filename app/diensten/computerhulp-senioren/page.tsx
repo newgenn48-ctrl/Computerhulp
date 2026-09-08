@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: 'https://computerhulpzh.nl/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Computerhulp Zuid-Holland - IT Hulp aan Huis'},
+        alt: 'Computerhulp Zuid-Holland - computerhulp aan huis'},
     ]},
   alternates: {
     canonical: 'https://computerhulpzh.nl/diensten/computerhulp-senioren'},

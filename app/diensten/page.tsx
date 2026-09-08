@@ -100,7 +100,7 @@ export default function DienstenPage() {
           <div className="max-w-2xl">
             <p className="section-eyebrow">Alle diensten · Zuid-Holland</p>
             <h1 className="section-title-lg">
-              Alle Diensten <span className="text-blue-600">Zuid-Holland</span>
+              Alle diensten in <span className="text-blue-600">Zuid-Holland</span>
             </h1>
 
             <p className="section-subtitle mb-8 max-w-xl">

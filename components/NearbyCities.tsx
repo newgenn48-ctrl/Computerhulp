@@ -15,8 +15,8 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
   }
 
   const titleText = pageType === 'student-aan-huis'
-    ? 'Student aan Huis in omliggende steden'
-    : 'Computerhulp aan Huis in omliggende steden'
+    ? 'Student aan huis in omliggende steden'
+    : 'Computerhulp aan huis in omliggende steden'
 
   const parentLink = pageType === 'student-aan-huis'
     ? { url: '/student-aan-huis', text: 'Bekijk alle steden in Zuid-Holland' }

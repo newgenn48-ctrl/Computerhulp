@@ -159,7 +159,7 @@ export default function TVInstallatiePage() {
           <div className="text-center mb-10">
             <p className="section-eyebrow">Onze hulp</p>
             <h2 className="section-title">Wat wij voor u doen</h2>
-            <p className="section-subtitle">TV-klussen die we dagelijks doen.</p>
+            <p className="section-subtitle">Tv-klussen die we dagelijks doen.</p>
           </div>
           <div className="card-bezel max-w-3xl mx-auto">
             <div className="card-bezel-inner p-6 sm:p-8">

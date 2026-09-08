@@ -281,7 +281,7 @@ export default function ComputerLaptopHulpPage() {
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="cta-title mb-6">
-            Computer of Laptop Probleem?
+            Computer- of laptopprobleem?
           </h2>
           <p className="text-xl text-blue-100 mb-10">
             Neem contact op en we komen vandaag of morgen al bij u langs

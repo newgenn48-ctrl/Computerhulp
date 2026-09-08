@@ -38,20 +38,20 @@ export default function Breadcrumb() {
     // Special cases for better labels
     if (segment.startsWith('student-aan-huis')) {
       if (segment === 'student-aan-huis') {
-        label = 'Student aan Huis'
+        label = 'Student aan huis'
       } else {
         const city = segment.replace('student-aan-huis-', '')
         const cityName = city.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
-        breadcrumbItems.push({ label: 'Student aan Huis', href: '/student-aan-huis' })
+        breadcrumbItems.push({ label: 'Student aan huis', href: '/student-aan-huis' })
         label = cityName
       }
     } else if (segment.startsWith('computerhulp-aan-huis')) {
       if (segment === 'computerhulp-aan-huis') {
-        label = 'Computerhulp aan Huis'
+        label = 'Computerhulp aan huis'
       } else {
         const city = segment.replace('computerhulp-aan-huis-', '')
         const cityName = city.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')
-        breadcrumbItems.push({ label: 'Computerhulp aan Huis', href: '/computerhulp-aan-huis' })
+        breadcrumbItems.push({ label: 'Computerhulp aan huis', href: '/computerhulp-aan-huis' })
         label = cityName
       }
     } else if (segment === 'diensten') {

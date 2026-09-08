@@ -203,12 +203,19 @@ export default function SmartphoneHulpAanHuisPage() {
 
       {/* Premium Hero Section */}
       <section className="hero-wrapper" aria-label="Smartphone- en tablethulp aan huis hero">
-        <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 opacity-[0.08]"
-            style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, rgb(255 255 255 / 1) 1px, transparent 0)', backgroundSize: '32px 32px' }}
+        <div className="absolute inset-0">
+          <Image
+            src="/dienst-tablet-smartphone.webp"
+            alt="Tablet in de handen van een oudere vrouw"
+            fill
+            className="object-cover"
+            style={{ objectPosition: 'center center' }}
+            priority
+            sizes="100vw"
           />
+          <div className="hero-overlay-mobile" />
+          <div className="hero-overlay-desktop-r" />
+          <div className="hero-overlay-desktop-b" />
         </div>
 
         <div className="hero-content">

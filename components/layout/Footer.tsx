@@ -58,12 +58,12 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>
                 <Link href="/computerhulp-aan-huis" className="footer-link">
-                  Computerhulp aan Huis
+                  Computerhulp aan huis
                 </Link>
               </li>
               <li>
                 <Link href="/student-aan-huis" className="footer-link">
-                  Student aan Huis
+                  Student aan huis
                 </Link>
               </li>
               <li>
