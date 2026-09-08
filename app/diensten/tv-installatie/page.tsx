@@ -12,7 +12,7 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: 'Tv-installatie aan huis | Ophangen, zenders en apps',
-  description: `Tv-installatie aan huis in ${BUSINESS.REGION}: tv ophangen, smart-tv en zenders instellen, soundbar, decoder en Netflix. Ook als zenders weg zijn of de afstandsbediening niet werkt. Bel ${BUSINESS.PHONE}.`,
+  description: `Tv-installatie aan huis in ${BUSINESS.REGION}: tv ophangen, smart-tv en zenders instellen, soundbar, decoder en Netflix. Ook als zenders weg zijn.`,
   openGraph: {
     images: OG_IMAGE,
     title: 'Tv-installatie aan huis',

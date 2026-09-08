@@ -10,7 +10,8 @@
     "lint": "next lint",
     "test": "jest",
     "test:watch": "jest --watch",
-    "generate-cities": "node scripts/generate-cities.js"
+    "generate-cities": "node scripts/generate-cities.js",
+    "ads:token": "node scripts/google-ads-refresh-token.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",

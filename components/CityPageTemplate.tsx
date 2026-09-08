@@ -142,6 +142,11 @@ function villageSuffix(city: City): string {
   return ` (ook ${lijst})`
 }
 
+/** Google toont ~160 tekens van een beschrijving: met dorpen als het past, anders zonder. */
+function fit160(long: string, short: string): string {
+  return long.length <= 160 ? long : short
+}
+
 export function generateComputerhulpPageMetadata(city: City): Metadata {
   /* Google toont ~60 tekens van een title; lange plaatsnamen krijgen een
      kortere variant zodat de naam nooit wordt afgekapt. */
@@ -152,7 +157,8 @@ export function generateComputerhulpPageMetadata(city: City): Metadata {
     ].find((t) => t.length <= 60) ?? `Computerhulp ${city.name} | Meestal binnen 24 uur`
   return {
     title,
-    description: `Computerhulp aan huis in ${city.name}${villageSuffix(city)}: computer, laptop, printer en wifi. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+    description: fit160(`Computerhulp aan huis in ${city.name}${villageSuffix(city)}: computer, laptop, printer en wifi. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+      `Computerhulp aan huis in ${city.name}: computer, laptop, printer en wifi. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`),
     openGraph: {
       images: OG_IMAGE,
       title: `Computerhulp aan huis ${city.name} | Meestal binnen 24 uur`,
@@ -177,7 +183,8 @@ export function generateStudentPageMetadata(city: City): Metadata {
     ].find((t) => t.length <= 60) ?? `Student aan huis ${city.name}`
   return {
     title,
-    description: `Student aan huis in ${city.name}${villageSuffix(city)}: een geduldige HBO-student voor computer, laptop en wifi. ${PRICING.PER_QUARTER} per kwartier, geen abonnement.`,
+    description: fit160(`Student aan huis in ${city.name}${villageSuffix(city)}: een geduldige HBO-student voor computer, laptop en wifi. ${PRICING.PER_QUARTER} per kwartier, geen abonnement.`,
+      `Student aan huis in ${city.name}: een geduldige HBO-student voor computer, laptop en wifi. ${PRICING.PER_QUARTER} per kwartier, geen abonnement.`),
     openGraph: {
       images: OG_IMAGE,
       title: `Student aan huis ${city.name} | Geen abonnement`,

@@ -14,7 +14,7 @@ import PricingSection from '@/components/PricingSection'
 
 export const metadata: Metadata = {
   title: 'Smartphone- en tablethulp aan huis | Zuid-Holland',
-  description: `Smartphone- en tablethulp aan huis in ${BUSINESS.REGION}: telefoon of tablet instellen, foto’s en contacten overzetten, apps en videobellen. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Smartphone- en tablethulp aan huis in ${BUSINESS.REGION}: toestel instellen, foto’s en contacten overzetten, apps en videobellen. Meestal binnen 24 uur bij u thuis.`,
   openGraph: {
     title: 'Smartphone- en tablethulp aan huis | HBO-student aan huis',
     description: `Smartphone hulp aan huis in ${BUSINESS.REGION}: uw HBO-student aan huis. Meestal binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
@@ -307,7 +307,7 @@ export default function SmartphoneHulpAanHuisPage() {
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Een nieuwe telefoon of tablet is leuk — tot alles overgezet moet worden. Wij maken uw toestel werkklaar: contacten, foto’s en apps mee, e-mail ingesteld en de belangrijkste instellingen uitgelegd. Ook bij een volle opslag, haperende apps of een onbegrijpelijke melding komen we gewoon bij u thuis. Android of iPhone, telefoon of tablet: allemaal prima.
+                  Een nieuwe telefoon of tablet is leuk — tot alles overgezet moet worden. Wij maken uw toestel werkklaar: contacten, foto’s en apps mee, e-mail ingesteld en de belangrijkste instellingen uitgelegd. Ook bij een volle opslag, haperende apps of een onbegrijpelijke melding komen we gewoon bij u thuis. Elk merk, telefoon of tablet: allemaal prima.
                 </p>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waar we mee helpen</h3>
@@ -327,7 +327,7 @@ export default function SmartphoneHulpAanHuisPage() {
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Android én iPhone:</strong> Android, iPhone of een ander merk: we kennen ze allemaal.</span>
+                    <span><strong>Elk merk:</strong> welk merk telefoon of tablet u ook heeft, we kennen ze allemaal.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />

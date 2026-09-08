@@ -11,8 +11,8 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Computer- en laptophulp aan huis Zuid-Holland | Ook reparatie',
-  description: `Computer- en laptophulp aan huis in ${BUSINESS.REGION}: traag, vastgelopen, kapot scherm of start niet op. Ook pc-hulp en reparatie bij u thuis. Meestal binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
+  title: 'Computer- en laptophulp aan huis | Ook reparatie en pc-hulp',
+  description: `Computer- en laptophulp aan huis in ${BUSINESS.REGION}: traag, vastgelopen, kapot scherm of start niet op. Ook pc-hulp. Meestal binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
     title: 'Computer- en laptophulp aan huis',
@@ -85,7 +85,7 @@ const faqData = {
     { '@type': 'Question', name: `Repareren jullie ook een kapot scherm of een lege accu?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We vervangen laptopschermen, accu’s en toetsenborden aan huis. We bestellen het juiste onderdeel voor uw model en komen het bij u installeren.` } },
     { '@type': 'Question', name: `Moet mijn laptop of pc mee naar een werkplaats?`, acceptedAnswer: { '@type': 'Answer', text: `Nee. We werken bij u thuis, ook aan een vaste pc: u hoeft niets los te koppelen of te sjouwen. Alleen bij een enkele hardwarefout, zoals een moederbordprobleem, overleggen we of een werkplaats zinvol is.` } },
     { '@type': 'Question', name: `Raak ik mijn bestanden kwijt als jullie het oplossen?`, acceptedAnswer: { '@type': 'Answer', text: `Daar doen we alles aan om het te voorkomen. Waar mogelijk stellen we eerst uw documenten en foto’s veilig, en pas daarna lossen we het probleem op.` } },
-    { '@type': 'Question', name: `Helpen jullie met alle merken laptops en computers?`, acceptedAnswer: { '@type': 'Answer', text: `Ja, met alle merken en alle systemen: Windows, Mac en Chromebook, laptop en vaste pc.` } },
+    { '@type': 'Question', name: `Helpen jullie met alle merken laptops en computers?`, acceptedAnswer: { '@type': 'Answer', text: `Ja, met alle merken en alle besturingssystemen, laptop en vaste pc.` } },
     { '@type': 'Question', name: `Kan mijn oudere computer nog sneller worden?`, acceptedAnswer: { '@type': 'Answer', text: `Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Helpt dat niet genoeg, dan is een SSD-upgrade meestal de beste investering. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.` } },
     { '@type': 'Question', name: `Wat als het probleem niet opgelost kan worden?`, acceptedAnswer: { '@type': 'Answer', text: `Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). We zijn altijd eerlijk over de mogelijkheden voordat we beginnen.` } },
     { '@type': 'Question', name: `Wat kost computerhulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` } },
@@ -97,10 +97,10 @@ const services = [
   `Computer start niet op of loopt vast`,
   `Foutmeldingen, pop-ups en ongewenste programma’s weghalen`,
   `Nieuwe computer of laptop aansluiten en alles overzetten`,
-  `Windows en programma’s bijwerken`,
+  `Systeem en programma’s bijwerken`,
   `Kapot scherm, accu of toetsenbord vervangen`,
   `SSD-upgrade voor meer snelheid`,
-  `Diagnose bij waterschade`,
+  `Eerlijke diagnose als iets niet meer werkt`,
   `Vaste pc: beeldscherm, printer en kabels netjes aangesloten`,
   `Onderhoud en opschoning`,
   `Bestanden veiligstellen voordat we beginnen`,
@@ -113,7 +113,7 @@ const faqs = [
   { question: `Repareren jullie ook een kapot scherm of een lege accu?`, answer: `Ja. We vervangen laptopschermen, accu’s en toetsenborden aan huis. We bestellen het juiste onderdeel voor uw model en komen het bij u installeren.` },
   { question: `Moet mijn laptop of pc mee naar een werkplaats?`, answer: `Nee. We werken bij u thuis, ook aan een vaste pc: u hoeft niets los te koppelen of te sjouwen. Alleen bij een enkele hardwarefout, zoals een moederbordprobleem, overleggen we of een werkplaats zinvol is.` },
   { question: `Raak ik mijn bestanden kwijt als jullie het oplossen?`, answer: `Daar doen we alles aan om het te voorkomen. Waar mogelijk stellen we eerst uw documenten en foto’s veilig, en pas daarna lossen we het probleem op.` },
-  { question: `Helpen jullie met alle merken laptops en computers?`, answer: `Ja, met alle merken en alle systemen: Windows, Mac en Chromebook, laptop en vaste pc.` },
+  { question: `Helpen jullie met alle merken laptops en computers?`, answer: `Ja, met alle merken en alle besturingssystemen, laptop en vaste pc.` },
   { question: `Kan mijn oudere computer nog sneller worden?`, answer: `Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Helpt dat niet genoeg, dan is een SSD-upgrade meestal de beste investering. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.` },
   { question: `Wat als het probleem niet opgelost kan worden?`, answer: `Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). We zijn altijd eerlijk over de mogelijkheden voordat we beginnen.` },
   { question: `Wat kost computerhulp aan huis?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` },
@@ -260,11 +260,11 @@ export default function ComputerLaptopHulpPage() {
           <div className="prose prose-lg text-gray-700 max-w-none">
             <p>Een computer die traag is, vastloopt, rare meldingen geeft of helemaal niet meer opstart: we zien het dagelijks. Onze HBO-student komt bij u thuis in heel {BUSINESS.REGION}, meestal binnen 24 uur, en begint met een eerlijke diagnose. Eerst begrijpen wat er aan de hand is, dan pas oplossen. Zo betaalt u nooit voor werk dat niet nodig is.</p>
             <h3 className="content-title mt-8 mb-2">Trage computer of laptop</h3>
-            <p>Een trage computer is meestal geen reden voor een nieuwe. We ruimen op, halen programma’s weg die op de achtergrond meedraaien, werken Windows bij en zetten de instellingen goed. Helpt dat niet genoeg, dan is een SSD-upgrade vaak de beste investering: dezelfde computer, maar een stuk vlotter. We adviseren eerlijk wat zin heeft.</p>
+            <p>Een trage computer is meestal geen reden voor een nieuwe. We ruimen op, halen programma’s weg die op de achtergrond meedraaien, werken het systeem bij en zetten de instellingen goed. Helpt dat niet genoeg, dan is een SSD-upgrade vaak de beste investering: dezelfde computer, maar een stuk vlotter. We adviseren eerlijk wat zin heeft.</p>
             <h3 className="content-title mt-8 mb-2">Start niet op, loopt vast of geeft foutmeldingen</h3>
             <p>Bij een computer die niet meer opstart of steeds vastloopt zoeken we eerst naar de oorzaak, in plaats van symptomen te bestrijden. Ongewenste pop-ups en meldingen halen we weg en we zorgen dat het probleem niet volgende week terugkomt. Waar mogelijk stellen we eerst uw documenten en foto’s veilig.</p>
             <h3 className="content-title mt-8 mb-2">Reparatie aan huis: scherm, accu en toetsenbord</h3>
-            <p>Een kapotte laptop hoeft niet meteen vervangen te worden. Een gebroken scherm, een accu die niet meer laadt of een toetsenbord dat hapert repareren we bij u thuis. We bestellen het juiste onderdeel voor uw model en komen het installeren. Ook bij waterschade doen we een diagnose; hoe eerder u belt, hoe groter de kans dat het goed komt.</p>
+            <p>Een kapotte laptop hoeft niet meteen vervangen te worden. Een gebroken scherm, een accu die niet meer laadt of een toetsenbord dat hapert repareren we bij u thuis. We bestellen het juiste onderdeel voor uw model en komen het installeren. Is er vocht in de laptop gekomen, bel dan snel: hoe eerder we kijken, hoe groter de kans dat het goed komt.</p>
             <h3 className="content-title mt-8 mb-2">Pc-hulp aan huis: uw vaste computer</h3>
             <p>Een desktop-pc brengt u niet zomaar even naar een winkel: kabels los, beeldscherm mee en thuis alles weer aansluiten. Daarom komen wij naar u. We werken op de plek waar uw pc staat, sluiten beeldscherm, printer en luidsprekers netjes aan en zorgen dat alles weer soepel loopt.</p>
             <h3 className="content-title mt-8 mb-2">Een monteur die bij u thuiskomt</h3>

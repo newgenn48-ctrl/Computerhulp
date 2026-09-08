@@ -14,7 +14,7 @@ import PricingSection from '@/components/PricingSection'
 
 export const metadata: Metadata = {
   title: 'Computercursus voor ouderen aan huis | Ook computerles',
-  description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}: computerles op uw eigen computer, tablet of telefoon. E-mail, videobellen, bankieren, Word en Excel. Op uw tempo. Bel ${BUSINESS.PHONE}.`,
+  description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}: les op uw eigen computer of tablet. E-mail, videobellen, bankieren, Word en Excel. Op uw tempo.`,
   openGraph: {
     title: 'Computercursus voor ouderen | HBO-student aan huis',
     description: `Computercursus voor ouderen in ${BUSINESS.REGION}: uw HBO-student aan huis. Meestal binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,

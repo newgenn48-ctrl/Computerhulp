@@ -17,7 +17,7 @@ import PricingSection from '@/components/PricingSection'
 export const metadata: Metadata = {
   // Homepage richt zich op merk + regio; de hub /computerhulp-aan-huis is de enige doelpagina
   // voor 'computerhulp aan huis' (beide stonden op hetzelfde zoekwoord en hielden elkaar laag).
-  title: `Computerhulp ${BUSINESS.REGION} | Hulp aan huis meestal binnen 24 uur`,
+  title: `Computerhulp ${BUSINESS.REGION} | Aan huis, meestal binnen 24 uur`,
   description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, wifi, printer en meer. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,

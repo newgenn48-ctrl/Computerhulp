@@ -23,7 +23,7 @@ const ALL_TOPICS = [
 
 export const metadata: Metadata = {
   title: 'Alle computerhulpdiensten aan huis in Zuid-Holland',
-  description: `Bekijk al onze computerhulpdiensten aan huis: laptop, wifi, printer, e-mail, smartphone, smart home en meer. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  description: `Alle computerhulpdiensten aan huis: laptop, wifi, printer, e-mail, smartphone, tv en smart home. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
 
   openGraph: {
     images: OG_IMAGE,

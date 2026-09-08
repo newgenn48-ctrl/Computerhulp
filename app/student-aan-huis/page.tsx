@@ -10,7 +10,7 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
   title: `Student aan huis ${BUSINESS.REGION} | HBO-student, geen abonnement`,
-  description: `Student aan huis in ${BUSINESS.REGION}: een geduldige HBO-student helpt u thuis met computer, laptop, wifi en tablet. ${PRICING.PER_QUARTER} per kwartier, geen abonnement. Bel ${BUSINESS.PHONE}.`,
+  description: `Student aan huis in ${BUSINESS.REGION}: een geduldige HBO-student helpt u thuis met computer, laptop, wifi en tablet. ${PRICING.PER_QUARTER} per kwartier, geen abonnement.`,
   openGraph: {
     images: OG_IMAGE,
     title: `Student aan huis ${BUSINESS.REGION} | Meestal binnen 24 uur bij u thuis`,

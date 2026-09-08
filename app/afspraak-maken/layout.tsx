@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Afspraak maken | ${BUSINESS.NAME} | Meestal binnen 24 uur`,
+  title: `Afspraak maken | ${BUSINESS.NAME}`,
   description: `Maak een afspraak voor computerhulp aan huis in ${BUSINESS.REGION}. Meestal binnen 24 uur geholpen. ${PRICING.TRAVEL} voorrijkosten. ${HOURS.DAYS} beschikbaar.`,
   openGraph: {
     images: OG_IMAGE,

@@ -18,60 +18,6 @@ export const metadata: Metadata = {
   },
 }
 
-const faqStructuredData = {
-  '@context': 'https://schema.org',
-  '@type': 'FAQPage',
-  mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Hoe snel kunnen jullie langskomen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'In de meeste gevallen kunnen we binnen 24 uur bij u langs komen. In acute situaties proberen we vaak nog dezelfde dag te komen. We werken 7 dagen per week, ook in de avonduren.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Wat zijn de kosten voor computerhulp?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Zijn er voorrijkosten?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Nee, in heel ${BUSINESS.REGION} is voorrijden slechts ${PRICING.TRAVEL}. Of u nu in Den Haag, Rotterdam, Leiden of een klein dorpje woont - u betaalt alleen voor onze tijd.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Hoe kan ik betalen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'U kunt na afloop betalen via pin of Tikkie. We rekenen af zodra het werk klaar is, zodat u precies weet waar u voor betaalt. Facturen zijn ook mogelijk voor bedrijven.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Werken jullie ook in het weekend?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja, we werken 7 dagen per week. Ook op zaterdag en zondag komen we graag bij u langs. Dit is handig als u doordeweeks werkt.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Welke problemen kunnen jullie oplossen?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Eigenlijk alle IT-problemen: computers, laptops, printers, wifi, e-mail, tablets, smartphones, software installeren, pop-ups en ongewenste programma’s weghalen, bestanden terughalen en persoonlijke training.'
-      }
-    }
-  ]
-}
 
 export default function FAQPage() {
   return (
@@ -276,3 +222,16 @@ const faqCategories = [
     ]
   }
 ]
+
+/* Schema en zichtbare vragen komen uit dezelfde lijst, zodat ze nooit uit de pas lopen. */
+const faqStructuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqCategories.flatMap((c) =>
+    c.questions.map((q) => ({
+      '@type': 'Question',
+      name: q.question,
+      acceptedAnswer: { '@type': 'Answer', text: q.answer },
+    }))
+  ),
+}

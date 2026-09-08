@@ -123,6 +123,25 @@ export default function TarievenPage() {
         </div>
       </section>
 
+      {/* Wat zit erin */}
+      <section className="panel-section" aria-labelledby="inbegrepen-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <p className="section-eyebrow">Zo rekenen we</p>
+          <h2 id="inbegrepen-heading" className="section-title mb-6">Wat u wel en niet betaalt</h2>
+          <div className="prose prose-lg text-gray-700 max-w-none">
+            <p>
+              U betaalt per kwartier, en alleen de tijd die de student echt bij u is. De teller begint als we aanbellen en stopt als alles werkt en is uitgelegd. Het minimum is drie kwartier ({PRICING.MINIMUM_TOTAL}), omdat een bezoek zelden korter duurt: even kennismaken, rustig kijken wat er aan de hand is en samen controleren of het klopt.
+            </p>
+            <p>
+              Voorrijden kost {PRICING.TRAVEL}, overal in {BUSINESS.REGION}: in de stad en in de dorpen, overdag, ’s avonds en in het weekend. Er is geen toeslag voor avond of weekend, geen abonnement en geen jaarbijdrage. Aan de telefoon hoort u vooraf een inschatting van de tijd; duurt iets langer dan gedacht, dan overleggen we dat eerst.
+            </p>
+            <p>
+              Niet inbegrepen zijn onderdelen of apparaten die u zelf aanschaft, zoals een nieuw scherm, een accu of een wifi-versterker. Die bespreken we altijd vooraf en u beslist zelf. Lukt iets niet, dan betaalt u alleen de tijd van de diagnose. Betalen doet u achteraf, via pin of Tikkie; bedrijven kunnen een factuur krijgen.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Voorbeeld berekeningen */}
       <section className="panel-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">

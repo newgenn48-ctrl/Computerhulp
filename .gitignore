@@ -93,6 +93,10 @@ Desktop.ini
 # Google Ads exports & analysis (private data)
 ads-data/
 
+# Google OAuth client secret (nooit committen)
+client_secret*.json
+*.apps.googleusercontent.com.json
+
 # agent skills (vendored via skills-lock.json, opnieuw te installeren met npx skills add)
 .agents/
 .claude/skills/
