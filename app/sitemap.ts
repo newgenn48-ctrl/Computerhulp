@@ -6,7 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://computerhulpzh.nl'
   // Echte wijzigingsdatums in plaats van de buildtijd: Google negeert een lastmod die bij
   // elke build voor alle 370 URL's tegelijk verspringt, en vertrouwt de sitemap dan minder.
-  const contentUpdate = new Date('2026-09-05')
+  const contentUpdate = new Date('2026-09-08')
   const layoutUpdate = new Date('2026-08-29')
   const now = contentUpdate
 
@@ -15,7 +15,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: baseUrl, lastModified: now, changeFrequency: 'weekly', priority: 1.0 },
     { url: `${baseUrl}/computerhulp-aan-huis`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/student-aan-huis`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
-    { url: `${baseUrl}/it-hulp`, lastModified: now, changeFrequency: 'weekly', priority: 0.9 },
     { url: `${baseUrl}/diensten`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${baseUrl}/website-laten-maken`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${baseUrl}/offerte-aanvragen`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },

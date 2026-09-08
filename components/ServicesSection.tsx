@@ -26,10 +26,10 @@ export const services = [
     imageAlt: 'Witte wifi-router op een kast, hand aan de kabel',
     slug: '/diensten/wifi-internet-hulp',
     features: [
-      'WiFi router installeren en instellen',
+      'Wifi router installeren en instellen',
       'Bereik en snelheid verbeteren',
-      'Apparaten verbinden met uw WiFi',
-      'Uw WiFi veilig maken'
+      'Apparaten verbinden met uw wifi',
+      'Uw wifi veilig maken'
     ]
   },
   {
@@ -66,7 +66,7 @@ export const services = [
     icon: 'mobile',
     image: '/dienst-tablet-smartphone.webp',
     imageAlt: 'Tablet in de handen van een oudere vrouw',
-    slug: '/diensten/tablet-smartphone-hulp',
+    slug: '/diensten/smartphone-hulp-aan-huis',
     features: [
       'Nieuwe tablet of telefoon instellen',
       'Apps installeren en instellen',
@@ -80,9 +80,9 @@ export const services = [
     icon: 'tv',
     image: '/dienst-tv.webp',
     imageAlt: 'Televisie aan de wand met soundbar eronder',
-    slug: '/diensten/televisie-radio',
+    slug: '/diensten/tv-installatie',
     features: [
-      'Smart TV installeren en instellen',
+      'Smart-tv installeren en instellen',
       'Zenders instellen en sorteren',
       'Decoder en mediabox instellen',
       'Soundbar aansluiten',
@@ -90,18 +90,17 @@ export const services = [
     ]
   },
   {
-    title: 'Laptop of pc doet het niet',
-    description: 'Start niet op, loopt vast of geeft foutmeldingen? Wij kijken bij u thuis wat er aan de hand is.',
-    icon: 'wrench',
-    image: '/Reparatie.webp',
-    imageAlt: 'Geopende laptop met precisieschroevendraaier ernaast',
-    slug: '/diensten/laptop-computer-reparatie',
+    title: 'Computerhulp voor senioren',
+    description: 'Rustige hulp in uw tempo, op uw eigen apparaat. Geen vraag is te klein en u hoeft niets te kopen.',
+    icon: 'users',
+    image: '/hero-student.webp',
+    imageAlt: 'HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant',
+    slug: '/diensten/computerhulp-senioren',
     features: [
-      'Alle merken laptops en computers',
-      'Schermreparatie',
-      'Accu- en opladerproblemen',
-      'Computer sneller maken (SSD upgrade)',
-      'Toetsenbord en touchpad'
+      'Alles in gewone taal uitgelegd',
+      'Stappen op papier om na te lezen',
+      'Geen haast, geen verkooppraatjes',
+      'Ook voor kleine vragen'
     ]
   },
   {
@@ -112,7 +111,7 @@ export const services = [
     imageAlt: 'Slimme thermostaat aan de muur, hand aan de knop',
     slug: '/diensten/smart-home-domotica',
     features: [
-      'Smart TV installeren en koppelen',
+      'Smart-tv installeren en koppelen',
       'Slimme verlichting instellen',
       'Slimme speakers instellen',
       'Videodeurbel installeren'
@@ -134,11 +133,11 @@ export const services = [
   },
   {
     title: 'Uitleg en training',
-    description: 'Stap voor stap leren werken met uw apparaten, in uw tempo en in gewone taal.',
+    description: 'Computerles aan huis: stap voor stap leren werken met uw apparaten, in uw tempo en in gewone taal.',
     icon: 'academic-cap',
     image: '/dienst-training.webp',
     imageAlt: 'Beschreven notitieblok naast een laptop',
-    slug: '/diensten/persoonlijke-training',
+    slug: '/diensten/computercursus-ouderen',
     features: [
       'Basistraining voor uw computer',
       'Internet veilig gebruiken',

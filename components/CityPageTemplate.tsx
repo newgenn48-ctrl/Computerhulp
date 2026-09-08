@@ -80,21 +80,21 @@ const studentConfig: VariantConfig = {
   serviceNameLower: 'student aan huis',
   urlPrefix: 'student-aan-huis',
   heroImage: '/hero-student.webp',
-  heroAlt: (cityName) => `IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${cityName}`,
+  heroAlt: (cityName) => `HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${cityName}`,
   heroTitle: (cityName) => (
     <>Student aan Huis <span className="hero-highlight">{cityName}</span></>
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
-  servicesDescription: 'Van een laptopprobleem tot smart home — onze IT-studenten helpen u graag',
+  servicesDescription: 'Van een laptopprobleem tot smart home — onze HBO-studenten helpen u graag',
   whyTitle: 'Waarom een student aan huis?',
   benefits: [
-    { icon: 'users', title: 'Geduldige IT-studenten', desc: 'Jonge specialisten die uitleggen stap voor stap. Geen vaktermen, wel helder.' },
-    { icon: 'clock', title: 'Binnen 24 uur bij u thuis', desc: 'Geen wachtlijst. Meestal de volgende dag al bij u aan de keukentafel.' },
+    { icon: 'users', title: 'Geduldige HBO-studenten', desc: 'Jonge specialisten die uitleggen stap voor stap. Geen vaktermen, wel helder.' },
+    { icon: 'clock', title: 'Meestal binnen 24 uur bij u thuis', desc: 'Geen wachtlijst. Meestal de volgende dag al bij u aan de keukentafel.' },
     { icon: 'home', title: 'Gewoon thuis blijven', desc: 'U hoeft nergens naartoe. Wij komen bij u en lossen het ter plekke op.' },
     { icon: 'money', title: 'Betalen pas na afloop', desc: 'Eerst u tevreden, dan betalen — via Tikkie. Geen abonnement, geen verborgen kosten.' },
   ],
@@ -107,6 +107,25 @@ const studentConfig: VariantConfig = {
     'Ook \'s avonds en in het weekend beschikbaar',
     'Betalen via pin of Tikkie'
   ],
+}
+
+/** Hogescholen/universiteiten in de buurt van elke regio; gebruikt op de student-stadspagina's. */
+const STUDY_CITIES: Record<string, string> = {
+  'Haaglanden': 'Den Haag en Delft',
+  'Westland': 'Den Haag en Delft',
+  'Midden-Delfland': 'Delft en Rotterdam',
+  'Rijnmond': 'Rotterdam',
+  'Lansingerland': 'Rotterdam en Den Haag',
+  'Voorne aan Zee': 'Rotterdam',
+  'Voorne-Putten': 'Rotterdam',
+  'Drechtsteden': 'Rotterdam en Dordrecht',
+  'Alblasserwaard': 'Rotterdam en Dordrecht',
+  'Hoeksche Waard': 'Rotterdam en Dordrecht',
+  'Goeree-Overflakkee': 'Rotterdam',
+  'Holland Rijnland': 'Leiden',
+  'Bollenstreek': 'Leiden',
+  'Groene Hart': 'Leiden en Rotterdam',
+  'Krimpenerwaard': 'Rotterdam',
 }
 
 function getConfig(variant: CityPageVariant): VariantConfig {
@@ -128,16 +147,16 @@ export function generateComputerhulpPageMetadata(city: City): Metadata {
      kortere variant zodat de naam nooit wordt afgekapt. */
   const title =
     [
-      `Computerhulp aan Huis ${city.name} | Binnen 24u bij u Thuis`,
-      `Computerhulp aan Huis ${city.name} | Binnen 24u`,
-    ].find((t) => t.length <= 60) ?? `Computerhulp ${city.name} | Binnen 24u`
+      `Computerhulp aan huis ${city.name} | Meestal binnen 24 uur`,
+      `Computerhulp aan huis ${city.name} | Snel bij u thuis`,
+    ].find((t) => t.length <= 60) ?? `Computerhulp ${city.name} | Meestal binnen 24 uur`
   return {
     title,
     description: `Computerhulp aan huis in ${city.name}${villageSuffix(city)}: computer, laptop, printer en wifi. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
     openGraph: {
       images: OG_IMAGE,
-      title: `Computerhulp aan Huis ${city.name} | Binnen 24u`,
-      description: `Computerhulp aan huis in ${city.name}. Computer, laptop, printer, wifi, smartphone, tablet en camera. Binnen 24 uur bij u thuis.`,
+      title: `Computerhulp aan huis ${city.name} | Meestal binnen 24 uur`,
+      description: `Computerhulp aan huis in ${city.name}. Computer, laptop, printer, wifi, smartphone, tablet en camera. Meestal binnen 24 uur bij u thuis.`,
       type: 'website',
       url: `https://computerhulpzh.nl/computerhulp-aan-huis-${city.slug}`,
     },
@@ -152,17 +171,17 @@ export function generateStudentPageMetadata(city: City): Metadata {
      omschrijving noemen daarom wat ons onderscheidt (HBO-student, geen abonnement, prijs). */
   const title =
     [
-      `Student aan Huis ${city.name} | HBO-student, geen abonnement`,
-      `Student aan Huis ${city.name} | Geen abonnement`,
-      `Student aan Huis ${city.name} | Binnen 24u`,
-    ].find((t) => t.length <= 60) ?? `Student aan Huis ${city.name}`
+      `Student aan huis ${city.name} | HBO-student, geen abonnement`,
+      `Student aan huis ${city.name} | Geen abonnement`,
+      `Student aan huis ${city.name} | Meestal binnen 24 uur`,
+    ].find((t) => t.length <= 60) ?? `Student aan huis ${city.name}`
   return {
     title,
     description: `Student aan huis in ${city.name}${villageSuffix(city)}: een geduldige HBO-student voor computer, laptop en wifi. ${PRICING.PER_QUARTER} per kwartier, geen abonnement.`,
     openGraph: {
       images: OG_IMAGE,
-      title: `Student aan Huis ${city.name} | Vanaf ${PRICING.MINIMUM_TOTAL}`,
-      description: `Student aan huis in ${city.name}. Computerhulp door IT-studenten. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+      title: `Student aan huis ${city.name} | Geen abonnement`,
+      description: `Student aan huis in ${city.name}. Computerhulp door HBO-studenten. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
       type: 'website',
       url: `https://computerhulpzh.nl/student-aan-huis-${city.slug}`,
     },
@@ -184,14 +203,14 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
   const cityDescription = variant === 'computerhulp'
     ? (content
         ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home — opgelost bij u thuis.`
-        : `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`)
+        : `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`)
     : (content
-        ? `IT-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige IT-studenten bij u thuis.`
-        : `Computerhulp aan huis door IT-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`)
+        ? `HBO-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige HBO-studenten bij u thuis.`
+        : `Computerhulp aan huis door HBO-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`)
 
   const serviceDescription = variant === 'computerhulp'
-    ? `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
-    : `IT-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
+    ? `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
+    : `HBO-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
 
   const localBusiness: Record<string, unknown> = {
     '@type': 'LocalBusiness',
@@ -376,18 +395,18 @@ function generateStudentFaqQuestions(city: City) {
     },
     {
       '@type': 'Question',
-      name: `Hoe snel kan een IT-student in ${city.name} langskomen?`,
+      name: `Hoe snel kan een HBO-student in ${city.name} langskomen?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `In de meeste gevallen kunnen onze IT-studenten binnen 24 uur bij u thuis zijn in ${city.name}. Bij urgente problemen proberen we dezelfde dag langs te komen. We zijn 7 dagen per week beschikbaar, ook 's avonds.`
+        text: `In de meeste gevallen kunnen onze HBO-studenten binnen 24 uur bij u thuis zijn in ${city.name}. Bij urgente problemen proberen we dezelfde dag langs te komen. We zijn 7 dagen per week beschikbaar, ook 's avonds.`
       }
     },
     {
       '@type': 'Question',
-      name: 'Waar helpen jullie IT-studenten mee?',
+      name: 'Waar helpen jullie HBO-studenten mee?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Onze IT-studenten helpen met laptop- en computerproblemen, WiFi en internet, printers, e-mail, tablets en smartphones, smart home-apparaten en persoonlijke training. Van trage computers tot nieuwe apparaten instellen.'
+        text: 'Onze HBO-studenten helpen met laptop- en computerproblemen, wifi en internet, printers, e-mail, tablets en smartphones, smart home-apparaten en persoonlijke training. Van trage computers tot nieuwe apparaten instellen.'
       }
     },
     {
@@ -403,7 +422,7 @@ function generateStudentFaqQuestions(city: City) {
       name: `Komen jullie ook 's avonds en in het weekend in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Ja, onze IT-studenten zijn 7 dagen per week beschikbaar in ${city.name}, ook 's avonds tot 22:00 uur. Perfect als u overdag werkt en 's avonds of in het weekend hulp nodig heeft.`
+        text: `Ja, onze HBO-studenten zijn 7 dagen per week beschikbaar in ${city.name}, ook 's avonds tot 22:00 uur. Perfect als u overdag werkt en 's avonds of in het weekend hulp nodig heeft.`
       }
     }
   ]
@@ -411,10 +430,10 @@ function generateStudentFaqQuestions(city: City) {
   if (content && content.neighborhoods.length >= 3) {
     questions.push({
       '@type': 'Question',
-      name: `In welke wijken van ${city.name} komen jullie IT-studenten?`,
+      name: `In welke wijken van ${city.name} komen jullie HBO-studenten?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Onze IT-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts ${PRICING.TRAVEL} in de hele regio ${content.region}.`
+        text: `Onze HBO-studenten komen in alle wijken van ${city.name}, waaronder ${content.neighborhoods.slice(0, 5).join(', ')}. Voorrijden kost slechts ${PRICING.TRAVEL} in de hele regio ${content.region}.`
       }
     })
   }
@@ -466,7 +485,7 @@ function getStudentFaqDisplayData(city: City) {
     },
     {
       question: 'Waar kunnen jullie mee helpen?',
-      answer: 'Eigenlijk met alles rondom uw computer, laptop, tablet, smartphone, printer, WiFi of e-mail. Of u nu een traag apparaat heeft of iets nieuws wilt instellen — wij helpen u graag.'
+      answer: 'Eigenlijk met alles rondom uw computer, laptop, tablet, smartphone, printer, wifi of e-mail. Of u nu een traag apparaat heeft of iets nieuws wilt instellen — wij helpen u graag.'
     },
     {
       question: 'Hoe werkt de betaling?',
@@ -610,84 +629,77 @@ function ComputerhulpContentSection({ city }: { city: City }) {
 function StudentContentSection({ city }: { city: City }) {
   const content = getCityContent(city.slug)
   const populationText = content ? getPopulationDescription(content.population) : ''
-  const neighborhoodText = content ? formatNeighborhoods(content.neighborhoods, city.name) : ''
+  const studyCities = content ? (STUDY_CITIES[content.region] ?? 'Den Haag, Rotterdam, Leiden en Delft') : 'Den Haag, Rotterdam, Leiden en Delft'
+  // De computerhulp-variant toont de hele stadsbeschrijving; hier alleen het middenstuk
+  // (wat we er doen), zodat beide pagina's van dezelfde stad niet dezelfde tekst dragen.
+  const sentences = content
+    ? (content.description.match(/[^.!?]+[.!?]+/g) ?? [content.description]).map((x) => x.trim())
+    : []
+  const middle = sentences.slice(3, 7).join(' ')
+  const kernen = content && content.neighborhoods.length >= 2
+    ? `${content.neighborhoods.slice(0, 3).join(', ')} en de andere wijken en kernen van ${city.name}`
+    : `alle wijken van ${city.name}`
 
   return (
     <section className="panel-section">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+        <p className="section-eyebrow">Student aan huis in {city.name}</p>
         <h2 className="section-title mb-6">
-          Waarom mensen ons bellen in {city.name}
+          Wie komt er bij u thuis in {city.name}?
         </h2>
 
         <div className="prose prose-lg max-w-none">
-          {content ? (
+          <p className="text-gray-700 leading-relaxed mb-6">
+            <strong>Een HBO-student uit de buurt.</strong> {city.name} ligt op korte afstand van de hogescholen en universiteiten in {studyCities}, waar veel van onze studenten een technische opleiding volgen, zoals ICT of Informatica. Daardoor kunnen we snel schakelen: meestal staat er binnen 24 uur iemand bij u aan de deur, ook ’s avonds en in het weekend.
+          </p>
+          <p className="text-gray-700 leading-relaxed mb-6">
+            U krijgt vooraf de naam van de student en een tijdvak. De student komt naar {kernen}, luistert eerst naar wat u dwarszit en gaat dan pas aan de slag, op uw eigen{' '}
+            <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:text-blue-800 font-medium">computer of laptop</Link>,{' '}
+            <Link href="/diensten/smartphone-hulp-aan-huis" className="text-blue-600 hover:text-blue-800 font-medium">tablet of telefoon</Link>{' '}of{' '}
+            <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:text-blue-800 font-medium">wifi</Link>. Ondertussen vertelt hij of zij in gewone woorden wat er gebeurt, zodat u het de volgende keer zelf kunt.
+          </p>
+          {middle && (
             <>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Student aan huis in {city.name}</strong> — persoonlijke hulp bij u thuis, door geduldige IT-studenten die de tijd nemen om alles rustig uit te leggen. In een gemeente met {populationText} helpen wij regelmatig mensen met hun{' '}
-                <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                  computer of laptop
-                </Link>,{' '}
-                <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                  tablet
-                </Link>{' '}of{' '}
-                <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                  WiFi
-                </Link>.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                {neighborhoodText} — onze IT-studenten komen gewoon bij u thuis. Ze volgen een technische opleiding en weten hoe de nieuwste apparaten en software werken. En het fijne is: ze leggen alles rustig uit, in gewone taal.
-              </p>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
+                Wat we in {city.name} vaak doen
+              </h3>
+              <p className="text-gray-700 leading-relaxed mb-6">{middle}</p>
             </>
-          ) : (
-            <>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                <strong>Student aan huis in {city.name}</strong> — u belt, we spreken een moment af, en een IT-student komt bij u thuis.
-                Geen ingewikkelde procedures, geen abonnementen. Gewoon iemand die uw{' '}
-                <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                  computer of laptop
-                </Link>,{' '}
-                <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                  tablet
-                </Link>{' '}of{' '}
-                <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:text-blue-800 font-medium">
-                  WiFi
-                </Link>{' '}weer aan de praat krijgt.
-              </p>
-              <p className="text-gray-700 leading-relaxed mb-6">
-                Onze IT-studenten volgen een technische opleiding en weten hoe de nieuwste apparaten en software werken.
-                En het fijne is: ze nemen de tijd om alles rustig uit te leggen, in gewone taal.
-              </p>
-            </>
+          )}
+          {populationText && (
+            <p className="text-gray-700 leading-relaxed mb-6">
+              In een gemeente met {populationText} zijn de vragen heel verschillend, maar de aanpak is steeds dezelfde: rustig, in uw tempo en zonder dat u iets hoeft te kopen. Wilt u dezelfde student terug voor een volgende keer? Zeg het bij het maken van de afspraak.
+            </p>
           )}
 
           <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
-            Wat u van ons mag verwachten
+            Wat u van de student mag verwachten
           </h3>
           <ul className="space-y-3 text-gray-700 mb-6">
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
-              <span><strong>U bepaalt:</strong> Wanneer, hoe lang en wat er gedaan wordt. Geen verplichtingen, geen abonnementen.</span>
+              <span><strong>U bepaalt:</strong> wanneer, hoe lang en wat er gedaan wordt. Geen verplichtingen, geen abonnement.</span>
             </li>
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
-              <span><strong>Geen verrassingen:</strong> U krijgt vooraf een inschatting van de tijd en kosten. Zo weet u waar u aan toe bent.</span>
+              <span><strong>Geen verrassingen:</strong> u krijgt vooraf een inschatting van de tijd en de kosten.</span>
             </li>
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
-              <span><strong>Rustig uitgelegd:</strong> Onze studenten leggen stap voor stap uit wat ze doen. U leert er zelf ook van.</span>
+              <span><strong>Uitleg terwijl hij werkt:</strong> de student laat zien wat hij doet en schrijft de belangrijkste stappen desgewenst voor u op.</span>
             </li>
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
-              <span><strong>Betalen achteraf:</strong> Pas na afloop betalen via pin of Tikkie. {PRICING.TRAVEL} voorrijkosten in {city.name}.</span>
+              <span><strong>Betalen achteraf:</strong> pas na afloop, via pin of Tikkie. {PRICING.TRAVEL} voorrijkosten in {city.name}.</span>
             </li>
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
               <span>
-                <strong>Voor van alles:</strong> Van{' '}
-                <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:text-blue-800">printerproblemen</Link> tot{' '}
-                <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:text-blue-800">smart home-installatie</Link>,{' '}
-                <Link href="/diensten/email-hulp" className="text-blue-600 hover:text-blue-800">e-mailhulp</Link> en{' '}
-                <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:text-blue-800">dataherstel</Link>.
+                <strong>Ook voor:</strong>{' '}
+                <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:text-blue-800">de printer</Link>,{' '}
+                <Link href="/diensten/tv-installatie" className="text-blue-600 hover:text-blue-800">de televisie</Link>,{' '}
+                <Link href="/diensten/email-hulp" className="text-blue-600 hover:text-blue-800">e-mail</Link> en{' '}
+                <Link href="/diensten/computercursus-ouderen" className="text-blue-600 hover:text-blue-800">een computerles aan huis</Link>.
               </span>
             </li>
           </ul>
@@ -704,6 +716,45 @@ function StudentContentSection({ city }: { city: City }) {
   )
 }
 
+
+// ─── Hulplijst (student variant) ─────────────────────────────────────────────
+
+const STUDENT_HELP = [
+  { href: '/diensten/computer-laptop-hulp', title: 'Computer en laptop', desc: 'Traag, vastgelopen, foutmeldingen of een nieuwe laptop inrichten.' },
+  { href: '/diensten/wifi-internet-hulp', title: 'Wifi en internet', desc: 'Bereik in het hele huis, nieuwe router, apparaten verbinden.' },
+  { href: '/diensten/printer-scanner-hulp', title: 'Printer en scanner', desc: 'Aansluiten, draadloos printen, scannen naar e-mail.' },
+  { href: '/diensten/email-hulp', title: 'E-mail', desc: 'Weer toegang, instellen op telefoon en tablet, ongewenste mail stoppen.' },
+  { href: '/diensten/smartphone-hulp-aan-huis', title: 'Tablet en telefoon', desc: 'Nieuw toestel instellen, foto’s overzetten, videobellen met familie.' },
+  { href: '/diensten/tv-installatie', title: 'Televisie', desc: 'Smart-tv, zenders, decoder, Netflix en de soundbar.' },
+  { href: '/diensten/dataherstel-backup', title: 'Foto’s en bestanden', desc: 'Terughalen wat kan en een automatische back-up instellen.' },
+  { href: '/diensten/computercursus-ouderen', title: 'Uitleg en les', desc: 'Stap voor stap leren, met de stappen op papier om na te lezen.' },
+]
+
+function StudentHelpList({ city }: { city: City }) {
+  return (
+    <section className="panel-section" aria-labelledby="hulp-heading">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6">
+        <div className="panel panel-pad">
+          <header className="mb-8">
+            <p className="section-eyebrow">Waarmee</p>
+            <h2 id="hulp-heading" className="section-title">Waar de student u in {city.name} mee helpt</h2>
+            <p className="section-subtitle">Eén student voor alles wat een scherm of een stekker heeft.</p>
+          </header>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {STUDENT_HELP.map((item) => (
+              <li key={item.href}>
+                <Link href={item.href} className="step-card block h-full group">
+                  <h3 className="font-bold text-gray-900 text-lg leading-snug mb-1.5 group-hover:text-blue-700">{item.title}</h3>
+                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </section>
+  )
+}
 
 // ─── Cross-link section (student variant only) ──────────────────────────────
 
@@ -728,25 +779,25 @@ function StudentCrossLinkSection({ city }: { city: City }) {
             href="/diensten/computer-laptop-hulp"
             className="city-tag-link"
           >
-            Computer &amp; Laptop Hulp
+            Computer- en laptophulp
           </Link>
           <Link
             href="/diensten/wifi-internet-hulp"
             className="city-tag-link"
           >
-            WiFi &amp; Internet Hulp
+            Wifi- en internethulp
           </Link>
           <Link
-            href="/diensten/tablet-smartphone-hulp"
+            href="/diensten/smartphone-hulp-aan-huis"
             className="city-tag-link"
           >
-            Tablet &amp; Smartphone Hulp
+            Smartphone- en tablethulp
           </Link>
           <Link
-            href="/diensten/persoonlijke-training"
+            href="/diensten/computercursus-ouderen"
             className="city-tag-link"
           >
-            Persoonlijke Training
+            Computercursus aan huis
           </Link>
           <Link
             href="/student-aan-huis"
@@ -785,9 +836,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         pills={[
           {
             icon: 'academic-cap',
-            label: variant === 'student'
-              ? 'HBO-opgeleide studenten'
-              : 'HBO-opgeleide HBO-studenten',
+            label: 'HBO-opgeleide studenten',
           },
           { icon: 'money', label: 'Betaalbare tarieven' },
           { icon: 'calendar', label: '7 dagen per week' },
@@ -797,14 +846,18 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       {/* Vaste volgorde voor beide varianten: diensten → waarom → prijs
           → reviews → hoe. Wat per variant verschilt zit in config. */}
-      <ServicesSection
-        eyebrow="Onze hulp"
-        title={`Waar wij u mee helpen in ${city.name}`}
-        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
-        photoCards={true}
-        limitServices={6}
-        showAllButton={true}
-      />
+      {variant === 'computerhulp' ? (
+        <ServicesSection
+          eyebrow="Onze hulp"
+          title={`Waar wij u mee helpen in ${city.name}`}
+          subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
+          photoCards={true}
+          limitServices={6}
+          showAllButton={true}
+        />
+      ) : (
+        <StudentHelpList city={city} />
+      )}
 
       <ComfortSection cityName={city.name} variant={variant} />
 
@@ -814,7 +867,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         testimonials={HUB_TESTIMONIALS}
       />
 
-      <HowItWorksSection />
+      {variant === 'computerhulp' && <HowItWorksSection />}
 
       {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">
@@ -933,7 +986,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             </span>
             <span className="flex items-center gap-2">
               <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />
-              Binnen 24 uur geholpen
+              Meestal binnen 24 uur geholpen
             </span>
           </div>
         </div>

@@ -4,12 +4,12 @@ import { Icon } from '@/components/icons'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Waarom ${BUSINESS.NAME}? | Voordelen & Verschillen`,
-  description: `Waarom kiezen klanten voor ${BUSINESS.NAME}? Goedkoper, sneller en lokaal. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+  title: `Waarom ${BUSINESS.NAME}? | Voordelen en verschillen`,
+  description: `Waarom kiezen klanten voor ${BUSINESS.NAME}? Goedkoper, sneller en lokaal. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
     title: `Waarom ${BUSINESS.NAME}?`,
-    description: `Goedkoper, sneller en lokaal. Binnen 24 uur bij u thuis in heel ${BUSINESS.REGION}.`,
+    description: `Goedkoper, sneller en lokaal. Meestal binnen 24 uur bij u thuis in heel ${BUSINESS.REGION}.`,
     type: 'website',
     url: `${BUSINESS.URL}/waarom-ons`,
   },
@@ -118,10 +118,10 @@ export default function WaaromOnsPage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {[
               { icon: 'money', title: 'Scherpe prijs, geen abonnement', desc: `${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. U betaalt alleen voor wat u gebruikt.` },
-              { icon: 'clock', title: 'Binnen 24 uur bij u thuis', desc: 'Geen weken wachten. Meestal komen we al de volgende dag — ook \'s avonds en in het weekend.' },
+              { icon: 'clock', title: 'Meestal binnen 24 uur bij u thuis', desc: 'Geen weken wachten. Meestal komen we al de volgende dag — ook \'s avonds en in het weekend.' },
               { icon: 'location-pin', title: `Lokaal in ${BUSINESS.REGION}`, desc: 'Geen callcenter in een andere provincie. We kennen uw regio en zijn altijd dichtbij.' },
               { icon: 'shield', title: 'Betrouwbaar en verzekerd', desc: `KvK ${BUSINESS.KVK}, verzekerd en gescreend. Uw gegevens en apparatuur zijn in goede handen.` },
-              { icon: 'home', title: 'Gewoon thuis blijven', desc: 'U hoeft nergens naartoe. Onze IT-student komt bij u aan huis en lost het ter plekke op.' },
+              { icon: 'home', title: 'Gewoon thuis blijven', desc: 'U hoeft nergens naartoe. Onze HBO-student komt bij u aan huis en lost het ter plekke op.' },
               { icon: 'calendar', title: HOURS.DAYS, desc: `Beschikbaar van ${HOURS.OPEN} tot ${HOURS.CLOSE} uur, ook in het weekend. Zonder extra kosten.` },
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4 bg-white rounded-2xl p-6 border border-gray-200 hover:border-blue-300 hover:shadow-lg transition">
@@ -159,7 +159,7 @@ export default function WaaromOnsPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {[
               { step: '1', title: 'U belt of mailt ons', desc: `Vertel kort wat er aan de hand is. Even bellen op ${BUSINESS.PHONE} of online een afspraak maken.` },
-              { step: '2', title: 'We komen bij u thuis', desc: `Meestal binnen 24 uur staat onze IT-student voor de deur. Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` },
+              { step: '2', title: 'We komen bij u thuis', desc: `Meestal binnen 24 uur staat onze HBO-student voor de deur. Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` },
               { step: '3', title: 'Probleem opgelost', desc: 'U kunt weer verder. Betalen doet u achteraf via pin of Tikkie — alleen voor de tijd die we nodig hadden.' },
             ].map((item, idx) => (
               <div key={idx} className="text-center">
@@ -182,7 +182,7 @@ export default function WaaromOnsPage() {
           </div>
           <div className="space-y-4">
             {[
-              { q: 'Waarom zijn jullie goedkoper dan andere aanbieders?', a: 'Wij werken met slimme IT-studenten, geen dure monteurs. Daardoor houden we onze kosten laag zonder in te leveren op kwaliteit. En we vragen geen abonnement of lidmaatschap.' },
+              { q: 'Waarom zijn jullie goedkoper dan andere aanbieders?', a: 'Wij werken met slimme HBO-studenten, geen dure monteurs. Daardoor houden we onze kosten laag zonder in te leveren op kwaliteit. En we vragen geen abonnement of lidmaatschap.' },
               { q: 'Heb ik een abonnement nodig?', a: 'Nee, bij ons is geen abonnement nodig. U betaalt gewoon per bezoek. Geen maandelijkse kosten, geen jaarlijkse opzegging.' },
               { q: 'Hoe snel kunnen jullie komen?', a: `In de meeste gevallen binnen 24 uur. Bij spoed vaak nog dezelfde dag. We zijn ${HOURS.DAYS} beschikbaar van ${HOURS.OPEN} tot ${HOURS.CLOSE} uur.` },
               { q: 'Zijn jullie ook goedkoper dan de computerwinkel?', a: 'Ja, en u hoeft niet eens uw huis uit. Wij komen bij u thuis, lossen het ter plekke op, en u betaalt alleen voor de tijd die we nodig hebben. Geen weken wachten, geen extra kosten.' },

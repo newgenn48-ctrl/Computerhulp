@@ -5,7 +5,7 @@ import { cityCount, TOP_CITIES } from '@/lib/cities'
 
 
 interface AvailableInCitiesProps {
-  /** Omschrijf de dienst (bijv. "WiFi-hulp", "computerhulp") — gebruikt in titel */
+  /** Omschrijf de dienst (bijv. "Wifi-hulp", "computerhulp") — gebruikt in titel */
   serviceLabel?: string
   /** URL-prefix voor de city-links. 'computerhulp-aan-huis' of 'student-aan-huis'. */
   pagePrefix?: 'computerhulp-aan-huis' | 'student-aan-huis'

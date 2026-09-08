@@ -155,7 +155,7 @@ export function SvgSprite() {
           <circle cx="17.5" cy="11.5" r="0.75" fill="currentColor" />
         </symbol>
 
-        {/* WiFi - stroke, viewBox 0 0 24 24 */}
+        {/* wifi - stroke, viewBox 0 0 24 24 */}
         <symbol id="icon-wifi" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round">
           <path d="M2 9.5a16 16 0 0120 0" />
           <path d="M5 13a11 11 0 0114 0" />

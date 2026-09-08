@@ -26,7 +26,7 @@ export default function AfspraakMakenPage() {
             {[
               'Wij bellen u terug — meestal binnen een uur, altijd dezelfde dag (tussen 08:00 en 22:00).',
               'We plannen een moment dat u uitkomt. Vaak kunnen we al binnen 24 uur langskomen, ook \'s avonds en in het weekend.',
-              'Onze specialist komt bij u thuis, lost het op en legt het rustig uit. U betaalt achteraf per kwartier, via pin of Tikkie.',
+              'Onze HBO-student komt bij u thuis, lost het op en legt het rustig uit. U betaalt achteraf per kwartier, via pin of Tikkie.',
             ].map((stap, idx) => (
               <li key={idx} className="flex items-start gap-4 bg-white rounded-2xl border border-gray-200 p-5">
                 <span className="flex-shrink-0 w-8 h-8 rounded-full bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-sm font-bold flex items-center justify-center" aria-hidden="true">

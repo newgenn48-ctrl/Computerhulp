@@ -11,12 +11,12 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'E-mail Hulp aan Huis Zuid-Holland | Outlook & Gmail | 24u',
+  title: 'E-mailhulp aan huis | Outlook, Gmail en meer | Zuid-Holland',
   description: `E-mail problemen? Niet meer kunnen inloggen of mailbox vol? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: 'E-mail Hulp aan Huis',
-    description: `E-mail problemen? Niet meer kunnen inloggen? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
+    title: 'E-mailhulp aan huis',
+    description: `E-mail problemen? Niet meer kunnen inloggen? We komen bij u thuis in ${BUSINESS.REGION}. Meestal binnen 24 uur geholpen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/email-hulp'},
   alternates: {
@@ -133,7 +133,7 @@ export default function EmailHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide HBO-studenten
+                HBO-opgeleide studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -202,7 +202,7 @@ export default function EmailHulpPage() {
       {/* SEO Content */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="content-title mb-4">E-mailproblemen Snel en Vakkundig Opgelost</h2>
+          <h2 className="content-title mb-4">E-mailproblemen snel en vakkundig opgelost</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>E-mail is voor veel mensen het belangrijkste communicatiemiddel. Als uw e-mail niet werkt, u niet meer kunt inloggen, of u overspoeld wordt met spam, dan kan dat enorm veel stress opleveren. Onze HBO-studenten helpen u met alle e-mailproviders: Outlook, Gmail, Yahoo, Ziggo, KPN en meer.</p>
             <p>We stellen uw e-mail in op al uw apparaten — computer, laptop, tablet en telefoon — zodat u overal bij uw berichten kunt. Ook helpen we met het migreren van e-mails naar een nieuwe provider, het opruimen van een volle mailbox, en het instellen van goede spam-filters. Alles bij u thuis, met duidelijke uitleg.</p>

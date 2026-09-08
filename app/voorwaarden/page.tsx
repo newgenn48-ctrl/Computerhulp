@@ -2,11 +2,11 @@ import { Metadata } from 'next'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Algemene Voorwaarden | Computerhulp Zuid-Holland',
+  title: 'Algemene voorwaarden | Computerhulp Zuid-Holland',
   description: 'Algemene voorwaarden van Computerhulp Zuid-Holland. Lees de voorwaarden voor gebruik van onze diensten.',
   openGraph: {
     images: OG_IMAGE,
-    title: 'Algemene Voorwaarden | Computerhulp Zuid-Holland',
+    title: 'Algemene voorwaarden | Computerhulp Zuid-Holland',
     type: 'website',
     url: 'https://computerhulpzh.nl/voorwaarden',
   },
@@ -44,7 +44,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">3. Totstandkoming Overeenkomst</h2>
+            <h2 className="content-title mt-8 mb-4">3. Totstandkoming overeenkomst</h2>
             <p>Een overeenkomst komt tot stand door:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>Mondelinge of schriftelijke afspraak tussen klant en Computerhulp Zuid-Holland</li>
@@ -54,7 +54,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">4. Prijzen en Betaling</h2>
+            <h2 className="content-title mt-8 mb-4">4. Prijzen en betaling</h2>
             <p>
               <strong>Tarief:</strong> {PRICING.PER_QUARTER} per kwartier (15 minuten), minimaal 3 kwartier (€44,97).
             </p>
@@ -73,7 +73,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">5. Uitvoering Werkzaamheden</h2>
+            <h2 className="content-title mt-8 mb-4">5. Uitvoering werkzaamheden</h2>
             <p>
               Computerhulp Zuid-Holland zal de werkzaamheden naar beste kunnen en volgens de eisen van goed vakmanschap uitvoeren.
             </p>
@@ -131,7 +131,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">9. Privacy en Geheimhouding</h2>
+            <h2 className="content-title mt-8 mb-4">9. Privacy en geheimhouding</h2>
             <p>
               Wij gaan vertrouwelijk om met alle informatie die wij tijdens onze werkzaamheden tegenkomen.
               Zie ook onze <a href="/privacy" className="text-blue-600 hover:underline">Privacyverklaring</a>.
@@ -164,7 +164,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">12. Wijzigingen Voorwaarden</h2>
+            <h2 className="content-title mt-8 mb-4">12. Wijzigingen voorwaarden</h2>
             <p>
               Wij kunnen deze voorwaarden wijzigen. De laatste versie staat altijd op deze pagina.
               De voorwaarden die golden bij totstandkoming van de overeenkomst blijven van toepassing.
@@ -172,7 +172,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">13. Toepasselijk Recht</h2>
+            <h2 className="content-title mt-8 mb-4">13. Toepasselijk recht</h2>
             <p>
               Op alle overeenkomsten is Nederlands recht van toepassing.
             </p>

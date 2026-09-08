@@ -11,11 +11,11 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Dataherstel & Backup aan Huis Zuid-Holland | Binnen 24u',
+  title: 'Dataherstel en back-up aan huis | Zuid-Holland',
   description: `Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: 'Dataherstel & Backup aan Huis',
+    title: 'Dataherstel en back-up aan huis',
     description: `Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in ${BUSINESS.REGION}.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/dataherstel-backup'},
@@ -133,7 +133,7 @@ export default function DataherstelBackupPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide HBO-studenten
+                HBO-opgeleide studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -202,7 +202,7 @@ export default function DataherstelBackupPage() {
       {/* SEO Content */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="content-title mb-4">Uw Data Is Kostbaar — Wij Beschermen Het</h2>
+          <h2 className="content-title mb-4">Uw data is kostbaar, wij beschermen het</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Niets is zo vervelend als het verliezen van belangrijke bestanden, dierbare foto&apos;s of zakelijke documenten. Of uw harde schijf nu defect is geraakt, u per ongeluk bestanden heeft verwijderd, of uw computer niet meer opstart — er is vaak meer te redden dan u denkt.</p>
             <p>Onze HBO-studenten komen bij u thuis en maken een grondige diagnose. We zijn altijd eerlijk over de mogelijkheden voordat we beginnen. Daarnaast helpen we u met het opzetten van een betrouwbaar backupsysteem, zodat u in de toekomst nooit meer data kwijtraakt. We werken met zowel lokale backups als cloud-oplossingen.</p>
@@ -217,7 +217,7 @@ export default function DataherstelBackupPage() {
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="cta-title mb-6">Data Kwijt of Backup Nodig?</h2>
+          <h2 className="cta-title mb-6">Data kwijt of backup nodig?</h2>
           <p className="text-xl text-blue-100 mb-10">We helpen u direct. Bel nu en we komen vandaag of morgen al langs!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>

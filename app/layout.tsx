@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     default: `${BUSINESS.NAME} | IT-Problemen Snel Opgelost`,
     template: '%s',
   },
-  description: `Problemen met computer, laptop, printer, e-mail of WiFi? Binnen 24 uur geholpen in heel ${BUSINESS.REGION}. Transparant tarief: ${PRICING.PER_QUARTER} per kwartier. Bel ${BUSINESS.PHONE}.`,
+  description: `Problemen met computer, laptop, printer, e-mail of wifi? Meestal binnen 24 uur geholpen in heel ${BUSINESS.REGION}. Transparant tarief: ${PRICING.PER_QUARTER} per kwartier. Bel ${BUSINESS.PHONE}.`,
   authors: [{ name: BUSINESS.NAME }],
   creator: BUSINESS.NAME,
   publisher: BUSINESS.NAME,
@@ -28,8 +28,8 @@ export const metadata: Metadata = {
     locale: 'nl_NL',
     url: BUSINESS.URL,
     siteName: BUSINESS.NAME,
-    title: `${BUSINESS.NAME} | IT-Problemen Snel Opgelost`,
-    description: `Computer, laptop, printer of WiFi problemen? Binnen 24 uur bij u thuis in ${BUSINESS.REGION}.`,
+    title: `${BUSINESS.NAME} | Computerhulp aan huis, meestal binnen 24 uur`,
+    description: `Computer, laptop, printer of wifi problemen? Meestal binnen 24 uur bij u thuis in ${BUSINESS.REGION}.`,
   },
   /* Alleen het kaarttype; titel en beschrijving erven per pagina uit Open Graph. */
   twitter: {

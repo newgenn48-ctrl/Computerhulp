@@ -133,7 +133,7 @@ export default function ContactPage() {
                 <div className="mb-6">
                   <h2 className="content-title mb-2">Liever dat wij u bellen?</h2>
                   <p className="text-gray-600">
-                    Laat uw gegevens achter en we nemen binnen enkele uren contact op.
+                    Laat uw gegevens achter en we bellen u meestal binnen een uur terug.
                   </p>
                 </div>
                 <AfspraakForm />

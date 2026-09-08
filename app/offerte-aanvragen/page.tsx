@@ -156,7 +156,7 @@ export default function OfferteAanvragenPage() {
             Vraag Uw Website Offerte Aan
           </h1>
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Vul het formulier in en ontvang binnen 24 uur een offerte op maat
+            Vul het formulier in en ontvang meestal binnen 24 uur een offerte op maat
           </p>
         </div>
       </section>
@@ -173,7 +173,7 @@ export default function OfferteAanvragenPage() {
                   <div>
                     <h3 className="text-green-800 font-semibold">Bedankt voor uw aanvraag!</h3>
                     <p className="text-green-700 mt-1">
-                      We hebben uw offerte aanvraag ontvangen en sturen binnen 24 uur een offerte naar uw e-mailadres.
+                      We hebben uw offerte aanvraag ontvangen en sturen meestal binnen 24 uur een offerte naar uw e-mailadres.
                       U ontvangt ook een bevestigingsmail.
                     </p>
                   </div>
@@ -433,7 +433,7 @@ export default function OfferteAanvragenPage() {
               </button>
 
               <p className="text-sm text-gray-500 text-center">
-                We nemen binnen 24 uur contact met u op
+                We nemen meestal binnen 24 uur contact met u op
               </p>
             </form>
           </div>
@@ -464,7 +464,7 @@ export default function OfferteAanvragenPage() {
               </div>
               <h3 className="text-lg font-bold text-gray-900 mb-2">Contact</h3>
               <p className="text-gray-600">
-                We bellen u binnen 24 uur voor een persoonlijk gesprek
+                We bellen u meestal binnen 24 uur voor een persoonlijk gesprek
               </p>
             </div>
 

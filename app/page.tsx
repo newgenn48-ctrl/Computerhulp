@@ -17,12 +17,12 @@ import PricingSection from '@/components/PricingSection'
 export const metadata: Metadata = {
   // Homepage richt zich op merk + regio; de hub /computerhulp-aan-huis is de enige doelpagina
   // voor 'computerhulp aan huis' (beide stonden op hetzelfde zoekwoord en hielden elkaar laag).
-  title: `Computerhulp ${BUSINESS.REGION} | Hulp aan huis binnen 24 uur`,
-  description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  title: `Computerhulp ${BUSINESS.REGION} | Hulp aan huis meestal binnen 24 uur`,
+  description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, wifi, printer en meer. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: `Computerhulp aan Huis ${BUSINESS.REGION} | Binnen 24 uur`,
-    description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, WiFi, printer en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+    title: `Computerhulp aan huis ${BUSINESS.REGION} | Meestal binnen 24 uur`,
+    description: `Computerproblemen? Computerhulp aan huis in ${BUSINESS.REGION}. Laptop, wifi, printer en meer. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
     type: 'website',
     url: BUSINESS.URL,
     siteName: BUSINESS.NAME,
@@ -56,7 +56,7 @@ const faqItems = [
   },
   {
     q: 'Waar kunnen jullie mee helpen?',
-    a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, WiFi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.',
+    a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, wifi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.',
   },
   {
     q: 'Komen jullie ook in mijn woonplaats?',
@@ -93,7 +93,7 @@ const localBusinessData = {
   '@type': 'LocalBusiness',
   '@id': `${BUSINESS.URL}/#localbusiness`,
   name: BUSINESS.NAME,
-  description: `Professionele computerhulp aan huis in ${BUSINESS.REGION}. Wij lossen computer-, laptop-, printer- en WiFi-problemen snel op. Binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
+  description: `Professionele computerhulp aan huis in ${BUSINESS.REGION}. Wij lossen computer-, laptop-, printer- en wifi-problemen snel op. Meestal binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
   url: BUSINESS.URL,
   telephone: BUSINESS.PHONE_INTL,
   email: BUSINESS.EMAIL,
@@ -145,7 +145,7 @@ const serviceData = {
   serviceType: 'Computer Repair Service',
   provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
   areaServed: { '@type': 'State', name: BUSINESS.REGION },
-  description: `Professionele computerhulp aan huis voor particulieren en kleine ondernemers in ${BUSINESS.REGION}. Wij lossen computer, laptop, printer, WiFi en andere IT-problemen snel en vakkundig op.`,
+  description: `Professionele computerhulp aan huis voor particulieren en kleine ondernemers in ${BUSINESS.REGION}. Wij lossen computer, laptop, printer, wifi en andere IT-problemen snel en vakkundig op.`,
   offers: {
     '@type': 'Offer',
     price: String(PRICING.PER_QUARTER_NUM),
@@ -202,7 +202,7 @@ export default function HomePage() {
 
       <Hero
         imageSrc="/hero-student.webp"
-        imageAlt={`IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
+        imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel={`${BUSINESS.NAME} hero`}
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
@@ -251,15 +251,15 @@ export default function HomePage() {
           <div className="panel panel-pad grid lg:grid-cols-2 gap-12 items-start">
             <article>
               <h2 id="seo-content-heading" className="section-title mb-6">
-                Computerhulp bij u thuis
+                Eén nummer voor al uw apparaten
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Loopt uw <strong>computer, laptop, printer of WiFi</strong> niet lekker? Dat is vervelend, maar geen reden tot stress. Wij komen gewoon bij u thuis en helpen het oplossen. Of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link> of ergens anders in {BUSINESS.REGION} woont — wij staan meestal binnen een dag bij u aan de deur.
+                  {BUSINESS.NAME} is een kleine, lokale dienst: één telefoonnummer voor alles met een scherm of een stekker. Een HBO-student komt bij u thuis, of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link>, <Link href="/computerhulp-aan-huis-zoetermeer" className="text-blue-600 hover:underline">Zoetermeer</Link> of <Link href="/computerhulp-aan-huis-dordrecht" className="text-blue-600 hover:underline">Dordrecht</Link> woont, of in een van de dorpen daartussen.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Waar kunnen wij u mee helpen? Onder andere met: <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:underline">een trage computer</Link>, <Link href="/diensten/laptop-computer-reparatie" className="text-blue-600 hover:underline">een kapotte laptop</Link>, <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">een printer die niet werkt</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">WiFi dat hapert</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail instellen</Link>, <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet en telefoon</Link>, <Link href="/diensten/smart-home-domotica" className="text-blue-600 hover:underline">slimme apparaten</Link> en <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">bestanden terughalen</Link>.
+                  Kies wat bij u past. Werkt er iets niet, dan is <Link href="/computerhulp-aan-huis" className="text-blue-600 hover:underline">computerhulp aan huis</Link> de snelste weg: van een trage laptop tot een printer die zwijgt. Zoekt u vooral iemand die rustig uitlegt, kijk dan bij <Link href="/student-aan-huis" className="text-blue-600 hover:underline">student aan huis</Link>. En wilt u het zelf leren, dan is er de <Link href="/diensten/computercursus-ouderen" className="text-blue-600 hover:underline">computercursus aan uw eigen keukentafel</Link>. Alle onderwerpen staan op een rij bij <Link href="/diensten" className="text-blue-600 hover:underline">onze diensten</Link>.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">

@@ -6,17 +6,17 @@ import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
 import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Computer & Laptop Hulp aan Huis Zuid-Holland | Binnen 24u',
-  description: `Computer traag, laptop kapot of pc problemen? Professionele hulp aan huis in ${BUSINESS.REGION}. Alle merken, binnen 24 uur. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  title: 'Computer- en laptophulp aan huis Zuid-Holland | Ook reparatie',
+  description: `Computer- en laptophulp aan huis in ${BUSINESS.REGION}: traag, vastgelopen, kapot scherm of start niet op. Ook pc-hulp en reparatie bij u thuis. Meestal binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: 'Computer & Laptop Hulp aan Huis',
-    description: `Computer of laptop problemen? Traag, vast, crash of defect? We komen bij u thuis in ${BUSINESS.REGION} en maken het weer als nieuw. Binnen 24 uur geholpen.`,
+    title: 'Computer- en laptophulp aan huis',
+    description: `Computer of laptop traag, vastgelopen of kapot? Een HBO-student komt bij u thuis in ${BUSINESS.REGION}, repareert of lost het op en legt het rustig uit.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/computer-laptop-hulp'},
   alternates: {
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
 const structuredData = {
   '@context': 'https://schema.org',
   '@type': 'Service',
-  serviceType: 'Computer & Laptop Hulp',
+  serviceType: 'Computer- en laptophulp',
   provider: {
     '@type': 'LocalBusiness',
     name: BUSINESS.NAME,
@@ -49,7 +49,7 @@ const structuredData = {
     price: PRICING.PER_QUARTER_NUM.toString(),
     priceCurrency: 'EUR'
   },
-  description: 'Professionele computer en laptop hulp aan huis. Van trage computers tot crashes, data recovery en hardware upgrades. We komen bij u thuis in Zuid-Holland.'}
+  description: 'Computer- en laptophulp aan huis in Zuid-Holland: trage computers, opstartproblemen, foutmeldingen, reparatie van scherm en accu, pc-hulp en overzetten naar een nieuwe computer.'}
 
 const breadcrumbData = {
   '@context': 'https://schema.org',
@@ -70,7 +70,7 @@ const breadcrumbData = {
     {
       '@type': 'ListItem',
       position: 3,
-      name: 'Computer & Laptop Hulp',
+      name: 'Computer- en laptophulp',
       item: 'https://computerhulpzh.nl/diensten/computer-laptop-hulp'
     }
   ]
@@ -80,81 +80,43 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    {
-      '@type': 'Question',
-      name: 'Hoe snel kunnen jullie langskomen voor computerhulp?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'In de meeste gevallen komen we binnen 24 uur bij u langs. Bij spoed proberen we vaak nog dezelfde dag te komen.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Kunnen jullie mijn data redden als mijn computer niet meer opstart?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja, in veel gevallen kunnen we data terughalen van defecte computers of harde schijven. We maken eerst een diagnose en geven u een eerlijk advies over de mogelijkheden.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Helpen jullie met alle merken laptops?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Wat als het probleem niet opgelost kan worden?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). We zijn altijd eerlijk over de mogelijkheden voordat we beginnen.'
-      }
-    },
-    {
-      '@type': 'Question',
-      name: 'Kan mijn oudere computer nog sneller worden?',
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: 'Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.'
-      }
-    }
+    { '@type': 'Question', name: `Hoe snel kunnen jullie langskomen voor computerhulp?`, acceptedAnswer: { '@type': 'Answer', text: `Meestal binnen 24 uur. Bij spoed proberen we vaak nog dezelfde dag te komen. We zijn 7 dagen per week bereikbaar van ${HOURS.OPEN} tot ${HOURS.CLOSE} uur.` } },
+    { '@type': 'Question', name: `Mijn computer start helemaal niet meer op. Komen jullie dan ook?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Vaak krijgen we hem bij u thuis gewoon weer aan de praat. Lukt dat niet, dan stellen we eerst uw bestanden veilig en zeggen we eerlijk wat de beste vervolgstap is.` } },
+    { '@type': 'Question', name: `Repareren jullie ook een kapot scherm of een lege accu?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We vervangen laptopschermen, accu’s en toetsenborden aan huis. We bestellen het juiste onderdeel voor uw model en komen het bij u installeren.` } },
+    { '@type': 'Question', name: `Moet mijn laptop of pc mee naar een werkplaats?`, acceptedAnswer: { '@type': 'Answer', text: `Nee. We werken bij u thuis, ook aan een vaste pc: u hoeft niets los te koppelen of te sjouwen. Alleen bij een enkele hardwarefout, zoals een moederbordprobleem, overleggen we of een werkplaats zinvol is.` } },
+    { '@type': 'Question', name: `Raak ik mijn bestanden kwijt als jullie het oplossen?`, acceptedAnswer: { '@type': 'Answer', text: `Daar doen we alles aan om het te voorkomen. Waar mogelijk stellen we eerst uw documenten en foto’s veilig, en pas daarna lossen we het probleem op.` } },
+    { '@type': 'Question', name: `Helpen jullie met alle merken laptops en computers?`, acceptedAnswer: { '@type': 'Answer', text: `Ja, met alle merken en alle systemen: Windows, Mac en Chromebook, laptop en vaste pc.` } },
+    { '@type': 'Question', name: `Kan mijn oudere computer nog sneller worden?`, acceptedAnswer: { '@type': 'Answer', text: `Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Helpt dat niet genoeg, dan is een SSD-upgrade meestal de beste investering. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.` } },
+    { '@type': 'Question', name: `Wat als het probleem niet opgelost kan worden?`, acceptedAnswer: { '@type': 'Answer', text: `Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). We zijn altijd eerlijk over de mogelijkheden voordat we beginnen.` } },
+    { '@type': 'Question', name: `Wat kost computerhulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` } },
   ]
 }
 
 const services = [
-  'Nieuwe computer installeren en instellen',
-  'Trage computer weer snel maken',
-  'Ongewenste meldingen en pop-ups weghalen',
-  'Programma\'s installeren en bijwerken',
-  'Bestanden overzetten naar nieuwe computer',
-  'Systeemupdates uitvoeren',
-  'Opstartproblemen oplossen',
-  'Onderhoud en opschoning',
+  `Trage computer of laptop weer snel maken`,
+  `Computer start niet op of loopt vast`,
+  `Foutmeldingen, pop-ups en ongewenste programma’s weghalen`,
+  `Nieuwe computer of laptop aansluiten en alles overzetten`,
+  `Windows en programma’s bijwerken`,
+  `Kapot scherm, accu of toetsenbord vervangen`,
+  `SSD-upgrade voor meer snelheid`,
+  `Diagnose bij waterschade`,
+  `Vaste pc: beeldscherm, printer en kabels netjes aangesloten`,
+  `Onderhoud en opschoning`,
+  `Bestanden veiligstellen voordat we beginnen`,
+  `Alle merken en systemen`,
 ]
 
 const faqs = [
-  {
-    question: 'Hoe snel kunnen jullie langskomen voor computerhulp?',
-    answer: 'In de meeste gevallen komen we binnen 24 uur bij u langs. Bij spoed proberen we vaak nog dezelfde dag te komen. We zijn 7 dagen per week bereikbaar van 08:00 tot 22:00.'
-  },
-  {
-    question: 'Kunnen jullie mijn data redden als mijn computer niet meer opstart?',
-    answer: 'Ja, in veel gevallen kunnen we data terughalen van defecte computers of harde schijven. We maken eerst een diagnose en geven u een eerlijk advies over de mogelijkheden.'
-  },
-  {
-    question: 'Helpen jullie met alle merken laptops?',
-    answer: 'Ja, we helpen met alle merken computers en laptops, ongeacht het besturingssysteem. Onze HBO-studenten hebben ervaring met alle systemen.'
-  },
-  {
-    question: 'Wat als het probleem niet opgelost kan worden?',
-    answer: 'Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). We zijn altijd eerlijk over de mogelijkheden voordat we beginnen.'
-  },
-  {
-    question: 'Kan mijn oudere computer nog sneller worden?',
-    answer: 'Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.'
-  }
+  { question: `Hoe snel kunnen jullie langskomen voor computerhulp?`, answer: `Meestal binnen 24 uur. Bij spoed proberen we vaak nog dezelfde dag te komen. We zijn 7 dagen per week bereikbaar van ${HOURS.OPEN} tot ${HOURS.CLOSE} uur.` },
+  { question: `Mijn computer start helemaal niet meer op. Komen jullie dan ook?`, answer: `Ja. Vaak krijgen we hem bij u thuis gewoon weer aan de praat. Lukt dat niet, dan stellen we eerst uw bestanden veilig en zeggen we eerlijk wat de beste vervolgstap is.` },
+  { question: `Repareren jullie ook een kapot scherm of een lege accu?`, answer: `Ja. We vervangen laptopschermen, accu’s en toetsenborden aan huis. We bestellen het juiste onderdeel voor uw model en komen het bij u installeren.` },
+  { question: `Moet mijn laptop of pc mee naar een werkplaats?`, answer: `Nee. We werken bij u thuis, ook aan een vaste pc: u hoeft niets los te koppelen of te sjouwen. Alleen bij een enkele hardwarefout, zoals een moederbordprobleem, overleggen we of een werkplaats zinvol is.` },
+  { question: `Raak ik mijn bestanden kwijt als jullie het oplossen?`, answer: `Daar doen we alles aan om het te voorkomen. Waar mogelijk stellen we eerst uw documenten en foto’s veilig, en pas daarna lossen we het probleem op.` },
+  { question: `Helpen jullie met alle merken laptops en computers?`, answer: `Ja, met alle merken en alle systemen: Windows, Mac en Chromebook, laptop en vaste pc.` },
+  { question: `Kan mijn oudere computer nog sneller worden?`, answer: `Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Helpt dat niet genoeg, dan is een SSD-upgrade meestal de beste investering. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.` },
+  { question: `Wat als het probleem niet opgelost kan worden?`, answer: `Als we het probleem niet kunnen oplossen, betaalt u alleen voor de diagnose (minimaal 3 kwartier). We zijn altijd eerlijk over de mogelijkheden voordat we beginnen.` },
+  { question: `Wat kost computerhulp aan huis?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` },
 ]
 
 export default function ComputerLaptopHulpPage() {
@@ -192,13 +154,13 @@ export default function ComputerLaptopHulpPage() {
 
         <div className="hero-content">
           <div className="max-w-2xl">
-            <p className="hero-eyebrow">Computer & Laptop · {BUSINESS.REGION}</p>
+            <p className="hero-eyebrow">Computer, laptop en pc · {BUSINESS.REGION}</p>
             <h1 className="hero-title">
               Hulp nodig met uw <span className="hero-highlight">computer</span> of laptop?
             </h1>
 
             <p className="hero-description">
-              Heeft u problemen met uw computer of laptop? Een HBO-student komt bij u thuis, kijkt rustig mee en legt alles uit — <strong className="text-white">in gewone taal</strong>.
+              Traag, vastgelopen, kapot scherm of start hij niet meer op? Een HBO-student komt bij u thuis, kijkt rustig mee en repareert of lost het op — <strong className="text-white">in gewone taal uitgelegd</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -219,7 +181,7 @@ export default function ComputerLaptopHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide HBO-studenten
+                HBO-opgeleide studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -237,7 +199,7 @@ export default function ComputerLaptopHulpPage() {
           <div className="text-center mb-10">
             <p className="section-eyebrow">Onze hulp</p>
             <h2 className="section-title">Wat wij voor u doen</h2>
-            <p className="section-subtitle">De meest gevraagde ingrepen op computers en laptops — allemaal bij u thuis.</p>
+            <p className="section-subtitle">Van een trage laptop tot een kapot scherm of een vaste pc die niet meer wil: allemaal bij u thuis.</p>
           </div>
           <div className="card-bezel max-w-3xl mx-auto">
             <div className="card-bezel-inner p-6 sm:p-8">
@@ -292,17 +254,26 @@ export default function ComputerLaptopHulpPage() {
       </section>
 
       {/* SEO Content */}
-      <section className="py-12 lg:py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="content-title mb-4">Professionele Computerhulp bij U Thuis</h2>
-          <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een trage computer of laptop die vastloopt is niet alleen frustrerend, het kost u ook tijd en productiviteit. Of het nu gaat om een computer die niet meer opstart, een laptop die steeds vastloopt of programma’s die foutmeldingen geven — onze HBO-studenten hebben de kennis en ervaring om het probleem snel te diagnosticeren en op te lossen.</p>
-            <p>Wij komen bij u thuis in heel Zuid-Holland, van Den Haag tot Rotterdam en van Leiden tot Dordrecht. Geen gedoe met uw computer naar een winkel brengen, geen wachttijden van weken. Meestal binnen 24 uur staat onze HBO-student aan uw deur, en in de meeste gevallen is het probleem ter plekke verholpen. Van opschonen en opnieuw instellen tot bestanden overzetten — wij regelen het.</p>
+      <section className="panel-section" aria-labelledby="seo-content-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <h2 id="seo-content-heading" className="section-title mb-6">Computerhulp, pc-hulp en laptopreparatie bij u thuis</h2>
+          <div className="prose prose-lg text-gray-700 max-w-none">
+            <p>Een computer die traag is, vastloopt, rare meldingen geeft of helemaal niet meer opstart: we zien het dagelijks. Onze HBO-student komt bij u thuis in heel {BUSINESS.REGION}, meestal binnen 24 uur, en begint met een eerlijke diagnose. Eerst begrijpen wat er aan de hand is, dan pas oplossen. Zo betaalt u nooit voor werk dat niet nodig is.</p>
+            <h3 className="content-title mt-8 mb-2">Trage computer of laptop</h3>
+            <p>Een trage computer is meestal geen reden voor een nieuwe. We ruimen op, halen programma’s weg die op de achtergrond meedraaien, werken Windows bij en zetten de instellingen goed. Helpt dat niet genoeg, dan is een SSD-upgrade vaak de beste investering: dezelfde computer, maar een stuk vlotter. We adviseren eerlijk wat zin heeft.</p>
+            <h3 className="content-title mt-8 mb-2">Start niet op, loopt vast of geeft foutmeldingen</h3>
+            <p>Bij een computer die niet meer opstart of steeds vastloopt zoeken we eerst naar de oorzaak, in plaats van symptomen te bestrijden. Ongewenste pop-ups en meldingen halen we weg en we zorgen dat het probleem niet volgende week terugkomt. Waar mogelijk stellen we eerst uw documenten en foto’s veilig.</p>
+            <h3 className="content-title mt-8 mb-2">Reparatie aan huis: scherm, accu en toetsenbord</h3>
+            <p>Een kapotte laptop hoeft niet meteen vervangen te worden. Een gebroken scherm, een accu die niet meer laadt of een toetsenbord dat hapert repareren we bij u thuis. We bestellen het juiste onderdeel voor uw model en komen het installeren. Ook bij waterschade doen we een diagnose; hoe eerder u belt, hoe groter de kans dat het goed komt.</p>
+            <h3 className="content-title mt-8 mb-2">Pc-hulp aan huis: uw vaste computer</h3>
+            <p>Een desktop-pc brengt u niet zomaar even naar een winkel: kabels los, beeldscherm mee en thuis alles weer aansluiten. Daarom komen wij naar u. We werken op de plek waar uw pc staat, sluiten beeldscherm, printer en luidsprekers netjes aan en zorgen dat alles weer soepel loopt.</p>
+            <h3 className="content-title mt-8 mb-2">Een monteur die bij u thuiskomt</h3>
+            <p>U hoeft nergens naartoe en niets te sjouwen. Onze student neemt gereedschap en kabels mee, lost het ter plekke op en legt in gewone taal uit wat er aan de hand was. Ook ’s avonds en in het weekend, zonder toeslag. Is een nieuwe computer toch de beste keuze, dan helpen we met het <Link href="/diensten/dataherstel-backup" className="text-blue-600 hover:underline">overzetten van uw bestanden</Link> en zorgen we dat <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:underline">printer</Link> en <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">wifi</Link> meteen werken.</p>
           </div>
         </div>
       </section>
 
-      <ServiceCrossLinks currentService="computer-laptop-hulp" serviceName="Computer & Laptop Hulp" />
+      <ServiceCrossLinks currentService="computer-laptop-hulp" serviceName="Computer- en laptophulp" />
 
 
       <AvailableInCities serviceLabel="Computer- en laptophulp" />

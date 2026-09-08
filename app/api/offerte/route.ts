@@ -265,7 +265,7 @@ Neem zo snel mogelijk contact op met de klant!
 
                 <p style="font-size: 16px;">
                   Hartelijk dank voor uw interesse in onze website diensten! We hebben uw offerte aanvraag
-                  goed ontvangen en zullen <strong>binnen 24 uur</strong> een vrijblijvende offerte naar u
+                  goed ontvangen en zullen <strong>meestal binnen 24 uur</strong> een vrijblijvende offerte naar u
                   opsturen.
                 </p>
 
@@ -279,7 +279,7 @@ Neem zo snel mogelijk contact op met de klant!
                 <div class="info-box">
                   <h3 style="margin-top: 0; color: #1f2937;">⏱️ Wat Gebeurt Er Nu?</h3>
                   <ul>
-                    <li><strong>Binnen 24 uur:</strong> U ontvangt een gedetailleerde offerte</li>
+                    <li><strong>Meestal binnen 24 uur:</strong> U ontvangt een gedetailleerde offerte</li>
                     <li><strong>Vrijblijvend gesprek:</strong> We bespreken graag uw wensen</li>
                     <li><strong>Op maat gemaakt:</strong> Elk project is uniek</li>
                     <li><strong>Transparante prijzen:</strong> Geen verborgen kosten</li>
@@ -325,7 +325,7 @@ Beste ${textNaam},
 
 Hartelijk dank voor uw interesse in onze website diensten!
 
-We hebben uw offerte aanvraag goed ontvangen en zullen binnen 24 uur een vrijblijvende offerte naar u opsturen.
+We hebben uw offerte aanvraag goed ontvangen en zullen meestal binnen 24 uur een vrijblijvende offerte naar u opsturen.
 
 UW AANVRAAG:
 Type Website: ${typeLabel}
@@ -333,7 +333,7 @@ ${textBudget ? `Budget: ${textBudget}` : ''}
 ${textDeadline ? `Gewenste Opleverdatum: ${textDeadline}` : ''}
 
 WAT GEBEURT ER NU?
-- Binnen 24 uur: U ontvangt een gedetailleerde offerte
+- Meestal binnen 24 uur: U ontvangt een gedetailleerde offerte
 - Vrijblijvend gesprek: We bespreken graag uw wensen
 - Op maat gemaakt: Elk project is uniek
 - Transparante prijzen: Geen verborgen kosten

@@ -1,24 +1,20 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
-import ServicesSection from '@/components/ServicesSection'
-import PricingSection from '@/components/PricingSection'
-import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import ComfortSection from '@/components/sections/ComfortSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
-import { TOP_CITIES } from '@/lib/cities'
 
 export const metadata: Metadata = {
-  title: `Student aan Huis ${BUSINESS.REGION} | HBO-student, geen abonnement`,
+  title: `Student aan huis ${BUSINESS.REGION} | HBO-student, geen abonnement`,
   description: `Student aan huis in ${BUSINESS.REGION}: een geduldige HBO-student helpt u thuis met computer, laptop, wifi en tablet. ${PRICING.PER_QUARTER} per kwartier, geen abonnement. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: `Student aan Huis ${BUSINESS.REGION} | IT-Hulp Binnen 24u bij u Thuis`,
-    description: `IT-student aan huis in ${BUSINESS.REGION}. Geduldige studenten helpen met computer, laptop, WiFi en meer. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+    title: `Student aan huis ${BUSINESS.REGION} | Meestal binnen 24 uur bij u thuis`,
+    description: `Een HBO-student komt bij u thuis in ${BUSINESS.REGION} voor computer, laptop, wifi en tablet. Rustig uitgelegd, geen abonnement. Bel ${BUSINESS.PHONE}.`,
     type: 'website',
     url: `${BUSINESS.URL}/student-aan-huis`,
   },
@@ -57,9 +53,9 @@ const structuredData = {
     {
       '@type': 'Service',
       '@id': `${BUSINESS.URL}/student-aan-huis#service`,
-      serviceType: 'Student aan Huis',
-      name: 'Student aan Huis — Computerhulp door IT-studenten',
-      description: `Computerhulp door jonge IT-studenten aan huis in ${BUSINESS.REGION}. Geduldig, betaalbaar en kundig.`,
+      serviceType: 'Student aan huis',
+      name: 'Student aan huis: computerhulp door HBO-studenten',
+      description: `Computerhulp aan huis door HBO-studenten in ${BUSINESS.REGION}. Geduldig, betaalbaar en zonder abonnement.`,
       url: `${BUSINESS.URL}/student-aan-huis`,
       provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
       offers: {
@@ -87,32 +83,51 @@ const structuredData = {
       '@type': 'BreadcrumbList',
       itemListElement: [
         { '@type': 'ListItem', position: 1, name: 'Home', item: BUSINESS.URL },
-        { '@type': 'ListItem', position: 2, name: 'Student aan Huis', item: `${BUSINESS.URL}/student-aan-huis` },
+        { '@type': 'ListItem', position: 2, name: 'Student aan huis', item: `${BUSINESS.URL}/student-aan-huis` },
       ],
     },
   ],
 }
 
+const helpItems = [
+  { href: '/diensten/computer-laptop-hulp', title: 'Computer en laptop', desc: 'Traag, vastgelopen, foutmeldingen of een nieuwe laptop inrichten.' },
+  { href: '/diensten/wifi-internet-hulp', title: 'Wifi en internet', desc: 'Bereik in het hele huis, nieuwe router, apparaten verbinden.' },
+  { href: '/diensten/printer-scanner-hulp', title: 'Printer en scanner', desc: 'Aansluiten, draadloos printen, scannen naar e-mail.' },
+  { href: '/diensten/email-hulp', title: 'E-mail', desc: 'Weer toegang, instellen op telefoon en tablet, ongewenste mail stoppen.' },
+  { href: '/diensten/smartphone-hulp-aan-huis', title: 'Tablet en telefoon', desc: 'Nieuw toestel instellen, foto’s overzetten, videobellen met familie.' },
+  { href: '/diensten/tv-installatie', title: 'Televisie', desc: 'Smart-tv, zenders, decoder, Netflix en de soundbar.' },
+  { href: '/diensten/dataherstel-backup', title: 'Foto’s en bestanden', desc: 'Terughalen wat kan en een automatische back-up instellen.' },
+  { href: '/diensten/computercursus-ouderen', title: 'Uitleg en les', desc: 'Stap voor stap leren, met de stappen op papier om na te lezen.' },
+]
+
 const faqItems = [
   {
     q: 'Wat is student aan huis?',
-    a: 'Een IT-student komt bij u thuis voor computerhulp. Jong, geduldig en up-to-date met de nieuwste apparaten. Ze nemen de tijd en leggen alles rustig uit.',
-  },
-  {
-    q: 'Wat is het verschil met gewone computerhulp?',
-    a: 'Onze studenten volgen een technische opleiding en kennen de laatste software en apparaten. Zelfde kwaliteit en prijs als reguliere computerhulp, met een frisse aanpak.',
-  },
-  {
-    q: 'Wat kost een student aan huis?',
-    a: `${PRICING.PER_QUARTER} per kwartier, minimum 3 kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen na afloop via pin of Tikkie.`,
+    a: 'Een HBO-student komt bij u thuis voor computerhulp. Jong, geduldig en vertrouwd met de nieuwste apparaten. De student neemt de tijd en legt alles rustig uit, in gewone taal.',
   },
   {
     q: 'Weten de studenten wel genoeg?',
-    a: 'Ja. Onze IT-studenten zijn goed opgeleid, hebben ervaring en lossen dagelijks problemen op. Ze studeren IT of Informatica.',
+    a: 'Ja. Onze studenten volgen een technische HBO-opleiding, zoals ICT of Informatica, en lossen dagelijks dezelfde soort problemen op. Elke student is door ons persoonlijk gesproken en ingewerkt voordat hij of zij bij klanten komt.',
+  },
+  {
+    q: 'Wat is het verschil met gewone computerhulp?',
+    a: 'De hulp is hetzelfde en de prijs ook. Het verschil zit in de aanpak: een student legt uit terwijl hij werkt, zodat u het de volgende keer zelf kunt. Voor veel mensen is dat precies wat ze zoeken.',
+  },
+  {
+    q: 'Wat kost een student aan huis?',
+    a: `${PRICING.PER_QUARTER} per kwartier, minimaal drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement en geen jaarbijdrage; u betaalt na afloop via pin of Tikkie.`,
+  },
+  {
+    q: 'Kan ik dezelfde student terugvragen?',
+    a: 'Ja, graag zelfs. Zeg het bij het maken van de afspraak; als de planning het toelaat, komt dezelfde student terug. Zo hoeft u niet elke keer opnieuw uit te leggen hoe u werkt.',
+  },
+  {
+    q: 'Kan de student ook alleen iets uitleggen, zonder dat er iets kapot is?',
+    a: 'Zeker. Veel bezoeken gaan alleen over uitleg: e-mail, videobellen, bankieren of een nieuwe telefoon leren kennen. Wilt u meer leren, kijk dan bij de computercursus aan huis.',
   },
   {
     q: 'Waar komen jullie?',
-    a: `In heel ${BUSINESS.REGION}: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en 50+ andere gemeenten. Voorrijden ${PRICING.TRAVEL}.`,
+    a: `In heel ${BUSINESS.REGION}: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en meer dan 50 andere gemeenten, inclusief de dorpen. Voorrijden kost overal ${PRICING.TRAVEL}.`,
   },
 ]
 
@@ -127,33 +142,6 @@ const faqSchema = {
   })),
 }
 
-const testimonials = HUB_TESTIMONIALS
-
-const studentBenefits = [
-  {
-    icon: 'users',
-    title: 'Geduldige IT-studenten',
-    desc: 'Jonge specialisten die uitleggen stap voor stap. Geen vaktermen, wel helder.',
-  },
-  {
-    icon: 'clock',
-    title: 'Binnen 24 uur bij u thuis',
-    desc: 'Geen wachtlijst. Meestal de volgende dag al bij u aan de keukentafel.',
-  },
-  {
-    icon: 'home',
-    title: 'Gewoon thuis blijven',
-    desc: 'U hoeft nergens naartoe. Wij komen bij u en lossen het ter plekke op.',
-  },
-  {
-    icon: 'money',
-    title: 'Betalen pas na afloop',
-    desc: 'Eerst u tevreden, dan betalen — via Tikkie. Geen abonnement, geen verborgen kosten.',
-  },
-]
-
-const topCities = TOP_CITIES
-
 export default function StudentAanHuisPage() {
   return (
     <>
@@ -162,11 +150,11 @@ export default function StudentAanHuisPage() {
 
       <Hero
         imageSrc="/hero-student.webp"
-        imageAlt={`IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
+        imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Student <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> IT-studenten komen bij u thuis en helpen u stap voor stap, in begrijpelijke taal.</>,
+          <>Een geduldige HBO-student komt bij u thuis voor uw computer, laptop, tablet, printer of wifi. Rustig uitgelegd, <strong className="text-white">zonder abonnement</strong>, en u betaalt pas achteraf.</>,
         ]}
         pills={[
           { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
@@ -175,21 +163,75 @@ export default function StudentAanHuisPage() {
         ]}
       />
 
-      <ServicesSection
-        eyebrow="Onze hulp"
-        title="Waar wij u mee helpen"
-        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
-        photoCards={true}
-        limitServices={6}
-        showAllButton={true}
-      />
+      {/* 1. Wie komt er: het antwoord op de vraag die deze zoeker stelt */}
+      <section className="panel-section" aria-labelledby="wie-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="panel overflow-hidden">
+            <div className="grid lg:grid-cols-[1fr_1.1fr]">
+              <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
+                <Image
+                  src="/hero-computerhulp.webp"
+                  alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  loading="lazy"
+                />
+              </div>
+              <div className="p-6 sm:p-10 lg:p-12">
+                <p className="section-eyebrow">Wie komt er</p>
+                <h2 id="wie-heading" className="section-title">Wie staat er bij u voor de deur?</h2>
+                <div className="prose prose-lg text-gray-700 max-w-none mt-4">
+                  <p>
+                    Een student van een technische HBO-opleiding in {BUSINESS.REGION}, zoals ICT of Informatica. Iemand die is opgegroeid met computers, tablets en telefoons en de nieuwste apparaten uit eigen ervaring kent. Elke student is door ons persoonlijk gesproken en ingewerkt voordat hij of zij bij klanten komt.
+                  </p>
+                  <p>
+                    U krijgt vooraf de naam van de student en een tijdvak. De student komt op tijd, stelt zich voor, luistert eerst naar wat u dwarszit en gaat dan pas aan de slag. Ondertussen vertelt hij of zij wat er gebeurt, in gewone woorden, zodat u het de volgende keer zelf kunt.
+                  </p>
+                </div>
+                <ul className="grid sm:grid-cols-2 gap-3 mt-6">
+                  {[
+                    'Kent de nieuwste apparaten en apps',
+                    'Neemt de tijd en legt rustig uit',
+                    'Zelfde student terugvragen kan',
+                    'Geen verkooppraatjes, niets kopen',
+                  ].map((t) => (
+                    <li key={t} className="flex items-start gap-2.5 text-gray-800">
+                      <Icon name="check-circle" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2.5} aria-hidden="true" />
+                      <span>{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-      <ComfortSection variant="student" />
+      {/* 2. Waarmee de student helpt: tekstlijst, geen fotokaarten (die staan op de homepage) */}
+      <section className="panel-section" aria-labelledby="hulp-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <div className="panel panel-pad">
+            <header className="mb-8">
+              <p className="section-eyebrow">Waarmee</p>
+              <h2 id="hulp-heading" className="section-title">Waar de student u thuis mee helpt</h2>
+              <p className="section-subtitle">Eén student voor alles wat een scherm of een stekker heeft.</p>
+            </header>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {helpItems.map((item) => (
+                <li key={item.href}>
+                  <Link href={item.href} className="step-card block h-full group">
+                    <h3 className="font-bold text-gray-900 text-lg leading-snug mb-1.5 group-hover:text-blue-700">{item.title}</h3>
+                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
 
-      <PricingSection />
-
-      {/* Kosten uitgelegd: 'student aan huis kosten' is de grootste organische zoekvraag op deze pagina
-          (positie ~10). Eén duidelijke sectie met de vergelijking die zoekers maken. */}
+      {/* 3. Kosten: 'student aan huis kosten' is de grootste zoekvraag op deze pagina */}
       <section className="panel-section" aria-labelledby="kosten-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-8">
@@ -225,19 +267,15 @@ export default function StudentAanHuisPage() {
         </div>
       </section>
 
-      {/* Reviews — sociaal bewijs valideert de prijs */}
-      <TestimonialsSection
-        testimonials={testimonials}
-      />
+      {/* 4. Reviews */}
+      <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
 
-      <HowItWorksSection />
-
-      {/* FAQ */}
+      {/* 5. FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
-            <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
+            <h2 id="faq-heading" className="section-title">Veelgestelde vragen over student aan huis</h2>
           </header>
           <div className="space-y-4">
             {faqItems.map((faq, idx) => (
@@ -253,7 +291,7 @@ export default function StudentAanHuisPage() {
         </div>
       </section>
 
-      <LocalCitiesSection pagePrefix="student-aan-huis" />
+      <LocalCitiesSection pagePrefix="student-aan-huis" title="Een student aan huis in uw woonplaats" eyebrow="Student aan huis per plaats" />
 
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
@@ -280,7 +318,7 @@ export default function StudentAanHuisPage() {
               <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />Ook avonden tot {HOURS.CLOSE}
             </span>
             <span className="flex items-center gap-2">
-              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />Binnen 24 uur geholpen
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />Meestal binnen 24 uur geholpen
             </span>
           </div>
         </div>

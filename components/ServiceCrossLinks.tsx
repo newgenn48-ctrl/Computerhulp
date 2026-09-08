@@ -7,43 +7,29 @@ interface ServiceCrossLinksProps {
 }
 
 const allServices = [
-  { slug: 'computer-laptop-hulp', name: 'Computer & Laptop Hulp' },
-  { slug: 'laptop-computer-reparatie', name: 'Laptop & PC Reparatie' },
-  { slug: 'wifi-internet-hulp', name: 'WiFi & Internet Hulp' },
-  { slug: 'printer-scanner-hulp', name: 'Printer & Scanner Hulp' },
-  { slug: 'email-hulp', name: 'E-mail Hulp' },
-  { slug: 'tablet-smartphone-hulp', name: 'Tablet & Smartphone Hulp' },
-  { slug: 'televisie-radio', name: 'TV & Radio Hulp' },
-  { slug: 'smart-home-domotica', name: 'Smart Home & Domotica' },
-  { slug: 'dataherstel-backup', name: 'Dataherstel & Backup' },
-  { slug: 'persoonlijke-training', name: 'Persoonlijke Training' },
-  { slug: 'computercursus-ouderen', name: 'Computercursus Ouderen' },
-  { slug: 'tv-installatie', name: 'TV Installatie' },
-  { slug: 'pc-hulp-aan-huis', name: 'PC Hulp aan Huis' },
-  { slug: 'hulp-bij-computerproblemen', name: 'Hulp bij Computerproblemen' },
-  { slug: 'smartphone-hulp-aan-huis', name: 'Smartphone Hulp' },
-  { slug: 'computerhulp-senioren', name: 'Computerhulp Senioren' },
-  { slug: 'monteur-aan-huis', name: 'Monteur aan Huis' },
+  { slug: 'computer-laptop-hulp', name: 'Computer- en laptophulp' },
+  { slug: 'wifi-internet-hulp', name: 'Wifi- en internethulp' },
+  { slug: 'printer-scanner-hulp', name: 'Printer- en scannerhulp' },
+  { slug: 'email-hulp', name: 'E-mailhulp' },
+  { slug: 'smartphone-hulp-aan-huis', name: 'Smartphone- en tablethulp' },
+  { slug: 'tv-installatie', name: 'Tv-installatie en tv-hulp' },
+  { slug: 'smart-home-domotica', name: 'Smart home en domotica' },
+  { slug: 'dataherstel-backup', name: 'Dataherstel en back-up' },
+  { slug: 'computercursus-ouderen', name: 'Computercursus voor ouderen' },
+  { slug: 'computerhulp-senioren', name: 'Computerhulp voor senioren' },
 ]
 
 const relatedServicesMap: Record<string, string[]> = {
-  'computer-laptop-hulp': ['hulp-bij-computerproblemen', 'dataherstel-backup', 'wifi-internet-hulp', 'email-hulp', 'monteur-aan-huis'],
-  'laptop-computer-reparatie': ['computer-laptop-hulp', 'dataherstel-backup', 'wifi-internet-hulp', 'tablet-smartphone-hulp', 'persoonlijke-training'],
+  'computer-laptop-hulp': ['dataherstel-backup', 'wifi-internet-hulp', 'email-hulp', 'printer-scanner-hulp', 'computerhulp-senioren'],
   'wifi-internet-hulp': ['smart-home-domotica', 'printer-scanner-hulp', 'tv-installatie', 'computer-laptop-hulp', 'smartphone-hulp-aan-huis'],
-  'printer-scanner-hulp': ['computer-laptop-hulp', 'wifi-internet-hulp', 'email-hulp', 'monteur-aan-huis', 'persoonlijke-training'],
-  'email-hulp': ['computer-laptop-hulp', 'tablet-smartphone-hulp', 'wifi-internet-hulp', 'persoonlijke-training', 'printer-scanner-hulp'],
-  'tablet-smartphone-hulp': ['email-hulp', 'wifi-internet-hulp', 'persoonlijke-training', 'smart-home-domotica', 'computer-laptop-hulp'],
-  'televisie-radio': ['tv-installatie', 'smart-home-domotica', 'wifi-internet-hulp', 'tablet-smartphone-hulp', 'computer-laptop-hulp'],
-  'smart-home-domotica': ['wifi-internet-hulp', 'tv-installatie', 'televisie-radio', 'smartphone-hulp-aan-huis', 'persoonlijke-training'],
-  'dataherstel-backup': ['computer-laptop-hulp', 'laptop-computer-reparatie', 'email-hulp', 'tablet-smartphone-hulp', 'persoonlijke-training'],
-  'persoonlijke-training': ['computer-laptop-hulp', 'tablet-smartphone-hulp', 'email-hulp', 'wifi-internet-hulp', 'computercursus-ouderen'],
-  'computercursus-ouderen': ['persoonlijke-training', 'tablet-smartphone-hulp', 'email-hulp', 'computer-laptop-hulp', 'wifi-internet-hulp'],
-  'tv-installatie': ['televisie-radio', 'smart-home-domotica', 'wifi-internet-hulp', 'computer-laptop-hulp', 'tablet-smartphone-hulp'],
-  'pc-hulp-aan-huis': ['computer-laptop-hulp', 'laptop-computer-reparatie', 'hulp-bij-computerproblemen', 'dataherstel-backup', 'wifi-internet-hulp'],
-  'hulp-bij-computerproblemen': ['computer-laptop-hulp', 'pc-hulp-aan-huis', 'wifi-internet-hulp', 'printer-scanner-hulp', 'email-hulp'],
-  'smartphone-hulp-aan-huis': ['tablet-smartphone-hulp', 'email-hulp', 'persoonlijke-training', 'computerhulp-senioren', 'wifi-internet-hulp'],
-  'computerhulp-senioren': ['computercursus-ouderen', 'persoonlijke-training', 'tablet-smartphone-hulp', 'smartphone-hulp-aan-huis', 'email-hulp'],
-  'monteur-aan-huis': ['computer-laptop-hulp', 'laptop-computer-reparatie', 'hulp-bij-computerproblemen', 'pc-hulp-aan-huis', 'printer-scanner-hulp'],
+  'printer-scanner-hulp': ['computer-laptop-hulp', 'wifi-internet-hulp', 'email-hulp', 'smartphone-hulp-aan-huis', 'computerhulp-senioren'],
+  'email-hulp': ['computer-laptop-hulp', 'smartphone-hulp-aan-huis', 'wifi-internet-hulp', 'computercursus-ouderen', 'printer-scanner-hulp'],
+  'smartphone-hulp-aan-huis': ['email-hulp', 'wifi-internet-hulp', 'computercursus-ouderen', 'smart-home-domotica', 'computer-laptop-hulp'],
+  'tv-installatie': ['smart-home-domotica', 'wifi-internet-hulp', 'smartphone-hulp-aan-huis', 'computer-laptop-hulp', 'computerhulp-senioren'],
+  'smart-home-domotica': ['wifi-internet-hulp', 'tv-installatie', 'smartphone-hulp-aan-huis', 'computer-laptop-hulp', 'computercursus-ouderen'],
+  'dataherstel-backup': ['computer-laptop-hulp', 'email-hulp', 'smartphone-hulp-aan-huis', 'printer-scanner-hulp', 'computercursus-ouderen'],
+  'computercursus-ouderen': ['computerhulp-senioren', 'smartphone-hulp-aan-huis', 'email-hulp', 'computer-laptop-hulp', 'wifi-internet-hulp'],
+  'computerhulp-senioren': ['computercursus-ouderen', 'smartphone-hulp-aan-huis', 'email-hulp', 'computer-laptop-hulp', 'printer-scanner-hulp'],
 }
 
 export default function ServiceCrossLinks({ currentService, serviceName }: ServiceCrossLinksProps) {
@@ -55,8 +41,8 @@ export default function ServiceCrossLinks({ currentService, serviceName }: Servi
   return (
     <>
       {/* Gerelateerde diensten */}
-      <section className="py-12 lg:py-16 bg-surface">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+      <section className="panel-section">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-10">
             <p className="section-eyebrow">Meer hulp</p>
             <h2 className="section-title">Andere diensten</h2>

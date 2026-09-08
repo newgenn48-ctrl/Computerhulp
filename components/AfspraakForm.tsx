@@ -185,7 +185,7 @@ export default function AfspraakForm() {
 
         <div>
           <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
-            E-mail
+            E-mail <span className="text-red-500" aria-hidden="true">*</span>
           </label>
           <input
             type="email"
@@ -210,7 +210,7 @@ export default function AfspraakForm() {
         </div>
 
         <div>
-          <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer</label>
+          <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer <span className="text-red-500" aria-hidden="true">*</span></label>
           <input
             type="text"
             id="adres"
@@ -232,7 +232,7 @@ export default function AfspraakForm() {
 
         <div className="grid grid-cols-[8.5rem_1fr] gap-3">
           <div>
-            <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode</label>
+            <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode <span className="text-red-500" aria-hidden="true">*</span></label>
             <input
               type="text"
               id="postcode"
@@ -252,7 +252,7 @@ export default function AfspraakForm() {
             />
           </div>
           <div>
-            <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats</label>
+            <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats <span className="text-red-500" aria-hidden="true">*</span></label>
             <input
               type="text"
               id="plaats"
@@ -280,7 +280,7 @@ export default function AfspraakForm() {
         )}
 
         <div>
-          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Waar gaat het om?</label>
+          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Waar gaat het om? <span className="text-red-500" aria-hidden="true">*</span></label>
           <textarea
             id="probleem"
             name="probleem"
@@ -291,7 +291,7 @@ export default function AfspraakForm() {
             onBlur={handleBlur}
             rows={4}
             className={`${inputClass('probleem')} resize-none`}
-            placeholder="Bijv: 'Mijn laptop start niet op' of 'WiFi werkt niet meer'"
+            placeholder="Bijv: 'Mijn laptop start niet op' of 'Wifi werkt niet meer'"
             aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'}
             aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
             disabled={isSubmitting}

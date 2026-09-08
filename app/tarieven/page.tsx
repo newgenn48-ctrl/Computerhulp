@@ -4,11 +4,11 @@ import { Icon } from '@/components/icons'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Tarieven Computerhulp aan Huis | ${PRICING.PER_QUARTER} per Kwartier`,
+  title: `Tarieven computerhulp aan huis | ${PRICING.PER_QUARTER} per kwartier`,
   description: `Wat kost computerhulp aan huis? ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Transparante prijzen zonder verrassingen. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: 'Tarieven Computerhulp aan Huis | Zuid-Holland',
+    title: 'Tarieven computerhulp aan huis | Zuid-Holland',
     description: `Transparante tarieven. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Eerlijke prijzen, geen verrassingen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/tarieven',
@@ -43,7 +43,7 @@ const euro = (n: number) => '\u20ac' + n.toFixed(2).replace('.', ',')
 
 /* Rekenvoorbeelden uit constants - een prijswijziging loopt automatisch mee. */
 const voorbeelden = [
-  { label: 'Simpel probleem', kwartier: 3, tijd: '45 minuten', voorbeeld: 'Printer instellen, e-mail configureren, WiFi fixen', featured: false },
+  { label: 'Simpel probleem', kwartier: 3, tijd: '45 minuten', voorbeeld: 'Printer instellen, e-mail configureren, wifi fixen', featured: false },
   { label: 'Gemiddeld probleem', kwartier: 4, tijd: '60 minuten', voorbeeld: 'Trage computer opschonen, pop-ups weghalen, data overzetten', featured: true },
   { label: 'Complex probleem', kwartier: 6, tijd: '90 minuten', voorbeeld: 'Netwerk instellen, meerdere apparaten, volledige installatie', featured: false },
 ]

@@ -563,7 +563,7 @@ export default function WebsiteLatenMakenPage() {
                   </Link>
                 </div>
                 <p className="text-sm text-gray-500">
-                  Geen verplichtingen • Gratis adviesgesprek • Offerte binnen 24 uur
+                  Geen verplichtingen • Gratis adviesgesprek • Offerte meestal binnen 24 uur
                 </p>
               </div>
             </div>

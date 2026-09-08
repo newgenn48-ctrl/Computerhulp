@@ -13,11 +13,11 @@ import PricingSection from '@/components/PricingSection'
 
 
 export const metadata: Metadata = {
-  title: 'Computercursus voor Ouderen | Binnen 24u | Zuid-Holland',
-  description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}. Persoonlijke uitleg over laptop, tablet, smartphone en meer. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+  title: 'Computercursus voor ouderen aan huis | Ook computerles',
+  description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}: computerles op uw eigen computer, tablet of telefoon. E-mail, videobellen, bankieren, Word en Excel. Op uw tempo. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Computercursus voor Ouderen | HBO-student aan Huis',
-    description: `Computercursus voor ouderen in ${BUSINESS.REGION}: uw HBO-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Computercursus voor ouderen | HBO-student aan huis',
+    description: `Computercursus voor ouderen in ${BUSINESS.REGION}: uw HBO-student aan huis. Meestal binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/computercursus-ouderen',
     siteName: 'Computerhulp Zuid-Holland',
@@ -69,7 +69,7 @@ const localBusinessData = {
   '@type': 'LocalBusiness',
   '@id': 'https://computerhulpzh.nl/diensten/computercursus-ouderen/#localbusiness',
   name: 'Computerhulp Zuid-Holland - Computercursus voor Ouderen',
-  description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}. Persoonlijke uitleg over computer, laptop, tablet en smartphone. Binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
+  description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}. Persoonlijke uitleg over computer, laptop, tablet en smartphone. Meestal binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
   url: 'https://computerhulpzh.nl/diensten/computercursus-ouderen',
   telephone: BUSINESS.PHONE_INTL,
   email: BUSINESS.EMAIL,
@@ -113,7 +113,7 @@ const localBusinessData = {
       },
       {
         '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'WiFi & Internet Hulp', description: 'WiFi installatie, bereik verbeteren en internetproblemen oplossen' }
+        itemOffered: { '@type': 'Service', name: 'Wifi & Internet Hulp', description: 'Wifi installatie, bereik verbeteren en internetproblemen oplossen' }
       },
       {
         '@type': 'Offer',
@@ -163,46 +163,14 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    {
-      '@type': 'Question',
-      name: `Moet ik al iets van computers weten?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Nee. We beginnen waar ú staat — desnoods helemaal vanaf nul, bij het aanzetten van het apparaat.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: `Hoe lang duurt een les?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `De meeste lessen duren een uur tot anderhalf uur. U bepaalt het tempo, en we stoppen op het moment dat u dat wilt.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: `Welke onderwerpen kan ik leren?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Wat u maar wilt: e-mailen, videobellen en WhatsApp, veilig internetbankieren, foto's ordenen, of gewoon vlotter werken met muis en toetsenbord.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: `Krijg ik iets om na te lezen?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Ja. Elke les eindigt met de stappen op papier, zodat u zelfstandig verder kunt oefenen tot de volgende keer.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: `Is één les genoeg, en wat kost het?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder — u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.`
-      }
-    }
+    { '@type': 'Question', name: `Moet ik al iets van computers weten?`, acceptedAnswer: { '@type': 'Answer', text: `Nee. We beginnen waar ú staat — desnoods helemaal vanaf nul, bij het aanzetten van het apparaat.` } },
+    { '@type': 'Question', name: `Hoe lang duurt een les?`, acceptedAnswer: { '@type': 'Answer', text: `De meeste lessen duren een uur tot anderhalf uur. U bepaalt het tempo, en we stoppen op het moment dat u dat wilt.` } },
+    { '@type': 'Question', name: `Welke onderwerpen kan ik leren?`, acceptedAnswer: { '@type': 'Answer', text: `Wat u maar wilt: e-mailen, videobellen en WhatsApp, veilig internetbankieren, foto’s ordenen, Word en Excel, of gewoon vlotter werken met muis en toetsenbord.` } },
+    { '@type': 'Question', name: `Geven jullie ook les in Word en Excel?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Een brief of kaart maken in Word, een adreslijst of huishoudboekje in Excel: we leggen het uit op uw eigen computer en oefenen het samen.` } },
+    { '@type': 'Question', name: `Kunnen jullie mij leren veilig te internetbankieren?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Van inloggen met DigiD of uw bank-app tot een overschrijving doen. We leggen ook uit hoe u nepmails en oplichting herkent, zodat u met een gerust hart bankiert.` } },
+    { '@type': 'Question', name: `Leren jullie ook videobellen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen en oefenen het samen, zodat u zelf met kinderen, kleinkinderen of vrienden kunt bellen.` } },
+    { '@type': 'Question', name: `Krijg ik iets om na te lezen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Elke les eindigt met de stappen op papier, zodat u zelfstandig verder kunt oefenen tot de volgende keer.` } },
+    { '@type': 'Question', name: `Is één les genoeg, en wat kost het?`, acceptedAnswer: { '@type': 'Answer', text: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder — u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
   ]
 }
 
@@ -218,7 +186,7 @@ const breadcrumbData = {
 
 const cities = TOP_CITIES.map((c) => c.name)
 
-export default function HomePage() {
+export default function ComputercursusOuderenPage() {
   return (
     <>
       {/* Structured Data - Consolidated @graph */}
@@ -329,8 +297,13 @@ export default function HomePage() {
                   </li>
                 </ul>
 
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Wat u bij ons kunt leren</h3>
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Liever eerst één losse vraag opgelost? Kijk dan bij <Link href="/diensten/computerhulp-senioren" className="text-blue-600 hover:underline">computerhulp voor senioren</Link> of <Link href="/diensten/persoonlijke-training" className="text-blue-600 hover:underline">persoonlijke training</Link>. Ook hulp bij <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet en smartphone</Link> hoort erbij.
+                  E-mailen en een bijlage meesturen. Veilig internetbankieren en inloggen met DigiD. Videobellen en appen met kinderen en kleinkinderen. Foto’s ordenen, bewaren en delen. Een brief of kaart maken in Word en een adreslijst of huishoudboekje in Excel. Sociale media zonder zorgen. Of gewoon uw nieuwe laptop, tablet of telefoon leren kennen. Ook een korte persoonlijke training over één onderwerp is prima: u bepaalt wat u wilt kunnen.
+                </p>
+
+                <p className="text-gray-700 leading-relaxed mb-6">
+                  Liever eerst één losse vraag opgelost? Kijk dan bij <Link href="/diensten/computerhulp-senioren" className="text-blue-600 hover:underline">computerhulp voor senioren</Link>. Ook hulp bij <Link href="/diensten/smartphone-hulp-aan-huis" className="text-blue-600 hover:underline">tablet en smartphone</Link> en <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail</Link>.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
@@ -385,7 +358,10 @@ export default function HomePage() {
             {[
               { q: `Moet ik al iets van computers weten?`, a: `Nee. We beginnen waar ú staat — desnoods helemaal vanaf nul, bij het aanzetten van het apparaat.` },
               { q: `Hoe lang duurt een les?`, a: `De meeste lessen duren een uur tot anderhalf uur. U bepaalt het tempo, en we stoppen op het moment dat u dat wilt.` },
-              { q: `Welke onderwerpen kan ik leren?`, a: `Wat u maar wilt: e-mailen, videobellen en WhatsApp, veilig internetbankieren, foto's ordenen, of gewoon vlotter werken met muis en toetsenbord.` },
+              { q: `Welke onderwerpen kan ik leren?`, a: `Wat u maar wilt: e-mailen, videobellen en WhatsApp, veilig internetbankieren, foto’s ordenen, Word en Excel, of gewoon vlotter werken met muis en toetsenbord.` },
+              { q: `Geven jullie ook les in Word en Excel?`, a: `Ja. Een brief of kaart maken in Word, een adreslijst of huishoudboekje in Excel: we leggen het uit op uw eigen computer en oefenen het samen.` },
+              { q: `Kunnen jullie mij leren veilig te internetbankieren?`, a: `Ja. Van inloggen met DigiD of uw bank-app tot een overschrijving doen. We leggen ook uit hoe u nepmails en oplichting herkent, zodat u met een gerust hart bankiert.` },
+              { q: `Leren jullie ook videobellen?`, a: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen en oefenen het samen, zodat u zelf met kinderen, kleinkinderen of vrienden kunt bellen.` },
               { q: `Krijg ik iets om na te lezen?`, a: `Ja. Elke les eindigt met de stappen op papier, zodat u zelfstandig verder kunt oefenen tot de volgende keer.` },
               { q: `Is één les genoeg, en wat kost het?`, a: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder — u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
@@ -404,7 +380,7 @@ export default function HomePage() {
       </section>
 
       {/* Service Cross Links */}
-      <ServiceCrossLinks currentService="computercursus-ouderen" serviceName="Computercursus Ouderen" />
+      <ServiceCrossLinks currentService="computercursus-ouderen" serviceName="Computercursus voor ouderen" />
 
 
       <AvailableInCities serviceLabel="Computercursus" />

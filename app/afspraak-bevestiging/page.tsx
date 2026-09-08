@@ -5,7 +5,7 @@ import { Icon } from '@/components/icons'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Afspraak Bevestiging — ${BUSINESS.NAME}`,
+  title: `Afspraak ontvangen | ${BUSINESS.NAME}`,
   description: 'Bedankt voor uw afspraakaanvraag. We bellen u meestal binnen een uur terug.',
   robots: {
     index: false,
@@ -49,7 +49,7 @@ export default function AfspraakBevestigingPage() {
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">2</span>
                     <div>
-                      <p className="font-semibold text-gray-900">Binnen 24 uur</p>
+                      <p className="font-semibold text-gray-900">Meestal binnen 24 uur</p>
                       <p className="text-gray-700">Onze HBO-student komt bij u thuis en helpt u rustig verder</p>
                     </div>
                   </li>

@@ -13,11 +13,11 @@ import PricingSection from '@/components/PricingSection'
 
 
 export const metadata: Metadata = {
-  title: 'Computerhulp voor Senioren | Binnen 24u | Zuid-Holland',
-  description: `Computerhulp voor senioren aan huis in ${BUSINESS.REGION}. Geduldig, duidelijk en op uw gemak. Laptop, WiFi en printer. Binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+  title: 'Computerhulp voor senioren aan huis | Zuid-Holland',
+  description: `Computerhulp voor senioren aan huis in ${BUSINESS.REGION}. Geduldig, duidelijk en op uw gemak. Laptop, wifi en printer. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Computerhulp voor Senioren | HBO-student aan Huis',
-    description: `Computerhulp voor senioren in ${BUSINESS.REGION}: uw HBO-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Computerhulp voor senioren | HBO-student aan huis',
+    description: `Computerhulp voor senioren in ${BUSINESS.REGION}: uw HBO-student aan huis. Meestal binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/computerhulp-senioren',
     siteName: 'Computerhulp Zuid-Holland',
@@ -69,7 +69,7 @@ const localBusinessData = {
   '@type': 'LocalBusiness',
   '@id': 'https://computerhulpzh.nl/diensten/computerhulp-senioren/#localbusiness',
   name: 'Computerhulp voor Senioren Zuid-Holland',
-  description: `Professionele computerhulp voor senioren aan huis in ${BUSINESS.REGION}. Wij lossen computer-, laptop-, printer- en WiFi-problemen snel op. Binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
+  description: `Professionele computerhulp voor senioren aan huis in ${BUSINESS.REGION}. Wij lossen computer-, laptop-, printer- en wifi-problemen snel op. Meestal binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
   url: 'https://computerhulpzh.nl/diensten/computerhulp-senioren',
   telephone: BUSINESS.PHONE_INTL,
   email: BUSINESS.EMAIL,
@@ -113,7 +113,7 @@ const localBusinessData = {
       },
       {
         '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'WiFi & Internet Hulp', description: 'WiFi installatie, bereik verbeteren en internetproblemen oplossen' }
+        itemOffered: { '@type': 'Service', name: 'Wifi & Internet Hulp', description: 'Wifi installatie, bereik verbeteren en internetproblemen oplossen' }
       },
       {
         '@type': 'Offer',
@@ -143,7 +143,7 @@ const serviceData = {
   serviceType: 'Computer Repair Service',
   provider: { '@id': 'https://computerhulpzh.nl/diensten/computerhulp-senioren/#localbusiness' },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  description: `Professionele computerhulp voor senioren aan huis voor particulieren in ${BUSINESS.REGION}. Wij lossen computer, laptop, printer, WiFi en andere IT-problemen snel en vakkundig op.`,
+  description: `Professionele computerhulp voor senioren aan huis voor particulieren in ${BUSINESS.REGION}. Wij lossen computer, laptop, printer, wifi en andere IT-problemen snel en vakkundig op.`,
   offers: {
     '@type': 'Offer',
     price: PRICING.PER_QUARTER_NUM.toString(),
@@ -331,7 +331,7 @@ export default function ComputerhulpSeniorenPage() {
                 </ul>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Veel senioren vragen ons hulp bij <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail</Link>, <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet en telefoon</Link> en veilig internetbankieren. Wilt u structureel beter met de computer leren omgaan, kijk dan ook bij onze <Link href="/diensten/computercursus-ouderen" className="text-blue-600 hover:underline">computercursus voor ouderen</Link>.
+                  Veel senioren vragen ons hulp bij <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail</Link>, <Link href="/diensten/smartphone-hulp-aan-huis" className="text-blue-600 hover:underline">tablet en telefoon</Link> en veilig internetbankieren. Wilt u structureel beter met de computer leren omgaan, kijk dan ook bij onze <Link href="/diensten/computercursus-ouderen" className="text-blue-600 hover:underline">computercursus voor ouderen</Link>.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">

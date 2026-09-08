@@ -27,6 +27,14 @@ const nextConfig = {
       { source: '/wp-content/uploads/2024/10/Algemene-voorwaarden.pdf', destination: '/voorwaarden', permanent: true },
       { source: '/wp-content/uploads/2024/10/Privacyverklaring-AVG.pdf', destination: '/privacy', permanent: true },
       { source: '/wp-content/:path*', destination: '/', permanent: true },
+      // Dienstpagina's die in september 2026 zijn samengevoegd tot één sterke pagina per onderwerp
+      { source: '/diensten/pc-hulp-aan-huis', destination: '/diensten/computer-laptop-hulp', permanent: true },
+      { source: '/diensten/hulp-bij-computerproblemen', destination: '/diensten/computer-laptop-hulp', permanent: true },
+      { source: '/diensten/laptop-computer-reparatie', destination: '/diensten/computer-laptop-hulp', permanent: true },
+      { source: '/diensten/monteur-aan-huis', destination: '/diensten/computer-laptop-hulp', permanent: true },
+      { source: '/diensten/tablet-smartphone-hulp', destination: '/diensten/smartphone-hulp-aan-huis', permanent: true },
+      { source: '/diensten/televisie-radio', destination: '/diensten/tv-installatie', permanent: true },
+      { source: '/diensten/persoonlijke-training', destination: '/diensten/computercursus-ouderen', permanent: true },
       ...villageRedirects,
     ]
   },

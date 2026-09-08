@@ -4,8 +4,8 @@ import { Icon } from '@/components/icons'
 import { BUSINESS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Offerte Bevestiging - Computerhulp Zuid-Holland',
-  description: 'Bedankt voor uw offerteaanvraag. U ontvangt binnen 24 uur een offerte op maat.',
+  title: 'Offerte ontvangen | Computerhulp Zuid-Holland',
+  description: 'Bedankt voor uw offerteaanvraag. U ontvangt meestal binnen 24 uur een offerte op maat.',
   robots: {
     index: false,
     follow: false,
@@ -39,7 +39,7 @@ export default function OfferteBevestigingPage() {
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                     <div>
-                      <p className="font-semibold text-gray-900">Binnen 24 uur</p>
+                      <p className="font-semibold text-gray-900">Meestal binnen 24 uur</p>
                       <p className="text-gray-700">U ontvangt een gedetailleerde offerte op maat voor uw project</p>
                     </div>
                   </li>

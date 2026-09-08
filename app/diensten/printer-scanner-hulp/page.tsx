@@ -11,12 +11,12 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Printer & Scanner Hulp aan Huis Zuid-Holland | Binnen 24u',
-  description: `Printer print niet of scanner werkt niet? Wij komen bij u thuis in ${BUSINESS.REGION} en lossen het op. ${PRICING.TRAVEL} voorrijkosten, binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
+  title: 'Printer en scanner installeren aan huis | Zuid-Holland',
+  description: `Printer print niet of scanner werkt niet? Wij komen bij u thuis in ${BUSINESS.REGION} en lossen het op. ${PRICING.TRAVEL} voorrijkosten, meestal binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: 'Printer & Scanner Hulp aan Huis',
-    description: `Printer print niet of scanner doet het niet? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
+    title: 'Printer- en scannerhulp aan huis',
+    description: `Printer print niet of scanner doet het niet? We komen bij u thuis in ${BUSINESS.REGION}. Meestal binnen 24 uur geholpen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/printer-scanner-hulp'},
   alternates: {
@@ -63,7 +63,7 @@ const faqData = {
 
 const services = [
   'Nieuwe printer aansluiten en instellen',
-  'Draadloos printen via WiFi instellen',
+  'Draadloos printen via wifi instellen',
   'Scanner installeren en koppelen',
   'Scannen naar e-mail configureren',
   'Printkwaliteit verbeteren',
@@ -133,7 +133,7 @@ export default function PrinterScannerHulpPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide HBO-studenten
+                HBO-opgeleide studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -202,10 +202,10 @@ export default function PrinterScannerHulpPage() {
       {/* SEO Content */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="content-title mb-4">Printer en Scanner Hulp bij U Thuis</h2>
+          <h2 className="content-title mb-4">Printer en scanner hulp bij u thuis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Een printer die niet print, een scanner die niet scant, of een apparaat dat niet wil verbinden met uw computer — het zijn frustrerende problemen die uw dagelijkse werk verstoren. Onze HBO-studenten kennen alle merken en modellen: HP, Canon, Epson, Brother, Samsung en meer.</p>
-            <p>We installeren nieuwe printers, lossen papierstoringen op, configureren draadloos printen via WiFi, en stellen scan-naar-e-mail in. Alles bij u thuis, met duidelijke uitleg zodat u het voortaan zelf kunt. En als uw printer echt aan vervanging toe is, adviseren we u eerlijk welk model bij u past.</p>
+            <p>We installeren nieuwe printers, lossen papierstoringen op, configureren draadloos printen via wifi, en stellen scan-naar-e-mail in. Alles bij u thuis, met duidelijke uitleg zodat u het voortaan zelf kunt. En als uw printer echt aan vervanging toe is, adviseren we u eerlijk welk model bij u past.</p>
           </div>
         </div>
       </section>
@@ -217,7 +217,7 @@ export default function PrinterScannerHulpPage() {
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="cta-title mb-6">Printer of Scanner Problemen?</h2>
+          <h2 className="cta-title mb-6">Printer of scanner problemen?</h2>
           <p className="text-xl text-blue-100 mb-10">Neem contact op en we komen vandaag of morgen al bij u langs</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>

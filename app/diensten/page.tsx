@@ -9,33 +9,26 @@ import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 // Elke pagina onder app/diensten/. Houd gelijk aan lib/cities.ts -> services.
 const ALL_TOPICS = [
-  { slug: 'computer-laptop-hulp', label: 'Computer & laptop hulp' },
-  { slug: 'pc-hulp-aan-huis', label: 'Pc-hulp aan huis' },
-  { slug: 'hulp-bij-computerproblemen', label: 'Hulp bij computerproblemen' },
+  { slug: 'computer-laptop-hulp', label: 'Computer- en laptophulp (ook reparatie en pc-hulp)' },
   { slug: 'computerhulp-senioren', label: 'Computerhulp voor senioren' },
-  { slug: 'computercursus-ouderen', label: 'Computercursus voor ouderen' },
-  { slug: 'persoonlijke-training', label: 'Persoonlijke training' },
-  { slug: 'laptop-computer-reparatie', label: 'Laptop- en pc-reparatie' },
-  { slug: 'monteur-aan-huis', label: 'IT-monteur aan huis' },
-  { slug: 'printer-scanner-hulp', label: 'Printer & scanner' },
+  { slug: 'computercursus-ouderen', label: 'Computercursus en computerles voor ouderen' },
+  { slug: 'printer-scanner-hulp', label: 'Printer en scanner' },
   { slug: 'email-hulp', label: 'E-mail instellen en op orde brengen' },
-  { slug: 'wifi-internet-hulp', label: 'WiFi & internet' },
-  { slug: 'tablet-smartphone-hulp', label: 'Tablet & smartphone' },
-  { slug: 'smartphone-hulp-aan-huis', label: 'Smartphone-hulp aan huis' },
-  { slug: 'televisie-radio', label: 'Televisie & radio' },
-  { slug: 'tv-installatie', label: 'TV installeren en ophangen' },
-  { slug: 'smart-home-domotica', label: 'Smart home & domotica' },
-  { slug: 'dataherstel-backup', label: 'Dataherstel & back-up' },
+  { slug: 'wifi-internet-hulp', label: 'Wifi en internet' },
+  { slug: 'smartphone-hulp-aan-huis', label: 'Smartphone en tablet' },
+  { slug: 'tv-installatie', label: 'Tv installeren, ophangen en instellen' },
+  { slug: 'smart-home-domotica', label: 'Smart home en domotica' },
+  { slug: 'dataherstel-backup', label: 'Dataherstel en back-up' },
 ] as const
 
 export const metadata: Metadata = {
-  title: 'Alle Computerhulpdiensten aan Huis in Zuid-Holland',
-  description: `Bekijk al onze computerhulpdiensten aan huis: laptop, WiFi, printer, e-mail, smartphone, smart home en meer. Binnen 24u, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  title: 'Alle computerhulpdiensten aan huis in Zuid-Holland',
+  description: `Bekijk al onze computerhulpdiensten aan huis: laptop, wifi, printer, e-mail, smartphone, smart home en meer. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
 
   openGraph: {
     images: OG_IMAGE,
-    title: 'Alle Computerhulpdiensten aan Huis',
-    description: `Computerhulp aan huis in ${BUSINESS.REGION}. Van laptophulp tot smarthome-installatie. Binnen 24u.`,
+    title: 'Alle computerhulpdiensten aan huis',
+    description: `Computerhulp aan huis in ${BUSINESS.REGION}. Van laptophulp tot smarthome-installatie. Meestal binnen 24 uur.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten'},
   robots: {
@@ -111,7 +104,7 @@ export default function DienstenPage() {
             </h1>
 
             <p className="section-subtitle mb-8 max-w-xl">
-              Heeft u hulp nodig met uw digitale apparaten? Van computer tot WiFi, van printer tot smart home — we helpen met <strong className="text-gray-900 font-semibold">alles rondom uw apparaten</strong>, bij u thuis.
+              Heeft u hulp nodig met uw digitale apparaten? Van computer tot wifi, van printer tot smart home — we helpen met <strong className="text-gray-900 font-semibold">alles rondom uw apparaten</strong>, bij u thuis.
             </p>
 
             {/* CTA Buttons — phone primary */}
@@ -276,13 +269,13 @@ export default function DienstenPage() {
           </h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed mb-4">
-              Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Een compleet pakket IT-diensten voor particulieren en kleine ondernemers in heel {BUSINESS.REGION}. Van computer- en laptophulp tot WiFi-installatie, van printerproblemen tot smart-home-oplossingen.
+              Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Een compleet pakket IT-diensten voor particulieren en kleine ondernemers in heel {BUSINESS.REGION}. Van computer- en laptophulp tot wifi-installatie, van printerproblemen tot smart-home-oplossingen.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               Onze HBO-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp — we helpen vakkundig en persoonlijk, in gewone taal.
             </p>
             <p className="text-gray-700 leading-relaxed">
-              Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met slechts {PRICING.TRAVEL} voorrijkosten. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen binnen 24 uur bij u langs.
+              Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met slechts {PRICING.TRAVEL} voorrijkosten. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen meestal binnen 24 uur bij u langs.
             </p>
           </div>
         </div>

@@ -26,7 +26,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: '24 augustus 2026',
   },
   {
-    quote: 'WiFi werkte niet, e-mail deed het niet. Alles in één keer opgelost. Eerlijke prijs, top service.',
+    quote: 'Wifi werkte niet, e-mail deed het niet. Alles in één keer opgelost. Eerlijke prijs, top service.',
     name: 'Mevrouw Linda',
     initials: 'L',
     city: 'Leiden',

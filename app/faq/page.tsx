@@ -5,7 +5,7 @@ import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Veelgestelde vragen (FAQ) | ${BUSINESS.NAME}`,
-  description: `Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Binnen 24u geholpen. Bel ons op ${BUSINESS.PHONE}.`,
+  description: `Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Meestal binnen 24 uur geholpen. Bel ons op ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
     title: `Veelgestelde vragen (FAQ) | ${BUSINESS.NAME}`,
@@ -67,7 +67,7 @@ const faqStructuredData = {
       name: 'Welke problemen kunnen jullie oplossen?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, e-mail, tablets, smartphones, software installeren, pop-ups en ongewenste programma’s weghalen, bestanden terughalen en persoonlijke training.'
+        text: 'Eigenlijk alle IT-problemen: computers, laptops, printers, wifi, e-mail, tablets, smartphones, software installeren, pop-ups en ongewenste programma’s weghalen, bestanden terughalen en persoonlijke training.'
       }
     }
   ]
@@ -208,7 +208,7 @@ const faqCategories = [
     questions: [
       {
         question: 'Welke problemen kunnen jullie oplossen?',
-        answer: 'Eigenlijk alle IT-problemen: computers, laptops, printers, WiFi, e-mail, tablets, smartphones, software installeren, pop-ups en ongewenste programma’s weghalen, bestanden terughalen en persoonlijke training. Als het met technologie te maken heeft, helpen we.'
+        answer: 'Eigenlijk alle IT-problemen: computers, laptops, printers, wifi, e-mail, tablets, smartphones, software installeren, pop-ups en ongewenste programma’s weghalen, bestanden terughalen en persoonlijke training. Als het met technologie te maken heeft, helpen we.'
       },
       {
         question: 'Helpen jullie met alle merken computers?',

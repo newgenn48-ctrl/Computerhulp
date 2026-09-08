@@ -11,13 +11,13 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Smart Home & Domotica aan Huis Zuid-Holland | Binnen 24u',
+  title: 'Smart home en domotica hulp aan huis | Zuid-Holland',
   description: `Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel nu.`,
 
   openGraph: {
     images: OG_IMAGE,
-    title: 'Smart Home & Domotica Hulp aan Huis',
-    description: `Slimme apparaten installeren? Hulp nodig met slimme verlichting of speakers? We komen bij u thuis in ${BUSINESS.REGION}. Binnen 24 uur geholpen.`,
+    title: 'Smart home en domotica hulp aan huis',
+    description: `Slimme apparaten installeren? Hulp nodig met slimme verlichting of speakers? We komen bij u thuis in ${BUSINESS.REGION}. Meestal binnen 24 uur geholpen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/smart-home-domotica'},
   alternates: {
@@ -68,7 +68,7 @@ const services = [
   'Videodeurbel installeren (Ring, Nest, Eufy)',
   'Slim deurslot koppelen',
   'Slimme speakers (Alexa, Google Home)',
-  'Smart TV installeren en koppelen',
+  'Smart-tv installeren en koppelen',
   'Alle apparaten in één app bedienen',
 ]
 
@@ -133,7 +133,7 @@ export default function SmartHomeDomoticaPage() {
               </span>
               <span className="hero-pill">
                 <Icon name="book" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                HBO-opgeleide HBO-studenten
+                HBO-opgeleide studenten
               </span>
               <span className="hero-pill">
                 <Icon name="check" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
@@ -202,7 +202,7 @@ export default function SmartHomeDomoticaPage() {
       {/* SEO Content */}
       <section className="py-12 lg:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <h2 className="content-title mb-4">Smart Home Installatie door een IT-Student</h2>
+          <h2 className="content-title mb-4">Smart home installatie door een HBO-student</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>Een slim huis begint met de juiste installatie. Of u nu slimme verlichting, een slimme thermostaat, beveiligingscamera&apos;s of een complete domotica-oplossing wilt — het kan overweldigend zijn om alles zelf te configureren en te koppelen.</p>
             <p>Onze HBO-studenten komen bij u thuis en zorgen dat al uw slimme apparaten perfect samenwerken. We koppelen alles aan uw smartphone, stellen spraakbesturing in via Google Home of Alexa, en maken handige automatiseringen. Zodat uw huis niet alleen slim is, maar ook makkelijk te bedienen.</p>
@@ -217,7 +217,7 @@ export default function SmartHomeDomoticaPage() {
       {/* CTA */}
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
-          <h2 className="cta-title mb-6">Klaar Voor Een Slim Huis?</h2>
+          <h2 className="cta-title mb-6">Klaar voor een slim huis?</h2>
           <p className="text-xl text-blue-100 mb-10">We installeren en koppelen alles voor u. Neem vandaag nog contact op!</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>

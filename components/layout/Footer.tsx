@@ -27,7 +27,7 @@ export default function Footer() {
             </Link>
             <p className="text-gray-300 text-sm mb-4 max-w-md">
               Uw partner voor computerhulp, printerhulp en IT-ondersteuning
-              aan huis in heel {BUSINESS.REGION}. Binnen 24 uur bij u thuis.
+              aan huis in heel {BUSINESS.REGION}. Meestal binnen 24 uur bij u thuis.
             </p>
             {/* Info links */}
             <div className="flex flex-wrap gap-4 text-sm">
@@ -83,7 +83,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/diensten/wifi-internet-hulp" className="footer-link">
-                  WiFi & Internet
+                  wifi & Internet
                 </Link>
               </li>
             </ul>

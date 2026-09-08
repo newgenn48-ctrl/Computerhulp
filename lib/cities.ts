@@ -255,22 +255,15 @@ export function getNearbyCities(slug: string, count: number = 6): City[] {
 // anders ontbreekt die pagina in de sitemap.
 export const services = [
   'computer-laptop-hulp',
-  'computercursus-ouderen',
   'computerhulp-senioren',
-  'hulp-bij-computerproblemen',
-  'pc-hulp-aan-huis',
-  'smartphone-hulp-aan-huis',
-  'tv-installatie',
+  'computercursus-ouderen',
   'printer-scanner-hulp',
   'email-hulp',
   'wifi-internet-hulp',
-  'tablet-smartphone-hulp',
-  'persoonlijke-training',
-  'televisie-radio',
+  'smartphone-hulp-aan-huis',
+  'tv-installatie',
   'smart-home-domotica',
-  'dataherstel-backup',
-  'laptop-computer-reparatie',
-  'monteur-aan-huis'
+  'dataherstel-backup'
 ] as const
 
 export type ServiceSlug = typeof services[number]

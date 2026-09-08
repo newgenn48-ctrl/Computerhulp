@@ -6,7 +6,7 @@ import Hero from '@/components/sections/Hero'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Over ons — uw IT-student aan huis in ${BUSINESS.REGION}`,
+  title: `Over ons — uw HBO-student aan huis in ${BUSINESS.REGION}`,
   description: `Maak kennis met ${BUSINESS.NAME}. HBO-studenten die bij u thuis komen voor computerhulp. Persoonlijk, eerlijk en in gewone taal. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
@@ -63,10 +63,10 @@ export default function OverOnsPage() {
 
       <Hero
         imageSrc="/hero-student.webp"
-        imageAlt={`IT-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
+        imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel="Over ons hero"
         eyebrow="Over ons"
-        title={<>Uw <span className="hero-highlight">IT-student</span> aan huis</>}
+        title={<>Uw <span className="hero-highlight">HBO-student</span> aan huis</>}
         descriptions={[
           <>Uw betrouwbare partner voor <strong className="text-white">computerhulp aan huis</strong> in <strong className="text-white">{BUSINESS.REGION}</strong>. {BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.</>,
         ]}
@@ -88,7 +88,7 @@ export default function OverOnsPage() {
             <div>
               <div className="space-y-6">
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Het begon simpel: vrienden en familie vroegen regelmatig om hulp met hun computer, printer of WiFi. Veel mensen liepen vast bij technische problemen en wisten niet waar ze naartoe konden.
+                  Het begon simpel: vrienden en familie vroegen regelmatig om hulp met hun computer, printer of wifi. Veel mensen liepen vast bij technische problemen en wisten niet waar ze naartoe konden.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
                   Dus startten we <strong>{BUSINESS.NAME}</strong>. Het concept was eenvoudig: bij mensen thuis komen, in begrijpelijke taal uitleggen wat er aan de hand is, en het probleem ter plekke oplossen. Geen jargon, geen onnodige verkoop.
@@ -150,7 +150,7 @@ export default function OverOnsPage() {
           <header className="text-center mb-12">
             <h2 className="section-title">Ons team</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              IT-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Stuk voor stuk gescreend, verzekerd en met minimaal 2 jaar praktijkervaring.
+              HBO-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Stuk voor stuk gescreend, verzekerd en met minimaal 2 jaar praktijkervaring.
             </p>
           </header>
 
@@ -212,7 +212,7 @@ export default function OverOnsPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="cta-title mb-6">Hulp nodig?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Neem contact op voor persoonlijke computerhulp aan huis. Binnen 24 uur bij u in {BUSINESS.REGION}.
+            Neem contact op voor persoonlijke computerhulp aan huis. Meestal binnen 24 uur bij u in {BUSINESS.REGION}.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>

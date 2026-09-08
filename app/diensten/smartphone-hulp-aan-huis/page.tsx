@@ -13,11 +13,11 @@ import PricingSection from '@/components/PricingSection'
 
 
 export const metadata: Metadata = {
-  title: 'Smartphone Hulp aan Huis | Binnen 24u | Zuid-Holland',
-  description: `Smartphone hulp aan huis in ${BUSINESS.REGION}. Telefoon instellen, data overzetten en apps installeren. Binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
+  title: 'Smartphone- en tablethulp aan huis | Zuid-Holland',
+  description: `Smartphone- en tablethulp aan huis in ${BUSINESS.REGION}: telefoon of tablet instellen, foto’s en contacten overzetten, apps en videobellen. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
-    title: 'Smartphone Hulp aan Huis Zuid-Holland | HBO-student aan Huis',
-    description: `Smartphone hulp aan huis in ${BUSINESS.REGION}: uw HBO-student aan huis. Binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
+    title: 'Smartphone- en tablethulp aan huis | HBO-student aan huis',
+    description: `Smartphone hulp aan huis in ${BUSINESS.REGION}: uw HBO-student aan huis. Meestal binnen 24 uur bij u thuis. ${PRICING.TRAVEL} voorrijkosten. ${PRICING.PER_QUARTER} per kwartier.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis',
     siteName: 'Computerhulp Zuid-Holland',
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
         url: 'https://computerhulpzh.nl/logo.png',
         width: 1200,
         height: 630,
-        alt: 'Computerhulp Zuid-Holland - Smartphone Hulp aan Huis'},
+        alt: 'Computerhulp Zuid-Holland - Smartphone- en tablethulp aan huis'},
     ]},
   alternates: {
     canonical: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis'},
@@ -69,7 +69,7 @@ const localBusinessData = {
   '@type': 'LocalBusiness',
   '@id': 'https://computerhulpzh.nl/#localbusiness',
   name: 'Computerhulp Zuid-Holland',
-  description: `Professionele smartphone hulp aan huis in ${BUSINESS.REGION}. Wij helpen met telefoon instellen, data overzetten, apps installeren en smartphone problemen oplossen. Binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
+  description: `Professionele smartphone- en tablethulp aan huis in ${BUSINESS.REGION}. Wij helpen met telefoon instellen, data overzetten, apps installeren en smartphone problemen oplossen. Meestal binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
   url: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis',
   telephone: BUSINESS.PHONE_INTL,
   email: BUSINESS.EMAIL,
@@ -105,7 +105,7 @@ const localBusinessData = {
   ],
   hasOfferCatalog: {
     '@type': 'OfferCatalog',
-    name: 'Smartphone Hulp Diensten',
+    name: 'Smartphone- en tablethulp',
     itemListElement: [
       {
         '@type': 'Offer',
@@ -113,7 +113,7 @@ const localBusinessData = {
       },
       {
         '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'WiFi & Internet Hulp', description: 'WiFi installatie, bereik verbeteren en internetproblemen oplossen' }
+        itemOffered: { '@type': 'Service', name: 'Wifi & Internet Hulp', description: 'Wifi installatie, bereik verbeteren en internetproblemen oplossen' }
       },
       {
         '@type': 'Offer',
@@ -139,11 +139,11 @@ const serviceData = {
   '@context': 'https://schema.org',
   '@type': 'Service',
   '@id': 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis/#service',
-  name: 'Smartphone Hulp aan Huis',
-  serviceType: 'Smartphone Repair Service',
+  name: 'Smartphone- en tablethulp aan huis',
+  serviceType: 'Smartphone en tablet hulp',
   provider: { '@id': 'https://computerhulpzh.nl/#localbusiness' },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  description: `Professionele smartphone hulp aan huis voor particulieren en kleine ondernemers in ${BUSINESS.REGION}. Wij helpen met telefoon instellen, data overzetten, apps installeren en smartphone problemen oplossen.`,
+  description: `Professionele smartphone- en tablethulp aan huis voor particulieren en kleine ondernemers in ${BUSINESS.REGION}. Wij helpen met telefoon instellen, data overzetten, apps installeren en smartphone problemen oplossen.`,
   offers: {
     '@type': 'Offer',
     price: PRICING.PER_QUARTER_NUM.toString(),
@@ -163,46 +163,13 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    {
-      '@type': 'Question',
-      name: `Raken mijn foto's en contacten kwijt bij een nieuwe telefoon?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Nee. We zetten eerst alles veilig over — contacten, foto's en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Ja. We ruimen op, zetten uw foto's veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: `Helpen jullie met Android én met iPhone?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Allebei. Android, iPhone of een ander merk: we kennen alle systemen en leggen de verschillen rustig uit.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: `Kunnen jullie apps installeren en uitleggen?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `Ja — en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.`
-      }
-    },
-    {
-      '@type': 'Question',
-      name: `Wat kost smartphone-hulp aan huis?`,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.`
-      }
-    }
+    { '@type': 'Question', name: `Raken mijn foto’s en contacten kwijt bij een nieuwe telefoon?`, acceptedAnswer: { '@type': 'Answer', text: `Nee. We zetten eerst alles veilig over — contacten, foto’s en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` } },
+    { '@type': 'Question', name: `Helpen jullie ook met een tablet?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Een tablet is voor veel mensen het fijnste apparaat: groot scherm, weinig knoppen. We stellen hem in, zetten e-mail en videobellen klaar en leggen uit hoe u foto’s bekijkt en deelt.` } },
+    { '@type': 'Question', name: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We ruimen op, zetten uw foto’s veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.` } },
+    { '@type': 'Question', name: `Helpen jullie met Android én met iPhone?`, acceptedAnswer: { '@type': 'Answer', text: `Allebei. Android, iPhone of een ander merk, telefoon of tablet: we kennen alle systemen en leggen de verschillen rustig uit.` } },
+    { '@type': 'Question', name: `Kunnen jullie videobellen instellen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen, koppelen de contacten en oefenen het samen, zodat u het daarna zelf kunt.` } },
+    { '@type': 'Question', name: `Kunnen jullie apps installeren en uitleggen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja — en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` } },
+    { '@type': 'Question', name: `Wat kost smartphone- of tablethulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
   ]
 }
 
@@ -212,7 +179,7 @@ const breadcrumbData = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://computerhulpzh.nl' },
-    { '@type': 'ListItem', position: 2, name: 'Smartphone Hulp aan Huis', item: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis' }
+    { '@type': 'ListItem', position: 2, name: 'Smartphone- en tablethulp aan huis', item: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis' }
   ]
 }
 
@@ -235,7 +202,7 @@ export default function SmartphoneHulpAanHuisPage() {
       }) }} />
 
       {/* Premium Hero Section */}
-      <section className="hero-wrapper" aria-label="Smartphone Hulp aan Huis hero">
+      <section className="hero-wrapper" aria-label="Smartphone- en tablethulp aan huis hero">
         <div className="absolute inset-0 bg-gradient-to-br from-ink-900 via-ink-800 to-ink-900">
           <div
             aria-hidden="true"
@@ -247,11 +214,11 @@ export default function SmartphoneHulpAanHuisPage() {
         <div className="hero-content">
           <div className="max-w-2xl">
             <h1 className="hero-title">
-              Hulp nodig met uw <span className="hero-highlight">smartphone</span>?
+              Hulp nodig met uw <span className="hero-highlight">smartphone</span> of tablet?
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw smartphone? Nieuwe telefoon instellen, contacten overzetten of app die niet werkt? We regelen het bij u thuis — <strong className="text-white">iPhone, Samsung, Huawei</strong>, alles.
+              Nieuwe telefoon of tablet instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis — <strong className="text-white">voor elk merk telefoon of tablet</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -294,11 +261,11 @@ export default function SmartphoneHulpAanHuisPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             <article>
               <h2 id="seo-content-heading" className="section-title mb-6">
-                Smartphone-hulp: van instellen tot foto’s overzetten
+                Smartphone- en tablethulp: van instellen tot foto’s overzetten
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Een nieuwe telefoon is leuk — tot alles overgezet moet worden. Wij maken uw smartphone werkklaar: contacten, foto’s en apps mee, e-mail ingesteld en de belangrijkste instellingen uitgelegd. Ook bij een volle opslag, haperende apps of een onbegrijpelijke melding komen we gewoon bij u thuis. Android of iPhone: allebei prima.
+                  Een nieuwe telefoon of tablet is leuk — tot alles overgezet moet worden. Wij maken uw toestel werkklaar: contacten, foto’s en apps mee, e-mail ingesteld en de belangrijkste instellingen uitgelegd. Ook bij een volle opslag, haperende apps of een onbegrijpelijke melding komen we gewoon bij u thuis. Android of iPhone, telefoon of tablet: allemaal prima.
                 </p>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waar we mee helpen</h3>
@@ -320,10 +287,18 @@ export default function SmartphoneHulpAanHuisPage() {
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>Android én iPhone:</strong> Android, iPhone of een ander merk: we kennen ze allemaal.</span>
                   </li>
+                  <li className="check-list-item">
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <span><strong>Tablet instellen:</strong> E-mail, videobellen, de krant en foto’s van de familie: alles op één groot, duidelijk scherm.</span>
+                  </li>
+                  <li className="check-list-item">
+                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <span><strong>Back-up en veiligheid:</strong> We zetten een automatische back-up aan en controleren de beveiliging, zodat u niets kwijtraakt.</span>
+                  </li>
                 </ul>
 
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Zie ook: <Link href="/diensten/tablet-smartphone-hulp" className="text-blue-600 hover:underline">tablet- en smartphonehulp</Link>, <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail instellen</Link> en <Link href="/diensten/persoonlijke-training" className="text-blue-600 hover:underline">persoonlijke training</Link>.
+                  Zie ook: <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail instellen</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">wifi in huis</Link> en <Link href="/diensten/computercursus-ouderen" className="text-blue-600 hover:underline">computercursus aan huis</Link>.
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
@@ -376,11 +351,13 @@ export default function SmartphoneHulpAanHuisPage() {
 
           <div className="space-y-4">
             {[
-              { q: `Raken mijn foto's en contacten kwijt bij een nieuwe telefoon?`, a: `Nee. We zetten eerst alles veilig over — contacten, foto's en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` },
-              { q: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, a: `Ja. We ruimen op, zetten uw foto's veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.` },
-              { q: `Helpen jullie met Android én met iPhone?`, a: `Allebei. Android, iPhone of een ander merk: we kennen alle systemen en leggen de verschillen rustig uit.` },
+              { q: `Raken mijn foto’s en contacten kwijt bij een nieuwe telefoon?`, a: `Nee. We zetten eerst alles veilig over — contacten, foto’s en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` },
+              { q: `Helpen jullie ook met een tablet?`, a: `Ja. Een tablet is voor veel mensen het fijnste apparaat: groot scherm, weinig knoppen. We stellen hem in, zetten e-mail en videobellen klaar en leggen uit hoe u foto’s bekijkt en deelt.` },
+              { q: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, a: `Ja. We ruimen op, zetten uw foto’s veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.` },
+              { q: `Helpen jullie met Android én met iPhone?`, a: `Allebei. Android, iPhone of een ander merk, telefoon of tablet: we kennen alle systemen en leggen de verschillen rustig uit.` },
+              { q: `Kunnen jullie videobellen instellen?`, a: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen, koppelen de contacten en oefenen het samen, zodat u het daarna zelf kunt.` },
               { q: `Kunnen jullie apps installeren en uitleggen?`, a: `Ja — en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` },
-              { q: `Wat kost smartphone-hulp aan huis?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
+              { q: `Wat kost smartphone- of tablethulp aan huis?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
@@ -396,10 +373,10 @@ export default function SmartphoneHulpAanHuisPage() {
         </div>
       </section>
 
-      <ServiceCrossLinks currentService="smartphone-hulp-aan-huis" serviceName="Smartphone Hulp" />
+      <ServiceCrossLinks currentService="smartphone-hulp-aan-huis" serviceName="Smartphone- en tablethulp" />
 
 
-      <AvailableInCities serviceLabel="Smartphone-hulp" />
+      <AvailableInCities serviceLabel="Smartphone- en tablethulp" />
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
