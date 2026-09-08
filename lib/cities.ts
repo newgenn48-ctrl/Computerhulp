@@ -205,7 +205,7 @@ export function getVillagesOf(municipalitySlug: string): Village[] {
 // Utility functions
 export const citySlugs = cities.map(c => c.slug)
 
-/** De grootste plaatsen — de vaste selectie voor footers, chips en schema's. */
+/** De grootste plaatsen, de vaste selectie voor footers, chips en schema's. */
 export const TOP_CITIES = [
   { name: 'Den Haag', slug: 'den-haag' },
   { name: 'Rotterdam', slug: 'rotterdam' },

@@ -9,8 +9,8 @@ interface PricingSectionProps {
 
 /**
  * De prijskaart als ticket: één focaal bedrag, de twee bijzaken als
- * statistiekpaar eronder. Dezelfde drie feiten als altijd — per kwartier,
- * voorrijkosten, minimale afname — maar met hiërarchie: het tarief is
+ * statistiekpaar eronder. Dezelfde drie feiten als altijd, per kwartier,
+ * voorrijkosten, minimale afname, maar met hiërarchie: het tarief is
  * waar de beslissing om draait, dus dat draagt de kaart.
  */
 export default function PricingSection({ background = 'soft' }: PricingSectionProps) {
@@ -27,7 +27,7 @@ export default function PricingSection({ background = 'soft' }: PricingSectionPr
 
         <div className="card-bezel">
           <div className="card-bezel-inner">
-            {/* Merkstreep — hetzelfde verloop als het logo en de knoppen */}
+            {/* Merkstreep, hetzelfde verloop als het logo en de knoppen */}
             <div className="h-1.5 bg-gradient-to-r from-blue-600 to-indigo-700" aria-hidden="true" />
 
             <div className="p-6 sm:p-8">
@@ -53,7 +53,7 @@ export default function PricingSection({ background = 'soft' }: PricingSectionPr
                 Een bezoek kost dus vanaf {PRICING.MINIMUM_ALL_IN} all-in
               </p>
               <p className="mt-2 text-sm text-gray-600 leading-relaxed text-center">
-                {PRICING.MINIMUM_QUARTERS} kwartier plus voorrijkosten. U hoort altijd eerst wat het kost — dan pas beginnen we.
+                {PRICING.MINIMUM_QUARTERS} kwartier plus voorrijkosten. U hoort altijd eerst wat het kost, dan pas beginnen we.
               </p>
 
               <div className="grid sm:grid-cols-2 gap-3 mt-6">

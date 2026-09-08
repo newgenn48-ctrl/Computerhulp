@@ -168,7 +168,7 @@ const faqData = {
       name: `Ik ben niet handig met computers. Is dat erg?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Helemaal niet — juist daarvoor komen we. We nemen de tijd, gebruiken gewone woorden en gaan pas verder als het duidelijk is. Twee keer dezelfde vraag stellen is bij ons heel normaal.`
+        text: `Helemaal niet, juist daarvoor komen we. We nemen de tijd, gebruiken gewone woorden en gaan pas verder als het duidelijk is. Twee keer dezelfde vraag stellen is bij ons heel normaal.`
       }
     },
     {
@@ -184,7 +184,7 @@ const faqData = {
       name: `Mag mijn zoon of dochter erbij zijn?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Natuurlijk, dat is zelfs handig. Vier oren onthouden meer dan twee — en uw familie weet daarna precies hoe alles is ingesteld.`
+        text: `Natuurlijk, dat is zelfs handig. Vier oren onthouden meer dan twee, en uw familie weet daarna precies hoe alles is ingesteld.`
       }
     },
     {
@@ -192,7 +192,7 @@ const faqData = {
       name: `Helpen jullie ook met de tablet en de telefoon?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Zeker. Van tablet tot telefoon: instellen, apps, foto's en videobellen met de kleinkinderen — u zegt maar waar u mee zit.`
+        text: `Zeker. Van tablet tot telefoon: instellen, apps, foto's en videobellen met de kleinkinderen, u zegt maar waar u mee zit.`
       }
     },
     {
@@ -297,7 +297,7 @@ export default function ComputerhulpSeniorenPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
@@ -341,7 +341,7 @@ export default function ComputerhulpSeniorenPage() {
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  U hoeft zich bij ons nooit te haasten. We nemen de tijd, leggen alles uit in gewone woorden en herhalen het gerust nog een keer als iets niet meteen duidelijk is. U werkt op uw eigen apparaat, aan uw eigen tafel — zo onthoudt u het veel beter dan uit een boekje of een telefonische helpdesk.
+                  U hoeft zich bij ons nooit te haasten. We nemen de tijd, leggen alles uit in gewone woorden en herhalen het gerust nog een keer als iets niet meteen duidelijk is. U werkt op uw eigen apparaat, aan uw eigen tafel, zo onthoudt u het veel beter dan uit een boekje of een telefonische helpdesk.
                 </p>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Zo helpen we senioren</h3>
@@ -370,7 +370,7 @@ export default function ComputerhulpSeniorenPage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur — ook in het weekend.
+                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur, ook in het weekend.
                 </p>
               </div>
             </article>
@@ -419,10 +419,10 @@ export default function ComputerhulpSeniorenPage() {
 
           <div className="space-y-4">
             {[
-              { q: `Ik ben niet handig met computers. Is dat erg?`, a: `Helemaal niet — juist daarvoor komen we. We nemen de tijd, gebruiken gewone woorden en gaan pas verder als het duidelijk is. Twee keer dezelfde vraag stellen is bij ons heel normaal.` },
+              { q: `Ik ben niet handig met computers. Is dat erg?`, a: `Helemaal niet, juist daarvoor komen we. We nemen de tijd, gebruiken gewone woorden en gaan pas verder als het duidelijk is. Twee keer dezelfde vraag stellen is bij ons heel normaal.` },
               { q: `Kunnen jullie het opschrijven, zodat ik het kan nalezen?`, a: `Ja. De belangrijkste stappen zetten we voor u op papier, in duidelijke taal, zodat u ze later rustig zelf kunt herhalen.` },
-              { q: `Mag mijn zoon of dochter erbij zijn?`, a: `Natuurlijk, dat is zelfs handig. Vier oren onthouden meer dan twee — en uw familie weet daarna precies hoe alles is ingesteld.` },
-              { q: `Helpen jullie ook met de tablet en de telefoon?`, a: `Zeker. Van tablet tot telefoon: instellen, apps, foto's en videobellen met de kleinkinderen — u zegt maar waar u mee zit.` },
+              { q: `Mag mijn zoon of dochter erbij zijn?`, a: `Natuurlijk, dat is zelfs handig. Vier oren onthouden meer dan twee, en uw familie weet daarna precies hoe alles is ingesteld.` },
+              { q: `Helpen jullie ook met de tablet en de telefoon?`, a: `Zeker. Van tablet tot telefoon: instellen, apps, foto's en videobellen met de kleinkinderen, u zegt maar waar u mee zit.` },
               { q: `Wat kost computerhulp voor senioren?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
@@ -451,7 +451,7 @@ export default function ComputerhulpSeniorenPage() {
             Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
+            Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen, rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

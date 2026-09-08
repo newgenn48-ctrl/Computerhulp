@@ -112,7 +112,7 @@ export default function DataherstelBackupPage() {
             </h1>
 
             <p className="hero-description">
-              Bent u bestanden of foto's kwijt? Harde schijf defect of pc start niet meer op? We maken eerst een <strong className="text-white">eerlijke diagnose</strong> — pas als herstel realistisch is, gaan we aan de slag.
+              Bent u bestanden of foto's kwijt? Harde schijf defect of pc start niet meer op? We maken eerst een <strong className="text-white">eerlijke diagnose</strong>: pas als herstel realistisch is, gaan we aan de slag.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -145,7 +145,7 @@ export default function DataherstelBackupPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
@@ -204,7 +204,7 @@ export default function DataherstelBackupPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Uw data is kostbaar, wij beschermen het</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Niets is zo vervelend als het verliezen van belangrijke bestanden, dierbare foto&apos;s of zakelijke documenten. Of uw harde schijf nu defect is geraakt, u per ongeluk bestanden heeft verwijderd, of uw computer niet meer opstart — er is vaak meer te redden dan u denkt.</p>
+            <p>Niets is zo vervelend als het verliezen van belangrijke bestanden, dierbare foto&apos;s of zakelijke documenten. Of uw harde schijf nu defect is geraakt, u per ongeluk bestanden heeft verwijderd, of uw computer niet meer opstart, er is vaak meer te redden dan u denkt.</p>
             <p>Onze HBO-studenten komen bij u thuis en maken een grondige diagnose. We zijn altijd eerlijk over de mogelijkheden voordat we beginnen. Daarnaast helpen we u met het opzetten van een betrouwbaar backupsysteem, zodat u in de toekomst nooit meer data kwijtraakt. We werken met zowel lokale backups als cloud-oplossingen.</p>
           </div>
         </div>

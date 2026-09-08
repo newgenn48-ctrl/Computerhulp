@@ -238,7 +238,7 @@ export default function LocatiesPage() {
         </div>
       </section>
 
-      {/* Testimonials — geograpfische social proof */}
+      {/* Testimonials, geograpfische social proof */}
       <section className="panel-section" aria-labelledby="locations-testimonials-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 panel panel-pad">
           <header className="text-center mb-12">

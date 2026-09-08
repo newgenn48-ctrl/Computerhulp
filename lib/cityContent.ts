@@ -462,7 +462,7 @@ const cityContentData: Record<string, CityContent> = {
     population: 17000,
     region: 'Voorne aan Zee',
     neighborhoods: ['Centrum', 'Slagveld', 'Rugge', 'Zwartewaal', 'Vierpolders'],
-    description: 'Brielle is een van de best bewaarde vestingsteden van Nederland en de plek waar in 1572 de Watergeuzen de stad innamen — het begin van de Nederlandse onafhankelijkheid. De monumentale binnenstad, complete vestingwallen en waterrijke omgeving maken Brielle uniek.',
+    description: 'Brielle is een van de best bewaarde vestingsteden van Nederland en de plek waar in 1572 de Watergeuzen de stad innamen, het begin van de Nederlandse onafhankelijkheid. De monumentale binnenstad, complete vestingwallen en waterrijke omgeving maken Brielle uniek.',
     highlights: ['Volledig behouden vestingwal', 'Watergeuzen 1 april', 'Historisch Museum Den Briel', 'Brielse Meer']
   },
   'oostvoorne': {
@@ -838,7 +838,7 @@ const cityContentData: Record<string, CityContent> = {
     population: 13000,
     region: 'Groene Hart',
     neighborhoods: ['Centrum', 'Reeuwijkse Plassen', 'Sluipwijk', 'Middelburg'],
-    description: 'Reeuwijk staat wereldberoemd om de Reeuwijkse Plassen — een uitgestrekt gebied van 12 aaneengesloten plassen, ideaal voor zeilen, wandelen en fietsen. Een van de mooiste natuurgebieden van het Groene Hart.',
+    description: 'Reeuwijk staat wereldberoemd om de Reeuwijkse Plassen, een uitgestrekt gebied van 12 aaneengesloten plassen, ideaal voor zeilen, wandelen en fietsen. Een van de mooiste natuurgebieden van het Groene Hart.',
     highlights: ['Reeuwijkse Plassen (12 plassen)', 'Watersport en zeilen', 'Groene Hart natuur', 'Nabij Gouda']
   },
   'driebruggen': {
@@ -1069,7 +1069,7 @@ const cityContentData: Record<string, CityContent> = {
     population: 2200,
     region: 'Groene Hart',
     neighborhoods: ['Centrum', 'Dorpsstraat', 'Molendriegang'],
-    description: 'Aarlanderveen is een klein dorp in het Groene Hart met een unieke molendriegang — drie werkende molens op een rij. Deze zeldzaamheid trekt molenliefhebbers uit het hele land.',
+    description: 'Aarlanderveen is een klein dorp in het Groene Hart met een unieke molendriegang, drie werkende molens op een rij. Deze zeldzaamheid trekt molenliefhebbers uit het hele land.',
     highlights: ['Molendriegang (3 molens op rij)', 'Uniek in Nederland', 'Groene Hart']
   },
   'leimuiden': {
@@ -1111,7 +1111,7 @@ const cityContentData: Record<string, CityContent> = {
     population: 15000,
     region: 'Holland Rijnland',
     neighborhoods: ['Centrum', 'Bloemfontein', 'Vroomstaten', 'Frederiksoord'],
-    description: 'Rijnsburg is een levendige kern van gemeente Katwijk, wereldbekend om Bloemenveiling Royal FloraHolland Rijnsburg — de grootste bloemenveiling ter wereld. Historisch banden met Spinoza.',
+    description: 'Rijnsburg is een levendige kern van gemeente Katwijk, wereldbekend om Bloemenveiling Royal FloraHolland Rijnsburg, de grootste bloemenveiling ter wereld. Historisch banden met Spinoza.',
     highlights: ['Royal FloraHolland Rijnsburg', 'Spinoza museum', 'Bollenstreek', 'Uitloper Oude Rijn']
   },
   'valkenburg-zh': {

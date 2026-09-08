@@ -43,7 +43,7 @@ export default function Header() {
     setMobileMenuOpen(false)
   }, [pathname])
 
-  // Sluit mobile menu met Escape — voorkomt focus-trap voor toetsenbordgebruikers
+  // Sluit mobile menu met Escape, voorkomt focus-trap voor toetsenbordgebruikers
   useEffect(() => {
     if (!mobileMenuOpen) return
     const handleKey = (e: KeyboardEvent) => {
@@ -53,7 +53,7 @@ export default function Header() {
     return () => window.removeEventListener('keydown', handleKey)
   }, [mobileMenuOpen])
 
-  // Body scroll lock — voorkomt dat achtergrond scrollt terwijl menu open is
+  // Body scroll lock, voorkomt dat achtergrond scrollt terwijl menu open is
   useEffect(() => {
     if (!mobileMenuOpen) return
     const prev = document.body.style.overflow
@@ -73,7 +73,7 @@ export default function Header() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="flex justify-between items-center">
-          {/* Logo — fallback-tekst als image faalt */}
+          {/* Logo, fallback-tekst als image faalt */}
           <Link href="/" className="flex items-center group" aria-label={`Naar de homepage van ${BUSINESS.NAME}`}>
             <div className="relative h-10 w-[140px] md:h-11 md:w-[160px] lg:h-12 lg:w-[180px] flex items-center">
               <Image
@@ -96,7 +96,7 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Desktop Navigation — toont vanaf md (768px) zodat ook smallere laptops items zien */}
+          {/* Desktop Navigation, toont vanaf md (768px) zodat ook smallere laptops items zien */}
           <nav className="hidden md:flex items-center gap-4 lg:gap-5" aria-label="Hoofdnavigatie">
             {NAV_ITEMS.map(item => (
               <Link
@@ -175,7 +175,7 @@ export default function Header() {
         )}
       </div>
 
-      {/* Backdrop — sluit menu bij tap buiten */}
+      {/* Backdrop, sluit menu bij tap buiten */}
       {mobileMenuOpen && (
         <div
           className="md:hidden fixed inset-0 top-full bg-black/40 -z-10"

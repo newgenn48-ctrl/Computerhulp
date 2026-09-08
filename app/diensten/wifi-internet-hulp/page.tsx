@@ -113,7 +113,7 @@ export default function WifiInternetHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u problemen met uw wifi of internet? Slecht bereik of traag internet? <strong className="text-white">In 7 van de 10 gevallen</strong> ligt het aan de router — en dan is het meestal binnen een uur opgelost.
+              Heeft u problemen met uw wifi of internet? Slecht bereik of traag internet? <strong className="text-white">In 7 van de 10 gevallen</strong> ligt het aan de router, en dan is het meestal binnen een uur opgelost.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -146,13 +146,13 @@ export default function WifiInternetHulpPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <p className="section-eyebrow">Onze hulp</p>
             <h2 className="section-title">Wat wij voor u doen</h2>
-            <p className="section-subtitle">De wifi-klussen die we dagelijks oplossen — bij u thuis.</p>
+            <p className="section-subtitle">De wifi-klussen die we dagelijks oplossen, bij u thuis.</p>
           </div>
           <div className="card-bezel max-w-3xl mx-auto">
             <div className="card-bezel-inner p-6 sm:p-8">
@@ -205,8 +205,8 @@ export default function WifiInternetHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Wifi en internet problemen vakkundig opgelost</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Slecht wifi-bereik, traag internet of apparaten die steeds de verbinding verliezen — het zijn problemen die in bijna elk huishouden voorkomen. De oorzaak kan vari&euml;ren van een verkeerd geplaatste router tot een verouderd netwerk of storing van buitenaf.</p>
-            <p>Onze HBO-studenten analyseren uw situatie ter plekke en bieden een passende oplossing: router herplaatsen, een wifi-versterker of meshsysteem installeren, of uw netwerk helemaal opnieuw configureren. We zorgen dat al uw apparaten — van laptop en telefoon tot smart-tv en printer — stabiel verbonden zijn.</p>
+            <p>Slecht wifi-bereik, traag internet of apparaten die steeds de verbinding verliezen, het zijn problemen die in bijna elk huishouden voorkomen. De oorzaak kan vari&euml;ren van een verkeerd geplaatste router tot een verouderd netwerk of storing van buitenaf.</p>
+            <p>Onze HBO-studenten analyseren uw situatie ter plekke en bieden een passende oplossing: router herplaatsen, een wifi-versterker of meshsysteem installeren, of uw netwerk helemaal opnieuw configureren. We zorgen dat al uw apparaten, van laptop en telefoon tot smart-tv en printer, stabiel verbonden zijn.</p>
           </div>
         </div>
       </section>

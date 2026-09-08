@@ -163,12 +163,12 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: `Raken mijn foto’s en contacten kwijt bij een nieuwe telefoon?`, acceptedAnswer: { '@type': 'Answer', text: `Nee. We zetten eerst alles veilig over — contacten, foto’s en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` } },
+    { '@type': 'Question', name: `Raken mijn foto’s en contacten kwijt bij een nieuwe telefoon?`, acceptedAnswer: { '@type': 'Answer', text: `Nee. We zetten eerst alles veilig over, contacten, foto’s en apps, en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` } },
     { '@type': 'Question', name: `Helpen jullie ook met een tablet?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Een tablet is voor veel mensen het fijnste apparaat: groot scherm, weinig knoppen. We stellen hem in, zetten e-mail en videobellen klaar en leggen uit hoe u foto’s bekijkt en deelt.` } },
-    { '@type': 'Question', name: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We ruimen op, zetten uw foto’s veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.` } },
+    { '@type': 'Question', name: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We ruimen op, zetten uw foto’s veilig weg en zorgen voor blijvende ruimte, zonder dat er iets verloren gaat.` } },
     { '@type': 'Question', name: `Helpen jullie met Android én met iPhone?`, acceptedAnswer: { '@type': 'Answer', text: `Allebei. Android, iPhone of een ander merk, telefoon of tablet: we kennen alle systemen en leggen de verschillen rustig uit.` } },
     { '@type': 'Question', name: `Kunnen jullie videobellen instellen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen, koppelen de contacten en oefenen het samen, zodat u het daarna zelf kunt.` } },
-    { '@type': 'Question', name: `Kunnen jullie apps installeren en uitleggen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja — en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` } },
+    { '@type': 'Question', name: `Kunnen jullie apps installeren en uitleggen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja, en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` } },
     { '@type': 'Question', name: `Wat kost smartphone- of tablethulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
   ]
 }
@@ -237,7 +237,7 @@ export default function SmartphoneHulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Nieuwe telefoon of tablet instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis — <strong className="text-white">voor elk merk telefoon of tablet</strong>.
+              Nieuwe telefoon of tablet instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis, <strong className="text-white">voor elk merk telefoon of tablet</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -263,7 +263,7 @@ export default function SmartphoneHulpAanHuisPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
@@ -307,7 +307,7 @@ export default function SmartphoneHulpAanHuisPage() {
               </h2>
               <div className="prose prose-lg max-w-none">
                 <p className="text-gray-700 leading-relaxed mb-6">
-                  Een nieuwe telefoon of tablet is leuk — tot alles overgezet moet worden. Wij maken uw toestel werkklaar: contacten, foto’s en apps mee, e-mail ingesteld en de belangrijkste instellingen uitgelegd. Ook bij een volle opslag, haperende apps of een onbegrijpelijke melding komen we gewoon bij u thuis. Elk merk, telefoon of tablet: allemaal prima.
+                  Een nieuwe telefoon of tablet is leuk, tot alles overgezet moet worden. Wij maken uw toestel werkklaar: contacten, foto’s en apps mee, e-mail ingesteld en de belangrijkste instellingen uitgelegd. Ook bij een volle opslag, haperende apps of een onbegrijpelijke melding komen we gewoon bij u thuis. Elk merk, telefoon of tablet: allemaal prima.
                 </p>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Waar we mee helpen</h3>
@@ -315,7 +315,7 @@ export default function SmartphoneHulpAanHuisPage() {
                 <ul className="space-y-3 text-gray-700 mb-6">
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Nieuwe telefoon werkklaar:</strong> Alles overgezet en ingesteld — u mist geen contact en geen foto.</span>
+                    <span><strong>Nieuwe telefoon werkklaar:</strong> Alles overgezet en ingesteld, u mist geen contact en geen foto.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
@@ -323,7 +323,7 @@ export default function SmartphoneHulpAanHuisPage() {
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Apps en updates:</strong> Installeren, opruimen en uitleggen — alleen wat ú nodig heeft.</span>
+                    <span><strong>Apps en updates:</strong> Installeren, opruimen en uitleggen, alleen wat ú nodig heeft.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
@@ -344,7 +344,7 @@ export default function SmartphoneHulpAanHuisPage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur — ook in het weekend.
+                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur, ook in het weekend.
                 </p>
               </div>
             </article>
@@ -393,12 +393,12 @@ export default function SmartphoneHulpAanHuisPage() {
 
           <div className="space-y-4">
             {[
-              { q: `Raken mijn foto’s en contacten kwijt bij een nieuwe telefoon?`, a: `Nee. We zetten eerst alles veilig over — contacten, foto’s en apps — en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` },
+              { q: `Raken mijn foto’s en contacten kwijt bij een nieuwe telefoon?`, a: `Nee. We zetten eerst alles veilig over, contacten, foto’s en apps, en controleren samen of niets ontbreekt voordat de oude telefoon leeg mag.` },
               { q: `Helpen jullie ook met een tablet?`, a: `Ja. Een tablet is voor veel mensen het fijnste apparaat: groot scherm, weinig knoppen. We stellen hem in, zetten e-mail en videobellen klaar en leggen uit hoe u foto’s bekijkt en deelt.` },
-              { q: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, a: `Ja. We ruimen op, zetten uw foto’s veilig weg en zorgen voor blijvende ruimte — zonder dat er iets verloren gaat.` },
+              { q: `Mijn opslag zit steeds vol. Kunnen jullie daarbij helpen?`, a: `Ja. We ruimen op, zetten uw foto’s veilig weg en zorgen voor blijvende ruimte, zonder dat er iets verloren gaat.` },
               { q: `Helpen jullie met Android én met iPhone?`, a: `Allebei. Android, iPhone of een ander merk, telefoon of tablet: we kennen alle systemen en leggen de verschillen rustig uit.` },
               { q: `Kunnen jullie videobellen instellen?`, a: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen, koppelen de contacten en oefenen het samen, zodat u het daarna zelf kunt.` },
-              { q: `Kunnen jullie apps installeren en uitleggen?`, a: `Ja — en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` },
+              { q: `Kunnen jullie apps installeren en uitleggen?`, a: `Ja, en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` },
               { q: `Wat kost smartphone- of tablethulp aan huis?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
@@ -426,7 +426,7 @@ export default function SmartphoneHulpAanHuisPage() {
             Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
+            Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen, rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

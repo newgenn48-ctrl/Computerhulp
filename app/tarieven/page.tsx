@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 const faqs = [
   { q: 'Wat kost computerhulp aan huis?', a: `Wij rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` },
   { q: 'Heb ik een abonnement nodig?', a: 'Nee. Bij ons betaalt u per bezoek. Geen maandelijkse kosten, geen jaarlijks lidmaatschap, geen verplichtingen.' },
-  { q: 'Zijn er extra kosten in de avond of het weekend?', a: `Nee, wij rekenen hetzelfde tarief op alle dagen en tijden. Of u nu op maandag om 10:00 of op zaterdag om 20:00 belt — u betaalt gewoon ${PRICING.PER_QUARTER} per kwartier.` },
+  { q: 'Zijn er extra kosten in de avond of het weekend?', a: `Nee, wij rekenen hetzelfde tarief op alle dagen en tijden. Of u nu op maandag om 10:00 of op zaterdag om 20:00 belt, u betaalt gewoon ${PRICING.PER_QUARTER} per kwartier.` },
   { q: 'Hoe kan ik betalen?', a: 'U kunt na afloop betalen via pin of Tikkie. We rekenen af zodra het werk klaar is. Facturen zijn ook mogelijk voor bedrijven.' },
   { q: 'Krijg ik vooraf een inschatting?', a: 'Ja, we geven altijd een eerlijke inschatting van hoeveel tijd we denken nodig te hebben. Zo weet u vooraf waar u aan toe bent.' },
   { q: 'Wat als het probleem niet opgelost kan worden?', a: 'Dan betaalt u alleen voor de tijd die we daadwerkelijk besteed hebben. We zijn altijd eerlijk over wat we wel en niet kunnen oplossen.' },
@@ -61,7 +61,7 @@ export default function TarievenPage() {
             Duidelijk, <span className="text-blue-600">geen verrassingen</span>
           </h1>
           <p className="section-subtitle max-w-2xl mx-auto mb-8">
-            U betaalt per kwartier en alleen voor de tijd die we nodig hebben — achteraf, via pin of Tikkie.
+            U betaalt per kwartier en alleen voor de tijd die we nodig hebben, achteraf, via pin of Tikkie.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -90,7 +90,7 @@ export default function TarievenPage() {
 
             <div className="px-6 sm:px-8 py-8 sm:py-10">
               <div className="text-center mb-8">
-                <div className="text-lg text-gray-700 font-medium">Minimaal 3 kwartier + voorrijkosten — all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
+                <div className="text-lg text-gray-700 font-medium">Minimaal 3 kwartier + voorrijkosten, all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
               </div>
 
               <div className="space-y-4 mb-8">

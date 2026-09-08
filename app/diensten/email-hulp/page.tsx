@@ -112,7 +112,7 @@ export default function EmailHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u problemen met uw e-mail? Niet meer kunnen inloggen, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in — <strong className="text-white">meestal in een halfuur klaar</strong>.
+              Heeft u problemen met uw e-mail? Niet meer kunnen inloggen, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in, <strong className="text-white">meestal in een halfuur klaar</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -145,7 +145,7 @@ export default function EmailHulpPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
@@ -205,7 +205,7 @@ export default function EmailHulpPage() {
           <h2 className="content-title mb-4">E-mailproblemen snel en vakkundig opgelost</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
             <p>E-mail is voor veel mensen het belangrijkste communicatiemiddel. Als uw e-mail niet werkt, u niet meer kunt inloggen, of u overspoeld wordt met spam, dan kan dat enorm veel stress opleveren. Onze HBO-studenten helpen u met alle e-mailproviders: Outlook, Gmail, Yahoo, Ziggo, KPN en meer.</p>
-            <p>We stellen uw e-mail in op al uw apparaten — computer, laptop, tablet en telefoon — zodat u overal bij uw berichten kunt. Ook helpen we met het migreren van e-mails naar een nieuwe provider, het opruimen van een volle mailbox, en het instellen van goede spam-filters. Alles bij u thuis, met duidelijke uitleg.</p>
+            <p>We stellen uw e-mail in op al uw apparaten, computer, laptop, tablet en telefoon, zodat u overal bij uw berichten kunt. Ook helpen we met het migreren van e-mails naar een nieuwe provider, het opruimen van een volle mailbox, en het instellen van goede spam-filters. Alles bij u thuis, met duidelijke uitleg.</p>
           </div>
         </div>
       </section>

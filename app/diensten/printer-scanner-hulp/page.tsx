@@ -69,7 +69,7 @@ const services = [
   'Printkwaliteit verbeteren',
   'Papierstoring verhelpen',
   'Inktcartridges vervangen',
-  'Printer niet gevonden — oplossen',
+  'Printer niet gevonden, oplossen',
 ]
 
 const faqs = [
@@ -112,7 +112,7 @@ export default function PrinterScannerHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw printer of scanner? Draadloos printen, scannen of installatie — we regelen het bij u thuis. De meeste printerproblemen zijn <strong className="text-white">in een halfuur opgelost</strong>.
+              Heeft u hulp nodig met uw printer of scanner? Draadloos printen, scannen of installatie, we regelen het bij u thuis. De meeste printerproblemen zijn <strong className="text-white">in een halfuur opgelost</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -145,13 +145,13 @@ export default function PrinterScannerHulpPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
             <p className="section-eyebrow">Onze hulp</p>
             <h2 className="section-title">Wat wij voor u doen</h2>
-            <p className="section-subtitle">Alles rondom printers en scanners — installatie, instellingen, storingen.</p>
+            <p className="section-subtitle">Alles rondom printers en scanners, installatie, instellingen, storingen.</p>
           </div>
           <div className="card-bezel max-w-3xl mx-auto">
             <div className="card-bezel-inner p-6 sm:p-8">
@@ -204,7 +204,7 @@ export default function PrinterScannerHulpPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Printer en scanner hulp bij u thuis</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een printer die niet print, een scanner die niet scant, of een apparaat dat niet wil verbinden met uw computer — het zijn frustrerende problemen die uw dagelijkse werk verstoren. Onze HBO-studenten kennen alle merken en modellen: HP, Canon, Epson, Brother, Samsung en meer.</p>
+            <p>Een printer die niet print, een scanner die niet scant, of een apparaat dat niet wil verbinden met uw computer, het zijn frustrerende problemen die uw dagelijkse werk verstoren. Onze HBO-studenten kennen alle merken en modellen: HP, Canon, Epson, Brother, Samsung en meer.</p>
             <p>We installeren nieuwe printers, lossen papierstoringen op, configureren draadloos printen via wifi, en stellen scan-naar-e-mail in. Alles bij u thuis, met duidelijke uitleg zodat u het voortaan zelf kunt. En als uw printer echt aan vervanging toe is, adviseren we u eerlijk welk model bij u past.</p>
           </div>
         </div>

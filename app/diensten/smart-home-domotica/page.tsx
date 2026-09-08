@@ -112,7 +112,7 @@ export default function SmartHomeDomoticaPage() {
             </h1>
 
             <p className="hero-description">
-              Wilt u slimme apparaten laten installeren? Verlichting, thermostaat, speaker of deurbel — we koppelen en configureren al uw slimme apparaten bij u thuis — <strong className="text-white">alles in één app</strong>.
+              Wilt u slimme apparaten laten installeren? Verlichting, thermostaat, speaker of deurbel, we koppelen en configureren al uw slimme apparaten bij u thuis, <strong className="text-white">alles in één app</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -145,7 +145,7 @@ export default function SmartHomeDomoticaPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
@@ -204,7 +204,7 @@ export default function SmartHomeDomoticaPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <h2 className="content-title mb-4">Smart home installatie door een HBO-student</h2>
           <div className="prose prose-lg text-gray-600 max-w-none">
-            <p>Een slim huis begint met de juiste installatie. Of u nu slimme verlichting, een slimme thermostaat, beveiligingscamera&apos;s of een complete domotica-oplossing wilt — het kan overweldigend zijn om alles zelf te configureren en te koppelen.</p>
+            <p>Een slim huis begint met de juiste installatie. Of u nu slimme verlichting, een slimme thermostaat, beveiligingscamera&apos;s of een complete domotica-oplossing wilt, het kan overweldigend zijn om alles zelf te configureren en te koppelen.</p>
             <p>Onze HBO-studenten komen bij u thuis en zorgen dat al uw slimme apparaten perfect samenwerken. We koppelen alles aan uw smartphone, stellen spraakbesturing in via Google Home of Alexa, en maken handige automatiseringen. Zodat uw huis niet alleen slim is, maar ook makkelijk te bedienen.</p>
           </div>
         </div>

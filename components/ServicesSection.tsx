@@ -105,7 +105,7 @@ export const services = [
   },
   {
     title: 'Smart Home',
-    description: 'Slimme lampen, deurbel of speakers — wij koppelen alles en lossen storingen op.',
+    description: 'Slimme lampen, deurbel of speakers, wij koppelen alles en lossen storingen op.',
     icon: 'lightbulb',
     image: '/dienst-smart-home.webp',
     imageAlt: 'Slimme thermostaat aan de muur, hand aan de knop',
@@ -151,10 +151,10 @@ interface ServicesSectionProps {
   title?: string
   subtitle?: string
   eyebrow?: string
-  /** Toon korte beschrijving onder de titel — gebruikt voor zelf-kwalificatie op landingspagina's. */
+  /** Toon korte beschrijving onder de titel, gebruikt voor zelf-kwalificatie op landingspagina's. */
   showDescription?: boolean
   /** Grote fotokaarten met dubbele rand. Het apparaat op de foto vertelt
-      meteen waar de dienst over gaat — sterker dan een icoon. */
+      meteen waar de dienst over gaat, sterker dan een icoon. */
   photoCards?: boolean
   limitServices?: number
   showAllButton?: boolean

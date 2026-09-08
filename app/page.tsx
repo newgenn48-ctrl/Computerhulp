@@ -56,7 +56,7 @@ const faqItems = [
   },
   {
     q: 'Waar kunnen jullie mee helpen?',
-    a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, wifi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten — u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.',
+    a: 'Eigenlijk met alles wat met een scherm te maken heeft. Een trage computer, een printer die niet werkt, wifi-problemen, e-mail instellen, uw tablet of telefoon, slimme apparaten, u noemt het. En als u gewoon iets wilt leren, helpen we daar ook graag bij.',
   },
   {
     q: 'Komen jullie ook in mijn woonplaats?',
@@ -187,7 +187,7 @@ const cities = TOP_CITIES.map((c) => c.name)
 export default function HomePage() {
   return (
     <>
-      {/* Structured Data — single @graph with non-colliding @ids */}
+      {/* Structured Data, single @graph with non-colliding @ids */}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@graph': [
@@ -207,7 +207,7 @@ export default function HomePage() {
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — een geduldige HBO-student komt bij u thuis, lost het op en legt alles uit in gewone taal.</>,
+          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong>: een geduldige HBO-student komt bij u thuis, lost het op en legt alles uit in gewone taal.</>,
         ]}
         pills={[
           { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
@@ -232,7 +232,7 @@ export default function HomePage() {
       {/* Zo werkt het */}
       <HowItWorksSection />
 
-      {/* Prijs — met een uitgewerkt voorbeeld in plaats van een tarievenlijst */}
+      {/* Prijs, met een uitgewerkt voorbeeld in plaats van een tarievenlijst */}
       <PricingSection />
 
       {/* Plaatsen met een eigen zin per stad */}
@@ -263,7 +263,7 @@ export default function HomePage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur — ook in het weekend.
+                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur, ook in het weekend.
                 </p>
               </div>
             </article>
@@ -301,7 +301,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* FAQ Section — shares data with JSON-LD above */}
+      {/* FAQ Section, shares data with JSON-LD above */}
       <section className="panel-section" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-10">
@@ -333,7 +333,7 @@ export default function HomePage() {
             Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
+            Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen, rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

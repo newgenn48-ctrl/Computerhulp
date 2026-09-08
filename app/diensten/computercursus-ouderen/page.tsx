@@ -143,7 +143,7 @@ const serviceData = {
   serviceType: 'Computer Repair Service',
   provider: { '@id': 'https://computerhulpzh.nl/diensten/computercursus-ouderen/#localbusiness' },
   areaServed: { '@type': 'State', name: 'Zuid-Holland' },
-  description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}. Persoonlijke uitleg over computer, laptop, tablet, smartphone en andere apparaten — rustig en op uw eigen tempo.`,
+  description: `Computercursus voor ouderen aan huis in ${BUSINESS.REGION}. Persoonlijke uitleg over computer, laptop, tablet, smartphone en andere apparaten, rustig en op uw eigen tempo.`,
   offers: {
     '@type': 'Offer',
     price: PRICING.PER_QUARTER_NUM.toString(),
@@ -163,14 +163,14 @@ const faqData = {
   '@context': 'https://schema.org',
   '@type': 'FAQPage',
   mainEntity: [
-    { '@type': 'Question', name: `Moet ik al iets van computers weten?`, acceptedAnswer: { '@type': 'Answer', text: `Nee. We beginnen waar ú staat — desnoods helemaal vanaf nul, bij het aanzetten van het apparaat.` } },
+    { '@type': 'Question', name: `Moet ik al iets van computers weten?`, acceptedAnswer: { '@type': 'Answer', text: `Nee. We beginnen waar ú staat, desnoods helemaal vanaf nul, bij het aanzetten van het apparaat.` } },
     { '@type': 'Question', name: `Hoe lang duurt een les?`, acceptedAnswer: { '@type': 'Answer', text: `De meeste lessen duren een uur tot anderhalf uur. U bepaalt het tempo, en we stoppen op het moment dat u dat wilt.` } },
     { '@type': 'Question', name: `Welke onderwerpen kan ik leren?`, acceptedAnswer: { '@type': 'Answer', text: `Wat u maar wilt: e-mailen, videobellen en WhatsApp, veilig internetbankieren, foto’s ordenen, Word en Excel, of gewoon vlotter werken met muis en toetsenbord.` } },
     { '@type': 'Question', name: `Geven jullie ook les in Word en Excel?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Een brief of kaart maken in Word, een adreslijst of huishoudboekje in Excel: we leggen het uit op uw eigen computer en oefenen het samen.` } },
     { '@type': 'Question', name: `Kunnen jullie mij leren veilig te internetbankieren?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Van inloggen met DigiD of uw bank-app tot een overschrijving doen. We leggen ook uit hoe u nepmails en oplichting herkent, zodat u met een gerust hart bankiert.` } },
     { '@type': 'Question', name: `Leren jullie ook videobellen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen en oefenen het samen, zodat u zelf met kinderen, kleinkinderen of vrienden kunt bellen.` } },
     { '@type': 'Question', name: `Krijg ik iets om na te lezen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Elke les eindigt met de stappen op papier, zodat u zelfstandig verder kunt oefenen tot de volgende keer.` } },
-    { '@type': 'Question', name: `Is één les genoeg, en wat kost het?`, acceptedAnswer: { '@type': 'Answer', text: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder — u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
+    { '@type': 'Question', name: `Is één les genoeg, en wat kost het?`, acceptedAnswer: { '@type': 'Answer', text: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder, u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
   ]
 }
 
@@ -238,7 +238,7 @@ export default function ComputercursusOuderenPage() {
             </h1>
 
             <p className="hero-description">
-              Wilt u beter leren omgaan met uw computer, tablet of smartphone? We leggen alles stap voor stap uit — <strong className="text-white">in gewone taal, op uw tempo</strong>.
+              Wilt u beter leren omgaan met uw computer, tablet of smartphone? We leggen alles stap voor stap uit, <strong className="text-white">in gewone taal, op uw tempo</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -264,7 +264,7 @@ export default function ComputercursusOuderenPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">
@@ -316,7 +316,7 @@ export default function ComputercursusOuderenPage() {
                 <ul className="space-y-3 text-gray-700 mb-6">
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                    <span><strong>Eén-op-één les:</strong> Alle aandacht voor uw vragen — niemand die op u wacht of u opjaagt.</span>
+                    <span><strong>Eén-op-één les:</strong> Alle aandacht voor uw vragen, niemand die op u wacht of u opjaagt.</span>
                   </li>
                   <li className="check-list-item">
                     <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
@@ -342,7 +342,7 @@ export default function ComputercursusOuderenPage() {
                 </p>
 
                 <p className="text-gray-700 leading-relaxed">
-                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur — ook in het weekend.
+                  Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur, ook in het weekend.
                 </p>
               </div>
             </article>
@@ -391,14 +391,14 @@ export default function ComputercursusOuderenPage() {
 
           <div className="space-y-4">
             {[
-              { q: `Moet ik al iets van computers weten?`, a: `Nee. We beginnen waar ú staat — desnoods helemaal vanaf nul, bij het aanzetten van het apparaat.` },
+              { q: `Moet ik al iets van computers weten?`, a: `Nee. We beginnen waar ú staat, desnoods helemaal vanaf nul, bij het aanzetten van het apparaat.` },
               { q: `Hoe lang duurt een les?`, a: `De meeste lessen duren een uur tot anderhalf uur. U bepaalt het tempo, en we stoppen op het moment dat u dat wilt.` },
               { q: `Welke onderwerpen kan ik leren?`, a: `Wat u maar wilt: e-mailen, videobellen en WhatsApp, veilig internetbankieren, foto’s ordenen, Word en Excel, of gewoon vlotter werken met muis en toetsenbord.` },
               { q: `Geven jullie ook les in Word en Excel?`, a: `Ja. Een brief of kaart maken in Word, een adreslijst of huishoudboekje in Excel: we leggen het uit op uw eigen computer en oefenen het samen.` },
               { q: `Kunnen jullie mij leren veilig te internetbankieren?`, a: `Ja. Van inloggen met DigiD of uw bank-app tot een overschrijving doen. We leggen ook uit hoe u nepmails en oplichting herkent, zodat u met een gerust hart bankiert.` },
               { q: `Leren jullie ook videobellen?`, a: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen en oefenen het samen, zodat u zelf met kinderen, kleinkinderen of vrienden kunt bellen.` },
               { q: `Krijg ik iets om na te lezen?`, a: `Ja. Elke les eindigt met de stappen op papier, zodat u zelfstandig verder kunt oefenen tot de volgende keer.` },
-              { q: `Is één les genoeg, en wat kost het?`, a: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder — u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
+              { q: `Is één les genoeg, en wat kost het?`, a: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder, u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">
@@ -426,7 +426,7 @@ export default function ComputercursusOuderenPage() {
             Kunnen wij u ergens mee helpen?
           </h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen — rustig en zonder gedoe.
+            Bel ons gerust of plan een afspraak in. Wij komen bij u thuis en helpen het oplossen, rustig en zonder gedoe.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a

@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { LEAD_SENT_KEY } from '@/components/ConversionTracker'
-import { BUSINESS } from '@/lib/constants'
+import { BUSINESS, HOURS } from '@/lib/constants'
 
 type Field = 'naam' | 'telefoon' | 'email' | 'adres' | 'postcode' | 'plaats' | 'probleem'
 
@@ -75,7 +75,7 @@ export default function AfspraakForm() {
     setErrors(newErrors)
     setTouched(newTouched)
     if (Object.keys(newErrors).length > 0) {
-      // Spring naar het eerste foute veld — anders lijkt het formulier
+      // Spring naar het eerste foute veld, anders lijkt het formulier
       // stil te falen wanneer de fout buiten beeld staat.
       const firstInvalid = fields.find(field => newErrors[field])
       if (firstInvalid) {
@@ -86,7 +86,7 @@ export default function AfspraakForm() {
       return
     }
 
-    // Offline check — spaart een timeout-ronde als netwerk weg is
+    // Offline check, spaart een timeout-ronde als netwerk weg is
     if (typeof navigator !== 'undefined' && navigator.onLine === false) {
       setSubmitStatus('error')
       return
@@ -308,7 +308,7 @@ export default function AfspraakForm() {
           {touched.probleem && errors.probleem && <p id="probleem-error" role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>}
         </div>
 
-        {/* Honeypot — real users won't fill this, bots will */}
+        {/* Honeypot, real users won't fill this, bots will */}
         <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
           <label htmlFor="website">Website (laat leeg)</label>
           <input
@@ -332,9 +332,12 @@ export default function AfspraakForm() {
               Versturen…
             </span>
           ) : (
-            'Hulp vragen'
+            'Verstuur mijn aanvraag'
           )}
         </button>
+        <p className="text-center text-sm text-gray-600">
+          Geen verplichtingen. We bellen u meestal binnen een uur terug, alle dagen tussen {HOURS.OPEN} en {HOURS.CLOSE} uur.
+        </p>
 
       </form>
     </>

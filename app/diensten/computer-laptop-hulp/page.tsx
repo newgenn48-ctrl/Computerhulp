@@ -160,7 +160,7 @@ export default function ComputerLaptopHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Traag, vastgelopen, kapot scherm of start hij niet meer op? Een HBO-student komt bij u thuis, kijkt rustig mee en repareert of lost het op — <strong className="text-white">in gewone taal uitgelegd</strong>.
+              Traag, vastgelopen, kapot scherm of start hij niet meer op? Een HBO-student komt bij u thuis, kijkt rustig mee en repareert of lost het op, <strong className="text-white">in gewone taal uitgelegd</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">
@@ -193,7 +193,7 @@ export default function ComputerLaptopHulpPage() {
       </section>
 
 
-      {/* Wat wij voor u doen — check-list */}
+      {/* Wat wij voor u doen, check-list */}
       <section className="py-12 lg:py-16 bg-surface">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="text-center mb-10">

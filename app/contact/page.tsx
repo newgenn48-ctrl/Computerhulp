@@ -22,7 +22,7 @@ export const metadata: Metadata = {
 
 /* De hele pagina ís de conversie, dus geen blauwe afsluitband die nogmaals
    om contact vraagt. Opbouw: rustige kop, daarna links de manieren om ons
-   te bereiken (bellen voorop) en rechts het formulier — naast elkaar op
+   te bereiken (bellen voorop) en rechts het formulier, naast elkaar op
    desktop, onder elkaar op mobiel met bellen als eerste. */
 export default function ContactPage() {
   return (
@@ -34,7 +34,7 @@ export default function ContactPage() {
           <h1 className="section-title-lg mb-4">Neem contact op</h1>
           <p className="section-subtitle">
             We zijn {HOURS.DAYS} bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur.
-            Bellen is het snelst — maar mailen of een terugbelverzoek kan net zo goed.
+            Bellen is het snelst, maar mailen of een terugbelverzoek kan net zo goed.
           </p>
         </div>
       </section>
@@ -45,7 +45,7 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-start">
             {/* Links: bereiken */}
             <div className="space-y-4">
-              {/* Bellen — primair */}
+              {/* Bellen, primair */}
               <a
                 href={BUSINESS.PHONE_HREF}
                 className="group block bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-5 sm:p-7 text-white shadow-xl hover:shadow-2xl hover:-translate-y-0.5 transition duration-200"
@@ -105,12 +105,12 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              {/* Werkgebied — compact, in de kolom in plaats van een eigen sectie */}
+              {/* Werkgebied, compact, in de kolom in plaats van een eigen sectie */}
               <div className="card-bezel">
                 <div className="card-bezel-inner p-5 sm:p-6">
                   <h2 className="font-bold text-gray-900 mb-1.5">Waar we komen</h2>
                   <p className="text-sm text-gray-600 mb-4">
-                    In heel {BUSINESS.REGION} — voorrijkosten {PRICING.TRAVEL}.
+                    In heel {BUSINESS.REGION}, voorrijkosten {PRICING.TRAVEL}.
                   </p>
                   <div className="flex flex-wrap gap-2 mb-4">
                     {TOP_CITIES.slice(0, 8).map(({ name: city }) => (

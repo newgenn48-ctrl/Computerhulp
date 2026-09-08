@@ -104,10 +104,10 @@ export default function DienstenPage() {
             </h1>
 
             <p className="section-subtitle mb-8 max-w-xl">
-              Heeft u hulp nodig met uw digitale apparaten? Van computer tot wifi, van printer tot smart home — we helpen met <strong className="text-gray-900 font-semibold">alles rondom uw apparaten</strong>, bij u thuis.
+              Heeft u hulp nodig met uw digitale apparaten? Van computer tot wifi, van printer tot smart home, we helpen met <strong className="text-gray-900 font-semibold">alles rondom uw apparaten</strong>, bij u thuis.
             </p>
 
-            {/* CTA Buttons — phone primary */}
+            {/* CTA Buttons, phone primary */}
             <div className="flex flex-col sm:flex-row gap-4">
               <a href={BUSINESS.PHONE_HREF} className="btn-primary" aria-label={`Bel ${BUSINESS.PHONE}`}>
                 <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
@@ -218,7 +218,7 @@ export default function DienstenPage() {
             <div className="p-6 sm:p-10">
             <div className="text-5xl sm:text-6xl font-extrabold tracking-display-tight text-gray-900 tabular-nums mb-2 text-center">{PRICING.PER_QUARTER}</div>
             <div className="text-xl text-gray-600 mb-1 text-center font-medium">per kwartier</div>
-            <div className="text-base sm:text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier + voorrijkosten — all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
+            <div className="text-base sm:text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier + voorrijkosten, all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
 
             <div className="border-t border-gray-200 pt-6 mb-8">
               <ul className="grid md:grid-cols-2 gap-4">
@@ -254,7 +254,7 @@ export default function DienstenPage() {
         </div>
       </section>
 
-      {/* Testimonials — social proof voor verdere conversie */}
+      {/* Testimonials, social proof voor verdere conversie */}
       <TestimonialsSection
         testimonials={HUB_TESTIMONIALS}
         subtitle={<>Dagelijks helpen we mensen in heel {BUSINESS.REGION}</>}
@@ -272,7 +272,7 @@ export default function DienstenPage() {
               Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Een compleet pakket IT-diensten voor particulieren en kleine ondernemers in heel {BUSINESS.REGION}. Van computer- en laptophulp tot wifi-installatie, van printerproblemen tot smart-home-oplossingen.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              Onze HBO-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp — we helpen vakkundig en persoonlijk, in gewone taal.
+              Onze HBO-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp, we helpen vakkundig en persoonlijk, in gewone taal.
             </p>
             <p className="text-gray-700 leading-relaxed">
               Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met slechts {PRICING.TRAVEL} voorrijkosten. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen meestal binnen 24 uur bij u langs.
@@ -286,7 +286,7 @@ export default function DienstenPage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="cta-title mb-6">Hulp nodig met computer of techniek?</h2>
           <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
-            Bel ons of maak een afspraak — we helpen u graag met uw computerprobleem.
+            Bel ons of maak een afspraak, we helpen u graag met uw computerprobleem.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href={BUSINESS.PHONE_HREF} className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>

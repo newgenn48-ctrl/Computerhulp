@@ -19,7 +19,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: '27 augustus 2026',
   },
   {
-    quote: 'Eindelijk iemand die normaal uitlegt — geen ingewikkelde termen. Printer werkt nu perfect.',
+    quote: 'Eindelijk iemand die normaal uitlegt, geen ingewikkelde termen. Printer werkt nu perfect.',
     name: 'De heer Jan',
     initials: 'J',
     city: 'Rotterdam',

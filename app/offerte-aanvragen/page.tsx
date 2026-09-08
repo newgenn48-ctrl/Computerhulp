@@ -407,7 +407,7 @@ export default function OfferteAanvragenPage() {
                 ></textarea>
               </div>
 
-              {/* Honeypot — bots fill hidden fields, humans don't */}
+              {/* Honeypot, bots fill hidden fields, humans don't */}
               <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
                 <label htmlFor="website">Website (laat leeg)</label>
                 <input type="text" id="website" name="website" tabIndex={-1} autoComplete="off" />

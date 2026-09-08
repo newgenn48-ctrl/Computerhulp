@@ -59,15 +59,15 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong> — onze HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong>: onze HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan huis ${cityName}`,
-  servicesDescription: 'Van een simpele vraag tot een lastig probleem — wij helpen u graag',
+  servicesDescription: 'Van een simpele vraag tot een lastig probleem, wij helpen u graag',
   whyTitle: 'Waarom klanten voor ons kiezen',
   neighborhoodsSectionTitle: (_city, region) => `Computerhulp in de regio ${region}`,
   neighborhoodsSectionDescription: (cityName, region) =>
-    `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont in de regio ${region} — we zijn er snel.`,
+    `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont in de regio ${region}, we zijn er snel.`,
   pricingBenefits: (cityName) => [
     `${PRICING.TRAVEL} voorrijkosten in ${cityName}`,
     'Ook \'s avonds en in het weekend beschikbaar',
@@ -86,21 +86,21 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen — onze <strong className="text-white">deskundige</strong> HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen: onze <strong className="text-white">deskundige</strong> HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
-  servicesDescription: 'Van een laptopprobleem tot smart home — onze HBO-studenten helpen u graag',
+  servicesDescription: 'Van een laptopprobleem tot smart home, onze HBO-studenten helpen u graag',
   whyTitle: 'Waarom een student aan huis?',
   benefits: [
     { icon: 'users', title: 'Geduldige HBO-studenten', desc: 'Jonge specialisten die uitleggen stap voor stap. Geen vaktermen, wel helder.' },
     { icon: 'clock', title: 'Meestal binnen 24 uur bij u thuis', desc: 'Geen wachtlijst. Meestal de volgende dag al bij u aan de keukentafel.' },
     { icon: 'home', title: 'Gewoon thuis blijven', desc: 'U hoeft nergens naartoe. Wij komen bij u en lossen het ter plekke op.' },
-    { icon: 'money', title: 'Betalen pas na afloop', desc: 'Eerst u tevreden, dan betalen — via Tikkie. Geen abonnement, geen verborgen kosten.' },
+    { icon: 'money', title: 'Betalen pas na afloop', desc: 'Eerst u tevreden, dan betalen, via Tikkie. Geen abonnement, geen verborgen kosten.' },
   ],
   neighborhoodsSectionTitle: (city) => `Student aan huis in alle wijken van ${city.name}`,
   neighborhoodsSectionDescription: (cityName) =>
-    `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont — voorrijden kost slechts ${PRICING.TRAVEL}.`,
+    `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont, voorrijden kost slechts ${PRICING.TRAVEL}.`,
   pricingBenefits: (cityName) => [
     `${PRICING.TRAVEL} voorrijkosten in ${cityName}`,
     'Eerlijke inschatting vooraf, geen verrassingen',
@@ -209,7 +209,7 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
 
   const cityDescription = variant === 'computerhulp'
     ? (content
-        ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home — opgelost bij u thuis.`
+        ? `Professionele computerhulp aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home, opgelost bij u thuis.`
         : `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`)
     : (content
         ? `HBO-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige HBO-studenten bij u thuis.`
@@ -455,7 +455,7 @@ function getComputerhulpFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost computerhulp aan huis in ${city.name}?`,
-      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} — u betaalt dus alleen voor de hulp zelf.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}, u betaalt dus alleen voor de hulp zelf.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} komen?`,
@@ -484,7 +484,7 @@ function getStudentFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost student aan huis in ${city.name}?`,
-      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}. Betalen doet u achteraf — via pin of Tikkie.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}. Betalen doet u achteraf, via pin of Tikkie.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} langskomen?`,
@@ -492,7 +492,7 @@ function getStudentFaqDisplayData(city: City) {
     },
     {
       question: 'Waar kunnen jullie mee helpen?',
-      answer: 'Eigenlijk met alles rondom uw computer, laptop, tablet, smartphone, printer, wifi of e-mail. Of u nu een traag apparaat heeft of iets nieuws wilt instellen — wij helpen u graag.'
+      answer: 'Eigenlijk met alles rondom uw computer, laptop, tablet, smartphone, printer, wifi of e-mail. Of u nu een traag apparaat heeft of iets nieuws wilt instellen, wij helpen u graag.'
     },
     {
       question: 'Hoe werkt de betaling?',
@@ -545,17 +545,17 @@ function ComputerhulpContentSection({ city }: { city: City }) {
               {content ? (
                 <>
                   <p>
-                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — {descLead} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer, wifi, smartphone, tablet of camera. Gewoon bij u aan de keukentafel.
+                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong>: {descLead} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer, wifi, smartphone, tablet of camera. Gewoon bij u aan de keukentafel.
                   </p>
                   <p>
-                    {neighborhoodText} — onze HBO-student komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
+                    {neighborhoodText}, onze HBO-student komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
                   </p>
                   {descParas.map((para, idx) => (
                     <p key={idx}>{para}</p>
                   ))}
                   {content.highlights.length > 0 && (
                     <p>
-                      Wij kennen {city.name} en de regio {content.region} goed. Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone die ingesteld moet worden — wij zoeken het rustig uit en zorgen dat het weer werkt.
+                      Wij kennen {city.name} en de regio {content.region} goed. Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone die ingesteld moet worden, wij zoeken het rustig uit en zorgen dat het weer werkt.
                     </p>
                   )}
                   <p>
@@ -565,13 +565,13 @@ function ComputerhulpContentSection({ city }: { city: City }) {
               ) : (
                 <>
                   <p>
-                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong> — handig als uw computer, laptop, printer, wifi, smartphone, tablet of camera niet meer doet wat u wilt. U hoeft nergens naartoe, wij komen gewoon bij u thuis.
+                    <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong>: handig als uw computer, laptop, printer, wifi, smartphone, tablet of camera niet meer doet wat u wilt. U hoeft nergens naartoe, wij komen gewoon bij u thuis.
                   </p>
                   <p>
-                    Of u nu in het centrum van {city.name} woont of wat verder weg — meestal zijn we binnen 24 uur bij u. Ook in de avonduren en in het weekend.
+                    Of u nu in het centrum van {city.name} woont of wat verder weg, meestal zijn we binnen 24 uur bij u. Ook in de avonduren en in het weekend.
                   </p>
                   <p>
-                    Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone of camera die ingesteld moet worden — wij zoeken het rustig uit en zorgen dat alles weer werkt.
+                    Of het nu gaat om een trage computer, een printer die niet wil, wifi die wegvalt of een nieuwe smartphone of camera die ingesteld moet worden, wij zoeken het rustig uit en zorgen dat alles weer werkt.
                   </p>
                   <p>
                     Veelvoorkomende problemen die wij tegenkomen zijn trage computers door verouderde software, printers die na een update niet meer verbinden, wifi die op bepaalde plekken wegvalt, smartphones en tablets die ingesteld moeten worden, smart-tv&apos;s die niet met streamingdiensten verbinden, en e-mailprogramma&apos;s die opnieuw geconfigureerd moeten worden. Dit soort problemen lossen onze HBO-studenten dagelijks op.
@@ -593,7 +593,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                 </div>
                 <div>
                   <div className="font-semibold text-gray-900 mb-1">Gewoon thuis blijven</div>
-                  <div className="text-gray-600">U hoeft nergens naartoe — wij komen bij u in {city.name}.</div>
+                  <div className="text-gray-600">U hoeft nergens naartoe, wij komen bij u in {city.name}.</div>
                 </div>
               </li>
               <li className="flex items-start gap-4">
@@ -903,7 +903,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         : <StudentContentSection city={city} />
       }
 
-      {/* Neighborhoods — alleen als er echte neighborhood data is */}
+      {/* Neighborhoods, alleen als er echte neighborhood data is */}
       {(() => {
         const content = getCityContent(city.slug)
         if (!content || content.neighborhoods.length < 3) return null
@@ -955,13 +955,13 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         )
       })()}
 
-      {/* Nearby cities — discovery vóór de final CTA */}
+      {/* Nearby cities, discovery vóór de final CTA */}
       <NearbyCities currentCity={city.slug} pageType={config.urlPrefix} />
 
       {/* Cross-link section (student variant only) */}
       {variant === 'student' && <StudentCrossLinkSection city={city} />}
 
-      {/* Final CTA — consistent met hub pages */}
+      {/* Final CTA, consistent met hub pages */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="cta-title mb-6">

@@ -28,7 +28,7 @@ export default function CookieConsent() {
     try {
       if (localStorage.getItem(STORAGE_KEY)) setVisible(false)
     } catch {
-      // localStorage geblokkeerd — banner blijft staan
+      // localStorage geblokkeerd, banner blijft staan
     }
   }, [])
 

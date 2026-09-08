@@ -6,7 +6,7 @@ import Hero from '@/components/sections/Hero'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Over ons — uw HBO-student aan huis in ${BUSINESS.REGION}`,
+  title: `Over ons, uw HBO-student aan huis in ${BUSINESS.REGION}`,
   description: `Maak kennis met ${BUSINESS.NAME}. HBO-studenten die bij u thuis komen voor computerhulp. Persoonlijk, eerlijk en in gewone taal. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
@@ -119,7 +119,7 @@ export default function OverOnsPage() {
               Waarom mensen ons bellen
             </h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              Dit vinden onze klanten belangrijk — en wij ook
+              Dit vinden onze klanten belangrijk, en wij ook
             </p>
           </div>
 
@@ -128,7 +128,7 @@ export default function OverOnsPage() {
               { icon: 'users', title: 'Persoonlijk & geduldig', desc: 'We nemen de tijd om alles rustig uit te leggen. Geen haast, geen irritatie als iets niet direct lukt.' },
               { icon: 'check-circle', title: 'Eerlijk & transparant', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. Geen verrassingen achteraf. We verkopen niets onnodigs.` },
               { icon: 'clock', title: 'Snel & vakkundig', desc: `Onze studenten doen dit dagelijks en lossen de meeste problemen ter plekke op. Meestal binnen 24 uur bij u thuis.` },
-              { icon: 'heart', title: 'Voor alle leeftijden', desc: 'Of u nu 25 bent of 85 — we helpen iedereen. We passen ons tempo en onze uitleg aan uw niveau aan.' },
+              { icon: 'heart', title: 'Voor alle leeftijden', desc: 'Of u nu 25 bent of 85, we helpen iedereen. We passen ons tempo en onze uitleg aan uw niveau aan.' },
               { icon: 'home', title: 'Bij u thuis', desc: `Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, ${PRICING.TRAVEL} voorrijkosten.` },
               { icon: 'shield', title: 'Bewezen betrouwbaar', desc: `KvK ${BUSINESS.KVK}, verzekerd en gescreend. ${BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.` },
             ].map((item, idx) => (
@@ -156,7 +156,7 @@ export default function OverOnsPage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mb-10">
             {[
-              { title: 'Technisch opgeleid', desc: 'IT, Informatica of Technische Informatica — zowel hbo als wo.', icon: 'users' },
+              { title: 'Technisch opgeleid', desc: 'IT, Informatica of Technische Informatica, zowel hbo als wo.', icon: 'users' },
               { title: 'Ervaren met senioren', desc: 'We leggen uit in gewone taal, in uw tempo. Geen vaktermen.', icon: 'heart' },
               { title: 'Gescreend & verzekerd', desc: `VOG waar nodig, aansprakelijk via onze bedrijfsverzekering (KvK ${BUSINESS.KVK}).`, icon: 'shield' },
             ].map((item, idx) => (
@@ -171,7 +171,7 @@ export default function OverOnsPage() {
           </div>
 
           <p className="text-center text-sm text-gray-500">
-            Wilt u vooraf weten wie er komt? Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-medium hover:underline">{BUSINESS.PHONE}</a> — dan vertellen we wie er ingepland staat.
+            Wilt u vooraf weten wie er komt? Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-medium hover:underline">{BUSINESS.PHONE}</a>, dan vertellen we wie er ingepland staat.
           </p>
         </div>
       </section>

@@ -101,7 +101,7 @@ export default function OfferteBevestigingPage() {
 
               <div className="border-t pt-6">
                 <h3 className="font-bold text-gray-900 mb-4">Bereid u voor op ons gesprek</h3>
-                <p className="text-sm text-gray-600 mb-4">Denk alvast na over deze vragen — zo kunnen we meteen concreet worden:</p>
+                <p className="text-sm text-gray-600 mb-4">Denk alvast na over deze vragen, zo kunnen we meteen concreet worden:</p>
                 <ul className="space-y-3">
                   {[
                     'Wat moet uw website kunnen (informatie tonen, webshop, afspraken inplannen)?',

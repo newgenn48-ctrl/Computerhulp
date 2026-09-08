@@ -10,14 +10,14 @@ export interface HeroPill {
 }
 
 interface HeroProps {
-  /** Achtergrondfoto — priority=true, sizes="100vw" */
+  /** Achtergrondfoto, priority=true, sizes="100vw" */
   imageSrc: string
   imageAlt: string
-  /** Section aria-label — bv. "IT hulp aan huis hero" */
+  /** Section aria-label, bv. "IT hulp aan huis hero" */
   ariaLabel?: string
-  /** Kleine tekst boven H1 — meestal "5000+ tevreden klanten" */
+  /** Kleine tekst boven H1, meestal "5000+ tevreden klanten" */
   eyebrow: string
-  /** H1-inhoud — JSX toegestaan zodat je een <span className="hero-highlight"> highlight kunt inzetten */
+  /** H1-inhoud, JSX toegestaan zodat je een <span className="hero-highlight"> highlight kunt inzetten */
   title: ReactNode
   /** 1 of 2 paragrafen. Elke item wordt in eigen <p className="hero-description"> gerenderd */
   descriptions?: ReactNode[]

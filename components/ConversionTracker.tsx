@@ -19,7 +19,7 @@ declare global {
 export const LEAD_SENT_KEY = 'chzh-lead-sent'
 
 /**
- * Fires a Google Ads conversion event on mount — maar alleen als het formulier
+ * Fires a Google Ads conversion event on mount, maar alleen als het formulier
  * daadwerkelijk zojuist is verzonden. Zonder deze vlag (direct bezoek, verversen,
  * terugknop) telt de bedankpagina niets, zodat één inzending één conversie is.
  */

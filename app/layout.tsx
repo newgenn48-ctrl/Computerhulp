@@ -88,7 +88,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.google-analytics.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://googleads.g.doubleclick.net" crossOrigin="anonymous" />
 
-        {/* Consent Mode v2 default — MOET vóór GTM laden. Alles default 'denied',
+        {/* Consent Mode v2 default, MOET vóór GTM laden. Alles default 'denied',
             CookieConsent component upgradet naar 'granted' bij accept.
 
             Geen wait_for_update: een eerdere keuze wordt hieronder synchroon
