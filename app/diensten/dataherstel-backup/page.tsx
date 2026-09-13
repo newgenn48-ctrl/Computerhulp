@@ -11,7 +11,7 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Dataherstel en back-up aan huis | Zuid-Holland',
+  title: 'Dataherstel en back-up aan huis | Foto’s en bestanden terug',
   description: `Bestanden kwijt of harde schijf kapot? Wij redden uw data en maken backups aan huis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,

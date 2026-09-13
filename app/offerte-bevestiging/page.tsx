@@ -4,7 +4,7 @@ import { Icon } from '@/components/icons'
 import { BUSINESS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Offerte ontvangen | Computerhulp Zuid-Holland',
+  title: 'Offerte ontvangen | Computerhulp aan huis',
   description: 'Bedankt voor uw offerteaanvraag. U ontvangt meestal binnen 24 uur een offerte op maat.',
   robots: {
     index: false,

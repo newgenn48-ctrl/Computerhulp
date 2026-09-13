@@ -11,7 +11,7 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Smart home en domotica hulp aan huis | Zuid-Holland',
+  title: 'Smart home en domotica hulp aan huis | Rustig ingesteld',
   description: `Slimme apparaten installeren? Hulp nodig met slimme verlichting, thermostaten of speakers? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel nu.`,
 
   openGraph: {

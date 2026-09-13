@@ -6,7 +6,7 @@ import Hero from '@/components/sections/Hero'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Over ons, uw HBO-student aan huis in ${BUSINESS.REGION}`,
+  title: 'Over ons | Uw HBO-student aan huis',
   description: `Maak kennis met ${BUSINESS.NAME}. HBO-studenten die bij u thuis komen voor computerhulp. Persoonlijk, eerlijk en in gewone taal. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,

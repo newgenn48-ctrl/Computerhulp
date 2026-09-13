@@ -11,7 +11,7 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Printer en scanner installeren aan huis | Zuid-Holland',
+  title: 'Printer en scanner installeren aan huis | Ook draadloos',
   description: `Printer print niet of scanner werkt niet? Wij komen bij u thuis in ${BUSINESS.REGION} en lossen het op. ${PRICING.TRAVEL} voorrijkosten, meestal binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,

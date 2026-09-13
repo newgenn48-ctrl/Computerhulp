@@ -8,7 +8,7 @@ export const metadata: Metadata = {
   description: `Wat kost computerhulp aan huis? ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Transparante prijzen zonder verrassingen. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: 'Tarieven computerhulp aan huis | Zuid-Holland',
+    title: 'Tarieven computerhulp aan huis | Geen abonnement',
     description: `Transparante tarieven. ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten. Eerlijke prijzen, geen verrassingen.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/tarieven',

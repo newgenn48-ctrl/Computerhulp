@@ -11,7 +11,7 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'Wifi- en internethulp aan huis | Zuid-Holland',
+  title: 'Wifi- en internethulp aan huis | Bereik in het hele huis',
   description: `Wifi-problemen? Slecht bereik, traag of geen verbinding? Wij komen bij u thuis in ${BUSINESS.REGION} en lossen het op. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
 
   openGraph: {

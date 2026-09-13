@@ -13,7 +13,7 @@ import PricingSection from '@/components/PricingSection'
 
 
 export const metadata: Metadata = {
-  title: 'Smartphone- en tablethulp aan huis | Zuid-Holland',
+  title: 'Smartphone- en tablethulp aan huis | Rustig uitgelegd',
   description: `Smartphone- en tablethulp aan huis in ${BUSINESS.REGION}: toestel instellen, foto’s en contacten overzetten, apps en videobellen. Meestal binnen 24 uur bij u thuis.`,
   openGraph: {
     title: 'Smartphone- en tablethulp aan huis | HBO-student aan huis',

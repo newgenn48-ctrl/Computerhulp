@@ -9,11 +9,11 @@ import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 export const metadata: Metadata = {
-  title: `Computerhulp aan huis in ${cityCount} plaatsen in Zuid-Holland`,
+  title: `Computerhulp aan huis in ${cityCount} plaatsen | Alle locaties`,
   description: `Computerhulp aan huis in heel ${BUSINESS.REGION}. Bekijk alle ${cityCount} plaatsen waar wij actief zijn. Van Den Haag tot Dordrecht. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: `Computerhulp aan huis in ${cityCount} plaatsen in Zuid-Holland`,
+    title: `Computerhulp aan huis in ${cityCount} plaatsen | Alle locaties`,
     description: `Computerhulp aan huis in heel Zuid-Holland. Bekijk alle ${cityCount} plaatsen waar wij actief zijn.`,
     type: 'website',
     url: 'https://computerhulpzh.nl/locaties'

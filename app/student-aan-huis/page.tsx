@@ -9,11 +9,11 @@ import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: `Student aan huis ${BUSINESS.REGION} | HBO-student, geen abonnement`,
+  title: 'Student aan huis | HBO-student, geen abonnement',
   description: `Student aan huis in ${BUSINESS.REGION}: een geduldige HBO-student helpt u thuis met computer, laptop, wifi en tablet. ${PRICING.PER_QUARTER} per kwartier, geen abonnement.`,
   openGraph: {
     images: OG_IMAGE,
-    title: `Student aan huis ${BUSINESS.REGION} | Meestal binnen 24 uur bij u thuis`,
+    title: 'Student aan huis | Meestal binnen 24 uur bij u thuis',
     description: `Een HBO-student komt bij u thuis in ${BUSINESS.REGION} voor computer, laptop, wifi en tablet. Rustig uitgelegd, geen abonnement. Bel ${BUSINESS.PHONE}.`,
     type: 'website',
     url: `${BUSINESS.URL}/student-aan-huis`,
@@ -152,7 +152,7 @@ export default function StudentAanHuisPage() {
         imageSrc="/hero-student.webp"
         imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
-        title={<>Student <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
+        title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Een geduldige HBO-student komt bij u thuis voor uw computer, laptop, tablet, printer of wifi. Rustig uitgelegd, <strong className="text-white">zonder abonnement</strong>, en u betaalt pas achteraf.</>,
         ]}

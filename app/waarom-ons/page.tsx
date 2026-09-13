@@ -4,11 +4,11 @@ import { Icon } from '@/components/icons'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Waarom ${BUSINESS.NAME}? | Voordelen en verschillen`,
+  title: 'Waarom kiezen voor ons? | Voordelen en verschillen',
   description: `Waarom kiezen klanten voor ${BUSINESS.NAME}? Goedkoper, sneller en lokaal. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: `Waarom ${BUSINESS.NAME}?`,
+    title: 'Waarom kiezen voor ons?',
     description: `Goedkoper, sneller en lokaal. Meestal binnen 24 uur bij u thuis in heel ${BUSINESS.REGION}.`,
     type: 'website',
     url: `${BUSINESS.URL}/waarom-ons`,

@@ -13,7 +13,7 @@ import PricingSection from '@/components/PricingSection'
 
 
 export const metadata: Metadata = {
-  title: 'Computerhulp voor senioren aan huis | Zuid-Holland',
+  title: 'Computerhulp voor senioren aan huis | Geduldig uitgelegd',
   description: `Computerhulp voor senioren aan huis in ${BUSINESS.REGION}. Geduldig en in uw tempo: laptop, wifi, printer en tablet. Meestal binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Computerhulp voor senioren | HBO-student aan huis',

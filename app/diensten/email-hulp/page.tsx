@@ -11,7 +11,7 @@ import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: 'E-mailhulp aan huis | Outlook, Gmail en meer | Zuid-Holland',
+  title: 'E-mailhulp aan huis | Outlook, Gmail en meer',
   description: `E-mail problemen? Niet meer kunnen inloggen of mailbox vol? Wij komen bij u thuis in ${BUSINESS.REGION}. ${PRICING.TRAVEL} voorrijkosten. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,

@@ -4,18 +4,20 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import PricingSection from '@/components/PricingSection'
 import ServicesSection from '@/components/ServicesSection'
+import ComfortSection from '@/components/sections/ComfortSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
-import { TOP_CITIES } from '@/lib/cities'
+import { TOP_CITIES, cityCount } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
 export const metadata: Metadata = {
-  title: `Computerhulp aan huis ${BUSINESS.REGION} | Meestal binnen 24 uur`,
+  title: 'Computerhulp aan huis | Meestal binnen 24 uur bij u thuis',
   description: `Computerhulp aan huis in heel ${BUSINESS.REGION}: computer, laptop, printer, wifi en tv. Een HBO-student komt meestal binnen 24 uur, geen abonnement. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: `Computerhulp aan huis ${BUSINESS.REGION} | Meestal binnen 24 uur bij u thuis`,
+    title: 'Computerhulp aan huis | Meestal binnen 24 uur bij u thuis',
     description: `Computer, laptop, printer, wifi, tablet of tv: opgelost bij u thuis in ${BUSINESS.REGION}. Bel ${BUSINESS.PHONE}.`,
     type: 'website',
     url: `${BUSINESS.URL}/computerhulp-aan-huis`,
@@ -64,7 +66,7 @@ const structuredData = {
       '@type': 'Service',
       '@id': `${BUSINESS.URL}/computerhulp-aan-huis#service`,
       serviceType: 'Computerhulp aan huis',
-      name: `Computerhulp aan huis ${BUSINESS.REGION}`,
+      name: 'Computerhulp aan huis',
       description: `Computerhulp aan huis in heel ${BUSINESS.REGION}. Een HBO-student komt meestal binnen 24 uur bij u thuis voor computer, laptop, printer, wifi, smartphone, tablet, tv, e-mail en smart home.`,
       url: `${BUSINESS.URL}/computerhulp-aan-huis`,
       provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
@@ -98,21 +100,6 @@ const structuredData = {
     },
   ],
 }
-
-// Problemen waarvoor mensen ons bellen, in hun eigen woorden. Elk punt linkt naar de
-// dienstpagina die er het diepst op ingaat.
-const problems = [
-  { q: 'Mijn computer is zo traag geworden', a: 'We ruimen op, halen programma’s weg die ongemerkt meedraaien en werken alles bij. Is de computer echt te oud, dan zeggen we dat eerlijk.', href: '/diensten/computer-laptop-hulp', label: 'Computer- en laptophulp' },
-  { q: 'De printer doet het ineens niet meer', a: 'Meestal is de verbinding na een update of een nieuw modem verbroken. We sluiten hem opnieuw aan, ook draadloos, en testen het printen én scannen.', href: '/diensten/printer-scanner-hulp', label: 'Printerhulp' },
-  { q: 'De wifi valt weg in de slaapkamer of de tuin', a: 'We kijken waar de router staat, meten het bereik en zetten waar nodig een versterker of mesh-punt neer. Daarna werkt het overal in huis.', href: '/diensten/wifi-internet-hulp', label: 'Wifi en internet' },
-  { q: 'Ik kan niet meer in mijn e-mail', a: 'Wachtwoord kwijt, account geblokkeerd of de mail staat niet op uw telefoon: we herstellen de toegang en zetten e-mail op al uw apparaten.', href: '/diensten/email-hulp', label: 'E-mailhulp' },
-  { q: 'Er verschijnen steeds rare meldingen', a: 'Pop-ups, nepwaarschuwingen en ongewenste programma’s halen we weg. We zetten de instellingen zo dat het niet terugkomt en leggen uit wat u kunt negeren.', href: '/diensten/computer-laptop-hulp', label: 'Computer- en laptophulp' },
-  { q: 'Ik heb een nieuwe laptop, tablet of telefoon', a: 'We zetten alles over van het oude apparaat, stellen e-mail, foto’s en apps in en laten zien wat er anders werkt dan u gewend was.', href: '/diensten/smartphone-hulp-aan-huis', label: 'Smartphone en tablet' },
-  { q: 'Netflix of NPO doet het niet op de televisie', a: 'We verbinden de smart-tv met de wifi, installeren de apps en zetten de zenders op volgorde. Ook de decoder en de soundbar nemen we mee.', href: '/diensten/tv-installatie', label: 'Tv-installatie' },
-  { q: 'Ik wil videobellen met de kleinkinderen', a: 'We installeren WhatsApp of een ander programma, koppelen de contacten en oefenen het samen tot u het zelf kunt.', href: '/diensten/smartphone-hulp-aan-huis', label: 'Smartphone en tablet' },
-  { q: 'Mijn foto’s zijn weg', a: 'We halen terug wat kan en zetten een automatische back-up aan, zodat dit niet nog een keer gebeurt.', href: '/diensten/dataherstel-backup', label: 'Dataherstel en back-up' },
-  { q: 'Ik wil het eigenlijk zelf leren', a: 'Dan geven we les aan uw eigen keukentafel: e-mail, bankieren, foto’s of videobellen, op uw tempo en met de stappen op papier.', href: '/diensten/computercursus-ouderen', label: 'Computercursus' },
-]
 
 const faqItems = [
   {
@@ -160,7 +147,23 @@ const faqSchema = {
   })),
 }
 
+/* De regio's waarin we komen; dezelfde rol als de wijkenlijst op een stadspagina. */
+const REGIONS = [
+  'Haaglanden', 'Westland', 'Rijnmond', 'Drechtsteden', 'Holland Rijnland', 'Bollenstreek',
+  'Groene Hart', 'Lansingerland', 'Voorne-Putten', 'Hoeksche Waard', 'Alblasserwaard',
+  'Krimpenerwaard', 'Goeree-Overflakkee', 'Midden-Delfland',
+]
+
+/* Dezelfde opbouw als een stadspagina (/computerhulp-aan-huis-[stad]), maar dan voor de hele provincie:
+   hero, diensten, geruststelling, prijs, reviews, werkwijze, FAQ, tekst met voordelen, regio's, plaatsen, CTA. */
 export default function ComputerhulpAanHuisPage() {
+  const voordelen = [
+    { title: 'Gewoon thuis blijven', desc: `U hoeft nergens naartoe, wij komen bij u thuis in heel ${BUSINESS.REGION}.` },
+    { title: 'Snel geregeld', desc: 'Meestal is het probleem in één bezoek opgelost, vaak binnen 24 uur na uw telefoontje.' },
+    { title: 'Rustige uitleg', desc: 'We nemen de tijd om alles duidelijk uit te leggen, in gewone taal.' },
+    { title: `${PRICING.TRAVEL} voorrijkosten`, desc: `In alle ${cityCount} gemeenten van ${BUSINESS.REGION}, zonder toeslag voor avond of weekend.` },
+  ]
+
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }} />
@@ -170,7 +173,7 @@ export default function ComputerhulpAanHuisPage() {
         imageSrc="/hero-computerhulp.webp"
         imageAlt={`HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
-        title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
+        title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Computer, laptop, printer, wifi, tablet of televisie: een HBO-student komt bij u thuis in heel {BUSINESS.REGION}, meestal binnen 24 uur, en lost het rustig op. <strong className="text-white">Geen abonnement, geen gedoe.</strong></>,
         ]}
@@ -181,105 +184,29 @@ export default function ComputerhulpAanHuisPage() {
         ]}
       />
 
-      {/* 1. Diensten als fotokaarten: zelf kwalificeren */}
       <ServicesSection
         eyebrow="Onze hulp"
-        title="Waarmee kunnen we u thuis helpen?"
-        subtitle="Klik op wat u herkent, of bel gewoon: u hoeft het probleem niet zelf te benoemen."
+        title="Waar wij u mee helpen"
+        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
         photoCards={true}
         limitServices={6}
         showAllButton={true}
       />
 
-      {/* 2. Problemen in de woorden van de beller */}
-      <section className="panel-section" aria-labelledby="problemen-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="panel panel-pad">
-            <header className="mb-8">
-              <p className="section-eyebrow">Herkent u dit?</p>
-              <h2 id="problemen-heading" className="section-title">Problemen die we dagelijks oplossen</h2>
-              <p className="section-subtitle">Zo omschrijven mensen het aan de telefoon. Daaronder wat wij dan doen.</p>
-            </header>
-            <dl className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-7">
-              {problems.map((item) => (
-                <div key={item.q} className="border-l-4 border-blue-600 pl-4">
-                  <dt className="font-bold text-gray-900 text-lg leading-snug">“{item.q}”</dt>
-                  <dd className="text-gray-600 leading-relaxed mt-1.5">
-                    {item.a}{' '}
-                    <Link href={item.href} className="text-blue-700 font-semibold hover:underline whitespace-nowrap">
-                      {item.label} →
-                    </Link>
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
+      <ComfortSection variant="computerhulp" />
 
-      {/* 3. Werkwijze in detail: wat er precies gebeurt bij een bezoek */}
-      <section className="panel-section" aria-labelledby="bezoek-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <p className="section-eyebrow">Zo gaat het</p>
-          <h2 id="bezoek-heading" className="section-title mb-6">Zo verloopt een huisbezoek</h2>
-          <div className="prose prose-lg text-gray-700 max-w-none">
-            <p>
-              <strong>U belt of vult het formulier in.</strong> Vertel in uw eigen woorden wat er niet werkt; technische termen zijn niet nodig. Aan de telefoon geven we meteen een inschatting van de tijd en de kosten, en soms lossen we een kleine vraag al direct op.
-            </p>
-            <p>
-              <strong>We plannen een moment dat u uitkomt.</strong> Meestal kunnen we binnen 24 uur langskomen, ook ’s avonds en in het weekend. U krijgt de naam van de student die komt en een tijdvak, zodat u weet wie er voor de deur staat.
-            </p>
-            <p>
-              <strong>De student komt bij u thuis.</strong> Met kabels, adapters en gereedschap in de tas. We werken op uw eigen apparaat, op de plek waar het normaal staat, en vertellen ondertussen wat we doen. Een gemiddeld bezoek duurt drie tot vier kwartier.
-            </p>
-            <p>
-              <strong>We controleren samen of alles werkt.</strong> U probeert het zelf, wij kijken mee. De belangrijkste stappen schrijven we desgewenst voor u op, zodat u ze later rustig kunt nalezen.
-            </p>
-            <p>
-              <strong>U betaalt achteraf.</strong> Per kwartier, via pin of Tikkie, en alleen de tijd die we er echt zijn geweest. Geen abonnement en geen verplichtingen. Heeft u een week later nog een vraag, dan belt u gewoon even.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Prijs, na vertrouwen */}
       <PricingSection />
 
-      {/* 5. Voor wie */}
-      <section className="panel-section" aria-labelledby="voorwie-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="panel panel-pad">
-            <header className="mb-8">
-              <p className="section-eyebrow">Voor wie</p>
-              <h2 id="voorwie-heading" className="section-title">Voor iedereen die liever iemand aan tafel heeft</h2>
-            </header>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="step-card">
-                <h3 className="font-bold text-gray-900 text-lg mb-2">Senioren</h3>
-                <p className="text-gray-600 leading-relaxed">Geen helpdesk aan de telefoon, maar een geduldige student naast u. In uw tempo, in gewone taal, en zonder dat u iets hoeft te kopen. Lees meer bij <Link href="/diensten/computerhulp-senioren" className="text-blue-700 font-semibold hover:underline">computerhulp voor senioren</Link>.</p>
-              </div>
-              <div className="step-card">
-                <h3 className="font-bold text-gray-900 text-lg mb-2">Gezinnen en thuiswerkers</h3>
-                <p className="text-gray-600 leading-relaxed">Wifi die het hele huis moet dekken, een printer voor het huiswerk en een laptop voor het werk. We lossen het op een moment op dat u uitkomt, ook ’s avonds.</p>
-              </div>
-              <div className="step-card">
-                <h3 className="font-bold text-gray-900 text-lg mb-2">Kleine ondernemers</h3>
-                <p className="text-gray-600 leading-relaxed">Een kassa die niet print, e-mail die niet binnenkomt of een nieuwe laptop voor de administratie. Dezelfde student, hetzelfde tarief, gewoon op locatie.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. Reviews */}
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
 
-      {/* 7. FAQ */}
+      <HowItWorksSection />
+
+      {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-10">
             <p className="section-eyebrow">FAQ</p>
-            <h2 id="faq-heading" className="section-title">Veelgestelde vragen over computerhulp aan huis</h2>
+            <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
           </header>
           <div className="space-y-4">
             {faqItems.map((faq, idx) => (
@@ -290,6 +217,66 @@ export default function ComputerhulpAanHuisPage() {
                 </summary>
                 <div className="faq-answer">{faq.a}</div>
               </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Tekst met voordelen, zoals "Waarom computerhulp aan huis in [stad]?" op een stadspagina */}
+      <section className="panel-section" aria-labelledby="waarom-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
+            <div>
+              <span className="section-label">Over ons</span>
+              <h2 id="waarom-heading" className="section-title-lg mt-4 mb-8">
+                Waarom computerhulp aan huis?
+              </h2>
+              <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+                <p>
+                  <strong className="text-gray-900">Computerhulp aan huis</strong> betekent dat u niets hoeft te sjouwen en niets hoeft uit te leggen aan een helpdesk. U belt of vult het formulier in, vertelt in uw eigen woorden wat er niet werkt, en wij geven meteen een inschatting van de tijd en de kosten. Soms lossen we een kleine vraag al aan de telefoon op.
+                </p>
+                <p>
+                  Daarna komt een HBO-student bij u langs, met kabels, adapters en gereedschap in de tas. We werken op uw eigen apparaat, op de plek waar het normaal staat, en vertellen ondertussen wat we doen. Een gemiddeld bezoek duurt drie tot vier kwartier. Aan het eind probeert u het zelf terwijl wij meekijken, en schrijven we de belangrijkste stappen desgewenst voor u op.
+                </p>
+                <p>
+                  De vragen die we in {BUSINESS.REGION} het vaakst krijgen: een computer die traag is geworden, een printer die na een update niet meer wil, wifi die in de slaapkamer of de tuin wegvalt, e-mail waar u niet meer in komt, rare meldingen op het scherm, een nieuwe laptop, tablet of telefoon die ingericht moet worden, Netflix dat het niet doet op de televisie, en videobellen met de kleinkinderen. Zie ook <Link href="/diensten/computer-laptop-hulp" className="text-blue-700 font-semibold hover:underline">computer- en laptophulp</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-700 font-semibold hover:underline">wifi en internet</Link> en <Link href="/diensten/tv-installatie" className="text-blue-700 font-semibold hover:underline">tv-installatie</Link>.
+                </p>
+                <p>
+                  We helpen senioren die liever iemand naast zich hebben dan een helpdesk aan de lijn, gezinnen en thuiswerkers die wifi in het hele huis en een werkende printer nodig hebben, en kleine ondernemers met een kassa die niet print of een nieuwe laptop voor de administratie. Dezelfde student, hetzelfde tarief, gewoon bij u op locatie. Wilt u het liever zelf leren? Dan geven we <Link href="/diensten/computercursus-ouderen" className="text-blue-700 font-semibold hover:underline">les aan uw eigen keukentafel</Link>.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gray-50 rounded-3xl p-8 sm:p-10">
+              <h3 className="text-2xl font-bold text-gray-900 mb-8">Uw voordelen</h3>
+              <ul className="space-y-6">
+                {voordelen.map((v) => (
+                  <li key={v.title} className="flex items-start gap-4">
+                    <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                      <Icon name="check" className="w-5 h-5 text-white" strokeWidth={2} />
+                    </div>
+                    <div>
+                      <div className="font-semibold text-gray-900 mb-1">{v.title}</div>
+                      <div className="text-gray-600">{v.desc}</div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Regio's, zoals de wijkenlijst op een stadspagina */}
+      <section className="panel-section" aria-labelledby="regio-heading">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <h2 id="regio-heading" className="section-title">Computerhulp in heel {BUSINESS.REGION}</h2>
+          <p className="section-subtitle mb-8">
+            Wij komen in alle {cityCount} gemeenten van {BUSINESS.REGION}, van de kust tot het Groene Hart. Waar u ook woont, voorrijden kost {PRICING.TRAVEL} en we zijn er meestal binnen 24 uur.
+          </p>
+          <div className="flex flex-wrap gap-3">
+            {REGIONS.map((r) => (
+              <span key={r} className="city-tag">{r}</span>
             ))}
           </div>
         </div>

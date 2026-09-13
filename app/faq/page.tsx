@@ -4,11 +4,11 @@ import { Icon } from '@/components/icons'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Veelgestelde vragen (FAQ) | ${BUSINESS.NAME}`,
+  title: 'Veelgestelde vragen (FAQ) | Computerhulp aan huis',
   description: `Antwoorden op veelgestelde vragen over computerhulp aan huis: prijzen, werkgebied, diensten en meer. Meestal binnen 24 uur geholpen. Bel ons op ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
-    title: `Veelgestelde vragen (FAQ) | ${BUSINESS.NAME}`,
+    title: 'Veelgestelde vragen (FAQ) | Computerhulp aan huis',
     description: 'Antwoorden op veelgestelde vragen over onze computerhulp diensten, prijzen en werkgebied.',
     type: 'website',
     url: `${BUSINESS.URL}/faq`,

@@ -5,7 +5,7 @@ import { Icon } from '@/components/icons'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: `Afspraak ontvangen | ${BUSINESS.NAME}`,
+  title: 'Afspraak ontvangen | Computerhulp aan huis',
   description: 'Bedankt voor uw afspraakaanvraag. We bellen u meestal binnen een uur terug.',
   robots: {
     index: false,
