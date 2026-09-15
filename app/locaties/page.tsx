@@ -138,11 +138,11 @@ export default function LocatiesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">{cities.length}+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{cities.length}</div>
               <div className="text-gray-600">Gemeenten</div>
             </div>
             <div>
-              <div className="text-4xl font-bold text-blue-600 mb-2">{villages.length}+</div>
+              <div className="text-4xl font-bold text-blue-600 mb-2">{villages.length}</div>
               <div className="text-gray-600">Dorpen en kernen</div>
             </div>
             <div>
@@ -244,7 +244,7 @@ export default function LocatiesPage() {
           <header className="text-center mb-12">
             <h2 id="locations-testimonials-heading" className="section-title">Recent geholpen in {BUSINESS.REGION}</h2>
             <p className="section-subtitle">Klanten uit Delft, Rotterdam, Den Haag, Gouda en meer</p>
-            <p className="text-sm text-gray-500 mt-2 lg:hidden">← Swipe voor meer reviews →</p>
+            <p className="text-sm text-gray-500 mt-2 lg:hidden">Schuif opzij voor meer ervaringen</p>
           </header>
           <TestimonialsCarousel testimonials={HUB_TESTIMONIALS} />
         </div>

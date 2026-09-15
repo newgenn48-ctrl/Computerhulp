@@ -3,11 +3,11 @@ import { BUSINESS, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Contact | Computerhulp aan huis | Bel ${BUSINESS.PHONE}`,
-  description: `Neem contact op met ${BUSINESS.NAME}. Bel ${BUSINESS.PHONE} of vul het formulier in. Binnen 1 uur reactie. ${HOURS.DAYS} bereikbaar.`,
+  description: `Neem contact op met ${BUSINESS.NAME}. Bel ${BUSINESS.PHONE} of vul het formulier in. Meestal binnen 1 uur reactie. ${HOURS.DAYS} bereikbaar.`,
   openGraph: {
     images: OG_IMAGE,
     title: 'Contact | Computerhulp aan huis',
-    description: `Neem contact op voor computerhulp aan huis. Bel ${BUSINESS.PHONE} of vul het formulier in. Binnen 1 uur reactie.`,
+    description: `Neem contact op voor computerhulp aan huis. Bel ${BUSINESS.PHONE} of vul het formulier in. Meestal binnen 1 uur reactie.`,
     type: 'website',
     url: `${BUSINESS.URL}/contact`,
   },

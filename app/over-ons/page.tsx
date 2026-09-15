@@ -94,7 +94,7 @@ export default function OverOnsPage() {
                   Dus startten we <strong>{BUSINESS.NAME}</strong>. Het concept was eenvoudig: bij mensen thuis komen, in begrijpelijke taal uitleggen wat er aan de hand is, en het probleem ter plekke oplossen. Geen jargon, geen onnodige verkoop.
                 </p>
                 <p className="text-lg text-gray-700 leading-relaxed">
-                  Wat klein begon, groeide uit tot heel {BUSINESS.REGION}. Inmiddels hebben we {BUSINESS.REVIEW_COUNT} mensen geholpen met alles van een trage laptop tot complexe netwerkinstallaties. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
+                  Wat klein begon, groeide uit tot heel {BUSINESS.REGION}. Inmiddels hebben we {BUSINESS.REVIEW_COUNT} mensen geholpen met alles van een trage laptop tot wifi in het hele huis. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
                 </p>
               </div>
             </div>
@@ -128,7 +128,7 @@ export default function OverOnsPage() {
               { icon: 'users', title: 'Persoonlijk & geduldig', desc: 'We nemen de tijd om alles rustig uit te leggen. Geen haast, geen irritatie als iets niet direct lukt.' },
               { icon: 'check-circle', title: 'Eerlijk & transparant', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. Geen verrassingen achteraf. We verkopen niets onnodigs.` },
               { icon: 'clock', title: 'Snel & vakkundig', desc: `Onze studenten doen dit dagelijks en lossen de meeste problemen ter plekke op. Meestal binnen 24 uur bij u thuis.` },
-              { icon: 'heart', title: 'Voor alle leeftijden', desc: 'Of u nu 25 bent of 85, we helpen iedereen. We passen ons tempo en onze uitleg aan uw niveau aan.' },
+              { icon: 'heart', title: 'Voor alle leeftijden', desc: 'We passen ons tempo en onze uitleg aan u aan. Geen haast, geen vaktermen.' },
               { icon: 'home', title: 'Bij u thuis', desc: `Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, ${PRICING.TRAVEL} voorrijkosten.` },
               { icon: 'shield', title: 'Bewezen betrouwbaar', desc: `KvK ${BUSINESS.KVK}, verzekerd en gescreend. ${BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.` },
             ].map((item, idx) => (
@@ -150,7 +150,7 @@ export default function OverOnsPage() {
           <header className="text-center mb-12">
             <h2 className="section-title">Ons team</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              HBO-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Stuk voor stuk gescreend, verzekerd en met minimaal 2 jaar praktijkervaring.
+              HBO-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Stuk voor stuk gescreend en verzekerd.
             </p>
           </header>
 
@@ -158,7 +158,7 @@ export default function OverOnsPage() {
             {[
               { title: 'Technisch opgeleid', desc: 'IT, Informatica of Technische Informatica, zowel hbo als wo.', icon: 'users' },
               { title: 'Ervaren met senioren', desc: 'We leggen uit in gewone taal, in uw tempo. Geen vaktermen.', icon: 'heart' },
-              { title: 'Gescreend & verzekerd', desc: `VOG waar nodig, aansprakelijk via onze bedrijfsverzekering (KvK ${BUSINESS.KVK}).`, icon: 'shield' },
+              { title: 'Gescreend & verzekerd', desc: `Verzekerd via onze bedrijfsaansprakelijkheidsverzekering (KvK ${BUSINESS.KVK}).`, icon: 'shield' },
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">
@@ -194,6 +194,7 @@ export default function OverOnsPage() {
               { title: `${PRICING.TRAVEL} voorrijkosten`, desc: `In heel ${BUSINESS.REGION} komen we bij u langs. ${HOURS.DAYS}, ook in de avond.` },
               { title: 'Eerlijke prijzen', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. We geven altijd een eerlijke inschatting vooraf.` },
               { title: 'Privacy & veiligheid', desc: 'Uw gegevens zijn veilig bij ons. We behandelen uw informatie met de grootst mogelijke zorgvuldigheid.' },
+              { title: 'Werkt het toch niet?', desc: 'Lukt het niet, dan betaalt u alleen de tijd van de diagnose. Werkt iets binnen 30 dagen na ons bezoek toch weer niet, dan komen we gratis terug.' },
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4 bg-surface rounded-xl p-6 border border-gray-200">
                 <Icon name="check-circle" className="w-7 h-7 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />

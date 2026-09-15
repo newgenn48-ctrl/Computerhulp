@@ -112,7 +112,7 @@ export default function EmailHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u problemen met uw e-mail? Niet meer kunnen inloggen, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in, <strong className="text-white">meestal in een halfuur klaar</strong>.
+              Heeft u problemen met uw e-mail? Niet meer kunnen inloggen, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in, <strong className="text-white">meestal in één bezoek geregeld</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">

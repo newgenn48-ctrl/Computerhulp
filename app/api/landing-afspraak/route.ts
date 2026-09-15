@@ -4,8 +4,17 @@ import { sanitizeHtml, sanitizeText, validatePhone, validateLength } from '@/lib
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
 import { BUSINESS } from '@/lib/constants'
 
+export const maxDuration = 30
+
 export async function POST(request: NextRequest) {
   try {
+    if (!process.env.SMTP_HOST || !process.env.SMTP_TO) {
+      console.error('[API Error - Landing Afspraak] SMTP-omgevingsvariabelen ontbreken (SMTP_HOST/SMTP_TO)')
+      return NextResponse.json(
+        { error: `E-mail kon niet worden verzonden. Bel ons direct op ${BUSINESS.PHONE}.` },
+        { status: 503 }
+      )
+    }
     const clientIP = getClientIP(request)
     const rateLimitResult = checkRateLimit(`landing:${clientIP}`, RATE_LIMITS.afspraak)
 
@@ -22,21 +31,24 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { naam, telefoon, probleem, website } = body
+    const { naam, telefoon, probleem, website, bron } = body
 
     // Honeypot — bots fill hidden fields, humans don't
     if (website) {
       return NextResponse.json({ message: 'Aanvraag succesvol verzonden!' }, { status: 200 })
     }
 
-    if (!naam || !telefoon || !probleem) {
+    // Terugbelverzoek: naam en nummer zijn genoeg, de omschrijving is optioneel.
+    if (typeof naam !== 'string' || !naam.trim() || typeof telefoon !== 'string' || !telefoon.trim()) {
       return NextResponse.json(
-        { error: 'Alle velden zijn verplicht' },
+        { error: 'Vul uw naam en telefoonnummer in' },
         { status: 400 }
       )
     }
+    const omschrijving = typeof probleem === 'string' && probleem.trim() ? probleem.trim() : 'Geen omschrijving: de klant wil teruggebeld worden.'
+    const herkomst = typeof bron === 'string' ? bron.trim().slice(0, 120) : ''
 
-    if (!validateLength(naam, 100) || !validateLength(telefoon, 20) || !validateLength(probleem, 2000)) {
+    if (!validateLength(naam, 100) || !validateLength(telefoon, 20) || !validateLength(omschrijving, 2000)) {
       return NextResponse.json(
         { error: 'Een of meerdere velden zijn te lang' },
         { status: 400 }
@@ -52,11 +64,13 @@ export async function POST(request: NextRequest) {
 
     const safeNaam = sanitizeHtml(naam.trim())
     const safeTelefoon = sanitizeHtml(telefoon.trim())
-    const safeProbleem = sanitizeHtml(probleem.trim())
+    const safeProbleem = sanitizeHtml(omschrijving)
+    const safeHerkomst = sanitizeHtml(herkomst)
 
     const textNaam = sanitizeText(naam.trim())
     const textTelefoon = sanitizeText(telefoon.trim())
-    const textProbleem = sanitizeText(probleem.trim())
+    const textProbleem = sanitizeText(omschrijving)
+    const textHerkomst = sanitizeText(herkomst)
 
     const port = parseInt(process.env.SMTP_PORT || '587')
     const transporter = nodemailer.createTransport({
@@ -72,7 +86,7 @@ export async function POST(request: NextRequest) {
     const adminMailOptions = {
       from: process.env.SMTP_FROM,
       to: process.env.SMTP_TO,
-      subject: `[Landing Page] Nieuwe aanvraag van ${textNaam}`,
+      subject: `Terugbelverzoek van ${textNaam}${textHerkomst ? ` (via ${textHerkomst})` : ''}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -96,8 +110,8 @@ export async function POST(request: NextRequest) {
           <body>
             <div class="container">
               <div class="header">
-                <h1>Nieuwe Aanvraag via Landing Page</h1>
-                <span class="badge">Google Ads Landing</span>
+                <h1>Terugbelverzoek</h1>
+                <span class="badge">Bel deze klant terug${safeHerkomst ? ` · pagina ${safeHerkomst}` : ''}</span>
               </div>
               <div class="content">
                 <div class="info-box">
@@ -111,7 +125,7 @@ export async function POST(request: NextRequest) {
                   </div>
                 </div>
                 <div class="info-box">
-                  <div class="label">Probleem omschrijving</div>
+                  <div class="label">Omschrijving</div>
                   <div class="problem-box">${safeProbleem}</div>
                 </div>
                 <div style="text-align: center; margin-top: 25px;">
@@ -127,10 +141,11 @@ export async function POST(request: NextRequest) {
         </html>
       `,
       text: `
-[LANDING PAGE] Nieuwe Aanvraag
+Terugbelverzoek
 
 Naam: ${textNaam}
 Telefoon: ${textTelefoon}
+Pagina: ${textHerkomst || '(onbekend)'}
 
 Probleem:
 ${textProbleem}
@@ -152,7 +167,10 @@ Neem zo snel mogelijk contact op!
       timestamp: new Date().toISOString(),
     })
 
-    if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
+    // Alle mailserverfouten (verbinding, login, time-out) als 503 met belnummer, niet als vage 500
+    const code = typeof (error as { code?: unknown })?.code === 'string' ? (error as { code: string }).code : ''
+    const mailFault = ['EAUTH', 'ECONNECTION', 'ECONNREFUSED', 'ETIMEDOUT', 'ESOCKET', 'EDNS', 'EENVELOPE'].includes(code)
+    if (mailFault || (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED') || error.message.includes('Invalid login')))) {
       return NextResponse.json(
         { error: `E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
         { status: 503 }

@@ -53,14 +53,15 @@ export default function StickyMobileBar() {
           aria-label={`Bel ${BUSINESS.PHONE}`}
         >
           <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-          {BUSINESS.PHONE}
+          Bel {BUSINESS.PHONE}
         </a>
         <a
           href="/afspraak-maken"
-          className="inline-flex items-center justify-center gap-1 bg-white border-2 border-gray-200 text-gray-900 rounded-xl px-4 font-medium text-sm"
+          className="inline-flex items-center justify-center gap-1.5 bg-white border-2 border-gray-200 text-gray-900 rounded-xl px-3.5 font-medium text-sm whitespace-nowrap"
           aria-label="Online afspraak maken"
         >
           <Icon name="calendar" className="w-5 h-5 text-blue-600" strokeWidth={2} aria-hidden="true" />
+          Afspraak
         </a>
       </div>
     </div>

@@ -43,7 +43,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>Contactgegevens (naam, telefoonnummer, e-mailadres)</li>
               <li>Adresgegevens (voor het uitvoeren van werkzaamheden)</li>
-              <li>Technische informatie over uw apparaten (alleen wat nodig is voor reparatie)</li>
+              <li>Technische informatie over uw apparaten (alleen wat nodig is voor de hulp)</li>
               <li>Factuurgegevens en betalingsinformatie</li>
               <li>Communicatie tussen u en ons</li>
             </ul>
@@ -55,7 +55,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>Het uitvoeren van afspraken en dienstverlening</li>
               <li>Het versturen van facturen en administratie</li>
-              <li>Contact met u over uw aanvraag of reparatie</li>
+              <li>Contact met u over uw aanvraag of de hulp</li>
               <li>Het nakomen van wettelijke verplichtingen</li>
             </ul>
             <p className="mt-4">Wij gebruiken uw gegevens <strong>NIET</strong> voor:</p>
@@ -72,7 +72,7 @@ export default function PrivacyPage() {
             <ul className="list-disc pl-6 space-y-2">
               <li>Contactgegevens: tot 2 jaar na laatste contact</li>
               <li>Factuurgegevens: 7 jaar (wettelijke verplichting)</li>
-              <li>Technische informatie: alleen tijdens reparatie</li>
+              <li>Technische informatie: alleen tijdens de hulp</li>
             </ul>
           </section>
 

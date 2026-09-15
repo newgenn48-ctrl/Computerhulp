@@ -12,7 +12,7 @@ const rateLimitStore = new Map<string, RateLimitEntry>()
 
 // Clean up old entries periodically (every 5 minutes)
 if (typeof setInterval !== 'undefined') {
-  setInterval(() => {
+  const timer = setInterval(() => {
     const now = Date.now()
     for (const [key, entry] of rateLimitStore.entries()) {
       if (entry.resetTime < now) {
@@ -20,6 +20,8 @@ if (typeof setInterval !== 'undefined') {
       }
     }
   }, 5 * 60 * 1000)
+  // Houdt het proces (en Jest) niet open
+  ;(timer as { unref?: () => void }).unref?.()
 }
 
 export interface RateLimitConfig {

@@ -100,7 +100,7 @@ export default function DienstenPage() {
           <div className="max-w-2xl">
             <p className="section-eyebrow">Alle diensten · Zuid-Holland</p>
             <h1 className="section-title-lg">
-              Alle diensten in <span className="text-blue-600">Zuid-Holland</span>
+              Waar wij u thuis mee helpen
             </h1>
 
             <p className="section-subtitle mb-8 max-w-xl">
@@ -128,7 +128,7 @@ export default function DienstenPage() {
           <div className="text-center mb-12">
             <h2 className="section-title">Waar wij u mee helpen</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              Tik op een dienst voor meer informatie
+              Kies hieronder waar u hulp bij wilt
             </p>
           </div>
 
@@ -269,7 +269,7 @@ export default function DienstenPage() {
           </h2>
           <div className="prose prose-lg max-w-none">
             <p className="text-gray-700 leading-relaxed mb-4">
-              Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? Een compleet pakket IT-diensten voor particulieren en kleine ondernemers in heel {BUSINESS.REGION}. Van computer- en laptophulp tot wifi-installatie, van printerproblemen tot smart-home-oplossingen.
+              Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? We helpen particulieren en kleine ondernemers in heel {BUSINESS.REGION} met alles rondom hun apparaten. Van computer- en laptophulp tot wifi-installatie, van printerproblemen tot smart-home-oplossingen.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               Onze HBO-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp, we helpen vakkundig en persoonlijk, in gewone taal.

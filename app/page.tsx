@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
+import CallbackSection from '@/components/sections/CallbackSection'
 import ServicesSection from '@/components/ServicesSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
@@ -211,10 +212,13 @@ export default function HomePage() {
         ]}
         pills={[
           { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
-          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'money', label: 'Betalen achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
+
+      {/* Bellen of teruggebeld worden, meteen onder de hero */}
+      <CallbackSection />
 
       {/* Diensten als fotokaarten: het apparaat op de foto vertelt meteen
           waar het vakje over gaat */}

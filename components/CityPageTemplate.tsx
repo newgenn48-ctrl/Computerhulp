@@ -5,6 +5,7 @@ import PricingSection from '@/components/PricingSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import Hero from '@/components/sections/Hero'
+import CallbackSection from '@/components/sections/CallbackSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import { Icon } from '@/components/icons'
@@ -845,11 +846,12 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
             icon: 'academic-cap',
             label: 'HBO-opgeleide studenten',
           },
-          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'money', label: 'Betalen achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
 
+      <CallbackSection cityName={city.name} />
 
       {/* Vaste volgorde voor beide varianten: diensten → waarom → prijs
           → reviews → hoe. Wat per variant verschilt zit in config. */}

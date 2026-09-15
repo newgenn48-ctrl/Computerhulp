@@ -82,7 +82,7 @@ export const TESTIMONIALS: Testimonial[] = [
     date: '15 juli 2026',
   },
   {
-    quote: 'Mijn printer deed het al maanden niet meer. Ik had er zelf uren aan gezeten. De monteur loste het op in tien minuten.',
+    quote: 'Mijn printer deed het al maanden niet meer. Ik had er zelf uren aan gezeten. De student loste het op in tien minuten.',
     name: 'De heer Bert',
     initials: 'B',
     city: 'Vlaardingen',

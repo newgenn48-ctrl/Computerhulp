@@ -112,7 +112,7 @@ export default function PrinterScannerHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u hulp nodig met uw printer of scanner? Draadloos printen, scannen of installatie, we regelen het bij u thuis. De meeste printerproblemen zijn <strong className="text-white">in een halfuur opgelost</strong>.
+              Heeft u hulp nodig met uw printer of scanner? Draadloos printen, scannen of installatie, we regelen het bij u thuis. De meeste printerproblemen zijn <strong className="text-white">in één bezoek opgelost, vaak binnen drie kwartier</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">

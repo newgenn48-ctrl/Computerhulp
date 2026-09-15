@@ -290,8 +290,8 @@ export default function WebsiteLatenMakenPage() {
                 { icon: '🎨', title: 'Maatwerk Design', desc: 'Uniek design dat perfect past bij uw merk', color: 'from-blue-500 to-blue-700', size: 'col-span-1' },
                 { icon: '⚙️', title: 'Uw Keuze', desc: 'Custom code óf WordPress, Shopify, Wix - wat u wilt', color: 'from-indigo-500 to-indigo-700', size: 'col-span-1' },
                 { icon: '📱', title: 'Mobile First', desc: 'Perfect op alle schermformaten', color: 'from-blue-700 to-indigo-800', size: 'col-span-1' },
-                { icon: '🔍', title: 'SEO Proof', desc: 'Bovenaan in Google vanaf dag 1', color: 'from-action-600 to-action-700', size: 'col-span-1' },
-                { icon: '⚡', title: 'Supersnel', desc: 'Optimale performance gegarandeerd', color: 'from-indigo-600 to-blue-600', size: 'col-span-1' },
+                { icon: '🔍', title: 'SEO Proof', desc: 'Gebouwd om goed gevonden te worden', color: 'from-action-600 to-action-700', size: 'col-span-1' },
+                { icon: '⚡', title: 'Supersnel', desc: 'Snel op telefoon en computer', color: 'from-indigo-600 to-blue-600', size: 'col-span-1' },
                 { icon: '💬', title: 'Direct Contact', desc: 'Persoonlijk aanspreekpunt, altijd', color: 'from-blue-600 to-indigo-600', size: 'col-span-1' }
               ].map((feature, idx) => (
                 <div

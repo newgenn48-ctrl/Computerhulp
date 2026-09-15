@@ -4,8 +4,18 @@ import { sanitizeHtml, sanitizeText, validateEmail, validatePhone, validateLengt
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
 import { BUSINESS, HOURS } from '@/lib/constants'
 
+// Twee SMTP-verzendingen vanaf een koude start passen niet in de standaard 10 s
+export const maxDuration = 30
+
 export async function POST(request: NextRequest) {
   try {
+    if (!process.env.SMTP_HOST || !process.env.SMTP_TO) {
+      console.error('[API Error - Afspraak] SMTP-omgevingsvariabelen ontbreken (SMTP_HOST/SMTP_TO)')
+      return NextResponse.json(
+        { error: `E-mail kon niet worden verzonden. Bel ons direct op ${BUSINESS.PHONE}.` },
+        { status: 503 }
+      )
+    }
     // Rate limiting
     const clientIP = getClientIP(request)
     const rateLimitResult = checkRateLimit(`afspraak:${clientIP}`, RATE_LIMITS.afspraak)
@@ -53,8 +63,8 @@ export async function POST(request: NextRequest) {
     const optProbleem = typeof probleem === 'string' ? probleem.trim() : ''
 
     // Validatie - Length limits
-    if (!validateLength(naam, 100) ||
-        !validateLength(telefoon, 20) ||
+    if (!validateLength(naam.trim(), 100) ||
+        !validateLength(telefoon.trim(), 20) ||
         !validateLength(optEmail, 254) ||
         !validateLength(optAdres, 120) ||
         !validateLength(optPostcode, 10) ||
@@ -295,10 +305,17 @@ KvK: ${BUSINESS.KVK}
       `,
     }
 
-    // Verstuur admin-mail; klant-bevestiging alleen als er een e-mailadres is opgegeven
+    // Verstuur admin-mail; de klantbevestiging is best-effort: als die faalt (typfout in het
+    // e-mailadres, greylisting) is de aanvraag tóch binnen en mag de klant geen foutmelding zien.
     await transporter.sendMail(adminMailOptions)
     if (safeEmail) {
-      await transporter.sendMail(customerMailOptions)
+      try {
+        await transporter.sendMail(customerMailOptions)
+      } catch (mailError) {
+        console.error('[API Warning - Afspraak] Klantbevestiging niet verzonden', {
+          error: mailError instanceof Error ? mailError.message : 'Unknown error',
+        })
+      }
     }
 
     return NextResponse.json(
@@ -312,7 +329,10 @@ KvK: ${BUSINESS.KVK}
       timestamp: new Date().toISOString()
     })
 
-    if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
+    // Alle mailserverfouten (verbinding, login, time-out) als 503 met belnummer, niet als vage 500
+    const code = typeof (error as { code?: unknown })?.code === 'string' ? (error as { code: string }).code : ''
+    const mailFault = ['EAUTH', 'ECONNECTION', 'ECONNREFUSED', 'ETIMEDOUT', 'ESOCKET', 'EDNS', 'EENVELOPE'].includes(code)
+    if (mailFault || (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED') || error.message.includes('Invalid login')))) {
       return NextResponse.json(
         { error: `E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
         { status: 503 }

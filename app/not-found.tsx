@@ -13,13 +13,11 @@ export default function NotFound() {
     <div className="min-h-screen bg-surface flex items-center justify-center px-4 pt-20 pb-20">
       <div className="max-w-2xl w-full text-center">
         <div className="bg-white rounded-3xl shadow-xl border border-gray-100 p-8 sm:p-12">
-          <div className="mb-6">
-            <h1 className="text-7xl sm:text-8xl font-bold text-blue-600">404</h1>
-          </div>
+          <p className="text-sm font-semibold text-blue-600 mb-3">404</p>
 
-          <h2 className="section-title">
-            Pagina niet gevonden
-          </h2>
+          <h1 className="section-title">
+            Deze pagina bestaat niet
+          </h1>
 
           <p className="text-lg text-gray-600 mb-8">
             De pagina die u zoekt bestaat niet of is verplaatst.

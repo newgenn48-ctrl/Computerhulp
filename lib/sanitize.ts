@@ -34,12 +34,21 @@ export function validateEmail(email: string): boolean {
 }
 
 /**
- * Validate Dutch phone number
+ * Normaliseer een Nederlands telefoonnummer naar 10 cijfers met voorloopnul.
+ * Accepteert spaties, streepjes, punten, haakjes en de vormen +31 (0)6…, 0031 6…, 06….
+ * Gebruikt door het formulier (client) én de API (server), zodat beide hetzelfde goedkeuren.
+ */
+export function normalizePhone(phone: string): string {
+  let digits = (phone || '').replace(/[\s\-\.\(\)]/g, '')
+  digits = digits.replace(/^\+31\(?0?\)?/, '0').replace(/^00310?/, '0')
+  return digits
+}
+
+/**
+ * Validate Dutch phone number (vast of mobiel, 10 cijfers)
  */
 export function validatePhone(phone: string): boolean {
-  const phoneRegex = /^(\+31|0031|0)[1-9][0-9]{8}$/
-  const cleanPhone = phone.replace(/[\s\-\(\)]/g, '')
-  return phoneRegex.test(cleanPhone) && cleanPhone.length <= 15
+  return /^0[1-9][0-9]{8}$/.test(normalizePhone(phone))
 }
 
 /**

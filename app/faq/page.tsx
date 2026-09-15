@@ -162,7 +162,7 @@ const faqCategories = [
       },
       {
         question: 'Kunnen jullie mijn data redden?',
-        answer: 'In veel gevallen wel. Als uw computer crasht of niet meer start, kunnen we vaak nog bestanden redden. We kunnen echter geen garantie geven - dat hangt af van de schade.'
+        answer: 'In veel gevallen wel. Als uw computer crasht of niet meer start, kunnen we vaak nog bestanden redden. We kunnen echter geen garantie geven: dat hangt af van de schade.'
       },
       {
         question: 'Installeren jullie ook nieuwe apparaten?',
@@ -183,7 +183,7 @@ const faqCategories = [
       },
       {
         question: 'Komen jullie ook buiten Zuid-Holland?',
-        answer: 'In principe werken we alleen in Zuid-Holland. Voor aangrenzende gebieden kunt u altijd bellen - soms kunnen we een uitzondering maken.'
+        answer: 'In principe werken we alleen in Zuid-Holland. Voor aangrenzende gebieden kunt u altijd bellen, soms kunnen we een uitzondering maken.'
       }
     ]
   },
@@ -200,7 +200,7 @@ const faqCategories = [
       },
       {
         question: 'Wat als ik niet tevreden ben?',
-        answer: 'We streven altijd naar 100% tevredenheid. Lukt iets niet? Dan komen we terug tot het wel werkt. Zonder extra kosten. Uw tevredenheid is onze prioriteit.'
+        answer: 'Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose. Werkt iets binnen 30 dagen na ons bezoek toch weer niet, dan komen we gratis terug.'
       }
     ]
   },
@@ -209,7 +209,7 @@ const faqCategories = [
     questions: [
       {
         question: 'Moet ik thuis blijven tijdens het bezoek?',
-        answer: 'Dat hangt van het probleem af. Voor de meeste dingen werken we bij u thuis terwijl u er bent. We werken altijd bij u thuis; uw apparaat blijft gewoon bij u.'
+        answer: 'Ja, u blijft er gewoon bij. We werken aan uw eigen tafel en uw apparaat gaat niet mee. Zo ziet u wat we doen en kunt u meteen vragen stellen.'
       },
       {
         question: 'Wat moet ik klaar hebben?',

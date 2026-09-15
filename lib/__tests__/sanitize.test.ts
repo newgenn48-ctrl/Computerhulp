@@ -3,6 +3,7 @@ import {
   sanitizeText,
   validateEmail,
   validatePhone,
+  normalizePhone,
   validateLength,
 } from '../sanitize'
 
@@ -124,5 +125,20 @@ describe('validateLength', () => {
   it('should handle edge cases', () => {
     expect(validateLength('x', 1)).toBe(true)
     expect(validateLength('xx', 1)).toBe(false)
+  })
+})
+
+describe('normalizePhone', () => {
+  it('normaliseert gangbare Nederlandse notaties naar 10 cijfers', () => {
+    expect(normalizePhone('+31 (0)6 12345678')).toBe('0612345678')
+    expect(normalizePhone('0031 6 12345678')).toBe('0612345678')
+    expect(normalizePhone('06.12345678')).toBe('0612345678')
+    expect(normalizePhone('085-8002006')).toBe('0858002006')
+  })
+  it('keurt die notaties ook goed in validatePhone', () => {
+    expect(validatePhone('+31 (0)6 12345678')).toBe(true)
+    expect(validatePhone('06.12345678')).toBe(true)
+    expect(validatePhone('06 1234')).toBe(false)
+    expect(validatePhone('0612345678 extra')).toBe(false)
   })
 })

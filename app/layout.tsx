@@ -76,7 +76,7 @@ export default function RootLayout({
        per definitie wél in de client-DOM en niet in de server-HTML. Zonder
        deze vlag meldt React dat als mismatch. Geldt alleen voor dit element,
        niet voor de rest van de boom. */
-    <html lang="nl" className="scroll-smooth" suppressHydrationWarning>
+    <html lang="nl" className="scroll-smooth" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         {/* DNS Prefetch & Preconnect for Performance */}
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
@@ -153,7 +153,10 @@ export default function RootLayout({
               ['pointerdown','keydown','touchstart','scroll'].forEach(function(ev){
                 window.addEventListener(ev, loadGtag, { capture: true, passive: true, once: true });
               });
-              setTimeout(loadGtag, 3500);
+              // Komt de bezoeker via een advertentie (gclid), dan meteen laden: de belklik is dan
+              // vaak de eerste interactie en moet gemeten zijn vóór de telefoon-app opent.
+              if (/[?&](gclid|gbraid|wbraid)=/.test(location.search)) { loadGtag(); }
+              else { setTimeout(loadGtag, 3500); }
             })();
           `}
         </Script>
@@ -164,14 +167,19 @@ export default function RootLayout({
             // Bel-conversie: meet de klik als beacon en laat de telefoon direct openen.
             // Geen preventDefault en geen wachttijd meer: de klant wacht niet op de meting.
             // Maximaal één telling per bezoek, zodat herhaald tikken niet dubbel telt.
+            // Alleen op een aanraakscherm telt de klik als Ads-conversie: op een computer
+            // opent een tel-link meestal niets, en Google Ads stuurde daardoor op loze kliks.
+            // GA4 krijgt de klik altijd, met het apparaattype erbij.
             var chzhCallCounted = false;
             document.addEventListener('click', function(e) {
               var link = e.target && e.target.closest ? e.target.closest('a[href^="tel:"]') : null;
               if (!link || chzhCallCounted) return;
               chzhCallCounted = true;
+              var touch = !!(window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
               if (typeof gtag === 'function') {
                 // Zelfde klik ook als GA4-gebeurtenis (belangrijke gebeurtenis 'tel_click')
-                gtag('event', 'tel_click', { 'event_category': 'contact', 'transport_type': 'beacon' });
+                gtag('event', 'tel_click', { 'event_category': 'contact', 'device': touch ? 'touch' : 'desktop', 'transport_type': 'beacon' });
+                if (!touch) return;
                 gtag('event', 'conversion', {
                   'send_to': 'AW-16733341823/KWVeCKj-u_gbEP-Qiqs-',
                   'value': 1.0,

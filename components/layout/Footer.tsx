@@ -67,11 +67,6 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/website-laten-maken" className="footer-link">
-                  Website Laten Maken
-                </Link>
-              </li>
-              <li>
                 <Link href="/diensten/computer-laptop-hulp" className="footer-link">
                   Computer & Laptop
                 </Link>

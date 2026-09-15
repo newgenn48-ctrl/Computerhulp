@@ -5,11 +5,11 @@ import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Waarom kiezen voor ons? | Voordelen en verschillen',
-  description: `Waarom kiezen klanten voor ${BUSINESS.NAME}? Goedkoper, sneller en lokaal. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
+  description: `Waarom kiezen klanten voor ${BUSINESS.NAME}? Geen abonnement, snel en lokaal. Meestal binnen 24 uur bij u thuis. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     images: OG_IMAGE,
     title: 'Waarom kiezen voor ons?',
-    description: `Goedkoper, sneller en lokaal. Meestal binnen 24 uur bij u thuis in heel ${BUSINESS.REGION}.`,
+    description: `Geen abonnement, snel en lokaal. Meestal binnen 24 uur bij u thuis in heel ${BUSINESS.REGION}.`,
     type: 'website',
     url: `${BUSINESS.URL}/waarom-ons`,
   },
@@ -74,9 +74,9 @@ export default function WaaromOnsPage() {
               </thead>
               <tbody>
                 <tr className="border-t border-gray-200">
-                  <td className="p-4 font-medium text-gray-900">1 uur aan huis</td>
-                  <td className="p-4 bg-blue-50 text-center font-bold text-blue-700 text-lg">€54,97</td>
-                  <td className="p-4 text-center text-gray-600 bg-surface">Vaak hoger, of per uur</td>
+                  <td className="p-4 font-medium text-gray-900">Een bezoek van 45 minuten (het minimum), inclusief voorrijden</td>
+                  <td className="p-4 bg-blue-50 text-center font-bold text-blue-700 text-lg">{PRICING.MINIMUM_ALL_IN}</td>
+                  <td className="p-4 text-center text-gray-600 bg-surface">Vaak per uur, soms met lidmaatschap</td>
                 </tr>
                 <tr className="border-t border-gray-200">
                   <td className="p-4 font-medium text-gray-900">Voorrijkosten</td>

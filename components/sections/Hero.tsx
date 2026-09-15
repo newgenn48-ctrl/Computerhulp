@@ -2,7 +2,7 @@ import type { ReactNode } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS } from '@/lib/constants'
+import { BUSINESS, PRICING } from '@/lib/constants'
 
 export interface HeroPill {
   icon: string
@@ -29,7 +29,8 @@ interface HeroProps {
 
 /**
  * Eén shared Hero voor alle landingspagina's.
- * CTA-volgorde is vast: witte bel-knop primair, gradient Afspraak maken secundair.
+ * CTA-volgorde is vast: witte bel-knop primair, glazen Afspraak maken secundair.
+ * De vertrouwensregel noemt de prijs: 'wat kost het' is de eerste vraag van deze doelgroep.
  */
 export default function Hero({
   imageSrc,
@@ -39,7 +40,7 @@ export default function Hero({
   title,
   descriptions = [],
   pills,
-  trustLine = 'Meestal binnen 24 uur geholpen',
+  trustLine = `Meestal binnen 24 uur bij u thuis · ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten`,
 }: HeroProps) {
   return (
     <section className="hero-wrapper" aria-label={ariaLabel}>
@@ -50,6 +51,7 @@ export default function Hero({
           fill
           className="object-cover object-center"
           priority
+          fetchPriority="high"
           quality={65}
           sizes="100vw"
         />
@@ -74,9 +76,9 @@ export default function Hero({
               aria-label={`Bel ${BUSINESS.PHONE}`}
             >
               <Icon name="phone" className="w-5 h-5" strokeWidth={2.5} aria-hidden="true" />
-              {BUSINESS.PHONE}
+              Bel {BUSINESS.PHONE}
             </a>
-            <Link href="/afspraak-maken" className="btn-hero-primary">
+            <Link href="/afspraak-maken" className="btn-hero-secondary">
               Afspraak maken
               <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
             </Link>

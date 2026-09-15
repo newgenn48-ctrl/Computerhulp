@@ -42,7 +42,7 @@ export default function AfspraakBevestigingPage() {
                   <li className="flex items-start gap-3">
                     <span className="flex-shrink-0 w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center font-bold text-sm">1</span>
                     <div>
-                      <p className="font-semibold text-gray-900">Binnen 1 uur</p>
+                      <p className="font-semibold text-gray-900">Meestal binnen 1 uur</p>
                       <p className="text-gray-700">We bellen u om een concrete afspraak in te plannen</p>
                     </div>
                   </li>
@@ -68,7 +68,7 @@ export default function AfspraakBevestigingPage() {
                   <Icon name="email" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" strokeWidth={2} />
                   <div>
                     <p className="font-semibold text-gray-900 mb-1">Check uw e-mail</p>
-                    <p className="text-gray-700">U heeft een bevestigingsmail ontvangen met alle details van uw aanvraag.</p>
+                    <p className="text-gray-700">U ontvangt een bevestiging per e-mail met de details van uw aanvraag.</p>
                   </div>
                 </div>
               </div>
@@ -115,10 +115,6 @@ export default function AfspraakBevestigingPage() {
         <div className="mt-8 text-center">
           <p className="text-sm text-gray-600 mb-4">Vertrouwd door {BUSINESS.REVIEW_COUNT} tevreden klanten</p>
           <div className="flex justify-center items-center gap-6 flex-wrap">
-            <div className="flex items-center gap-2 text-gray-700">
-              <Icon name="star" className="w-5 h-5 text-yellow-500" />
-              <span className="font-semibold">9.2/10</span>
-            </div>
             <div className="flex items-center gap-2 text-gray-700">
               <Icon name="shield" className="w-5 h-5 text-blue-600" strokeWidth={2} aria-hidden="true" />
               <span className="font-semibold">KvK {BUSINESS.KVK}</span>

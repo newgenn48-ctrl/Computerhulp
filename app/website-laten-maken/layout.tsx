@@ -21,6 +21,7 @@ export const metadata: Metadata = {
   alternates: {
     canonical: 'https://computerhulpzh.nl/website-laten-maken',
   },
+  robots: { index: false, follow: true },
 }
 
 const serviceSchema = {

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
+import CallbackSection from '@/components/sections/CallbackSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
@@ -158,10 +159,12 @@ export default function StudentAanHuisPage() {
         ]}
         pills={[
           { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
-          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'money', label: 'Betalen achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
+
+      <CallbackSection />
 
       {/* 1. Wie komt er: het antwoord op de vraag die deze zoeker stelt */}
       <section className="panel-section" aria-labelledby="wie-heading">

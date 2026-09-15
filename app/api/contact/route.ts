@@ -70,7 +70,10 @@ export async function POST(request: NextRequest) {
       timestamp: new Date().toISOString(),
     })
 
-    if (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED'))) {
+    // Alle mailserverfouten (verbinding, login, time-out) als 503 met belnummer, niet als vage 500
+    const code = typeof (error as { code?: unknown })?.code === 'string' ? (error as { code: string }).code : ''
+    const mailFault = ['EAUTH', 'ECONNECTION', 'ECONNREFUSED', 'ETIMEDOUT', 'ESOCKET', 'EDNS', 'EENVELOPE'].includes(code)
+    if (mailFault || (error instanceof Error && (error.message.includes('SMTP') || error.message.includes('ECONNREFUSED') || error.message.includes('Invalid login')))) {
       return NextResponse.json(
         { error: `E-mail kon niet worden verzonden. Probeer het later opnieuw of bel ons direct op ${BUSINESS.PHONE}.` },
         { status: 503 }

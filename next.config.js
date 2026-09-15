@@ -49,7 +49,8 @@ const nextConfig = {
     optimizePackageImports: ['@/components'],
   },
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production',
+    // console.error/warn blijven staan: anders is een SMTP-storing op Vercel onzichtbaar in de logs
+    removeConsole: process.env.NODE_ENV === 'production' ? { exclude: ['error', 'warn'] } : false,
   },
   async headers() {
     return [

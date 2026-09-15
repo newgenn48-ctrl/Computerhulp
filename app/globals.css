@@ -59,6 +59,14 @@
     touch-action: manipulation;
   }
 
+  /* Invoervelden nooit kleiner dan 16px: iOS Safari zoomt anders het hele
+     scherm in bij elk veld, precies bij de doelgroep die dat het minst kan hebben. */
+  input,
+  select,
+  textarea {
+    font-size: max(1rem, 16px);
+  }
+
   /* Cookie-banner verbergen zodra er een keuze vastligt. Het inline
      head-script zet data-consent vóór de eerste paint, dus terugkerende
      bezoekers zien de banner nooit oplichten. */
@@ -336,6 +344,12 @@
     @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-bold text-blue-700 bg-white hover:bg-blue-50 rounded-xl transition duration-200 hover:-translate-y-0.5 shadow-lg shadow-black/30;
   }
 
+  /* Secundaire heroknop: glas op de donkere foto, zodat de witte belknop
+     de enige zware knop boven de vouw is. */
+  .btn-hero-secondary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/40 hover:border-white/60 backdrop-blur-sm rounded-xl transition duration-200;
+  }
+
   .hero-pill {
     @apply inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white border border-white/25 rounded-full px-4 py-2 text-sm font-medium shadow-lg shadow-black/10 transition duration-200 hover:bg-white/25 hover:border-white/40;
   }
@@ -535,6 +549,7 @@ html {
 .btn-cta-dark[href^="tel:"],
 .btn-hero-phone[href^="tel:"],
 .btn-hero-primary[href^="tel:"],
+.btn-hero-secondary[href^="tel:"],
 .btn-header-cta[href^="tel:"],
 .btn-header-cta-mobile[href^="tel:"],
 .floating-btn[href^="tel:"],

@@ -41,99 +41,6 @@ export const metadata: Metadata = {
       'max-image-preview': 'large',
       'max-snippet': -1}}}
 
-// Organization Schema
-const organizationData = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  '@id': 'https://computerhulpzh.nl/#organization',
-  name: 'Computerhulp Zuid-Holland',
-  url: 'https://computerhulpzh.nl',
-  logo: {
-    '@type': 'ImageObject',
-    url: 'https://computerhulpzh.nl/logo.png',
-    width: 200,
-    height: 60
-  },
-  contactPoint: {
-    '@type': 'ContactPoint',
-    telephone: BUSINESS.PHONE_INTL,
-    contactType: 'customer service',
-    availableLanguage: 'Dutch',
-    areaServed: BUSINESS.COUNTRY
-  }
-}
-
-// LocalBusiness Schema (enhanced)
-const localBusinessData = {
-  '@context': 'https://schema.org',
-  '@type': 'LocalBusiness',
-  '@id': 'https://computerhulpzh.nl/#localbusiness',
-  name: 'Computerhulp Zuid-Holland',
-  description: `Professionele smartphone- en tablethulp aan huis in ${BUSINESS.REGION}. Wij helpen met telefoon instellen, data overzetten, apps installeren en smartphone problemen oplossen. Meestal binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
-  url: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis',
-  telephone: BUSINESS.PHONE_INTL,
-  email: BUSINESS.EMAIL,
-  logo: 'https://computerhulpzh.nl/logo.png',
-  image: [
-    'https://computerhulpzh.nl/hero-computerhulp.webp',
-    'https://computerhulpzh.nl/hero-student.webp'
-  ],
-  address: {
-    '@type': 'PostalAddress',
-    addressRegion: BUSINESS.REGION,
-    addressCountry: BUSINESS.COUNTRY
-  },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 52.0116,
-    longitude: 4.3571
-  },
-  areaServed: [
-    ...TOP_CITIES.map((c) => ({ '@type': 'City', name: c.name })),
-    { '@type': 'State', name: 'Zuid-Holland' }
-  ],
-  priceRange: '€€',
-  currenciesAccepted: 'EUR',
-  paymentAccepted: 'Cash, Credit Card, Debit Card',
-  openingHoursSpecification: [
-    {
-      '@type': 'OpeningHoursSpecification',
-      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-      opens: HOURS.OPEN,
-      closes: HOURS.CLOSE
-    }
-  ],
-  hasOfferCatalog: {
-    '@type': 'OfferCatalog',
-    name: 'Smartphone- en tablethulp',
-    itemListElement: [
-      {
-        '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'Computer & Laptop Hulp', description: 'Hulp bij trage computers, crashes en opstartproblemen' }
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'Wifi & Internet Hulp', description: 'Wifi installatie, bereik verbeteren en internetproblemen oplossen' }
-      },
-      {
-        '@type': 'Offer',
-        itemOffered: { '@type': 'Service', name: 'Printer & Scanner Hulp', description: 'Printer installeren, aansluiten en printproblemen oplossen' }
-      }
-    ]
-  }
-}
-
-// WebSite Schema with SearchAction
-const websiteData = {
-  '@context': 'https://schema.org',
-  '@type': 'WebSite',
-  '@id': 'https://computerhulpzh.nl/#website',
-  name: 'Computerhulp Zuid-Holland',
-  url: 'https://computerhulpzh.nl',
-  publisher: { '@id': 'https://computerhulpzh.nl/#organization' },
-  inLanguage: 'nl-NL'
-}
-
 // Service Schema
 const serviceData = {
   '@context': 'https://schema.org',
@@ -179,7 +86,8 @@ const breadcrumbData = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://computerhulpzh.nl' },
-    { '@type': 'ListItem', position: 2, name: 'Smartphone- en tablethulp aan huis', item: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis' }
+    { '@type': 'ListItem', position: 2, name: 'Diensten', item: 'https://computerhulpzh.nl/diensten' },
+    { '@type': 'ListItem', position: 3, name: 'Smartphone- en tablethulp aan huis', item: 'https://computerhulpzh.nl/diensten/smartphone-hulp-aan-huis' }
   ]
 }
 
@@ -204,9 +112,6 @@ export default function SmartphoneHulpAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
         '@context': 'https://schema.org',
         '@graph': [
-          organizationData,
-          localBusinessData,
-          websiteData,
           serviceData,
           faqData,
           breadcrumbData,

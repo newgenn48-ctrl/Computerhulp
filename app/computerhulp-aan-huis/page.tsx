@@ -2,6 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
+import CallbackSection from '@/components/sections/CallbackSection'
 import PricingSection from '@/components/PricingSection'
 import ServicesSection from '@/components/ServicesSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -179,10 +180,12 @@ export default function ComputerhulpAanHuisPage() {
         ]}
         pills={[
           { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
-          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'money', label: 'Betalen achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
       />
+
+      <CallbackSection />
 
       <ServicesSection
         eyebrow="Onze hulp"

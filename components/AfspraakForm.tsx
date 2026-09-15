@@ -5,13 +5,14 @@ import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { LEAD_SENT_KEY } from '@/components/ConversionTracker'
 import { BUSINESS, HOURS } from '@/lib/constants'
+import { validatePhone } from '@/lib/sanitize'
 
 type Field = 'naam' | 'telefoon' | 'email' | 'adres' | 'postcode' | 'plaats' | 'probleem'
 
-const validationRules: Record<Field, { required?: string; pattern?: [RegExp, string]; minLength?: [number, string] }> = {
+const validationRules: Record<Field, { required?: string; pattern?: [RegExp, string]; check?: [(v: string) => boolean, string]; minLength?: [number, string] }> = {
   // Alle velden zijn verplicht: zo staat elke aanvraag compleet in de mail en hoeft niemand na te bellen voor het adres.
   naam: { required: 'Naam is verplicht', minLength: [2, 'Naam moet minimaal 2 karakters bevatten'] },
-  telefoon: { required: 'Telefoonnummer is verplicht', pattern: [/^[\d\s\-\+\(\)]{10,}$/, 'Voer een geldig telefoonnummer in'] },
+  telefoon: { required: 'Telefoonnummer is verplicht', check: [validatePhone, 'Voer een geldig Nederlands telefoonnummer in, bijvoorbeeld 06-12345678'] },
   email: { required: 'E-mailadres is verplicht', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
   adres: { required: 'Straat en huisnummer zijn verplicht' },
   postcode: { required: 'Postcode is verplicht', pattern: [/^[1-9]\d{3}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2511 CV)'] },
@@ -25,6 +26,7 @@ function validate(name: Field, value: string): string {
   const trimmed = value.trim()
   if (!trimmed) return rule.required ?? ''
   if (rule.pattern && !rule.pattern[0].test(trimmed)) return rule.pattern[1]
+  if (rule.check && !rule.check[0](trimmed)) return rule.check[1]
   if (rule.minLength && trimmed.length < rule.minLength[0]) return rule.minLength[1]
   return ''
 }
@@ -96,7 +98,7 @@ export default function AfspraakForm() {
     setSubmitStatus('idle')
 
     const controller = new AbortController()
-    const timeoutId = setTimeout(() => controller.abort(), 10000)
+    const timeoutId = setTimeout(() => controller.abort(), 20000)
 
     try {
       const response = await fetch('/api/afspraak', {
@@ -117,14 +119,24 @@ export default function AfspraakForm() {
       } else {
         // Toon de reden van de server (bijv. ongeldig telefoonnummer) in plaats van een algemene melding
         const data = await response.json().catch(() => null)
-        setServerError(typeof data?.error === 'string' ? data.error : '')
+        const msg = typeof data?.error === 'string' ? data.error : ''
+        // Een telefoonfout van de server hoort bij het veld, niet alleen in de balk bovenaan
+        if (/telefoon/i.test(msg)) {
+          setErrors(prev => ({ ...prev, telefoon: msg }))
+          setTouched(prev => ({ ...prev, telefoon: true }))
+          document.getElementById('telefoon')?.focus({ preventScroll: true })
+          document.getElementById('telefoon')?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+        }
+        setServerError(msg)
         setSubmitStatus('error')
+        setIsSubmitting(false)
       }
     } catch {
       setSubmitStatus('error')
+      setIsSubmitting(false)
     } finally {
       clearTimeout(timeoutId)
-      setIsSubmitting(false)
+      // Bij succes blijft de knop uit tot de bedankpagina er is: geen dubbele inzending door een tweede klik
     }
   }
 
@@ -141,7 +153,7 @@ export default function AfspraakForm() {
             <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
             <div>
               <h3 className="text-red-800 font-semibold">Er ging iets mis</h3>
-              <p className="text-red-700 mt-1">{serverError ? `${serverError}. Of ` : 'Probeer het opnieuw of '}bel ons direct op <a href={BUSINESS.PHONE_HREF} translate="no" className="font-bold underline whitespace-nowrap">{BUSINESS.PHONE}</a></p>
+              <p className="text-red-700 mt-1">{serverError ? `${serverError}. Of ` : 'Mogelijk is uw aanvraag toch aangekomen; probeer het anders nog eens of '}bel ons direct op <a href={BUSINESS.PHONE_HREF} translate="no" className="font-bold underline whitespace-nowrap">{BUSINESS.PHONE}</a></p>
             </div>
           </div>
         </div>

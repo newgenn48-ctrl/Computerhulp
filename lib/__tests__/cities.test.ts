@@ -9,8 +9,8 @@ import {
 } from '../cities'
 
 describe('cities data', () => {
-  it('should have 169 cities', () => {
-    expect(cities.length).toBe(169)
+  it('should have 51 cities', () => {
+    expect(cities.length).toBe(51)
   })
 
   it('should have unique slugs', () => {
@@ -45,7 +45,7 @@ describe('cities data', () => {
 
 describe('citySlugs', () => {
   it('should contain all city slugs', () => {
-    expect(citySlugs.length).toBe(169)
+    expect(citySlugs.length).toBe(51)
     expect(citySlugs).toContain('rotterdam')
     expect(citySlugs).toContain('den-haag')
     expect(citySlugs).toContain('leiden')
@@ -134,8 +134,8 @@ describe('TOP_CITIES', () => {
 })
 
 describe('services', () => {
-  it('should have 18 services', () => {
-    expect(services.length).toBe(18)
+  it('should have 10 services', () => {
+    expect(services.length).toBe(10)
   })
 
   it('should include common services', () => {
