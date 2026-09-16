@@ -215,7 +215,7 @@ export default function HomePage() {
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
         descriptions={[
-          <>Werkt uw computer, printer, wifi of televisie niet meer zoals het hoort? <strong className="text-white">Geen zorgen</strong>: een geduldige HBO-student komt bij u thuis, lost het op en legt in gewone taal uit wat er aan de hand was.</>,
+          <>Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
         ]}
       />
 

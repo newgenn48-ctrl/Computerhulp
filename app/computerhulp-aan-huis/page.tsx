@@ -183,7 +183,7 @@ export default function ComputerhulpAanHuisPage() {
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Werkt uw computer, printer, wifi of televisie niet meer zoals het hoort? Een geduldige HBO-student komt bij u thuis in heel {BUSINESS.REGION}, meestal binnen 24 uur, en lost het rustig op. <strong className="text-white">Geen abonnement, geen gedoe.</strong></>,
+          <>Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis in heel {BUSINESS.REGION}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
         ]}
       />
 

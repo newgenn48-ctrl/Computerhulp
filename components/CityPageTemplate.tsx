@@ -60,7 +60,7 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Werkt uw computer, printer, wifi of televisie niet meer zoals het hoort? <strong className="text-white">Geen zorgen</strong>: een geduldige HBO-student komt bij u thuis in {cityName}, lost het op en legt in gewone taal uit wat er aan de hand was.
+      Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong>
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan huis ${cityName}`,
@@ -87,7 +87,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Een geduldige HBO-student komt bij u thuis in {cityName} voor uw computer, laptop, tablet, printer of wifi. Rustig uitgelegd, <strong className="text-white">zonder abonnement</strong>, en u betaalt pas achteraf.
+      Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,

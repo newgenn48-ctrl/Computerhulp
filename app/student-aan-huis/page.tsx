@@ -156,7 +156,7 @@ export default function StudentAanHuisPage() {
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Een geduldige HBO-student komt bij u thuis voor uw computer, laptop, tablet, printer of wifi. Rustig uitgelegd, <strong className="text-white">zonder abonnement</strong>, en u betaalt pas achteraf.</>,
+          <>Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis, lost het op en legt het rustig uit.</>,
         ]}
       />
 
