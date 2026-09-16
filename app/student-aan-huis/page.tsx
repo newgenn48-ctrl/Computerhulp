@@ -4,7 +4,12 @@ import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
+import TrustStrip from '@/components/sections/TrustStrip'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
+import ServicesSection from '@/components/ServicesSection'
+import PricingSection from '@/components/PricingSection'
+import HowItWorksSection from '@/components/sections/HowItWorksSection'
+import ComfortSection from '@/components/sections/ComfortSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
@@ -90,16 +95,6 @@ const structuredData = {
   ],
 }
 
-const helpItems = [
-  { href: '/diensten/computer-laptop-hulp', title: 'Computer en laptop', desc: 'Traag, vastgelopen, foutmeldingen of een nieuwe laptop inrichten.' },
-  { href: '/diensten/wifi-internet-hulp', title: 'Wifi en internet', desc: 'Bereik in het hele huis, nieuwe router, apparaten verbinden.' },
-  { href: '/diensten/printer-scanner-hulp', title: 'Printer en scanner', desc: 'Aansluiten, draadloos printen, scannen naar e-mail.' },
-  { href: '/diensten/email-hulp', title: 'E-mail', desc: 'Weer toegang, instellen op telefoon en tablet, ongewenste mail stoppen.' },
-  { href: '/diensten/smartphone-hulp-aan-huis', title: 'Tablet en telefoon', desc: 'Nieuw toestel instellen, foto’s overzetten, videobellen met familie.' },
-  { href: '/diensten/tv-installatie', title: 'Televisie', desc: 'Smart-tv, zenders, decoder, Netflix en de soundbar.' },
-  { href: '/diensten/dataherstel-backup', title: 'Foto’s en bestanden', desc: 'Terughalen wat kan en een automatische back-up instellen.' },
-  { href: '/diensten/computercursus-ouderen', title: 'Uitleg en les', desc: 'Stap voor stap leren, met de stappen op papier om na te lezen.' },
-]
 
 const faqItems = [
   {
@@ -150,6 +145,7 @@ export default function StudentAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Hero
+        trustLine=""
         imageSrc="/hero-student.webp"
         imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
@@ -157,16 +153,53 @@ export default function StudentAanHuisPage() {
         descriptions={[
           <>Een geduldige HBO-student komt bij u thuis voor uw computer, laptop, tablet, printer of wifi. Rustig uitgelegd, <strong className="text-white">zonder abonnement</strong>, en u betaalt pas achteraf.</>,
         ]}
-        pills={[
-          { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
-          { icon: 'money', label: 'Betalen achteraf' },
-          { icon: 'calendar', label: '7 dagen per week' },
-        ]}
       />
 
+      <TrustStrip />
+
+      <ServicesSection
+        eyebrow="Onze hulp"
+        title="Waar de student u mee helpt"
+        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
+        photoCards={true}
+        limitServices={6}
+        showAllButton={true}
+      />
+
+      <PricingSection />
+
+      {/* 4. Reviews */}
+      <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
+
+      {/* Bellen of teruggebeld worden: na prijs en reviews */}
       <CallbackSection />
 
-      {/* 1. Wie komt er: het antwoord op de vraag die deze zoeker stelt */}
+      <HowItWorksSection />
+
+      <ComfortSection variant="student" />
+
+      {/* 5. FAQ */}
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <header className="text-center mb-10">
+            <p className="section-eyebrow">FAQ</p>
+            <h2 id="faq-heading" className="section-title">Veelgestelde vragen over student aan huis</h2>
+          </header>
+          <div className="space-y-4">
+            {faqItems.map((faq, idx) => (
+              <details key={idx} className="group faq-item-white">
+                <summary className="faq-summary">
+                  {faq.q}
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
+                </summary>
+                <div className="faq-answer">{faq.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Wie komt er: het antwoord op de vraag die deze zoeker stelt */}
       <section className="panel-section" aria-labelledby="wie-heading">
         <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <div className="panel overflow-hidden">
@@ -207,89 +240,6 @@ export default function StudentAanHuisPage() {
                 </ul>
               </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2. Waarmee de student helpt: tekstlijst, geen fotokaarten (die staan op de homepage) */}
-      <section className="panel-section" aria-labelledby="hulp-heading">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="panel panel-pad">
-            <header className="mb-8">
-              <p className="section-eyebrow">Waarmee</p>
-              <h2 id="hulp-heading" className="section-title">Waar de student u thuis mee helpt</h2>
-              <p className="section-subtitle">Eén student voor alles wat een scherm of een stekker heeft.</p>
-            </header>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              {helpItems.map((item) => (
-                <li key={item.href}>
-                  <Link href={item.href} className="step-card block h-full group">
-                    <h3 className="font-bold text-gray-900 text-lg leading-snug mb-1.5 group-hover:text-blue-700">{item.title}</h3>
-                    <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* 3. Kosten: 'student aan huis kosten' is de grootste zoekvraag op deze pagina */}
-      <section className="panel-section" aria-labelledby="kosten-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <header className="text-center mb-8">
-            <p className="section-eyebrow">Kosten</p>
-            <h2 id="kosten-heading" className="section-title">Wat kost een student aan huis?</h2>
-            <p className="section-subtitle">Geen abonnement, geen lidmaatschap: u betaalt alleen de tijd die de student bij u is.</p>
-          </header>
-          <div className="grid sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
-            <div className="rounded-2xl border border-gray-200 p-5 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-1">{PRICING.PER_QUARTER}</div>
-              <div className="text-gray-600">per kwartier, minimaal 3 kwartier</div>
-            </div>
-            <div className="rounded-2xl border border-gray-200 p-5 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-1">{PRICING.TRAVEL}</div>
-              <div className="text-gray-600">voorrijkosten in heel {BUSINESS.REGION}</div>
-            </div>
-            <div className="rounded-2xl border border-gray-200 p-5 text-center">
-              <div className="text-3xl font-bold text-blue-600 mb-1">€0</div>
-              <div className="text-gray-600">abonnement of jaarlijkse bijdrage</div>
-            </div>
-          </div>
-          <div className="prose prose-gray max-w-none text-gray-700">
-            <p>
-              Een gemiddeld bezoek duurt drie tot vier kwartier. Daarin lost de student het probleem op, legt uit wat er aan de hand was en
-              laat zien hoe u het zelf voorkomt. U weet vooraf wat een kwartier kost en betaalt na afloop via pin of Tikkie.
-            </p>
-            <p>
-              Landelijke diensten werken vaak met een lidmaatschap of jaarbijdrage bovenop het uurtarief. Bij ons is er geen instapdrempel:
-              u belt, we plannen meestal binnen 24 uur een moment, en u betaalt alleen de tijd die u afneemt. Duurt iets langer dan verwacht,
-              dan overleggen we dat eerst. Bekijk alle <Link href="/tarieven" className="text-blue-600 hover:text-blue-800 font-medium">tarieven</Link>.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. Reviews */}
-      <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
-
-      {/* 5. FAQ */}
-      <section className="panel-section" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <header className="text-center mb-10">
-            <p className="section-eyebrow">FAQ</p>
-            <h2 id="faq-heading" className="section-title">Veelgestelde vragen over student aan huis</h2>
-          </header>
-          <div className="space-y-4">
-            {faqItems.map((faq, idx) => (
-              <details key={idx} className="group faq-item-white">
-                <summary className="faq-summary">
-                  {faq.q}
-                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
-                </summary>
-                <div className="faq-answer">{faq.a}</div>
-              </details>
-            ))}
           </div>
         </div>
       </section>

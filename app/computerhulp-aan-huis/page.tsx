@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
+import TrustStrip from '@/components/sections/TrustStrip'
 import PricingSection from '@/components/PricingSection'
 import ServicesSection from '@/components/ServicesSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -156,7 +157,7 @@ const REGIONS = [
 ]
 
 /* Dezelfde opbouw als een stadspagina (/computerhulp-aan-huis-[stad]), maar dan voor de hele provincie:
-   hero, diensten, geruststelling, prijs, reviews, werkwijze, FAQ, tekst met voordelen, regio's, plaatsen, CTA. */
+   hero, feiten, diensten, prijs, reviews, terugbellen, werkwijze, geruststelling, FAQ, tekst met voordelen, regio's, plaatsen, CTA. */
 export default function ComputerhulpAanHuisPage() {
   const voordelen = [
     { title: 'Gewoon thuis blijven', desc: `U hoeft nergens naartoe, wij komen bij u thuis in heel ${BUSINESS.REGION}.` },
@@ -171,21 +172,17 @@ export default function ComputerhulpAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Hero
+        trustLine=""
         imageSrc="/hero-computerhulp.webp"
         imageAlt={`HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Computer, laptop, printer, wifi, tablet of televisie: een HBO-student komt bij u thuis in heel {BUSINESS.REGION}, meestal binnen 24 uur, en lost het rustig op. <strong className="text-white">Geen abonnement, geen gedoe.</strong></>,
-        ]}
-        pills={[
-          { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
-          { icon: 'money', label: 'Betalen achteraf' },
-          { icon: 'calendar', label: '7 dagen per week' },
+          <>Werkt uw computer, printer, wifi of televisie niet meer zoals het hoort? Een geduldige HBO-student komt bij u thuis in heel {BUSINESS.REGION}, meestal binnen 24 uur, en lost het rustig op. <strong className="text-white">Geen abonnement, geen gedoe.</strong></>,
         ]}
       />
 
-      <CallbackSection />
+      <TrustStrip />
 
       <ServicesSection
         eyebrow="Onze hulp"
@@ -196,13 +193,15 @@ export default function ComputerhulpAanHuisPage() {
         showAllButton={true}
       />
 
-      <ComfortSection variant="computerhulp" />
-
       <PricingSection />
 
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
 
+      <CallbackSection />
+
       <HowItWorksSection />
+
+      <ComfortSection variant="computerhulp" />
 
       {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">

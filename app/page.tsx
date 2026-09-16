@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
+import TrustStrip from '@/components/sections/TrustStrip'
 import ServicesSection from '@/components/ServicesSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
@@ -202,23 +203,19 @@ export default function HomePage() {
       }) }} />
 
       <Hero
+        trustLine=""
         imageSrc="/hero-student.webp"
         imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel={`${BUSINESS.NAME} hero`}
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong>: een geduldige HBO-student komt bij u thuis, lost het op en legt alles uit in gewone taal.</>,
-        ]}
-        pills={[
-          { icon: 'academic-cap', label: 'HBO-opgeleide studenten' },
-          { icon: 'money', label: 'Betalen achteraf' },
-          { icon: 'calendar', label: '7 dagen per week' },
+          <>Werkt uw computer, printer, wifi of televisie niet meer zoals het hoort? <strong className="text-white">Geen zorgen</strong>: een geduldige HBO-student komt bij u thuis, lost het op en legt in gewone taal uit wat er aan de hand was.</>,
         ]}
       />
 
-      {/* Bellen of teruggebeld worden, meteen onder de hero */}
-      <CallbackSection />
+      {/* Vier controleerbare feiten, zoals de marktleider zijn kengetallen onder de hero zet */}
+      <TrustStrip />
 
       {/* Diensten als fotokaarten: het apparaat op de foto vertelt meteen
           waar het vakje over gaat */}
@@ -231,23 +228,26 @@ export default function HomePage() {
         showAllButton={true}
       />
 
-      <ComfortSection />
-
-      {/* Zo werkt het */}
-      <HowItWorksSection />
-
-      {/* Prijs, met een uitgewerkt voorbeeld in plaats van een tarievenlijst */}
+      {/* Prijs direct na de diensten: 'wat kost het' is de eerste vraag van deze doelgroep */}
       <PricingSection />
 
-      {/* Plaatsen met een eigen zin per stad */}
-      <LocalCitiesSection />
-
-      {/* Testimonials */}
+      {/* Reviews */}
       <TestimonialsSection
         testimonials={testimonials}
         subtitle={<>Wij helpen dagelijks mensen in heel {BUSINESS.REGION}</>}
         background="soft"
       />
+
+      {/* Bellen of teruggebeld worden: na prijs en reviews, als de bezoeker overtuigd is */}
+      <CallbackSection />
+
+      {/* Zo werkt het */}
+      <HowItWorksSection />
+
+      <ComfortSection />
+
+      {/* Plaatsen met een eigen zin per stad */}
+      <LocalCitiesSection />
 
       {/* SEO Content Section */}
       <section className="panel-section" aria-labelledby="seo-content-heading">

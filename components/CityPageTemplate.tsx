@@ -6,6 +6,7 @@ import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
+import TrustStrip from '@/components/sections/TrustStrip'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import { Icon } from '@/components/icons'
@@ -60,7 +61,7 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? <strong className="text-white">Geen zorgen</strong>: onze HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Werkt uw computer, printer, wifi of televisie niet meer zoals het hoort? <strong className="text-white">Geen zorgen</strong>: een geduldige HBO-student komt bij u thuis in {cityName}, lost het op en legt in gewone taal uit wat er aan de hand was.
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan huis ${cityName}`,
@@ -87,7 +88,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, tablet, smartphone of een ander digitaal apparaat? Geen zorgen: onze <strong className="text-white">deskundige</strong> HBO-studenten komen bij u thuis in {cityName} en helpen u stap voor stap, in begrijpelijke taal.
+      Een geduldige HBO-student komt bij u thuis in {cityName} voor uw computer, laptop, tablet, printer of wifi. Rustig uitgelegd, <strong className="text-white">zonder abonnement</strong>, en u betaalt pas achteraf.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -725,45 +726,6 @@ function StudentContentSection({ city }: { city: City }) {
 }
 
 
-// ─── Hulplijst (student variant) ─────────────────────────────────────────────
-
-const STUDENT_HELP = [
-  { href: '/diensten/computer-laptop-hulp', title: 'Computer en laptop', desc: 'Traag, vastgelopen, foutmeldingen of een nieuwe laptop inrichten.' },
-  { href: '/diensten/wifi-internet-hulp', title: 'Wifi en internet', desc: 'Bereik in het hele huis, nieuwe router, apparaten verbinden.' },
-  { href: '/diensten/printer-scanner-hulp', title: 'Printer en scanner', desc: 'Aansluiten, draadloos printen, scannen naar e-mail.' },
-  { href: '/diensten/email-hulp', title: 'E-mail', desc: 'Weer toegang, instellen op telefoon en tablet, ongewenste mail stoppen.' },
-  { href: '/diensten/smartphone-hulp-aan-huis', title: 'Tablet en telefoon', desc: 'Nieuw toestel instellen, foto’s overzetten, videobellen met familie.' },
-  { href: '/diensten/tv-installatie', title: 'Televisie', desc: 'Smart-tv, zenders, decoder, Netflix en de soundbar.' },
-  { href: '/diensten/dataherstel-backup', title: 'Foto’s en bestanden', desc: 'Terughalen wat kan en een automatische back-up instellen.' },
-  { href: '/diensten/computercursus-ouderen', title: 'Uitleg en les', desc: 'Stap voor stap leren, met de stappen op papier om na te lezen.' },
-]
-
-function StudentHelpList({ city }: { city: City }) {
-  return (
-    <section className="panel-section" aria-labelledby="hulp-heading">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        <div className="panel panel-pad">
-          <header className="mb-8">
-            <p className="section-eyebrow">Waarmee</p>
-            <h2 id="hulp-heading" className="section-title">Waar de student u in {city.name} mee helpt</h2>
-            <p className="section-subtitle">Eén student voor alles wat een scherm of een stekker heeft.</p>
-          </header>
-          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {STUDENT_HELP.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className="step-card block h-full group">
-                  <h3 className="font-bold text-gray-900 text-lg leading-snug mb-1.5 group-hover:text-blue-700">{item.title}</h3>
-                  <p className="text-gray-600 leading-relaxed">{item.desc}</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    </section>
-  )
-}
-
 // ─── Cross-link section (student variant only) ──────────────────────────────
 
 function StudentCrossLinkSection({ city }: { city: City }) {
@@ -836,39 +798,26 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       />
 
       <Hero
+        trustLine=""
         imageSrc={config.heroImage}
         imageAlt={config.heroAlt(city.name)}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={config.heroTitle(city.name)}
         descriptions={[config.heroDescription(city.name)]}
-        pills={[
-          {
-            icon: 'academic-cap',
-            label: 'HBO-opgeleide studenten',
-          },
-          { icon: 'money', label: 'Betalen achteraf' },
-          { icon: 'calendar', label: '7 dagen per week' },
-        ]}
       />
 
-      <CallbackSection cityName={city.name} />
+      <TrustStrip cityName={city.name} />
 
-      {/* Vaste volgorde voor beide varianten: diensten → waarom → prijs
-          → reviews → hoe. Wat per variant verschilt zit in config. */}
-      {variant === 'computerhulp' ? (
-        <ServicesSection
-          eyebrow="Onze hulp"
-          title={`Waar wij u mee helpen in ${city.name}`}
-          subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
-          photoCards={true}
-          limitServices={6}
-          showAllButton={true}
-        />
-      ) : (
-        <StudentHelpList city={city} />
-      )}
-
-      <ComfortSection cityName={city.name} variant={variant} />
+      {/* Vaste volgorde voor beide varianten: feiten → diensten → prijs → reviews
+          → terugbellen → hoe → waarom. Wat per variant verschilt zit in config. */}
+      <ServicesSection
+        eyebrow="Onze hulp"
+        title={variant === 'computerhulp' ? `Waar wij u mee helpen in ${city.name}` : `Waar de student u in ${city.name} mee helpt`}
+        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
+        photoCards={true}
+        limitServices={6}
+        showAllButton={true}
+      />
 
       <PricingSection />
 
@@ -876,7 +825,11 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         testimonials={HUB_TESTIMONIALS}
       />
 
-      {variant === 'computerhulp' && <HowItWorksSection />}
+      <CallbackSection cityName={city.name} />
+
+      <HowItWorksSection />
+
+      <ComfortSection cityName={city.name} variant={variant} />
 
       {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">

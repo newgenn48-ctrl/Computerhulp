@@ -1,6 +1,6 @@
 import { Icon } from '@/components/icons'
 import CallbackForm from '@/components/CallbackForm'
-import { BUSINESS, HOURS, PRICING } from '@/lib/constants'
+import { BUSINESS } from '@/lib/constants'
 
 interface CallbackSectionProps {
   /** Plaatsnaam op stadspagina's: "…bij u thuis in Delft". */
@@ -38,18 +38,6 @@ export default function CallbackSection({ cityName }: CallbackSectionProps) {
                 <Icon name="phone" className="w-6 h-6" strokeWidth={2.5} aria-hidden="true" />
                 Bel {BUSINESS.PHONE}
               </a>
-              <ul className="mt-6 space-y-2 text-sm text-blue-50">
-                {[
-                  `${HOURS.DAYS}, van ${HOURS.OPEN} tot ${HOURS.CLOSE} uur`,
-                  `${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten, betalen achteraf`,
-                  'Meestal binnen 24 uur bij u thuis',
-                ].map((t) => (
-                  <li key={t} className="flex items-start gap-2">
-                    <Icon name="check-circle" className="w-4 h-4 mt-1 text-blue-200 flex-shrink-0" aria-hidden="true" />
-                    <span>{t}</span>
-                  </li>
-                ))}
-              </ul>
             </div>
 
             {/* Terugbellen */}
