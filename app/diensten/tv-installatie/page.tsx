@@ -134,7 +134,7 @@ export default function TVInstallatiePage() {
               </Link>
             </div>
 
-            <div className="flex flex-wrap items-center gap-3">
+            <div className="grid grid-cols-2 lg:flex lg:flex-wrap gap-x-5 gap-y-2.5 max-w-2xl">
               <span className="hero-pill">
                 <Icon name="money" className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
                 Betaalbare tarieven

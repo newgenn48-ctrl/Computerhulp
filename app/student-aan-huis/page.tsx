@@ -4,7 +4,6 @@ import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
-import TrustStrip from '@/components/sections/TrustStrip'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/PricingSection'
@@ -146,6 +145,12 @@ export default function StudentAanHuisPage() {
 
       <Hero
         trustLine=""
+        pills={[
+          { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
+          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'clock', label: 'Meestal binnen 24 uur' },
+          { icon: 'calendar', label: '7 dagen per week' },
+        ]}
         imageSrc="/hero-student.webp"
         imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
@@ -154,8 +159,6 @@ export default function StudentAanHuisPage() {
           <>Een geduldige HBO-student komt bij u thuis voor uw computer, laptop, tablet, printer of wifi. Rustig uitgelegd, <strong className="text-white">zonder abonnement</strong>, en u betaalt pas achteraf.</>,
         ]}
       />
-
-      <TrustStrip />
 
       <ServicesSection
         eyebrow="Onze hulp"

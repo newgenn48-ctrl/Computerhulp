@@ -21,7 +21,7 @@ interface HeroProps {
   title: ReactNode
   /** 1 of 2 paragrafen. Elke item wordt in eigen <p className="hero-description"> gerenderd */
   descriptions?: ReactNode[]
-  /** Optionele trust-pills onder de CTAs */
+  /** Optionele voordelen onder de knoppen: korte regels met een groen vinkje, geen vakjes */
   pills?: HeroPill[]
   /** Regel met groen vinkje direct onder de knoppen. Lege string verbergt hem. */
   trustLine?: string
@@ -92,14 +92,14 @@ export default function Hero({
           )}
 
           {pills && pills.length > 0 && (
-            <div className="flex flex-wrap items-center gap-3">
+            <ul className="grid grid-cols-2 lg:flex lg:flex-wrap gap-x-5 gap-y-2.5 max-w-2xl" aria-label="In het kort">
               {pills.map((pill, i) => (
-                <span key={i} className="hero-pill">
-                  <Icon name={pill.icon} className="w-3.5 h-3.5 text-primary-300" strokeWidth={2} />
-                  {pill.label}
-                </span>
+                <li key={i} className="hero-pill">
+                  <Icon name="check-circle" className="w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true" />
+                  <span>{pill.label}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           )}
         </div>
       </div>

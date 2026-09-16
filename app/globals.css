@@ -350,8 +350,10 @@
     @apply inline-flex items-center justify-center gap-2 px-7 py-4 text-lg font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/40 hover:border-white/60 backdrop-blur-sm rounded-xl transition duration-200;
   }
 
+  /* Voordelen in de hero: rustige regels met vinkje, zonder rand of achtergrond,
+     zodat de twee knoppen erboven de enige "klikbare" vormen blijven */
   .hero-pill {
-    @apply inline-flex items-center gap-2 bg-white/15 backdrop-blur-md text-white border border-white/25 rounded-full px-4 py-2 text-sm font-medium shadow-lg shadow-black/10 transition duration-200 hover:bg-white/25 hover:border-white/40;
+    @apply flex items-center gap-2 text-white text-sm font-medium leading-snug;
   }
 
   /* ============================================

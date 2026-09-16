@@ -6,7 +6,6 @@ import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
-import TrustStrip from '@/components/sections/TrustStrip'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import { Icon } from '@/components/icons'
@@ -799,14 +798,18 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       <Hero
         trustLine=""
+        pills={[
+          { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
+          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'clock', label: 'Meestal binnen 24 uur' },
+          { icon: 'calendar', label: '7 dagen per week' },
+        ]}
         imageSrc={config.heroImage}
         imageAlt={config.heroAlt(city.name)}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={config.heroTitle(city.name)}
         descriptions={[config.heroDescription(city.name)]}
       />
-
-      <TrustStrip cityName={city.name} />
 
       {/* Vaste volgorde voor beide varianten: feiten → diensten → prijs → reviews
           → terugbellen → hoe → waarom. Wat per variant verschilt zit in config. */}

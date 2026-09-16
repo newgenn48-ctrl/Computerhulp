@@ -4,7 +4,6 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
-import TrustStrip from '@/components/sections/TrustStrip'
 import ServicesSection from '@/components/ServicesSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
@@ -204,6 +203,12 @@ export default function HomePage() {
 
       <Hero
         trustLine=""
+        pills={[
+          { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
+          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'clock', label: 'Meestal binnen 24 uur' },
+          { icon: 'calendar', label: '7 dagen per week' },
+        ]}
         imageSrc="/hero-student.webp"
         imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel={`${BUSINESS.NAME} hero`}
@@ -213,9 +218,6 @@ export default function HomePage() {
           <>Werkt uw computer, printer, wifi of televisie niet meer zoals het hoort? <strong className="text-white">Geen zorgen</strong>: een geduldige HBO-student komt bij u thuis, lost het op en legt in gewone taal uit wat er aan de hand was.</>,
         ]}
       />
-
-      {/* Vier controleerbare feiten, zoals de marktleider zijn kengetallen onder de hero zet */}
-      <TrustStrip />
 
       {/* Diensten als fotokaarten: het apparaat op de foto vertelt meteen
           waar het vakje over gaat */}

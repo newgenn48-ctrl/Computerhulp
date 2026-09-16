@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
-import TrustStrip from '@/components/sections/TrustStrip'
 import PricingSection from '@/components/PricingSection'
 import ServicesSection from '@/components/ServicesSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -173,6 +172,12 @@ export default function ComputerhulpAanHuisPage() {
 
       <Hero
         trustLine=""
+        pills={[
+          { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
+          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'clock', label: 'Meestal binnen 24 uur' },
+          { icon: 'calendar', label: '7 dagen per week' },
+        ]}
         imageSrc="/hero-computerhulp.webp"
         imageAlt={`HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
@@ -181,8 +186,6 @@ export default function ComputerhulpAanHuisPage() {
           <>Werkt uw computer, printer, wifi of televisie niet meer zoals het hoort? Een geduldige HBO-student komt bij u thuis in heel {BUSINESS.REGION}, meestal binnen 24 uur, en lost het rustig op. <strong className="text-white">Geen abonnement, geen gedoe.</strong></>,
         ]}
       />
-
-      <TrustStrip />
 
       <ServicesSection
         eyebrow="Onze hulp"
