@@ -39,15 +39,6 @@ const faqData = {
   })),
 }
 
-const euro = (n: number) => '\u20ac' + n.toFixed(2).replace('.', ',')
-
-/* Rekenvoorbeelden uit constants - een prijswijziging loopt automatisch mee. */
-const voorbeelden = [
-  { label: 'Simpel probleem', kwartier: 3, tijd: '45 minuten', voorbeeld: 'Printer instellen, e-mail configureren, wifi fixen', featured: false },
-  { label: 'Gemiddeld probleem', kwartier: 4, tijd: '60 minuten', voorbeeld: 'Trage computer opschonen, pop-ups weghalen, data overzetten', featured: true },
-  { label: 'Complex probleem', kwartier: 6, tijd: '90 minuten', voorbeeld: 'Netwerk instellen, meerdere apparaten, volledige installatie', featured: false },
-]
-
 export default function TarievenPage() {
   return (
     <>
@@ -119,60 +110,6 @@ export default function TarievenPage() {
               </div>
             </div>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Wat zit erin */}
-      <section className="panel-section" aria-labelledby="inbegrepen-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <p className="section-eyebrow">Zo rekenen we</p>
-          <h2 id="inbegrepen-heading" className="section-title mb-6">Wat u wel en niet betaalt</h2>
-          <div className="prose prose-lg text-gray-700 max-w-none">
-            <p>
-              U betaalt per kwartier, en alleen de tijd die de student echt bij u is. De teller begint als we aanbellen en stopt als alles werkt en is uitgelegd. Het minimum is drie kwartier ({PRICING.MINIMUM_TOTAL}), omdat een bezoek zelden korter duurt: even kennismaken, rustig kijken wat er aan de hand is en samen controleren of het klopt.
-            </p>
-            <p>
-              Voorrijden kost {PRICING.TRAVEL}, overal in {BUSINESS.REGION}: in de stad en in de dorpen, overdag, ’s avonds en in het weekend. Er is geen toeslag voor avond of weekend, geen abonnement en geen jaarbijdrage. Aan de telefoon hoort u vooraf een inschatting van de tijd; duurt iets langer dan gedacht, dan overleggen we dat eerst.
-            </p>
-            <p>
-              Niet inbegrepen zijn onderdelen of apparaten die u zelf aanschaft, zoals een nieuw scherm, een accu of een wifi-versterker. Die bespreken we altijd vooraf en u beslist zelf. Lukt iets niet, dan betaalt u alleen de tijd van de diagnose. Betalen doet u achteraf, via pin of Tikkie; bedrijven kunnen een factuur krijgen.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Voorbeeld berekeningen */}
-      <section className="panel-section">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <div className="text-center mb-10">
-            <p className="section-eyebrow">Rekenvoorbeelden</p>
-            <h2 className="section-title">Wat kost het in de praktijk?</h2>
-            <p className="section-subtitle">De meeste problemen lossen we op in 45 tot 90 minuten</p>
-          </div>
-
-          <div className="grid sm:grid-cols-3 gap-5 lg:gap-6">
-            {voorbeelden.map((v) => (
-              <div key={v.label} className="card-bezel">
-                <div className="card-bezel-inner h-full">
-                  {v.featured ? (
-                    <div className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white text-xs font-bold text-center py-1.5" aria-hidden="true">
-                      Meest voorkomend
-                    </div>
-                  ) : (
-                    <div className="h-1.5 bg-gray-100" aria-hidden="true" />
-                  )}
-                  <div className="p-6 text-center">
-                    <div className="text-sm text-gray-500 mb-2">{v.label}</div>
-                    <div className="text-3xl font-extrabold text-gray-900 tabular-nums tracking-display-tight mb-1">
-                      {euro(PRICING.PER_QUARTER_NUM * v.kwartier + PRICING.TRAVEL_NUM)}
-                    </div>
-                    <div className="text-sm text-gray-600">{v.tijd} + {PRICING.TRAVEL} voorrijkosten</div>
-                    <div className="mt-4 text-sm text-gray-500">{v.voorbeeld}</div>
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
