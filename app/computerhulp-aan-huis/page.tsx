@@ -3,7 +3,6 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
-import PricingSection from '@/components/PricingSection'
 import ServicesSection from '@/components/ServicesSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
@@ -195,8 +194,6 @@ export default function ComputerhulpAanHuisPage() {
         limitServices={6}
         showAllButton={true}
       />
-
-      <PricingSection />
 
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
 

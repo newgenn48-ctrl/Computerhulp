@@ -12,7 +12,6 @@ import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
-import PricingSection from '@/components/PricingSection'
 
 
 export const metadata: Metadata = {
@@ -230,9 +229,6 @@ export default function HomePage() {
         showAllButton={true}
       />
 
-      {/* Prijs direct na de diensten: 'wat kost het' is de eerste vraag van deze doelgroep */}
-      <PricingSection />
-
       {/* Reviews */}
       <TestimonialsSection
         testimonials={testimonials}
@@ -240,7 +236,7 @@ export default function HomePage() {
         background="soft"
       />
 
-      {/* Bellen of teruggebeld worden: na prijs en reviews, als de bezoeker overtuigd is */}
+      {/* Bellen of teruggebeld worden: na diensten en reviews, als de bezoeker overtuigd is */}
       <CallbackSection />
 
       {/* Zo werkt het */}

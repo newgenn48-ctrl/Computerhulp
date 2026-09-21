@@ -9,7 +9,6 @@ import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
-import PricingSection from '@/components/PricingSection'
 
 
 export const metadata: Metadata = {
@@ -227,7 +226,6 @@ export default function ComputerhulpSeniorenPage() {
       <HowItWorksSection />
 
       {/* Pricing Section */}
-      <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
       <TestimonialsSection

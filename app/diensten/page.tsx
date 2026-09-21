@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/components/ServicesSection'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -199,57 +199,6 @@ export default function DienstenPage() {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Pricing Overview */}
-      <section className="panel-section">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <div className="text-center mb-10">
-            <p className="section-eyebrow">Tarieven</p>
-            <h2 className="section-title">Wat het kost</h2>
-            <p className="section-subtitle">Voor elke dienst hetzelfde transparante tarief</p>
-          </div>
-
-          <div className="card-bezel">
-            <div className="card-bezel-inner">
-            <div className="h-1.5 bg-gradient-to-r from-blue-600 to-indigo-700" aria-hidden="true" />
-            <div className="p-6 sm:p-10">
-            <div className="text-5xl sm:text-6xl font-extrabold tracking-display-tight text-gray-900 tabular-nums mb-2 text-center">{PRICING.PER_QUARTER}</div>
-            <div className="text-xl text-gray-600 mb-1 text-center font-medium">per kwartier</div>
-            <div className="text-base sm:text-lg text-gray-600 mb-8 text-center">Minimaal 3 kwartier + voorrijkosten, all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
-
-            <div className="border-t border-gray-200 pt-6 mb-8">
-              <ul className="grid md:grid-cols-2 gap-4">
-                {[
-                  `${PRICING.TRAVEL} voorrijkosten in heel ${BUSINESS.REGION}`,
-                  'Elke dienst dezelfde prijs',
-                  'Diagnose ter plekke inbegrepen',
-                  'Geen weekend- of avondtoeslag',
-                  'Betalen achteraf via pin of Tikkie',
-                  `${HOURS.DAYS} beschikbaar`,
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-center gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
-                    <span className="text-gray-700">{item}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="grid sm:grid-cols-2 gap-3">
-              <a href={BUSINESS.PHONE_HREF} translate="no" className="btn-primary text-base px-6 whitespace-nowrap" aria-label={`Bel ${BUSINESS.PHONE}`}>
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
-              <Link href="/afspraak-maken" className="btn-secondary text-base px-6">
-                Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
-            </div>
-            </div>
-            </div>
           </div>
         </div>
       </section>

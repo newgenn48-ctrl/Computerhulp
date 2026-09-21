@@ -1,7 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 import { Metadata } from 'next'
-import PricingSection from '@/components/PricingSection'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import Hero from '@/components/sections/Hero'
@@ -811,7 +810,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         descriptions={[config.heroDescription(city.name)]}
       />
 
-      {/* Vaste volgorde voor beide varianten: feiten → diensten → prijs → reviews
+      {/* Vaste volgorde voor beide varianten: feiten → diensten → reviews
           → terugbellen → hoe → waarom. Wat per variant verschilt zit in config. */}
       <ServicesSection
         eyebrow="Onze hulp"
@@ -821,8 +820,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         limitServices={6}
         showAllButton={true}
       />
-
-      <PricingSection />
 
       <TestimonialsSection
         testimonials={HUB_TESTIMONIALS}

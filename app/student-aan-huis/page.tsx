@@ -6,7 +6,6 @@ import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import ServicesSection from '@/components/ServicesSection'
-import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
@@ -168,8 +167,6 @@ export default function StudentAanHuisPage() {
         limitServices={6}
         showAllButton={true}
       />
-
-      <PricingSection />
 
       {/* 4. Reviews */}
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />

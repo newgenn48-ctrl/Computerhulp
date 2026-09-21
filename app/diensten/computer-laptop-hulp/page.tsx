@@ -4,7 +4,6 @@ import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
-import PricingSection from '@/components/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
@@ -217,7 +216,6 @@ export default function ComputerLaptopHulpPage() {
       </section>
 
       <HowItWorksSection />
-      <PricingSection />
 
       {/* Testimonials - Swipeable Carousel */}
       <TestimonialsSection
