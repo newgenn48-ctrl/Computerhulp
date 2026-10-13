@@ -112,7 +112,7 @@ export default function WifiInternetHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Heeft u problemen met uw wifi of internet? Slecht bereik of traag internet? <strong className="text-white">In 7 van de 10 gevallen</strong> ligt het aan de router, en dan is het meestal binnen een uur opgelost.
+              Heeft u hulp nodig bij uw wifi of internet? Slecht bereik of traag internet? <strong className="text-white">In 7 van de 10 gevallen</strong> ligt het aan de router, en dan is het meestal binnen een uur opgelost.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">

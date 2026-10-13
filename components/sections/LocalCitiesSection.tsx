@@ -47,11 +47,11 @@ export default function LocalCitiesSection({
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-5">
             {CITY_CARDS.map((c) => (
               <Link key={c.slug} href={`/${pagePrefix}-${c.slug}`} className="group city-card">
-                <span className="flex items-center gap-2 font-bold text-gray-900 text-lg group-hover:text-blue-700 transition-colors">
+                <span className="flex items-center gap-2 font-bold text-gray-900 text-xl group-hover:text-blue-700 transition-colors">
                   <Icon name="location-pin" className="w-5 h-5 text-blue-600" strokeWidth={2} aria-hidden="true" />
                   {label} {c.name}
                 </span>
-                <span className="block text-gray-600 mt-1.5 leading-relaxed">{c.text}</span>
+                <span className="block body-copy text-gray-600 mt-1.5">{c.text}</span>
                 <span className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-700 mt-3">
                   Bekijk {c.name}
                   <Icon name="arrow-right-short" className="w-4 h-4 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden="true" />

@@ -111,7 +111,7 @@ export default function SmartHomeDomoticaPage() {
             </h1>
 
             <p className="hero-description">
-              Wilt u slimme apparaten laten installeren? Verlichting, thermostaat, speaker of deurbel, we koppelen en configureren al uw slimme apparaten bij u thuis, <strong className="text-white">alles in één app</strong>.
+              Heeft u hulp nodig bij uw slimme apparaten? Verlichting, thermostaat, speaker of deurbel, we koppelen en configureren al uw slimme apparaten bij u thuis, <strong className="text-white">alles in één app</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">

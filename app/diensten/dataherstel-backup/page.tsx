@@ -111,7 +111,7 @@ export default function DataherstelBackupPage() {
             </h1>
 
             <p className="hero-description">
-              Bent u bestanden of foto's kwijt? Harde schijf defect of pc start niet meer op? We maken eerst een <strong className="text-white">eerlijke diagnose</strong>: pas als herstel realistisch is, gaan we aan de slag.
+              Heeft u hulp nodig bij het terughalen van uw bestanden of foto's? Een defecte harde schijf, of een pc die niet meer opstart? We maken eerst een <strong className="text-white">eerlijke diagnose</strong>: pas als herstel realistisch is, gaan we aan de slag.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">

@@ -119,7 +119,7 @@ export default function TVInstallatiePage() {
             </h1>
 
             <p className="hero-description">
-              Nieuwe tv ophangen en aansluiten, smart-tv en zenders instellen, soundbar en Netflix werkend, of zenders die ineens weg zijn? Wij komen bij u thuis en <strong className="text-white">zorgen dat alles werkt</strong>.
+              Heeft u hulp nodig bij uw tv? Ophangen en aansluiten, smart-tv en zenders instellen, soundbar en Netflix werkend, of zenders die ineens weg zijn? Wij komen bij u thuis en <strong className="text-white">zorgen dat alles werkt</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">

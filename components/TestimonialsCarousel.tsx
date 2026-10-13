@@ -31,7 +31,7 @@ function TestimonialsFallback({ testimonials }: TestimonialsCarouselProps) {
             </div>
             {t.date && <span className="text-sm text-gray-500">{t.date}</span>}
           </div>
-          <blockquote className="text-gray-800 mb-6 leading-relaxed text-[1.0625rem] sm:text-lg">&ldquo;{t.quote}&rdquo;</blockquote>
+          <blockquote className="body-copy text-gray-800 mb-6">&ldquo;{t.quote}&rdquo;</blockquote>
           <footer className="flex items-center gap-3 pt-4 border-t border-gray-100">
             <div className="w-11 h-11 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
               {t.initials}
@@ -136,7 +136,7 @@ function TestimonialsCarouselInner({ testimonials }: TestimonialsCarouselProps) 
                 <span className="text-sm text-gray-500">{testimonial.date}</span>
               )}
             </div>
-            <blockquote className="text-gray-800 mb-6 leading-relaxed text-[1.0625rem] sm:text-lg">&ldquo;{testimonial.quote}&rdquo;</blockquote>
+            <blockquote className="body-copy text-gray-800 mb-6">&ldquo;{testimonial.quote}&rdquo;</blockquote>
             <footer className="flex items-center gap-3 pt-4 border-t border-gray-100">
               <div className="w-11 h-11 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-full flex items-center justify-center text-white font-bold" aria-hidden="true">
                 {testimonial.initials}

@@ -82,8 +82,8 @@ export default function ComfortSection({
                       <Icon name={p.icon} className="w-5 h-5 text-white" strokeWidth={2} aria-hidden="true" />
                     </span>
                     <div>
-                      <h3 className="font-bold text-gray-900 text-lg leading-snug">{p.title}</h3>
-                      <p className="text-gray-600 leading-relaxed mt-1">{p.desc}</p>
+                      <h3 className="font-bold text-gray-900 text-xl leading-snug">{p.title}</h3>
+                      <p className="body-copy text-gray-600 mt-1">{p.desc}</p>
                     </div>
                   </li>
                 ))}

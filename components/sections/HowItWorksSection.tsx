@@ -49,8 +49,8 @@ export default function HowItWorksSection({
                 <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-600 to-indigo-700 text-white text-lg font-bold flex items-center justify-center shadow-md shadow-blue-700/20 mb-4" aria-hidden="true">
                   {item.step}
                 </div>
-                <h3 className="font-bold text-gray-900 text-lg leading-snug mb-1.5">{item.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{item.desc}</p>
+                <h3 className="font-bold text-gray-900 text-xl leading-snug mb-1.5">{item.title}</h3>
+                <p className="body-copy text-gray-600">{item.desc}</p>
               </li>
             ))}
           </ol>

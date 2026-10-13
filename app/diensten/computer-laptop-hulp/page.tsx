@@ -159,7 +159,7 @@ export default function ComputerLaptopHulpPage() {
             </h1>
 
             <p className="hero-description">
-              Traag, vastgelopen, kapot scherm of start hij niet meer op? Een HBO-student komt bij u thuis, kijkt rustig mee en repareert of lost het op, <strong className="text-white">in gewone taal uitgelegd</strong>.
+              Heeft u hulp nodig bij uw computer of laptop? Traag, vastgelopen, een kapot scherm of start hij niet meer op? Een HBO-student komt bij u thuis, kijkt rustig mee en repareert of lost het op, <strong className="text-white">in gewone taal uitgelegd</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-6">

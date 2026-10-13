@@ -142,7 +142,7 @@ export default function ComputercursusOuderenPage() {
             </h1>
 
             <p className="hero-description">
-              Wilt u beter leren omgaan met uw computer, tablet of smartphone? We leggen alles stap voor stap uit, <strong className="text-white">in gewone taal, op uw tempo</strong>.
+              Heeft u hulp nodig bij het leren werken met uw computer, tablet of smartphone? We leggen alles stap voor stap uit, <strong className="text-white">in gewone taal, op uw tempo</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -210,7 +210,7 @@ export default function ComputercursusOuderenPage() {
                 Een computercursus aan uw eigen keukentafel
               </h2>
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   Geen klaslokaal en geen tempo van een groep: bij onze cursus bepaalt ú wat u wilt leren en hoe snel het gaat. Denk aan e-mailen, videobellen en appen met de kleinkinderen, veilig internetbankieren, of orde in uw foto’s. De les is bij u thuis, op uw eigen apparaat.
                 </p>
 
@@ -236,15 +236,15 @@ export default function ComputercursusOuderenPage() {
                 </ul>
 
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">Wat u bij ons kunt leren</h3>
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   E-mailen en een bijlage meesturen. Veilig internetbankieren en inloggen met DigiD. Videobellen en appen met kinderen en kleinkinderen. Foto’s ordenen, bewaren en delen. Een brief of kaart maken in Word en een adreslijst of huishoudboekje in Excel. Sociale media zonder zorgen. Of gewoon uw nieuwe laptop, tablet of telefoon leren kennen. Ook een korte persoonlijke training over één onderwerp is prima: u bepaalt wat u wilt kunnen.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   Liever eerst één losse vraag opgelost? Kijk dan bij <Link href="/diensten/computerhulp-senioren" className="text-blue-600 hover:underline">computerhulp voor senioren</Link>. Ook hulp bij <Link href="/diensten/smartphone-hulp-aan-huis" className="text-blue-600 hover:underline">tablet en smartphone</Link> en <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail</Link>.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="body-copy text-gray-700">
                   Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur, ook in het weekend.
                 </p>
               </div>

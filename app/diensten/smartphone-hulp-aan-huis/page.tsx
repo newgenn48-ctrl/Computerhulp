@@ -141,7 +141,7 @@ export default function SmartphoneHulpAanHuisPage() {
             </h1>
 
             <p className="hero-description">
-              Nieuwe telefoon of tablet instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis, <strong className="text-white">voor elk merk telefoon of tablet</strong>.
+              Heeft u hulp nodig bij uw telefoon of tablet? Een nieuw toestel instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis, <strong className="text-white">voor elk merk telefoon of tablet</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -209,7 +209,7 @@ export default function SmartphoneHulpAanHuisPage() {
                 Smartphone- en tablethulp: van instellen tot foto’s overzetten
               </h2>
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   Een nieuwe telefoon of tablet is leuk, tot alles overgezet moet worden. Wij maken uw toestel werkklaar: contacten, foto’s en apps mee, e-mail ingesteld en de belangrijkste instellingen uitgelegd. Ook bij een volle opslag, haperende apps of een onbegrijpelijke melding komen we gewoon bij u thuis. Elk merk, telefoon of tablet: allemaal prima.
                 </p>
 
@@ -242,11 +242,11 @@ export default function SmartphoneHulpAanHuisPage() {
                   </li>
                 </ul>
 
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   Zie ook: <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail instellen</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-600 hover:underline">wifi in huis</Link> en <Link href="/diensten/computercursus-ouderen" className="text-blue-600 hover:underline">computercursus aan huis</Link>.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="body-copy text-gray-700">
                   Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur, ook in het weekend.
                 </p>
               </div>

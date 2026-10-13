@@ -44,7 +44,7 @@ export default function CallbackSection({ cityName }: CallbackSectionProps) {
             <div className="p-6 sm:p-10">
               <p className="section-eyebrow">Liever teruggebeld worden?</p>
               <h3 className="text-2xl font-bold text-gray-900 leading-tight mb-2">Laat uw nummer achter, wij bellen u</h3>
-              <p className="text-gray-600 mb-5">Alleen uw naam en telefoonnummer. Meer hoeft u niet in te vullen.</p>
+              <p className="body-copy text-gray-600 mb-5">Alleen uw naam en telefoonnummer. Meer hoeft u niet in te vullen.</p>
               <CallbackForm />
             </div>
           </div>

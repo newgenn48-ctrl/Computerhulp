@@ -174,7 +174,7 @@ export default function ComputerhulpSeniorenPage() {
             </h1>
 
             <p className="hero-description">
-              Trage computer, vreemde meldingen of iets dat niet werkt? Een HBO-student komt bij u thuis en legt alles <strong className="text-white">rustig uit, op uw tempo</strong>.
+              Heeft u hulp nodig bij uw computer, tablet of telefoon? Een trage computer, vreemde meldingen of iets dat niet werkt? Een HBO-student komt bij u thuis en legt alles <strong className="text-white">rustig uit, op uw tempo</strong>.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
@@ -242,7 +242,7 @@ export default function ComputerhulpSeniorenPage() {
                 Computerhulp voor senioren, in uw eigen tempo
               </h2>
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   U hoeft zich bij ons nooit te haasten. We nemen de tijd, leggen alles uit in gewone woorden en herhalen het gerust nog een keer als iets niet meteen duidelijk is. U werkt op uw eigen apparaat, aan uw eigen tafel, zo onthoudt u het veel beter dan uit een boekje of een telefonische helpdesk.
                 </p>
 
@@ -267,11 +267,11 @@ export default function ComputerhulpSeniorenPage() {
                   </li>
                 </ul>
 
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   Veel senioren vragen ons hulp bij <Link href="/diensten/email-hulp" className="text-blue-600 hover:underline">e-mail</Link>, <Link href="/diensten/smartphone-hulp-aan-huis" className="text-blue-600 hover:underline">tablet en telefoon</Link> en veilig internetbankieren. Wilt u structureel beter met de computer leren omgaan, kijk dan ook bij onze <Link href="/diensten/computercursus-ouderen" className="text-blue-600 hover:underline">computercursus voor ouderen</Link>.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="body-copy text-gray-700">
                   Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur, ook in het weekend.
                 </p>
               </div>

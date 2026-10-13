@@ -87,13 +87,13 @@ export default function OverOnsPage() {
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="space-y-6">
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg body-copy text-gray-700">
                   Het begon simpel: vrienden en familie vroegen regelmatig om hulp met hun computer, printer of wifi. Veel mensen liepen vast bij technische problemen en wisten niet waar ze naartoe konden.
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg body-copy text-gray-700">
                   Dus startten we <strong>{BUSINESS.NAME}</strong>. Het concept was eenvoudig: bij mensen thuis komen, in begrijpelijke taal uitleggen wat er aan de hand is, en het probleem ter plekke oplossen. Geen jargon, geen onnodige verkoop.
                 </p>
-                <p className="text-lg text-gray-700 leading-relaxed">
+                <p className="text-lg body-copy text-gray-700">
                   Wat klein begon, groeide uit tot heel {BUSINESS.REGION}. Inmiddels hebben we {BUSINESS.REVIEW_COUNT} mensen geholpen met alles van een trage laptop tot wifi in het hele huis. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
                 </p>
               </div>

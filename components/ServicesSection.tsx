@@ -195,10 +195,10 @@ export default function ServicesSection({
                     />
                   </div>
                   <div className="flex flex-col flex-1 p-5 sm:p-6">
-                    <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight mb-2">
+                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight mb-2">
                       {service.title}
                     </h3>
-                    <p className="text-sm sm:text-base text-gray-600 leading-snug mb-5 flex-1">
+                    <p className="body-copy text-gray-600 mb-5 flex-1">
                       {service.description}
                     </p>
                     <span className="inline-flex items-center gap-2.5 text-sm font-semibold text-blue-700">
@@ -232,10 +232,10 @@ export default function ServicesSection({
                   />
                 </div>
                 <div className="flex flex-col flex-1 min-w-0 md:flex-none md:w-full">
-                  <h3 className="text-base sm:text-lg font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight mb-1.5">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-blue-600 transition-colors leading-tight mb-1.5">
                     {service.title}
                   </h3>
-                  <p className="text-sm text-gray-600 leading-snug">
+                  <p className="body-copy text-gray-600">
                     {service.description}
                   </p>
                   {/* Zichtbare klik-aanwijzing: de hele kaart is een link, maar

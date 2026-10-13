@@ -217,13 +217,13 @@ export default function DienstenPage() {
             Computerhulp aan huis in {BUSINESS.REGION}
           </h2>
           <div className="prose prose-lg max-w-none">
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="body-copy text-gray-700 mb-4">
               Zoekt u betrouwbare <strong>computerhulp aan huis</strong>? We helpen particulieren en kleine ondernemers in heel {BUSINESS.REGION} met alles rondom hun apparaten. Van computer- en laptophulp tot wifi-installatie, van printerproblemen tot smart-home-oplossingen.
             </p>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className="body-copy text-gray-700 mb-4">
               Onze HBO-studenten komen bij u thuis en lossen uw technische probleem ter plekke op. Trage computer, internetproblemen, e-mailinstellingen of smartphone-hulp, we helpen vakkundig en persoonlijk, in gewone taal.
             </p>
-            <p className="text-gray-700 leading-relaxed">
+            <p className="body-copy text-gray-700">
               Elke dienst voor hetzelfde transparante tarief van {PRICING.PER_QUARTER} per kwartier, met slechts {PRICING.TRAVEL} voorrijkosten. Bel <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold">{BUSINESS.PHONE}</a> en we komen meestal binnen 24 uur bij u langs.
             </p>
           </div>

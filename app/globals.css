@@ -194,9 +194,23 @@
 
   .section-subtitle {
     @apply text-slate-600;
-    font-size: 1rem;
-    line-height: 1.7;
+    font-size: 1.125rem;
+    line-height: 1.65;
     text-wrap: pretty;
+  }
+
+  /* Eén leesmaat voor alle lopende tekst in kaarten en secties: 17px op
+     mobiel, 18px vanaf sm. Gelijk aan de reviewcitaten, zodat de hele site
+     dezelfde maat heeft. De kleur blijft bij de gebruiker van de klasse. */
+  .body-copy {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+  @media (min-width: 640px) {
+    .body-copy {
+      font-size: 1.125rem;
+    }
   }
 
   .section-label {
@@ -317,12 +331,12 @@
     transform: skewX(-4deg);
   }
 
-  /* Leadtekst onder de hero-kop: 1,22rem, gewicht 600, regelafstand 1,75. */
+  /* Leadtekst onder de hero-kop: 1,32rem, gewicht 600, regelafstand 1,7. */
   .hero-description {
     @apply text-white mb-6 max-w-lg;
-    font-size: 1.22rem;
+    font-size: 1.32rem;
     font-weight: 600;
-    line-height: 1.75;
+    line-height: 1.7;
     text-wrap: pretty;
   }
 
@@ -374,7 +388,15 @@
   }
 
   .faq-answer {
-    @apply px-5 sm:px-6 pb-5 sm:pb-6 text-gray-700 leading-relaxed;
+    @apply px-5 sm:px-6 pb-5 sm:pb-6 text-gray-700;
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    text-wrap: pretty;
+  }
+  @media (min-width: 640px) {
+    .faq-answer {
+      font-size: 1.125rem;
+    }
   }
 
   /* ============================================
