@@ -155,7 +155,7 @@ export default function StudentAanHuisPage() {
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis, lost het op en legt het rustig uit.</>,
+          <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis, lost het op en legt het rustig uit.</>,
         ]}
       />
 
@@ -171,12 +171,12 @@ export default function StudentAanHuisPage() {
       {/* 4. Reviews */}
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
 
-      {/* Bellen of teruggebeld worden: na prijs en reviews */}
-      <CallbackSection />
-
       <HowItWorksSection />
 
       <ComfortSection variant="student" />
+
+      {/* Bellen of teruggebeld worden: direct onder de geruststelling */}
+      <CallbackSection />
 
       {/* 5. FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">

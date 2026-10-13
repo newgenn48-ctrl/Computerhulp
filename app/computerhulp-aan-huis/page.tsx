@@ -182,7 +182,7 @@ export default function ComputerhulpAanHuisPage() {
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis in heel {BUSINESS.REGION}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
+          <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis in heel {BUSINESS.REGION}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
         ]}
       />
 
@@ -197,11 +197,11 @@ export default function ComputerhulpAanHuisPage() {
 
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
 
-      <CallbackSection />
-
       <HowItWorksSection />
 
       <ComfortSection variant="computerhulp" />
+
+      <CallbackSection />
 
       {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">

@@ -214,7 +214,7 @@ export default function HomePage() {
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
         descriptions={[
-          <>Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
+          <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
         ]}
       />
 
@@ -236,13 +236,13 @@ export default function HomePage() {
         background="soft"
       />
 
-      {/* Bellen of teruggebeld worden: na diensten en reviews, als de bezoeker overtuigd is */}
-      <CallbackSection />
-
       {/* Zo werkt het */}
       <HowItWorksSection />
 
       <ComfortSection />
+
+      {/* Bellen of teruggebeld worden: direct onder de geruststelling, als de bezoeker overtuigd is */}
+      <CallbackSection />
 
       {/* Plaatsen met een eigen zin per stad */}
       <LocalCitiesSection />
@@ -256,15 +256,15 @@ export default function HomePage() {
                 Eén nummer voor al uw apparaten
               </h2>
               <div className="prose prose-lg max-w-none">
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   {BUSINESS.NAME} is een kleine, lokale dienst: één telefoonnummer voor alles met een scherm of een stekker. Een HBO-student komt bij u thuis, of u nu in <Link href="/computerhulp-aan-huis-den-haag" className="text-blue-600 hover:underline">Den Haag</Link>, <Link href="/computerhulp-aan-huis-rotterdam" className="text-blue-600 hover:underline">Rotterdam</Link>, <Link href="/computerhulp-aan-huis-leiden" className="text-blue-600 hover:underline">Leiden</Link>, <Link href="/computerhulp-aan-huis-delft" className="text-blue-600 hover:underline">Delft</Link>, <Link href="/computerhulp-aan-huis-zoetermeer" className="text-blue-600 hover:underline">Zoetermeer</Link> of <Link href="/computerhulp-aan-huis-dordrecht" className="text-blue-600 hover:underline">Dordrecht</Link> woont, of in een van de dorpen daartussen.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed mb-6">
+                <p className="body-copy text-gray-700 mb-6">
                   Kies wat bij u past. Werkt er iets niet, dan is <Link href="/computerhulp-aan-huis" className="text-blue-600 hover:underline">computerhulp aan huis</Link> de snelste weg: van een trage laptop tot een printer die zwijgt. Zoekt u vooral iemand die rustig uitlegt, kijk dan bij <Link href="/student-aan-huis" className="text-blue-600 hover:underline">student aan huis</Link>. En wilt u het zelf leren, dan is er de <Link href="/diensten/computercursus-ouderen" className="text-blue-600 hover:underline">computercursus aan uw eigen keukentafel</Link>. Alle onderwerpen staan op een rij bij <Link href="/diensten" className="text-blue-600 hover:underline">onze diensten</Link>.
                 </p>
 
-                <p className="text-gray-700 leading-relaxed">
+                <p className="body-copy text-gray-700">
                   Bel ons gerust op <a href={BUSINESS.PHONE_HREF} className="text-blue-600 font-semibold hover:underline">{BUSINESS.PHONE}</a> of <Link href="/afspraak-maken" className="text-blue-600 font-semibold hover:underline">maak een afspraak online</Link>. Wij zijn elke dag bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur, ook in het weekend.
                 </p>
               </div>

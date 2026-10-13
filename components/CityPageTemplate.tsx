@@ -59,7 +59,7 @@ const computerhulpConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong>
+      Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong>
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan huis ${cityName}`,
@@ -86,7 +86,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Computer, printer, internet, e-mail, tablet of telefoon: doet iets het niet meer? Een geduldige HBO-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit.
+      Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,
@@ -656,10 +656,10 @@ function StudentContentSection({ city }: { city: City }) {
         </h2>
 
         <div className="prose prose-lg max-w-none">
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="body-copy text-gray-700 mb-6">
             <strong>Een HBO-student uit de buurt.</strong> {city.name} ligt op korte afstand van de hogescholen en universiteiten in {studyCities}, waar veel van onze studenten een technische opleiding volgen, zoals ICT of Informatica. Daardoor kunnen we snel schakelen: meestal staat er binnen 24 uur iemand bij u aan de deur, ook ’s avonds en in het weekend.
           </p>
-          <p className="text-gray-700 leading-relaxed mb-6">
+          <p className="body-copy text-gray-700 mb-6">
             U krijgt vooraf de naam van de student en een tijdvak. De student komt naar {kernen}, luistert eerst naar wat u dwarszit en gaat dan pas aan de slag, op uw eigen{' '}
             <Link href="/diensten/computer-laptop-hulp" className="text-blue-600 hover:text-blue-800 font-medium">computer of laptop</Link>,{' '}
             <Link href="/diensten/smartphone-hulp-aan-huis" className="text-blue-600 hover:text-blue-800 font-medium">tablet of telefoon</Link>{' '}of{' '}
@@ -670,11 +670,11 @@ function StudentContentSection({ city }: { city: City }) {
               <h3 className="text-2xl font-bold text-gray-900 mb-4 mt-8">
                 Wat we in {city.name} vaak doen
               </h3>
-              <p className="text-gray-700 leading-relaxed mb-6">{middle}</p>
+              <p className="body-copy text-gray-700 mb-6">{middle}</p>
             </>
           )}
           {populationText && (
-            <p className="text-gray-700 leading-relaxed mb-6">
+            <p className="body-copy text-gray-700 mb-6">
               In een gemeente met {populationText} zijn de vragen heel verschillend, maar de aanpak is steeds dezelfde: rustig, in uw tempo en zonder dat u iets hoeft te kopen. Wilt u dezelfde student terug voor een volgende keer? Zeg het bij het maken van de afspraak.
             </p>
           )}
@@ -711,7 +711,7 @@ function StudentContentSection({ city }: { city: City }) {
             </li>
           </ul>
 
-          <p className="text-gray-700 leading-relaxed">
+          <p className="body-copy text-gray-700">
             Kunnen wij u helpen in {city.name}? Bel gerust{' '}
             <a href={BUSINESS.PHONE_HREF} className="text-blue-600 hover:text-blue-800 font-semibold">{BUSINESS.PHONE}</a>{' '}
             of{' '}
@@ -811,7 +811,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       />
 
       {/* Vaste volgorde voor beide varianten: feiten → diensten → reviews
-          → terugbellen → hoe → waarom. Wat per variant verschilt zit in config. */}
+          → hoe → waarom → terugbellen. Wat per variant verschilt zit in config. */}
       <ServicesSection
         eyebrow="Onze hulp"
         title={variant === 'computerhulp' ? `Waar wij u mee helpen in ${city.name}` : `Waar de student u in ${city.name} mee helpt`}
@@ -825,11 +825,11 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         testimonials={HUB_TESTIMONIALS}
       />
 
-      <CallbackSection cityName={city.name} />
-
       <HowItWorksSection />
 
       <ComfortSection cityName={city.name} variant={variant} />
+
+      <CallbackSection cityName={city.name} />
 
       {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">
@@ -911,7 +911,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       })()}
 
       {/* Nearby cities, discovery vóór de final CTA */}
-      <NearbyCities currentCity={city.slug} pageType={config.urlPrefix} />
+      <NearbyCities currentCity={city.slug} cityName={city.name} pageType={config.urlPrefix} />
 
       {/* Cross-link section (student variant only) */}
       {variant === 'student' && <StudentCrossLinkSection city={city} />}

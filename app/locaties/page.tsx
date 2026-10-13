@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { cities, cityCount, villages, TOP_CITIES } from '@/lib/cities'
+import { hubRegions, regionWithArticle } from '@/lib/regions'
 import LocationSearch from '@/components/LocationSearch'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
@@ -193,9 +194,35 @@ export default function LocatiesPage() {
       {/* All Cities A-Z */}
       <section className="panel-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
+          {/* Regio's boven de A-Z-lijst: zeven blokken zijn sneller te overzien
+              dan 51 gemeenten, en het haalt de gemeentepagina's een klik
+              dichter bij de homepage. */}
+          <div className="text-center mb-8">
+            <p className="section-eyebrow">Per regio</p>
+            <h2 className="section-title">Waar wij komen in {BUSINESS.REGION}</h2>
+            <p className="section-subtitle max-w-2xl mx-auto">
+              Kies uw regio voor alle gemeenten daarbinnen.
+            </p>
+          </div>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-16">
+            {hubRegions.map(region => (
+              <li key={region.slug} className="card-bezel">
+                <Link href={`/regio/${region.slug}`} className="group card-bezel-inner block p-4">
+                  <span className="flex items-center gap-2 font-bold text-gray-900 text-lg group-hover:text-blue-700 transition-colors">
+                    <Icon name="location-pin" className="w-5 h-5 text-blue-600 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
+                    <span className="min-w-0 truncate">Computerhulp in {regionWithArticle(region.name)}</span>
+                  </span>
+                  <span className="block body-copy text-gray-600 mt-1">
+                    {region.cities.length} gemeenten, waaronder {region.cities.slice(0, 3).map(c => c.name).join(', ')}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+
           <div className="text-center mb-12">
             <h2 className="section-title">Alle Locaties A-Z</h2>
-            <p className="text-lg text-gray-600">Klik op uw gemeente voor meer informatie</p>
+            <p className="section-subtitle">Klik op uw gemeente voor meer informatie</p>
           </div>
 
           {/* Letter navigation */}

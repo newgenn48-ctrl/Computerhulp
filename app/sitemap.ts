@@ -1,12 +1,13 @@
 import { MetadataRoute } from 'next'
 import { citySlugs, services } from '@/lib/cities'
+import { regionSlugs } from '@/lib/regions'
 import { getCityContent } from '@/lib/cityContent'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://computerhulpzh.nl'
   // Echte wijzigingsdatums in plaats van de buildtijd: Google negeert een lastmod die bij
   // elke build voor alle 370 URL's tegelijk verspringt, en vertrouwt de sitemap dan minder.
-  const contentUpdate = new Date('2026-09-08')
+  const contentUpdate = new Date('2026-10-14')
   const layoutUpdate = new Date('2026-08-29')
   const now = contentUpdate
 
@@ -28,6 +29,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/voorwaarden`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/locaties`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
   ]
+
+  // Regio-hubs: tussenlaag tussen /locaties en de gemeentepagina's
+  const regionPages: MetadataRoute.Sitemap = regionSlugs.map(slug => ({
+    url: `${baseUrl}/regio/${slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.8,
+  }))
 
   // Diensten paginas
   const servicePages: MetadataRoute.Sitemap = services.map(service => ({
@@ -55,6 +64,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...basePages,
+    ...regionPages,
     ...servicePages,
     ...studentCityPages,
     ...computerhulpCityPages,

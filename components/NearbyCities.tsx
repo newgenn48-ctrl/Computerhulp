@@ -1,14 +1,17 @@
 import Link from 'next/link'
 import { getNearbyCities } from '@/lib/cities'
+import { getRegionOfCity, regionWithArticle } from '@/lib/regions'
 import { Icon } from '@/components/icons'
 
 interface NearbyCitiesProps {
   currentCity: string
+  cityName: string
   pageType: 'student-aan-huis' | 'computerhulp-aan-huis'
 }
 
-export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProps) {
-  const nearbyCities = getNearbyCities(currentCity, 5)
+export default function NearbyCities({ currentCity, cityName, pageType }: NearbyCitiesProps) {
+  const nearbyCities = getNearbyCities(currentCity, 8)
+  const region = getRegionOfCity(currentCity)
 
   if (nearbyCities.length === 0) {
     return null
@@ -21,6 +24,14 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
   const parentLink = pageType === 'student-aan-huis'
     ? { url: '/student-aan-huis', text: 'Bekijk alle steden in Zuid-Holland' }
     : { url: '/computerhulp-aan-huis', text: 'Bekijk alle steden in Zuid-Holland' }
+
+  /* Zusterpagina van dezelfde plaats. Zonder deze link kruisen de twee
+     varianten elkaar nergens en blijft de helft van de stadspagina's voor
+     Google op grote afstand van de homepage liggen. */
+  const siblingType = pageType === 'student-aan-huis' ? 'computerhulp-aan-huis' : 'student-aan-huis'
+  const siblingText = pageType === 'student-aan-huis'
+    ? `Computerhulp aan huis in ${cityName}`
+    : `Student aan huis in ${cityName}`
 
   return (
     <section className="py-12 bg-surface">
@@ -42,7 +53,23 @@ export default function NearbyCities({ currentCity, pageType }: NearbyCitiesProp
             </Link>
           ))}
         </div>
-        <div className="text-center">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-3 text-center">
+          <Link
+            href={`/${siblingType}-${currentCity}`}
+            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
+          >
+            {siblingText}
+            <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+          </Link>
+          {region && (
+            <Link
+              href={`/regio/${region.slug}`}
+              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
+            >
+              Alle plaatsen in {regionWithArticle(region.name)}
+              <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
+            </Link>
+          )}
           <Link
             href={parentLink.url}
             className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
