@@ -74,7 +74,7 @@ export default function WaaromOnsPage() {
               </thead>
               <tbody>
                 <tr className="border-t border-gray-200">
-                  <td className="p-4 font-medium text-gray-900">Een bezoek van 45 minuten (het minimum), inclusief voorrijden</td>
+                  <td className="p-4 font-medium text-gray-900">Een bezoek van 30 minuten (het minimum), inclusief voorrijden</td>
                   <td className="p-4 bg-blue-50 text-center font-bold text-blue-700 text-lg">{PRICING.MINIMUM_ALL_IN}</td>
                   <td className="p-4 text-center text-gray-600 bg-surface">Vaak per uur, soms met lidmaatschap</td>
                 </tr>

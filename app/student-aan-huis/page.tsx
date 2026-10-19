@@ -78,7 +78,7 @@ const structuredData = {
             unitText: 'minuten',
           },
           minPrice: String(PRICING.MINIMUM_TOTAL_NUM),
-          description: `Minimaal 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`,
+          description: `Minimaal 2 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`,
         },
         seller: { '@id': `${BUSINESS.URL}/#localbusiness` },
       },
@@ -109,7 +109,7 @@ const faqItems = [
   },
   {
     q: 'Wat kost een student aan huis?',
-    a: `${PRICING.PER_QUARTER} per kwartier, minimaal drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement en geen jaarbijdrage; u betaalt na afloop via pin of Tikkie.`,
+    a: `${PRICING.PER_QUARTER} per kwartier, minimaal twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement en geen jaarbijdrage; u betaalt na afloop via pin of Tikkie.`,
   },
   {
     q: 'Kan ik dezelfde student terugvragen?',

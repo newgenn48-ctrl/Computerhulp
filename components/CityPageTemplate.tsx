@@ -284,8 +284,8 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
           unitCode: 'MIN',
           unitText: 'minuten'
         },
-        ...(variant === 'computerhulp' ? { minPrice: '44.97' } : {}),
-        description: `Minimaal 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`
+        ...(variant === 'computerhulp' ? { minPrice: String(PRICING.MINIMUM_TOTAL_NUM) } : {}),
+        description: `Minimaal 2 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`
       }
     }
   }
@@ -340,7 +340,7 @@ function generateComputerhulpFaqEntities(city: City) {
       name: `Wat kost computerhulp aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Computerhulp aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL}.`
+        text: `Computerhulp aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 2 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL}.`
       }
     },
     {
@@ -397,7 +397,7 @@ function generateStudentFaqQuestions(city: City) {
       name: `Wat kost student aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Student aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in ${city.name} en omgeving. U betaalt na afloop via pin of Tikkie.`
+        text: `Student aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 2 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in ${city.name} en omgeving. U betaalt na afloop via pin of Tikkie.`
       }
     },
     {
@@ -455,7 +455,7 @@ function getComputerhulpFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost computerhulp aan huis in ${city.name}?`,
-      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}, u betaalt dus alleen voor de hulp zelf.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}, u betaalt dus alleen voor de hulp zelf.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} komen?`,
@@ -484,7 +484,7 @@ function getStudentFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost student aan huis in ${city.name}?`,
-      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}. Betalen doet u achteraf, via pin of Tikkie.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}. Betalen doet u achteraf, via pin of Tikkie.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} langskomen?`,

@@ -106,7 +106,7 @@ const faqData = {
       name: `Wat kost computerhulp voor senioren?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.`
+        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.`
       }
     }
   ]
@@ -325,7 +325,7 @@ export default function ComputerhulpSeniorenPage() {
               { q: `Kunnen jullie het opschrijven, zodat ik het kan nalezen?`, a: `Ja. De belangrijkste stappen zetten we voor u op papier, in duidelijke taal, zodat u ze later rustig zelf kunt herhalen.` },
               { q: `Mag mijn zoon of dochter erbij zijn?`, a: `Natuurlijk, dat is zelfs handig. Vier oren onthouden meer dan twee, en uw familie weet daarna precies hoe alles is ingesteld.` },
               { q: `Helpen jullie ook met de tablet en de telefoon?`, a: `Zeker. Van tablet tot telefoon: instellen, apps, foto's en videobellen met de kleinkinderen, u zegt maar waar u mee zit.` },
-              { q: `Wat kost computerhulp voor senioren?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
+              { q: `Wat kost computerhulp voor senioren?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">

@@ -75,7 +75,7 @@ const faqData = {
     { '@type': 'Question', name: `Helpen jullie met Android én met iPhone?`, acceptedAnswer: { '@type': 'Answer', text: `Allebei. Android, iPhone of een ander merk, telefoon of tablet: we kennen alle systemen en leggen de verschillen rustig uit.` } },
     { '@type': 'Question', name: `Kunnen jullie videobellen instellen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen, koppelen de contacten en oefenen het samen, zodat u het daarna zelf kunt.` } },
     { '@type': 'Question', name: `Kunnen jullie apps installeren en uitleggen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja, en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` } },
-    { '@type': 'Question', name: `Wat kost smartphone- of tablethulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
+    { '@type': 'Question', name: `Wat kost smartphone- of tablethulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
   ]
 }
 
@@ -302,7 +302,7 @@ export default function SmartphoneHulpAanHuisPage() {
               { q: `Helpen jullie met Android én met iPhone?`, a: `Allebei. Android, iPhone of een ander merk, telefoon of tablet: we kennen alle systemen en leggen de verschillen rustig uit.` },
               { q: `Kunnen jullie videobellen instellen?`, a: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen, koppelen de contacten en oefenen het samen, zodat u het daarna zelf kunt.` },
               { q: `Kunnen jullie apps installeren en uitleggen?`, a: `Ja, en alleen de apps die ú nodig heeft. We laten zien hoe ze werken, en herhalen het gerust nog een keer.` },
-              { q: `Wat kost smartphone- of tablethulp aan huis?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
+              { q: `Wat kost smartphone- of tablethulp aan huis?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">

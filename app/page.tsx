@@ -52,7 +52,7 @@ const faqItems = [
   },
   {
     q: 'Wat kost het?',
-    a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt pas achteraf, gewoon via pin, contant of Tikkie.`,
+    a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt pas achteraf, gewoon via pin, contant of Tikkie.`,
   },
   {
     q: 'Waar kunnen jullie mee helpen?',

@@ -86,7 +86,7 @@ const structuredData = {
             unitText: 'minuten',
           },
           minPrice: String(PRICING.MINIMUM_TOTAL_NUM),
-          description: `Minimaal 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`,
+          description: `Minimaal 2 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`,
         },
         seller: { '@id': `${BUSINESS.URL}/#localbusiness` },
       },
@@ -132,7 +132,7 @@ const faqItems = [
   },
   {
     q: 'Wat kost computerhulp aan huis?',
-    a: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement, geen toeslag, betalen achteraf via pin of Tikkie.`,
+    a: `${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement, geen toeslag, betalen achteraf via pin of Tikkie.`,
   },
 ]
 
