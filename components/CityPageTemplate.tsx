@@ -80,7 +80,7 @@ const studentConfig: VariantConfig = {
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit.
+      Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Dan komt er een geduldige HBO IT-student aan huis in {cityName}, die het oplost en rustig uitlegt.
     </>
   ),
   servicesTitle: (cityName) => `Waar we u mee helpen in ${cityName}`,

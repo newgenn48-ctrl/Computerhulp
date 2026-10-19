@@ -155,7 +155,7 @@ export default function StudentAanHuisPage() {
         eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
         title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis, lost het op en legt het rustig uit.</>,
+          <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Dan komt er een geduldige computerstudent aan huis: een HBO IT-student die het oplost en rustig uitlegt.</>,
         ]}
       />
 
