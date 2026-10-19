@@ -13,8 +13,6 @@ export const BUSINESS = {
   REGION: 'Zuid-Holland',
   COUNTRY: 'NL',
   REVIEW_COUNT: '5000+',
-  YEARS_ACTIVE: '10+',
-  FOUNDING_YEAR: 2013,
   RESPONSE_TIME: 'meestal binnen 1 uur',
 } as const
 

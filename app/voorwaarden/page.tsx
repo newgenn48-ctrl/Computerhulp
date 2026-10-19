@@ -3,7 +3,7 @@ import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Algemene voorwaarden | Computerhulp aan huis',
-  description: 'Algemene voorwaarden van Computerhulp Zuid-Holland. Lees de voorwaarden voor gebruik van onze diensten.',
+  description: 'Algemene voorwaarden van Computerhulp Zuid-Holland: wat een bezoek kost, hoe u betaalt, wanneer u kunt annuleren en welke afspraken er gelden bij hulp aan huis.',
   openGraph: {
     images: OG_IMAGE,
     title: 'Algemene voorwaarden | Computerhulp aan huis',

@@ -45,7 +45,6 @@ interface VariantConfig {
   benefits?: Benefit[]
   neighborhoodsSectionTitle: (city: City, region: string) => string
   neighborhoodsSectionDescription: (cityName: string, region?: string) => string
-  pricingBenefits: (cityName: string) => string[]
 }
 
 const computerhulpConfig: VariantConfig = {
@@ -68,11 +67,6 @@ const computerhulpConfig: VariantConfig = {
   neighborhoodsSectionTitle: (_city, region) => `Computerhulp in de regio ${region}`,
   neighborhoodsSectionDescription: (cityName, region) =>
     `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont in de regio ${region}, we zijn er snel.`,
-  pricingBenefits: (cityName) => [
-    `${PRICING.TRAVEL} voorrijkosten in ${cityName}`,
-    'Ook \'s avonds en in het weekend beschikbaar',
-    'Betalen via pin of Tikkie'
-  ],
 }
 
 const studentConfig: VariantConfig = {
@@ -101,12 +95,6 @@ const studentConfig: VariantConfig = {
   neighborhoodsSectionTitle: (city) => `Student aan huis in alle wijken van ${city.name}`,
   neighborhoodsSectionDescription: (cityName) =>
     `Wij komen in alle wijken en buurten van ${cityName}. Waar u ook woont, voorrijden kost slechts ${PRICING.TRAVEL}.`,
-  pricingBenefits: (cityName) => [
-    `${PRICING.TRAVEL} voorrijkosten in ${cityName}`,
-    'Eerlijke inschatting vooraf, geen verrassingen',
-    'Ook \'s avonds en in het weekend beschikbaar',
-    'Betalen via pin of Tikkie'
-  ],
 }
 
 /** Hogescholen/universiteiten in de buurt van elke regio; gebruikt op de student-stadspagina's. */

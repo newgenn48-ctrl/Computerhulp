@@ -3,7 +3,7 @@ import { BUSINESS, OG_IMAGE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Privacyverklaring | Computerhulp aan huis',
-  description: 'Privacyverklaring van Computerhulp Zuid-Holland. Lees hoe wij omgaan met uw persoonlijke gegevens.',
+  description: 'Privacyverklaring van Computerhulp Zuid-Holland: welke gegevens wij vragen, waarvoor we ze gebruiken, hoe lang we ze bewaren en hoe u ze laat verwijderen.',
   openGraph: {
     images: OG_IMAGE,
     title: 'Privacyverklaring | Computerhulp aan huis',
