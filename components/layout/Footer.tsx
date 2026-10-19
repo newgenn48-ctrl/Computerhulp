@@ -43,6 +43,9 @@ export default function Footer() {
               <Link href="/faq" className="footer-link">
                 FAQ
               </Link>
+              <Link href="/kennisbank" className="footer-link">
+                Kennisbank
+              </Link>
               <Link href="/privacy" className="footer-link">
                 Privacy
               </Link>

@@ -54,6 +54,14 @@ export default function Breadcrumb() {
         breadcrumbItems.push({ label: 'Computerhulp aan huis', href: '/computerhulp-aan-huis' })
         label = cityName
       }
+    } else if (pathSegments[0] === 'kennisbank' && index === 1) {
+      // Artikelslugs zijn hele zinnen. Elk woord een hoofdletter geven leest
+      // fout ("Computer Traag Geworden"), dus alleen het eerste woord.
+      const woorden = segment.split('-')
+      label = woorden[0].charAt(0).toUpperCase() + woorden[0].slice(1) + ' ' + woorden.slice(1).join(' ')
+      label = label.trim()
+    } else if (segment === 'kennisbank') {
+      label = 'Kennisbank'
     } else if (segment === 'diensten') {
       label = 'Diensten'
     } else if (segment === 'over-ons') {

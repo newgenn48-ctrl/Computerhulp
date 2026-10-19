@@ -11,6 +11,7 @@ const NAV_ITEMS: { href: string; label: string; desktopClass?: string }[] = [
   { href: '/diensten', label: 'Diensten' },
   { href: '/tarieven', label: 'Tarieven' },
   { href: '/locaties', label: 'Locaties', desktopClass: 'hidden lg:inline' },
+  { href: '/kennisbank', label: 'Kennisbank', desktopClass: 'hidden xl:inline' },
   { href: '/over-ons', label: 'Over Ons', desktopClass: 'hidden lg:inline' },
   { href: '/contact', label: 'Contact' },
 ]

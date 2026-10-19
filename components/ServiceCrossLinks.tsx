@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import { articles } from '@/lib/kennisbank'
 
 interface ServiceCrossLinksProps {
   currentService: string
@@ -34,6 +35,9 @@ const relatedServicesMap: Record<string, string[]> = {
 
 export default function ServiceCrossLinks({ currentService, serviceName }: ServiceCrossLinksProps) {
   const related = relatedServicesMap[currentService] || []
+  /* Kennisbankartikelen die bij deze dienst horen. Niet elke dienst heeft er
+     een; dan vervalt de sectie in plaats van een lege kop te laten staan. */
+  const kennisbank = articles.filter(a => a.service === currentService)
   const relatedServices = related
     .map(slug => allServices.find(s => s.slug === slug))
     .filter((s): s is (typeof allServices)[number] => Boolean(s))
@@ -69,6 +73,44 @@ export default function ServiceCrossLinks({ currentService, serviceName }: Servi
           </div>
         </div>
       </section>
+
+      {/* Uitleg bij de klacht, voor wie eerst wil begrijpen wat er aan de hand
+          is voordat hij belt. */}
+      {kennisbank.length > 0 && (
+        <section className="panel-section" aria-labelledby="kennisbank-dienst-heading">
+          <div className="max-w-5xl mx-auto px-4 sm:px-6 panel panel-pad">
+            <header className="text-center mb-8">
+              <p className="section-eyebrow">Kennisbank</p>
+              <h2 id="kennisbank-dienst-heading" className="section-title">Wat zit er meestal achter?</h2>
+              <p className="section-subtitle max-w-2xl mx-auto">
+                Uitleg over de klachten die wij hierin het vaakst tegenkomen.
+              </p>
+            </header>
+
+            <ul className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {kennisbank.map(article => (
+                <li key={article.slug} className="card-bezel">
+                  <div className="card-bezel-inner p-5 h-full flex flex-col">
+                    <h3 className="font-bold text-gray-900 text-lg leading-snug mb-2">
+                      <Link href={`/kennisbank/${article.slug}`} className="hover:text-blue-700 transition-colors">
+                        {article.title}
+                      </Link>
+                    </h3>
+                    <p className="body-copy text-gray-600">{article.excerpt}</p>
+                  </div>
+                </li>
+              ))}
+            </ul>
+
+            <p className="mt-6 text-center">
+              <Link href="/kennisbank" className="inline-flex items-center gap-2 font-semibold text-blue-700 hover:text-blue-800">
+                Alle onderwerpen in de kennisbank
+                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+              </Link>
+            </p>
+          </div>
+        </section>
+      )}
     </>
   )
 }

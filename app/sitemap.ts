@@ -1,6 +1,7 @@
 import { MetadataRoute } from 'next'
 import { citySlugs, services } from '@/lib/cities'
 import { regionSlugs } from '@/lib/regions'
+import { articleSlugs } from '@/lib/kennisbank'
 import { getCityContent } from '@/lib/cityContent'
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -9,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // elke build voor alle 370 URL's tegelijk verspringt, en vertrouwt de sitemap dan minder.
   const contentUpdate = new Date('2026-10-14')
   const layoutUpdate = new Date('2026-08-29')
+  const kennisbankUpdate = new Date('2026-10-19')
   const now = contentUpdate
 
   // Basis paginas met prioriteit
@@ -26,7 +28,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${baseUrl}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/voorwaarden`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     { url: `${baseUrl}/locaties`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${baseUrl}/kennisbank`, lastModified: kennisbankUpdate, changeFrequency: 'monthly', priority: 0.7 },
   ]
+
+  // Kennisbank: uitleg per klacht, elk artikel wijst door naar zijn dienstpagina
+  const kennisbankPages: MetadataRoute.Sitemap = articleSlugs.map(slug => ({
+    url: `${baseUrl}/kennisbank/${slug}`,
+    lastModified: kennisbankUpdate,
+    changeFrequency: 'yearly' as const,
+    priority: 0.6,
+  }))
 
   // Regio-hubs: tussenlaag tussen /locaties en de gemeentepagina's
   const regionPages: MetadataRoute.Sitemap = regionSlugs.map(slug => ({
@@ -64,6 +75,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...basePages,
     ...regionPages,
     ...servicePages,
+    ...kennisbankPages,
     ...studentCityPages,
     ...computerhulpCityPages,
   ]
