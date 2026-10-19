@@ -8,6 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
+    "seo:check": "node scripts/seo-check.mjs",
     "test": "jest",
     "test:watch": "jest --watch",
     "ads:token": "node scripts/google-ads-refresh-token.mjs"

@@ -32,7 +32,14 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
 
   return {
     title,
-    description: `Computerhulp aan huis in ${inRegio}: ${region.cities.slice(0, 4).map(c => c.name).join(', ')} en meer. Een HBO IT-student komt bij u thuis, meestal binnen 24 uur. Bel ${BUSINESS.PHONE}.`,
+    /* Google toont ~160 tekens. Met drie plaatsnamen past het bij de meeste
+       regio's; bij lange namen vallen we terug op een variant zonder opsomming. */
+    description: (() => {
+      const lang = `Computerhulp aan huis in ${inRegio}: ${region.cities.slice(0, 3).map(c => c.name).join(', ')} en meer. Een HBO IT-student bij u thuis, meestal binnen 24 uur.`
+      return lang.length <= 160
+        ? lang
+        : `Computerhulp aan huis in ${inRegio}, ${region.cities.length} gemeenten. Een HBO IT-student komt bij u thuis en legt alles rustig uit, meestal binnen 24 uur.`
+    })(),
     openGraph: {
       images: OG_IMAGE,
       title,

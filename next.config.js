@@ -22,6 +22,10 @@ const nextConfig = {
       { source: '/index.php/:year(\\d{4})/:path*', destination: '/', permanent: true },
       { source: '/index.php/:path*', destination: '/:path*', permanent: true },
       { source: '/hello-world', destination: '/', permanent: true },
+      /* De broodkruimel bouwt zijn pad uit URL-segmenten, dus op /regio/<naam>
+         ontstaat een link naar /regio. Die map heeft geen eigen pagina en moet
+         er ook geen krijgen: dat zou /locaties dupliceren. */
+      { source: '/regio', destination: '/locaties', permanent: true },
       { source: '/category/:path*', destination: '/', permanent: true },
       { source: '/computerhulp-aan-huis-in-den-haag', destination: '/computerhulp-aan-huis-den-haag', permanent: true },
       { source: '/wp-content/uploads/2024/10/Algemene-voorwaarden.pdf', destination: '/voorwaarden', permanent: true },
