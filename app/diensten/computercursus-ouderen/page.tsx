@@ -76,7 +76,7 @@ const faqData = {
     { '@type': 'Question', name: `Kunnen jullie mij leren veilig te internetbankieren?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Van inloggen met DigiD of uw bank-app tot een overschrijving doen. We leggen ook uit hoe u nepmails en oplichting herkent, zodat u met een gerust hart bankiert.` } },
     { '@type': 'Question', name: `Leren jullie ook videobellen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen en oefenen het samen, zodat u zelf met kinderen, kleinkinderen of vrienden kunt bellen.` } },
     { '@type': 'Question', name: `Krijg ik iets om na te lezen?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. Elke les eindigt met de stappen op papier, zodat u zelfstandig verder kunt oefenen tot de volgende keer.` } },
-    { '@type': 'Question', name: `Is één les genoeg, en wat kost het?`, acceptedAnswer: { '@type': 'Answer', text: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder, u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
+    { '@type': 'Question', name: `Is één les genoeg, en wat kost het?`, acceptedAnswer: { '@type': 'Answer', text: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder, u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` } },
   ]
 }
 
@@ -301,7 +301,7 @@ export default function ComputercursusOuderenPage() {
               { q: `Kunnen jullie mij leren veilig te internetbankieren?`, a: `Ja. Van inloggen met DigiD of uw bank-app tot een overschrijving doen. We leggen ook uit hoe u nepmails en oplichting herkent, zodat u met een gerust hart bankiert.` },
               { q: `Leren jullie ook videobellen?`, a: `Ja. We installeren WhatsApp of een ander programma om te beeldbellen en oefenen het samen, zodat u zelf met kinderen, kleinkinderen of vrienden kunt bellen.` },
               { q: `Krijg ik iets om na te lezen?`, a: `Ja. Elke les eindigt met de stappen op papier, zodat u zelfstandig verder kunt oefenen tot de volgende keer.` },
-              { q: `Is één les genoeg, en wat kost het?`, a: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder, u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
+              { q: `Is één les genoeg, en wat kost het?`, a: `Soms is één les genoeg; wilt u meer, dan plannen we gewoon verder, u zit nergens aan vast. We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">

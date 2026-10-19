@@ -59,7 +59,7 @@ const faqData = {
     { '@type': 'Question', name: `Kunnen jullie een soundbar aansluiten op mijn tv?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We sluiten uw soundbar of surroundset aan via HDMI ARC, optisch of bluetooth en zorgen dat het geluid samenwerkt met uw tv en afstandsbediening.` } },
     { '@type': 'Question', name: `Installeren jullie ook streamingdiensten zoals Netflix?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We installeren en configureren Netflix, Disney+, NPO Start, Videoland, Amazon Prime en meer. We maken accounts aan als dat nodig is en leggen uit hoe u ze gebruikt.` } },
     { '@type': 'Question', name: `Helpen jullie ook met radio en muziek?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We stellen DAB+ radio’s in, koppelen bluetooth-speakers en zorgen dat internetradio en muziekdiensten werken op uw tv of speaker.` } },
-    { '@type': 'Question', name: `Wat kost een tv-installatie?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Een gemiddelde installatie duurt drie tot vier kwartier. U betaalt achteraf, via pin of Tikkie.` } },
+    { '@type': 'Question', name: `Wat kost een tv-installatie?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Een gemiddelde installatie duurt drie tot vier kwartier. U betaalt achteraf, via pin of Tikkie.` } },
   ]
 }
 
@@ -84,7 +84,7 @@ const faqs = [
   { question: `Kunnen jullie een soundbar aansluiten op mijn tv?`, answer: `Ja. We sluiten uw soundbar of surroundset aan via HDMI ARC, optisch of bluetooth en zorgen dat het geluid samenwerkt met uw tv en afstandsbediening.` },
   { question: `Installeren jullie ook streamingdiensten zoals Netflix?`, answer: `Ja. We installeren en configureren Netflix, Disney+, NPO Start, Videoland, Amazon Prime en meer. We maken accounts aan als dat nodig is en leggen uit hoe u ze gebruikt.` },
   { question: `Helpen jullie ook met radio en muziek?`, answer: `Ja. We stellen DAB+ radio’s in, koppelen bluetooth-speakers en zorgen dat internetradio en muziekdiensten werken op uw tv of speaker.` },
-  { question: `Wat kost een tv-installatie?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van twee kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Een gemiddelde installatie duurt drie tot vier kwartier. U betaalt achteraf, via pin of Tikkie.` },
+  { question: `Wat kost een tv-installatie?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Een gemiddelde installatie duurt drie tot vier kwartier. U betaalt achteraf, via pin of Tikkie.` },
 ]
 
 export default function TVInstallatiePage() {

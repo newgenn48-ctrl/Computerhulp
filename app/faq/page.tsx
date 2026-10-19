@@ -108,7 +108,7 @@ const faqCategories = [
     questions: [
       {
         question: 'Wat zijn de kosten voor computerhulp?',
-        answer: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 2 kwartier (${PRICING.MINIMUM_TOTAL}), plus ${PRICING.TRAVEL} voorrijkosten. Een bezoek kost dus vanaf ${PRICING.MINIMUM_ALL_IN} all-in; daar komt niets meer bij.`
+        answer: `We rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL}), plus ${PRICING.TRAVEL} voorrijkosten. Een bezoek kost dus vanaf ${PRICING.MINIMUM_ALL_IN} all-in; daar komt niets meer bij.`
       },
       {
         question: 'Zijn er voorrijkosten?',
