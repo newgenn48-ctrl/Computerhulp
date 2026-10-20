@@ -29,7 +29,7 @@ export default function FAQPage() {
 
       <div className="pb-20">
         {/* Hero */}
-        <section className="bg-surface pt-28 pb-12 sm:pb-16">
+        <section className="bg-surface pt-6 pb-12 sm:pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <span className="eyebrow">Hulp & informatie</span>
             <h1 className="section-title-lg mb-4">
@@ -104,7 +104,7 @@ export default function FAQPage() {
 
 const faqCategories = [
   {
-    title: 'Prijzen & Betaling',
+    title: 'Prijzen en betaling',
     questions: [
       {
         question: 'Wat zijn de kosten voor computerhulp?',
@@ -129,7 +129,7 @@ const faqCategories = [
     ]
   },
   {
-    title: 'Planning & Beschikbaarheid',
+    title: 'Planning en beschikbaarheid',
     questions: [
       {
         question: 'Hoe snel kunnen jullie langskomen?',
@@ -150,7 +150,7 @@ const faqCategories = [
     ]
   },
   {
-    title: 'Diensten & Problemen',
+    title: 'Diensten en problemen',
     questions: [
       {
         question: 'Welke problemen kunnen jullie oplossen?',
@@ -188,7 +188,7 @@ const faqCategories = [
     ]
   },
   {
-    title: 'Privacy & Veiligheid',
+    title: 'Privacy en veiligheid',
     questions: [
       {
         question: 'Zijn mijn gegevens veilig bij jullie?',
@@ -205,7 +205,7 @@ const faqCategories = [
     ]
   },
   {
-    title: 'Overige Vragen',
+    title: 'Overige vragen',
     questions: [
       {
         question: 'Moet ik thuis blijven tijdens het bezoek?',

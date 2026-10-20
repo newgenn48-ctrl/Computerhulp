@@ -47,7 +47,7 @@ export default function WebsiteLatenMakenPage() {
 
       <div className="min-h-screen bg-white">
         {/* Hero Section - 2 Columns */}
-        <section className="relative flex items-center pt-24 pb-16 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-surface">
+        <section className="relative flex items-center pt-6 pb-16 overflow-hidden bg-gradient-to-br from-blue-50 via-white to-surface">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 w-full">
             <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
               {/* Left Column - Content */}

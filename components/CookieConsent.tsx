@@ -51,29 +51,35 @@ export default function CookieConsent() {
       role="region"
       aria-live="polite"
       aria-label="Cookie-toestemming"
-      /* mb-[76px] op mobiel houdt de sticky bel-balk volledig vrij */
-      className="cookie-consent fixed inset-x-0 bottom-0 z-[60] px-3 pb-3 mb-[76px] sm:mb-0 sm:px-6 sm:pb-6"
+      /* mb-[76px] op mobiel houdt de sticky bel-balk volledig vrij. Vanaf sm
+         is dit een kaartje rechtsonder in plaats van een balk over de volle
+         breedte: die balk dekte de onderste 88px van het scherm, en precies
+         daar staat op de hero de belknop. Rechtsonder, want de herotekst
+         staat links. */
+      className="cookie-consent fixed inset-x-0 bottom-0 z-[60] px-3 pb-3 mb-[76px] sm:mb-0 sm:inset-x-auto sm:right-6 sm:bottom-6 sm:px-0 sm:pb-0 sm:w-[26rem]"
     >
-      <div className="max-w-3xl mx-auto bg-white border border-gray-200 rounded-xl shadow-2xl px-3 py-2.5 sm:px-5 sm:py-3">
-        <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-5">
+      <div className="bg-white border border-gray-200 rounded-xl shadow-2xl px-3 py-2.5 sm:px-5 sm:py-4">
+        <div className="flex flex-col gap-2.5">
           <p className="flex-1 text-xs sm:text-sm text-gray-700 leading-snug">
             Wij gebruiken cookies voor de website en advertenties.{' '}
             <Link href="/privacy" className="text-blue-600 hover:text-blue-700 underline font-medium">
               Lees meer
             </Link>
           </p>
+          {/* min-h-[44px]: deze twee knoppen waren 38px hoog en zijn het
+              eerste wat iemand op de site moet aanraken. */}
           <div className="flex flex-row gap-2 flex-shrink-0">
             <button
               type="button"
               onClick={() => decide(false)}
-              className="flex-1 sm:flex-none px-3 py-2 text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
+              className="flex-1 inline-flex items-center justify-center min-h-[44px] px-4 text-sm font-semibold text-gray-700 bg-gray-100 hover:bg-gray-200 rounded-lg transition-colors"
             >
               Weigeren
             </button>
             <button
               type="button"
               onClick={() => decide(true)}
-              className="flex-1 sm:flex-none px-3 py-2 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 rounded-lg transition-colors shadow-sm"
+              className="flex-1 inline-flex items-center justify-center min-h-[44px] px-4 text-sm font-semibold text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 rounded-lg transition-colors shadow-sm"
             >
               Accepteren
             </button>

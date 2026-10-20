@@ -121,7 +121,7 @@ export default async function KennisbankArtikelPage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleData) }} />
 
       <div className="pb-20">
-        <section className="bg-surface pt-28 pb-10 sm:pb-12">
+        <section className="bg-surface pt-6 pb-10 sm:pb-12">
           <div className="max-w-3xl mx-auto px-4 sm:px-6">
             <span className="eyebrow">{article.category}</span>
             <h1 className="section-title-lg mb-4" style={{ textWrap: 'balance' }}>

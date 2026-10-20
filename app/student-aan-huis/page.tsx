@@ -6,6 +6,7 @@ import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import ServicesSection from '@/components/ServicesSection'
+import PricingSection from '@/components/sections/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
@@ -168,12 +169,21 @@ export default function StudentAanHuisPage() {
         showAllButton={true}
       />
 
+      {/* Prijs direct na de diensten: dat is de volgorde waarin
+          mensen het vragen, en zonder dit blok stond er nergens
+          boven de FAQ een bedrag. */}
+      <PricingSection />
+
       {/* 4. Reviews */}
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
 
       <HowItWorksSection />
 
-      <ComfortSection variant="student" />
+      <ComfortSection
+        variant="student"
+        imageSrc="/hero-computerhulp.webp"
+        imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+      />
 
       {/* Bellen of teruggebeld worden: direct onder de geruststelling */}
       <CallbackSection />

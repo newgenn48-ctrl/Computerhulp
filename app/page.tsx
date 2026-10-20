@@ -5,6 +5,7 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
 import ServicesSection from '@/components/ServicesSection'
+import PricingSection from '@/components/sections/PricingSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
@@ -100,7 +101,7 @@ const localBusinessData = {
   logo: `${BUSINESS.URL}/logo.png`,
   image: [
     `${BUSINESS.URL}/hero-student.webp`,
-    `${BUSINESS.URL}/hero-student.webp`,
+    `${BUSINESS.URL}/hero-computerhulp.webp`,
   ],
   address: {
     '@type': 'PostalAddress',
@@ -229,17 +230,25 @@ export default function HomePage() {
         showAllButton={true}
       />
 
+      {/* Prijs direct na de diensten: dat is de volgorde waarin
+          mensen het vragen, en zonder dit blok stond er nergens
+          boven de FAQ een bedrag. */}
+      <PricingSection />
+
       {/* Reviews */}
       <TestimonialsSection
         testimonials={testimonials}
         subtitle={<>Wij helpen dagelijks mensen in heel {BUSINESS.REGION}</>}
-        background="soft"
       />
 
       {/* Zo werkt het */}
       <HowItWorksSection />
 
-      <ComfortSection />
+      {/* Andere foto dan de hero hierboven: die is dezelfde student. */}
+      <ComfortSection
+        imageSrc="/hero-computerhulp.webp"
+        imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+      />
 
       {/* Bellen of teruggebeld worden: direct onder de geruststelling, als de bezoeker overtuigd is */}
       <CallbackSection />

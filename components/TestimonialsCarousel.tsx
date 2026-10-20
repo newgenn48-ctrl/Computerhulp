@@ -80,6 +80,15 @@ function TestimonialsCarouselInner({ testimonials }: TestimonialsCarouselProps) 
     }
   }, [])
 
+  /* De stipjes onderaan zijn knoppen geworden; dit is wat ze doen. */
+  const scrollToIndex = (idx: number) => {
+    const container = scrollRef.current
+    if (!container) return
+    const card = container.querySelector('[role="listitem"]') as HTMLElement | null
+    if (!card) return
+    container.scrollTo({ left: idx * (card.offsetWidth + 24), behavior: 'smooth' })
+  }
+
   const scroll = (direction: 'left' | 'right') => {
     if (scrollRef.current) {
       const cardWidth = (scrollRef.current.querySelector('[role="listitem"]') as HTMLElement)?.offsetWidth || 400
@@ -152,15 +161,25 @@ function TestimonialsCarouselInner({ testimonials }: TestimonialsCarouselProps) 
         ))}
       </div>
 
-      {/* Scroll indicators (dots) - Mobile only */}
-      <div className="flex justify-center gap-2 mt-6 lg:hidden" aria-hidden="true">
+      {/* Stipjes, mobiel. Het waren decoratieve divjes die uitzagen als
+          paginering maar niets deden; nu springen ze naar de review. De knop
+          is 44px hoog zodat hij te raken is, de stip zelf blijft klein. */}
+      <div className="flex justify-center gap-1 mt-4 lg:hidden">
         {testimonials.map((_, idx) => (
-          <div
+          <button
             key={idx}
-            className={`h-2 rounded-full transition-colors duration-200 ${
-              idx === activeIdx ? 'w-5 bg-blue-600' : 'w-2 bg-gray-300'
-            }`}
-          />
+            type="button"
+            onClick={() => scrollToIndex(idx)}
+            className="inline-flex items-center justify-center h-11 w-6"
+            aria-label={`Naar review ${idx + 1} van ${testimonials.length}`}
+            aria-current={idx === activeIdx ? 'true' : undefined}
+          >
+            <span
+              className={`h-2 rounded-full transition-colors duration-200 ${
+                idx === activeIdx ? 'w-5 bg-blue-600' : 'w-2 bg-gray-300'
+              }`}
+            />
+          </button>
         ))}
       </div>
     </div>

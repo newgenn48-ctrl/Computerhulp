@@ -4,6 +4,7 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
 import ServicesSection from '@/components/ServicesSection'
+import PricingSection from '@/components/sections/PricingSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
@@ -194,6 +195,11 @@ export default function ComputerhulpAanHuisPage() {
         limitServices={6}
         showAllButton={true}
       />
+
+      {/* Prijs direct na de diensten: dat is de volgorde waarin
+          mensen het vragen, en zonder dit blok stond er nergens
+          boven de FAQ een bedrag. */}
+      <PricingSection />
 
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
 

@@ -32,10 +32,10 @@ export default function Footer() {
             {/* Info links */}
             <div className="flex flex-wrap gap-4 text-sm">
               <Link href="/over-ons" className="footer-link">
-                Over Ons
+                Over ons
               </Link>
               <Link href="/waarom-ons" className="footer-link">
-                Waarom Ons
+                Waarom ons
               </Link>
               <Link href="/tarieven" className="footer-link">
                 Tarieven
@@ -81,7 +81,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/diensten/wifi-internet-hulp" className="footer-link">
-                  wifi & Internet
+                  Wifi & internet
                 </Link>
               </li>
             </ul>

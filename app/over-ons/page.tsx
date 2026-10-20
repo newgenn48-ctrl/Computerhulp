@@ -51,7 +51,7 @@ const breadcrumbData = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: BUSINESS.URL },
-    { '@type': 'ListItem', position: 2, name: 'Over Ons', item: `${BUSINESS.URL}/over-ons` },
+    { '@type': 'ListItem', position: 2, name: 'Over ons', item: `${BUSINESS.URL}/over-ons` },
   ],
 }
 
@@ -72,12 +72,12 @@ export default function OverOnsPage() {
         ]}
       />
 
-      {/* Ons Verhaal */}
+      {/* Ons verhaal */}
       <section className="panel-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-16">
             <h2 className="section-title">
-              Ons Verhaal
+              Ons verhaal
             </h2>
             <p className="section-subtitle max-w-2xl mx-auto">
               Van een kleine start tot dé partner voor computerhulp aan huis
@@ -176,12 +176,12 @@ export default function OverOnsPage() {
         </div>
       </section>
 
-      {/* Onze Garanties */}
+      {/* Onze garanties */}
       <section className="panel-section">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-12">
             <h2 className="section-title">
-              Onze Garanties
+              Onze garanties
             </h2>
             <p className="section-subtitle">
               Dit kunt u van ons verwachten

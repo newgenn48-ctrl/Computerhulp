@@ -87,8 +87,9 @@
   /* ============================================
      BUTTONS — refined with gradient + active press
      ============================================ */
-  /* Groen = conversie. Blauw blijft de merkkleur; groen betekent overal
-     op de site precies een ding: bellen of een afspraak maken. */
+  /* Alle CTA's zijn blauw: dat is de merkkleur en er komt geen tweede
+     actiekleur bij. De `action`-tinten in tailwind.config.ts zijn daarom
+     alleen voor vinkjes en statuslabels, niet voor knoppen. */
   .btn-primary {
     @apply inline-flex items-center justify-center gap-3 bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white px-8 py-4 rounded-xl font-semibold text-lg shadow-md shadow-blue-700/25 hover:shadow-xl hover:shadow-blue-700/35 hover:-translate-y-0.5 active:translate-y-0 active:shadow-md transition duration-200;
   }
@@ -297,10 +298,14 @@
     @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pt-28 lg:pb-16;
   }
 
-  /* Hero-kop zoals de referentie: groot (tot 5,1rem), gewicht 700, 1.06. */
+  /* Hero-kop: gewicht 700, 1.06. Bovengrens bewust op 3,4rem in plaats van
+     5,1rem. Bij 5,1rem werd de kop op een laptop 72px hoog en liep hij over
+     drie regels; samen met de leadtekst duwde dat de belknop onder de vouw
+     (gemeten: knop op 567px, vouw op 575px). De kop blijft groot genoeg om
+     het eerste te zijn wat iemand leest, maar de knop staat nu in beeld. */
   .hero-title {
     @apply font-bold text-white mb-5;
-    font-size: clamp(2.6rem, 1.6rem + 3.6vw, 5.1rem);
+    font-size: clamp(2.6rem, 1.6rem + 3.6vw, 3.4rem);
     line-height: 1.06;
     letter-spacing: -0.02em;
     text-wrap: balance;
@@ -331,12 +336,15 @@
     transform: skewX(-4deg);
   }
 
-  /* Leadtekst onder de hero-kop: 1,32rem, gewicht 600, regelafstand 1,7. */
+  /* Leadtekst onder de hero-kop: gewicht 600. Iets strakker gezet dan eerst
+     (1,25rem/1,55 i.p.v. 1,32rem/1,7) en een maat breder, zodat dezelfde
+     tekst in minder regels past. Dat haalt de belknop boven de vouw zonder
+     dat er een woord uit de tekst hoeft. */
   .hero-description {
-    @apply text-white mb-6 max-w-lg;
-    font-size: 1.32rem;
+    @apply text-white mb-6 max-w-xl;
+    font-size: 1.25rem;
     font-weight: 600;
-    line-height: 1.7;
+    line-height: 1.55;
     text-wrap: pretty;
   }
 
@@ -491,15 +499,28 @@
     @apply relative w-14 h-14 text-white rounded-2xl shadow-lg flex items-center justify-center transition duration-200 hover:shadow-xl hover:-translate-y-0.5;
   }
 
+  /* De zweefknoppen stonden bij een eerste bezoek onder de cookiebalk (z-40
+     tegen z-60, gemeten 40px overlap). Zolang er nog geen keuze gemaakt is,
+     blijven ze weg; het inline script in de head zet data-consent vóór de
+     eerste paint, dus wie al gekozen heeft ziet ze meteen. */
+  html:not([data-consent]) .floating-cta {
+    display: none;
+  }
+
   /* ============================================
      FOOTER
      ============================================ */
+  /* Footerlinks waren 19-22px hoog: op een telefoon niet te raken voor wie
+     geen vaste hand heeft, en dat is precies onze doelgroep. Nu minimaal
+     44px aanraakvlak, zonder dat de tekst groter wordt. */
   .footer-link {
-    @apply text-gray-300 hover:text-white transition-colors;
+    @apply inline-flex items-center min-h-[44px] text-gray-300 hover:text-white transition-colors;
   }
 
+  /* 51 plaatslinks op 44px zou de footer verdubbelen; deze zijn breed, dus
+     40px hoogte is hier de afweging tussen raakbaarheid en lengte. */
   .footer-city-tag {
-    @apply bg-ink-800 text-gray-300 hover:bg-blue-600 hover:text-white px-3 py-1 rounded-full text-xs transition-colors border border-ink-700/50;
+    @apply inline-flex items-center min-h-[40px] bg-ink-800 text-gray-300 hover:bg-blue-600 hover:text-white px-3.5 py-2 rounded-full text-sm transition-colors border border-ink-700/50;
   }
 
   /* ============================================

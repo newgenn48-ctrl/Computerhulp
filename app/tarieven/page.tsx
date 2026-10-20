@@ -19,7 +19,7 @@ export const metadata: Metadata = {
 }
 
 const faqs = [
-  { q: 'Wat kost computerhulp aan huis?', a: `Wij rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}.` },
+  { q: 'Wat kost computerhulp aan huis?', a: `Wij rekenen ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Alle bedragen zijn inclusief btw; u krijgt geen naheffing.` },
   { q: 'Heb ik een abonnement nodig?', a: 'Nee. Bij ons betaalt u per bezoek. Geen maandelijkse kosten, geen jaarlijks lidmaatschap, geen verplichtingen.' },
   { q: 'Zijn er extra kosten in de avond of het weekend?', a: `Nee, wij rekenen hetzelfde tarief op alle dagen en tijden. Of u nu op maandag om 10:00 of op zaterdag om 20:00 belt, u betaalt gewoon ${PRICING.PER_QUARTER} per kwartier.` },
   { q: 'Hoe kan ik betalen?', a: 'U kunt na afloop betalen via pin of Tikkie. We rekenen af zodra het werk klaar is. Facturen zijn ook mogelijk voor bedrijven.' },
@@ -45,7 +45,7 @@ export default function TarievenPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
 
       {/* Hero */}
-      <section className="bg-surface pt-28 pb-16">
+      <section className="bg-surface pt-6 pb-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <p className="section-eyebrow">Tarieven</p>
           <h1 className="section-title-lg mb-4">
@@ -77,11 +77,12 @@ export default function TarievenPage() {
               <div className="text-sm font-semibold uppercase tracking-[0.1em] mb-2 text-blue-100">Ons tarief</div>
               <div className="text-6xl font-extrabold tracking-display-tight tabular-nums mb-1">{PRICING.PER_QUARTER}</div>
               <div className="text-xl text-blue-100">per kwartier</div>
+              <div className="text-sm text-blue-100/90 mt-1">{PRICING.VAT_NOTE}</div>
             </div>
 
             <div className="px-6 sm:px-8 py-8 sm:py-10">
               <div className="text-center mb-8">
-                <div className="text-lg text-gray-700 font-medium">Minimaal 3 kwartier + voorrijkosten, all-in vanaf {PRICING.MINIMUM_ALL_IN}</div>
+                <div className="text-lg text-gray-700 font-medium">Minimaal 3 kwartier + voorrijkosten, all-in vanaf {PRICING.MINIMUM_ALL_IN} {PRICING.VAT_NOTE}</div>
               </div>
 
               <div className="space-y-4 mb-8">

@@ -27,6 +27,10 @@ export const PRICING = {
   MINIMUM_TOTAL_NUM: 44.97,
   /** Minimum inclusief voorrijkosten (€44,97 + €12,50). Gebruikt voor klantgerichte "vanaf"-prijzen. */
   MINIMUM_ALL_IN: '€57,47',
+  /** Onze klanten zijn particulieren, dus elke genoemde prijs is een
+   *  consumentenprijs. Dat moet er ook staan: "€14,99 — en dan nog plus
+   *  btw?" is precies de twijfel die je niet wilt op het beslismoment. */
+  VAT_NOTE: 'incl. btw',
 } as const
 
 export const HOURS = {

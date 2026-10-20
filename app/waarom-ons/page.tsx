@@ -23,7 +23,7 @@ const breadcrumbData = {
   '@type': 'BreadcrumbList',
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: BUSINESS.URL },
-    { '@type': 'ListItem', position: 2, name: 'Waarom Ons', item: `${BUSINESS.URL}/waarom-ons` },
+    { '@type': 'ListItem', position: 2, name: 'Waarom ons', item: `${BUSINESS.URL}/waarom-ons` },
   ],
 }
 
@@ -33,7 +33,7 @@ export default function WaaromOnsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
       {/* Hero */}
-      <section className="bg-surface pt-24 pb-16 lg:pt-32 lg:pb-24">
+      <section className="bg-surface pt-6 pb-16 lg:pt-10 lg:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
           <span className="eyebrow">Waarom ons · vergelijking</span>
           <h1 className="section-title-lg">

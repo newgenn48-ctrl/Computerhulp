@@ -78,10 +78,13 @@ const config: Config = {
       // Koppen blijven juist dicht op elkaar staan.
       // Tekstschaal van de referentiesite (computerhulpnh.nl): compactere
       // lopende tekst (0,9-0,95rem), leadtekst 1,22rem, koppen 2rem en groter.
+      // sm en base stonden onder de browserstandaard (14px en 15,2px). Voor een
+      // publiek van 60+ dat de helft van de bijregels en formulierlabels in
+      // text-sm leest is dat te klein; nu 15px en 16px.
       fontSize: {
         'xs':   ['0.75rem',   { lineHeight: '1.5' }],   // 12px
-        'sm':   ['0.875rem',  { lineHeight: '1.6' }],   // 14px
-        'base': ['0.95rem',   { lineHeight: '1.7' }],   // 15,2px
+        'sm':   ['0.9375rem', { lineHeight: '1.6' }],   // 15px
+        'base': ['1rem',      { lineHeight: '1.7' }],   // 16px
         'lg':   ['1.05rem',   { lineHeight: '1.7' }],   // 16,8px
         'xl':   ['1.22rem',   { lineHeight: '1.75' }],  // 19,5px
         '2xl':  ['1.5rem',    { lineHeight: '1.3' }],   // 24px

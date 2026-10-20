@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import AfspraakForm from '@/components/AfspraakForm'
+import CallbackForm from '@/components/CallbackForm'
 import { BUSINESS, HOURS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { cityCount, TOP_CITIES } from '@/lib/cities'
 
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
    desktop, onder elkaar op mobiel met bellen als eerste. */
 export default function ContactPage() {
   return (
-    <div className="pt-24">
+    <div className="pt-2">
       {/* Paginakop */}
       <section className="panel-section">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 text-center panel panel-pad">
@@ -130,13 +130,23 @@ export default function ContactPage() {
             {/* Rechts: het formulier */}
             <div id="afspraak" className="card-bezel scroll-mt-28">
               <div className="card-bezel-inner p-6 sm:p-8">
+                {/* Twee velden, niet zeven. De kop belooft een terugbelverzoek,
+                    dus hoort hier het korte formulier; wie liever alles in één
+                    keer doorgeeft, gaat naar /afspraak-maken. */}
                 <div className="mb-6">
                   <h2 className="content-title mb-2">Liever dat wij u bellen?</h2>
                   <p className="text-gray-600">
-                    Laat uw gegevens achter en we bellen u meestal binnen een uur terug.
+                    Uw naam en telefoonnummer is genoeg. We bellen u meestal binnen een uur terug.
                   </p>
                 </div>
-                <AfspraakForm />
+                <CallbackForm />
+                <p className="mt-5 text-sm text-gray-600">
+                  Liever meteen een afspraak met uw adres erbij?{' '}
+                  <Link href="/afspraak-maken" className="font-semibold text-blue-700 hover:text-blue-800">
+                    Vul het afspraakformulier in
+                  </Link>
+                  .
+                </p>
               </div>
             </div>
           </div>

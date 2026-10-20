@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { Metadata } from 'next'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
+import PricingSection from '@/components/sections/PricingSection'
 import Hero from '@/components/sections/Hero'
 import CallbackSection from '@/components/sections/CallbackSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
@@ -809,13 +810,27 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         showAllButton={true}
       />
 
+      {/* Prijs direct na de diensten: dat is de volgorde waarin
+          mensen het vragen, en zonder dit blok stond er nergens
+          boven de FAQ een bedrag. */}
+      <PricingSection cityName={city.name} />
+
       <TestimonialsSection
         testimonials={HUB_TESTIMONIALS}
       />
 
       <HowItWorksSection />
 
-      <ComfortSection cityName={city.name} variant={variant} />
+      {/* De foto is bewust niet config.heroImage: dan stond dezelfde
+          foto twee keer op de pagina. */}
+      <ComfortSection
+        cityName={city.name}
+        variant={variant}
+        imageSrc={variant === 'student' ? '/hero-computerhulp.webp' : '/hero-student.webp'}
+        imageAlt={variant === 'student'
+          ? 'HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt'
+          : 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant'}
+      />
 
       <CallbackSection cityName={city.name} />
 

@@ -11,6 +11,10 @@ interface ComfortSectionProps {
   eyebrow?: string
   /** 'student' zet de nadruk op de student, 'computerhulp' op de hulp zelf. */
   variant?: 'computerhulp' | 'student'
+  /** Foto bij de sectie. Moet verschillen van de hero op dezelfde pagina:
+   *  tweemaal dezelfde keukentafel binnen één scroll valt op. */
+  imageSrc?: string
+  imageAlt?: string
 }
 
 /**
@@ -24,6 +28,8 @@ export default function ComfortSection({
   title = 'We leggen het uit alsof we naast u zitten.',
   eyebrow = 'Rustige uitleg aan huis',
   variant = 'computerhulp',
+  imageSrc = '/hero-student.webp',
+  imageAlt = 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant',
 }: ComfortSectionProps) {
   const waar = cityName ? ` in ${cityName}` : ''
   const wie = variant === 'student' ? 'De student' : 'Onze student'
@@ -58,8 +64,8 @@ export default function ComfortSection({
           <div className="grid lg:grid-cols-[1.05fr_1fr]">
             <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
               <Image
-                src="/hero-student.webp"
-                alt={`Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant${waar}`}
+                src={imageSrc}
+                alt={`${imageAlt}${waar}`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"

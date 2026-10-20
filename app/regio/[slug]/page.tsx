@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
+import PricingSection from '@/components/sections/PricingSection'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -149,6 +150,11 @@ export default async function RegioPage({ params }: PageProps) {
         limitServices={6}
         showAllButton={true}
       />
+
+      {/* Prijs direct na de diensten: dat is de volgorde waarin
+          mensen het vragen, en zonder dit blok stond er nergens
+          boven de FAQ een bedrag. */}
+      <PricingSection />
 
       <TestimonialsSection
         testimonials={HUB_TESTIMONIALS}

@@ -43,9 +43,15 @@ export default function FloatingButtons() {
 
   return (
     <div
-      className={`fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-40 transition duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+      /* floating-cta: globals.css houdt deze knoppen weg zolang er nog geen
+         cookiekeuze is gemaakt. Zonder dat stonden ze onder de cookiebalk
+         (z-40 tegen z-60) en keek je naar een knop die half onder een witte
+         balk uitkwam. inert houdt ze ook buiten de tabvolgorde zolang ze
+         onzichtbaar zijn. */
+      className={`floating-cta fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-40 transition duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
       role="complementary"
       aria-label="Snelle actieknoppen"
+      inert={!show}
     >
       {/* Mobile: alleen WhatsApp (phone & afspraak zitten in StickyMobileBar) */}
       <div className="flex flex-col gap-3 sm:hidden">

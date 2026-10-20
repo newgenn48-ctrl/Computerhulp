@@ -162,7 +162,7 @@ export default function LocatiesPage() {
       <section className="panel-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-12">
-            <h2 className="section-title">Populaire Locaties</h2>
+            <h2 className="section-title">Populaire locaties</h2>
             <p className="text-lg text-gray-600">Onze meest gevraagde werkgebieden</p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -221,7 +221,7 @@ export default function LocatiesPage() {
           </ul>
 
           <div className="text-center mb-12">
-            <h2 className="section-title">Alle Locaties A-Z</h2>
+            <h2 className="section-title">Alle locaties A-Z</h2>
             <p className="section-subtitle">Klik op uw gemeente voor meer informatie</p>
           </div>
 

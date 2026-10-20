@@ -85,7 +85,7 @@ export default function KennisbankPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionData) }} />
 
       <div className="pb-20">
-        <section className="bg-surface pt-28 pb-12 sm:pb-16">
+        <section className="bg-surface pt-6 pb-12 sm:pb-16">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
             <span className="eyebrow">Kennisbank</span>
             <h1 className="section-title-lg mb-4">

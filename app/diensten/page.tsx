@@ -126,9 +126,9 @@ export default function DienstenPage() {
       <section className="panel-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <div className="text-center mb-12">
-            <h2 className="section-title">Waar wij u mee helpen</h2>
+            <h2 className="section-title">Kies uw onderwerp</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              Kies hieronder waar u hulp bij wilt
+              Klik op het onderwerp dat het dichtst bij uw vraag komt
             </p>
           </div>
 
@@ -207,7 +207,6 @@ export default function DienstenPage() {
       <TestimonialsSection
         testimonials={HUB_TESTIMONIALS}
         subtitle={<>Dagelijks helpen we mensen in heel {BUSINESS.REGION}</>}
-        background="soft"
       />
 
       {/* SEO Content */}

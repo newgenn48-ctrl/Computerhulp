@@ -9,9 +9,15 @@ import { BUSINESS } from '@/lib/constants'
 
 const NAV_ITEMS: { href: string; label: string; desktopClass?: string }[] = [
   { href: '/diensten', label: 'Diensten' },
+  /* De twee landingspagina's waar de advertenties op uitkomen. Op desktop
+     laat ik ze weg (daar moeten bellen en afspraak maken voorrang houden),
+     in het mobiele menu staan ze wel: daar is ruimte en daar komt het
+     grootste deel van de aanvragen vandaan. */
+  { href: '/computerhulp-aan-huis', label: 'Computerhulp aan huis', desktopClass: 'hidden' },
+  { href: '/student-aan-huis', label: 'Student aan huis', desktopClass: 'hidden' },
   { href: '/tarieven', label: 'Tarieven' },
   { href: '/locaties', label: 'Locaties', desktopClass: 'hidden lg:inline' },
-  { href: '/over-ons', label: 'Over Ons', desktopClass: 'hidden lg:inline' },
+  { href: '/over-ons', label: 'Over ons', desktopClass: 'hidden lg:inline' },
   { href: '/contact', label: 'Contact' },
 ]
 
