@@ -15,7 +15,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {/* Bedrijfsinfo */}
           <div className="lg:col-span-2">
-            <Link href="/" className="inline-block mb-4">
+            <Link href="/" className="inline-flex items-center min-h-[44px] mb-4">
               <Image
                 src="/logo.png"
                 alt={BUSINESS.NAME}
@@ -139,7 +139,7 @@ export default function Footer() {
         <div className="mt-10 pt-8 border-t border-ink-800">
           <div className="flex items-center justify-between mb-3">
             <span className="text-sm text-gray-300">We werken in heel Zuid-Holland, waaronder:</span>
-            <Link href="/locaties" className="text-sm text-blue-400 hover:text-blue-300 transition flex items-center gap-1">
+            <Link href="/locaties" className="inline-flex items-center gap-1 min-h-[44px] text-sm text-blue-400 hover:text-blue-300 transition">
               Alle locaties
               <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
             </Link>
@@ -173,7 +173,7 @@ export default function Footer() {
       {/* Disclaimer */}
       <div className="border-t border-ink-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
-          <p className="text-xs text-gray-400 text-center">
+          <p className="text-sm text-gray-400 text-center">
             {BUSINESS.NAME} is een onafhankelijke dienstverlener (KvK: {BUSINESS.KVK}) en is niet gelieerd aan enige fabrikant of softwareleverancier.
           </p>
         </div>

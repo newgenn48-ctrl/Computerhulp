@@ -231,7 +231,7 @@ export default function LocatiesPage() {
               <a
                 key={letter}
                 href={`#letter-${letter}`}
-                className="w-10 h-10 flex items-center justify-center bg-gray-100 hover:bg-blue-600 hover:text-white rounded-lg font-semibold text-gray-700 transition-colors"
+                className="w-11 h-11 flex items-center justify-center bg-gray-100 hover:bg-blue-600 hover:text-white rounded-lg font-semibold text-gray-700 transition-colors"
               >
                 {letter}
               </a>
@@ -248,11 +248,11 @@ export default function LocatiesPage() {
                     <div key={city.slug} className="flex items-center gap-3 p-3 rounded-xl hover:bg-blue-50 transition-colors group">
                       <Icon name="location-pin" className="w-5 h-5 text-gray-400 group-hover:text-blue-600 transition-colors flex-shrink-0" strokeWidth={2} />
                       <span className="flex flex-col min-w-0">
-                        <Link href={`/computerhulp-aan-huis-${city.slug}`} className="text-gray-700 group-hover:text-blue-600 transition-colors">
+                        <Link href={`/computerhulp-aan-huis-${city.slug}`} className="flex items-center min-h-[44px] text-gray-700 group-hover:text-blue-600 transition-colors">
                           {city.name}
                         </Link>
                         {/* Ook de student-variant bereikbaar maken: die kreeg tot nu toe geen interne links */}
-                        <Link href={`/student-aan-huis-${city.slug}`} className="text-sm text-gray-500 hover:text-blue-600 transition-colors">
+                        <Link href={`/student-aan-huis-${city.slug}`} className="flex items-center min-h-[32px] text-sm text-gray-500 hover:text-blue-600 transition-colors">
                           Student aan huis {city.name}
                         </Link>
                       </span>

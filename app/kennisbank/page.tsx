@@ -129,7 +129,7 @@ export default function KennisbankPage() {
                         <h3 className="font-bold text-gray-900 text-lg leading-snug mb-2">
                           <Link
                             href={`/kennisbank/${article.slug}`}
-                            className="hover:text-blue-700 transition-colors"
+                            className="flex items-center min-h-[44px] hover:text-blue-700 transition-colors"
                           >
                             {article.title}
                           </Link>

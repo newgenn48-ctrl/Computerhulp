@@ -40,15 +40,15 @@ export default function NotFound() {
               <Link href="/computerhulp-aan-huis" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                 Computerhulp aan huis
               </Link>
-              <span className="text-gray-300">•</span>
+              <span className="text-gray-300" aria-hidden="true">•</span>
               <Link href="/student-aan-huis" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                 Student aan huis
               </Link>
-              <span className="text-gray-300">•</span>
+              <span className="text-gray-300" aria-hidden="true">•</span>
               <Link href="/diensten" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                 Alle diensten
               </Link>
-              <span className="text-gray-300">•</span>
+              <span className="text-gray-300" aria-hidden="true">•</span>
               <Link href="/tarieven" className="text-blue-600 hover:text-blue-700 text-sm font-medium">
                 Tarieven
               </Link>

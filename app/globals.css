@@ -294,8 +294,11 @@
     @apply absolute inset-0 hidden md:block bg-gradient-to-t from-ink-900/50 via-transparent to-ink-900/40;
   }
 
+  /* Bovenmarge op de telefoon kleiner: de vaste header is daar 72px, dus
+     pt-20 (80px) is genoeg. Die 16px gaan naar de knoppen onderin, die op
+     een scherm van 700px anders achter de cookiebalk verdwijnen. */
   .hero-content {
-    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12 lg:pt-28 lg:pb-16;
+    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 sm:pt-24 lg:pt-28 lg:pb-16;
   }
 
   /* Hero-kop: gewicht 700, 1.06. Bovengrens bewust op 3,4rem in plaats van
@@ -305,7 +308,7 @@
      het eerste te zijn wat iemand leest, maar de knop staat nu in beeld. */
   .hero-title {
     @apply font-bold text-white mb-5;
-    font-size: clamp(2.6rem, 1.6rem + 3.6vw, 3.4rem);
+    font-size: clamp(2.25rem, 1.6rem + 3.6vw, 3.4rem);
     line-height: 1.06;
     letter-spacing: -0.02em;
     text-wrap: balance;
@@ -342,10 +345,19 @@
      dat er een woord uit de tekst hoeft. */
   .hero-description {
     @apply text-white mb-6 max-w-xl;
-    font-size: 1.25rem;
+    font-size: 1.15rem;
     font-weight: 600;
-    line-height: 1.55;
+    line-height: 1.5;
     text-wrap: pretty;
+  }
+  /* Op de telefoon staat dezelfde tekst over zes regels; die blijven iets
+     kleiner zodat de twee knoppen eronder in beeld blijven. Vanaf sm is er
+     ruimte en gaat de leadtekst weer op zijn volle maat. */
+  @media (min-width: 640px) {
+    .hero-description {
+      font-size: 1.25rem;
+      line-height: 1.55;
+    }
   }
 
   .hero-eyebrow {

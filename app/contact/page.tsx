@@ -119,7 +119,7 @@ export default function ContactPage() {
                       </span>
                     ))}
                   </div>
-                  <Link href="/locaties" className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800 font-semibold text-sm">
+                  <Link href="/locaties" className="inline-flex items-center gap-2 min-h-[44px] text-blue-700 hover:text-blue-800 font-semibold text-sm">
                     Bekijk alle {cityCount} locaties
                     <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />
                   </Link>

@@ -44,7 +44,7 @@ export default function AvailableInCities({
         </div>
 
         <div className="text-center mt-8">
-          <Link href="/locaties" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold">
+          <Link href="/locaties" className="inline-flex items-center gap-2 min-h-[44px] text-blue-600 hover:text-blue-700 font-semibold">
             Bekijk alle {cityCount} locaties
             <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
           </Link>

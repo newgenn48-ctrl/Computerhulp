@@ -56,7 +56,7 @@ export default function NearbyCities({ currentCity, cityName, pageType }: Nearby
         <div className="flex flex-col sm:flex-row items-center justify-center gap-x-8 gap-y-3 text-center">
           <Link
             href={`/${siblingType}-${currentCity}`}
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
+            className="inline-flex items-center gap-2 min-h-[44px] text-blue-600 hover:text-blue-700 font-semibold"
           >
             {siblingText}
             <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
@@ -64,7 +64,7 @@ export default function NearbyCities({ currentCity, cityName, pageType }: Nearby
           {region && (
             <Link
               href={`/regio/${region.slug}`}
-              className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
+              className="inline-flex items-center gap-2 min-h-[44px] text-blue-600 hover:text-blue-700 font-semibold"
             >
               Alle plaatsen in {regionWithArticle(region.name)}
               <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
@@ -72,7 +72,7 @@ export default function NearbyCities({ currentCity, cityName, pageType }: Nearby
           )}
           <Link
             href={parentLink.url}
-            className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold"
+            className="inline-flex items-center gap-2 min-h-[44px] text-blue-600 hover:text-blue-700 font-semibold"
           >
             {parentLink.text}
             <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />

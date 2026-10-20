@@ -191,7 +191,7 @@ export default function DienstenPage() {
                 <li key={topic.slug}>
                   <Link
                     href={`/diensten/${topic.slug}`}
-                    className="group flex items-center gap-2 py-2 text-blue-700 hover:text-blue-800 font-medium"
+                    className="group flex items-center gap-2 min-h-[44px] text-blue-700 hover:text-blue-800 font-medium"
                   >
                     <Icon name="arrow-right-short" className="w-4 h-4 flex-shrink-0 transition-transform group-hover:translate-x-0.5" strokeWidth={2} aria-hidden="true" />
                     {topic.label}

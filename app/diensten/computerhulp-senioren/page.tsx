@@ -299,7 +299,7 @@ export default function ComputerhulpSeniorenPage() {
                       </span>
                     ))}
                   </div>
-                  <Link href="/computerhulp-aan-huis" className="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm">
+                  <Link href="/computerhulp-aan-huis" className="inline-flex items-center gap-2 min-h-[44px] text-blue-600 hover:text-blue-700 font-semibold text-sm">
                     Bekijk alle {cityCount} locaties
                     <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} />
                   </Link>

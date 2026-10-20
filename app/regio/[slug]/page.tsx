@@ -123,14 +123,14 @@ export default async function RegioPage({ params }: PageProps) {
                 <div className="card-bezel-inner p-4">
                   <Link
                     href={`/computerhulp-aan-huis-${city.slug}`}
-                    className="group flex items-center gap-2 font-bold text-gray-900 text-lg hover:text-blue-700 transition-colors"
+                    className="group flex items-center gap-2 min-h-[44px] font-bold text-gray-900 text-lg hover:text-blue-700 transition-colors"
                   >
                     <Icon name="location-pin" className="w-5 h-5 text-blue-600 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
                     <span className="min-w-0 truncate">Computerhulp {city.name}</span>
                   </Link>
                   <Link
                     href={`/student-aan-huis-${city.slug}`}
-                    className="mt-1.5 inline-flex items-center gap-1.5 text-sm font-semibold text-blue-700 hover:text-blue-800"
+                    className="inline-flex items-center gap-1.5 min-h-[32px] text-sm font-semibold text-blue-700 hover:text-blue-800"
                   >
                     Student aan huis in {city.name}
                     <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2} aria-hidden="true" />

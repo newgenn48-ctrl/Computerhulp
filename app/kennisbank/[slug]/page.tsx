@@ -213,7 +213,7 @@ export default async function KennisbankArtikelPage({ params }: PageProps) {
                       <h3 className="font-bold text-gray-900 leading-snug mb-2">
                         <Link
                           href={`/kennisbank/${other.slug}`}
-                          className="hover:text-blue-700 transition-colors"
+                          className="flex items-center min-h-[44px] hover:text-blue-700 transition-colors"
                         >
                           {other.title}
                         </Link>
@@ -227,7 +227,7 @@ export default async function KennisbankArtikelPage({ params }: PageProps) {
               <p className="mt-6">
                 <Link
                   href="/kennisbank"
-                  className="inline-flex items-center gap-2 font-semibold text-blue-700 hover:text-blue-800"
+                  className="inline-flex items-center gap-2 min-h-[44px] font-semibold text-blue-700 hover:text-blue-800"
                 >
                   Alle onderwerpen in de kennisbank
                   <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />

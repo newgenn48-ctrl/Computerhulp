@@ -103,7 +103,7 @@ export default function ServiceCrossLinks({ currentService, serviceName }: Servi
             </ul>
 
             <p className="mt-6 text-center">
-              <Link href="/kennisbank" className="inline-flex items-center gap-2 font-semibold text-blue-700 hover:text-blue-800">
+              <Link href="/kennisbank" className="inline-flex items-center gap-2 min-h-[44px] font-semibold text-blue-700 hover:text-blue-800">
                 Alle onderwerpen in de kennisbank
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
               </Link>

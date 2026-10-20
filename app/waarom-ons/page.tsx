@@ -64,39 +64,41 @@ export default function WaaromOnsPage() {
           </div>
 
           <div className="overflow-x-auto">
-            <table className="w-full text-left border-collapse">
+            {/* p-2.5 onder sm: met p-4 was de tabel 426px breed in een scherm van
+                375px en moest je horizontaal schuiven om de derde kolom te zien. */}
+            <table className="w-full text-left border-collapse text-sm sm:text-base">
               <thead>
                 <tr>
-                  <th className="p-4 text-gray-500 font-medium text-sm"></th>
-                  <th className="p-4 bg-blue-600 text-white font-bold rounded-t-xl text-center">{BUSINESS.NAME}</th>
-                  <th className="p-4 text-gray-700 font-medium text-center bg-surface">Veel andere aanbieders</th>
+                  <th className="p-2.5 sm:p-4 text-gray-500 font-medium text-sm"></th>
+                  <th className="p-2.5 sm:p-4 bg-blue-600 text-white font-bold rounded-t-xl text-center">{BUSINESS.NAME}</th>
+                  <th className="p-2.5 sm:p-4 text-gray-700 font-medium text-center bg-surface">Veel andere aanbieders</th>
                 </tr>
               </thead>
               <tbody>
                 <tr className="border-t border-gray-200">
-                  <td className="p-4 font-medium text-gray-900">Een bezoek van 45 minuten (het minimum), inclusief voorrijden</td>
-                  <td className="p-4 bg-blue-50 text-center font-bold text-blue-700 text-lg">{PRICING.MINIMUM_ALL_IN}</td>
-                  <td className="p-4 text-center text-gray-600 bg-surface">Vaak per uur, soms met lidmaatschap</td>
+                  <td className="p-2.5 sm:p-4 font-medium text-gray-900">Een bezoek van 45 minuten (het minimum), inclusief voorrijden</td>
+                  <td className="p-2.5 sm:p-4 bg-blue-50 text-center font-bold text-blue-700 text-lg">{PRICING.MINIMUM_ALL_IN}</td>
+                  <td className="p-2.5 sm:p-4 text-center text-gray-600 bg-surface">Vaak per uur, soms met lidmaatschap</td>
                 </tr>
                 <tr className="border-t border-gray-200">
-                  <td className="p-4 font-medium text-gray-900">Voorrijkosten</td>
-                  <td className="p-4 bg-blue-50 text-center font-bold text-blue-700">{PRICING.TRAVEL}</td>
-                  <td className="p-4 text-center text-gray-600 bg-surface">Wisselend</td>
+                  <td className="p-2.5 sm:p-4 font-medium text-gray-900">Voorrijkosten</td>
+                  <td className="p-2.5 sm:p-4 bg-blue-50 text-center font-bold text-blue-700">{PRICING.TRAVEL}</td>
+                  <td className="p-2.5 sm:p-4 text-center text-gray-600 bg-surface">Wisselend</td>
                 </tr>
                 <tr className="border-t border-gray-200">
-                  <td className="p-4 font-medium text-gray-900">Abonnement nodig?</td>
-                  <td className="p-4 bg-blue-50 text-center font-bold text-blue-700">Nee</td>
-                  <td className="p-4 text-center text-gray-600 bg-surface">Vaak ja</td>
+                  <td className="p-2.5 sm:p-4 font-medium text-gray-900">Abonnement nodig?</td>
+                  <td className="p-2.5 sm:p-4 bg-blue-50 text-center font-bold text-blue-700">Nee</td>
+                  <td className="p-2.5 sm:p-4 text-center text-gray-600 bg-surface">Vaak ja</td>
                 </tr>
                 <tr className="border-t border-gray-200">
-                  <td className="p-4 font-medium text-gray-900">Weekendtoeslag?</td>
-                  <td className="p-4 bg-blue-50 text-center font-bold text-blue-700">Nee</td>
-                  <td className="p-4 text-center text-gray-600 bg-surface">Soms</td>
+                  <td className="p-2.5 sm:p-4 font-medium text-gray-900">Weekendtoeslag?</td>
+                  <td className="p-2.5 sm:p-4 bg-blue-50 text-center font-bold text-blue-700">Nee</td>
+                  <td className="p-2.5 sm:p-4 text-center text-gray-600 bg-surface">Soms</td>
                 </tr>
                 <tr className="border-t border-gray-200">
-                  <td className="p-4 font-medium text-gray-900">Beschikbaarheid</td>
-                  <td className="p-4 bg-blue-50 text-center font-bold text-blue-700 rounded-b-xl">{HOURS.OPEN} - {HOURS.CLOSE}, {HOURS.DAYS}</td>
-                  <td className="p-4 text-center text-gray-600 bg-surface">Kantooruren</td>
+                  <td className="p-2.5 sm:p-4 font-medium text-gray-900">Beschikbaarheid</td>
+                  <td className="p-2.5 sm:p-4 bg-blue-50 text-center font-bold text-blue-700 rounded-b-xl">{HOURS.OPEN} - {HOURS.CLOSE}, {HOURS.DAYS}</td>
+                  <td className="p-2.5 sm:p-4 text-center text-gray-600 bg-surface">Kantooruren</td>
                 </tr>
               </tbody>
             </table>
