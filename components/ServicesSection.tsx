@@ -5,6 +5,7 @@ import { Icon } from '@/components/icons'
 export const services = [
   {
     title: 'Computer & Laptop',
+    shortTitle: 'Computer',
     description: 'Trage computer of laptop weer snel: opschonen, updates, opstartproblemen en rustige uitleg.',
     icon: 'laptop',
     image: '/dienst-computer-laptop.webp',
@@ -20,6 +21,7 @@ export const services = [
   },
   {
     title: 'Wifi & internet',
+    shortTitle: 'Wifi & internet',
     description: 'Traag internet, wegvallende wifi of slechte dekking in huis: wij lossen het op en verbeteren het bereik.',
     icon: 'wifi',
     image: '/dienst-wifi.webp',
@@ -34,6 +36,7 @@ export const services = [
   },
   {
     title: 'Printer installeren',
+    shortTitle: 'Printer',
     description: 'Nieuwe printer aansluiten, draadloos printen, scanner instellen en printerstoringen oplossen.',
     icon: 'printer',
     image: '/dienst-printer-scanner.webp',
@@ -48,6 +51,7 @@ export const services = [
   },
   {
     title: 'E-mail & accounts',
+    shortTitle: 'E-mail',
     description: 'E-mail instellen op computer of telefoon, weer toegang krijgen en ongewenste mail stoppen.',
     icon: 'email',
     image: '/dienst-email.webp',
@@ -62,6 +66,7 @@ export const services = [
   },
   {
     title: 'Tablet & telefoon',
+    shortTitle: 'Tablet & telefoon',
     description: 'Nieuwe tablet of telefoon instellen, apps, foto’s overzetten en videobellen, rustig uitgelegd.',
     icon: 'mobile',
     image: '/dienst-tablet-smartphone.webp',
@@ -76,6 +81,7 @@ export const services = [
   },
   {
     title: 'Televisie & streamen',
+    shortTitle: 'Televisie',
     description: 'Smart-tv instellen, zenders op volgorde, decoder en Netflix werkend, soundbar aangesloten.',
     icon: 'tv',
     image: '/dienst-tv.webp',
@@ -91,6 +97,7 @@ export const services = [
   },
   {
     title: 'Computerhulp voor senioren',
+    shortTitle: 'Voor senioren',
     description: 'Rustige hulp in uw tempo, op uw eigen apparaat. Geen vraag is te klein en u hoeft niets te kopen.',
     icon: 'users',
     image: '/hero-student.webp',
@@ -105,6 +112,7 @@ export const services = [
   },
   {
     title: 'Smart Home',
+    shortTitle: 'Smart home',
     description: 'Slimme lampen, deurbel of speakers, wij koppelen alles en lossen storingen op.',
     icon: 'lightbulb',
     image: '/dienst-smart-home.webp',
@@ -119,6 +127,7 @@ export const services = [
   },
   {
     title: 'Foto’s en bestanden veilig',
+    shortTitle: 'Foto’s & back-up',
     description: 'Bestanden kwijt na een storing? Wij halen terug wat kan en zetten een automatische back-up op.',
     icon: 'database',
     image: '/dienst-dataherstel.webp',
@@ -133,6 +142,7 @@ export const services = [
   },
   {
     title: 'Uitleg en training',
+    shortTitle: 'Computerles',
     description: 'Computerles aan huis: stap voor stap leren werken met uw apparaten, in uw tempo en in gewone taal.',
     icon: 'academic-cap',
     image: '/dienst-training.webp',
@@ -181,37 +191,26 @@ export default function ServicesSection({
         </div>
 
         {photoCards ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto">
             {displayServices.map((service, idx) => (
-              <Link key={idx} href={service.slug} className="group card-bezel">
-                <article className="card-bezel-inner flex flex-col h-full">
-                  <div className="relative aspect-[4/3] overflow-hidden bg-surface">
-                    <Image
-                      src={service.image}
-                      alt={service.imageAlt ?? ''}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                    />
-                  </div>
-                  <div className="flex flex-col flex-1 p-5 sm:p-6">
-                    <h3 className="text-xl sm:text-2xl font-bold text-gray-900 leading-tight mb-2">
-                      {service.title}
-                    </h3>
-                    <p className="body-copy text-gray-600 mb-5 flex-1">
-                      {service.description}
-                    </p>
-                    <span className="inline-flex items-center gap-2.5 text-sm font-semibold text-blue-700">
-                      Bekijk deze hulp
-                      <span
-                        className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center transition-transform duration-300 group-hover:translate-x-1"
-                        aria-hidden="true"
-                      >
-                        <Icon name="arrow-right-short" className="w-4 h-4" strokeWidth={2.5} />
-                      </span>
-                    </span>
-                  </div>
-                </article>
+              <Link key={idx} href={service.slug} className="group service-tile">
+                <div className="relative aspect-square overflow-hidden bg-surface">
+                  {/* De foto is hier decoratief: de naam eronder zegt al
+                      waar de tegel over gaat, dus een alt-tekst zou de
+                      linknaam alleen verdubbelen. */}
+                  <Image
+                    src={service.image}
+                    alt=""
+                    fill
+                    sizes="(max-width: 640px) 50vw, 300px"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div className="px-3 py-4 text-center">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors text-balance">
+                    {service.shortTitle}
+                  </h3>
+                </div>
               </Link>
             ))}
           </div>

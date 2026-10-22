@@ -11,6 +11,9 @@
     --color-accent-soft: 245 158 11;
     --color-ink: 28 25 23;
     --color-ink-soft: 68 64 60;
+    /* Paginakleur. De golf onderaan de hero vult hiermee, dus beide
+       blijven gelijk als deze tint ooit verandert. */
+    --color-page: 245 247 251;
   }
 
   html {
@@ -33,7 +36,7 @@
     /* Zachte verloopachtergrond in onze eigen blauw- en indigotinten. Secties
        liggen er als witte panelen op; dat geeft de rust die de doelgroep nodig
        heeft en het onderscheid tussen secties zonder harde grijze banden. */
-    background-color: #f5f7fb;
+    background-color: rgb(var(--color-page));
     background-image:
       radial-gradient(60rem 40rem at 0% 0%, rgb(219 234 254 / 0.9), transparent 60%),
       radial-gradient(60rem 40rem at 100% 20%, rgb(224 231 255 / 0.8), transparent 60%),
@@ -298,7 +301,7 @@
      pt-20 (80px) is genoeg. Die 16px gaan naar de knoppen onderin, die op
      een scherm van 700px anders achter de cookiebalk verdwijnen. */
   .hero-content {
-    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 sm:pt-24 lg:pt-28 lg:pb-16;
+    @apply relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 sm:pt-24 sm:pb-20 lg:pt-28 lg:pb-24;
   }
 
   /* Hero-kop: gewicht 700, 1.06. Bovengrens bewust op 3,4rem in plaats van
@@ -388,6 +391,38 @@
      zodat de twee knoppen erboven de enige "klikbare" vormen blijven */
   .hero-pill {
     @apply flex items-center gap-2 text-white text-sm font-medium leading-snug;
+  }
+
+  /* Golvende afsluiting van de hero. De svg wordt met
+     preserveAspectRatio="none" tot deze hoogte geplet; de paden staan in
+     Hero.tsx. De waas is wit op laag niveau en leest op de donkere foto
+     als een tweede golfkam; de lichtlijn ligt op de kam zelf en is op de
+     lichte helft vanzelf onzichtbaar. */
+  .hero-wave {
+    @apply pointer-events-none absolute inset-x-0 bottom-0 h-9 sm:h-12 lg:h-[3.75rem];
+    line-height: 0;
+  }
+  .hero-wave svg {
+    @apply block h-full w-full;
+  }
+  .hero-wave-haze {
+    fill: #fff;
+    opacity: 0.16;
+  }
+  .hero-wave-body {
+    fill: rgb(var(--color-page));
+  }
+  .hero-wave-crest {
+    fill: none;
+    stroke: rgb(255 255 255 / 0.4);
+    stroke-width: 2;
+  }
+
+  /* Dienstentegel: vierkante foto met de naam eronder, zoals op de
+     referentiesite. Eén plat wit vlak zonder dubbele rand - op een tegel
+     van deze maat is de foto het hele verhaal. */
+  .service-tile {
+    @apply flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-soft-lg;
   }
 
   /* ============================================

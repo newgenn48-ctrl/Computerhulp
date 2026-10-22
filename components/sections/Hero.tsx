@@ -60,6 +60,29 @@ export default function Hero({
         <div className="hero-overlay-desktop-b" />
       </div>
 
+      {/* Golvende afsluiting. Drie lagen: een lichte waas die net boven de
+          hoofdgolf uitkomt, de golf zelf in de paginakleur, en een dunne
+          lichtlijn over de kam. preserveAspectRatio="none" plet de viewBox
+          tot de hoogte uit .hero-wave, dus de amplitude hieronder is ruim
+          gekozen - anders blijft er op mobiel niets van de golf over. */}
+      <div className="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
+          <path
+            className="hero-wave-haze"
+            d="M0,86 C240,14 480,14 720,52 C960,90 1200,90 1440,58 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-body"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-crest"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
+
       <div className="hero-content">
         <div className="max-w-2xl">
           <p className="hero-eyebrow">{eyebrow}</p>

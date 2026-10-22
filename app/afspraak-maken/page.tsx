@@ -1,5 +1,4 @@
 import AfspraakForm from '@/components/AfspraakForm'
-import { Icon } from '@/components/icons'
 import { BUSINESS, HOURS } from '@/lib/constants'
 
 export default function AfspraakMakenPage() {
@@ -14,22 +13,6 @@ export default function AfspraakMakenPage() {
             Vul uw gegevens in, dan bellen we u meestal binnen een uur terug om een moment af te spreken. Geen verplichtingen.
           </p>
         </header>
-
-        {/* Bellen is de snelste weg; de sticky belbalk staat op deze pagina uit, dus hier expliciet. */}
-        <a
-          href={BUSINESS.PHONE_HREF}
-          translate="no"
-          className="flex items-center justify-between gap-4 bg-gradient-to-br from-blue-600 to-indigo-700 text-white rounded-2xl p-5 mb-6 shadow-lg hover:shadow-xl transition duration-200"
-          aria-label={`Bel ${BUSINESS.PHONE}`}
-        >
-          <span className="min-w-0">
-            <span className="block text-sm text-blue-100">Liever direct iemand spreken? Bellen is het snelst.</span>
-            <span className="block text-2xl font-bold tabular-nums whitespace-nowrap">Bel {BUSINESS.PHONE}</span>
-          </span>
-          <span className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center flex-shrink-0" aria-hidden="true">
-            <Icon name="phone" className="w-6 h-6" strokeWidth={2} />
-          </span>
-        </a>
 
         <div className="card-bezel">
           <div className="card-bezel-inner p-6 sm:p-10">

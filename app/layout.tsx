@@ -57,6 +57,7 @@ export const metadata: Metadata = {
 /* Browserbalk in dezelfde tint als de pagina-achtergrond; viewport-fit zodat
    env(safe-area-inset-*) werkt op telefoons met een notch. */
 export const viewport: Viewport = {
+  // Gelijk aan --color-page in globals.css; metadata kan geen CSS-variabele lezen.
   themeColor: '#f5f7fb',
   colorScheme: 'light',
   viewportFit: 'cover',
