@@ -3,7 +3,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
-import CallbackSection from '@/components/sections/CallbackSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
@@ -110,7 +109,7 @@ const faqItems = [
   },
   {
     q: 'Wat kost een student aan huis?',
-    a: `${PRICING.PER_QUARTER} per kwartier, minimaal drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement en geen jaarbijdrage; u betaalt na afloop via pin of Tikkie.`,
+    a: `${PRICING.PER_QUARTER} per kwartier, minimaal drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement en geen jaarbijdrage; u betaalt na afloop via pin, contant of Tikkie.`,
   },
   {
     q: 'Kan ik dezelfde student terugvragen?',
@@ -122,7 +121,7 @@ const faqItems = [
   },
   {
     q: 'Waar komen jullie?',
-    a: `In heel ${BUSINESS.REGION}: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en meer dan 50 andere gemeenten, inclusief de dorpen. Voorrijden kost overal ${PRICING.TRAVEL}.`,
+    a: `In heel ${BUSINESS.REGION}: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Gouda, Dordrecht en nog ruim veertig andere plaatsen, inclusief de dorpen daartussen. Voorrijden kost overal ${PRICING.TRAVEL}.`,
   },
 ]
 
@@ -148,12 +147,12 @@ export default function StudentAanHuisPage() {
         pills={[
           { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
           { icon: 'money', label: 'Betaalbare tarieven' },
-          { icon: 'clock', label: 'Meestal binnen 24 uur' },
+          { icon: 'check', label: 'Betalen pas achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
         imageSrc="/hero-student.webp"
         imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
-        eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
+        eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Dan komt er een geduldige computerstudent aan huis: een HBO IT-student die het oplost en rustig uitlegt.</>,
@@ -172,10 +171,10 @@ export default function StudentAanHuisPage() {
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
           boven de FAQ een bedrag. */}
-      <PricingSection />
 
       {/* 4. Reviews */}
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
+      <PricingSection />
 
       <HowItWorksSection />
 
@@ -186,7 +185,6 @@ export default function StudentAanHuisPage() {
       />
 
       {/* Bellen of teruggebeld worden: direct onder de geruststelling */}
-      <CallbackSection />
 
       {/* 5. FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">

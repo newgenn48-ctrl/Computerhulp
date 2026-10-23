@@ -56,7 +56,7 @@ export default function VoorwaardenPage() {
           <section>
             <h2 className="content-title mt-8 mb-4">4. Prijzen en betaling</h2>
             <p>
-              <strong>Tarief:</strong> {PRICING.PER_QUARTER} per kwartier (15 minuten), minimaal 3 kwartier (€44,97).
+              <strong>Tarief:</strong> {PRICING.PER_QUARTER} per kwartier (15 minuten), minimaal 3 kwartier ({PRICING.MINIMUM_TOTAL}).
             </p>
             <p className="mt-4">
               <strong>Voorrijkosten:</strong> {PRICING.TRAVEL} in heel Zuid-Holland.
@@ -88,7 +88,7 @@ export default function VoorwaardenPage() {
           <section>
             <h2 className="content-title mt-8 mb-4">6. Annulering</h2>
             <ul className="list-disc pl-6 space-y-2">
-              <li><strong>Door klant:</strong> Gratis annuleren tot 24 uur voor de afspraak. Bij annulering binnen 24 uur kunnen we €44,97 (minimumtarief) in rekening brengen.</li>
+              <li><strong>Door klant:</strong> Gratis annuleren tot 24 uur voor de afspraak. Bij annulering binnen 24 uur kunnen we {PRICING.MINIMUM_TOTAL} (minimumtarief) in rekening brengen.</li>
               <li><strong>Door ons:</strong> Als wij moeten annuleren, doen we dit zo snel mogelijk en plannen we een nieuwe afspraak zonder extra kosten.</li>
             </ul>
           </section>

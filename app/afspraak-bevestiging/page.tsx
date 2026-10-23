@@ -113,7 +113,7 @@ export default function AfspraakBevestigingPage() {
         </div>
 
         <div className="mt-8 text-center">
-          <p className="text-sm text-gray-600 mb-4">Vertrouwd door {BUSINESS.REVIEW_COUNT} tevreden klanten</p>
+          <p className="text-sm text-gray-600 mb-4">{HOURS.DAYS} bereikbaar, van {HOURS.OPEN} tot {HOURS.CLOSE} uur</p>
           <div className="flex justify-center items-center gap-6 flex-wrap">
             <div className="flex items-center gap-2 text-gray-700">
               <Icon name="shield" className="w-5 h-5 text-blue-600" strokeWidth={2} aria-hidden="true" />

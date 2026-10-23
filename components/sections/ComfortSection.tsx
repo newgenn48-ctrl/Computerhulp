@@ -32,30 +32,55 @@ export default function ComfortSection({
   imageAlt = 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant',
 }: ComfortSectionProps) {
   const waar = cityName ? ` in ${cityName}` : ''
-  const wie = variant === 'student' ? 'De student' : 'Onze student'
 
-  const points = [
-    {
-      icon: 'chat',
-      title: 'Gewone taal, geen vaktermen',
-      desc: `${wie} laat zien waar u moet klikken en waarom. Snapt u het niet? Dan vertellen we het gewoon nog een keer.`,
-    },
-    {
-      icon: 'home',
-      title: 'Op uw eigen apparaat, aan uw eigen tafel',
-      desc: `We komen bij u thuis${waar}. Niets meenemen, niets opnieuw instellen: alles blijft precies zoals u het gewend bent.`,
-    },
-    {
-      icon: 'heart',
-      title: 'Geen vraag is te klein',
-      desc: 'Een knop die u niet kunt vinden is net zo goed een reden om te bellen als een computer die niet opstart.',
-    },
-    {
-      icon: 'shield',
-      title: 'U hoeft niets te kopen',
-      desc: 'Geen abonnement, geen nieuwe apparaten. We lossen op wat u heeft en u betaalt pas achteraf, via pin of Tikkie.',
-    },
-  ]
+  // De twee varianten stonden hier op één woord na dezelfde tekst, terwijl ze
+  // op dezelfde stad mikken. De computerhulp-pagina gaat over wat er kapot is,
+  // de studentpagina over wie er voor u staat.
+  const points = variant === 'student'
+    ? [
+        {
+          icon: 'academic-cap',
+          title: 'Een student, geen monteur',
+          desc: 'Iemand die zelf IT studeert en gewend is het thuis uit te leggen. Hij neemt de tijd en praat niet over uw hoofd heen.',
+        },
+        {
+          icon: 'home',
+          title: 'Aan uw eigen keukentafel',
+          desc: `Hij werkt op uw eigen apparaat, op de plek waar het normaal staat${waar}. U hoeft niets in te pakken en niets weg te brengen.`,
+        },
+        {
+          icon: 'chat',
+          title: 'U mag alles vragen',
+          desc: 'Ook de vraag die u vorige week al stelde. Hij legt het zo vaak uit als u wilt, en schrijft de stappen voor u op.',
+        },
+        {
+          icon: 'shield',
+          title: 'U zit nergens aan vast',
+          desc: 'Geen abonnement en geen nieuwe apparaten. Na afloop rekent u af, via pin, contant of Tikkie.',
+        },
+      ]
+    : [
+        {
+          icon: 'chat',
+          title: 'Gewone taal, geen vaktermen',
+          desc: 'Onze student laat zien waar u moet klikken en waarom. Snapt u het niet? Dan vertellen we het gewoon nog een keer.',
+        },
+        {
+          icon: 'home',
+          title: 'Op uw eigen apparaat, aan uw eigen tafel',
+          desc: `We komen bij u thuis${waar}. Niets meenemen, niets opnieuw instellen: alles blijft precies zoals u het gewend bent.`,
+        },
+        {
+          icon: 'heart',
+          title: 'Geen vraag is te klein',
+          desc: 'Een knop die u niet kunt vinden is net zo goed een reden om te bellen als een computer die niet opstart.',
+        },
+        {
+          icon: 'shield',
+          title: 'U hoeft niets te kopen',
+          desc: 'Geen abonnement, geen nieuwe apparaten. We lossen op wat u heeft en u betaalt pas achteraf, via pin, contant of Tikkie.',
+        },
+      ]
 
   return (
     <section className="panel-section" aria-labelledby="comfort-heading">

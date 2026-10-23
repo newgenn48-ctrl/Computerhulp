@@ -11,7 +11,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: OG_IMAGE,
     title: `Over ons | ${BUSINESS.NAME}`,
-    description: `Computerhulp door HBO-studenten, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
+    description: `Computerhulp aan huis door HBO-studenten uit ${BUSINESS.REGION}.`,
     type: 'website',
     url: `${BUSINESS.URL}/over-ons`,
   },
@@ -32,7 +32,7 @@ const organizationSchema = {
     width: '250',
     height: '60',
   },
-  description: `Professionele computerhulp aan huis in heel ${BUSINESS.REGION}. Computerhulp door HBO-studenten, ${BUSINESS.REVIEW_COUNT} tevreden klanten.`,
+  description: `Computerhulp aan huis in heel ${BUSINESS.REGION}, door HBO IT-studenten uit de regio.`,
   address: {
     '@type': 'PostalAddress',
     addressRegion: BUSINESS.REGION,
@@ -68,7 +68,7 @@ export default function OverOnsPage() {
         eyebrow="Over ons"
         title={<>Uw <span className="hero-highlight">HBO-student</span> aan huis</>}
         descriptions={[
-          <>Uw betrouwbare partner voor <strong className="text-white">computerhulp aan huis</strong> in <strong className="text-white">{BUSINESS.REGION}</strong>. {BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.</>,
+          <>Wij zijn de mensen achter <strong className="text-white">computerhulp aan huis</strong> in <strong className="text-white">{BUSINESS.REGION}</strong>. HBO IT-studenten die bij u thuis komen en rustig uitleggen wat er gebeurt.</>,
         ]}
       />
 
@@ -94,7 +94,7 @@ export default function OverOnsPage() {
                   Dus startten we <strong>{BUSINESS.NAME}</strong>. Het concept was eenvoudig: bij mensen thuis komen, in begrijpelijke taal uitleggen wat er aan de hand is, en het probleem ter plekke oplossen. Geen jargon, geen onnodige verkoop.
                 </p>
                 <p className="text-lg body-copy text-gray-700">
-                  Wat klein begon, groeide uit tot heel {BUSINESS.REGION}. Inmiddels hebben we {BUSINESS.REVIEW_COUNT} mensen geholpen met alles van een trage laptop tot wifi in het hele huis. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
+                  Wat klein begon, groeide uit tot heel {BUSINESS.REGION}. Van een trage laptop tot wifi in het hele huis, van een printer die niet meewerkt tot een tablet die niemand snapt. Nog steeds met dezelfde aanpak: <strong>persoonlijk en eerlijk</strong>.
                 </p>
               </div>
             </div>
@@ -130,7 +130,7 @@ export default function OverOnsPage() {
               { icon: 'clock', title: 'Snel & vakkundig', desc: `Onze studenten doen dit dagelijks en lossen de meeste problemen ter plekke op. Meestal binnen 24 uur bij u thuis.` },
               { icon: 'heart', title: 'Voor alle leeftijden', desc: 'We passen ons tempo en onze uitleg aan u aan. Geen haast, geen vaktermen.' },
               { icon: 'home', title: 'Bij u thuis', desc: `Geen gedoe met uw computer ergens naartoe brengen. We komen bij u thuis, ${PRICING.TRAVEL} voorrijkosten.` },
-              { icon: 'shield', title: 'Bewezen betrouwbaar', desc: `KvK ${BUSINESS.KVK}, verzekerd en gescreend. ${BUSINESS.REVIEW_COUNT} tevreden klanten gingen u voor.` },
+              { icon: 'shield', title: 'Gewoon te controleren', desc: `Ingeschreven bij de KvK onder ${BUSINESS.KVK}. U betaalt pas achteraf, dus u zit nergens aan vast.` },
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm hover:shadow-lg border border-gray-100 hover:border-blue-200 transition">
                 <div className="w-14 h-14 bg-blue-600 rounded-xl flex items-center justify-center mb-5 shadow-sm">
@@ -150,7 +150,7 @@ export default function OverOnsPage() {
           <header className="text-center mb-12">
             <h2 className="section-title">Ons team</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              HBO-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Stuk voor stuk gescreend en verzekerd.
+              HBO-studenten van hogescholen en universiteiten in {BUSINESS.REGION}. Allemaal uit de regio, en u hoort vooraf wie er bij u langskomt.
             </p>
           </header>
 
@@ -158,7 +158,7 @@ export default function OverOnsPage() {
             {[
               { title: 'Technisch opgeleid', desc: 'IT, Informatica of Technische Informatica, zowel hbo als wo.', icon: 'users' },
               { title: 'Ervaren met senioren', desc: 'We leggen uit in gewone taal, in uw tempo. Geen vaktermen.', icon: 'heart' },
-              { title: 'Gescreend & verzekerd', desc: `Verzekerd via onze bedrijfsaansprakelijkheidsverzekering (KvK ${BUSINESS.KVK}).`, icon: 'shield' },
+              { title: 'U weet wie er komt', desc: `Geen onbekende voor de deur: bel ${BUSINESS.PHONE} en we vertellen wie er ingepland staat.`, icon: 'shield' },
             ].map((item, idx) => (
               <div key={idx} className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 text-center">
                 <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mx-auto mb-4">

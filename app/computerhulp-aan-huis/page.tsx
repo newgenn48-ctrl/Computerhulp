@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
-import CallbackSection from '@/components/sections/CallbackSection'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -133,7 +132,7 @@ const faqItems = [
   },
   {
     q: 'Wat kost computerhulp aan huis?',
-    a: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement, geen toeslag, betalen achteraf via pin of Tikkie.`,
+    a: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Geen abonnement, geen toeslag, betalen achteraf via pin, contant of Tikkie.`,
   },
 ]
 
@@ -162,7 +161,7 @@ export default function ComputerhulpAanHuisPage() {
     { title: 'Gewoon thuis blijven', desc: `U hoeft nergens naartoe, wij komen bij u thuis in heel ${BUSINESS.REGION}.` },
     { title: 'Snel geregeld', desc: 'Meestal is het probleem in één bezoek opgelost, vaak binnen 24 uur na uw telefoontje.' },
     { title: 'Rustige uitleg', desc: 'We nemen de tijd om alles duidelijk uit te leggen, in gewone taal.' },
-    { title: `${PRICING.TRAVEL} voorrijkosten`, desc: `In alle ${cityCount} gemeenten van ${BUSINESS.REGION}, zonder toeslag voor avond of weekend.` },
+    { title: `${PRICING.TRAVEL} voorrijkosten`, desc: `In ${cityCount} plaatsen in ${BUSINESS.REGION}, zonder toeslag voor avond of weekend.` },
   ]
 
   return (
@@ -175,12 +174,12 @@ export default function ComputerhulpAanHuisPage() {
         pills={[
           { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
           { icon: 'money', label: 'Betaalbare tarieven' },
-          { icon: 'clock', label: 'Meestal binnen 24 uur' },
+          { icon: 'check', label: 'Betalen pas achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
         imageSrc="/hero-computerhulp.webp"
         imageAlt={`HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
-        eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
+        eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis in heel {BUSINESS.REGION}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
@@ -199,15 +198,14 @@ export default function ComputerhulpAanHuisPage() {
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
           boven de FAQ een bedrag. */}
-      <PricingSection />
 
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
+      <PricingSection />
 
       <HowItWorksSection />
 
       <ComfortSection variant="computerhulp" />
 
-      <CallbackSection />
 
       {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">
@@ -244,7 +242,7 @@ export default function ComputerhulpAanHuisPage() {
                   <strong className="text-gray-900">Computerhulp aan huis</strong> betekent dat u niets hoeft te sjouwen en niets hoeft uit te leggen aan een helpdesk. U belt of vult het formulier in, vertelt in uw eigen woorden wat er niet werkt, en wij geven meteen een inschatting van de tijd en de kosten. Soms lossen we een kleine vraag al aan de telefoon op.
                 </p>
                 <p>
-                  Daarna komt een HBO-student bij u langs, met kabels, adapters en gereedschap in de tas. We werken op uw eigen apparaat, op de plek waar het normaal staat, en vertellen ondertussen wat we doen. Een gemiddeld bezoek duurt drie tot vier kwartier. Aan het eind probeert u het zelf terwijl wij meekijken, en schrijven we de belangrijkste stappen desgewenst voor u op.
+                  Daarna komt een HBO-student bij u langs, met kabels, adapters en gereedschap in de tas. We werken op uw eigen apparaat, op de plek waar het normaal staat, en vertellen ondertussen wat we doen. Een gemiddeld bezoek duurt meestal drie kwartier, soms vier. Aan het eind probeert u het zelf terwijl wij meekijken, en schrijven we de belangrijkste stappen desgewenst voor u op.
                 </p>
                 <p>
                   De vragen die we in {BUSINESS.REGION} het vaakst krijgen: een computer die traag is geworden, een printer die na een update niet meer wil, wifi die in de slaapkamer of de tuin wegvalt, e-mail waar u niet meer in komt, rare meldingen op het scherm, een nieuwe laptop, tablet of telefoon die ingericht moet worden, Netflix dat het niet doet op de televisie, en videobellen met de kleinkinderen. Zie ook <Link href="/diensten/computer-laptop-hulp" className="text-blue-700 font-semibold hover:underline">computer- en laptophulp</Link>, <Link href="/diensten/wifi-internet-hulp" className="text-blue-700 font-semibold hover:underline">wifi en internet</Link> en <Link href="/diensten/tv-installatie" className="text-blue-700 font-semibold hover:underline">tv-installatie</Link>.
@@ -280,7 +278,7 @@ export default function ComputerhulpAanHuisPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           <h2 id="regio-heading" className="section-title">Computerhulp in heel {BUSINESS.REGION}</h2>
           <p className="section-subtitle mb-8">
-            Wij komen in alle {cityCount} gemeenten van {BUSINESS.REGION}, van de kust tot het Groene Hart. Waar u ook woont, voorrijden kost {PRICING.TRAVEL} en we zijn er meestal binnen 24 uur.
+            Wij komen in {cityCount} plaatsen in {BUSINESS.REGION}, van de kust tot het Groene Hart. Waar u ook woont, voorrijden kost {PRICING.TRAVEL} en we zijn er meestal binnen 24 uur.
           </p>
           <div className="flex flex-wrap gap-3">
             {REGIONS.map((r) => (

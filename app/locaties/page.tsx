@@ -39,7 +39,7 @@ const localBusinessData = {
   '@type': 'LocalBusiness',
   '@id': 'https://computerhulpzh.nl/#localbusiness',
   name: 'Computerhulp Zuid-Holland',
-  description: 'Professionele computerhulp aan huis in meer dan 50 gemeenten in Zuid-Holland',
+  description: 'Computerhulp aan huis in ruim 50 plaatsen in Zuid-Holland',
   url: 'https://computerhulpzh.nl',
   telephone: BUSINESS.PHONE_INTL,
   email: 'info@computerhulpzh.nl',
@@ -117,7 +117,7 @@ export default function LocatiesPage() {
               Computerhulp aan huis in <span className="text-blue-600">uw woonplaats</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 leading-relaxed max-w-xl">
-              Wij komen in alle <strong className="text-gray-900">{cityCount} gemeenten</strong> van <strong className="text-gray-900">{BUSINESS.REGION}</strong>, en in de dorpen daartussen. {PRICING.TRAVEL} voorrijkosten, meestal binnen 24 uur bij u thuis.
+              Wij komen in <strong className="text-gray-900">{cityCount} plaatsen</strong> in <strong className="text-gray-900">{BUSINESS.REGION}</strong>, en in de dorpen daartussen. {PRICING.TRAVEL} voorrijkosten, meestal binnen 24 uur bij u thuis.
             </p>
             <LocationSearch places={searchPlaces} />
             <div className="flex flex-wrap gap-4 mt-8">
@@ -195,13 +195,13 @@ export default function LocatiesPage() {
       <section className="panel-section">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 panel panel-pad">
           {/* Regio's boven de A-Z-lijst: zeven blokken zijn sneller te overzien
-              dan 51 gemeenten, en het haalt de gemeentepagina's een klik
+              dan 51 plaatsen, en het haalt de plaatspagina's een klik
               dichter bij de homepage. */}
           <div className="text-center mb-8">
             <p className="section-eyebrow">Per regio</p>
             <h2 className="section-title">Waar wij komen in {BUSINESS.REGION}</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              Kies uw regio voor alle gemeenten daarbinnen.
+              Kies uw regio voor alle plaatsen daarbinnen.
             </p>
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 mb-16">
@@ -213,7 +213,7 @@ export default function LocatiesPage() {
                     <span className="min-w-0 truncate">Computerhulp in {regionWithArticle(region.name)}</span>
                   </span>
                   <span className="block body-copy text-gray-600 mt-1">
-                    {region.cities.length} gemeenten, waaronder {region.cities.slice(0, 3).map(c => c.name).join(', ')}
+                    {region.cities.length} plaatsen, waaronder {region.cities.slice(0, 3).map(c => c.name).join(', ')}
                   </span>
                 </Link>
               </li>
@@ -222,7 +222,7 @@ export default function LocatiesPage() {
 
           <div className="text-center mb-12">
             <h2 className="section-title">Alle locaties A-Z</h2>
-            <p className="section-subtitle">Klik op uw gemeente voor meer informatie</p>
+            <p className="section-subtitle">Klik op uw plaats voor meer informatie</p>
           </div>
 
           {/* Letter navigation */}
@@ -281,7 +281,7 @@ export default function LocatiesPage() {
       <section className="cta-section-blue">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
           <h2 className="cta-title mb-6">
-            Staat uw gemeente er niet bij?
+            Staat uw plaats er niet bij?
           </h2>
           <p className="text-xl text-blue-100 mb-10">
             Wij zijn actief in heel {BUSINESS.REGION}. Neem contact op en we kijken wat we voor u kunnen betekenen.

@@ -4,6 +4,7 @@ import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
+import PricingSection from '@/components/sections/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
@@ -87,7 +88,7 @@ const faqData = {
     { '@type': 'Question', name: `Helpen jullie met alle merken laptops en computers?`, acceptedAnswer: { '@type': 'Answer', text: `Ja, met alle merken en alle besturingssystemen, laptop en vaste pc.` } },
     { '@type': 'Question', name: `Kan mijn oudere computer nog sneller worden?`, acceptedAnswer: { '@type': 'Answer', text: `Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Helpt dat niet genoeg, dan is een SSD-upgrade meestal de beste investering. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.` } },
     { '@type': 'Question', name: `Wat als het probleem niet opgelost kan worden?`, acceptedAnswer: { '@type': 'Answer', text: `Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose. Werkt iets binnen 30 dagen na ons bezoek toch weer niet, dan komen we gratis terug.` } },
-    { '@type': 'Question', name: `Wat kost computerhulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` } },
+    { '@type': 'Question', name: `Wat kost computerhulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin, contant of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` } },
   ]
 }
 
@@ -115,7 +116,7 @@ const faqs = [
   { question: `Helpen jullie met alle merken laptops en computers?`, answer: `Ja, met alle merken en alle besturingssystemen, laptop en vaste pc.` },
   { question: `Kan mijn oudere computer nog sneller worden?`, answer: `Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Helpt dat niet genoeg, dan is een SSD-upgrade meestal de beste investering. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.` },
   { question: `Wat als het probleem niet opgelost kan worden?`, answer: `Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose. Werkt iets binnen 30 dagen na ons bezoek toch weer niet, dan komen we gratis terug.` },
-  { question: `Wat kost computerhulp aan huis?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` },
+  { question: `Wat kost computerhulp aan huis?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin, contant of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` },
 ]
 
 export default function ComputerLaptopHulpPage() {
@@ -150,6 +151,25 @@ export default function ComputerLaptopHulpPage() {
           <div className="hero-overlay-desktop-r" />
           <div className="hero-overlay-desktop-b" />
         </div>
+      {/* Zelfde golvende afsluiting als de gedeelde Hero. Deze pagina's
+          hebben hun eigen hero-markup, dus de golf moet hier apart staan. */}
+      <div className="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
+          <path
+            className="hero-wave-haze"
+            d="M0,86 C240,14 480,14 720,52 C960,90 1200,90 1440,58 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-body"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-crest"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
 
         <div className="hero-content">
           <div className="max-w-2xl">
@@ -222,6 +242,7 @@ export default function ComputerLaptopHulpPage() {
         testimonials={SHORT_TESTIMONIALS}
         subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
       />
+      <PricingSection />
 
       {/* FAQ Section */}
       <section className="py-12 lg:py-16 bg-surface">

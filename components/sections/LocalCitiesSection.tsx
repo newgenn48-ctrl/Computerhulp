@@ -40,7 +40,7 @@ export default function LocalCitiesSection({
             <p className="section-eyebrow">{eyebrow}</p>
             <h2 id="local-cities-heading" className="section-title">{title}</h2>
             <p className="section-subtitle">
-              We helpen in heel {BUSINESS.REGION}, {cityCount} gemeenten, overal {PRICING.TRAVEL} voorrijkosten. Deze plaatsen worden het vaakst gezocht.
+              We helpen in heel {BUSINESS.REGION}, {cityCount} plaatsen, overal {PRICING.TRAVEL} voorrijkosten. Deze plaatsen worden het vaakst gezocht.
             </p>
           </header>
 

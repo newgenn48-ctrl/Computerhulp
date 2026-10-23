@@ -4,6 +4,7 @@ import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
+import PricingSection from '@/components/sections/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
@@ -59,7 +60,7 @@ const faqData = {
     { '@type': 'Question', name: `Kunnen jullie een soundbar aansluiten op mijn tv?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We sluiten uw soundbar of surroundset aan via HDMI ARC, optisch of bluetooth en zorgen dat het geluid samenwerkt met uw tv en afstandsbediening.` } },
     { '@type': 'Question', name: `Installeren jullie ook streamingdiensten zoals Netflix?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We installeren en configureren Netflix, Disney+, NPO Start, Videoland, Amazon Prime en meer. We maken accounts aan als dat nodig is en leggen uit hoe u ze gebruikt.` } },
     { '@type': 'Question', name: `Helpen jullie ook met radio en muziek?`, acceptedAnswer: { '@type': 'Answer', text: `Ja. We stellen DAB+ radio’s in, koppelen bluetooth-speakers en zorgen dat internetradio en muziekdiensten werken op uw tv of speaker.` } },
-    { '@type': 'Question', name: `Wat kost een tv-installatie?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Een gemiddelde installatie duurt drie tot vier kwartier. U betaalt achteraf, via pin of Tikkie.` } },
+    { '@type': 'Question', name: `Wat kost een tv-installatie?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Een gemiddelde installatie duurt meestal drie kwartier, soms vier. U betaalt achteraf, via pin, contant of Tikkie.` } },
   ]
 }
 
@@ -84,7 +85,7 @@ const faqs = [
   { question: `Kunnen jullie een soundbar aansluiten op mijn tv?`, answer: `Ja. We sluiten uw soundbar of surroundset aan via HDMI ARC, optisch of bluetooth en zorgen dat het geluid samenwerkt met uw tv en afstandsbediening.` },
   { question: `Installeren jullie ook streamingdiensten zoals Netflix?`, answer: `Ja. We installeren en configureren Netflix, Disney+, NPO Start, Videoland, Amazon Prime en meer. We maken accounts aan als dat nodig is en leggen uit hoe u ze gebruikt.` },
   { question: `Helpen jullie ook met radio en muziek?`, answer: `Ja. We stellen DAB+ radio’s in, koppelen bluetooth-speakers en zorgen dat internetradio en muziekdiensten werken op uw tv of speaker.` },
-  { question: `Wat kost een tv-installatie?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Een gemiddelde installatie duurt drie tot vier kwartier. U betaalt achteraf, via pin of Tikkie.` },
+  { question: `Wat kost een tv-installatie?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Een gemiddelde installatie duurt meestal drie kwartier, soms vier. U betaalt achteraf, via pin, contant of Tikkie.` },
 ]
 
 export default function TVInstallatiePage() {
@@ -110,6 +111,25 @@ export default function TVInstallatiePage() {
           <div className="hero-overlay-desktop-r" />
           <div className="hero-overlay-desktop-b" />
         </div>
+      {/* Zelfde golvende afsluiting als de gedeelde Hero. Deze pagina's
+          hebben hun eigen hero-markup, dus de golf moet hier apart staan. */}
+      <div className="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
+          <path
+            className="hero-wave-haze"
+            d="M0,86 C240,14 480,14 720,52 C960,90 1200,90 1440,58 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-body"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-crest"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
 
         <div className="hero-content">
           <div className="max-w-2xl">
@@ -182,6 +202,7 @@ export default function TVInstallatiePage() {
         testimonials={SHORT_TESTIMONIALS}
         subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
       />
+      <PricingSection />
 
       {/* FAQ Section */}
       <section className="py-12 lg:py-16 bg-surface">

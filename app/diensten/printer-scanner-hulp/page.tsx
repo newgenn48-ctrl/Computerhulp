@@ -4,6 +4,7 @@ import Image from 'next/image'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import { Icon } from '@/components/icons'
+import PricingSection from '@/components/sections/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
@@ -102,6 +103,25 @@ export default function PrinterScannerHulpPage() {
           <div className="hero-overlay-desktop-r" />
           <div className="hero-overlay-desktop-b" />
         </div>
+      {/* Zelfde golvende afsluiting als de gedeelde Hero. Deze pagina's
+          hebben hun eigen hero-markup, dus de golf moet hier apart staan. */}
+      <div className="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
+          <path
+            className="hero-wave-haze"
+            d="M0,86 C240,14 480,14 720,52 C960,90 1200,90 1440,58 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-body"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-crest"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
 
         <div className="hero-content">
           <div className="max-w-2xl">
@@ -174,6 +194,7 @@ export default function PrinterScannerHulpPage() {
         testimonials={SHORT_TESTIMONIALS}
         subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
       />
+      <PricingSection />
 
       {/* FAQ Section */}
       <section className="py-12 lg:py-16 bg-surface">

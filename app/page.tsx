@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
-import CallbackSection from '@/components/sections/CallbackSection'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -61,11 +60,11 @@ const faqItems = [
   },
   {
     q: 'Komen jullie ook in mijn woonplaats?',
-    a: `Wij komen in heel ${BUSINESS.REGION} bij u thuis. Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en meer dan 50 andere gemeenten. Overal ${PRICING.TRAVEL} voorrijkosten.`,
+    a: `Wij komen in heel ${BUSINESS.REGION} bij u thuis: Den Haag, Rotterdam, Leiden, Delft, Zoetermeer, Dordrecht, Gouda en nog ruim veertig andere plaatsen, en in de dorpen daartussen. Overal ${PRICING.TRAVEL} voorrijkosten.`,
   },
   {
     q: 'Moet ik iets voorbereiden?',
-    a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Het enige dat handig is: leg eventuele inloggegevens alvast klaar. Verder nemen wij alles mee wat nodig is.',
+    a: 'Nee hoor, daar hoeft u zich geen zorgen over te maken. Heeft u wachtwoorden nodig, leg die dan alvast klaar: u typt ze zelf in, wij schrijven niets op en nemen niets mee. Verder brengen wij alles mee wat nodig is.',
   },
 ]
 
@@ -206,7 +205,7 @@ export default function HomePage() {
         pills={[
           { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
           { icon: 'money', label: 'Betaalbare tarieven' },
-          { icon: 'clock', label: 'Meestal binnen 24 uur' },
+          { icon: 'check', label: 'Betalen pas achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
         imageSrc="/hero-student.webp"
@@ -233,13 +232,13 @@ export default function HomePage() {
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
           boven de FAQ een bedrag. */}
-      <PricingSection />
 
       {/* Reviews */}
       <TestimonialsSection
         testimonials={testimonials}
         subtitle={<>Wij helpen dagelijks mensen in heel {BUSINESS.REGION}</>}
       />
+      <PricingSection />
 
       {/* Zo werkt het */}
       <HowItWorksSection />
@@ -249,9 +248,31 @@ export default function HomePage() {
         imageSrc="/hero-computerhulp.webp"
         imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
       />
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <header className="text-center mb-10">
+            <h2 id="faq-heading" className="section-title">
+              Veelgestelde vragen
+            </h2>
+          </header>
+
+          <div className="space-y-4">
+            {faqItems.map((faq, idx) => (
+              <details key={idx} className="group faq-item-white">
+                <summary className="faq-summary">
+                  {faq.q}
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
+                </summary>
+                <div className="faq-answer">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Bellen of teruggebeld worden: direct onder de geruststelling, als de bezoeker overtuigd is */}
-      <CallbackSection />
 
       {/* Plaatsen met een eigen zin per stad */}
       <LocalCitiesSection />
@@ -313,29 +334,6 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section, shares data with JSON-LD above */}
-      <section className="panel-section" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <header className="text-center mb-10">
-            <h2 id="faq-heading" className="section-title">
-              Veelgestelde vragen
-            </h2>
-          </header>
-
-          <div className="space-y-4">
-            {faqItems.map((faq, idx) => (
-              <details key={idx} className="group faq-item-white">
-                <summary className="faq-summary">
-                  {faq.q}
-                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
-                </summary>
-                <div className="faq-answer">
-                  {faq.a}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">

@@ -2,7 +2,6 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { Icon } from '@/components/icons'
-import CallbackSection from '@/components/sections/CallbackSection'
 import { services } from '@/components/ServicesSection'
 import { articleSlugs, getArticle, getRelatedArticles, ArticleBlock } from '@/lib/kennisbank'
 import { BUSINESS, OG_IMAGE, HOURS } from '@/lib/constants'
@@ -237,7 +236,6 @@ export default async function KennisbankArtikelPage({ params }: PageProps) {
           </section>
         )}
 
-        <CallbackSection />
       </div>
     </>
   )

@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import CallbackSection from '@/components/sections/CallbackSection'
 import { articles, ArticleCategory } from '@/lib/kennisbank'
 import { BUSINESS, OG_IMAGE } from '@/lib/constants'
 
@@ -182,7 +181,6 @@ export default function KennisbankPage() {
           </div>
         </section>
 
-        <CallbackSection />
       </div>
     </>
   )

@@ -5,7 +5,6 @@ import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
 import Hero from '@/components/sections/Hero'
-import CallbackSection from '@/components/sections/CallbackSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import { Icon } from '@/components/icons'
@@ -386,7 +385,7 @@ function generateStudentFaqQuestions(city: City) {
       name: `Wat kost student aan huis in ${city.name}?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `Student aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in ${city.name} en omgeving. U betaalt na afloop via pin of Tikkie.`
+        text: `Student aan huis in ${city.name} kost ${PRICING.PER_QUARTER} per kwartier met een minimum van 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal). Voorrijden kost slechts ${PRICING.TRAVEL} in ${city.name} en omgeving. U betaalt na afloop via pin, contant of Tikkie.`
       }
     },
     {
@@ -410,7 +409,7 @@ function generateStudentFaqQuestions(city: City) {
       name: 'Hoe werkt de betaling?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'U betaalt na afloop van het bezoek. Dit kan via pin of Tikkie. U krijgt vooraf een inschatting van de tijd, zodat u weet waar u aan toe bent. Geen verborgen kosten, geen abonnementen.'
+        text: 'U betaalt na afloop van het bezoek. Dit kan via pin, contant of Tikkie. U krijgt vooraf een inschatting van de tijd, zodat u weet waar u aan toe bent. Geen verborgen kosten, geen abonnementen.'
       }
     },
     {
@@ -473,7 +472,7 @@ function getStudentFaqDisplayData(city: City) {
   const items = [
     {
       question: `Wat kost student aan huis in ${city.name}?`,
-      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}. Betalen doet u achteraf, via pin of Tikkie.`
+      answer: `U betaalt ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost slechts ${PRICING.TRAVEL}. Betalen doet u achteraf, via pin, contant of Tikkie.`
     },
     {
       question: `Hoe snel kunnen jullie in ${city.name} langskomen?`,
@@ -485,7 +484,7 @@ function getStudentFaqDisplayData(city: City) {
     },
     {
       question: 'Hoe werkt de betaling?',
-      answer: 'U betaalt pas na afloop, via pin of Tikkie. Vooraf krijgt u een inschatting van de tijd, zodat u weet waar u aan toe bent. Geen verborgen kosten.'
+      answer: 'U betaalt pas na afloop, via pin, contant of Tikkie. Vooraf krijgt u een inschatting van de tijd, zodat u weet waar u aan toe bent. Geen verborgen kosten.'
     },
     {
       question: `Komen jullie ook 's avonds en in het weekend?`,
@@ -537,7 +536,7 @@ function ComputerhulpContentSection({ city }: { city: City }) {
                     <strong className="text-gray-900">Computerhulp aan huis in {city.name}</strong>: {descLead} In een gemeente met {populationText} helpen wij regelmatig mensen met hun computer, laptop, printer, wifi, smartphone, tablet of camera. Gewoon bij u aan de keukentafel.
                   </p>
                   <p>
-                    {neighborhoodText}, onze HBO-student komt meestal binnen 24 uur bij u langs. Ook in de avonduren en in het weekend. U hoeft nergens naartoe, wij komen naar u toe.
+                    {neighborhoodText}, onze HBO-student komt gewoon bij u langs. U hoeft nergens naartoe, wij komen naar u toe.
                   </p>
                   {descParas.map((para, idx) => (
                     <p key={idx}>{para}</p>
@@ -686,7 +685,7 @@ function StudentContentSection({ city }: { city: City }) {
             </li>
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
-              <span><strong>Betalen achteraf:</strong> pas na afloop, via pin of Tikkie. {PRICING.TRAVEL} voorrijkosten in {city.name}.</span>
+              <span><strong>Betalen achteraf:</strong> pas na afloop, via pin, contant of Tikkie. {PRICING.TRAVEL} voorrijkosten in {city.name}.</span>
             </li>
             <li className="check-list-item">
               <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
@@ -789,12 +788,12 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         pills={[
           { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
           { icon: 'money', label: 'Betaalbare tarieven' },
-          { icon: 'clock', label: 'Meestal binnen 24 uur' },
+          { icon: 'check', label: 'Betalen pas achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
         imageSrc={config.heroImage}
         imageAlt={config.heroAlt(city.name)}
-        eyebrow={`${BUSINESS.REVIEW_COUNT} tevreden klanten`}
+        eyebrow={`In ${city.name} en omgeving`}
         title={config.heroTitle(city.name)}
         descriptions={[config.heroDescription(city.name)]}
       />
@@ -802,9 +801,11 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       {/* Vaste volgorde voor beide varianten: feiten → diensten → reviews
           → hoe → waarom → terugbellen. Wat per variant verschilt zit in config. */}
       <ServicesSection
-        eyebrow="Onze hulp"
+        eyebrow={variant === 'computerhulp' ? 'Onze hulp' : 'Waar de student mee helpt'}
         title={variant === 'computerhulp' ? `Waar wij u mee helpen in ${city.name}` : `Waar de student u in ${city.name} mee helpt`}
-        subtitle="Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is."
+        subtitle={variant === 'computerhulp'
+          ? 'Kies wat u herkent. U hoeft niet te weten wat er technisch aan de hand is.'
+          : 'Van een trage laptop tot de televisie: hij pakt het aan op uw eigen apparaat.'}
         photoCards={true}
         limitServices={6}
         showAllButton={true}
@@ -813,11 +814,11 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
           boven de FAQ een bedrag. */}
-      <PricingSection cityName={city.name} />
 
       <TestimonialsSection
         testimonials={HUB_TESTIMONIALS}
       />
+      <PricingSection cityName={city.name} />
 
       <HowItWorksSection />
 
@@ -832,7 +833,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
           : 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant'}
       />
 
-      <CallbackSection cityName={city.name} />
 
       {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">

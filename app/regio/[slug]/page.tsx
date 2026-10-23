@@ -8,7 +8,6 @@ import PricingSection from '@/components/sections/PricingSection'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
-import CallbackSection from '@/components/sections/CallbackSection'
 import { regionSlugs, getRegionBySlug, regionWithArticle } from '@/lib/regions'
 import { getCityContent } from '@/lib/cityContent'
 import { BUSINESS, OG_IMAGE, HOURS } from '@/lib/constants'
@@ -28,7 +27,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   if (!region) return {}
 
   const inRegio = regionWithArticle(region.name)
-  const langeTitel = `Computerhulp aan huis in ${region.name} | ${region.cities.length} gemeenten`
+  const langeTitel = `Computerhulp aan huis in ${region.name} | ${region.cities.length} plaatsen`
   const title = langeTitel.length <= 60 ? langeTitel : `Computerhulp aan huis in ${region.name}`
 
   return {
@@ -39,7 +38,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       const lang = `Computerhulp aan huis in ${inRegio}: ${region.cities.slice(0, 3).map(c => c.name).join(', ')} en meer. Een HBO IT-student bij u thuis, meestal binnen 24 uur.`
       return lang.length <= 160
         ? lang
-        : `Computerhulp aan huis in ${inRegio}, ${region.cities.length} gemeenten. Een HBO IT-student komt bij u thuis en legt alles rustig uit, meestal binnen 24 uur.`
+        : `Computerhulp aan huis in ${inRegio}, ${region.cities.length} plaatsen. Een HBO IT-student komt bij u thuis en legt alles rustig uit, meestal binnen 24 uur.`
     })(),
     openGraph: {
       images: OG_IMAGE,
@@ -98,7 +97,7 @@ export default async function RegioPage({ params }: PageProps) {
         imageSrc="/hero-computerhulp.webp"
         imageAlt={`HBO IT-student helpt een bewoner thuis met de computer in ${region.name}`}
         ariaLabel={`Computerhulp aan huis in ${region.name}`}
-        eyebrow={`${region.cities.length} gemeenten in ${inRegio}`}
+        eyebrow={`${region.cities.length} plaatsen in ${inRegio}`}
         title={<>Computerhulp aan huis in <span className="hero-highlight">{region.name}</span></>}
         descriptions={[
           <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis in {inRegio}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
@@ -113,7 +112,7 @@ export default async function RegioPage({ params }: PageProps) {
             <p className="section-eyebrow">Werkgebied</p>
             <h2 id="gemeenten-heading" className="section-title">Waar wij komen in {region.name}</h2>
             <p className="section-subtitle max-w-2xl mx-auto">
-              Kies uw gemeente voor de details, of bel gewoon. Voorrijden kost overal hetzelfde.
+              Kies uw plaats voor de details, of bel gewoon. Voorrijden kost overal hetzelfde.
             </p>
           </div>
 
@@ -154,18 +153,17 @@ export default async function RegioPage({ params }: PageProps) {
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
           boven de FAQ een bedrag. */}
-      <PricingSection />
 
       <TestimonialsSection
         testimonials={HUB_TESTIMONIALS}
         subtitle={<>Dagelijks helpen we mensen in heel {BUSINESS.REGION}</>}
       />
+      <PricingSection />
 
       <HowItWorksSection />
 
       <ComfortSection />
 
-      <CallbackSection />
 
       {/* Lopende tekst onderaan: dekt de zoekvraag per plaatsnaam zonder de
           bovenkant van de pagina vol te zetten. */}
@@ -175,7 +173,7 @@ export default async function RegioPage({ params }: PageProps) {
           <h2 className="section-title mb-6">Computerhulp aan huis in {inRegio}</h2>
 
           <p className="body-copy text-gray-700 mb-6">
-            Wij komen in {region.cities.length} gemeenten in {inRegio}: {namenZin}. Of u nu in{' '}
+            Wij komen in {region.cities.length} plaatsen in {inRegio}: {namenZin}. Of u nu in{' '}
             {grootste.join(' of ')} woont of in een kleinere kern ertussen, u betaalt hetzelfde
             voorrijtarief en we zijn er meestal binnen 24 uur.
           </p>
@@ -194,7 +192,7 @@ export default async function RegioPage({ params }: PageProps) {
 
           <p className="body-copy text-gray-700 mb-6">
             We zijn bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE}, {HOURS.DAYS}, ook in de avond en
-            het weekend zonder toeslag. U betaalt pas achteraf, via pin of Tikkie.
+            het weekend zonder toeslag. U betaalt pas achteraf, via pin, contant of Tikkie.
           </p>
 
           <p className="body-copy text-gray-700">
@@ -206,6 +204,39 @@ export default async function RegioPage({ params }: PageProps) {
           </p>
         </div>
       </section>
+
+      {/* Afsluitende CTA. Deze pagina eindigde op een blok lopende tekst,
+          waardoor hij als enige paginatype zonder vraag ophield. */}
+      <section className="cta-section-blue" aria-label="Contact opnemen">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="cta-title mb-6">Kunnen wij u helpen in {inRegio}?</h2>
+          <p className="text-xl text-blue-100 mb-10 max-w-2xl mx-auto">
+            Bel ons gerust, of vraag online een afspraak aan. Een student komt bij u thuis langs.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+            <a href={BUSINESS.PHONE_HREF} translate="no" className="btn-cta-white" aria-label={`Bel ${BUSINESS.PHONE}`}>
+              <Icon name="phone" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+              {BUSINESS.PHONE}
+            </a>
+            <Link href="/afspraak-maken" className="btn-cta-dark">
+              Afspraak maken
+              <Icon name="arrow-right-short" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-blue-100">
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />{HOURS.DAYS}
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />Ook avonden tot {HOURS.CLOSE}
+            </span>
+            <span className="flex items-center gap-2">
+              <Icon name="check-circle" className="w-4 h-4 text-blue-200" aria-hidden="true" />Meestal binnen 24 uur geholpen
+            </span>
+          </div>
+        </div>
+      </section>
+
     </>
   )
 }

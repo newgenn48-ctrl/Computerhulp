@@ -12,23 +12,22 @@ export const BUSINESS = {
   URL: 'https://computerhulpzh.nl',
   REGION: 'Zuid-Holland',
   COUNTRY: 'NL',
-  REVIEW_COUNT: '5000+',
   RESPONSE_TIME: 'meestal binnen 1 uur',
 } as const
 
 export const PRICING = {
-  PER_QUARTER: '€14,99',
-  PER_QUARTER_NUM: 14.99,
+  PER_QUARTER: '€14,50',
+  PER_QUARTER_NUM: 14.5,
   TRAVEL: '€12,50',
   TRAVEL_NUM: 12.5,
   MINIMUM_QUARTERS: 3,
-  /** 3 kwartier × €14,99, service alleen (zonder voorrijkosten). Gebruikt in schema.org / structured data. */
-  MINIMUM_TOTAL: '€44,97',
-  MINIMUM_TOTAL_NUM: 44.97,
-  /** Minimum inclusief voorrijkosten (€44,97 + €12,50). Gebruikt voor klantgerichte "vanaf"-prijzen. */
-  MINIMUM_ALL_IN: '€57,47',
+  /** 3 kwartier × €14,50, service alleen (zonder voorrijkosten). Gebruikt in schema.org / structured data. */
+  MINIMUM_TOTAL: '€43,50',
+  MINIMUM_TOTAL_NUM: 43.5,
+  /** Minimum inclusief voorrijkosten (€43,50 + €12,50). Alleen nog voor /tarieven en de vergelijkingstabel. */
+  MINIMUM_ALL_IN: '€56,00',
   /** Onze klanten zijn particulieren, dus elke genoemde prijs is een
-   *  consumentenprijs. Dat moet er ook staan: "€14,99 — en dan nog plus
+   *  consumentenprijs. Dat moet er ook staan: "€14,50 — en dan nog plus
    *  btw?" is precies de twijfel die je niet wilt op het beslismoment. */
   VAT_NOTE: 'incl. btw',
 } as const

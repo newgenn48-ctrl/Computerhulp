@@ -4,6 +4,7 @@ import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
+import PricingSection from '@/components/sections/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
@@ -106,7 +107,7 @@ const faqData = {
       name: `Wat kost computerhulp voor senioren?`,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.`
+        text: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin, contant of Tikkie.`
       }
     }
   ]
@@ -166,6 +167,25 @@ export default function ComputerhulpSeniorenPage() {
           <div className="hero-overlay-desktop-r" />
           <div className="hero-overlay-desktop-b" />
         </div>
+      {/* Zelfde golvende afsluiting als de gedeelde Hero. Deze pagina's
+          hebben hun eigen hero-markup, dus de golf moet hier apart staan. */}
+      <div className="hero-wave" aria-hidden="true">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
+          <path
+            className="hero-wave-haze"
+            d="M0,86 C240,14 480,14 720,52 C960,90 1200,90 1440,58 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-body"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44 L1440,120 L0,120 Z"
+          />
+          <path
+            className="hero-wave-crest"
+            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44"
+            vectorEffect="non-scaling-stroke"
+          />
+        </svg>
+      </div>
 
         <div className="hero-content">
           <div className="max-w-2xl">
@@ -232,6 +252,7 @@ export default function ComputerhulpSeniorenPage() {
         testimonials={SHORT_TESTIMONIALS}
         subtitle="Wij helpen dagelijks mensen in heel Zuid-Holland"
       />
+      <PricingSection />
 
       {/* SEO Content Section */}
       <section className="py-12 lg:py-16 bg-surface" aria-labelledby="seo-content-heading">
@@ -325,7 +346,7 @@ export default function ComputerhulpSeniorenPage() {
               { q: `Kunnen jullie het opschrijven, zodat ik het kan nalezen?`, a: `Ja. De belangrijkste stappen zetten we voor u op papier, in duidelijke taal, zodat u ze later rustig zelf kunt herhalen.` },
               { q: `Mag mijn zoon of dochter erbij zijn?`, a: `Natuurlijk, dat is zelfs handig. Vier oren onthouden meer dan twee, en uw familie weet daarna precies hoe alles is ingesteld.` },
               { q: `Helpen jullie ook met de tablet en de telefoon?`, a: `Zeker. Van tablet tot telefoon: instellen, apps, foto's en videobellen met de kleinkinderen, u zegt maar waar u mee zit.` },
-              { q: `Wat kost computerhulp voor senioren?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin of Tikkie.` },
+              { q: `Wat kost computerhulp voor senioren?`, a: `We rekenen ${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. U betaalt achteraf, via pin, contant of Tikkie.` },
             ].map((faq, idx) => (
               <details key={idx} className="group faq-item">
                 <summary className="faq-summary">

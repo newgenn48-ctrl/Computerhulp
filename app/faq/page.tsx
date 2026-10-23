@@ -116,7 +116,7 @@ const faqCategories = [
       },
       {
         question: 'Hoe kan ik betalen?',
-        answer: 'U kunt na afloop betalen via pin of Tikkie. We rekenen af zodra het werk klaar is, zodat u precies weet waar u voor betaalt. Facturen zijn ook mogelijk voor bedrijven.'
+        answer: 'U kunt na afloop betalen via pin, contant of Tikkie. We rekenen af zodra het werk klaar is, zodat u precies weet waar u voor betaalt. Facturen zijn ook mogelijk voor bedrijven.'
       },
       {
         question: 'Krijg ik een inschatting vooraf?',
@@ -195,8 +195,8 @@ const faqCategories = [
         answer: 'Ja, we behandelen uw gegevens met de grootst mogelijke zorgvuldigheid. We kijken alleen naar wat nodig is voor de hulp en delen nooit informatie met derden.'
       },
       {
-        question: 'Zijn jullie verzekerd?',
-        answer: `Ja, we zijn volledig verzekerd en geregistreerd bij de KvK (${BUSINESS.KVK}). U kunt met een gerust hart met ons werken.`
+        question: 'Wie komt er bij mij thuis?',
+        answer: `Een HBO IT-student uit uw eigen regio. Wilt u vooraf weten wie er komt? Bel ${BUSINESS.PHONE}, dan zeggen we wie er ingepland staat. Wij zijn ingeschreven bij de KvK onder ${BUSINESS.KVK}.`
       },
       {
         question: 'Wat als ik niet tevreden ben?',

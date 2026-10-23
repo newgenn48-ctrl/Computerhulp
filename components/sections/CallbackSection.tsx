@@ -8,7 +8,7 @@ interface CallbackSectionProps {
 }
 
 /**
- * Direct onder de hero: de twee manieren om ons te bereiken naast elkaar.
+ * Direct na de reviews: de twee manieren om ons te bereiken naast elkaar.
  * Links bellen (de snelste weg), rechts het terugbelformulier met alleen naam
  * en nummer. Daarmee hoeft niemand naar een aparte pagina met zeven velden
  * voordat we weten dat hij geholpen wil worden.
