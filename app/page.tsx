@@ -99,8 +99,8 @@ const localBusinessData = {
   email: BUSINESS.EMAIL,
   logo: `${BUSINESS.URL}/logo.png`,
   image: [
+    `${BUSINESS.URL}/hero-tafel.webp`,
     `${BUSINESS.URL}/hero-student.webp`,
-    `${BUSINESS.URL}/hero-computerhulp.webp`,
   ],
   address: {
     '@type': 'PostalAddress',
@@ -208,8 +208,9 @@ export default function HomePage() {
           { icon: 'check', label: 'Betalen pas achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
-        imageSrc="/hero-computerhulp.webp"
-        imageAlt={`HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
+        imageSrc="/hero-tafel.webp"
+        imageSrcMobile="/hero-tafel-mobiel.webp"
+        imageAlt={`HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel={`${BUSINESS.NAME} hero`}
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}

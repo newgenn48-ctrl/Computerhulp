@@ -22,6 +22,17 @@ interface HeroProps {
    * buiten. Leeg laten betekent: dezelfde uitsnede als op de computer.
    */
   imagePositionMobile?: string
+  /**
+   * Eigen, vooraf bijgesneden bestand voor onder 768px.
+   *
+   * next/image schaalt de hele foto naar schermbreedte en snijdt pas daarna
+   * bij, dus een telefoon kreeg zo'n 235 bronpixels uitgesmeerd over 780.
+   * Een losse uitsnede is zowel scherper als lichter: de telefoon haalt
+   * alleen nog dat bestand op in plaats van een brede desktopvariant.
+   * Is deze gezet, dan is de uitsnede al gemaakt en blijft
+   * imagePositionMobile buiten beeld.
+   */
+  imageSrcMobile?: string
   /** Section aria-label, bv. "IT hulp aan huis hero" */
   ariaLabel?: string
   /** Kleine tekst boven H1, bijvoorbeeld "In heel Zuid-Holland". JSX toegestaan. */
@@ -64,6 +75,7 @@ export default function Hero({
   imageAlt,
   imagePosition,
   imagePositionMobile,
+  imageSrcMobile,
   ariaLabel,
   eyebrow,
   title,
@@ -71,7 +83,11 @@ export default function Hero({
   pills,
   trustLine = `Meestal binnen 24 uur bij u thuis · ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten`,
 }: HeroProps) {
-  const mobilePosition = imagePositionMobile ?? MOBILE_POSITION[imageSrc]
+  // Is er een eigen mobiel bestand, dan zit de uitsnede daar al in en zou
+  // een object-position er nog een tweede keer overheen gaan.
+  const mobilePosition = imageSrcMobile
+    ? undefined
+    : imagePositionMobile ?? MOBILE_POSITION[imageSrc]
 
   // Custom properties in plaats van een kale objectPosition: de mobiele
   // uitsnede moet uit een media query komen, en die kan geen inline style zijn.
@@ -83,17 +99,35 @@ export default function Hero({
   return (
     <section className="hero-wrapper" aria-label={ariaLabel}>
       <div className="absolute inset-0">
-        <Image
-          src={imageSrc}
-          alt={imageAlt}
-          fill
-          className="hero-photo"
-          style={photoStyle}
-          priority
-          fetchPriority="high"
-          quality={65}
-          sizes="100vw"
-        />
+        {imageSrcMobile ? (
+          // <picture> en niet twee <Image>'en met display:none: een verborgen
+          // <img> wordt door de browser alsnog opgehaald, dus dat zou beide
+          // bestanden downloaden. De bestanden zijn al als webp geoptimaliseerd,
+          // dus next/image heeft hier niets meer toe te voegen.
+          <picture>
+            <source media="(min-width: 768px)" srcSet={imageSrc} />
+            <img
+              src={imageSrcMobile}
+              alt={imageAlt}
+              className="hero-photo absolute inset-0 h-full w-full"
+              style={photoStyle}
+              fetchPriority="high"
+              decoding="async"
+            />
+          </picture>
+        ) : (
+          <Image
+            src={imageSrc}
+            alt={imageAlt}
+            fill
+            className="hero-photo"
+            style={photoStyle}
+            priority
+            fetchPriority="high"
+            quality={65}
+            sizes="100vw"
+          />
+        )}
         <div className="hero-overlay-mobile" />
         <div className="hero-overlay-desktop-r" />
         <div className="hero-overlay-desktop-b" />
