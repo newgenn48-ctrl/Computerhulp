@@ -66,8 +66,32 @@ export default function StickyMobileBar() {
           aria-label="Online afspraak maken"
         >
           <Icon name="calendar" className="w-5 h-5 text-blue-600" strokeWidth={2} aria-hidden="true" />
-          Afspraak
+          {/* Onder 390px valt het label weg, anders houdt het telefoonnummer
+              in de knop ernaast te weinig ruimte over. Gemeten: met label op
+              een scherm van 360px bleef er 4px speling, en het lettertype is
+              system-ui, dus op een ander toestel valt dat net anders uit. */}
+          <span className="hidden min-[390px]:inline">Afspraak</span>
         </Link>
+        {/* WhatsApp zat hiervoor als zweefknop boven deze balk, en dekte daar
+            doorlopend een stuk lopende tekst af - een vaste knop verschuift
+            niet mee, dus er was geen stand waarin dat niet gebeurde. Wit met
+            een groen merkteken: blauw blijft de zwaarste knop in de balk. */}
+        <button
+          type="button"
+          onClick={() => {
+            const msg = encodeURIComponent('Hallo! Ik heb een vraag over computerhulp aan huis.')
+            // WhatsApp-klik meten als event (geen Ads-conversie: dat blijft bellen en formulier)
+            const w = window as Window & { gtag?: (...args: unknown[]) => void }
+            if (typeof w.gtag === 'function') {
+              w.gtag('event', 'whatsapp_click', { event_category: 'contact', transport_type: 'beacon' })
+            }
+            window.open(`${BUSINESS.WHATSAPP_HREF}?text=${msg}`, '_blank', 'noopener,noreferrer')
+          }}
+          className="inline-flex w-12 flex-shrink-0 items-center justify-center bg-white border-2 border-gray-200 rounded-xl"
+          aria-label="Stuur ons een WhatsApp-bericht"
+        >
+          <Icon name="whatsapp" className="w-6 h-6 text-[#25D366]" aria-hidden="true" />
+        </button>
       </div>
     </div>
   )

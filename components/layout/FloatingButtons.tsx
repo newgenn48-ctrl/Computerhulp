@@ -4,7 +4,6 @@ import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { Icon } from '@/components/icons'
-import { BUSINESS } from '@/lib/constants'
 
 export default function FloatingButtons() {
   const [show, setShow] = useState(false)
@@ -43,49 +42,32 @@ export default function FloatingButtons() {
 
   return (
     <div
-      /* floating-cta: globals.css houdt deze knoppen weg zolang er nog geen
-         cookiekeuze is gemaakt. Zonder dat stonden ze onder de cookiebalk
+      /* Alleen vanaf sm. Op de telefoon zweefde hier een WhatsApp-knop die
+         doorlopend een stuk lopende tekst afdekte; die zit nu in
+         StickyMobileBar, waar hij niets bedekt.
+
+         floating-cta: globals.css houdt deze knop weg zolang er nog geen
+         cookiekeuze is gemaakt. Zonder dat stond hij onder de cookiebalk
          (z-40 tegen z-60) en keek je naar een knop die half onder een witte
-         balk uitkwam. inert houdt ze ook buiten de tabvolgorde zolang ze
-         onzichtbaar zijn. */
-      className={`floating-cta fixed bottom-24 right-4 sm:bottom-6 sm:right-6 z-40 transition duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
+         balk uitkwam. inert houdt hem ook buiten de tabvolgorde zolang hij
+         onzichtbaar is. */
+      className={`floating-cta hidden sm:block fixed sm:bottom-6 sm:right-6 z-40 transition duration-300 ${show ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}
       role="complementary"
       aria-label="Snelle actieknoppen"
       inert={!show}
     >
-      {/* Mobile: alleen WhatsApp (phone & afspraak zitten in StickyMobileBar) */}
-      <div className="flex flex-col gap-3 sm:hidden">
-        <button
-          onClick={() => {
-            const msg = encodeURIComponent('Hallo! Ik heb een vraag over computerhulp aan huis.')
-            // WhatsApp-klik meten als event (geen Ads-conversie: dat blijft bellen en formulier)
-            const w = window as Window & { gtag?: (...args: unknown[]) => void }
-            if (typeof w.gtag === 'function') {
-              w.gtag('event', 'whatsapp_click', { event_category: 'contact', transport_type: 'beacon' })
-            }
-            window.open(`${BUSINESS.WHATSAPP_HREF}?text=${msg}`, '_blank', 'noopener,noreferrer')
-          }}
-          className="group floating-btn bg-[#25D366] hover:bg-[#128C7E] shadow-2xl"
-          aria-label="WhatsApp ons"
-        >
-          <Icon name="whatsapp" className="w-7 h-7" />
-        </button>
-      </div>
-
       {/* Computer en tablet: afspraak maken. Het telefoonnummer staat op deze
           schermen al permanent in de header; een tel:-link is daar weinig waard.
           Op de telefoon houdt StickyMobileBar het belnummer vooraan. */}
-      <div className="hidden sm:block">
-        <Link
-          href="/afspraak-maken"
-          className="inline-flex items-center gap-2.5 h-14 px-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold text-lg shadow-2xl transition duration-200 hover:-translate-y-0.5 whitespace-nowrap"
-          aria-label="Online een afspraak maken"
-        >
-          <Icon name="calendar" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
-          Afspraak maken
-          <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-        </Link>
-      </div>
+      <Link
+        href="/afspraak-maken"
+        className="inline-flex items-center gap-2.5 h-14 px-5 rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 text-white font-bold text-lg shadow-2xl transition duration-200 hover:-translate-y-0.5 whitespace-nowrap"
+        aria-label="Online een afspraak maken"
+      >
+        <Icon name="calendar" className="w-6 h-6" strokeWidth={2} aria-hidden="true" />
+        Afspraak maken
+        <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+      </Link>
     </div>
   )
 }

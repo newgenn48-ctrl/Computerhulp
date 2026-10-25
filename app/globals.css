@@ -43,6 +43,15 @@
       radial-gradient(50rem 40rem at 50% 100%, rgb(236 253 245 / 0.7), transparent 60%);
   }
 
+  /* Ruimte onder de pagina zolang de vaste balk er is (die is sm:hidden,
+     dus tot 640px). Zonder dit vielen onderaan de laatste footerregels
+     achter de balk: het copyright en de credit waren niet te lezen. */
+  @media (max-width: 639px) {
+    body {
+      padding-bottom: calc(4.75rem + env(safe-area-inset-bottom));
+    }
+  }
+
   /* Koppen: systeemlettertype, gewicht 700, letterafstand -0,02em
      (maten en gewichten overgenomen van computerhulpnh.nl). */
   h1, h2, h3 {
@@ -630,10 +639,6 @@
   /* ============================================
      FLOATING BUTTONS
      ============================================ */
-  .floating-btn {
-    @apply relative w-14 h-14 text-white rounded-2xl shadow-lg flex items-center justify-center transition duration-200 hover:shadow-xl hover:-translate-y-0.5;
-  }
-
   /* De zweefknoppen stonden bij een eerste bezoek onder de cookiebalk (z-40
      tegen z-60, gemeten 40px overlap). Zolang er nog geen keuze gemaakt is,
      blijven ze weg; het inline script in de head zet data-consent vóór de
@@ -732,7 +737,6 @@ html {
 .btn-hero-secondary[href^="tel:"],
 .btn-header-cta[href^="tel:"],
 .btn-header-cta-mobile[href^="tel:"],
-.floating-btn[href^="tel:"],
 .footer-link[href^="tel:"],
 .nav-link[href^="tel:"],
 .nav-mobile-link[href^="tel:"] {
