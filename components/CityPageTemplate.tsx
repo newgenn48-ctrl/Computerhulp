@@ -37,6 +37,8 @@ interface VariantConfig {
   urlPrefix: 'computerhulp-aan-huis' | 'student-aan-huis'
   heroImage: string
   heroImageMobile?: string
+  /** Foto die op de telefoon los onder de herotekst staat in plaats van erachter. */
+  heroImageLoose?: string
   heroAlt: (cityName: string) => string
   heroTitle: (cityName: string) => React.ReactNode
   heroDescription: (cityName: string) => React.ReactNode
@@ -75,9 +77,11 @@ const studentConfig: VariantConfig = {
   serviceName: 'Student aan Huis',
   serviceNameLower: 'student aan huis',
   urlPrefix: 'student-aan-huis',
-  heroImage: '/hero-tafel.webp',
-  heroImageMobile: '/hero-tafel-mobiel.webp',
-  heroAlt: (cityName) => `HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${cityName}`,
+  // Op de computer de achtergrond, op de telefoon los onder de tekst: daar
+  // ligt 70% ink over de hero, en zo is de foto echt te zien.
+  heroImage: '/hero-deur.webp',
+  heroImageLoose: '/hero-deur-los.webp',
+  heroAlt: (cityName) => `HBO-student belt aan bij een oudere vrouw in ${cityName}, die hem in de deuropening begroet`,
   heroTitle: (cityName) => (
     <>Student aan huis <span className="hero-highlight">{cityName}</span></>
   ),
@@ -248,7 +252,9 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
   }
 
   if (variant === 'student') {
-    localBusiness.image = `${baseUrl}/hero-tafel.webp`
+    // Dezelfde foto als de hero van de pagina, anders wijst de structured
+    // data naar een foto die er niet op staat.
+    localBusiness.image = `${baseUrl}${studentConfig.heroImage}`
   }
 
   const serviceEntity: Record<string, unknown> = {
@@ -796,6 +802,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         ]}
         imageSrc={config.heroImage}
         imageSrcMobile={config.heroImageMobile}
+        imageLooseMobile={config.heroImageLoose}
         imageAlt={config.heroAlt(city.name)}
         eyebrow={`In ${city.name} en omgeving`}
         title={config.heroTitle(city.name)}
@@ -818,9 +825,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         cityName={city.name}
         variant={variant}
         imageSrc="/comfort-tafel.webp"
-        imageAlt={variant === 'student'
-          ? 'HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt'
-          : 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant'}
       />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin

@@ -230,7 +230,7 @@ export default function SmartphoneHulpAanHuisPage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/comfort-tafel.webp"
-                    alt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
+                    alt="HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere vrouw"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"

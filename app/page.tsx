@@ -231,7 +231,7 @@ export default function HomePage() {
       />
       <ComfortSection
         imageSrc="/comfort-tafel.webp"
-        imageAlt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
+        imageAlt="HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere vrouw"
       />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin
@@ -306,7 +306,7 @@ export default function HomePage() {
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
                     src="/aan-de-deur.webp"
-                    alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+                    alt="HBO-student belt aan bij een oudere vrouw, die hem in de deuropening begroet"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"

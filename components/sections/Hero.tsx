@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import HeroPhoto from '@/components/HeroPhoto'
 import { BUSINESS, PRICING } from '@/lib/constants'
@@ -33,6 +34,16 @@ interface HeroProps {
    * imagePositionMobile buiten beeld.
    */
   imageSrcMobile?: string
+  /**
+   * Foto die op de telefoon los onder de tekst komt in plaats van erachter.
+   *
+   * Op de telefoon ligt er een vlakke laag van 70% ink over de hele hero,
+   * waardoor een achtergrondfoto daar alleen nog sfeer is. Is deze gezet, dan
+   * verdwijnt de achtergrondfoto onder 768px en staat de foto als eigen blok
+   * onder de knoppen, onbedekt. Op de computer verandert er niets: imageSrc
+   * blijft daar gewoon de achtergrond.
+   */
+  imageLooseMobile?: string
   /** Section aria-label, bv. "IT hulp aan huis hero" */
   ariaLabel?: string
   /** Kleine tekst boven H1, bijvoorbeeld "In heel Zuid-Holland". JSX toegestaan. */
@@ -58,6 +69,7 @@ export default function Hero({
   imagePosition,
   imagePositionMobile,
   imageSrcMobile,
+  imageLooseMobile,
   ariaLabel,
   eyebrow,
   title,
@@ -70,12 +82,15 @@ export default function Hero({
       <div className="absolute inset-0">
         <HeroPhoto
           src={imageSrc}
-          srcMobile={imageSrcMobile}
+          srcMobile={imageLooseMobile ? undefined : imageSrcMobile}
           alt={imageAlt}
           position={imagePosition}
           positionMobile={imagePositionMobile}
+          desktopOnly={Boolean(imageLooseMobile)}
         />
-        <div className="hero-overlay-mobile" />
+        {/* Zonder achtergrondfoto op de telefoon is er niets om te dempen:
+            .hero-wrapper is daar zelf al ink-900. */}
+        {!imageLooseMobile && <div className="hero-overlay-mobile" />}
         <div className="hero-overlay-desktop-r" />
         <div className="hero-overlay-desktop-b" />
       </div>
@@ -143,6 +158,19 @@ export default function Hero({
                 </li>
               ))}
             </ul>
+          )}
+
+          {/* Onderaan en niet bovenaan: de belknop moet op een telefoon in
+              het eerste scherm blijven staan. */}
+          {imageLooseMobile && (
+            <Image
+              src={imageLooseMobile}
+              alt={imageAlt}
+              width={1000}
+              height={750}
+              sizes="100vw"
+              className="hero-photo-loose"
+            />
           )}
         </div>
       </div>

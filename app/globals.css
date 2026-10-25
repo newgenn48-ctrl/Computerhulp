@@ -312,6 +312,13 @@
     }
   }
 
+  /* Herofoto die op de telefoon niet achter de tekst staat maar los eronder.
+     Boven 768px is hij er niet: daar is dezelfde foto de achtergrond. */
+  .hero-photo-loose {
+    @apply mt-8 block w-full rounded-2xl object-cover shadow-xl md:hidden;
+    aspect-ratio: 4 / 3;
+  }
+
   /* Bovenmarge op de telefoon kleiner: de vaste header is daar 72px, dus
      pt-20 (80px) is genoeg. Die 16px gaan naar de knoppen onderin, die op
      een scherm van 700px anders achter de cookiebalk verdwijnen. */

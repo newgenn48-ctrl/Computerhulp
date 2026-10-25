@@ -38,7 +38,7 @@ const structuredData = {
       telephone: BUSINESS.PHONE_INTL,
       email: BUSINESS.EMAIL,
       logo: `${BUSINESS.URL}/logo.png`,
-      image: `${BUSINESS.URL}/hero-tafel.webp`,
+      image: `${BUSINESS.URL}/hero-deur.webp`,
       address: {
         '@type': 'PostalAddress',
         addressRegion: BUSINESS.REGION,
@@ -150,9 +150,9 @@ export default function StudentAanHuisPage() {
           { icon: 'check', label: 'Betalen pas achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
-        imageSrc="/hero-tafel.webp"
-        imageSrcMobile="/hero-tafel-mobiel.webp"
-        imageAlt={`HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${BUSINESS.REGION}`}
+        imageSrc="/hero-deur.webp"
+        imageLooseMobile="/hero-deur-los.webp"
+        imageAlt={`HBO-student belt aan bij een oudere vrouw in ${BUSINESS.REGION}, die hem in de deuropening begroet`}
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
@@ -171,7 +171,7 @@ export default function StudentAanHuisPage() {
       <ComfortSection
         variant="student"
         imageSrc="/comfort-tafel.webp"
-        imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+        imageAlt="HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere vrouw"
       />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin
@@ -216,7 +216,7 @@ export default function StudentAanHuisPage() {
               <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
                 <Image
                   src="/aan-de-deur.webp"
-                  alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+                  alt="HBO-student belt aan bij een oudere vrouw, die hem in de deuropening begroet"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
