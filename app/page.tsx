@@ -100,7 +100,7 @@ const localBusinessData = {
   logo: `${BUSINESS.URL}/logo.png`,
   image: [
     `${BUSINESS.URL}/hero-tafel.webp`,
-    `${BUSINESS.URL}/hero-student.webp`,
+    `${BUSINESS.URL}/comfort-tafel.webp`,
   ],
   address: {
     '@type': 'PostalAddress',
@@ -230,8 +230,7 @@ export default function HomePage() {
         showAllButton={true}
       />
       <ComfortSection
-        imageSrc="/hero-student.webp"
-        imagePosition="90% center"
+        imageSrc="/comfort-tafel.webp"
         imageAlt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
       />
 
@@ -306,7 +305,7 @@ export default function HomePage() {
               <div className="sticky top-24">
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
-                    src="/hero-computerhulp.webp"
+                    src="/aan-de-deur.webp"
                     alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
                     fill
                     className="object-cover"

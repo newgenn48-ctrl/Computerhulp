@@ -89,9 +89,9 @@ export default function EmailHulpPage() {
 
       {/* Hero - Split Layout */}
       <Hero
-        imageSrc="/dienst-email.webp"
-        imageAlt="Laptopscherm met een geopende e-mail"
-        imagePosition="center 45%"
+        imageSrc="/dienst-email-16x9.webp"
+        imageSrcMobile="/dienst-email-mobiel.webp"
+        imageAlt="Laptop op tafel met een envelopje op het scherm"
         ariaLabel="E-mail hulp aan huis hero"
         eyebrow={<>E-mail hulp · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">e-mail</span>?</>}

@@ -90,6 +90,7 @@ export default function PrinterScannerHulpPage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-printer-scanner-16x9.webp"
+        imageSrcMobile="/dienst-printer-scanner-mobiel.webp"
         imageAlt="All-in-one printer met een vers afgedrukte pagina"
         ariaLabel="Printer & Scanner aan huis hero"
         eyebrow={<>Printer & Scanner · {BUSINESS.REGION}</>}

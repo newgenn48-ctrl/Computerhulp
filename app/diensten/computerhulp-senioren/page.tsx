@@ -154,9 +154,9 @@ export default function ComputerhulpSeniorenPage() {
 
       {/* Premium Hero Section */}
       <Hero
-        imageSrc="/dienst-computer-laptop.webp"
-        imageAlt="Open laptop op een eettafel, handen op het toetsenbord"
-        imagePosition="center 45%"
+        imageSrc="/dienst-senioren-16x9.webp"
+        imageSrcMobile="/dienst-senioren-mobiel.webp"
+        imageAlt="Oudere vrouw werkt zelf op de laptop, de student kijkt naast haar mee"
         ariaLabel="Computerhulp voor Senioren hero"
         eyebrow={<>Voor senioren · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">computer</span>?</>}
@@ -254,7 +254,7 @@ export default function ComputerhulpSeniorenPage() {
               <div className="sticky top-24">
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
-                    src="/hero-student.webp"
+                    src="/comfort-tafel.webp"
                     alt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
                     fill
                     className="object-cover"

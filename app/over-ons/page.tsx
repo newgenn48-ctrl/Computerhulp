@@ -101,7 +101,7 @@ export default function OverOnsPage() {
             </div>
             <div className="relative h-80 lg:h-[450px] rounded-2xl overflow-hidden shadow-xl">
               <Image
-                src="/hero-computerhulp.webp"
+                src="/aan-de-deur.webp"
                 alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
                 fill
                 className="object-cover"

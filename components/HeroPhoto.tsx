@@ -1,30 +1,6 @@
 import type { CSSProperties } from 'react'
 import Image from 'next/image'
 
-/**
- * Standaard uitsnede per foto op de telefoon.
- *
- * Een 16:9-foto in de staande herobak van een telefoon toont nog maar zo'n
- * 29% van zijn breedte, gecentreerd. Bij de foto's met mensen erop staat het
- * onderwerp rechts in beeld, dus die vielen er op mobiel volledig buiten: van
- * de oude homepagehero bleef een witte deur met een half hoofd over. De
- * dienstfoto's zijn close-ups en staan vanzelf goed, die horen hier niet in.
- *
- * Het hoort bij de foto en niet bij de pagina, dus staat het hier en niet in
- * elke aanroep. Een pagina kan het alsnog overschrijven met positionMobile.
- * Een foto met een eigen mobiel bestand heeft hier niets te zoeken: die
- * uitsnede zit al in het bestand.
- *
- * Sinds alle hero's de tafelfoto gebruiken staat hier niemand meer op; de
- * gemeten waarden blijven staan omdat de foto's nog in de repo zitten en
- * elders gebruikt worden.
- */
-const MOBILE_POSITION: Record<string, string> = {
-  '/hero-computerhulp.webp': '89% center',
-  '/hero-student.webp': '70% center',
-  '/hero-locaties.webp': '70% center',
-}
-
 export interface HeroPhotoProps {
   src: string
   alt: string
@@ -40,7 +16,7 @@ export interface HeroPhotoProps {
   srcMobile?: string
   /** object-position op de computer, bv. "center 58%". Standaard gecentreerd. */
   position?: string
-  /** object-position onder 768px. Zonder srcMobile valt hij terug op de tabel hierboven. */
+  /** object-position onder 768px, voor een foto zonder eigen mobiel bestand. */
   positionMobile?: string
   /** Extra klassen naast .hero-photo. */
   className?: string
@@ -61,9 +37,10 @@ export default function HeroPhoto({
   positionMobile,
   className = '',
 }: HeroPhotoProps) {
-  // Is er een eigen mobiel bestand, dan zit de uitsnede daar al in en zou
-  // een object-position er nog een tweede keer overheen gaan.
-  const mobile = srcMobile ? undefined : positionMobile ?? MOBILE_POSITION[src]
+  // Is er een eigen mobiel bestand, dan zit de uitsnede daar al in en zou een
+  // object-position er nog een tweede keer overheen gaan. Alle hero's hebben er
+  // inmiddels een, dus dit is er voor een foto die later zonder aankomt.
+  const mobile = srcMobile ? undefined : positionMobile
 
   // Custom properties in plaats van een kale objectPosition: de mobiele
   // uitsnede moet uit een media query komen, en die kan geen inline style zijn.

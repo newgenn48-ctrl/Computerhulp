@@ -138,6 +138,7 @@ export default function ComputerLaptopHulpPage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-computer-laptop-16x9.webp"
+        imageSrcMobile="/dienst-computer-laptop-mobiel.webp"
         imageAlt="Open laptop op een eettafel, handen op het toetsenbord"
         ariaLabel="Computer & Laptop aan huis hero"
         eyebrow={<>Computer, laptop en pc · {BUSINESS.REGION}</>}

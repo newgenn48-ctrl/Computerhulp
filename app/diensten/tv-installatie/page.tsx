@@ -97,9 +97,9 @@ export default function TVInstallatiePage() {
 
       {/* Hero - Split Layout */}
       <Hero
-        imageSrc="/dienst-tv.webp"
-        imageAlt="Televisie aan de wand met soundbar eronder"
-        imagePosition="center 58%"
+        imageSrc="/dienst-tv-16x9.webp"
+        imageSrcMobile="/dienst-tv-mobiel.webp"
+        imageAlt="Televisie met een soundbar op een dressoir"
         ariaLabel="TV installatie aan huis hero"
         eyebrow={<>Televisie en radio · {BUSINESS.REGION}</>}
         title={<>Tv-installatie <span className="hero-highlight">aan huis</span></>}

@@ -170,8 +170,7 @@ export default function StudentAanHuisPage() {
       />
       <ComfortSection
         variant="student"
-        imageSrc="/hero-computerhulp.webp"
-        imagePosition="80% center"
+        imageSrc="/comfort-tafel.webp"
         imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
       />
 
@@ -216,7 +215,7 @@ export default function StudentAanHuisPage() {
             <div className="grid lg:grid-cols-[1fr_1.1fr]">
               <div className="relative min-h-[280px] sm:min-h-[360px] lg:min-h-full">
                 <Image
-                  src="/hero-computerhulp.webp"
+                  src="/aan-de-deur.webp"
                   alt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
                   fill
                   className="object-cover"

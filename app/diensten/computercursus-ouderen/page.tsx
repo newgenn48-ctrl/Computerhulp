@@ -122,7 +122,8 @@ export default function ComputercursusOuderenPage() {
 
       {/* Premium Hero Section */}
       <Hero
-        imageSrc="/dienst-training.webp"
+        imageSrc="/dienst-training-16x9.webp"
+        imageSrcMobile="/dienst-training-mobiel.webp"
         imageAlt="Beschreven notitieblok naast een laptop"
         ariaLabel="Computercursus voor Ouderen hero"
         eyebrow={<>Computerles · {BUSINESS.REGION}</>}
@@ -226,7 +227,7 @@ export default function ComputercursusOuderenPage() {
               <div className="sticky top-24">
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
-                    src="/hero-student.webp"
+                    src="/comfort-tafel.webp"
                     alt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
                     fill
                     className="object-cover"

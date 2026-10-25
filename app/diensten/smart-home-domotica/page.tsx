@@ -89,9 +89,9 @@ export default function SmartHomeDomoticaPage() {
 
       {/* Hero - Split Layout */}
       <Hero
-        imageSrc="/dienst-smart-home.webp"
+        imageSrc="/dienst-smart-home-16x9.webp"
+        imageSrcMobile="/dienst-smart-home-mobiel.webp"
         imageAlt="Slimme thermostaat aan de muur, hand aan de knop"
-        imagePosition="center 45%"
         ariaLabel="Smart home aan huis hero"
         eyebrow={<>Smart home · {BUSINESS.REGION}</>}
         title={<><span className="hero-highlight">Slimme apparaten</span> laten installeren?</>}

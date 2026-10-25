@@ -31,7 +31,7 @@ export default function ComfortSection({
   title = 'We leggen het uit alsof we naast u zitten.',
   eyebrow = 'Rustige uitleg aan huis',
   variant = 'computerhulp',
-  imageSrc = '/hero-student.webp',
+  imageSrc = '/comfort-tafel.webp',
   imagePosition = '90% center',
   imageAlt = 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant',
 }: ComfortSectionProps) {

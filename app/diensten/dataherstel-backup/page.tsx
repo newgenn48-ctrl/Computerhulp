@@ -89,7 +89,8 @@ export default function DataherstelBackupPage() {
 
       {/* Hero - Split Layout */}
       <Hero
-        imageSrc="/dienst-dataherstel.webp"
+        imageSrc="/dienst-dataherstel-16x9.webp"
+        imageSrcMobile="/dienst-dataherstel-mobiel.webp"
         imageAlt="Externe harde schijf naast een open fotoalbum"
         ariaLabel="Dataherstel aan huis hero"
         eyebrow={<>Dataherstel · {BUSINESS.REGION}</>}

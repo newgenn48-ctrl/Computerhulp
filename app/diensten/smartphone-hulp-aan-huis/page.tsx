@@ -121,7 +121,8 @@ export default function SmartphoneHulpAanHuisPage() {
 
       {/* Premium Hero Section */}
       <Hero
-        imageSrc="/dienst-tablet-smartphone.webp"
+        imageSrc="/dienst-tablet-smartphone-16x9.webp"
+        imageSrcMobile="/dienst-tablet-smartphone-mobiel.webp"
         imageAlt="Tablet in de handen van een oudere vrouw"
         ariaLabel="Smartphone- en tablethulp aan huis hero"
         eyebrow={<>Telefoon en tablet · {BUSINESS.REGION}</>}
@@ -228,7 +229,7 @@ export default function SmartphoneHulpAanHuisPage() {
               <div className="sticky top-24">
                 <div className="relative h-80 lg:h-96 rounded-2xl overflow-hidden shadow-xl mb-8">
                   <Image
-                    src="/hero-student.webp"
+                    src="/comfort-tafel.webp"
                     alt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
                     fill
                     className="object-cover"

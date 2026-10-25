@@ -55,7 +55,7 @@ export const services = [
     description: 'E-mail instellen op computer of telefoon, weer toegang krijgen en ongewenste mail stoppen.',
     icon: 'email',
     image: '/dienst-email.webp',
-    imageAlt: 'Laptopscherm met een geopende e-mail',
+    imageAlt: 'Laptop op tafel met een envelopje op het scherm',
     slug: '/diensten/email-hulp',
     features: [
       'E-mail instellen op computer of telefoon',
@@ -85,7 +85,7 @@ export const services = [
     description: 'Smart-tv instellen, zenders op volgorde, decoder en Netflix werkend, soundbar aangesloten.',
     icon: 'tv',
     image: '/dienst-tv.webp',
-    imageAlt: 'Televisie aan de wand met soundbar eronder',
+    imageAlt: 'Televisie met een soundbar op een dressoir',
     slug: '/diensten/tv-installatie',
     features: [
       'Smart-tv installeren en instellen',
@@ -100,8 +100,8 @@ export const services = [
     shortTitle: 'Voor senioren',
     description: 'Rustige hulp in uw tempo, op uw eigen apparaat. Geen vraag is te klein en u hoeft niets te kopen.',
     icon: 'users',
-    image: '/hero-student.webp',
-    imageAlt: 'HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant',
+    image: '/dienst-senioren.webp',
+    imageAlt: 'Oudere vrouw werkt zelf op de laptop, de student kijkt naast haar mee',
     slug: '/diensten/computerhulp-senioren',
     features: [
       'Alles in gewone taal uitgelegd',

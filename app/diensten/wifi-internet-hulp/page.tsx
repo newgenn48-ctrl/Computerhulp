@@ -90,9 +90,9 @@ export default function WifiInternetHulpPage() {
 
       {/* Hero - Split Layout */}
       <Hero
-        imageSrc="/dienst-wifi.webp"
+        imageSrc="/dienst-wifi-16x9.webp"
+        imageSrcMobile="/dienst-wifi-mobiel.webp"
         imageAlt="Witte wifi-router op een kast, hand aan de kabel"
-        imagePosition="center 62%"
         ariaLabel="Wifi & Internet aan huis hero"
         eyebrow={<>Wifi & Internet · {BUSINESS.REGION}</>}
         title={<>Problemen met uw <span className="hero-highlight">wifi</span> of internet?</>}
