@@ -1,8 +1,7 @@
-import type { CSSProperties } from 'react'
 import { Metadata } from 'next'
-import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import HeroPhoto from '@/components/HeroPhoto'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { cities, cityCount, villages, TOP_CITIES } from '@/lib/cities'
 import { hubRegions, regionWithArticle } from '@/lib/regions'
@@ -98,16 +97,10 @@ export default function LocatiesPage() {
       {/* Hero Section */}
       <section className="relative min-h-[70vh] bg-white overflow-hidden">
         <div className="absolute inset-0">
-          <Image
-            src="/hero-locaties.webp"
-            alt="Computerhulp Zuid-Holland locaties"
-            fill
-            /* Eigen uitsnede op de telefoon: gecentreerd viel de student
-               buiten beeld en bleef er een bakstenen muur over. */
-            className="hero-photo"
-            style={{ '--hero-pos-mobile': '70% center' } as CSSProperties}
-            sizes="100vw"
-            priority
+          <HeroPhoto
+            src="/hero-tafel.webp"
+            srcMobile="/hero-tafel-mobiel.webp"
+            alt="HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant"
           />
           <div className="absolute inset-0 bg-white/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/85 to-transparent" />

@@ -131,8 +131,9 @@ export default async function RegioPage({ params }: PageProps) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
 
       <Hero
-        imageSrc="/hero-computerhulp.webp"
-        imageAlt={`HBO IT-student helpt een bewoner thuis met de computer in ${region.name}`}
+        imageSrc="/hero-tafel.webp"
+        imageSrcMobile="/hero-tafel-mobiel.webp"
+        imageAlt={`HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${region.name}`}
         ariaLabel={`Computerhulp aan huis in ${region.name}`}
         eyebrow={`${region.cities.length} plaatsen in ${inRegio}`}
         title={<>Computerhulp aan huis in <span className="hero-highlight">{region.name}</span></>}

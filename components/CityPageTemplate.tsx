@@ -36,6 +36,7 @@ interface VariantConfig {
   serviceNameLower: string
   urlPrefix: 'computerhulp-aan-huis' | 'student-aan-huis'
   heroImage: string
+  heroImageMobile?: string
   heroAlt: (cityName: string) => string
   heroTitle: (cityName: string) => React.ReactNode
   heroDescription: (cityName: string) => React.ReactNode
@@ -51,8 +52,9 @@ const computerhulpConfig: VariantConfig = {
   serviceName: 'Computerhulp aan Huis',
   serviceNameLower: 'computerhulp aan huis',
   urlPrefix: 'computerhulp-aan-huis',
-  heroImage: '/hero-computerhulp.webp',
-  heroAlt: (cityName) => `HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${cityName}`,
+  heroImage: '/hero-tafel.webp',
+  heroImageMobile: '/hero-tafel-mobiel.webp',
+  heroAlt: (cityName) => `HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${cityName}`,
   heroTitle: (cityName) => (
     <>Computerhulp aan huis <span className="hero-highlight">{cityName}</span></>
   ),
@@ -73,8 +75,9 @@ const studentConfig: VariantConfig = {
   serviceName: 'Student aan Huis',
   serviceNameLower: 'student aan huis',
   urlPrefix: 'student-aan-huis',
-  heroImage: '/hero-student.webp',
-  heroAlt: (cityName) => `HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${cityName}`,
+  heroImage: '/hero-tafel.webp',
+  heroImageMobile: '/hero-tafel-mobiel.webp',
+  heroAlt: (cityName) => `HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${cityName}`,
   heroTitle: (cityName) => (
     <>Student aan huis <span className="hero-highlight">{cityName}</span></>
   ),
@@ -245,7 +248,7 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
   }
 
   if (variant === 'student') {
-    localBusiness.image = `${baseUrl}/hero-student.webp`
+    localBusiness.image = `${baseUrl}/hero-tafel.webp`
   }
 
   const serviceEntity: Record<string, unknown> = {
@@ -792,6 +795,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
         imageSrc={config.heroImage}
+        imageSrcMobile={config.heroImageMobile}
         imageAlt={config.heroAlt(city.name)}
         eyebrow={`In ${city.name} en omgeving`}
         title={config.heroTitle(city.name)}

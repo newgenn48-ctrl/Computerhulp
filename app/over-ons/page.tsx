@@ -62,8 +62,9 @@ export default function OverOnsPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
 
       <Hero
-        imageSrc="/hero-student.webp"
-        imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
+        imageSrc="/hero-tafel.webp"
+        imageSrcMobile="/hero-tafel-mobiel.webp"
+        imageAlt={`HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel="Over ons hero"
         eyebrow="Over ons"
         title={<>Uw <span className="hero-highlight">HBO-student</span> aan huis</>}

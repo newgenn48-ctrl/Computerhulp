@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { services } from '@/components/ServicesSection'
 import { Icon } from '@/components/icons'
+import HeroPhoto from '@/components/HeroPhoto'
 import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
@@ -89,7 +90,11 @@ export default function DienstenPage() {
       <section className="relative bg-white overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
-          <Image src="/hero-computerhulp.webp" alt="HBO-student sluit de wifi-router aan bij een klant thuis" fill sizes="100vw" className="object-cover" priority />
+          <HeroPhoto
+            src="/hero-tafel.webp"
+            srcMobile="/hero-tafel-mobiel.webp"
+            alt="HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant"
+          />
           {/* Light overlay for text readability */}
           <div className="absolute inset-0 bg-white/80 md:hidden" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/80 to-transparent" />

@@ -1,7 +1,7 @@
-import type { CSSProperties, ReactNode } from 'react'
-import Image from 'next/image'
+import type { ReactNode } from 'react'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import HeroPhoto from '@/components/HeroPhoto'
 import { BUSINESS, PRICING } from '@/lib/constants'
 
 export interface HeroPill {
@@ -48,24 +48,6 @@ interface HeroProps {
 }
 
 /**
- * Standaard uitsnede per foto op de telefoon.
- *
- * Een 16:9-foto in de staande herobak van een telefoon toont nog maar zo'n
- * 29% van zijn breedte, gecentreerd. Bij de drie foto's met mensen erop staat
- * het onderwerp rechts in beeld, dus die vielen er op mobiel volledig buiten:
- * van de homepagehero bleef een witte deur met een half hoofd over. De
- * dienstfoto's zijn close-ups en staan vanzelf goed, die horen hier niet in.
- *
- * Het hoort bij de foto en niet bij de pagina, dus staat het hier en niet in
- * elke aanroep. Een pagina kan het alsnog overschrijven met imagePositionMobile.
- */
-const MOBILE_POSITION: Record<string, string> = {
-  '/hero-computerhulp.webp': '89% center',
-  '/hero-student.webp': '70% center',
-  '/hero-locaties.webp': '70% center',
-}
-
-/**
  * Eén shared Hero voor alle landingspagina's.
  * CTA-volgorde is vast: witte bel-knop primair, glazen Afspraak maken secundair.
  * De vertrouwensregel noemt de prijs: 'wat kost het' is de eerste vraag van deze doelgroep.
@@ -83,51 +65,16 @@ export default function Hero({
   pills,
   trustLine = `Meestal binnen 24 uur bij u thuis · ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten`,
 }: HeroProps) {
-  // Is er een eigen mobiel bestand, dan zit de uitsnede daar al in en zou
-  // een object-position er nog een tweede keer overheen gaan.
-  const mobilePosition = imageSrcMobile
-    ? undefined
-    : imagePositionMobile ?? MOBILE_POSITION[imageSrc]
-
-  // Custom properties in plaats van een kale objectPosition: de mobiele
-  // uitsnede moet uit een media query komen, en die kan geen inline style zijn.
-  const photoStyle = {
-    '--hero-pos': imagePosition ?? '50% 50%',
-    ...(mobilePosition ? { '--hero-pos-mobile': mobilePosition } : {}),
-  } as CSSProperties
-
   return (
     <section className="hero-wrapper" aria-label={ariaLabel}>
       <div className="absolute inset-0">
-        {imageSrcMobile ? (
-          // <picture> en niet twee <Image>'en met display:none: een verborgen
-          // <img> wordt door de browser alsnog opgehaald, dus dat zou beide
-          // bestanden downloaden. De bestanden zijn al als webp geoptimaliseerd,
-          // dus next/image heeft hier niets meer toe te voegen.
-          <picture>
-            <source media="(min-width: 768px)" srcSet={imageSrc} />
-            <img
-              src={imageSrcMobile}
-              alt={imageAlt}
-              className="hero-photo absolute inset-0 h-full w-full"
-              style={photoStyle}
-              fetchPriority="high"
-              decoding="async"
-            />
-          </picture>
-        ) : (
-          <Image
-            src={imageSrc}
-            alt={imageAlt}
-            fill
-            className="hero-photo"
-            style={photoStyle}
-            priority
-            fetchPriority="high"
-            quality={65}
-            sizes="100vw"
-          />
-        )}
+        <HeroPhoto
+          src={imageSrc}
+          srcMobile={imageSrcMobile}
+          alt={imageAlt}
+          position={imagePosition}
+          positionMobile={imagePositionMobile}
+        />
         <div className="hero-overlay-mobile" />
         <div className="hero-overlay-desktop-r" />
         <div className="hero-overlay-desktop-b" />

@@ -38,7 +38,7 @@ const structuredData = {
       telephone: BUSINESS.PHONE_INTL,
       email: BUSINESS.EMAIL,
       logo: `${BUSINESS.URL}/logo.png`,
-      image: `${BUSINESS.URL}/hero-student.webp`,
+      image: `${BUSINESS.URL}/hero-tafel.webp`,
       address: {
         '@type': 'PostalAddress',
         addressRegion: BUSINESS.REGION,
@@ -150,8 +150,9 @@ export default function StudentAanHuisPage() {
           { icon: 'check', label: 'Betalen pas achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
-        imageSrc="/hero-student.webp"
-        imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
+        imageSrc="/hero-tafel.webp"
+        imageSrcMobile="/hero-tafel-mobiel.webp"
+        imageAlt={`HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${BUSINESS.REGION}`}
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Student <span className="hero-highlight">aan huis</span></>}
         descriptions={[
