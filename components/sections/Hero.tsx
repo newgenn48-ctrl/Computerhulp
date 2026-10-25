@@ -13,10 +13,12 @@ interface HeroProps {
   /** Achtergrondfoto, priority=true, sizes="100vw" */
   imageSrc: string
   imageAlt: string
+  /** object-position van de achtergrondfoto, bv. "center 58%". Standaard gecentreerd. */
+  imagePosition?: string
   /** Section aria-label, bv. "IT hulp aan huis hero" */
   ariaLabel?: string
-  /** Kleine tekst boven H1, meestal "5000+ tevreden klanten" */
-  eyebrow: string
+  /** Kleine tekst boven H1, bijvoorbeeld "In heel Zuid-Holland". JSX toegestaan. */
+  eyebrow: ReactNode
   /** H1-inhoud, JSX toegestaan zodat je een <span className="hero-highlight"> highlight kunt inzetten */
   title: ReactNode
   /** 1 of 2 paragrafen. Elke item wordt in eigen <p className="hero-description"> gerenderd */
@@ -35,6 +37,7 @@ interface HeroProps {
 export default function Hero({
   imageSrc,
   imageAlt,
+  imagePosition,
   ariaLabel,
   eyebrow,
   title,
@@ -50,6 +53,7 @@ export default function Hero({
           alt={imageAlt}
           fill
           className="object-cover object-center"
+          style={imagePosition ? { objectPosition: imagePosition } : undefined}
           priority
           fetchPriority="high"
           quality={65}

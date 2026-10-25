@@ -5,6 +5,7 @@ import { Icon } from '@/components/icons'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import PricingSection from '@/components/sections/PricingSection'
+import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
@@ -119,72 +120,22 @@ export default function SmartphoneHulpAanHuisPage() {
       }) }} />
 
       {/* Premium Hero Section */}
-      <section className="hero-wrapper" aria-label="Smartphone- en tablethulp aan huis hero">
-        <div className="absolute inset-0">
-          <Image
-            src="/dienst-tablet-smartphone.webp"
-            alt="Tablet in de handen van een oudere vrouw"
-            fill
-            className="object-cover"
-            style={{ objectPosition: 'center center' }}
-            priority
-            sizes="100vw"
-          />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
-        </div>
-      {/* Zelfde golvende afsluiting als de gedeelde Hero. Deze pagina's
-          hebben hun eigen hero-markup, dus de golf moet hier apart staan. */}
-      <div className="hero-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
-          <path
-            className="hero-wave-haze"
-            d="M0,86 C240,14 480,14 720,52 C960,90 1200,90 1440,58 L1440,120 L0,120 Z"
-          />
-          <path
-            className="hero-wave-body"
-            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44 L1440,120 L0,120 Z"
-          />
-          <path
-            className="hero-wave-crest"
-            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44"
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
-      </div>
-
-        <div className="hero-content">
-          <div className="max-w-2xl">
-            <h1 className="hero-title">
-              Hulp nodig met uw <span className="hero-highlight">smartphone</span> of tablet?
-            </h1>
-
-            <p className="hero-description">
-              Heeft u hulp nodig bij uw telefoon of tablet? Een nieuw toestel instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis, <strong className="text-white">voor elk merk telefoon of tablet</strong>.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={BUSINESS.PHONE_HREF}
-                className="btn-hero-phone"
-                aria-label={`Bel ${BUSINESS.PHONE}`}
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
-              <Link
-                href="/afspraak-maken"
-                className="btn-hero-primary"
-              >
-                Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-      </section>
+      <Hero
+        imageSrc="/dienst-tablet-smartphone.webp"
+        imageAlt="Tablet in de handen van een oudere vrouw"
+        ariaLabel="Smartphone- en tablethulp aan huis hero"
+        eyebrow={<>Telefoon en tablet · {BUSINESS.REGION}</>}
+        title={<>Hulp nodig met uw <span className="hero-highlight">smartphone</span> of tablet?</>}
+        descriptions={[
+          <>Heeft u hulp nodig bij uw telefoon of tablet? Een nieuw toestel instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis, <strong className="text-white">voor elk merk telefoon of tablet</strong>.</>,
+        ]}
+        trustLine=""
+        pills={[
+          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'book', label: 'HBO-opgeleide studenten' },
+          { icon: 'check', label: '7 dagen per week' },
+        ]}
+      />
 
 
       {/* Wat wij voor u doen, check-list */}

@@ -5,6 +5,7 @@ import { Icon } from '@/components/icons'
 import { SHORT_TESTIMONIALS } from '@/lib/testimonials'
 import ServiceCrossLinks from '@/components/ServiceCrossLinks'
 import PricingSection from '@/components/sections/PricingSection'
+import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import { BUSINESS, PRICING, HOURS } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
@@ -120,72 +121,22 @@ export default function ComputercursusOuderenPage() {
       }) }} />
 
       {/* Premium Hero Section */}
-      <section className="hero-wrapper" aria-label="Computercursus voor Ouderen hero">
-        <div className="absolute inset-0">
-          <Image
-            src="/dienst-training.webp"
-            alt="Beschreven notitieblok naast een laptop"
-            fill
-            className="object-cover"
-            style={{ objectPosition: 'center center' }}
-            priority
-            sizes="100vw"
-          />
-          <div className="hero-overlay-mobile" />
-          <div className="hero-overlay-desktop-r" />
-          <div className="hero-overlay-desktop-b" />
-        </div>
-      {/* Zelfde golvende afsluiting als de gedeelde Hero. Deze pagina's
-          hebben hun eigen hero-markup, dus de golf moet hier apart staan. */}
-      <div className="hero-wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" focusable="false">
-          <path
-            className="hero-wave-haze"
-            d="M0,86 C240,14 480,14 720,52 C960,90 1200,90 1440,58 L1440,120 L0,120 Z"
-          />
-          <path
-            className="hero-wave-body"
-            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44 L1440,120 L0,120 Z"
-          />
-          <path
-            className="hero-wave-crest"
-            d="M0,28 C240,104 480,104 720,56 C960,8 1200,8 1440,44"
-            vectorEffect="non-scaling-stroke"
-          />
-        </svg>
-      </div>
-
-        <div className="hero-content">
-          <div className="max-w-2xl">
-            <h1 className="hero-title">
-              Beter <span className="hero-highlight">leren</span> werken met de computer?
-            </h1>
-
-            <p className="hero-description">
-              Heeft u hulp nodig bij het leren werken met uw computer, tablet of smartphone? We leggen alles stap voor stap uit, <strong className="text-white">in gewone taal, op uw tempo</strong>.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <a
-                href={BUSINESS.PHONE_HREF}
-                className="btn-hero-phone"
-                aria-label={`Bel ${BUSINESS.PHONE}`}
-              >
-                <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-                {BUSINESS.PHONE}
-              </a>
-              <Link
-                href="/afspraak-maken"
-                className="btn-hero-primary"
-              >
-                Afspraak maken
-                <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
-              </Link>
-            </div>
-          </div>
-        </div>
-
-      </section>
+      <Hero
+        imageSrc="/dienst-training.webp"
+        imageAlt="Beschreven notitieblok naast een laptop"
+        ariaLabel="Computercursus voor Ouderen hero"
+        eyebrow={<>Computerles · {BUSINESS.REGION}</>}
+        title={<>Beter <span className="hero-highlight">leren</span> werken met de computer?</>}
+        descriptions={[
+          <>Heeft u hulp nodig bij het leren werken met uw computer, tablet of smartphone? We leggen alles stap voor stap uit, <strong className="text-white">in gewone taal, op uw tempo</strong>.</>,
+        ]}
+        trustLine=""
+        pills={[
+          { icon: 'money', label: 'Betaalbare tarieven' },
+          { icon: 'book', label: 'HBO-opgeleide studenten' },
+          { icon: 'check', label: '7 dagen per week' },
+        ]}
+      />
 
 
       {/* Wat wij voor u doen, check-list */}

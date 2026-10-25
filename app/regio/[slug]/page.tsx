@@ -10,7 +10,7 @@ import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import { regionSlugs, getRegionBySlug, regionWithArticle } from '@/lib/regions'
 import { getCityContent } from '@/lib/cityContent'
-import { BUSINESS, OG_IMAGE, HOURS } from '@/lib/constants'
+import { BUSINESS, OG_IMAGE, HOURS, PRICING } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 interface PageProps {
@@ -70,6 +70,42 @@ export default async function RegioPage({ params }: PageProps) {
     .slice(0, 3)
     .map(c => c.name)
 
+  /* Elk ander paginatype heeft een FAQ; de regiopagina's niet. De antwoorden
+     noemen de regio en haar plaatsen, anders staat op zeven regiopagina's
+     zeven keer precies dezelfde tekst. */
+  const faqItems = [
+    {
+      q: `Komen jullie in alle plaatsen in ${inRegio}?`,
+      a: `Ja. Wij komen in ${region.cities.length} plaatsen in ${inRegio}: ${namenZin}. Ook in de dorpen en buurtschappen daartussen. Voorrijden kost overal ${PRICING.TRAVEL}.`,
+    },
+    {
+      q: `Hoe snel kunt u in ${region.name} langskomen?`,
+      a: `Meestal zijn we binnen 24 uur bij u thuis. Heeft u haast, dan lukt het vaak nog dezelfde dag. We zijn ${HOURS.DAYS} bereikbaar van ${HOURS.OPEN} tot ${HOURS.CLOSE} uur, ook 's avonds en in het weekend, zonder toeslag.`,
+    },
+    {
+      q: `Wat kost computerhulp in ${region.name}?`,
+      a: `${PRICING.PER_QUARTER} per kwartier, met een minimale afname van 3 kwartier. De meeste problemen zijn daarbinnen opgelost. Voorrijden kost ${PRICING.TRAVEL}. U betaalt pas achteraf, via pin, contant of Tikkie.`,
+    },
+    {
+      q: 'Wie komt er bij mij thuis?',
+      a: `Een HBO IT-student uit de regio. Wilt u vooraf weten wie er komt, bel dan ${BUSINESS.PHONE}; dan zeggen we wie er ingepland staat.`,
+    },
+    {
+      q: 'Moet ik mijn computer ergens naartoe brengen?',
+      a: `Nee. We werken bij u thuis, op uw eigen apparaat en op de plek waar het normaal staat. U hoeft niets in te pakken en niets opnieuw in te stellen.`,
+    },
+  ]
+
+  const faqData = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqItems.map(item => ({
+      '@type': 'Question',
+      name: item.q,
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
+    })),
+  }
+
   const breadcrumbData = {
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -92,6 +128,7 @@ export default async function RegioPage({ params }: PageProps) {
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqData) }} />
 
       <Hero
         imageSrc="/hero-computerhulp.webp"
@@ -163,6 +200,26 @@ export default async function RegioPage({ params }: PageProps) {
       <HowItWorksSection />
 
       <ComfortSection />
+
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <header className="text-center mb-10">
+            <p className="section-eyebrow">FAQ</p>
+            <h2 id="faq-heading" className="section-title">Veelgestelde vragen over {inRegio}</h2>
+          </header>
+          <div className="space-y-4">
+            {faqItems.map((faq, idx) => (
+              <details key={idx} className="group faq-item-white">
+                <summary className="faq-summary">
+                  {faq.q}
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
+                </summary>
+                <div className="faq-answer">{faq.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
 
       {/* Lopende tekst onderaan: dekt de zoekvraag per plaatsnaam zonder de
