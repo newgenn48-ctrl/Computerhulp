@@ -1,3 +1,4 @@
+import type { CSSProperties } from 'react'
 import { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -101,7 +102,10 @@ export default function LocatiesPage() {
             src="/hero-locaties.webp"
             alt="Computerhulp Zuid-Holland locaties"
             fill
-            className="object-cover"
+            /* Eigen uitsnede op de telefoon: gecentreerd viel de student
+               buiten beeld en bleef er een bakstenen muur over. */
+            className="hero-photo"
+            style={{ '--hero-pos-mobile': '70% center' } as CSSProperties}
             sizes="100vw"
             priority
           />

@@ -297,6 +297,21 @@
     @apply absolute inset-0 hidden md:block bg-gradient-to-t from-ink-900/50 via-transparent to-ink-900/40;
   }
 
+  /* De herofoto zelf. object-position staat in een custom property, zodat
+     een pagina de uitsnede op de telefoon apart kan kiezen. Dat is daar
+     geen finetuning maar noodzaak: een 16:9-foto in een staande herobak
+     toont op een telefoon nog maar ~29% van zijn breedte, dus zonder
+     eigen waarde valt het onderwerp gewoon buiten beeld. */
+  .hero-photo {
+    @apply object-cover;
+    object-position: var(--hero-pos, 50% 50%);
+  }
+  @media (max-width: 767px) {
+    .hero-photo {
+      object-position: var(--hero-pos-mobile, var(--hero-pos, 50% 50%));
+    }
+  }
+
   /* Bovenmarge op de telefoon kleiner: de vaste header is daar 72px, dus
      pt-20 (80px) is genoeg. Die 16px gaan naar de knoppen onderin, die op
      een scherm van 700px anders achter de cookiebalk verdwijnen. */
