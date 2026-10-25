@@ -208,8 +208,8 @@ export default function HomePage() {
           { icon: 'check', label: 'Betalen pas achteraf' },
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
-        imageSrc="/hero-student.webp"
-        imageAlt={`HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant in ${BUSINESS.REGION}`}
+        imageSrc="/hero-computerhulp.webp"
+        imageAlt={`HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt in ${BUSINESS.REGION}`}
         ariaLabel={`${BUSINESS.NAME} hero`}
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
@@ -229,8 +229,9 @@ export default function HomePage() {
         showAllButton={true}
       />
       <ComfortSection
-        imageSrc="/hero-computerhulp.webp"
-        imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+        imageSrc="/hero-student.webp"
+        imagePosition="90% center"
+        imageAlt="HBO-student legt aan de keukentafel iets uit op een tablet aan een oudere klant"
       />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin

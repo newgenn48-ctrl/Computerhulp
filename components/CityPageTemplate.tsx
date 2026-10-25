@@ -814,6 +814,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         cityName={city.name}
         variant={variant}
         imageSrc={variant === 'student' ? '/hero-computerhulp.webp' : '/hero-student.webp'}
+        imagePosition={variant === 'student' ? '80% center' : '90% center'}
         imageAlt={variant === 'student'
           ? 'HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt'
           : 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant'}

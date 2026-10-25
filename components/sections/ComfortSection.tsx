@@ -15,6 +15,9 @@ interface ComfortSectionProps {
    *  tweemaal dezelfde keukentafel binnen één scroll valt op. */
   imageSrc?: string
   imageAlt?: string
+  /** object-position van de foto. De mensen staan rechts in beeld; in deze
+   *  hoge kolom snijdt een gecentreerde uitsnede ze er juist af. */
+  imagePosition?: string
 }
 
 /**
@@ -29,6 +32,7 @@ export default function ComfortSection({
   eyebrow = 'Rustige uitleg aan huis',
   variant = 'computerhulp',
   imageSrc = '/hero-student.webp',
+  imagePosition = '90% center',
   imageAlt = 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant',
 }: ComfortSectionProps) {
   const waar = cityName ? ` in ${cityName}` : ''
@@ -93,6 +97,7 @@ export default function ComfortSection({
                 alt={`${imageAlt}${waar}`}
                 fill
                 className="object-cover"
+                style={{ objectPosition: imagePosition }}
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 loading="lazy"
               />

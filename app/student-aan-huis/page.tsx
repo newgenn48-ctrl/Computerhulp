@@ -170,6 +170,7 @@ export default function StudentAanHuisPage() {
       <ComfortSection
         variant="student"
         imageSrc="/hero-computerhulp.webp"
+        imagePosition="80% center"
         imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
       />
 
