@@ -810,6 +810,14 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         limitServices={6}
         showAllButton={true}
       />
+      <ComfortSection
+        cityName={city.name}
+        variant={variant}
+        imageSrc={variant === 'student' ? '/hero-computerhulp.webp' : '/hero-student.webp'}
+        imageAlt={variant === 'student'
+          ? 'HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt'
+          : 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant'}
+      />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
@@ -824,14 +832,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       {/* De foto is bewust niet config.heroImage: dan stond dezelfde
           foto twee keer op de pagina. */}
-      <ComfortSection
-        cityName={city.name}
-        variant={variant}
-        imageSrc={variant === 'student' ? '/hero-computerhulp.webp' : '/hero-student.webp'}
-        imageAlt={variant === 'student'
-          ? 'HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt'
-          : 'Student legt aan de keukentafel rustig iets uit op een laptop aan een oudere klant'}
-      />
 
 
       {/* FAQ */}

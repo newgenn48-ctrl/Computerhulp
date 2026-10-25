@@ -167,6 +167,11 @@ export default function StudentAanHuisPage() {
         limitServices={6}
         showAllButton={true}
       />
+      <ComfortSection
+        variant="student"
+        imageSrc="/hero-computerhulp.webp"
+        imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+      />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
@@ -178,11 +183,6 @@ export default function StudentAanHuisPage() {
 
       <HowItWorksSection />
 
-      <ComfortSection
-        variant="student"
-        imageSrc="/hero-computerhulp.webp"
-        imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
-      />
 
       {/* Bellen of teruggebeld worden: direct onder de geruststelling */}
 

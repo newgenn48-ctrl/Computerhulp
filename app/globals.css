@@ -418,9 +418,9 @@
     stroke-width: 2;
   }
 
-  /* Dienstentegel: vierkante foto met de naam eronder, zoals op de
-     referentiesite. Eén plat wit vlak zonder dubbele rand - op een tegel
-     van deze maat is de foto het hele verhaal. */
+  /* Dienstentegel: vierkante foto met de naam en een korte beschrijving
+     eronder. Eén plat wit vlak zonder dubbele rand. De foto vertelt waar
+     het over gaat, de regel eronder waarom u zou bellen. */
   .service-tile {
     @apply flex flex-col overflow-hidden rounded-2xl bg-white shadow-soft transition duration-300 hover:-translate-y-1 hover:shadow-soft-lg;
   }

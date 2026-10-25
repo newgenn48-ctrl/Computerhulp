@@ -194,6 +194,7 @@ export default function ComputerhulpAanHuisPage() {
         limitServices={6}
         showAllButton={true}
       />
+      <ComfortSection variant="computerhulp" />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
@@ -204,7 +205,6 @@ export default function ComputerhulpAanHuisPage() {
 
       <HowItWorksSection />
 
-      <ComfortSection variant="computerhulp" />
 
 
       {/* FAQ */}

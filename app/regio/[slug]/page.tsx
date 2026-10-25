@@ -186,6 +186,7 @@ export default async function RegioPage({ params }: PageProps) {
         limitServices={6}
         showAllButton={true}
       />
+      <ComfortSection />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
@@ -199,7 +200,6 @@ export default async function RegioPage({ params }: PageProps) {
 
       <HowItWorksSection />
 
-      <ComfortSection />
 
       <section className="panel-section" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">

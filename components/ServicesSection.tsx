@@ -206,10 +206,16 @@ export default function ServicesSection({
                     className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                 </div>
-                <div className="px-3 py-4 text-center">
+                {/* Tekst links uitgelijnd, niet gecentreerd: een beschrijving van
+                    vier regels midden op de kaart leest slecht, zeker voor wie
+                    wat ouder is. De naam blijft de blikvanger. */}
+                <div className="flex flex-1 flex-col px-4 py-4">
                   <h3 className="text-lg sm:text-xl font-bold text-gray-900 group-hover:text-blue-700 transition-colors text-balance">
                     {service.shortTitle}
                   </h3>
+                  <p className="mt-1.5 text-gray-600 text-pretty">
+                    {service.description}
+                  </p>
                 </div>
               </Link>
             ))}

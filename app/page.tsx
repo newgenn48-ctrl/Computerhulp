@@ -228,6 +228,10 @@ export default function HomePage() {
         limitServices={6}
         showAllButton={true}
       />
+      <ComfortSection
+        imageSrc="/hero-computerhulp.webp"
+        imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
+      />
 
       {/* Prijs direct na de diensten: dat is de volgorde waarin
           mensen het vragen, en zonder dit blok stond er nergens
@@ -244,10 +248,6 @@ export default function HomePage() {
       <HowItWorksSection />
 
       {/* Andere foto dan de hero hierboven: die is dezelfde student. */}
-      <ComfortSection
-        imageSrc="/hero-computerhulp.webp"
-        imageAlt="HBO-student sluit de wifi-router aan terwijl de bewoonster meekijkt"
-      />
       <section className="panel-section" aria-labelledby="faq-heading">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
           <header className="text-center mb-10">
