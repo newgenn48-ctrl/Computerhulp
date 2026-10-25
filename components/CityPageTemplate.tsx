@@ -268,12 +268,15 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
     areaServed: { '@type': 'City', name: city.name },
     offers: {
       '@type': 'Offer',
-      price: '14.99',
+      // Uit constants, niet met de hand: hier stond 14.99 terwijl het tarief
+      // 14,50 is, dus alle stadspagina's gaven een ander bedrag door aan
+      // Google dan de bezoeker op de pagina zag.
+      price: String(PRICING.PER_QUARTER_NUM),
       priceCurrency: 'EUR',
       ...(variant === 'computerhulp' ? { availability: 'https://schema.org/InStock' } : {}),
       priceSpecification: {
         '@type': 'UnitPriceSpecification',
-        price: '14.99',
+        price: String(PRICING.PER_QUARTER_NUM),
         priceCurrency: 'EUR',
         referenceQuantity: {
           '@type': 'QuantitativeValue',
