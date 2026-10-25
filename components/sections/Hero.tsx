@@ -78,7 +78,14 @@ export default function Hero({
   trustLine = `Meestal binnen 24 uur bij u thuis · ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten`,
 }: HeroProps) {
   return (
-    <section className="hero-wrapper" aria-label={ariaLabel}>
+    <section
+      // Geen achtergrondfoto op de telefoon betekent: daar geen donker vlak
+      // nodig. Lichte achtergrond met donkere letters leest daar prettiger,
+      // zeker voor deze doelgroep. Op de computer blijft alles donker, want
+      // daar ligt de tekst nog steeds op de foto.
+      className={`hero-wrapper${imageLooseMobile ? ' hero-light' : ''}`}
+      aria-label={ariaLabel}
+    >
       <div className="absolute inset-0">
         <HeroPhoto
           src={imageSrc}
@@ -143,8 +150,8 @@ export default function Hero({
           </div>
 
           {trustLine && (
-            <p className="flex items-center gap-2 text-sm font-medium text-white mb-5">
-              <Icon name="check-circle" className="w-4 h-4 text-green-400" strokeWidth={2.5} aria-hidden="true" />
+            <p className="hero-trust">
+              <Icon name="check-circle" className="hero-check w-4 h-4" strokeWidth={2.5} aria-hidden="true" />
               {trustLine}
             </p>
           )}
@@ -153,7 +160,7 @@ export default function Hero({
             <ul className="grid grid-cols-2 lg:flex lg:flex-wrap gap-x-5 gap-y-2.5 max-w-2xl" aria-label="In het kort">
               {pills.map((pill, i) => (
                 <li key={i} className="hero-pill">
-                  <Icon name="check-circle" className="w-4 h-4 text-green-400 flex-shrink-0" aria-hidden="true" />
+                  <Icon name="check-circle" className="hero-check w-4 h-4 flex-shrink-0" aria-hidden="true" />
                   <span>{pill.label}</span>
                 </li>
               ))}
