@@ -91,7 +91,7 @@ export default function EmailHulpPage() {
       <Hero
         imageSrc="/dienst-email-16x9.webp"
         imageSrcMobile="/dienst-email-mobiel.webp"
-        imageAlt="Laptop op tafel met een envelopje op het scherm"
+        imageAlt="Student legt aan tafel de e-mail uit terwijl de oudere man zelf typt"
         ariaLabel="E-mail hulp aan huis hero"
         eyebrow={<>E-mail hulp · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">e-mail</span>?</>}

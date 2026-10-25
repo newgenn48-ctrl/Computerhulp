@@ -139,7 +139,7 @@ export default function ComputerLaptopHulpPage() {
       <Hero
         imageSrc="/dienst-computer-laptop-16x9.webp"
         imageSrcMobile="/dienst-computer-laptop-mobiel.webp"
-        imageAlt="Open laptop op een eettafel, handen op het toetsenbord"
+        imageAlt="Student wijst iets aan op de laptop van een oudere man aan de eettafel"
         ariaLabel="Computer & Laptop aan huis hero"
         eyebrow={<>Computer, laptop en pc · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">computer</span> of laptop?</>}

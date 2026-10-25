@@ -99,7 +99,7 @@ export default function TVInstallatiePage() {
       <Hero
         imageSrc="/dienst-tv-16x9.webp"
         imageSrcMobile="/dienst-tv-mobiel.webp"
-        imageAlt="Televisie met een soundbar op een dressoir"
+        imageAlt="Student legt de smart-tv uit aan een man in zijn stoel"
         ariaLabel="TV installatie aan huis hero"
         eyebrow={<>Televisie en radio · {BUSINESS.REGION}</>}
         title={<>Tv-installatie <span className="hero-highlight">aan huis</span></>}

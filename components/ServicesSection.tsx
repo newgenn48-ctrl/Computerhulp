@@ -9,7 +9,7 @@ export const services = [
     description: 'Trage computer of laptop weer snel: opschonen, updates, opstartproblemen en rustige uitleg.',
     icon: 'laptop',
     image: '/dienst-computer-laptop.webp',
-    imageAlt: 'Open laptop op een eettafel, handen op het toetsenbord',
+    imageAlt: 'Student wijst iets aan op de laptop van een oudere man aan de eettafel',
     slug: '/diensten/computer-laptop-hulp',
     features: [
       'Nieuwe computer installeren en instellen',
@@ -25,7 +25,7 @@ export const services = [
     description: 'Traag internet, wegvallende wifi of slechte dekking in huis: wij lossen het op en verbeteren het bereik.',
     icon: 'wifi',
     image: '/dienst-wifi.webp',
-    imageAlt: 'Witte wifi-router op een kast, hand aan de kabel',
+    imageAlt: 'Student sluit de wifi-router aan terwijl de bewoonster meekijkt',
     slug: '/diensten/wifi-internet-hulp',
     features: [
       'Wifi router installeren en instellen',
@@ -40,7 +40,7 @@ export const services = [
     description: 'Nieuwe printer aansluiten, draadloos printen, scanner instellen en printerstoringen oplossen.',
     icon: 'printer',
     image: '/dienst-printer-scanner.webp',
-    imageAlt: 'All-in-one printer met een foto die uit de lade komt',
+    imageAlt: 'Student laat een vers afgedrukte foto zien aan een oudere vrouw bij de printer',
     slug: '/diensten/printer-scanner-hulp',
     features: [
       'Nieuwe printer aansluiten en instellen',
@@ -55,7 +55,7 @@ export const services = [
     description: 'E-mail instellen op computer of telefoon, weer toegang krijgen en ongewenste mail stoppen.',
     icon: 'email',
     image: '/dienst-email.webp',
-    imageAlt: 'Laptop op tafel met een envelopje op het scherm',
+    imageAlt: 'Student legt aan tafel de e-mail uit terwijl de oudere man zelf typt',
     slug: '/diensten/email-hulp',
     features: [
       'E-mail instellen op computer of telefoon',
@@ -70,7 +70,7 @@ export const services = [
     description: 'Nieuwe tablet of telefoon instellen, apps, foto’s overzetten en videobellen, rustig uitgelegd.',
     icon: 'mobile',
     image: '/dienst-tablet-smartphone.webp',
-    imageAlt: 'Tablet in de handen van een oudere vrouw',
+    imageAlt: 'Student wijst iets aan op de tablet van een oudere vrouw',
     slug: '/diensten/smartphone-hulp-aan-huis',
     features: [
       'Nieuwe tablet of telefoon instellen',
@@ -85,7 +85,7 @@ export const services = [
     description: 'Smart-tv instellen, zenders op volgorde, decoder en Netflix werkend, soundbar aangesloten.',
     icon: 'tv',
     image: '/dienst-tv.webp',
-    imageAlt: 'Televisie met een soundbar op een dressoir',
+    imageAlt: 'Student legt de smart-tv uit aan een man in zijn stoel',
     slug: '/diensten/tv-installatie',
     features: [
       'Smart-tv installeren en instellen',
@@ -116,7 +116,7 @@ export const services = [
     description: 'Slimme lampen, deurbel of speakers, wij koppelen alles en lossen storingen op.',
     icon: 'lightbulb',
     image: '/dienst-smart-home.webp',
-    imageAlt: 'Slimme thermostaat aan de muur, hand aan de knop',
+    imageAlt: 'Student stelt de slimme thermostaat in terwijl de bewoner meekijkt',
     slug: '/diensten/smart-home-domotica',
     features: [
       'Smart-tv installeren en koppelen',
@@ -131,7 +131,7 @@ export const services = [
     description: 'Bestanden kwijt na een storing? Wij halen terug wat kan en zetten een automatische back-up op.',
     icon: 'database',
     image: '/dienst-dataherstel.webp',
-    imageAlt: 'Externe harde schijf naast een open fotoalbum',
+    imageAlt: 'Student sluit een harde schijf aan naast het fotoalbum van een oudere vrouw',
     slug: '/diensten/dataherstel-backup',
     features: [
       'Verwijderde bestanden terughalen',
@@ -146,7 +146,7 @@ export const services = [
     description: 'Computerles aan huis: stap voor stap leren werken met uw apparaten, in uw tempo en in gewone taal.',
     icon: 'academic-cap',
     image: '/dienst-training.webp',
-    imageAlt: 'Beschreven notitieblok naast een laptop',
+    imageAlt: 'Oudere man schrijft een stap op terwijl de student de laptop uitlegt',
     slug: '/diensten/computercursus-ouderen',
     features: [
       'Basistraining voor uw computer',
@@ -163,8 +163,9 @@ interface ServicesSectionProps {
   eyebrow?: string
   /** Toon korte beschrijving onder de titel, gebruikt voor zelf-kwalificatie op landingspagina's. */
   showDescription?: boolean
-  /** Grote fotokaarten met dubbele rand. Het apparaat op de foto vertelt
-      meteen waar de dienst over gaat, sterker dan een icoon. */
+  /** Grote fotokaarten met dubbele rand. Op elke foto staat een student
+      samen met een klant bij het apparaat: wie er komt is voor deze
+      doelgroep overtuigender dan het apparaat alleen. */
   photoCards?: boolean
   limitServices?: number
   showAllButton?: boolean

@@ -91,7 +91,7 @@ export default function DataherstelBackupPage() {
       <Hero
         imageSrc="/dienst-dataherstel-16x9.webp"
         imageSrcMobile="/dienst-dataherstel-mobiel.webp"
-        imageAlt="Externe harde schijf naast een open fotoalbum"
+        imageAlt="Student sluit een harde schijf aan naast het fotoalbum van een oudere vrouw"
         ariaLabel="Dataherstel aan huis hero"
         eyebrow={<>Dataherstel · {BUSINESS.REGION}</>}
         title={<><span className="hero-highlight">Bestanden</span> of foto&apos;s kwijt?</>}

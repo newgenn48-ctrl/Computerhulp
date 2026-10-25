@@ -124,7 +124,7 @@ export default function ComputercursusOuderenPage() {
       <Hero
         imageSrc="/dienst-training-16x9.webp"
         imageSrcMobile="/dienst-training-mobiel.webp"
-        imageAlt="Beschreven notitieblok naast een laptop"
+        imageAlt="Oudere man schrijft een stap op terwijl de student de laptop uitlegt"
         ariaLabel="Computercursus voor Ouderen hero"
         eyebrow={<>Computerles · {BUSINESS.REGION}</>}
         title={<>Beter <span className="hero-highlight">leren</span> werken met de computer?</>}

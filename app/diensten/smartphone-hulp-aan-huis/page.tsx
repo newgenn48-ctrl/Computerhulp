@@ -123,7 +123,7 @@ export default function SmartphoneHulpAanHuisPage() {
       <Hero
         imageSrc="/dienst-tablet-smartphone-16x9.webp"
         imageSrcMobile="/dienst-tablet-smartphone-mobiel.webp"
-        imageAlt="Tablet in de handen van een oudere vrouw"
+        imageAlt="Student wijst iets aan op de tablet van een oudere vrouw"
         ariaLabel="Smartphone- en tablethulp aan huis hero"
         eyebrow={<>Telefoon en tablet · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">smartphone</span> of tablet?</>}

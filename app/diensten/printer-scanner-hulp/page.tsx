@@ -91,7 +91,7 @@ export default function PrinterScannerHulpPage() {
       <Hero
         imageSrc="/dienst-printer-scanner-16x9.webp"
         imageSrcMobile="/dienst-printer-scanner-mobiel.webp"
-        imageAlt="All-in-one printer met een vers afgedrukte pagina"
+        imageAlt="Student laat een vers afgedrukte foto zien aan een oudere vrouw bij de printer"
         ariaLabel="Printer & Scanner aan huis hero"
         eyebrow={<>Printer & Scanner · {BUSINESS.REGION}</>}
         title={<>Hulp met uw <span className="hero-highlight">printer</span> of scanner?</>}

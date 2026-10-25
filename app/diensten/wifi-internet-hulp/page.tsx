@@ -92,7 +92,7 @@ export default function WifiInternetHulpPage() {
       <Hero
         imageSrc="/dienst-wifi-16x9.webp"
         imageSrcMobile="/dienst-wifi-mobiel.webp"
-        imageAlt="Witte wifi-router op een kast, hand aan de kabel"
+        imageAlt="Student sluit de wifi-router aan terwijl de bewoonster meekijkt"
         ariaLabel="Wifi & Internet aan huis hero"
         eyebrow={<>Wifi & Internet · {BUSINESS.REGION}</>}
         title={<>Problemen met uw <span className="hero-highlight">wifi</span> of internet?</>}
