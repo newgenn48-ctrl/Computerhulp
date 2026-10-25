@@ -41,44 +41,44 @@ export default function ComfortSection({
         {
           icon: 'academic-cap',
           title: 'Een student, geen monteur',
-          desc: 'Iemand die zelf IT studeert en gewend is het thuis uit te leggen. Hij neemt de tijd en praat niet over uw hoofd heen.',
+          desc: 'Hij neemt de tijd en praat niet over uw hoofd heen.',
         },
         {
           icon: 'home',
           title: 'Aan uw eigen keukentafel',
-          desc: `Hij werkt op uw eigen apparaat, op de plek waar het normaal staat${waar}. U hoeft niets in te pakken en niets weg te brengen.`,
+          desc: `Hij werkt bij u thuis${waar}, op uw eigen apparaat.`,
         },
         {
           icon: 'chat',
           title: 'U mag alles vragen',
-          desc: 'Ook de vraag die u vorige week al stelde. Hij legt het zo vaak uit als u wilt, en schrijft de stappen voor u op.',
+          desc: 'Ook die ene van vorige week. Zo vaak als u wilt.',
         },
         {
           icon: 'shield',
           title: 'U zit nergens aan vast',
-          desc: 'Geen abonnement en geen nieuwe apparaten. Na afloop rekent u af, via pin, contant of Tikkie.',
+          desc: 'Geen abonnement. U rekent achteraf af.',
         },
       ]
     : [
         {
           icon: 'chat',
           title: 'Gewone taal, geen vaktermen',
-          desc: 'Onze student laat zien waar u moet klikken en waarom. Snapt u het niet? Dan vertellen we het gewoon nog een keer.',
+          desc: 'Snapt u het niet? Dan leggen we het nog een keer uit.',
         },
         {
           icon: 'home',
-          title: 'Op uw eigen apparaat, aan uw eigen tafel',
-          desc: `We komen bij u thuis${waar}. Niets meenemen, niets opnieuw instellen: alles blijft precies zoals u het gewend bent.`,
+          title: 'Aan uw eigen tafel',
+          desc: `Wij komen bij u thuis${waar}. U hoeft niets mee te nemen.`,
         },
         {
           icon: 'heart',
           title: 'Geen vraag is te klein',
-          desc: 'Een knop die u niet kunt vinden is net zo goed een reden om te bellen als een computer die niet opstart.',
+          desc: 'Een knop die u niet kunt vinden telt net zo goed.',
         },
         {
           icon: 'shield',
           title: 'U hoeft niets te kopen',
-          desc: 'Geen abonnement, geen nieuwe apparaten. We lossen op wat u heeft en u betaalt pas achteraf, via pin, contant of Tikkie.',
+          desc: 'Geen abonnement. U betaalt pas achteraf.',
         },
       ]
 
