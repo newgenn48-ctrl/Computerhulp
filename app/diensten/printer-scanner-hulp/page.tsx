@@ -90,13 +90,13 @@ export default function PrinterScannerHulpPage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-printer-scanner-16x9.webp"
-        imageSrcMobile="/dienst-printer-scanner-mobiel.webp"
+        imageLooseMobile="/dienst-printer-scanner-los.webp"
         imageAlt="Student laat een vers afgedrukte foto zien aan een oudere vrouw bij de printer"
         ariaLabel="Printer & Scanner aan huis hero"
         eyebrow={<>Printer & Scanner · {BUSINESS.REGION}</>}
         title={<>Hulp met uw <span className="hero-highlight">printer</span> of scanner?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw printer of scanner? Draadloos printen, scannen of installatie, we regelen het bij u thuis. De meeste printerproblemen zijn <strong className="text-white">in één bezoek opgelost, vaak binnen drie kwartier</strong>.</>,
+          <>Heeft u hulp nodig bij uw printer of scanner? Draadloos printen, scannen of installatie, we regelen het bij u thuis. De meeste printerproblemen zijn <strong>in één bezoek opgelost, vaak binnen drie kwartier</strong>.</>,
         ]}
         trustLine=""
         pills={[

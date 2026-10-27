@@ -155,13 +155,13 @@ export default function ComputerhulpSeniorenPage() {
       {/* Premium Hero Section */}
       <Hero
         imageSrc="/dienst-senioren-16x9.webp"
-        imageSrcMobile="/dienst-senioren-mobiel.webp"
+        imageLooseMobile="/dienst-senioren-los.webp"
         imageAlt="Oudere vrouw werkt zelf op de laptop, de student kijkt naast haar mee"
         ariaLabel="Computerhulp voor Senioren hero"
         eyebrow={<>Voor senioren · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">computer</span>?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, tablet of telefoon? Een trage computer, vreemde meldingen of iets dat niet werkt? Een HBO-student komt bij u thuis en legt alles <strong className="text-white">rustig uit, op uw tempo</strong>.</>,
+          <>Heeft u hulp nodig bij uw computer, tablet of telefoon? Een trage computer, vreemde meldingen of iets dat niet werkt? Een HBO-student komt bij u thuis en legt alles <strong>rustig uit, op uw tempo</strong>.</>,
         ]}
         trustLine=""
         pills={[

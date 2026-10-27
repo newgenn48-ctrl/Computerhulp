@@ -90,13 +90,13 @@ export default function EmailHulpPage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-email-16x9.webp"
-        imageSrcMobile="/dienst-email-mobiel.webp"
+        imageLooseMobile="/dienst-email-los.webp"
         imageAlt="Student legt aan tafel de e-mail uit terwijl de oudere man zelf typt"
         ariaLabel="E-mail hulp aan huis hero"
         eyebrow={<>E-mail hulp · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">e-mail</span>?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw e-mail? Niet meer kunnen inloggen, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in, <strong className="text-white">meestal in één bezoek geregeld</strong>.</>,
+          <>Heeft u hulp nodig bij uw e-mail? Niet meer kunnen inloggen, volle mailbox of spam die maar blijft komen? We stellen alles opnieuw in, <strong>meestal in één bezoek geregeld</strong>.</>,
         ]}
         trustLine=""
         pills={[

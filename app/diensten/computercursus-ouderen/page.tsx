@@ -123,13 +123,13 @@ export default function ComputercursusOuderenPage() {
       {/* Premium Hero Section */}
       <Hero
         imageSrc="/dienst-training-16x9.webp"
-        imageSrcMobile="/dienst-training-mobiel.webp"
+        imageLooseMobile="/dienst-training-los.webp"
         imageAlt="Oudere man schrijft een stap op terwijl de student de laptop uitlegt"
         ariaLabel="Computercursus voor Ouderen hero"
         eyebrow={<>Computerles · {BUSINESS.REGION}</>}
         title={<>Beter <span className="hero-highlight">leren</span> werken met de computer?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij het leren werken met uw computer, tablet of smartphone? We leggen alles stap voor stap uit, <strong className="text-white">in gewone taal, op uw tempo</strong>.</>,
+          <>Heeft u hulp nodig bij het leren werken met uw computer, tablet of smartphone? We leggen alles stap voor stap uit, <strong>in gewone taal, op uw tempo</strong>.</>,
         ]}
         trustLine=""
         pills={[

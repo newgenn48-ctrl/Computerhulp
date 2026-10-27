@@ -209,13 +209,13 @@ export default function HomePage() {
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
         imageSrc="/hero-tafel.webp"
-        imageSrcMobile="/hero-tafel-mobiel.webp"
+        imageLooseMobile="/hero-tafel-los.webp"
         imageAlt={`HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel={`${BUSINESS.NAME} hero`}
         eyebrow={`In heel ${BUSINESS.REGION}`}
         title={<>Computerhulp <span className="hero-highlight">aan huis</span> in Zuid-Holland</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong></>,
+          <>Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis, lost het op en legt het rustig uit. <strong>Meestal binnen 24 uur.</strong></>,
         ]}
       />
 

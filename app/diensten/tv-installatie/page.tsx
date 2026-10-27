@@ -98,13 +98,13 @@ export default function TVInstallatiePage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-tv-16x9.webp"
-        imageSrcMobile="/dienst-tv-mobiel.webp"
+        imageLooseMobile="/dienst-tv-los.webp"
         imageAlt="Student legt de smart-tv uit aan een man in zijn stoel"
         ariaLabel="TV installatie aan huis hero"
         eyebrow={<>Televisie en radio · {BUSINESS.REGION}</>}
         title={<>Tv-installatie <span className="hero-highlight">aan huis</span></>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw tv? Ophangen en aansluiten, smart-tv en zenders instellen, soundbar en Netflix werkend, of zenders die ineens weg zijn? Wij komen bij u thuis en <strong className="text-white">zorgen dat alles werkt</strong>.</>,
+          <>Heeft u hulp nodig bij uw tv? Ophangen en aansluiten, smart-tv en zenders instellen, soundbar en Netflix werkend, of zenders die ineens weg zijn? Wij komen bij u thuis en <strong>zorgen dat alles werkt</strong>.</>,
         ]}
         trustLine=""
         pills={[

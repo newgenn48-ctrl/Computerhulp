@@ -90,13 +90,13 @@ export default function DataherstelBackupPage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-dataherstel-16x9.webp"
-        imageSrcMobile="/dienst-dataherstel-mobiel.webp"
+        imageLooseMobile="/dienst-dataherstel-los.webp"
         imageAlt="Student sluit een harde schijf aan naast het fotoalbum van een oudere vrouw"
         ariaLabel="Dataherstel aan huis hero"
         eyebrow={<>Dataherstel · {BUSINESS.REGION}</>}
         title={<><span className="hero-highlight">Bestanden</span> of foto&apos;s kwijt?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij het terughalen van uw bestanden of foto's? Een defecte harde schijf, of een pc die niet meer opstart? We maken eerst een <strong className="text-white">eerlijke diagnose</strong>: pas als herstel realistisch is, gaan we aan de slag.</>,
+          <>Heeft u hulp nodig bij het terughalen van uw bestanden of foto's? Een defecte harde schijf, of een pc die niet meer opstart? We maken eerst een <strong>eerlijke diagnose</strong>: pas als herstel realistisch is, gaan we aan de slag.</>,
         ]}
         trustLine=""
         pills={[

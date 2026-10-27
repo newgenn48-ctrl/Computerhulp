@@ -138,13 +138,13 @@ export default function ComputerLaptopHulpPage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-computer-laptop-16x9.webp"
-        imageSrcMobile="/dienst-computer-laptop-mobiel.webp"
+        imageLooseMobile="/dienst-computer-laptop-los.webp"
         imageAlt="Student wijst iets aan op de laptop van een oudere man aan de eettafel"
         ariaLabel="Computer & Laptop aan huis hero"
         eyebrow={<>Computer, laptop en pc · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">computer</span> of laptop?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw computer of laptop? Traag, vastgelopen, een kapot scherm of start hij niet meer op? Een HBO-student komt bij u thuis, kijkt rustig mee en repareert of lost het op, <strong className="text-white">in gewone taal uitgelegd</strong>.</>,
+          <>Heeft u hulp nodig bij uw computer of laptop? Traag, vastgelopen, een kapot scherm of start hij niet meer op? Een HBO-student komt bij u thuis, kijkt rustig mee en repareert of lost het op, <strong>in gewone taal uitgelegd</strong>.</>,
         ]}
         trustLine=""
         pills={[

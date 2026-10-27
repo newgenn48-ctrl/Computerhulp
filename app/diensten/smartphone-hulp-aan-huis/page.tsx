@@ -122,13 +122,13 @@ export default function SmartphoneHulpAanHuisPage() {
       {/* Premium Hero Section */}
       <Hero
         imageSrc="/dienst-tablet-smartphone-16x9.webp"
-        imageSrcMobile="/dienst-tablet-smartphone-mobiel.webp"
+        imageLooseMobile="/dienst-tablet-smartphone-los.webp"
         imageAlt="Student wijst iets aan op de tablet van een oudere vrouw"
         ariaLabel="Smartphone- en tablethulp aan huis hero"
         eyebrow={<>Telefoon en tablet · {BUSINESS.REGION}</>}
         title={<>Hulp nodig met uw <span className="hero-highlight">smartphone</span> of tablet?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw telefoon of tablet? Een nieuw toestel instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis, <strong className="text-white">voor elk merk telefoon of tablet</strong>.</>,
+          <>Heeft u hulp nodig bij uw telefoon of tablet? Een nieuw toestel instellen, contacten en foto’s overzetten, videobellen met de kleinkinderen of een app die niet werkt? We regelen het bij u thuis, <strong>voor elk merk telefoon of tablet</strong>.</>,
         ]}
         trustLine=""
         pills={[

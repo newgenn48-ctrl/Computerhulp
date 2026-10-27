@@ -63,13 +63,13 @@ export default function OverOnsPage() {
 
       <Hero
         imageSrc="/hero-tafel.webp"
-        imageSrcMobile="/hero-tafel-mobiel.webp"
+        imageLooseMobile="/hero-tafel-los.webp"
         imageAlt={`HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${BUSINESS.REGION}`}
         ariaLabel="Over ons hero"
         eyebrow="Over ons"
         title={<>Uw <span className="hero-highlight">HBO-student</span> aan huis</>}
         descriptions={[
-          <>Wij zijn de mensen achter <strong className="text-white">computerhulp aan huis</strong> in <strong className="text-white">{BUSINESS.REGION}</strong>. HBO IT-studenten die bij u thuis komen en rustig uitleggen wat er gebeurt.</>,
+          <>Wij zijn de mensen achter <strong>computerhulp aan huis</strong> in <strong>{BUSINESS.REGION}</strong>. HBO IT-studenten die bij u thuis komen en rustig uitleggen wat er gebeurt.</>,
         ]}
       />
 

@@ -91,13 +91,13 @@ export default function WifiInternetHulpPage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-wifi-16x9.webp"
-        imageSrcMobile="/dienst-wifi-mobiel.webp"
+        imageLooseMobile="/dienst-wifi-los.webp"
         imageAlt="Student sluit de wifi-router aan terwijl de bewoonster meekijkt"
         ariaLabel="Wifi & Internet aan huis hero"
         eyebrow={<>Wifi & Internet · {BUSINESS.REGION}</>}
         title={<>Problemen met uw <span className="hero-highlight">wifi</span> of internet?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw wifi of internet? Slecht bereik of traag internet? <strong className="text-white">In 7 van de 10 gevallen</strong> ligt het aan de router, en dan is het meestal binnen een uur opgelost.</>,
+          <>Heeft u hulp nodig bij uw wifi of internet? Slecht bereik of traag internet? <strong>In 7 van de 10 gevallen</strong> ligt het aan de router, en dan is het meestal binnen een uur opgelost.</>,
         ]}
         trustLine=""
         pills={[

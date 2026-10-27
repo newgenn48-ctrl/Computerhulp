@@ -90,13 +90,13 @@ export default function SmartHomeDomoticaPage() {
       {/* Hero - Split Layout */}
       <Hero
         imageSrc="/dienst-smart-home-16x9.webp"
-        imageSrcMobile="/dienst-smart-home-mobiel.webp"
+        imageLooseMobile="/dienst-smart-home-los.webp"
         imageAlt="Student stelt de slimme thermostaat in terwijl de bewoner meekijkt"
         ariaLabel="Smart home aan huis hero"
         eyebrow={<>Smart home · {BUSINESS.REGION}</>}
         title={<><span className="hero-highlight">Slimme apparaten</span> laten installeren?</>}
         descriptions={[
-          <>Heeft u hulp nodig bij uw slimme apparaten? Verlichting, thermostaat, speaker of deurbel, we koppelen en configureren al uw slimme apparaten bij u thuis, <strong className="text-white">alles in één app</strong>.</>,
+          <>Heeft u hulp nodig bij uw slimme apparaten? Verlichting, thermostaat, speaker of deurbel, we koppelen en configureren al uw slimme apparaten bij u thuis, <strong>alles in één app</strong>.</>,
         ]}
         trustLine=""
         pills={[

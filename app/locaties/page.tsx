@@ -1,6 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
+import Image from 'next/image'
 import HeroPhoto from '@/components/HeroPhoto'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { cities, cityCount, villages, TOP_CITIES } from '@/lib/cities'
@@ -99,10 +100,11 @@ export default function LocatiesPage() {
         <div className="absolute inset-0">
           <HeroPhoto
             src="/hero-tafel.webp"
-            srcMobile="/hero-tafel-mobiel.webp"
+            desktopOnly
             alt="HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant"
           />
-          <div className="absolute inset-0 bg-white/80 md:hidden" />
+          {/* Geen waas meer op de telefoon: daar is geen achtergrondfoto om
+              te dempen, de sectie is er zelf al wit. */}
           <div className="absolute inset-0 hidden md:block bg-gradient-to-r from-white via-white/85 to-transparent" />
           <div className="absolute inset-0 hidden md:block bg-gradient-to-b from-white/40 via-transparent to-white/70" />
         </div>
@@ -127,6 +129,18 @@ export default function LocatiesPage() {
                 <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} />
               </Link>
             </div>
+
+            {/* Op de telefoon staat de foto los onder de tekst in plaats van
+                als waas erachter: zo is hij echt te zien. Boven 768px is
+                dezelfde foto de achtergrond hierboven. */}
+            <Image
+              src="/hero-tafel-los.webp"
+              alt="HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant"
+              width={1000}
+              height={750}
+              sizes="100vw"
+              className="hero-photo-loose"
+            />
           </div>
         </div>
       </section>
