@@ -36,7 +36,6 @@ interface VariantConfig {
   serviceNameLower: string
   urlPrefix: 'computerhulp-aan-huis' | 'student-aan-huis'
   heroImage: string
-  heroImageMobile?: string
   /** Foto die op de telefoon los onder de herotekst staat in plaats van erachter. */
   heroImageLoose?: string
   heroAlt: (cityName: string) => string
@@ -54,15 +53,17 @@ const computerhulpConfig: VariantConfig = {
   serviceName: 'Computerhulp aan Huis',
   serviceNameLower: 'computerhulp aan huis',
   urlPrefix: 'computerhulp-aan-huis',
+  // Op de computer de achtergrond, op de telefoon los onder de tekst, net
+  // als bij de student-variant.
   heroImage: '/hero-tafel.webp',
-  heroImageMobile: '/hero-tafel-mobiel.webp',
+  heroImageLoose: '/hero-tafel-los.webp',
   heroAlt: (cityName) => `HBO-student legt aan de keukentafel iets uit op de laptop aan een oudere klant in ${cityName}`,
   heroTitle: (cityName) => (
     <>Computerhulp aan huis <span className="hero-highlight">{cityName}</span></>
   ),
   heroDescription: (cityName) => (
     <>
-      Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit. <strong className="text-white">Meestal binnen 24 uur.</strong>
+      Heeft u hulp nodig bij uw computer, printer, internet, e-mail, tablet of telefoon? Een geduldige HBO IT-student komt bij u thuis in {cityName}, lost het op en legt het rustig uit. <strong>Meestal binnen 24 uur.</strong>
     </>
   ),
   servicesTitle: (cityName) => `Computerhulp aan huis ${cityName}`,
@@ -804,7 +805,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
           { icon: 'calendar', label: '7 dagen per week' },
         ]}
         imageSrc={config.heroImage}
-        imageSrcMobile={config.heroImageMobile}
         imageLooseMobile={config.heroImageLoose}
         imageAlt={config.heroAlt(city.name)}
         eyebrow={`In ${city.name} en omgeving`}
