@@ -8,7 +8,16 @@ import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
-import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
+import {
+  BUSINESS,
+  PRICING,
+  HOURS,
+  OG_IMAGE,
+  BUSINESS_DESCRIPTION,
+  BUSINESS_ENTITY_ID,
+  BUSINESS_IMAGES,
+  BUSINESS_GEO,
+} from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -32,18 +41,24 @@ const structuredData = {
   '@graph': [
     {
       '@type': 'LocalBusiness',
-      '@id': `${BUSINESS.URL}/#localbusiness`,
+      '@id': BUSINESS_ENTITY_ID,
       name: BUSINESS.NAME,
+      description: BUSINESS_DESCRIPTION,
       url: BUSINESS.URL,
+      sameAs: [BUSINESS.GBP_URL, BUSINESS.TRUSTPILOT_URL],
       telephone: BUSINESS.PHONE_INTL,
       email: BUSINESS.EMAIL,
       logo: `${BUSINESS.URL}/logo.png`,
-      image: `${BUSINESS.URL}/hero-deur.webp`,
+      // Hier stond hero-deur.webp: de foto van déze pagina onder het ID van
+      // het bedrijf, dat op elke andere pagina twee andere foto's heeft. De
+      // paginafoto staat nu bij de dienst hieronder.
+      image: BUSINESS_IMAGES,
       address: {
         '@type': 'PostalAddress',
         addressRegion: BUSINESS.REGION,
         addressCountry: BUSINESS.COUNTRY,
       },
+      geo: BUSINESS_GEO,
       priceRange: '€€',
       openingHoursSpecification: [
         {
@@ -61,7 +76,10 @@ const structuredData = {
       name: 'Student aan huis: computerhulp door HBO-studenten',
       description: `Computerhulp aan huis door HBO-studenten in ${BUSINESS.REGION}. Geduldig, betaalbaar en zonder abonnement.`,
       url: `${BUSINESS.URL}/student-aan-huis`,
-      provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
+      provider: { '@id': BUSINESS_ENTITY_ID },
+      // De hero van deze pagina. Hoort bij de dienst, want die is per pagina
+      // anders; de bedrijfsentiteit is dat juist niet.
+      image: `${BUSINESS.URL}/hero-deur.webp`,
       offers: {
         '@type': 'Offer',
         price: String(PRICING.PER_QUARTER_NUM),
@@ -80,7 +98,7 @@ const structuredData = {
           minPrice: String(PRICING.MINIMUM_TOTAL_NUM),
           description: `Minimaal 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`,
         },
-        seller: { '@id': `${BUSINESS.URL}/#localbusiness` },
+        seller: { '@id': BUSINESS_ENTITY_ID },
       },
     },
     {

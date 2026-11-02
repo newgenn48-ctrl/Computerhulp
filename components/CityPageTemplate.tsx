@@ -10,7 +10,16 @@ import ComfortSection from '@/components/sections/ComfortSection'
 import { Icon } from '@/components/icons'
 import { City, getVillagesOf } from '@/lib/cities'
 import { getCityContent, getPopulationDescription, formatNeighborhoods } from '@/lib/cityContent'
-import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
+import {
+  BUSINESS,
+  PRICING,
+  HOURS,
+  OG_IMAGE,
+  BUSINESS_DESCRIPTION,
+  BUSINESS_ENTITY_ID,
+  BUSINESS_IMAGES,
+  BUSINESS_GEO,
+} from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -198,7 +207,7 @@ export function generateStudentPageMetadata(city: City): Metadata {
 
 function generateStructuredData(city: City, variant: CityPageVariant) {
   const config = getConfig(variant)
-  const baseUrl = 'https://computerhulpzh.nl'
+  const baseUrl = BUSINESS.URL
   const pageUrl = `${baseUrl}/${config.urlPrefix}-${city.slug}`
   const serviceName = `${config.serviceName} ${city.name}`
   const content = getCityContent(city.slug)
@@ -211,51 +220,51 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
         ? `HBO-studenten aan huis in ${city.name} (${content.region}). ${content.description.split('.')[0]}. Computerhulp door geduldige HBO-studenten bij u thuis.`
         : `Computerhulp aan huis door HBO-studenten in ${city.name} en omgeving. Hulp bij computer, laptop, tablet, smartphone en internet.`)
 
-  const serviceDescription = variant === 'computerhulp'
-    ? `Professionele computerhulp aan huis in ${city.name}. Hulp bij computer, laptop, printer, wifi, smartphone, tablet, camera en smart home. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
-    : `HBO-studenten komen bij u thuis in ${city.name} voor computerhulp. Hulp bij laptop, pc, tablet en smartphoneproblemen. Meestal binnen 24 uur, ${PRICING.TRAVEL} voorrijkosten.`
+  // De dienst is wél per stad anders, dus hier mag en moet de stad in staan.
+  // cityDescription is de rijkere van de twee (hij haalt een zin uit de echte
+  // buurtkennis in cityContent), dus die gebruiken we hier. Het tarief hoeft
+  // niet in de tekst: dat staat even verderop in offers/priceSpecification,
+  // waar Google het ook echt uitleest.
+  const serviceDescription = cityDescription
 
+  // Eén onderneming, dus op elke pagina dezelfde entiteit met hetzelfde ID als
+  // op de homepage. Hier stond een eigen ID per pagina met een verzonnen naam
+  // ("Computerhulp aan Huis Delft"), addressLocality en stadscoördinaten. Dat
+  // maakte van één bedrijf zonder vestiging 102 lokale bedrijven met elk een
+  // adres, terwijl het Google Bedrijfsprofiel juist één servicegebied-
+  // onderneming zonder straat is — en dat profiel staat hieronder in sameAs.
+  // De stad hoort niet in de identiteit van het bedrijf maar in areaServed van
+  // de dienst, en die staat er nog steeds op.
   const localBusiness: Record<string, unknown> = {
     '@type': 'LocalBusiness',
-    // Eigen ID per pagina: het bedrijf is één, maar de stadsvermelding (naam, plaats, coördinaten)
-    // verschilt per pagina en mag niet onder één gedeeld ID botsen.
-    '@id': `${pageUrl}#localbusiness`,
-    name: variant === 'computerhulp' ? `Computerhulp aan Huis ${city.name}` : 'Computerhulp Zuid-Holland',
-    url: baseUrl,
+    '@id': BUSINESS_ENTITY_ID,
+    name: BUSINESS.NAME,
+    url: BUSINESS.URL,
+    sameAs: [BUSINESS.GBP_URL, BUSINESS.TRUSTPILOT_URL],
     telephone: BUSINESS.PHONE_INTL,
     email: BUSINESS.EMAIL,
-    description: cityDescription,
-    logo: `${baseUrl}/logo.png`,
+    description: BUSINESS_DESCRIPTION,
+    logo: `${BUSINESS.URL}/logo.png`,
+    image: BUSINESS_IMAGES,
     address: {
       '@type': 'PostalAddress',
-      addressLocality: city.name,
-      addressRegion: 'Zuid-Holland',
-      addressCountry: 'NL'
+      addressRegion: BUSINESS.REGION,
+      addressCountry: BUSINESS.COUNTRY
     },
-    geo: {
-      '@type': 'GeoCoordinates',
-      latitude: String(city.latitude),
-      longitude: String(city.longitude)
-    },
+    geo: BUSINESS_GEO,
     priceRange: '€€',
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
         dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '08:00',
-        closes: '22:00'
+        opens: HOURS.OPEN,
+        closes: HOURS.CLOSE
       }
     ],
     areaServed: {
-      '@type': 'City',
-      name: city.name
+      '@type': 'State',
+      name: BUSINESS.REGION
     }
-  }
-
-  if (variant === 'student') {
-    // Dezelfde foto als de hero van de pagina, anders wijst de structured
-    // data naar een foto die er niet op staat.
-    localBusiness.image = `${baseUrl}${studentConfig.heroImage}`
   }
 
   const serviceEntity: Record<string, unknown> = {
@@ -265,7 +274,10 @@ function generateStructuredData(city: City, variant: CityPageVariant) {
     name: serviceName,
     description: serviceDescription,
     url: pageUrl,
-    provider: { '@id': `${pageUrl}#localbusiness` },
+    provider: { '@id': BUSINESS_ENTITY_ID },
+    // De foto van deze pagina hoort bij de dienst, niet bij de bedrijfs-
+    // entiteit: die is overal gelijk, deze verschilt per variant.
+    image: `${BUSINESS.URL}${config.heroImage}`,
     areaServed: { '@type': 'City', name: city.name },
     offers: {
       '@type': 'Offer',

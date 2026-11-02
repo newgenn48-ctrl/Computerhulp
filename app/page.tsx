@@ -8,7 +8,16 @@ import PricingSection from '@/components/sections/PricingSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
+import {
+  BUSINESS,
+  PRICING,
+  HOURS,
+  OG_IMAGE,
+  BUSINESS_DESCRIPTION,
+  BUSINESS_ENTITY_ID,
+  BUSINESS_IMAGES,
+  BUSINESS_GEO,
+} from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import { cityCount, TOP_CITIES } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
@@ -74,6 +83,7 @@ const organizationData = {
   '@id': `${BUSINESS.URL}/#organization`,
   name: BUSINESS.NAME,
   url: BUSINESS.URL,
+  sameAs: [BUSINESS.GBP_URL, BUSINESS.TRUSTPILOT_URL],
   logo: {
     '@type': 'ImageObject',
     url: `${BUSINESS.URL}/logo.png`,
@@ -91,27 +101,24 @@ const organizationData = {
 
 const localBusinessData = {
   '@type': 'LocalBusiness',
-  '@id': `${BUSINESS.URL}/#localbusiness`,
+  // Deze velden staan op elke pagina onder hetzelfde ID, dus ze komen uit
+  // constants: anders beweert ooit één van de 143 pagina's iets anders over
+  // hetzelfde bedrijf.
+  '@id': BUSINESS_ENTITY_ID,
   name: BUSINESS.NAME,
-  description: `Professionele computerhulp aan huis in ${BUSINESS.REGION}. Wij lossen computer-, laptop-, printer- en wifi-problemen snel op. Meestal binnen 24 uur bij u thuis, ${PRICING.TRAVEL} voorrijkosten.`,
+  description: BUSINESS_DESCRIPTION,
   url: BUSINESS.URL,
+  sameAs: [BUSINESS.GBP_URL, BUSINESS.TRUSTPILOT_URL],
   telephone: BUSINESS.PHONE_INTL,
   email: BUSINESS.EMAIL,
   logo: `${BUSINESS.URL}/logo.png`,
-  image: [
-    `${BUSINESS.URL}/hero-tafel.webp`,
-    `${BUSINESS.URL}/comfort-tafel.webp`,
-  ],
+  image: BUSINESS_IMAGES,
   address: {
     '@type': 'PostalAddress',
     addressRegion: BUSINESS.REGION,
     addressCountry: BUSINESS.COUNTRY,
   },
-  geo: {
-    '@type': 'GeoCoordinates',
-    latitude: 52.0116,
-    longitude: 4.3571,
-  },
+  geo: BUSINESS_GEO,
   areaServed: [
     ...TOP_CITIES.map((c) => ({ '@type': 'City', name: c.name })),
     { '@type': 'State', name: BUSINESS.REGION },
@@ -143,7 +150,7 @@ const serviceData = {
   '@id': `${BUSINESS.URL}/#service`,
   name: 'Computerhulp aan Huis',
   serviceType: 'Computer Repair Service',
-  provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
+  provider: { '@id': BUSINESS_ENTITY_ID },
   areaServed: { '@type': 'State', name: BUSINESS.REGION },
   description: `Professionele computerhulp aan huis voor particulieren en kleine ondernemers in ${BUSINESS.REGION}. Wij lossen computer, laptop, printer, wifi en andere IT-problemen snel en vakkundig op.`,
   offers: {

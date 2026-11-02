@@ -7,7 +7,16 @@ import PricingSection from '@/components/sections/PricingSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
-import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
+import {
+  BUSINESS,
+  PRICING,
+  HOURS,
+  OG_IMAGE,
+  BUSINESS_DESCRIPTION,
+  BUSINESS_ENTITY_ID,
+  BUSINESS_IMAGES,
+  BUSINESS_GEO,
+} from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 import { TOP_CITIES, cityCount } from '@/lib/cities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
@@ -32,22 +41,24 @@ const structuredData = {
   '@graph': [
     {
       '@type': 'LocalBusiness',
-      '@id': `${BUSINESS.URL}/#localbusiness`,
+      '@id': BUSINESS_ENTITY_ID,
       name: BUSINESS.NAME,
+      description: BUSINESS_DESCRIPTION,
       url: BUSINESS.URL,
+      // Zonder sameAs moet Google uit naam en telefoonnummer afleiden dat deze
+      // pagina over hetzelfde bedrijf gaat als het Bedrijfsprofiel. Nu staat
+      // het er gewoon.
+      sameAs: [BUSINESS.GBP_URL, BUSINESS.TRUSTPILOT_URL],
       telephone: BUSINESS.PHONE_INTL,
       email: BUSINESS.EMAIL,
       logo: `${BUSINESS.URL}/logo.png`,
+      image: BUSINESS_IMAGES,
       address: {
         '@type': 'PostalAddress',
         addressRegion: BUSINESS.REGION,
         addressCountry: BUSINESS.COUNTRY,
       },
-      geo: {
-        '@type': 'GeoCoordinates',
-        latitude: '52.0116',
-        longitude: '4.3571',
-      },
+      geo: BUSINESS_GEO,
       priceRange: '€€',
       openingHoursSpecification: [
         {
@@ -69,7 +80,7 @@ const structuredData = {
       name: 'Computerhulp aan huis',
       description: `Computerhulp aan huis in heel ${BUSINESS.REGION}. Een HBO-student komt meestal binnen 24 uur bij u thuis voor computer, laptop, printer, wifi, smartphone, tablet, tv, e-mail en smart home.`,
       url: `${BUSINESS.URL}/computerhulp-aan-huis`,
-      provider: { '@id': `${BUSINESS.URL}/#localbusiness` },
+      provider: { '@id': BUSINESS_ENTITY_ID },
       offers: {
         '@type': 'Offer',
         price: String(PRICING.PER_QUARTER_NUM),
@@ -88,7 +99,7 @@ const structuredData = {
           minPrice: String(PRICING.MINIMUM_TOTAL_NUM),
           description: `Minimaal 3 kwartier (${PRICING.MINIMUM_TOTAL} totaal)`,
         },
-        seller: { '@id': `${BUSINESS.URL}/#localbusiness` },
+        seller: { '@id': BUSINESS_ENTITY_ID },
       },
     },
     {

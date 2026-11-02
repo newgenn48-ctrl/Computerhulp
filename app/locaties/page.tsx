@@ -7,7 +7,16 @@ import TestimonialsCarousel from '@/components/TestimonialsCarousel'
 import { cities, cityCount, villages, TOP_CITIES } from '@/lib/cities'
 import { hubRegions, regionWithArticle } from '@/lib/regions'
 import LocationSearch from '@/components/LocationSearch'
-import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
+import {
+  BUSINESS,
+  PRICING,
+  HOURS,
+  OG_IMAGE,
+  BUSINESS_DESCRIPTION,
+  BUSINESS_ENTITY_ID,
+  BUSINESS_IMAGES,
+  BUSINESS_GEO,
+} from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 export const metadata: Metadata = {
@@ -38,17 +47,24 @@ const breadcrumbData = {
 const localBusinessData = {
   '@context': 'https://schema.org',
   '@type': 'LocalBusiness',
-  '@id': 'https://computerhulpzh.nl/#localbusiness',
-  name: 'Computerhulp Zuid-Holland',
-  description: 'Computerhulp aan huis in ruim 50 plaatsen in Zuid-Holland',
-  url: 'https://computerhulpzh.nl',
+  // Stond hier met de hand ingetypt: eigen ID-tekst, eigen naam, eigen
+  // beschrijving en eigen e-mailadres. Dat is hetzelfde bedrijf als op de
+  // homepage, dus het hoort uit dezelfde constanten te komen.
+  '@id': BUSINESS_ENTITY_ID,
+  name: BUSINESS.NAME,
+  description: BUSINESS_DESCRIPTION,
+  url: BUSINESS.URL,
+  sameAs: [BUSINESS.GBP_URL, BUSINESS.TRUSTPILOT_URL],
   telephone: BUSINESS.PHONE_INTL,
-  email: 'info@computerhulpzh.nl',
+  email: BUSINESS.EMAIL,
+  logo: `${BUSINESS.URL}/logo.png`,
+  image: BUSINESS_IMAGES,
   address: {
     '@type': 'PostalAddress',
-    addressRegion: 'Zuid-Holland',
-    addressCountry: 'NL'
+    addressRegion: BUSINESS.REGION,
+    addressCountry: BUSINESS.COUNTRY
   },
+  geo: BUSINESS_GEO,
   areaServed: {
     '@type': 'State',
     name: 'Zuid-Holland',
@@ -56,12 +72,14 @@ const localBusinessData = {
       ...TOP_CITIES.map((c) => ({ '@type': 'City', name: c.name })),
     ]
   },
-  openingHoursSpecification: {
-    '@type': 'OpeningHoursSpecification',
-    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-    opens: '08:00',
-    closes: '22:00'
-  },
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
+      opens: HOURS.OPEN,
+      closes: HOURS.CLOSE
+    }
+  ],
   priceRange: '€€'
 }
 

@@ -25,6 +25,14 @@ export default function Header() {
   const pathname = usePathname()
   const [scrolled, setScrolled] = useState(false)
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  /* De logo-fallback zat in de DOM: onError zette style.display = 'none' op de
+     <img> en 'block' op de tekst ernaast. Een afgebroken laadpoging (de
+     bezoeker klikt door terwijl de header nog laadt, of de verbinding valt even
+     weg) vuurt óók onError, en niets zette die inline stijl ooit terug. Het
+     logo was dan voor de rest van het bezoek weg. Dat verklaart "de logo soms
+     doet het niet". Nu doet React het: faalt het laden, dan rendert de tekst,
+     en bij de volgende navigatie krijgt het logo gewoon weer een kans. */
+  const [logoFailed, setLogoFailed] = useState(false)
 
   // Actieve pagina markeren, ook voor subpaden (/diensten/wifi-internet-hulp)
   const isActive = (href: string) =>
@@ -82,23 +90,21 @@ export default function Header() {
           {/* Logo, fallback-tekst als image faalt */}
           <Link href="/" className="flex items-center group" aria-label={`Naar de homepage van ${BUSINESS.NAME}`}>
             <div className="relative h-10 w-[140px] md:h-11 md:w-[160px] lg:h-12 lg:w-[180px] flex items-center">
-              <Image
-                src="/logo.png"
-                alt={BUSINESS.NAME}
-                fill
-                sizes="180px"
-                className="object-contain"
-                priority
-                onError={(e) => {
-                  const target = e.currentTarget
-                  target.style.display = 'none'
-                  const next = target.nextElementSibling as HTMLElement | null
-                  if (next) next.style.display = 'block'
-                }}
-              />
-              <span className="hidden text-blue-700 font-bold text-base sm:text-lg" aria-hidden="true">
-                {BUSINESS.NAME}
-              </span>
+              {logoFailed ? (
+                <span className="text-blue-700 font-bold text-base sm:text-lg" translate="no">
+                  {BUSINESS.NAME}
+                </span>
+              ) : (
+                <Image
+                  src="/logo.png"
+                  alt={BUSINESS.NAME}
+                  fill
+                  sizes="180px"
+                  className="object-contain"
+                  priority
+                  onError={() => setLogoFailed(true)}
+                />
+              )}
             </div>
           </Link>
 
