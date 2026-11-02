@@ -36,17 +36,30 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { naam, telefoon, email, adres, postcode, plaats, probleem, website } = body
+    const { naam, telefoon, email, adres, postcode, plaats, probleem, website, aanvulling } = body
+    // Het formulier verstuurt in twee stappen. Stap 1 is naam + telefoon en
+    // gaat meteen de deur uit, zodat er gebeld kan worden ook als iemand
+    // daarna afhaakt. Stap 2 stuurt hetzelfde record nog eens, nu compleet,
+    // met aanvulling=true, zodat de onderwerpregel duidelijk maakt dat het om
+    // dezelfde aanvraag gaat en niet om een tweede klant.
+    const isAanvulling = aanvulling === true
 
     // Honeypot — bots fill hidden fields, humans don't
     if (website) {
       return NextResponse.json({ message: 'Hulpvraag succesvol verzonden!' }, { status: 200 })
     }
 
-    // Validatie - alle velden zijn verplicht (zelfde regels als het formulier)
+    // Alleen naam en telefoonnummer zijn verplicht. Hiervoor stonden alle
+    // zeven velden verplicht: met adres, postcode, woonplaats, e-mailadres en
+    // een omschrijving van tien tekens erbij, op een telefoon, voor een
+    // doelgroep van zeventig-plussers. Die pagina haakte voor 83% af terwijl
+    // er boven het formulier staat dat wij terugbellen om een moment af te
+    // spreken — het adres kan dus ook aan de telefoon. De velden hieronder
+    // worden verderop al als optioneel behandeld (optAdres, optPostcode,
+    // optPlaats, optEmail, optProbleem met "(niet ingevuld)" als terugval),
+    // dus hier hoefde alleen de verplichtstelling weg.
     const verplicht: Array<[unknown, string]> = [
-      [naam, 'naam'], [telefoon, 'telefoonnummer'], [email, 'e-mailadres'],
-      [adres, 'straat en huisnummer'], [postcode, 'postcode'], [plaats, 'woonplaats'], [probleem, 'omschrijving'],
+      [naam, 'naam'], [telefoon, 'telefoonnummer'],
     ]
     const ontbreekt = verplicht.filter(([v]) => typeof v !== 'string' || !v.trim()).map(([, label]) => label)
     if (ontbreekt.length > 0) {
@@ -62,14 +75,21 @@ export async function POST(request: NextRequest) {
     const optPlaats = typeof plaats === 'string' ? plaats.trim() : ''
     const optProbleem = typeof probleem === 'string' ? probleem.trim() : ''
 
-    // Validatie - Length limits
+    // Validatie - Length limits.
+    // validateLength() keurt een lege string af (hij eist length > 0), dus de
+    // optionele velden mogen er alleen langs als ze iets bevatten. Zolang alle
+    // zeven velden verplicht waren viel dat niet op; sinds alleen naam en
+    // telefoon verplicht zijn, liet een leeg adresveld de hele aanvraag
+    // stuklopen op "een of meerdere velden zijn te lang". De helper zelf blijft
+    // ongemoeid: landing-afspraak en offerte gebruiken hem met verplichte velden.
+    const binnenLengte = (v: string, max: number) => v === '' || validateLength(v, max)
     if (!validateLength(naam.trim(), 100) ||
         !validateLength(telefoon.trim(), 20) ||
-        !validateLength(optEmail, 254) ||
-        !validateLength(optAdres, 120) ||
-        !validateLength(optPostcode, 10) ||
-        !validateLength(optPlaats, 80) ||
-        !validateLength(optProbleem, 2000)) {
+        !binnenLengte(optEmail, 254) ||
+        !binnenLengte(optAdres, 120) ||
+        !binnenLengte(optPostcode, 10) ||
+        !binnenLengte(optPlaats, 80) ||
+        !binnenLengte(optProbleem, 2000)) {
       return NextResponse.json(
         { error: 'Een of meerdere velden zijn te lang' },
         { status: 400 }
@@ -137,7 +157,9 @@ export async function POST(request: NextRequest) {
     const adminMailOptions = {
       from: process.env.SMTP_FROM,
       to: process.env.SMTP_TO,
-      subject: `Nieuwe Hulpvraag van ${textNaam}`,
+      subject: isAanvulling
+        ? `Aanvulling (adres en probleem) van ${textNaam}`
+        : `BEL TERUG: ${textNaam} — ${textTelefoon}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -161,8 +183,10 @@ export async function POST(request: NextRequest) {
           <body>
             <div class="container">
               <div class="header">
-                <h1>Nieuwe Hulpvraag</h1>
-                <p style="margin: 5px 0 0 0; opacity: 0.9;">Er is een nieuwe hulpvraag binnengekomen</p>
+                <h1>${isAanvulling ? 'Aanvulling op een hulpvraag' : 'Nieuwe hulpvraag — bel terug'}</h1>
+                <p style="margin: 5px 0 0 0; opacity: 0.9;">${isAanvulling
+                  ? 'Dezelfde klant als de vorige mail, nu met adres en omschrijving erbij'
+                  : 'Naam en telefoonnummer zijn binnen; adres en omschrijving volgen mogelijk nog'}</p>
               </div>
               <div class="content">
                 <div class="info-box">

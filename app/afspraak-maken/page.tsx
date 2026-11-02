@@ -10,7 +10,7 @@ export default function AfspraakMakenPage() {
             Vraag een afspraak aan
           </h1>
           <p className="text-lg text-gray-600 max-w-xl mx-auto">
-            Vul uw gegevens in, dan bellen we u meestal binnen een uur terug om een moment af te spreken. Geen verplichtingen.
+            Uw naam en telefoonnummer zijn genoeg. We bellen u meestal binnen een uur terug om een moment af te spreken. Geen verplichtingen.
           </p>
         </header>
 
