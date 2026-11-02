@@ -36,13 +36,7 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { naam, telefoon, email, adres, postcode, plaats, probleem, website, aanvulling } = body
-    // Het formulier verstuurt in twee stappen. Stap 1 is naam + telefoon en
-    // gaat meteen de deur uit, zodat er gebeld kan worden ook als iemand
-    // daarna afhaakt. Stap 2 stuurt hetzelfde record nog eens, nu compleet,
-    // met aanvulling=true, zodat de onderwerpregel duidelijk maakt dat het om
-    // dezelfde aanvraag gaat en niet om een tweede klant.
-    const isAanvulling = aanvulling === true
+    const { naam, telefoon, email, adres, postcode, plaats, probleem, website } = body
 
     // Honeypot — bots fill hidden fields, humans don't
     if (website) {
@@ -157,9 +151,9 @@ export async function POST(request: NextRequest) {
     const adminMailOptions = {
       from: process.env.SMTP_FROM,
       to: process.env.SMTP_TO,
-      subject: isAanvulling
-        ? `Aanvulling (adres en probleem) van ${textNaam}`
-        : `BEL TERUG: ${textNaam} — ${textTelefoon}`,
+      // Nummer in de onderwerpregel: dan is terugbellen mogelijk zonder de
+      // mail te openen.
+      subject: `Nieuwe hulpvraag: ${textNaam} — ${textTelefoon}`,
       html: `
         <!DOCTYPE html>
         <html>
@@ -183,10 +177,8 @@ export async function POST(request: NextRequest) {
           <body>
             <div class="container">
               <div class="header">
-                <h1>${isAanvulling ? 'Aanvulling op een hulpvraag' : 'Nieuwe hulpvraag — bel terug'}</h1>
-                <p style="margin: 5px 0 0 0; opacity: 0.9;">${isAanvulling
-                  ? 'Dezelfde klant als de vorige mail, nu met adres en omschrijving erbij'
-                  : 'Naam en telefoonnummer zijn binnen; adres en omschrijving volgen mogelijk nog'}</p>
+                <h1>Nieuwe Hulpvraag</h1>
+                <p style="margin: 5px 0 0 0; opacity: 0.9;">Er is een nieuwe hulpvraag binnengekomen</p>
               </div>
               <div class="content">
                 <div class="info-box">

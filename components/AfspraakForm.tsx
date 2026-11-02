@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { LEAD_SENT_KEY } from '@/components/ConversionTracker'
@@ -9,22 +9,6 @@ import { validatePhone } from '@/lib/sanitize'
 
 type Field = 'naam' | 'telefoon' | 'email' | 'adres' | 'postcode' | 'plaats' | 'probleem'
 
-/**
- * Het formulier gaat in twee stappen de deur uit.
- *
- * Stap 1 is naam en telefoonnummer, en die wordt echt verstuurd: vanaf dat
- * moment kan er gebeld worden, ook als iemand daarna wegklikt. Stap 2 vraagt
- * het adres, dat nodig is om een student in te plannen, en is over te slaan.
- *
- * Hiervoor stonden alle zeven velden in één scherm, allemaal verplicht, met
- * een omschrijving van minimaal tien tekens. Zeven van de tien bezoekers doen
- * dat op een telefoon en de doelgroep is zeventig-plus; 83% haakte af. Boven
- * het formulier stond bovendien dat wij terugbellen om een moment af te
- * spreken — dan hoeft het adres daar niet eerst voor ingetypt te worden.
- */
-const STEP1_FIELDS: Field[] = ['naam', 'telefoon']
-const STEP2_FIELDS: Field[] = ['adres', 'postcode', 'plaats', 'email', 'probleem']
-
 type Rule = {
   required?: string
   pattern?: [RegExp, string]
@@ -32,15 +16,23 @@ type Rule = {
   minLength?: [number, string]
 }
 
+/**
+ * Eén scherm, zoals de eigenaar wil. Het adres staat erbij omdat dat nodig is
+ * om een student bij de klant in de buurt in te plannen.
+ *
+ * Wel lichter dan het ooit was: e-mail en de omschrijving zijn niet verplicht,
+ * en de eis van tien tekens bij de omschrijving is eraf — "Pc traag" is acht
+ * tekens en werd geweigerd. Wij bellen toch terug, dus het telefoonnummer is
+ * het enige waar echt alles op staat of valt.
+ */
+const FIELDS: Field[] = ['naam', 'telefoon', 'adres', 'postcode', 'plaats', 'probleem', 'email']
+
 const validationRules: Record<Field, Rule> = {
   naam: { required: 'Vul uw naam in', minLength: [2, 'Naam moet minimaal 2 karakters bevatten'] },
   telefoon: { required: 'Vul uw telefoonnummer in', check: [validatePhone, 'Voer een geldig Nederlands telefoonnummer in, bijvoorbeeld 06-12345678'] },
   adres: { required: 'Vul straat en huisnummer in' },
   postcode: { required: 'Vul uw postcode in', pattern: [/^[1-9]\d{3}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2511 CV)'] },
   plaats: { required: 'Vul uw woonplaats in' },
-  // E-mail en omschrijving zijn niet verplicht: wij bellen, dus het nummer is
-  // genoeg. Wie ze wel invult, krijgt ze wel gecontroleerd. De eis van tien
-  // tekens is eraf — "Pc traag" is een prima omschrijving en werd geweigerd.
   email: { pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
   probleem: {},
 }
@@ -58,30 +50,21 @@ function validate(name: Field, value: string): string {
 
 export default function AfspraakForm() {
   const router = useRouter()
-  const [step, setStep] = useState<1 | 2>(1)
   const [formData, setFormData] = useState({ naam: '', telefoon: '', email: '', adres: '', postcode: '', plaats: '', probleem: '', website: '' })
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [touched, setTouched] = useState<Record<string, boolean>>({})
   const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'error'>('idle')
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [serverError, setServerError] = useState('')
-  const stepTwoHeading = useRef<HTMLHeadingElement>(null)
 
-  // Waarschuw alleen zolang stap 1 nog niet verstuurd is. Daarna is de
-  // aanvraag binnen en zou een waarschuwing alleen maar bang maken.
-  const isDirty = STEP1_FIELDS.some(f => formData[f].trim() !== '')
+  // Waarschuw bij wegklikken als er al iets is ingevuld en nog niet is verstuurd
+  const isDirty = Object.entries(formData).some(([k, v]) => k !== 'website' && v.trim() !== '')
   useEffect(() => {
-    if (step !== 1 || !isDirty) return
+    if (!isDirty || submitStatus === 'success') return
     const warn = (e: BeforeUnloadEvent) => { e.preventDefault() }
     window.addEventListener('beforeunload', warn)
     return () => window.removeEventListener('beforeunload', warn)
-  }, [isDirty, step])
-
-  // Bij de stapwissel de focus naar de nieuwe kop, anders staat een
-  // toetsenbord- of schermlezergebruiker nog bij de verdwenen knop.
-  useEffect(() => {
-    if (step === 2) stepTwoHeading.current?.focus()
-  }, [step])
+  }, [isDirty, submitStatus])
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
@@ -97,32 +80,22 @@ export default function AfspraakForm() {
     }
   }
 
-  const goToConfirmation = () => {
-    try {
-      window.sessionStorage.setItem(LEAD_SENT_KEY, '1')
-    } catch {
-      // sessionStorage kan geblokkeerd zijn; dan telt de bedankpagina niets, liever te weinig dan dubbel
-    }
-    router.push('/afspraak-bevestiging')
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
 
-    const fields = step === 1 ? STEP1_FIELDS : STEP2_FIELDS
     const newErrors: Record<string, string> = {}
     const newTouched: Record<string, boolean> = {}
-    fields.forEach(field => {
+    FIELDS.forEach(field => {
       newTouched[field] = true
       const error = validate(field, formData[field])
       if (error) newErrors[field] = error
     })
-    setErrors(prev => ({ ...prev, ...newErrors }))
-    setTouched(prev => ({ ...prev, ...newTouched }))
+    setErrors(newErrors)
+    setTouched(newTouched)
     if (Object.keys(newErrors).length > 0) {
       // Spring naar het eerste foute veld, anders lijkt het formulier
       // stil te falen wanneer de fout buiten beeld staat.
-      const firstInvalid = fields.find(field => newErrors[field])
+      const firstInvalid = FIELDS.find(field => newErrors[field])
       if (firstInvalid) {
         const el = document.getElementById(firstInvalid)
         el?.focus({ preventScroll: true })
@@ -148,21 +121,18 @@ export default function AfspraakForm() {
       const response = await fetch('/api/afspraak', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        // Stap 1 stuurt wat er dan is; stap 2 stuurt het complete record nog
-        // eens met aanvulling=true, zodat de onderwerpregel van de mail laat
-        // zien dat het dezelfde klant is en niet een tweede aanvraag.
-        body: JSON.stringify({ ...formData, aanvulling: step === 2 }),
+        body: JSON.stringify(formData),
         signal: controller.signal,
       })
 
       if (response.ok) {
-        if (step === 1) {
-          setStep(2)
-          setIsSubmitting(false)
-        } else {
-          // Knop blijft uit tot de bedankpagina er is: geen dubbele inzending
-          goToConfirmation()
+        setSubmitStatus('success')
+        try {
+          window.sessionStorage.setItem(LEAD_SENT_KEY, '1')
+        } catch {
+          // sessionStorage kan geblokkeerd zijn; dan telt de bedankpagina niets, liever te weinig dan dubbel
         }
+        router.push('/afspraak-bevestiging')
         return
       }
 
@@ -184,6 +154,7 @@ export default function AfspraakForm() {
       setIsSubmitting(false)
     } finally {
       clearTimeout(timeoutId)
+      // Bij succes blijft de knop uit tot de bedankpagina er is: geen dubbele inzending door een tweede klik
     }
   }
 
@@ -191,13 +162,6 @@ export default function AfspraakForm() {
     `w-full px-4 py-4 border-2 rounded-xl text-base focus:ring-2 focus:ring-blue-200 transition-colors outline-none ${
       touched[field] && errors[field] ? 'border-red-500 focus:border-red-500' : 'border-gray-300 focus:border-blue-500'
     }`
-
-  const spinner = (
-    <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
-      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-    </svg>
-  )
 
   return (
     <>
@@ -226,236 +190,164 @@ export default function AfspraakForm() {
         </div>
       )}
 
-      {step === 2 && (
-        <div role="status" aria-live="polite" className="mb-6 flex items-start gap-3 rounded-2xl border border-green-200 bg-green-50 p-5">
-          <Icon name="check-circle" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
-          <div className="min-w-0">
-            <h2 ref={stepTwoHeading} tabIndex={-1} className="font-semibold text-green-900 outline-none break-words">
-              Uw aanvraag is binnen
-            </h2>
-            <p className="text-green-800 mt-1 break-words">
-              We bellen u meestal binnen een uur terug op{' '}
-              <span translate="no" className="font-semibold whitespace-nowrap">{formData.telefoon.trim()}</span>.
-            </p>
+      <form onSubmit={handleSubmit} noValidate aria-busy={isSubmitting} className="space-y-5">
+        <div>
+          <label htmlFor="naam" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Uw naam</label>
+          <input
+            type="text"
+            id="naam"
+            name="naam"
+            value={formData.naam}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+            aria-required="true"
+            autoComplete="name"
+            className={inputClass('naam')}
+            placeholder="Voor- en achternaam"
+            aria-invalid={touched.naam && errors.naam ? 'true' : 'false'}
+            aria-describedby={touched.naam && errors.naam ? 'naam-error' : undefined}
+            disabled={isSubmitting}
+          />
+          {touched.naam && errors.naam && <p id="naam-error" role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="telefoon" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Telefoonnummer</label>
+          <input
+            type="tel"
+            id="telefoon"
+            name="telefoon"
+            value={formData.telefoon}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+            aria-required="true"
+            autoComplete="tel"
+            inputMode="tel"
+            spellCheck={false}
+            className={inputClass('telefoon')}
+            placeholder="06-12345678"
+            aria-invalid={touched.telefoon && errors.telefoon ? 'true' : 'false'}
+            aria-describedby={touched.telefoon && errors.telefoon ? 'telefoon-error' : undefined}
+            disabled={isSubmitting}
+          />
+          {touched.telefoon && errors.telefoon && <p id="telefoon-error" role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer</label>
+          <input
+            type="text"
+            id="adres"
+            name="adres"
+            value={formData.adres}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            required
+            aria-required="true"
+            autoComplete="street-address"
+            className={inputClass('adres')}
+            placeholder="Bijv. Stationsweg 12"
+            aria-invalid={touched.adres && errors.adres ? 'true' : 'false'}
+            aria-describedby={touched.adres && errors.adres ? 'adres-error' : undefined}
+            disabled={isSubmitting}
+          />
+          {touched.adres && errors.adres && <p id="adres-error" role="alert" className="mt-1 text-sm text-red-600">{errors.adres}</p>}
+        </div>
+
+        <div className="grid grid-cols-[8.5rem_1fr] gap-3">
+          <div>
+            <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode</label>
+            <input
+              type="text"
+              id="postcode"
+              name="postcode"
+              value={formData.postcode}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+              aria-required="true"
+              autoComplete="postal-code"
+              spellCheck={false}
+              className={inputClass('postcode')}
+              placeholder="2511 CV"
+              aria-invalid={touched.postcode && errors.postcode ? 'true' : 'false'}
+              aria-describedby={touched.postcode && errors.postcode ? 'postcode-error' : undefined}
+              disabled={isSubmitting}
+            />
+          </div>
+          <div>
+            <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats</label>
+            <input
+              type="text"
+              id="plaats"
+              name="plaats"
+              value={formData.plaats}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              required
+              aria-required="true"
+              autoComplete="address-level2"
+              className={inputClass('plaats')}
+              placeholder="Bijv. Den Haag"
+              aria-invalid={touched.plaats && errors.plaats ? 'true' : 'false'}
+              aria-describedby={touched.plaats && errors.plaats ? 'plaats-error' : undefined}
+              disabled={isSubmitting}
+            />
           </div>
         </div>
-      )}
-
-      {/* Vooraf laten zien dat er twee stappen zijn. Zonder dit drukt iemand
-          op versturen en krijgt onaangekondigd een tweede scherm; dat voelt
-          als een truc, juist bij een doelgroep die toch al voorzichtig is.
-          De balk staat op aria-hidden omdat de regel erboven hetzelfde al
-          in woorden zegt - kleur alleen is hier geen signaal. */}
-      <div className="mb-6">
-        <p className="text-sm font-semibold text-gray-700 mb-2">
-          Stap {step} van 2{' '}
-          <span className="font-normal text-gray-600">
-            — {step === 1 ? 'uw naam en telefoonnummer' : 'uw adres'}
-          </span>
-        </p>
-        <div className="flex gap-2" aria-hidden="true">
-          <span className="h-2 flex-1 rounded-full bg-blue-600" />
-          <span className={`h-2 flex-1 rounded-full ${step === 2 ? 'bg-blue-600' : 'bg-gray-200'}`} />
-        </div>
-      </div>
-
-      <form onSubmit={handleSubmit} noValidate aria-busy={isSubmitting} className="space-y-5">
-        {step === 1 ? (
-          <>
-            <div>
-              <label htmlFor="naam" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Uw naam</label>
-              <input
-                type="text"
-                id="naam"
-                name="naam"
-                value={formData.naam}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                required
-                aria-required="true"
-                autoComplete="name"
-                className={inputClass('naam')}
-                placeholder="Voor- en achternaam"
-                aria-invalid={touched.naam && errors.naam ? 'true' : 'false'}
-                aria-describedby={touched.naam && errors.naam ? 'naam-error' : undefined}
-                disabled={isSubmitting}
-              />
-              {touched.naam && errors.naam && <p id="naam-error" role="alert" className="mt-1 text-sm text-red-600">{errors.naam}</p>}
-            </div>
-
-            <div>
-              <label htmlFor="telefoon" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Telefoonnummer</label>
-              <input
-                type="tel"
-                id="telefoon"
-                name="telefoon"
-                value={formData.telefoon}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                required
-                aria-required="true"
-                autoComplete="tel"
-                inputMode="tel"
-                spellCheck={false}
-                className={inputClass('telefoon')}
-                placeholder="06-12345678"
-                aria-invalid={touched.telefoon && errors.telefoon ? 'true' : 'false'}
-                aria-describedby={touched.telefoon && errors.telefoon ? 'telefoon-error' : undefined}
-                disabled={isSubmitting}
-              />
-              {touched.telefoon && errors.telefoon && <p id="telefoon-error" role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>}
-            </div>
-
-            {/* Boven de knop, niet eronder: wie hier op drukt moet al weten
-                wat er daarna komt. */}
-            <p className="text-sm text-gray-600">
-              Hierna vragen we nog uw adres, zodat we een student bij u in de buurt kunnen inplannen.
-            </p>
-
-            <button type="submit" disabled={isSubmitting} className="btn-submit">
-              {isSubmitting ? (
-                <span className="flex items-center justify-center gap-3">{spinner}Verstuur en ga verder</span>
-              ) : (
-                'Verstuur en ga verder'
-              )}
-            </button>
-            <p className="text-center text-sm text-gray-600">
-              Geen verplichtingen. We bellen u meestal binnen een uur terug, alle dagen tussen {HOURS.OPEN} en {HOURS.CLOSE} uur.
-            </p>
-          </>
-        ) : (
-          <>
-            <p className="text-gray-700">
-              Geeft u uw adres alvast door? Dan sturen we meteen een student bij u in de buurt. Liever aan de telefoon? Dat mag ook.
-            </p>
-
-            <div>
-              <label htmlFor="adres" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Straat en huisnummer</label>
-              <input
-                type="text"
-                id="adres"
-                name="adres"
-                value={formData.adres}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                autoComplete="street-address"
-                className={inputClass('adres')}
-                placeholder="Bijv. Stationsweg 12"
-                aria-invalid={touched.adres && errors.adres ? 'true' : 'false'}
-                aria-describedby={touched.adres && errors.adres ? 'adres-error' : undefined}
-                disabled={isSubmitting}
-              />
-              {touched.adres && errors.adres && <p id="adres-error" role="alert" className="mt-1 text-sm text-red-600">{errors.adres}</p>}
-            </div>
-
-            <div className="grid grid-cols-[8.5rem_1fr] gap-3">
-              <div>
-                <label htmlFor="postcode" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Postcode</label>
-                <input
-                  type="text"
-                  id="postcode"
-                  name="postcode"
-                  value={formData.postcode}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  autoComplete="postal-code"
-                  spellCheck={false}
-                  className={inputClass('postcode')}
-                  placeholder="2511 CV"
-                  aria-invalid={touched.postcode && errors.postcode ? 'true' : 'false'}
-                  aria-describedby={touched.postcode && errors.postcode ? 'postcode-error' : undefined}
-                  disabled={isSubmitting}
-                />
-              </div>
-              <div>
-                <label htmlFor="plaats" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">Woonplaats</label>
-                <input
-                  type="text"
-                  id="plaats"
-                  name="plaats"
-                  value={formData.plaats}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  autoComplete="address-level2"
-                  className={inputClass('plaats')}
-                  placeholder="Bijv. Den Haag"
-                  aria-invalid={touched.plaats && errors.plaats ? 'true' : 'false'}
-                  aria-describedby={touched.plaats && errors.plaats ? 'plaats-error' : undefined}
-                  disabled={isSubmitting}
-                />
-              </div>
-            </div>
-            {/* Fouten van het postcode/plaats-paar onder de rij, zodat de kolommen niet verspringen */}
-            {((touched.postcode && errors.postcode) || (touched.plaats && errors.plaats)) && (
-              <div className="-mt-3">
-                {touched.postcode && errors.postcode && <p id="postcode-error" role="alert" className="text-sm text-red-600">{errors.postcode}</p>}
-                {touched.plaats && errors.plaats && <p id="plaats-error" role="alert" className="text-sm text-red-600">{errors.plaats}</p>}
-              </div>
-            )}
-
-            <div>
-              <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
-                Waar gaat het om? <span className="font-normal text-gray-500">(mag u ook aan de telefoon vertellen)</span>
-              </label>
-              <textarea
-                id="probleem"
-                name="probleem"
-                value={formData.probleem}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                rows={3}
-                className={`${inputClass('probleem')} resize-none`}
-                placeholder="Bijv. ‘Mijn laptop start niet op’ of ‘Wifi werkt niet meer’"
-                aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'}
-                aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
-                disabled={isSubmitting}
-              />
-              {touched.probleem && errors.probleem && <p id="probleem-error" role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>}
-            </div>
-
-            <div>
-              <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
-                E-mail <span className="font-normal text-gray-500">(niet verplicht)</span>
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                autoComplete="email"
-                inputMode="email"
-                spellCheck={false}
-                autoCapitalize="none"
-                className={inputClass('email')}
-                placeholder="uw@email.nl"
-                aria-invalid={touched.email && errors.email ? 'true' : 'false'}
-                aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
-                disabled={isSubmitting}
-              />
-              {touched.email && errors.email && <p id="email-error" role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>}
-            </div>
-
-            <button type="submit" disabled={isSubmitting} className="btn-submit">
-              {isSubmitting ? (
-                <span className="flex items-center justify-center gap-3">{spinner}Adres doorgeven</span>
-              ) : (
-                'Adres doorgeven'
-              )}
-            </button>
-            {/* Hier stond een knop "Overslaan". Die is er op verzoek uit: het
-                adres is nodig om een student in te plannen. Dit is geen
-                doodlopende weg - de aanvraag is na stap 1 al verstuurd, en
-                onder het formulier staat het telefoonnummer voor wie het
-                liever aan de telefoon doorgeeft. */}
-            <p className="text-center text-sm text-gray-600">
-              Liever niet online? Bel ons op{' '}
-              <a href={BUSINESS.PHONE_HREF} translate="no" className="font-semibold text-blue-700 whitespace-nowrap">{BUSINESS.PHONE}</a>
-              {' '}— we hebben uw nummer al, dus we bellen u sowieso terug.
-            </p>
-          </>
+        {/* Fouten van het postcode/plaats-paar onder de rij, zodat de kolommen niet verspringen */}
+        {((touched.postcode && errors.postcode) || (touched.plaats && errors.plaats)) && (
+          <div className="-mt-3">
+            {touched.postcode && errors.postcode && <p id="postcode-error" role="alert" className="text-sm text-red-600">{errors.postcode}</p>}
+            {touched.plaats && errors.plaats && <p id="plaats-error" role="alert" className="text-sm text-red-600">{errors.plaats}</p>}
+          </div>
         )}
+
+        <div>
+          <label htmlFor="probleem" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
+            Waar gaat het om? <span className="font-normal text-gray-500">(mag u ook aan de telefoon vertellen)</span>
+          </label>
+          <textarea
+            id="probleem"
+            name="probleem"
+            value={formData.probleem}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            rows={3}
+            className={`${inputClass('probleem')} resize-none`}
+            placeholder="Bijv. ‘Mijn laptop start niet op’ of ‘Wifi werkt niet meer’"
+            aria-invalid={touched.probleem && errors.probleem ? 'true' : 'false'}
+            aria-describedby={touched.probleem && errors.probleem ? 'probleem-error' : undefined}
+            disabled={isSubmitting}
+          />
+          {touched.probleem && errors.probleem && <p id="probleem-error" role="alert" className="mt-1 text-sm text-red-600">{errors.probleem}</p>}
+        </div>
+
+        <div>
+          <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
+            E-mail <span className="font-normal text-gray-500">(niet verplicht)</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            autoComplete="email"
+            inputMode="email"
+            spellCheck={false}
+            autoCapitalize="none"
+            className={inputClass('email')}
+            placeholder="uw@email.nl"
+            aria-invalid={touched.email && errors.email ? 'true' : 'false'}
+            aria-describedby={touched.email && errors.email ? 'email-error' : undefined}
+            disabled={isSubmitting}
+          />
+          {touched.email && errors.email && <p id="email-error" role="alert" className="mt-1 text-sm text-red-600">{errors.email}</p>}
+        </div>
 
         {/* Honeypot, real users won't fill this, bots will */}
         <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
@@ -470,6 +362,23 @@ export default function AfspraakForm() {
             autoComplete="off"
           />
         </div>
+
+        <button type="submit" disabled={isSubmitting} className="btn-submit">
+          {isSubmitting ? (
+            <span className="flex items-center justify-center gap-3">
+              <svg className="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+                <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+              </svg>
+              Verstuur mijn aanvraag
+            </span>
+          ) : (
+            'Verstuur mijn aanvraag'
+          )}
+        </button>
+        <p className="text-center text-sm text-gray-600">
+          Geen verplichtingen. We bellen u meestal binnen een uur terug, alle dagen tussen {HOURS.OPEN} en {HOURS.CLOSE} uur.
+        </p>
       </form>
     </>
   )
