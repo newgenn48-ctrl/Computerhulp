@@ -241,6 +241,24 @@ export default function AfspraakForm() {
         </div>
       )}
 
+      {/* Vooraf laten zien dat er twee stappen zijn. Zonder dit drukt iemand
+          op versturen en krijgt onaangekondigd een tweede scherm; dat voelt
+          als een truc, juist bij een doelgroep die toch al voorzichtig is.
+          De balk staat op aria-hidden omdat de regel erboven hetzelfde al
+          in woorden zegt - kleur alleen is hier geen signaal. */}
+      <div className="mb-6">
+        <p className="text-sm font-semibold text-gray-700 mb-2">
+          Stap {step} van 2{' '}
+          <span className="font-normal text-gray-600">
+            — {step === 1 ? 'uw naam en telefoonnummer' : 'uw adres'}
+          </span>
+        </p>
+        <div className="flex gap-2" aria-hidden="true">
+          <span className="h-2 flex-1 rounded-full bg-blue-600" />
+          <span className={`h-2 flex-1 rounded-full ${step === 2 ? 'bg-blue-600' : 'bg-gray-200'}`} />
+        </div>
+      </div>
+
       <form onSubmit={handleSubmit} noValidate aria-busy={isSubmitting} className="space-y-5">
         {step === 1 ? (
           <>
@@ -288,11 +306,17 @@ export default function AfspraakForm() {
               {touched.telefoon && errors.telefoon && <p id="telefoon-error" role="alert" className="mt-1 text-sm text-red-600">{errors.telefoon}</p>}
             </div>
 
+            {/* Boven de knop, niet eronder: wie hier op drukt moet al weten
+                wat er daarna komt. */}
+            <p className="text-sm text-gray-600">
+              Hierna vragen we nog uw adres, zodat we een student bij u in de buurt kunnen inplannen.
+            </p>
+
             <button type="submit" disabled={isSubmitting} className="btn-submit">
               {isSubmitting ? (
-                <span className="flex items-center justify-center gap-3">{spinner}Verstuur mijn aanvraag</span>
+                <span className="flex items-center justify-center gap-3">{spinner}Verstuur en ga verder</span>
               ) : (
-                'Verstuur mijn aanvraag'
+                'Verstuur en ga verder'
               )}
             </button>
             <p className="text-center text-sm text-gray-600">
