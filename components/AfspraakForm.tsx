@@ -444,14 +444,16 @@ export default function AfspraakForm() {
                 'Adres doorgeven'
               )}
             </button>
-            <button
-              type="button"
-              onClick={goToConfirmation}
-              disabled={isSubmitting}
-              className="w-full py-3 text-base font-medium text-gray-600 underline underline-offset-4 hover:text-blue-700 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600 rounded-lg"
-            >
-              Overslaan, vraag het maar als u belt
-            </button>
+            {/* Hier stond een knop "Overslaan". Die is er op verzoek uit: het
+                adres is nodig om een student in te plannen. Dit is geen
+                doodlopende weg - de aanvraag is na stap 1 al verstuurd, en
+                onder het formulier staat het telefoonnummer voor wie het
+                liever aan de telefoon doorgeeft. */}
+            <p className="text-center text-sm text-gray-600">
+              Liever niet online? Bel ons op{' '}
+              <a href={BUSINESS.PHONE_HREF} translate="no" className="font-semibold text-blue-700 whitespace-nowrap">{BUSINESS.PHONE}</a>
+              {' '}— we hebben uw nummer al, dus we bellen u sowieso terug.
+            </p>
           </>
         )}
 
