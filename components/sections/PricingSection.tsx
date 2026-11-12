@@ -28,7 +28,6 @@ export default function PricingSection({ cityName }: PricingSectionProps) {
     `${PRICING.TRAVEL} voorrijkosten ${waar}.`,
     'U betaalt pas achteraf, via pin, contant of Tikkie.',
     'Lukt het niet, dan betaalt u alleen de tijd van het uitzoeken.',
-    'Werkt het binnen 30 dagen toch weer niet? Dan komen we gratis terug.',
   ]
 
   return (
