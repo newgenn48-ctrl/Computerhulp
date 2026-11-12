@@ -200,7 +200,7 @@ const faqCategories = [
       },
       {
         question: 'Wat als ik niet tevreden ben?',
-        answer: 'Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose. Werkt iets binnen 30 dagen na ons bezoek toch weer niet, dan komen we gratis terug.'
+        answer: 'Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose.'
       }
     ]
   },

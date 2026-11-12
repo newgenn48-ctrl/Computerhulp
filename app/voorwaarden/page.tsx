@@ -116,22 +116,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">8. Garantie</h2>
-            <p>
-              Op uitgevoerde werkzaamheden geldt een garantie van 30 dagen, mits:
-            </p>
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Het probleem direct gerelateerd is aan onze werkzaamheden</li>
-              <li>Er geen andere wijzigingen zijn aangebracht</li>
-              <li>De klant zich houdt aan onze adviezen</li>
-            </ul>
-            <p className="mt-4">
-              Bij garantiewerkzaamheden komen we gratis terug om het op te lossen.
-            </p>
-          </section>
-
-          <section>
-            <h2 className="content-title mt-8 mb-4">9. Privacy en geheimhouding</h2>
+            <h2 className="content-title mt-8 mb-4">8. Privacy en geheimhouding</h2>
             <p>
               Wij gaan vertrouwelijk om met alle informatie die wij tijdens onze werkzaamheden tegenkomen.
               Zie ook onze <a href="/privacy" className="text-blue-600 hover:underline">Privacyverklaring</a>.
@@ -139,7 +124,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">10. Klachten</h2>
+            <h2 className="content-title mt-8 mb-4">9. Klachten</h2>
             <p>
               Klachten moeten binnen 14 dagen na afronding van werkzaamheden worden gemeld via:
             </p>
@@ -153,7 +138,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">11. Geschillen</h2>
+            <h2 className="content-title mt-8 mb-4">10. Geschillen</h2>
             <p>
               Bij geschillen proberen we eerst samen tot een oplossing te komen.
               Lukt dit niet, dan is de rechtbank in het arrondissement waar Computerhulp Zuid-Holland is gevestigd bevoegd.
@@ -164,7 +149,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">12. Wijzigingen voorwaarden</h2>
+            <h2 className="content-title mt-8 mb-4">11. Wijzigingen voorwaarden</h2>
             <p>
               Wij kunnen deze voorwaarden wijzigen. De laatste versie staat altijd op deze pagina.
               De voorwaarden die golden bij totstandkoming van de overeenkomst blijven van toepassing.
@@ -172,7 +157,7 @@ export default function VoorwaardenPage() {
           </section>
 
           <section>
-            <h2 className="content-title mt-8 mb-4">13. Toepasselijk recht</h2>
+            <h2 className="content-title mt-8 mb-4">12. Toepasselijk recht</h2>
             <p>
               Op alle overeenkomsten is Nederlands recht van toepassing.
             </p>
