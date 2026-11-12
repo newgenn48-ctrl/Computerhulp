@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
+import CallbackSection from '@/components/sections/CallbackSection'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -208,7 +209,6 @@ export default function HomePage() {
       }) }} />
 
       <Hero
-        trustLine=""
         pills={[
           { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
           { icon: 'money', label: 'Betaalbare tarieven' },
@@ -281,6 +281,7 @@ export default function HomePage() {
       </section>
 
       {/* Bellen of teruggebeld worden: direct onder de geruststelling, als de bezoeker overtuigd is */}
+      <CallbackSection />
 
       {/* Plaatsen met een eigen zin per stad */}
       <LocalCitiesSection />

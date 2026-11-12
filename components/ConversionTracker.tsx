@@ -7,7 +7,13 @@ interface ConversionTrackerProps {
   conversionLabel: string
 }
 
-type GtagFn = (command: string, eventName: string, params: Record<string, unknown>) => void
+/* Derde argument is een object bij 'event'/'consent', maar een losse boolean bij
+   gtag('set', 'ads_data_redaction', true) in app/layout.tsx en CookieConsent. */
+type GtagFn = (
+  command: string,
+  eventName: string,
+  params?: Record<string, unknown> | boolean,
+) => void
 
 declare global {
   interface Window {

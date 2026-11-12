@@ -15,6 +15,11 @@ function updateConsent(granted: boolean) {
     analytics_storage: value,
     personalization_storage: value,
   })
+  /* Spiegelt het head-script in app/layout.tsx. Bij weigeren blijft de
+     advertentiedata geredigeerd en gaan er alleen cookieloze pings uit; bij
+     accepteren mag het volledige verkeer weer. Zonder dit blijft `true` staan
+     na een accept binnen dezelfde paginaweergave. */
+  window.gtag('set', 'ads_data_redaction', !granted)
 }
 
 export default function CookieConsent() {

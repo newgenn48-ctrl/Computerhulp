@@ -101,6 +101,11 @@ export const villages: Village[] = [
   { slug: 'sassenheim', name: 'Sassenheim', municipality: 'teylingen' },
   { slug: 'voorhout', name: 'Voorhout', municipality: 'teylingen' },
   { slug: 'warmond', name: 'Warmond', municipality: 'teylingen' },
+  /* Brielle en Zwartewaal hoorden nooit bij Westvoorne: alle drie zijn in 2023
+     opgegaan in de nieuwe gemeente Voorne aan Zee. Ze staan hier onder
+     'westvoorne' omdat dat de pagina is waarop ze gevonden worden, niet omdat
+     het een gemeentelijke indeling is. De pagina zegt daarom "rond X liggen
+     meer dorpen", niet "de gemeente X". */
   { slug: 'brielle', name: 'Brielle', municipality: 'westvoorne' },
   { slug: 'oostvoorne', name: 'Oostvoorne', municipality: 'westvoorne' },
   { slug: 'rockanje', name: 'Rockanje', municipality: 'westvoorne' },

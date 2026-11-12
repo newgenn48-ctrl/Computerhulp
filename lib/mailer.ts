@@ -1,5 +1,10 @@
 import nodemailer from 'nodemailer'
 import { sanitizeHtml, sanitizeText } from './sanitize'
+/* De reactietijd en het nummer komen uit de constants, niet uit deze
+   bestandstekst. Hier stond "binnen 3 uur op werkdagen" terwijl de site op
+   elke pagina "meestal binnen 1 uur" belooft: de bevestigingsmail zette de
+   verwachting die we net gewonnen hadden weer terug. */
+import { BUSINESS, HOURS } from './constants'
 
 export interface ContactFormData {
   name: string
@@ -122,11 +127,11 @@ ${textMessage}
                 zo spoedig mogelijk contact met u opnemen.
               </p>
               <p>
-                In de meeste gevallen reageren we binnen 3 uur op werkdagen.
+                We reageren ${BUSINESS.RESPONSE_TIME}, tussen ${HOURS.OPEN} en ${HOURS.CLOSE} uur.
                 Heeft u spoed? Bel ons gerust direct!
               </p>
               <div style="text-align: center;">
-                <a href="tel:0858002006" class="button">Bel direct: 085-8002006</a>
+                <a href="${BUSINESS.PHONE_HREF}" class="button">Bel direct: ${BUSINESS.PHONE}</a>
               </div>
               <p>
                 <strong>Uw gegevens:</strong><br>
@@ -140,7 +145,7 @@ ${textMessage}
             </div>
             <div class="footer">
               <p>
-                Computerhulp Zuid-Holland | 085-8002006 | info@computerhulpzh.nl<br>
+                ${BUSINESS.NAME} | ${BUSINESS.PHONE} | ${BUSINESS.EMAIL}<br>
                 KvK: 91310318 | BTW: NL865613461B01
               </p>
             </div>
@@ -153,7 +158,7 @@ Beste ${textName},
 
 Hartelijk dank voor uw bericht! We hebben uw aanvraag goed ontvangen en zullen zo spoedig mogelijk contact met u opnemen.
 
-In de meeste gevallen reageren we binnen 3 uur op werkdagen. Heeft u spoed? Bel ons gerust direct op 085-8002006!
+We reageren ${BUSINESS.RESPONSE_TIME}, tussen ${HOURS.OPEN} en ${HOURS.CLOSE} uur. Heeft u spoed? Bel ons gerust direct op ${BUSINESS.PHONE}!
 
 Uw gegevens:
 E-mail: ${textEmail}
@@ -163,7 +168,7 @@ Met vriendelijke groet,
 Computerhulp Zuid-Holland
 
 ---
-Computerhulp Zuid-Holland | 085-8002006 | info@computerhulpzh.nl
+${BUSINESS.NAME} | ${BUSINESS.PHONE} | ${BUSINESS.EMAIL}
 KvK: 91310318 | BTW: NL865613461B01
     `,
   }

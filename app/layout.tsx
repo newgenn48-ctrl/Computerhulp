@@ -108,6 +108,16 @@ export default function RootLayout({
               'personalization_storage': 'denied',
               'security_storage': 'granted'
             });
+            // Zonder deze twee regels is een bezoeker die de cookiebalk negeert
+            // onzichtbaar voor Google Ads: de gclid verdwijnt bij de eerste
+            // navigatie, dus een aanvraag of belklik is daarna niet meer aan de
+            // advertentieklik te koppelen. Dit is de door Google voorgeschreven
+            // 'advanced' consent mode: bij geweigerde toestemming gaan er alleen
+            // cookieloze pings uit, die Google voor modellering gebruikt. Er
+            // worden geen cookies geplaatst, dus dit verandert niets aan de
+            // toestemming zelf.
+            gtag('set', 'ads_data_redaction', true);
+            gtag('set', 'url_passthrough', true);
             // Eerdere keuze herstellen vóór GTM evalueert, en vóór de eerste
             // paint markeren op <html> zodat de banner niet flitst bij
             // terugkerende bezoekers.
@@ -124,6 +134,9 @@ export default function RootLayout({
                   'analytics_storage': 'granted',
                   'personalization_storage': 'granted'
                 });
+                // Toestemming gegeven: er mogen weer volledige, cookie-gedragen
+                // pings uit, dus de redactie gaat eraf.
+                gtag('set', 'ads_data_redaction', false);
               }
             } catch(e) {}
           `}

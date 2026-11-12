@@ -7,6 +7,11 @@ import { LEAD_SENT_KEY } from '@/components/ConversionTracker'
 import { BUSINESS, HOURS } from '@/lib/constants'
 import { validatePhone } from '@/lib/sanitize'
 
+/* Zelfde conversie-actie als de bedankpagina, zodat Google Ads beide wegen
+   als één actie "aanvraag" telt. */
+const ADS_ID = 'AW-16733341823'
+const FORM_LABEL = 'aDxYCK7Ct-gaEP-Qiqs-'
+
 type Field = 'naam' | 'telefoon' | 'email' | 'adres' | 'postcode' | 'plaats' | 'probleem'
 
 type Rule = {
@@ -57,13 +62,43 @@ export default function AfspraakForm() {
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle')
   const [serverError, setServerError] = useState('')
 
+  /* De foutbalk staat boven zeven velden. Wie onderaan op verzenden tikt ziet
+     daar niets gebeuren, denkt dat de knop stuk is en vertrekt. Dus de melding
+     naar de bezoeker toe brengen. */
+  const showErrorBanner = () => {
+    requestAnimationFrame(() => {
+      const el = document.getElementById('afspraak-error')
+      el?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+      el?.focus({ preventScroll: true })
+    })
+  }
+
   // Waarschuw bij wegklikken als er al iets is ingevuld en nog niet is verstuurd
   const isDirty = Object.entries(formData).some(([k, v]) => k !== 'website' && v.trim() !== '')
   useEffect(() => {
     if (!isDirty || submitStatus === 'success') return
-    const warn = (e: BeforeUnloadEvent) => { e.preventDefault() }
+    let leavingOnPurpose = false
+    const warn = (e: BeforeUnloadEvent) => {
+      // Bellen of WhatsAppen is geen ongeluk, dat is juist de bedoeling. Zonder
+      // deze uitzondering kreeg iemand met een half ingevuld formulier die op
+      // het nummer tikte een "Deze site verlaten?"-dialoog over zijn gesprek
+      // heen — precies op het duurste moment dat er is.
+      if (leavingOnPurpose) return
+      e.preventDefault()
+    }
+    const allow = (ev: Event) => {
+      const t = ev.target
+      if (!(t instanceof Element)) return
+      if (t.closest('a[href^="tel:"], a[href^="mailto:"], a[href*="wa.me"]')) {
+        leavingOnPurpose = true
+      }
+    }
     window.addEventListener('beforeunload', warn)
-    return () => window.removeEventListener('beforeunload', warn)
+    document.addEventListener('pointerdown', allow, true)
+    return () => {
+      window.removeEventListener('beforeunload', warn)
+      document.removeEventListener('pointerdown', allow, true)
+    }
   }, [isDirty, submitStatus])
 
   const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -127,10 +162,32 @@ export default function AfspraakForm() {
 
       if (response.ok) {
         setSubmitStatus('success')
-        try {
-          window.sessionStorage.setItem(LEAD_SENT_KEY, '1')
-        } catch {
-          // sessionStorage kan geblokkeerd zijn; dan telt de bedankpagina niets, liever te weinig dan dubbel
+        /* De conversie gaat nu hier af, op het antwoord van de server, en niet
+           meer uitsluitend via een sessionStorage-vlag op de bedankpagina. Die
+           vlag overleefde geen geblokkeerde sessionStorage en geen routewissel
+           die onderweg misgaat: de aanvraag kwam dan binnen zonder dat Google
+           Ads hem ooit zag. Lukt het hier niet, dan valt hij terug op de
+           bedankpagina — nooit beide, dus nooit dubbel geteld.
+           transport_type 'beacon', want direct hierna navigeren we weg. */
+        const payload = await response.json().catch(() => null)
+        const isLead = payload?.counted !== false
+        const w = window as Window & { gtag?: (...args: unknown[]) => void }
+        let counted = false
+        if (isLead && typeof w.gtag === 'function') {
+          w.gtag('event', 'lead_form', { event_category: 'contact', form: 'afspraak' })
+          w.gtag('event', 'conversion', {
+            send_to: `${ADS_ID}/${FORM_LABEL}`,
+            transaction_id: `af-${Date.now()}`,
+            transport_type: 'beacon',
+          })
+          counted = true
+        }
+        if (isLead && !counted) {
+          try {
+            window.sessionStorage.setItem(LEAD_SENT_KEY, '1')
+          } catch {
+            // sessionStorage geblokkeerd én geen gtag: dan telt er niets, liever te weinig dan dubbel
+          }
         }
         router.push('/afspraak-bevestiging')
         return
@@ -149,9 +206,11 @@ export default function AfspraakForm() {
       setServerError(msg)
       setSubmitStatus('error')
       setIsSubmitting(false)
+      showErrorBanner()
     } catch {
       setSubmitStatus('error')
       setIsSubmitting(false)
+      showErrorBanner()
     } finally {
       clearTimeout(timeoutId)
       // Bij succes blijft de knop uit tot de bedankpagina er is: geen dubbele inzending door een tweede klik
@@ -166,7 +225,7 @@ export default function AfspraakForm() {
   return (
     <>
       {submitStatus === 'error' && (
-        <div role="alert" aria-live="assertive" className="alert-error">
+        <div id="afspraak-error" tabIndex={-1} role="alert" aria-live="assertive" className="alert-error">
           <div className="flex items-center">
             <Icon name="error-circle" className="w-6 h-6 text-red-500 mr-3" strokeWidth={2} aria-hidden="true" />
             <div>

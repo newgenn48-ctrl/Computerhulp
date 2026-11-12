@@ -40,7 +40,16 @@ export async function POST(request: NextRequest) {
 
     // Honeypot — bots fill hidden fields, humans don't
     if (website) {
-      return NextResponse.json({ message: 'Hulpvraag succesvol verzonden!' }, { status: 200 })
+      // Een bot krijgt 200, zodat hij niet leert dat het veld een val is. Maar
+      // counted:false erbij: zonder die vlag vuurde de client een Ads-conversie
+      // af voor een aanvraag die nooit bestond. Een echte bezoeker kan hier ook
+      // belanden als zijn wachtwoordmanager het veld invult, en dan hoort er
+      // ook niets geteld te worden.
+      console.warn('[Honeypot] inzending geweigerd, veld "website" was gevuld')
+      return NextResponse.json(
+        { message: 'Hulpvraag succesvol verzonden!', counted: false },
+        { status: 200 }
+      )
     }
 
     // Alleen naam en telefoonnummer zijn verplicht. Hiervoor stonden alle

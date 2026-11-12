@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { usePathname } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { BUSINESS, HOURS } from '@/lib/constants'
@@ -30,6 +30,16 @@ export default function CallbackForm({ compact = false }: { compact?: boolean })
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
   const [serverError, setServerError] = useState('')
 
+  /* De foutbalk staat boven het formulier. Op een telefoon tikt iemand de knop
+     onderaan aan en ziet hij daar niets veranderen: de knop lijkt stuk en hij
+     vertrekt. Daarom de melding naar hem toe brengen in plaats van omgekeerd. */
+  useEffect(() => {
+    if (status !== 'error') return
+    const el = document.getElementById('cb-error')
+    el?.scrollIntoView({ block: 'center', behavior: 'smooth' })
+    el?.focus({ preventScroll: true })
+  }, [status])
+
   const handleSubmit = async (ev: React.FormEvent) => {
     ev.preventDefault()
     const e: { naam?: string; telefoon?: string } = {}
@@ -44,7 +54,11 @@ export default function CallbackForm({ compact = false }: { compact?: boolean })
     setStatus('sending')
     setServerError('')
     const controller = new AbortController()
-    const timeout = setTimeout(() => controller.abort(), 10000)
+    // 30 s, gelijk aan maxDuration van /api/landing-afspraak. Op 10 s brak de
+    // client af terwijl twee SMTP-verzendingen vanaf een koude start nog
+    // liepen: de klant zag een foutmelding, de mail kwam aan en de conversie
+    // werd niet geteld.
+    const timeout = setTimeout(() => controller.abort(), 30000)
     try {
       const res = await fetch('/api/landing-afspraak', {
         method: 'POST',
@@ -54,8 +68,12 @@ export default function CallbackForm({ compact = false }: { compact?: boolean })
       })
       if (res.ok) {
         setStatus('sent')
+        // De server antwoordt op een honeypot-treffer met 200 en counted:false,
+        // zodat een bot niets leert. Dan is er geen aanvraag en dus ook geen
+        // conversie te tellen.
+        const payload = await res.json().catch(() => null)
         const w = window as Window & { gtag?: Gtag }
-        if (typeof w.gtag === 'function') {
+        if (payload?.counted !== false && typeof w.gtag === 'function') {
           w.gtag('event', 'lead_form', { event_category: 'contact', form: 'terugbellen' })
           w.gtag('event', 'conversion', { send_to: `${ADS_ID}/${FORM_LABEL}`, transaction_id: `cb-${Date.now()}` })
         }
@@ -94,10 +112,23 @@ export default function CallbackForm({ compact = false }: { compact?: boolean })
   return (
     <form onSubmit={handleSubmit} noValidate aria-busy={status === 'sending'} className="space-y-3">
       {status === 'error' && (
-        <div role="alert" className="rounded-xl bg-red-50 border border-red-200 p-4 text-red-800 text-sm">
-          {serverError ? `${serverError}. ` : 'Versturen is niet gelukt. '}
-          Bel ons gerust direct op{' '}
-          <a href={BUSINESS.PHONE_HREF} translate="no" className="font-bold underline whitespace-nowrap">{BUSINESS.PHONE}</a>.
+        /* De servermelding eindigt vaak al op een punt en noemt soms zelf het
+           nummer. Zonder deze twee controles stond er "...085-8002006.. Bel ons
+           gerust direct op 085-8002006." Zelfde oplossing als in AfspraakForm. */
+        <div
+          id="cb-error"
+          tabIndex={-1}
+          role="alert"
+          aria-live="assertive"
+          className="rounded-xl bg-red-50 border border-red-200 p-4 text-red-800 text-sm"
+        >
+          {serverError ? serverError.replace(/\.\s*$/, '') : 'Versturen is niet gelukt'}
+          {serverError.includes(BUSINESS.PHONE) ? '.' : (
+            <>
+              . Bel ons gerust direct op{' '}
+              <a href={BUSINESS.PHONE_HREF} translate="no" className="font-bold underline whitespace-nowrap">{BUSINESS.PHONE}</a>.
+            </>
+          )}
         </div>
       )}
 

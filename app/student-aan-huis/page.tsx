@@ -6,6 +6,7 @@ import Hero from '@/components/sections/Hero'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
+import CallbackSection from '@/components/sections/CallbackSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import {
@@ -161,7 +162,6 @@ export default function StudentAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Hero
-        trustLine=""
         pills={[
           { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
           { icon: 'money', label: 'Betaalbare tarieven' },
@@ -199,6 +199,10 @@ export default function StudentAanHuisPage() {
       {/* 4. Reviews */}
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
       <PricingSection />
+
+      {/* Terugbellen op de pagina zelf: anders is de enige weg naar een
+          formulier /afspraak-maken, met vijf velden achter een paginawissel. */}
+      <CallbackSection />
 
       <HowItWorksSection />
 

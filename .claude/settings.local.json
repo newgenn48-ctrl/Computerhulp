@@ -91,7 +91,8 @@
       "Bash(git rm *)",
       "Bash(sort -k5 -n -r)",
       "Bash(awk *)",
-      "Bash(C:/Users/konia/AppData/Local/Microsoft/WindowsApps/python.exe *)"
+      "Bash(C:/Users/konia/AppData/Local/Microsoft/WindowsApps/python.exe *)",
+      "mcp__claude_ai_Windsor_ai__execute_action"
     ]
   }
 }

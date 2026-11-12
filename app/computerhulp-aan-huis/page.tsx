@@ -4,6 +4,7 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
+import CallbackSection from '@/components/sections/CallbackSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
@@ -181,7 +182,6 @@ export default function ComputerhulpAanHuisPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
 
       <Hero
-        trustLine=""
         pills={[
           { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
           { icon: 'money', label: 'Betaalbare tarieven' },
@@ -214,6 +214,10 @@ export default function ComputerhulpAanHuisPage() {
 
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
       <PricingSection />
+
+      {/* Terugbellen op de pagina zelf: anders is de enige weg naar een
+          formulier /afspraak-maken, met vijf velden achter een paginawissel. */}
+      <CallbackSection />
 
       <HowItWorksSection />
 

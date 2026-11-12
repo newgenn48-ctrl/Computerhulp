@@ -4,6 +4,7 @@ import { Metadata } from 'next'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
+import CallbackSection from '@/components/sections/CallbackSection'
 import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -809,7 +810,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       />
 
       <Hero
-        trustLine=""
         pills={[
           { icon: 'academic-cap', label: 'Betrouwbare HBO-studenten' },
           { icon: 'money', label: 'Betaalbare tarieven' },
@@ -851,11 +851,27 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       />
       <PricingSection cityName={city.name} />
 
+      {/* Terugbellen op de pagina zelf. Hiervoor was de enige weg naar een
+          formulier /afspraak-maken, met vijf velden inclusief adres en
+          postcode, achter een paginawissel. Een advertentiebezoeker die niet
+          wil bellen had hier dus geen enkele manier om zich te melden. */}
+      <CallbackSection cityName={city.name} />
+
       <HowItWorksSection />
 
       {/* De foto is bewust niet config.heroImage: dan stond dezelfde
           foto twee keer op de pagina. */}
 
+
+      {/* De inhoud over deze stad staat vóór de FAQ. Hij stond eronder, en
+          daarmee las niemand die niet doorschoof het enige stuk van de pagina
+          dat echt over zijn eigen stad gaat — de wijken, het ziekenhuis, de
+          dikke muren in de oude panden. Dat is precies wat de landelijke
+          concurrenten op hun stadspagina's niet hebben. */}
+      {variant === 'computerhulp'
+        ? <ComputerhulpContentSection city={city} />
+        : <StudentContentSection city={city} />
+      }
 
       {/* FAQ */}
       <section className="panel-section" aria-labelledby="faq-heading">
@@ -877,12 +893,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
           </div>
         </div>
       </section>
-
-      {/* City-specific SEO content */}
-      {variant === 'computerhulp'
-        ? <ComputerhulpContentSection city={city} />
-        : <StudentContentSection city={city} />
-      }
 
       {/* Neighborhoods, alleen als er echte neighborhood data is */}
       {(() => {
@@ -922,7 +932,7 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
                 {variant === 'computerhulp' ? `Ook computerhulp aan huis in ${lijst}` : `Ook een student aan huis in ${lijst}`}
               </h2>
               <p className="section-subtitle mb-8">
-                De gemeente {city.name} bestaat uit meer dan één kern. Wij komen in alle dorpen en wijken
+                Rond {city.name} liggen meer dorpen en kernen. Wij komen in alle dorpen en wijken
                 van {city.name}, voor dezelfde prijs en meestal binnen 24 uur. Voorrijden kost {PRICING.TRAVEL},
                 waar u in {city.name} ook woont.
               </p>

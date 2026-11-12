@@ -27,7 +27,8 @@ export default function PricingSection({ cityName }: PricingSectionProps) {
     'Minimale afname 3 kwartier. De meeste problemen zijn daarbinnen opgelost.',
     `${PRICING.TRAVEL} voorrijkosten ${waar}.`,
     'U betaalt pas achteraf, via pin, contant of Tikkie.',
-    'Lukt het niet, dan betaalt u alleen het uitzoekwerk.',
+    'Lukt het niet, dan betaalt u alleen de tijd van het uitzoeken.',
+    'Werkt het binnen 30 dagen toch weer niet? Dan komen we gratis terug.',
   ]
 
   return (
