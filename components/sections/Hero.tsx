@@ -3,7 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { Icon } from '@/components/icons'
 import HeroPhoto from '@/components/HeroPhoto'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS } from '@/lib/constants'
 
 export interface HeroPill {
   icon: string
@@ -75,7 +75,7 @@ export default function Hero({
   title,
   descriptions = [],
   pills,
-  trustLine = `Meestal binnen 24 uur bij u thuis · ${PRICING.PER_QUARTER} per kwartier, ${PRICING.TRAVEL} voorrijkosten`,
+  trustLine = 'Meestal binnen 24 uur bij u thuis',
 }: HeroProps) {
   return (
     <section
