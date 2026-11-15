@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server'
 import nodemailer from 'nodemailer'
 import { sanitizeHtml, sanitizeText, validateEmail, validatePhone, validateLength } from '@/lib/sanitize'
 import { checkRateLimit, getClientIP, RATE_LIMITS } from '@/lib/rate-limit'
+import { leesToken } from '@/lib/lead-token'
 import { BUSINESS, HOURS } from '@/lib/constants'
 
 // Twee SMTP-verzendingen vanaf een koude start passen niet in de standaard 10 s
@@ -36,7 +37,18 @@ export async function POST(request: NextRequest) {
     }
 
     const body = await request.json()
-    const { naam, telefoon, email, adres, postcode, plaats, probleem, website } = body
+    const { adres, postcode, plaats, website, onvoltooidGemeld } = body
+
+    /* Stap 1 is al door de server gevalideerd en ondertekend. Zit er een
+       geldig token bij, dan zijn díe waarden de waarheid: ze kunnen onderweg
+       niet meer zijn aangepast. Zonder token — een oud tabblad, JavaScript
+       dat niet laadde, een bot — vallen we terug op de velden uit de body,
+       zodat een aanvraag nooit verloren gaat op een technisch detail. */
+    const lead = leesToken(body?.token)
+    const naam = lead ? lead.naam : body?.naam
+    const telefoon = lead ? lead.telefoon : body?.telefoon
+    const email = lead ? lead.email : body?.email
+    const probleem = lead ? lead.probleem : body?.probleem
 
     // Honeypot — bots fill hidden fields, humans don't
     if (website) {
@@ -160,9 +172,22 @@ export async function POST(request: NextRequest) {
     const adminMailOptions = {
       from: process.env.SMTP_FROM,
       to: process.env.SMTP_TO,
+      /* Is er al een "niet afgemaakt"-melding de deur uit, dan is dit geen
+         nieuwe aanvraag maar het vervolg erop. Zelfde kenmerk in het
+         Message-ID, zodat de twee in de mailbox één draad vormen en dezelfde
+         klant niet twee keer gebeld wordt. */
+      ...(lead
+        ? {
+            messageId: `<afgerond-${lead.id}@computerhulpzh.nl>`,
+            references: `<lead-${lead.id}@computerhulpzh.nl>`,
+            inReplyTo: `<lead-${lead.id}@computerhulpzh.nl>`,
+          }
+        : {}),
       // Nummer in de onderwerpregel: dan is terugbellen mogelijk zonder de
       // mail te openen.
-      subject: `Nieuwe hulpvraag: ${textNaam} — ${textTelefoon}`,
+      subject: onvoltooidGemeld === true
+        ? `AFGEROND (was gemeld als niet afgemaakt): ${textNaam} — ${textTelefoon}`
+        : `Nieuwe hulpvraag: ${textNaam} — ${textTelefoon}`,
       html: `
         <!DOCTYPE html>
         <html>
