@@ -107,3 +107,26 @@ export const OG_IMAGE = [
     alt: 'Computerhulp Zuid-Holland – computerhulp aan huis, meestal binnen 24 uur',
   },
 ]
+
+/* TRUSTPILOT
+ *
+ * BUSINESS_UNIT_ID is geverifieerd, niet gegokt: het logo op
+ * consumersiteimages.trustpilot.net/business-units/<id>-198x149-1x.jpg is het
+ * logo van dit bedrijf.
+ *
+ * Het id staat hier klaar voor het geval er ooit een betaald abonnement komt.
+ * Op 16-11-2026 kan er namelijk GEEN widget met de score op de site: Trustpilot
+ * antwoordt op elk display-template met "BusinessUnit does not have access to
+ * that trustbox". Alleen de Review Collector is toegestaan, en die toont geen
+ * cijfer maar nodigt klanten uit zelf een review te schrijven.
+ *
+ * Zet hier nooit de score of het aantal reviews als constante neer. Zo'n getal
+ * veroudert stil, en Google staat een zelf opgevoerde aggregateRating bij
+ * LocalBusiness of Organization sowieso niet toe - ook niet als een widget hem
+ * invoegt. Zie components/TrustpilotWidget.tsx voor de volledige onderbouwing.
+ */
+export const TRUSTPILOT = {
+  BUSINESS_UNIT_ID: '698fbdf845c20b8134509f3e',
+  LOCALE: 'nl-NL',
+  PROFILE_URL: BUSINESS.TRUSTPILOT_URL,
+} as const

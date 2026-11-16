@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react'
 import TestimonialsCarousel from '@/components/TestimonialsCarousel'
+import TrustpilotWidget from '@/components/TrustpilotWidget'
 import type { Testimonial } from '@/lib/testimonials'
 
 interface TestimonialsSectionProps {
@@ -29,6 +30,13 @@ export default function TestimonialsSection({
               Wat onze klanten zeggen
             </h2>
             {subtitle && <p className="section-subtitle">{subtitle}</p>}
+
+            {/* Verwijzing naar de bron. De citaten hieronder zijn een selectie
+                die met de hand wordt bijgewerkt; deze link gaat naar het
+                volledige, actuele profiel. Bewust zonder cijfer in de tekst,
+                zie components/TrustpilotWidget.tsx. */}
+            <TrustpilotWidget className="mt-3" />
+
             <p className="text-sm text-gray-500 mt-2 lg:hidden">
               &larr; Swipe voor meer reviews &rarr;
             </p>
