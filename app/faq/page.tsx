@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING, OG_IMAGE, NO_FIX_PROMISE } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE, NO_FIX_PROMISE, NO_FIX_QUESTION } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Veelgestelde vragen (FAQ) | Computerhulp aan huis',
@@ -199,7 +199,12 @@ const faqCategories = [
         answer: `Een HBO IT-student uit uw eigen regio. Wilt u vooraf weten wie er komt? Bel ${BUSINESS.PHONE}, dan zeggen we wie er ingepland staat. Wij zijn ingeschreven bij de KvK onder ${BUSINESS.KVK}.`
       },
       {
-        question: 'Wat als ik niet tevreden ben?',
+        /* Stond hier als 'Wat als ik niet tevreden ben?', maar het antwoord
+           eronder gaat over een probleem dat niet op te lossen is. Dat is iets
+           anders dan ontevredenheid, en op /tarieven en de dienstenpagina's
+           hoort dit antwoord al bij NO_FIX_QUESTION. Nu overal dezelfde vraag
+           bij hetzelfde antwoord. */
+        question: NO_FIX_QUESTION,
         answer: NO_FIX_PROMISE
       }
     ]

@@ -71,9 +71,18 @@ export default function VoorwaardenPage() {
                 structured data die Google kan tonen. Hij hoort dus ook hier te
                 staan: een geldbelofte die alleen in marketingtekst leeft is
                 geen voorwaarde. De tekst komt uit NO_FIX_PROMISE, zodat site en
-                voorwaarden nooit uiteen kunnen lopen. */}
+                voorwaarden nooit uiteen kunnen lopen.
+
+                Hier stond een uitwerking van wat 'de tijd van de diagnose'
+                precies inhoudt: dat het minimum van 3 kwartier dan vervalt en
+                voorrijkosten wel verschuldigd blijven. Die uitwerking was
+                verzonnen, niet door de eigenaar vastgesteld, en is daarom
+                weggehaald. Een bedacht beding in algemene voorwaarden is erger
+                dan een belofte die nog niet is uitgewerkt: hierop kan een klant
+                zich beroepen. Vul dit aan zodra de eigenaar zegt hoe het echt
+                zit, in zijn woorden. */}
             <p className="mt-4">
-              <strong>Niet opgelost:</strong> {NO_FIX_PROMISE} Onder de diagnose verstaan wij de tijd die nodig was om vast te stellen dat wij het probleem niet kunnen verhelpen. Het minimum van 3 kwartier geldt in dat geval niet; voorrijkosten blijven wel verschuldigd.
+              <strong>Niet opgelost:</strong> {NO_FIX_PROMISE}
             </p>
             <p className="mt-4">
               Bij niet-tijdige betaling is de klant in verzuim en kan rente van 1% per maand in rekening worden gebracht.
