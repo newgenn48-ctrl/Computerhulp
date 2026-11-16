@@ -4,7 +4,6 @@ import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
-import CallbackSection from '@/components/sections/CallbackSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import LocalCitiesSection from '@/components/sections/LocalCitiesSection'
@@ -167,7 +166,9 @@ const REGIONS = [
 ]
 
 /* Dezelfde opbouw als een stadspagina (/computerhulp-aan-huis-[stad]), maar dan voor de hele provincie:
-   hero, feiten, diensten, prijs, reviews, terugbellen, werkwijze, geruststelling, FAQ, tekst met voordelen, regio's, plaatsen, CTA. */
+   hero, feiten, diensten, prijs, reviews, werkwijze, geruststelling, tekst met voordelen, regio's, plaatsen, FAQ, CTA.
+   De FAQ staat achteraan: wie dan nog vragen heeft leest ze aan het eind, en de
+   pagina sluit af met een call-to-action in plaats van met vragen. */
 export default function ComputerhulpAanHuisPage() {
   const voordelen = [
     { title: 'Gewoon thuis blijven', desc: `U hoeft nergens naartoe, wij komen bij u thuis in heel ${BUSINESS.REGION}.` },
@@ -215,34 +216,9 @@ export default function ComputerhulpAanHuisPage() {
       <TestimonialsSection testimonials={HUB_TESTIMONIALS} />
       <PricingSection />
 
-      {/* Terugbellen op de pagina zelf: anders is de enige weg naar een
-          formulier /afspraak-maken, met vijf velden achter een paginawissel. */}
-      <CallbackSection />
-
       <HowItWorksSection />
 
 
-
-      {/* FAQ */}
-      <section className="panel-section" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <header className="text-center mb-10">
-            <p className="section-eyebrow">FAQ</p>
-            <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
-          </header>
-          <div className="space-y-4">
-            {faqItems.map((faq, idx) => (
-              <details key={idx} className="group faq-item-white">
-                <summary className="faq-summary">
-                  {faq.q}
-                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
-                </summary>
-                <div className="faq-answer">{faq.a}</div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Tekst met voordelen, zoals "Waarom computerhulp aan huis in [stad]?" op een stadspagina */}
       <section className="panel-section" aria-labelledby="waarom-heading">
@@ -305,6 +281,27 @@ export default function ComputerhulpAanHuisPage() {
       </section>
 
       <LocalCitiesSection pagePrefix="computerhulp-aan-huis" />
+
+      {/* FAQ */}
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <header className="text-center mb-10">
+            <p className="section-eyebrow">FAQ</p>
+            <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
+          </header>
+          <div className="space-y-4">
+            {faqItems.map((faq, idx) => (
+              <details key={idx} className="group faq-item-white">
+                <summary className="faq-summary">
+                  {faq.q}
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
+                </summary>
+                <div className="faq-answer">{faq.a}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">

@@ -1,7 +1,6 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import CallbackForm from '@/components/CallbackForm'
 import { BUSINESS, HOURS, PRICING, OG_IMAGE } from '@/lib/constants'
 import { cityCount, TOP_CITIES } from '@/lib/cities'
 
@@ -34,7 +33,7 @@ export default function ContactPage() {
           <h1 className="section-title-lg mb-4">Neem contact op</h1>
           <p className="section-subtitle">
             We zijn {HOURS.DAYS} bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur.
-            Bellen is het snelst, maar mailen of een terugbelverzoek kan net zo goed.
+            Bellen is het snelst, maar mailen of online een afspraak aanvragen kan net zo goed.
           </p>
         </div>
       </section>
@@ -127,25 +126,40 @@ export default function ContactPage() {
               </div>
             </div>
 
-            {/* Rechts: het formulier */}
+            {/* Rechts: de twee manieren om contact te maken.
+                Hier stond een kort terugbelformulier; dat is eruit op verzoek
+                van de eigenaar. Wat blijft zijn de twee wegen die er altijd
+                waren: bellen, of het afspraakformulier. Een lege kaart laten
+                staan was geen optie, dus staat de keuze er nu uitgeschreven. */}
             <div id="afspraak" className="card-bezel scroll-mt-28">
               <div className="card-bezel-inner p-6 sm:p-8">
-                {/* Twee velden, niet zeven. De kop belooft een terugbelverzoek,
-                    dus hoort hier het korte formulier; wie liever alles in één
-                    keer doorgeeft, gaat naar /afspraak-maken. */}
                 <div className="mb-6">
-                  <h2 className="content-title mb-2">Liever dat wij u bellen?</h2>
+                  <h2 className="content-title mb-2">Hoe wilt u het doen?</h2>
                   <p className="text-gray-600">
-                    Uw naam en telefoonnummer is genoeg. We bellen u meestal binnen een uur terug.
+                    Bellen gaat het snelst: u heeft meteen iemand aan de lijn.
+                    Liever online? Vraag een afspraak aan, dan bellen we u
+                    {' '}{BUSINESS.RESPONSE_TIME} terug.
                   </p>
                 </div>
-                <CallbackForm />
-                <p className="mt-5 text-sm text-gray-600">
-                  Liever meteen een afspraak met uw adres erbij?{' '}
-                  <Link href="/afspraak-maken" className="font-semibold text-blue-700 hover:text-blue-800">
-                    Vul het afspraakformulier in
+
+                <div className="flex flex-col gap-3">
+                  <a
+                    href={BUSINESS.PHONE_HREF}
+                    className="btn-primary w-full"
+                    aria-label={`Bel ${BUSINESS.PHONE}`}
+                  >
+                    <Icon name="phone" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
+                    <span translate="no">{BUSINESS.PHONE}</span>
+                  </a>
+                  <Link href="/afspraak-maken" className="btn-secondary w-full">
+                    Afspraak aanvragen
+                    <Icon name="arrow-right-short" className="w-5 h-5" strokeWidth={2} aria-hidden="true" />
                   </Link>
-                  .
+                </div>
+
+                <p className="mt-5 text-sm text-gray-600">
+                  We zijn {HOURS.DAYS} bereikbaar van {HOURS.OPEN} tot {HOURS.CLOSE} uur,
+                  ook in het weekend.
                 </p>
               </div>
             </div>

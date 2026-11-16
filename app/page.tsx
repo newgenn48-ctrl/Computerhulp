@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
-import CallbackSection from '@/components/sections/CallbackSection'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -255,34 +254,6 @@ export default function HomePage() {
       {/* Zo werkt het */}
       <HowItWorksSection />
 
-      {/* Andere foto dan de hero hierboven: die is dezelfde student. */}
-      <section className="panel-section" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <header className="text-center mb-10">
-            <h2 id="faq-heading" className="section-title">
-              Veelgestelde vragen
-            </h2>
-          </header>
-
-          <div className="space-y-4">
-            {faqItems.map((faq, idx) => (
-              <details key={idx} className="group faq-item-white">
-                <summary className="faq-summary">
-                  {faq.q}
-                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
-                </summary>
-                <div className="faq-answer">
-                  {faq.a}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Bellen of teruggebeld worden: direct onder de geruststelling, als de bezoeker overtuigd is */}
-      <CallbackSection />
-
       {/* Plaatsen met een eigen zin per stad */}
       <LocalCitiesSection />
 
@@ -343,6 +314,31 @@ export default function HomePage() {
       </section>
 
       {/* FAQ Section, shares data with JSON-LD above */}
+
+      {/* Andere foto dan de hero hierboven: die is dezelfde student. */}
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <header className="text-center mb-10">
+            <h2 id="faq-heading" className="section-title">
+              Veelgestelde vragen
+            </h2>
+          </header>
+
+          <div className="space-y-4">
+            {faqItems.map((faq, idx) => (
+              <details key={idx} className="group faq-item-white">
+                <summary className="faq-summary">
+                  {faq.q}
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180" strokeWidth={2} />
+                </summary>
+                <div className="faq-answer">
+                  {faq.a}
+                </div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA */}
       <section className="cta-section-blue" aria-label="Contact opnemen">

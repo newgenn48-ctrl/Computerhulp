@@ -4,7 +4,6 @@ import { Metadata } from 'next'
 import NearbyCities from '@/components/NearbyCities'
 import ServicesSection from '@/components/ServicesSection'
 import PricingSection from '@/components/sections/PricingSection'
-import CallbackSection from '@/components/sections/CallbackSection'
 import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
@@ -825,7 +824,8 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       />
 
       {/* Vaste volgorde voor beide varianten: feiten → diensten → reviews
-          → hoe → waarom → terugbellen. Wat per variant verschilt zit in config. */}
+          → hoe → waarom → stadstekst → FAQ → CTA. Wat per variant verschilt
+          zit in config. */}
       <ServicesSection
         eyebrow={variant === 'computerhulp' ? 'Onze hulp' : 'Waar de student mee helpt'}
         title={variant === 'computerhulp' ? `Waar wij u mee helpen in ${city.name}` : `Waar de student u in ${city.name} mee helpt`}
@@ -851,12 +851,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
       />
       <PricingSection cityName={city.name} />
 
-      {/* Terugbellen op de pagina zelf. Hiervoor was de enige weg naar een
-          formulier /afspraak-maken, met vijf velden inclusief adres en
-          postcode, achter een paginawissel. Een advertentiebezoeker die niet
-          wil bellen had hier dus geen enkele manier om zich te melden. */}
-      <CallbackSection cityName={city.name} />
-
       <HowItWorksSection />
 
       {/* De foto is bewust niet config.heroImage: dan stond dezelfde
@@ -872,27 +866,6 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
         ? <ComputerhulpContentSection city={city} />
         : <StudentContentSection city={city} />
       }
-
-      {/* FAQ */}
-      <section className="panel-section" aria-labelledby="faq-heading">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
-          <header className="text-center mb-10">
-            <p className="section-eyebrow">FAQ</p>
-            <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
-          </header>
-          <div className="space-y-4">
-            {faqItems.map((faq, idx) => (
-              <details key={idx} className="group faq-item-white">
-                <summary className="faq-summary">
-                  {faq.question}
-                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
-                </summary>
-                <div className="faq-answer">{faq.answer}</div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Neighborhoods, alleen als er echte neighborhood data is */}
       {(() => {
@@ -951,6 +924,27 @@ export default function CityPageTemplate({ city, variant }: CityPageTemplateProp
 
       {/* Cross-link section (student variant only) */}
       {variant === 'student' && <StudentCrossLinkSection city={city} />}
+
+      {/* FAQ, achteraan zoals op de hub pages */}
+      <section className="panel-section" aria-labelledby="faq-heading">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 panel panel-pad">
+          <header className="text-center mb-10">
+            <p className="section-eyebrow">FAQ</p>
+            <h2 id="faq-heading" className="section-title">Veelgestelde vragen</h2>
+          </header>
+          <div className="space-y-4">
+            {faqItems.map((faq, idx) => (
+              <details key={idx} className="group faq-item-white">
+                <summary className="faq-summary">
+                  {faq.question}
+                  <Icon name="chevron-down" className="w-5 h-5 text-gray-500 transition-transform group-open:rotate-180 flex-shrink-0" strokeWidth={2} aria-hidden="true" />
+                </summary>
+                <div className="faq-answer">{faq.answer}</div>
+              </details>
+            ))}
+          </div>
+        </div>
+      </section>
 
       {/* Final CTA, consistent met hub pages */}
       <section className="cta-section-blue" aria-label="Contact opnemen">
