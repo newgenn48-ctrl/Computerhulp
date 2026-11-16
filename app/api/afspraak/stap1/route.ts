@@ -48,8 +48,12 @@ export async function POST(request: NextRequest) {
     const sProbleem = tekst(probleem)
     const sBron = tekst(bron).slice(0, 200)
 
-    if (!sNaam || !sTelefoon) {
-      const mist = [!sNaam && 'naam', !sTelefoon && 'telefoonnummer'].filter(Boolean).join(', ')
+    /* Naam, telefoon én e-mail zijn verplicht. De eis staat ook in de browser,
+       maar hier is hij bindend: een validatie die alleen in JavaScript leeft
+       is geen validatie. */
+    if (!sNaam || !sTelefoon || !sEmail) {
+      const mist = [!sNaam && 'naam', !sTelefoon && 'telefoonnummer', !sEmail && 'e-mailadres']
+        .filter(Boolean).join(', ')
       return NextResponse.json({ error: `Vul alle velden in (ontbreekt: ${mist})` }, { status: 400 })
     }
 

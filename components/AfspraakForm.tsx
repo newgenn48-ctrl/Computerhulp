@@ -40,10 +40,9 @@ type Rule = {
  * op het adres, dan is dat voortaan een belletje in plaats van een gemiste
  * klant. Zie /api/afspraak/onvoltooid.
  *
- * E-mail en de omschrijving blijven niet verplicht. Dat was een eerdere
- * bewuste keuze — met zeven verplichte velden haakte deze pagina voor 83% af,
- * op een doelgroep van zeventigplussers — en dat is niet veranderd door het
- * formulier te splitsen.
+ * Naam, telefoonnummer en e-mailadres zijn verplicht, de omschrijving niet.
+ * Die mag iemand ook aan de telefoon vertellen; een verplicht tekstvak is op
+ * een telefoon de grootste drempel van het hele formulier.
  */
 const STAP1: Field[] = ['naam', 'telefoon', 'email', 'probleem']
 const STAP2: Field[] = ['adres', 'postcode', 'plaats']
@@ -54,7 +53,7 @@ const validationRules: Record<Field, Rule> = {
   adres: { required: 'Vul straat en huisnummer in' },
   postcode: { required: 'Vul uw postcode in', pattern: [/^[1-9]\d{3}\s?[A-Za-z]{2}$/, 'Voer een geldige postcode in (bijv. 2511 CV)'] },
   plaats: { required: 'Vul uw woonplaats in' },
-  email: { pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
+  email: { required: 'Vul uw e-mailadres in', pattern: [/^[^\s@]+@[^\s@]+\.[^\s@]+$/, 'Voer een geldig e-mailadres in'] },
   probleem: {},
 }
 
@@ -516,11 +515,12 @@ export default function AfspraakForm() {
 
           <div>
             <label htmlFor="email" className="block text-sm sm:text-base font-semibold text-gray-700 mb-2">
-              E-mail <span className="font-normal text-gray-500">(niet verplicht)</span>
+              E-mailadres
             </label>
             <input
               type="email" id="email" name="email" value={formData.email}
               onChange={handleChange} onBlur={handleBlur}
+              required aria-required="true"
               autoComplete="email" inputMode="email" spellCheck={false} autoCapitalize="none"
               className={inputClass('email')} placeholder="uw@email.nl"
               disabled={isSubmitting} {...aria('email')}

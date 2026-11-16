@@ -73,6 +73,13 @@ export async function POST(request: NextRequest) {
     // worden verderop al als optioneel behandeld (optAdres, optPostcode,
     // optPlaats, optEmail, optProbleem met "(niet ingevuld)" als terugval),
     // dus hier hoefde alleen de verplichtstelling weg.
+    // Het e-mailadres is sinds 2026-11-16 wél verplicht, maar die eis wordt
+    // afgedwongen in /api/afspraak/stap1: daar komt de bezoeker niet langs
+    // zonder adres. Hier staat hij bewust niet in de verplichte lijst. Deze
+    // route krijgt een aanvraag die al compleet is, inclusief het woonadres,
+    // en die mag niet afketsen op een veld dat alleen kan ontbreken als stap 1
+    // technisch faalde. Een lead weggooien is duurder dan een lead zonder
+    // e-mailadres.
     const verplicht: Array<[unknown, string]> = [
       [naam, 'naam'], [telefoon, 'telefoonnummer'],
     ]
