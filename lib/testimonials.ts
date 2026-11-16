@@ -2,98 +2,108 @@ export interface Testimonial {
   quote: string
   name: string
   initials: string
-  city: string
+  /** Optioneel: Trustpilot geeft geen woonplaats, dus bij echte reviews staat
+   *  hier niets. De carousel schermt het veld al af met {t.city && ...}.
+   *  Nooit zelf een plaats invullen — dat is een verzonnen feit over een
+   *  echt persoon. */
+  city?: string
   date: string
 }
 
-// Één bron voor alle testimonials.
-// Als de echte bronnen (Google Business) beschikbaar komen,
-// vervang dit dan door een fetch/ISR van die reviews.
-
+/* ECHTE REVIEWS — overgenomen van het Trustpilot-profiel van dit bedrijf.
+ * Bron: https://nl.trustpilot.com/review/computerhulpzh.nl
+ * Opgehaald op 2026-11-16: TrustScore 4,8 over 41 reviews.
+ *
+ * Hiervoor stonden hier twaalf verzonnen testimonials met verzonnen namen,
+ * plaatsen en datums. Die zijn vervangen omdat de echte reviews er zijn,
+ * recenter zijn (22 okt – 13 nov) en beter zijn (allemaal vijf sterren).
+ *
+ * REGELS BIJ HET BIJWERKEN:
+ * - Tekst woordelijk overnemen. Niet mooier maken, niet inkorten tot iets dat
+ *   anders klinkt, geen typefouten wegpoetsen die de betekenis dragen.
+ * - Naam overnemen zoals de reviewer hem zelf schreef, ook in kleine letters.
+ * - Nooit een woonplaats, datum of citaat verzinnen.
+ * - Alleen reviews opnemen waarvan de volledige tekst zichtbaar is. Trustpilot
+ *   kapt lange reviews af met …; een afgekapte zin als compleet tonen is een
+ *   verdraaiing.
+ * - De carousel toont vast vijf sterren. Neem hier dus uitsluitend
+ *   vijfsterrenreviews op, anders klopt het sterrenbeeld niet.
+ *
+ * Duurzamer alternatief: de officiële Trustpilot-widget. Die blijft vanzelf
+ * actueel en haalt deze onderhoudsklus weg. Zie de notitie onderaan.
+ */
 export const TESTIMONIALS: Testimonial[] = [
   {
-    quote: 'Mijn computer deed het niet meer. Binnen 2 uur stond hij weer aan en al mijn foto\'s waren gered. Ontzettend blij!',
-    name: 'Mevrouw Gerda',
-    initials: 'G',
-    city: 'Den Haag',
-    date: '12 oktober 2026',
+    quote: 'Ik ben heel blij dat ik binnen enkele uren geholpen ben. Heel erg bedankt. Adam is betrouwbaar en deskundig',
+    name: 'Mioulet P.',
+    initials: 'M',
+    date: '13 november 2026',
   },
   {
-    quote: 'Eindelijk iemand die normaal uitlegt, geen ingewikkelde termen. Printer werkt nu perfect.',
-    name: 'De heer Jan',
+    quote: 'Ik vind de communicatie uitstekend. De problemen zijn goed en deskundig opgelost en er zijn goede tips gegeven.',
+    name: 'José Heemstra',
     initials: 'J',
-    city: 'Rotterdam',
-    date: '10 oktober 2026',
+    date: '12 november 2026',
   },
   {
-    quote: 'Wifi werkte niet, e-mail deed het niet. Alles in één keer opgelost. Eerlijke prijs, top service.',
-    name: 'Mevrouw Linda',
-    initials: 'L',
-    city: 'Leiden',
-    date: '8 oktober 2026',
-  },
-  {
-    quote: 'Heel geduldig uitgelegd hoe ik mijn tablet moet gebruiken. Nu stuur ik zelf foto\'s naar mijn kleinkinderen.',
-    name: 'De heer Henk',
-    initials: 'H',
-    city: 'Delft',
-    date: '6 oktober 2026',
-  },
-  {
-    quote: 'Laptop was zo traag geworden. Na het bezoek werkt hij weer als nieuw. Nam de tijd voor uitleg.',
-    name: 'Mevrouw Ria',
+    quote: 'Ik ben zeer tevreden over Adam. Hij is snel ter plaatse en geeft duidelijke uitleg. Adam mag zeker blijven!',
+    name: 'Rose Tiwow',
     initials: 'R',
-    city: 'Zoetermeer',
-    date: '4 oktober 2026',
+    date: '11 november 2026',
   },
   {
-    quote: 'Mijn nieuwe smart TV kon ik niet aansluiten. Binnen een uur Netflix én de foto\'s van mijn telefoon erop.',
-    name: 'De heer Peter',
-    initials: 'P',
-    city: 'Gouda',
-    date: '2 oktober 2026',
-  },
-  {
-    quote: 'Al jaren een trage computer. Eindelijk iemand die het écht oplost. Scheelt mij zoveel ergernis.',
-    name: 'Mevrouw Corrie',
+    quote: 'Geweldige service, netjes en beleefd! ter zake kundig',
+    name: 'Cor Boutkam',
     initials: 'C',
-    city: 'Dordrecht',
-    date: '30 september 2026',
+    date: '10 november 2026',
   },
   {
-    quote: 'Mijn laptop deed het niet meer en ik kon nergens meer bij. Alles rustig in orde gemaakt en duidelijk uitgelegd.',
-    name: 'De heer Willem',
-    initials: 'W',
-    city: 'Alphen aan den Rijn',
-    date: '28 september 2026',
+    quote: 'Top service, vanmiddag gebeld en vanavond geholpen. Vakkundig en betrouwbaar',
+    name: 'Diny Visser',
+    initials: 'D',
+    date: '3 november 2026',
   },
   {
-    quote: 'Durfde niet meer online te bankieren na een phishing mail. Alles gecontroleerd en duidelijke tips gekregen.',
-    name: 'Mevrouw Ans',
+    quote: 'Ik ben heel goed en snel geholpen. Adam is zeer prettig mens',
+    name: 'H. van der Linde',
+    initials: 'H',
+    date: '2 november 2026',
+  },
+  {
+    quote: 'Adam heeft mij uitstekend geholpen, vanavond gebeld en meteen gekomen en heeft goed doorzicht gehad wat er aan de hand is',
+    name: 'Albert Snethlage',
     initials: 'A',
-    city: 'Westland',
-    date: '26 september 2026',
+    date: '30 oktober 2026',
   },
   {
-    quote: 'Nieuwe laptop gekocht maar kreeg niks overgezet. Binnen anderhalf uur stond alles erop: foto\'s, documenten, programma\'s.',
-    name: 'Mevrouw Truus',
+    quote: 'Ongelooflijk snel opgelost. Ben heel blij mee. Adam is vakkundig en komt snel aan huis',
+    name: 'Lieuwco D. J.',
+    initials: 'L',
+    date: '29 oktober 2026',
+  },
+  {
+    quote: 'Snel verholpen en prima. Kwam op tijd en zeer vriendelijk, ik ben tevreden',
+    name: 'Dini Brandhorst',
+    initials: 'D',
+    date: '29 oktober 2026',
+  },
+  {
+    quote: 'Problemen met laptop snel opgelost met tips en uitleg, Ik raad Adam zeker aan. Betrouwbaar en vakkundig en knap',
+    name: 'T. Saleh',
     initials: 'T',
-    city: 'Schiedam',
-    date: '24 september 2026',
+    date: '27 oktober 2026',
   },
   {
-    quote: 'Mijn printer deed het al maanden niet meer. Ik had er zelf uren aan gezeten. De student loste het op in tien minuten.',
-    name: 'De heer Bert',
-    initials: 'B',
-    city: 'Vlaardingen',
-    date: '22 september 2026',
+    quote: 'Ik ben blij mee, virus op tablet en laptop zijn opgelost',
+    name: 'peter beukema',
+    initials: 'P',
+    date: '27 oktober 2026',
   },
   {
-    quote: 'Zo fijn om door een jongere geholpen te worden. Legde alles uit zoals ik het begrijp. En zo geduldig.',
-    name: 'Mevrouw De Jong',
-    initials: 'MJ',
-    city: 'Capelle aan den IJssel',
-    date: '20 september 2026',
+    quote: 'We zijn zeer snel ( dezelfde dag nog) geholpen. Zeer vriendelijke en duidelijke uitleg met goede tips erbij!',
+    name: 'Sandra',
+    initials: 'S',
+    date: '22 oktober 2026',
   },
 ]
 
@@ -102,3 +112,11 @@ export const SHORT_TESTIMONIALS: Testimonial[] = TESTIMONIALS.slice(0, 3)
 
 // Subset voor hub-pages (acht stuks)
 export const HUB_TESTIMONIALS: Testimonial[] = TESTIMONIALS.slice(0, 8)
+
+/* OVER AGGREGATERATING IN DE STRUCTURED DATA
+ * Zet de 4,8 en de 41 reviews hier niet als aggregateRating in schema.org op
+ * de eigen pagina's. Google staat geen zelf opgevoerde beoordeling van het
+ * eigen bedrijf toe; een beoordeling van een derde partij hoort via die partij
+ * te lopen. Het Trustpilot-profiel staat al als sameAs in de LocalBusiness,
+ * en dat is de juiste koppeling.
+ */
