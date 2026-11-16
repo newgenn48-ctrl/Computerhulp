@@ -697,23 +697,23 @@ function StudentContentSection({ city }: { city: City }) {
           </h3>
           <ul className="space-y-3 text-gray-700 mb-6">
             <li className="check-list-item">
-              <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
+              <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
               <span><strong>U bepaalt:</strong> wanneer, hoe lang en wat er gedaan wordt. Geen verplichtingen, geen abonnement.</span>
             </li>
             <li className="check-list-item">
-              <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
+              <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
               <span><strong>Geen verrassingen:</strong> u krijgt vooraf een inschatting van de tijd en de kosten.</span>
             </li>
             <li className="check-list-item">
-              <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
+              <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
               <span><strong>Uitleg terwijl hij werkt:</strong> de student laat zien wat hij doet en schrijft de belangrijkste stappen desgewenst voor u op.</span>
             </li>
             <li className="check-list-item">
-              <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
+              <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
               <span><strong>Betalen achteraf:</strong> pas na afloop, via pin, contant of Tikkie. {PRICING.TRAVEL} voorrijkosten in {city.name}.</span>
             </li>
             <li className="check-list-item">
-              <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
+              <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-1" strokeWidth={2} aria-hidden="true" />
               <span>
                 <strong>Ook voor:</strong>{' '}
                 <Link href="/diensten/printer-scanner-hulp" className="text-blue-600 hover:text-blue-800">de printer</Link>,{' '}

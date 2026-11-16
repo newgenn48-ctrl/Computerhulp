@@ -93,7 +93,7 @@ export default function TarievenPage() {
                   'Eerlijke inschatting vooraf',
                 ].map((item, idx) => (
                   <div key={idx} className="flex items-start gap-3">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">{item}</span>
                   </div>
                 ))}

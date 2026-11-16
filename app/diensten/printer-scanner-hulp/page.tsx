@@ -121,7 +121,7 @@ export default function PrinterScannerHulpPage() {
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
             {services.map((service, idx) => (
               <div key={idx} className="flex items-start gap-3 py-1">
-                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}

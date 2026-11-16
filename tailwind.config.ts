@@ -33,9 +33,18 @@ const config: Config = {
           600: '#ea580c',
           700: '#c2410c',
         },
-        // Actie/conversie — groen. Uitsluitend voor bellen en afspraak maken,
-        // zodat blauw het merk blijft en groen altijd 'hier klikken' betekent.
-        // action-700 haalt 5.0:1 op wit — ruim AA, ook voor kleine labels.
+        // NIET MEER IN GEBRUIK. Hier stond: "Actie/conversie — groen.
+        // Uitsluitend voor bellen en afspraak maken." Dat uitgangspunt is
+        // losgelaten: de eigenaar wil één merkkleur, en groen viel overal op
+        // als vreemde eend. Alle knoppen en vinkjes zijn nu blauw.
+        //
+        // Groen heeft op deze site nog maar twee taken, en die staan los van
+        // deze schaal: de bevestiging na een verzonden offerte (daar betekent
+        // groen 'gelukt', niet 'merk'), en het nagebootste browservenster op
+        // /website-laten-maken (stoplichtjes en het SSL-slotje, die groen zijn
+        // omdat een echte browser dat ook is).
+        //
+        // Pak deze schaal dus niet voor een knop of een vinkje. Gebruik blauw.
         action: {
           50:  '#f0fdf4',
           100: '#dcfce7',

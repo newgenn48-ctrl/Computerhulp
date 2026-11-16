@@ -88,15 +88,15 @@ export default function WebsiteLatenMakenPage() {
 
                 <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-600">
                   <div className="flex items-center gap-1.5 sm:gap-2">
-                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" strokeWidth={2} />
+                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
                     Vanaf {WEBSITE_PRICING.FROM}
                   </div>
                   <div className="flex items-center gap-1.5 sm:gap-2">
-                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" strokeWidth={2} />
+                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
                     2-3 weken levering
                   </div>
                   <div className="flex items-center gap-1.5 sm:gap-2">
-                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" strokeWidth={2} />
+                    <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
                     100% op maat
                   </div>
                 </div>
@@ -255,7 +255,9 @@ export default function WebsiteLatenMakenPage() {
                   {/* Floating SEO Icon */}
                   <div className="absolute -bottom-4 left-1/4 lg:left-1/3 z-40"
                     style={{ animation: 'float 4.8s ease-in-out infinite', animationDelay: '2s' }}>
-                    <div className="bg-gradient-to-br from-action-600 to-action-700 w-10 h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl shadow-2xl flex items-center justify-center text-xl lg:text-2xl border-2 border-white/20">
+                    {/* Zelfde tinten als de SEO Proof-kaart verderop, zodat het
+                        zwevende icoon en die kaart bij elkaar horen. */}
+                    <div className="bg-gradient-to-br from-indigo-600 to-indigo-800 w-10 h-10 lg:w-14 lg:h-14 rounded-lg lg:rounded-xl shadow-2xl flex items-center justify-center text-xl lg:text-2xl border-2 border-white/20">
                       🔍
                     </div>
                   </div>
@@ -290,7 +292,8 @@ export default function WebsiteLatenMakenPage() {
                 { icon: '🎨', title: 'Maatwerk Design', desc: 'Uniek design dat perfect past bij uw merk', color: 'from-blue-500 to-blue-700', size: 'col-span-1' },
                 { icon: '⚙️', title: 'Uw Keuze', desc: 'Custom code óf WordPress, Shopify, Wix - wat u wilt', color: 'from-indigo-500 to-indigo-700', size: 'col-span-1' },
                 { icon: '📱', title: 'Mobile First', desc: 'Perfect op alle schermformaten', color: 'from-blue-700 to-indigo-800', size: 'col-span-1' },
-                { icon: '🔍', title: 'SEO Proof', desc: 'Gebouwd om goed gevonden te worden', color: 'from-action-600 to-action-700', size: 'col-span-1' },
+                /* Was als enige groen in een reeks van zes blauwe/indigo kaarten. */
+                { icon: '🔍', title: 'SEO Proof', desc: 'Gebouwd om goed gevonden te worden', color: 'from-indigo-600 to-indigo-800', size: 'col-span-1' },
                 { icon: '⚡', title: 'Supersnel', desc: 'Snel op telefoon en computer', color: 'from-indigo-600 to-blue-600', size: 'col-span-1' },
                 { icon: '💬', title: 'Direct Contact', desc: 'Persoonlijk aanspreekpunt, altijd', color: 'from-blue-600 to-indigo-600', size: 'col-span-1' }
               ].map((feature, idx) => (
@@ -334,7 +337,11 @@ export default function WebsiteLatenMakenPage() {
                 { num: '2', title: 'Ontwerp', desc: 'Visueel concept', icon: '🎨', color: 'bg-blue-600' },
                 { num: '3', title: 'Bouwen', desc: 'Ontwikkeling', icon: '⚙️', color: 'bg-indigo-600' },
                 { num: '4', title: 'Testen', desc: 'Alles nakijken', icon: '🔍', color: 'bg-blue-700' },
-                { num: '5', title: 'Live!', desc: 'Publiceren', icon: '🚀', color: 'bg-green-500' }
+                /* Stap 5 was als enige groen terwijl 1 t/m 4 een blauwe reeks
+                   vormen. indigo-700 maakt het de diepste tint van die reeks,
+                   zodat de laatste stap nog steeds opvalt als eindpunt maar
+                   niet uit het kleurenschema springt. */
+                { num: '5', title: 'Live!', desc: 'Publiceren', icon: '🚀', color: 'bg-indigo-700' }
               ].map((step, idx) => (
                 <div
                   key={idx}
@@ -384,19 +391,19 @@ export default function WebsiteLatenMakenPage() {
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Ultiem snel en geoptimaliseerd</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Volledig unieke functionaliteiten</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Geen maandelijkse licentiekosten</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Beste SEO prestaties</span>
                   </div>
                 </div>
@@ -417,19 +424,19 @@ export default function WebsiteLatenMakenPage() {
                 </p>
                 <div className="space-y-3">
                   <div className="flex items-start gap-3">
-                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Zelf eenvoudig content aanpassen</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Snelle lancering mogelijk</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Toegang tot plugins en templates</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Icon name="check" className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span className="text-gray-700">Lagere initiële investering</span>
                   </div>
                 </div>
@@ -534,7 +541,7 @@ export default function WebsiteLatenMakenPage() {
                       'Nazorg & Support'
                     ].map((item, idx) => (
                       <div key={idx} className="flex items-center gap-3">
-                        <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0" strokeWidth={2} />
+                        <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0" strokeWidth={2} />
                         <span className="text-gray-700">{item}</span>
                       </div>
                     ))}

@@ -430,8 +430,14 @@
   .hero-trust {
     @apply flex items-center gap-2 text-sm font-medium text-white mb-5;
   }
+  /* Blauw, niet groen. Het ontwerpsysteem van deze site is blauw; groen was
+     hier een losse uitzondering die op de hero juist het meest opviel.
+     blue-200 is dezelfde tint die de blauwe CTA-secties al voor hun vinkjes
+     gebruiken, dus dit volgt een bestaande conventie in plaats van er een
+     nieuwe bij te verzinnen. Groen blijft op deze site gereserveerd voor
+     betekenis: de bevestiging na een verzonden offerte. */
   .hero-check {
-    @apply text-green-400;
+    @apply text-blue-200;
   }
 
   /* Lichte hero op de telefoon.
@@ -484,8 +490,11 @@
       backdrop-filter: none;
     }
 
+    /* Op de lichte telefoon-hero staat het vinkje op wit in plaats van op de
+       donkere foto, dus hier blue-700: dezelfde tint als de links in de
+       lopende tekst en als de belknop eronder. */
     .hero-light .hero-check {
-      @apply text-action-700;
+      @apply text-blue-700;
     }
 
     /* De waas en de lichtlijn van de golf zijn wit op lage dekking: op de

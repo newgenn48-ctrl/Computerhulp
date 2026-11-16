@@ -153,7 +153,7 @@ export default function ComputercursusOuderenPage() {
               <div className="grid sm:grid-cols-2 gap-x-8 gap-y-3">
             {services.map((service, idx) => (
               <div key={idx} className="flex items-start gap-3 py-1">
-                <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <span className="text-gray-700">{service}</span>
               </div>
             ))}
@@ -191,19 +191,19 @@ export default function ComputercursusOuderenPage() {
 
                 <ul className="space-y-3 text-gray-700 mb-6">
                   <li className="check-list-item">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>Eén-op-één les:</strong> Alle aandacht voor uw vragen, niemand die op u wacht of u opjaagt.</span>
                   </li>
                   <li className="check-list-item">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>U kiest de onderwerpen:</strong> Van e-mail tot bankieren: we behandelen wat ú wilt kunnen.</span>
                   </li>
                   <li className="check-list-item">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>Naslag op papier:</strong> Elke les eindigt met duidelijke stappen die u zelf kunt herhalen.</span>
                   </li>
                   <li className="check-list-item">
-                    <Icon name="check" className="w-6 h-6 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                    <Icon name="check" className="w-6 h-6 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
                     <span><strong>Vervolgles als u wilt:</strong> Eén les is soms genoeg. Wilt u meer, dan plannen we gewoon verder.</span>
                   </li>
                 </ul>

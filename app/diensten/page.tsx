@@ -177,7 +177,7 @@ export default function DienstenPage() {
                   <ul className="space-y-2 mb-4 flex-1">
                     {service.features.slice(0, 3).map((feature, fidx) => (
                       <li key={fidx} className="flex items-start gap-2 text-sm sm:text-base text-gray-700">
-                        <Icon name="check" className="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                        <Icon name="check" className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                         <span>{feature}</span>
                       </li>
                     ))}

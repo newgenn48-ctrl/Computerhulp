@@ -198,7 +198,7 @@ export default function OverOnsPage() {
               { title: 'Werkt het toch niet?', desc: NO_FIX_PROMISE },
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4 bg-surface rounded-xl p-6 border border-gray-200">
-                <Icon name="check-circle" className="w-7 h-7 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
+                <Icon name="check-circle" className="w-7 h-7 text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-1">{item.title}</h3>
                   <p className="text-gray-600">{item.desc}</p>
