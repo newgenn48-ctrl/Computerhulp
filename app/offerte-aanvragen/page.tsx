@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { Icon } from '@/components/icons'
-import { BUSINESS } from '@/lib/constants'
+import { BUSINESS, WEBSITE_PRICING } from '@/lib/constants'
 
 export default function OfferteAanvragenPage() {
   const router = useRouter()
@@ -352,7 +352,7 @@ export default function OfferteAanvragenPage() {
                   className="w-full px-4 py-3 border-2 border-gray-300 rounded-lg focus:border-blue-500 focus:ring-2 focus:ring-blue-200 transition-colors outline-none"
                 >
                   <option value="">Selecteer een budget</option>
-                  <option value="795-1500">€795 - €1.500</option>
+                  <option value="795-1500">{WEBSITE_PRICING.FROM} - €1.500</option>
                   <option value="1500-3000">€1.500 - €3.000</option>
                   <option value="3000-5000">€3.000 - €5.000</option>
                   <option value="500plus">€5.000+</option>

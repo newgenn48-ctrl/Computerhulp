@@ -1,12 +1,12 @@
 import { Metadata } from 'next'
-import { BUSINESS } from '@/lib/constants'
+import { BUSINESS, BUSINESS_ENTITY_ID, WEBSITE_PRICING } from '@/lib/constants'
 
 export const metadata: Metadata = {
-  title: 'Website laten maken | Vanaf €795',
+  title: `Website laten maken | Vanaf ${WEBSITE_PRICING.FROM}`,
   description: `Website laten maken in ${BUSINESS.REGION}. Custom of WordPress/Shopify. 2-3 weken geleverd, SEO-geoptimaliseerd. Gratis offerte. Bel ${BUSINESS.PHONE}.`,
   openGraph: {
     title: 'Website laten maken | Professioneel',
-    description: 'Website laten maken? Vanaf €795, custom code of WordPress/Shopify/Wix. 2-3 weken geleverd. Gratis offerte!',
+    description: `Website laten maken? Vanaf ${WEBSITE_PRICING.FROM}, custom code of WordPress/Shopify/Wix. 2-3 weken geleverd. Gratis offerte!`,
     type: 'website',
     url: 'https://computerhulpzh.nl/website-laten-maken',
     images: [
@@ -29,9 +29,10 @@ const serviceSchema = {
   '@type': 'Service',
   serviceType: 'Website Laten Maken',
   name: 'Website Laten Maken - Computerhulp Zuid-Holland',
-  description: 'Professionele websites laten maken in Zuid-Holland. Van visitekaartje tot webshop, custom code of WordPress, Shopify, Wix. Vanaf €795.',
+  description: `Professionele websites laten maken in Zuid-Holland. Van visitekaartje tot webshop, custom code of WordPress, Shopify, Wix. Vanaf ${WEBSITE_PRICING.FROM}.`,
   provider: {
     '@type': 'LocalBusiness',
+    '@id': BUSINESS_ENTITY_ID,
     name: 'Computerhulp Zuid-Holland',
     telephone: '+31858002006',
     email: 'info@computerhulpzh.nl',
@@ -56,7 +57,7 @@ const serviceSchema = {
       '@type': 'PriceSpecification',
       price: '795',
       priceCurrency: 'EUR',
-      description: 'Vanaf €795 voor een professionele website'
+      description: `Vanaf ${WEBSITE_PRICING.FROM} voor een professionele website`
     }
   }
 }
@@ -70,7 +71,7 @@ const faqSchema = {
       name: 'Hoeveel kost het om een website te laten maken?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'De kosten voor een website laten maken beginnen vanaf €795. De exacte prijs hangt af van uw wensen: aantal pagina\'s, functionaliteiten (zoals een webshop of reserveringssysteem), en of u kiest voor custom code of een platform zoals WordPress. We maken altijd eerst een vrijblijvende offerte op maat.'
+        text: `De kosten voor een website laten maken beginnen vanaf ${WEBSITE_PRICING.FROM}. De exacte prijs hangt af van uw wensen: aantal pagina's, functionaliteiten (zoals een webshop of reserveringssysteem), en of u kiest voor custom code of een platform zoals WordPress. We maken altijd eerst een vrijblijvende offerte op maat.`
       }
     },
     {

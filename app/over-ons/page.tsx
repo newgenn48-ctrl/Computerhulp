@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import Hero from '@/components/sections/Hero'
-import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE, NO_FIX_PROMISE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Over ons | Uw HBO-student aan huis',
@@ -195,7 +195,7 @@ export default function OverOnsPage() {
               { title: `${PRICING.TRAVEL} voorrijkosten`, desc: `In heel ${BUSINESS.REGION} komen we bij u langs. ${HOURS.DAYS}, ook in de avond.` },
               { title: 'Eerlijke prijzen', desc: `Vaste prijs van ${PRICING.PER_QUARTER} per kwartier. We geven altijd een eerlijke inschatting vooraf.` },
               { title: 'Privacy & veiligheid', desc: 'Uw gegevens zijn veilig bij ons. We behandelen uw informatie met de grootst mogelijke zorgvuldigheid.' },
-              { title: 'Werkt het toch niet?', desc: 'Lukt het niet, dan betaalt u alleen de tijd van de diagnose.' },
+              { title: 'Werkt het toch niet?', desc: NO_FIX_PROMISE },
             ].map((item, idx) => (
               <div key={idx} className="flex items-start gap-4 bg-surface rounded-xl p-6 border border-gray-200">
                 <Icon name="check-circle" className="w-7 h-7 text-green-600 flex-shrink-0 mt-0.5" strokeWidth={2} aria-hidden="true" />

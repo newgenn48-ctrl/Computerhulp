@@ -10,7 +10,7 @@ import HowItWorksSection from '@/components/sections/HowItWorksSection'
 import ComfortSection from '@/components/sections/ComfortSection'
 import { regionSlugs, getRegionBySlug, regionWithArticle } from '@/lib/regions'
 import { getCityContent } from '@/lib/cityContent'
-import { BUSINESS, OG_IMAGE, HOURS, PRICING } from '@/lib/constants'
+import { BUSINESS, OG_IMAGE, HOURS, PRICING, BUSINESS_ENTITY_ID } from '@/lib/constants'
 import { HUB_TESTIMONIALS } from '@/lib/testimonials'
 
 interface PageProps {
@@ -120,7 +120,8 @@ export default async function RegioPage({ params }: PageProps) {
     '@context': 'https://schema.org',
     '@type': 'Service',
     serviceType: 'Computerhulp aan huis',
-    provider: { '@type': 'LocalBusiness', name: BUSINESS.NAME, telephone: BUSINESS.PHONE, url: BUSINESS.URL },
+    provider: { '@type': 'LocalBusiness',
+ '@id': BUSINESS_ENTITY_ID, name: BUSINESS.NAME, telephone: BUSINESS.PHONE, url: BUSINESS.URL },
     areaServed: region.cities.map(c => ({ '@type': 'City', name: c.name })),
   }
 

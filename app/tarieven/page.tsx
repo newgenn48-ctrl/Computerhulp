@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE, NO_FIX_QUESTION, NO_FIX_PROMISE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: `Tarieven computerhulp aan huis | ${PRICING.PER_QUARTER} per kwartier`,
@@ -24,7 +24,7 @@ const faqs = [
   { q: 'Zijn er extra kosten in de avond of het weekend?', a: `Nee, wij rekenen hetzelfde tarief op alle dagen en tijden. Of u nu op maandag om 10:00 of op zaterdag om 20:00 belt, u betaalt gewoon ${PRICING.PER_QUARTER} per kwartier.` },
   { q: 'Hoe kan ik betalen?', a: 'U kunt na afloop betalen via pin, contant of Tikkie. We rekenen af zodra het werk klaar is. Facturen zijn ook mogelijk voor bedrijven.' },
   { q: 'Krijg ik vooraf een inschatting?', a: 'Ja, we geven altijd een eerlijke inschatting van hoeveel tijd we denken nodig te hebben. Zo weet u vooraf waar u aan toe bent.' },
-  { q: 'Wat als het probleem niet opgelost kan worden?', a: 'Dan betaalt u alleen voor de tijd die we daadwerkelijk besteed hebben. We zijn altijd eerlijk over wat we wel en niet kunnen oplossen.' },
+  { q: NO_FIX_QUESTION, a: NO_FIX_PROMISE },
 ]
 
 /* Schema en zichtbare FAQ komen uit dezelfde lijst - Google eist dat ze

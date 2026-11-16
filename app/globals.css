@@ -466,11 +466,17 @@
       @apply text-primary-700;
     }
 
-    /* Groen is op deze site alleen voor bellen en afspraak maken. Wit wint
-       het van elke kleur op donker, maar verdwijnt op licht, dus hier is
-       de belknop groen. action-700 haalt ruim AA met witte letters. */
+    /* Op mobiel is de herofoto verborgen, dus de achtergrond is licht en de
+       witte knop van de donkere hero zou wegvallen. Hij krijgt hier dus een
+       kleur — en dat is hetzelfde blauw als btn-primary en btn-header-cta,
+       want dat is de enige hoofdknopkleur van de site.
+
+       Hier stond action-700 (groen). Dat was de enige groene knop in de hele
+       stylesheet: de opmerking erboven beweerde dat groen "voor bellen" was,
+       maar geen enkele andere belknop is groen. Eén afwijkende kleur op de
+       eerste knop die een mobiele bezoeker ziet. */
     .hero-light .btn-hero-phone {
-      @apply text-white bg-action-700 hover:bg-action-800 shadow-md shadow-action-900/20;
+      @apply text-white bg-gradient-to-r from-blue-600 to-indigo-700 hover:from-blue-700 hover:to-indigo-800 shadow-md shadow-blue-700/25;
     }
 
     .hero-light .btn-hero-secondary {

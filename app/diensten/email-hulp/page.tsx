@@ -6,7 +6,7 @@ import { Icon } from '@/components/icons'
 import PricingSection from '@/components/sections/PricingSection'
 import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE, BUSINESS_ENTITY_ID } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -29,6 +29,7 @@ const structuredData = {
   serviceType: 'E-mail Hulp',
   provider: {
     '@type': 'LocalBusiness',
+    '@id': BUSINESS_ENTITY_ID,
     name: BUSINESS.NAME,
     telephone: BUSINESS.PHONE_INTL,
     email: BUSINESS.EMAIL,

@@ -6,7 +6,7 @@ import { Icon } from '@/components/icons'
 import PricingSection from '@/components/sections/PricingSection'
 import Hero from '@/components/sections/Hero'
 import HowItWorksSection from '@/components/sections/HowItWorksSection'
-import { BUSINESS, PRICING, HOURS, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, PRICING, HOURS, OG_IMAGE, NO_FIX_QUESTION, NO_FIX_PROMISE, BUSINESS_ENTITY_ID } from '@/lib/constants'
 import AvailableInCities from '@/components/sections/AvailableInCities'
 import TestimonialsSection from '@/components/sections/TestimonialsSection'
 
@@ -31,6 +31,7 @@ const structuredData = {
   serviceType: 'Computer- en laptophulp',
   provider: {
     '@type': 'LocalBusiness',
+    '@id': BUSINESS_ENTITY_ID,
     name: BUSINESS.NAME,
     telephone: BUSINESS.PHONE_INTL,
     email: BUSINESS.EMAIL,
@@ -87,7 +88,7 @@ const faqData = {
     { '@type': 'Question', name: `Raak ik mijn bestanden kwijt als jullie het oplossen?`, acceptedAnswer: { '@type': 'Answer', text: `Daar doen we alles aan om het te voorkomen. Waar mogelijk stellen we eerst uw documenten en foto’s veilig, en pas daarna lossen we het probleem op.` } },
     { '@type': 'Question', name: `Helpen jullie met alle merken laptops en computers?`, acceptedAnswer: { '@type': 'Answer', text: `Ja, met alle merken en alle besturingssystemen, laptop en vaste pc.` } },
     { '@type': 'Question', name: `Kan mijn oudere computer nog sneller worden?`, acceptedAnswer: { '@type': 'Answer', text: `Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Helpt dat niet genoeg, dan is een SSD-upgrade meestal de beste investering. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.` } },
-    { '@type': 'Question', name: `Wat als het probleem niet opgelost kan worden?`, acceptedAnswer: { '@type': 'Answer', text: `Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose.` } },
+    { '@type': 'Question', name: NO_FIX_QUESTION, acceptedAnswer: { '@type': 'Answer', text: NO_FIX_PROMISE } },
     { '@type': 'Question', name: `Wat kost computerhulp aan huis?`, acceptedAnswer: { '@type': 'Answer', text: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin, contant of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` } },
   ]
 }
@@ -115,7 +116,7 @@ const faqs = [
   { question: `Raak ik mijn bestanden kwijt als jullie het oplossen?`, answer: `Daar doen we alles aan om het te voorkomen. Waar mogelijk stellen we eerst uw documenten en foto’s veilig, en pas daarna lossen we het probleem op.` },
   { question: `Helpen jullie met alle merken laptops en computers?`, answer: `Ja, met alle merken en alle besturingssystemen, laptop en vaste pc.` },
   { question: `Kan mijn oudere computer nog sneller worden?`, answer: `Vaak wel. We ruimen op, halen programma’s weg die op de achtergrond meedraaien en werken alles bij. Helpt dat niet genoeg, dan is een SSD-upgrade meestal de beste investering. Is uw computer echt aan het einde, dan zeggen we dat eerlijk en helpen we met de overstap naar een nieuwe.` },
-  { question: `Wat als het probleem niet opgelost kan worden?`, answer: `Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose.` },
+  { question: NO_FIX_QUESTION, answer: NO_FIX_PROMISE },
   { question: `Wat kost computerhulp aan huis?`, answer: `${PRICING.PER_QUARTER} per kwartier, met een minimum van drie kwartier (${PRICING.MINIMUM_TOTAL}). Voorrijden kost ${PRICING.TRAVEL} in heel ${BUSINESS.REGION}. Betalen doet u achteraf, via pin, contant of Tikkie. Onderdelen zoals een scherm of accu komen daar apart bij; dat bespreken we vooraf.` },
 ]
 

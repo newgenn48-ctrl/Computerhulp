@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
 import { articles, ArticleCategory } from '@/lib/kennisbank'
-import { BUSINESS, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, OG_IMAGE, BUSINESS_ENTITY_ID } from '@/lib/constants'
 
 const TITLE = 'Kennisbank: uitleg over computerproblemen aan huis'
 const CANONICAL = `${BUSINESS.URL}/kennisbank`
@@ -66,7 +66,8 @@ export default function KennisbankPage() {
     description: 'Uitleg over computer-, wifi-, printer- en e-mailklachten die wij bij mensen thuis tegenkomen.',
     url: CANONICAL,
     inLanguage: 'nl-NL',
-    publisher: { '@type': 'LocalBusiness', name: BUSINESS.NAME, telephone: BUSINESS.PHONE, url: BUSINESS.URL },
+    publisher: { '@type': 'LocalBusiness',
+ '@id': BUSINESS_ENTITY_ID, name: BUSINESS.NAME, telephone: BUSINESS.PHONE, url: BUSINESS.URL },
     hasPart: articles.map(a => ({
       '@type': 'Article',
       headline: a.title,

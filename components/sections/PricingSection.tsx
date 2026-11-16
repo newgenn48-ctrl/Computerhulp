@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING } from '@/lib/constants'
+import { BUSINESS, PRICING, NO_FIX_PROMISE } from '@/lib/constants'
 
 interface PricingSectionProps {
   /** Plaatsnaam op stadspagina's: "…in Delft" in plaats van "in heel Zuid-Holland". */
@@ -27,7 +27,7 @@ export default function PricingSection({ cityName }: PricingSectionProps) {
     'Minimale afname 3 kwartier. De meeste problemen zijn daarbinnen opgelost.',
     `${PRICING.TRAVEL} voorrijkosten ${waar}.`,
     'U betaalt pas achteraf, via pin, contant of Tikkie.',
-    'Lukt het niet, dan betaalt u alleen de tijd van het uitzoeken.',
+    NO_FIX_PROMISE,
   ]
 
   return (

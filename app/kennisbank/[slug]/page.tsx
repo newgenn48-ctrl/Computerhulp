@@ -4,7 +4,7 @@ import { notFound } from 'next/navigation'
 import { Icon } from '@/components/icons'
 import { services } from '@/components/ServicesSection'
 import { articleSlugs, getArticle, getRelatedArticles, ArticleBlock } from '@/lib/kennisbank'
-import { BUSINESS, OG_IMAGE, HOURS } from '@/lib/constants'
+import { BUSINESS, OG_IMAGE, HOURS, BUSINESS_ENTITY_ID } from '@/lib/constants'
 
 interface PageProps {
   params: Promise<{ slug: string }>
@@ -107,6 +107,7 @@ export default async function KennisbankArtikelPage({ params }: PageProps) {
     author: { '@type': 'Organization', name: BUSINESS.NAME, url: BUSINESS.URL },
     publisher: {
       '@type': 'LocalBusiness',
+      '@id': BUSINESS_ENTITY_ID,
       name: BUSINESS.NAME,
       telephone: BUSINESS.PHONE,
       url: BUSINESS.URL,

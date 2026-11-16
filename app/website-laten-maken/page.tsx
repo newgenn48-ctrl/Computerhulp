@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS } from '@/lib/constants'
+import { BUSINESS, WEBSITE_PRICING } from '@/lib/constants'
 
 export default function WebsiteLatenMakenPage() {
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(null)
@@ -89,7 +89,7 @@ export default function WebsiteLatenMakenPage() {
                 <div className="flex flex-wrap items-center gap-4 sm:gap-8 text-xs sm:text-sm text-gray-600">
                   <div className="flex items-center gap-1.5 sm:gap-2">
                     <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" strokeWidth={2} />
-                    Vanaf €795
+                    Vanaf {WEBSITE_PRICING.FROM}
                   </div>
                   <div className="flex items-center gap-1.5 sm:gap-2">
                     <Icon name="check" className="w-4 h-4 sm:w-5 sm:h-5 text-green-500 flex-shrink-0" strokeWidth={2} />
@@ -461,7 +461,7 @@ export default function WebsiteLatenMakenPage() {
                 Wat Kost Het Om Een Website Te Laten Maken?
               </h2>
               <p className="text-xl text-gray-600">
-                Elke website is uniek - daarom maken we graag een offerte op maat. Vanaf €795 kunt u al een professionele website laten maken.
+                Elke website is uniek - daarom maken we graag een offerte op maat. Vanaf {WEBSITE_PRICING.FROM} kunt u al een professionele website laten maken.
               </p>
             </div>
 
@@ -470,7 +470,7 @@ export default function WebsiteLatenMakenPage() {
                 <div className="inline-flex items-baseline gap-2 mb-4">
                   <span className="text-2xl text-gray-600">Vanaf</span>
                   <span className="text-6xl font-extrabold tracking-display-tight bg-gradient-to-r from-blue-600 via-blue-700 to-indigo-800 bg-clip-text text-transparent">
-                    €795
+                    {WEBSITE_PRICING.FROM}
                   </span>
                 </div>
                 <p className="text-gray-600 text-lg">
@@ -586,7 +586,7 @@ export default function WebsiteLatenMakenPage() {
               {[
                 {
                   q: 'Hoeveel kost het om een website te laten maken?',
-                  a: 'De kosten voor een website laten maken beginnen vanaf €795. De exacte prijs hangt af van uw wensen: aantal pagina\'s, functionaliteiten (zoals een webshop of reserveringssysteem), en of u kiest voor custom code of een platform zoals WordPress. We maken altijd eerst een vrijblijvende offerte op maat.'
+                  a: `De kosten voor een website laten maken beginnen vanaf ${WEBSITE_PRICING.FROM}. De exacte prijs hangt af van uw wensen: aantal pagina's, functionaliteiten (zoals een webshop of reserveringssysteem), en of u kiest voor custom code of een platform zoals WordPress. We maken altijd eerst een vrijblijvende offerte op maat.`
                 },
                 {
                   q: 'Hoe lang duurt het om een website te laten maken?',

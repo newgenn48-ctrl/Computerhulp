@@ -1,7 +1,7 @@
 import { Metadata } from 'next'
 import Link from 'next/link'
 import { Icon } from '@/components/icons'
-import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE, NO_FIX_PROMISE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Veelgestelde vragen (FAQ) | Computerhulp aan huis',
@@ -200,7 +200,7 @@ const faqCategories = [
       },
       {
         question: 'Wat als ik niet tevreden ben?',
-        answer: 'Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose.'
+        answer: NO_FIX_PROMISE
       }
     ]
   },

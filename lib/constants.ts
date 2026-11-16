@@ -38,6 +38,31 @@ export const PRICING = {
   VAT_NOTE: 'incl. btw',
 } as const
 
+/** Wat de klant betaalt als het probleem niet opgelost raakt. Dit is een
+ *  geldbelofte, dus hij hoort op één plek te staan: hij stond op vijf plekken
+ *  in vier bewoordingen, en /tarieven beloofde iets anders ("de tijd die we
+ *  daadwerkelijk besteed hebben" = alles) dan de rest ("de tijd van de
+ *  diagnose" = alleen het uitzoeken). Dat verschil kost geld bij elke klus die
+ *  mislukt, en het stond uitgerekend op de prijspagina.
+ *
+ *  Wil je de belofte wijzigen, verander hem hier — dan verandert hij mee in de
+ *  FAQ-structured-data en in de voorwaarden, en kan hij niet opnieuw uiteen
+ *  lopen. */
+export const NO_FIX_PROMISE = 'Lukt het niet, dan zeggen we dat eerlijk en betaalt u alleen de tijd van de diagnose.'
+
+/** De vraag die bij bovenstaande belofte hoort. Ook één bron: hij staat in
+ *  drie FAQ-blokken, waarvan twee als structured data die Google kan tonen. */
+export const NO_FIX_QUESTION = 'Wat als het probleem niet opgelost kan worden?'
+
+/** Website laten maken is een andere dienst met een eigen prijsschaal. Deze
+ *  prijs stond zeven keer hardgecodeerd over drie bestanden; bij een wijziging
+ *  moest je ze alle zeven vinden. Dezelfde fout is eerder gemaakt met het
+ *  kwartiertarief (€14,99 tegen €14,50 op alle stadspagina's). */
+export const WEBSITE_PRICING = {
+  FROM: '€795',
+  FROM_NUM: 795,
+} as const
+
 /** Beschrijving van de onderneming in de structured data. Elke pagina zet deze
  *  onder hetzelfde #localbusiness-ID, dus hij moet overal woordelijk gelijk
  *  zijn: twee beschrijvingen onder één ID is één bedrijf dat zichzelf

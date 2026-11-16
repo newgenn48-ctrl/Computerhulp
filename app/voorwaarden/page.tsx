@@ -1,5 +1,5 @@
 import { Metadata } from 'next'
-import { BUSINESS, PRICING, OG_IMAGE } from '@/lib/constants'
+import { BUSINESS, PRICING, OG_IMAGE, NO_FIX_PROMISE } from '@/lib/constants'
 
 export const metadata: Metadata = {
   title: 'Algemene voorwaarden | Computerhulp aan huis',
@@ -66,6 +66,14 @@ export default function VoorwaardenPage() {
             </p>
             <p className="mt-4">
               <strong>Facturen:</strong> Betaalbaar binnen 14 dagen na factuurdatum.
+            </p>
+            {/* Deze belofte staat op vijf plekken op de site, waaronder in de
+                structured data die Google kan tonen. Hij hoort dus ook hier te
+                staan: een geldbelofte die alleen in marketingtekst leeft is
+                geen voorwaarde. De tekst komt uit NO_FIX_PROMISE, zodat site en
+                voorwaarden nooit uiteen kunnen lopen. */}
+            <p className="mt-4">
+              <strong>Niet opgelost:</strong> {NO_FIX_PROMISE} Onder de diagnose verstaan wij de tijd die nodig was om vast te stellen dat wij het probleem niet kunnen verhelpen. Het minimum van 3 kwartier geldt in dat geval niet; voorrijkosten blijven wel verschuldigd.
             </p>
             <p className="mt-4">
               Bij niet-tijdige betaling is de klant in verzuim en kan rente van 1% per maand in rekening worden gebracht.
