@@ -6,9 +6,22 @@
   :root {
     --color-primary: 37 99 235;
     --color-primary-dark: 30 64 175;
-    --color-accent: 217 119 6;
-    --color-action: 21 128 61;
-    --color-accent-soft: 245 158 11;
+    /* De markeerbalk achter het kernwoord in de H1 (.hero-highlight).
+       Lichter dan het merkblauw, want diezelfde balk moet op twee
+       achtergronden werken: op de donkere herofoto met witte tekst erop,
+       en op de lichte telefoon-hero met donkere tekst erop. Gemeten op 55%
+       dekking: op de foto blijft de balk 3,0-3,8:1 van de donkere waas te
+       onderscheiden en houdt de witte kop 4,6-5,9:1; op de telefoon leest
+       de donkere kop op 10,4-12,5:1. Donkerder mag niet - primary-600
+       haalt op de foto 1,9:1 en is daar dus onzichtbaar - en lichter maakt
+       de witte kop onleesbaar.
+
+       Hier stond amber (217 119 6 -> 245 158 11): de laatste warme kleur in
+       de interface, en over het blauwgrijze wit van de telefoon-hero las
+       die als een vuile streep. Hier stond ook --color-action (21 128 61,
+       groen): nergens gebruikt, en groen is uit de interface. */
+    --color-highlight: 96 165 250;
+    --color-highlight-soft: 147 197 253;
     --color-ink: 28 25 23;
     --color-ink-soft: 68 64 60;
     /* Paginakleur. De golf onderaan de hero vult hiermee, dus beide
@@ -348,8 +361,9 @@
     text-wrap: balance;
   }
 
-  /* Signature-highlight — warme amber marker achter een keyword in de H1.
-     Vervangt text-blue-300 accent voor herkenbare, niet-generieke branding. */
+  /* De marker achter het kernwoord in de H1, op 18 pagina's. Blauw, niet
+     amber: één merkkleur. De balk ligt met z-index -1 achter de tekst en
+     is 0,32em hoog, dus hij dekt de onderste derde van de letters. */
   .hero-highlight {
     @apply relative inline-block text-white;
     /* Eigen stapelcontext, anders valt het ::after met z-index -1 achter
@@ -365,8 +379,8 @@
     height: 0.32em;
     background: linear-gradient(
       90deg,
-      rgb(var(--color-accent) / 0.55) 0%,
-      rgb(var(--color-accent-soft) / 0.55) 100%
+      rgb(var(--color-highlight) / 0.55) 0%,
+      rgb(var(--color-highlight-soft) / 0.55) 100%
     );
     border-radius: 6px;
     z-index: -1;
